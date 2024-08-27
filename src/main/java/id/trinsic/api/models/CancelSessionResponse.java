@@ -36,7 +36,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   CancelSessionResponse.JSON_PROPERTY_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-27T15:39:48.457157Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-27T16:04:29.952666Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CancelSessionResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
   private Session session;
