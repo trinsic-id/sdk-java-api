@@ -35,7 +35,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   IdentityLookupResponse.JSON_PROPERTY_IDENTITY_IN_NETWORK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T18:10:34.132636Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T18:15:16.114476Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class IdentityLookupResponse {
   public static final String JSON_PROPERTY_IDENTITY_IN_NETWORK = "identityInNetwork";
   private Boolean identityInNetwork;

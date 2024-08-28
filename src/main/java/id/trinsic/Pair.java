@@ -13,7 +13,7 @@
 
 package id.trinsic;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T18:10:34.132636Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T18:15:16.114476Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Pair {
     private String name = "";
     private String value = "";
