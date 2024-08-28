@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   Address.JSON_PROPERTY_COUNTRY,
   Address.JSON_PROPERTY_FULL_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T18:16:43.647301Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T19:11:50.612710Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Address {
   public static final String JSON_PROPERTY_LINE1 = "line1";
   private String line1;

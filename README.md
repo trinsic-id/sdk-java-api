@@ -4,7 +4,7 @@ Connect API
 
 - API version: v1
 
-- Build date: 2024-08-28T18:16:43.647301Z[Etc/UTC]
+- Build date: 2024-08-28T19:11:50.612710Z[Etc/UTC]
 
 - Generator version: 7.8.0
 
@@ -44,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>id.trinsic</groupId>
   <artifactId>api</artifactId>
-  <version>0.3.10</version>
+  <version>0.4.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -54,7 +54,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "id.trinsic:api:0.3.10"
+compile "id.trinsic:api:0.4.0"
 ```
 
 ### Others
@@ -67,7 +67,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/api-0.3.10.jar`
+- `target/api-0.4.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started

@@ -13,9 +13,9 @@
 
 package id.trinsic;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T18:16:43.647301Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T19:11:50.612710Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Configuration {
-    public static final String VERSION = "0.3.10";
+    public static final String VERSION = "0.4.0";
 
     private static ApiClient defaultApiClient = new ApiClient();
 
