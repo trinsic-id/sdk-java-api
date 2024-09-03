@@ -35,7 +35,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   GetSessionResultRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T22:39:47.265040Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T22:45:34.923212Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class GetSessionResultRequest {
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
   private String resultsAccessKey;

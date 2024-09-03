@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   Verification.JSON_PROPERTY_PROVIDER,
   Verification.JSON_PROPERTY_FAIL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T22:39:47.265040Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T22:45:34.923212Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Verification {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   private String provider;
