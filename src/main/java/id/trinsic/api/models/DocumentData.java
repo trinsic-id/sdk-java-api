@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   DocumentData.JSON_PROPERTY_ISSUING_COUNTRY,
   DocumentData.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-28T19:11:50.612710Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T22:39:47.265040Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class DocumentData {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
