@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   CreateSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateSessionRequest.JSON_PROPERTY_DISCLOSED_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T22:45:34.923212Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T23:00:53.495440Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateSessionRequest {
   public static final String JSON_PROPERTY_LAUNCH_METHOD_DIRECTLY = "launchMethodDirectly";
   private Boolean launchMethodDirectly;
