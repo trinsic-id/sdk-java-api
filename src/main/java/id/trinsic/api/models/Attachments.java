@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   Attachments.JSON_PROPERTY_DOCUMENT_BACK,
   Attachments.JSON_PROPERTY_DOCUMENT_PORTRAIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T23:00:53.495440Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T00:30:10.165450Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Attachments {
   public static final String JSON_PROPERTY_SELFIE = "selfie";
   private String selfie;

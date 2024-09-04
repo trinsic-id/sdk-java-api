@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ListProvidersResponse.JSON_PROPERTY_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-03T23:00:53.495440Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T00:30:10.165450Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ListProvidersResponse {
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
   private List<ProviderInfo> providers = new ArrayList<>();
