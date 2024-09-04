@@ -35,7 +35,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   GetAttachmentRequest.JSON_PROPERTY_ATTACHMENT_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T20:12:40.430580Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T20:20:30.807100Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class GetAttachmentRequest {
   public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEY = "attachmentAccessKey";
   private String attachmentAccessKey;
