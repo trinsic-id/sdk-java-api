@@ -35,7 +35,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   FailureMessage.JSON_PROPERTY_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T20:20:30.807100Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T20:22:54.018620Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class FailureMessage {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
