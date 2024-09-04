@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   GetSessionResultResponse.JSON_PROPERTY_SESSION,
   GetSessionResultResponse.JSON_PROPERTY_IDENTITY_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T01:23:47.871823Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T01:27:25.599829Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class GetSessionResultResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
   private Session session;

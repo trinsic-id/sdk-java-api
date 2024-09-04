@@ -15,7 +15,7 @@ package id.trinsic;
 
 import java.net.http.HttpHeaders;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T01:23:47.871823Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T01:27:25.599829Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ApiException extends Exception {
     private static final long serialVersionUID = 1L;
 
