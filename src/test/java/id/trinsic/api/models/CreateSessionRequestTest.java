@@ -41,11 +41,11 @@ class CreateSessionRequestTest {
     }
 
     /**
-     * Test the property 'launchMethodDirectly'
+     * Test the property 'launchProviderDirectly'
      */
     @Test
-    void launchMethodDirectlyTest() {
-        // TODO: test launchMethodDirectly
+    void launchProviderDirectlyTest() {
+        // TODO: test launchProviderDirectly
     }
 
     /**

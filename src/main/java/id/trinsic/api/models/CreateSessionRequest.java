@@ -36,14 +36,14 @@ import id.trinsic.ApiClient;
  * CreateSessionRequest
  */
 @JsonPropertyOrder({
-  CreateSessionRequest.JSON_PROPERTY_LAUNCH_METHOD_DIRECTLY,
+  CreateSessionRequest.JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY,
   CreateSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateSessionRequest.JSON_PROPERTY_DISCLOSED_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T01:27:25.599829Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T19:57:26.338036Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateSessionRequest {
-  public static final String JSON_PROPERTY_LAUNCH_METHOD_DIRECTLY = "launchMethodDirectly";
-  private Boolean launchMethodDirectly;
+  public static final String JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY = "launchProviderDirectly";
+  private Boolean launchProviderDirectly;
 
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
   private List<String> providers = new ArrayList<>();
@@ -54,27 +54,27 @@ public class CreateSessionRequest {
   public CreateSessionRequest() { 
   }
 
-  public CreateSessionRequest launchMethodDirectly(Boolean launchMethodDirectly) {
-    this.launchMethodDirectly = launchMethodDirectly;
+  public CreateSessionRequest launchProviderDirectly(Boolean launchProviderDirectly) {
+    this.launchProviderDirectly = launchProviderDirectly;
     return this;
   }
 
   /**
-   * Whether to immediately launch the identity provider, without invoking the Trinsic Connect Widget UI.                Users will not be shown the Connect Widget; therefore, reuse of Connect credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a &#x60;RedirectUrl&#x60; specified, and cannot be invoked using the frontend SDK at this time.
-   * @return launchMethodDirectly
+   * Whether to immediately launch the identity provider, without invoking the Trinsic Widget UI.                Users will not be shown the Widget; therefore, reuse of credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a &#x60;RedirectUrl&#x60; specified, and cannot be invoked using the frontend SDK at this time.
+   * @return launchProviderDirectly
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAUNCH_METHOD_DIRECTLY)
+  @JsonProperty(JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Boolean getLaunchMethodDirectly() {
-    return launchMethodDirectly;
+  public Boolean getLaunchProviderDirectly() {
+    return launchProviderDirectly;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAUNCH_METHOD_DIRECTLY)
+  @JsonProperty(JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLaunchMethodDirectly(Boolean launchMethodDirectly) {
-    this.launchMethodDirectly = launchMethodDirectly;
+  public void setLaunchProviderDirectly(Boolean launchProviderDirectly) {
+    this.launchProviderDirectly = launchProviderDirectly;
   }
 
 
@@ -146,21 +146,21 @@ public class CreateSessionRequest {
       return false;
     }
     CreateSessionRequest createSessionRequest = (CreateSessionRequest) o;
-    return Objects.equals(this.launchMethodDirectly, createSessionRequest.launchMethodDirectly) &&
+    return Objects.equals(this.launchProviderDirectly, createSessionRequest.launchProviderDirectly) &&
         Objects.equals(this.providers, createSessionRequest.providers) &&
         Objects.equals(this.disclosedFields, createSessionRequest.disclosedFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(launchMethodDirectly, providers, disclosedFields);
+    return Objects.hash(launchProviderDirectly, providers, disclosedFields);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateSessionRequest {\n");
-    sb.append("    launchMethodDirectly: ").append(toIndentedString(launchMethodDirectly)).append("\n");
+    sb.append("    launchProviderDirectly: ").append(toIndentedString(launchProviderDirectly)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
     sb.append("    disclosedFields: ").append(toIndentedString(disclosedFields)).append("\n");
     sb.append("}");
@@ -210,9 +210,9 @@ public class CreateSessionRequest {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `launchMethodDirectly` to the URL query string
-    if (getLaunchMethodDirectly() != null) {
-      joiner.add(String.format("%slaunchMethodDirectly%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLaunchMethodDirectly()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `launchProviderDirectly` to the URL query string
+    if (getLaunchProviderDirectly() != null) {
+      joiner.add(String.format("%slaunchProviderDirectly%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLaunchProviderDirectly()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `providers` to the URL query string

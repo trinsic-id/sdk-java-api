@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   CreateSessionResponse.JSON_PROPERTY_SESSION,
   CreateSessionResponse.JSON_PROPERTY_LAUNCH_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T01:27:25.599829Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-04T19:57:26.338036Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateSessionResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
   private Session session;
@@ -78,7 +78,7 @@ public class CreateSessionResponse {
   }
 
   /**
-   * The URL that should be used to invoke the Acceptance Session on your user&#39;s device.                If the Session was created with &#x60;LaunchMethodDirectly&#x60; set to &#x60;true&#x60;, you should redirect your user&#39;s browser to this URL. The frontend SDK cannot presently be used to  invoke these Sessions.                Otherwise, you should pass this URL to your user&#39;s frontend and use the frontend SDK to invoke the Session.                This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
+   * The URL that should be used to invoke the Acceptance Session on your user&#39;s device.                You can use our frontend SDKs to launch the user into the Acceptance Session, or you can redirect the user&#39;s browser to this URL.  If the Session was created with &#x60;LaunchProviderDirectly&#x60; set to &#x60;true&#x60;, you can&#39;t use the iFrame mode.                This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
    * @return launchUrl
    */
   @javax.annotation.Nullable
