@@ -5,7 +5,7 @@
     <artifactId>api</artifactId>
     <packaging>jar</packaging>
     <name>api</name>
-    <version>0.6.1</version>
+    <version>1.0.0</version>
     <url>https://trinsic.id</url>
     <description>Trinsic</description>
     <scm>
@@ -16,8 +16,8 @@
 
     <licenses>
         <license>
-            <name>Unlicense</name>
-            <url>http://unlicense.org</url>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
