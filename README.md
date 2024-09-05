@@ -72,13 +72,15 @@ Trinsic follows a Semantic Versioning (SemVer) process where all releases will h
 
 ## Support
 
-New features and bug fixes are released on the latest major version of the package. If you are on an older major version, we recommend that you upgrade to the latest in order to use the new features and bug fixes including those for security vulnerabilities. Older major versions of the package will continue to be available for use, but will not be receiving any updates.
+Our SDKs follow the [Semantic Versioning](https://semver.org) ("SemVer") scheme. 
 
-Any issues, inquiries, and feature requests can be sent to [support@trinsic.id](mailto:support@trinsic.id), or feel free to open a GitHub issue [here](https://github.com/trinsic-id/sdk/issues).
+For example, the version number `1.13.0` has a major version of `1`, a minor version of `13`, and a patch version of `0`.
+
+Breaking changes are only introduced alongside a new major version.
 
 ## More Information
 
 - [API Reference](https://docs.trinsic.id/reference)
-- [Developer Guide](https://github.com/stripe/stripe-node/wiki/Passing-Options)
+- [Developer Guide](https://docs.trinsic.id/docs/developer-tools)
 - [Our Blog](https://trinsic.id/blog/)
 - [Schedule a demo](https://trinsic.id/contact/)
