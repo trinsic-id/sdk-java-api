@@ -7,7 +7,7 @@ api/openapi.yaml
 build.gradle
 build.sbt
 docs/Address.md
-docs/Attachments.md
+docs/AttachmentAccessKeys.md
 docs/AttachmentsApi.md
 docs/CancelSessionResponse.md
 docs/CreateSessionRequest.md
@@ -17,6 +17,7 @@ docs/DisclosedFieldsRequest.md
 docs/DocumentData.md
 docs/FailureMessage.md
 docs/GetAttachmentRequest.md
+docs/GetAttachmentResponse.md
 docs/GetSessionResponse.md
 docs/GetSessionResultRequest.md
 docs/GetSessionResultResponse.md
@@ -59,7 +60,7 @@ src/main/java/id/trinsic/api/NetworkApi.java
 src/main/java/id/trinsic/api/SessionsApi.java
 src/main/java/id/trinsic/api/models/AbstractOpenApiSchema.java
 src/main/java/id/trinsic/api/models/Address.java
-src/main/java/id/trinsic/api/models/Attachments.java
+src/main/java/id/trinsic/api/models/AttachmentAccessKeys.java
 src/main/java/id/trinsic/api/models/CancelSessionResponse.java
 src/main/java/id/trinsic/api/models/CreateSessionRequest.java
 src/main/java/id/trinsic/api/models/CreateSessionResponse.java
@@ -68,6 +69,7 @@ src/main/java/id/trinsic/api/models/DisclosedFieldsRequest.java
 src/main/java/id/trinsic/api/models/DocumentData.java
 src/main/java/id/trinsic/api/models/FailureMessage.java
 src/main/java/id/trinsic/api/models/GetAttachmentRequest.java
+src/main/java/id/trinsic/api/models/GetAttachmentResponse.java
 src/main/java/id/trinsic/api/models/GetSessionResponse.java
 src/main/java/id/trinsic/api/models/GetSessionResultRequest.java
 src/main/java/id/trinsic/api/models/GetSessionResultResponse.java
@@ -89,7 +91,7 @@ src/test/java/id/trinsic/api/AttachmentsApiTest.java
 src/test/java/id/trinsic/api/NetworkApiTest.java
 src/test/java/id/trinsic/api/SessionsApiTest.java
 src/test/java/id/trinsic/api/models/AddressTest.java
-src/test/java/id/trinsic/api/models/AttachmentsTest.java
+src/test/java/id/trinsic/api/models/AttachmentAccessKeysTest.java
 src/test/java/id/trinsic/api/models/CancelSessionResponseTest.java
 src/test/java/id/trinsic/api/models/CreateSessionRequestTest.java
 src/test/java/id/trinsic/api/models/CreateSessionResponseTest.java
@@ -98,6 +100,7 @@ src/test/java/id/trinsic/api/models/DisclosedFieldsTest.java
 src/test/java/id/trinsic/api/models/DocumentDataTest.java
 src/test/java/id/trinsic/api/models/FailureMessageTest.java
 src/test/java/id/trinsic/api/models/GetAttachmentRequestTest.java
+src/test/java/id/trinsic/api/models/GetAttachmentResponseTest.java
 src/test/java/id/trinsic/api/models/GetSessionResponseTest.java
 src/test/java/id/trinsic/api/models/GetSessionResultRequestTest.java
 src/test/java/id/trinsic/api/models/GetSessionResultResponseTest.java

@@ -11,11 +11,11 @@ All URIs are relative to *https://api.trinsic.id*
 
 ## getAttachment
 
-> void getAttachment(getAttachmentRequest)
+> GetAttachmentResponse getAttachment(getAttachmentRequest)
 
 Get Attachment
 
-Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
+Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed.  If so, this endpoint will return an HTTP 503 code, and you should try again later.
 
 ### Example
 
@@ -40,7 +40,8 @@ public class Example {
         AttachmentsApi apiInstance = new AttachmentsApi(defaultClient);
         GetAttachmentRequest getAttachmentRequest = new GetAttachmentRequest(); // GetAttachmentRequest | 
         try {
-            apiInstance.getAttachment(getAttachmentRequest);
+            GetAttachmentResponse result = apiInstance.getAttachment(getAttachmentRequest);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AttachmentsApi#getAttachment");
             System.err.println("Status code: " + e.getCode());
@@ -61,8 +62,8 @@ public class Example {
 
 ### Return type
 
+[**GetAttachmentResponse**](GetAttachmentResponse.md)
 
-null (empty response body)
 
 ### Authorization
 
@@ -71,12 +72,13 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **503** | Service Unavailable |  -  |
 | **400** | Validation Failed |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -84,11 +86,11 @@ null (empty response body)
 
 ## getAttachmentWithHttpInfo
 
-> ApiResponse<Void> getAttachment getAttachmentWithHttpInfo(getAttachmentRequest)
+> ApiResponse<GetAttachmentResponse> getAttachment getAttachmentWithHttpInfo(getAttachmentRequest)
 
 Get Attachment
 
-Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
+Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed.  If so, this endpoint will return an HTTP 503 code, and you should try again later.
 
 ### Example
 
@@ -114,9 +116,10 @@ public class Example {
         AttachmentsApi apiInstance = new AttachmentsApi(defaultClient);
         GetAttachmentRequest getAttachmentRequest = new GetAttachmentRequest(); // GetAttachmentRequest | 
         try {
-            ApiResponse<Void> response = apiInstance.getAttachmentWithHttpInfo(getAttachmentRequest);
+            ApiResponse<GetAttachmentResponse> response = apiInstance.getAttachmentWithHttpInfo(getAttachmentRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
             System.err.println("Exception when calling AttachmentsApi#getAttachment");
             System.err.println("Status code: " + e.getCode());
@@ -137,8 +140,8 @@ public class Example {
 
 ### Return type
 
+ApiResponse<[**GetAttachmentResponse**](GetAttachmentResponse.md)>
 
-ApiResponse<Void>
 
 ### Authorization
 
@@ -147,12 +150,13 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **503** | Service Unavailable |  -  |
 | **400** | Validation Failed |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |

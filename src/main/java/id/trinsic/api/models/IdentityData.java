@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.Attachments;
+import id.trinsic.api.models.AttachmentAccessKeys;
 import id.trinsic.api.models.DocumentData;
 import id.trinsic.api.models.PersonData;
 import java.util.Arrays;
@@ -39,9 +39,9 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_ORIGINATING_PROVIDER_ID,
   IdentityData.JSON_PROPERTY_PERSON,
   IdentityData.JSON_PROPERTY_DOCUMENT,
-  IdentityData.JSON_PROPERTY_ATTACHMENTS
+  IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-05T17:58:46.930776Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-12T18:15:29.677466657Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private String originatingProviderId;
@@ -52,8 +52,8 @@ public class IdentityData {
   public static final String JSON_PROPERTY_DOCUMENT = "document";
   private DocumentData document;
 
-  public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
-  private Attachments attachments;
+  public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS = "attachmentAccessKeys";
+  private AttachmentAccessKeys attachmentAccessKeys;
 
   public IdentityData() { 
   }
@@ -130,27 +130,27 @@ public class IdentityData {
   }
 
 
-  public IdentityData attachments(Attachments attachments) {
-    this.attachments = attachments;
+  public IdentityData attachmentAccessKeys(AttachmentAccessKeys attachmentAccessKeys) {
+    this.attachmentAccessKeys = attachmentAccessKeys;
     return this;
   }
 
   /**
-   * Access keys for attachments (eg document/selfie images)
-   * @return attachments
+   * Attachment Access Keys for attachments (eg document / selfie images)
+   * @return attachmentAccessKeys
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
+  @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Attachments getAttachments() {
-    return attachments;
+  public AttachmentAccessKeys getAttachmentAccessKeys() {
+    return attachmentAccessKeys;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
+  @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttachments(Attachments attachments) {
-    this.attachments = attachments;
+  public void setAttachmentAccessKeys(AttachmentAccessKeys attachmentAccessKeys) {
+    this.attachmentAccessKeys = attachmentAccessKeys;
   }
 
 
@@ -169,12 +169,12 @@ public class IdentityData {
     return Objects.equals(this.originatingProviderId, identityData.originatingProviderId) &&
         Objects.equals(this.person, identityData.person) &&
         Objects.equals(this.document, identityData.document) &&
-        Objects.equals(this.attachments, identityData.attachments);
+        Objects.equals(this.attachmentAccessKeys, identityData.attachmentAccessKeys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(originatingProviderId, person, document, attachments);
+    return Objects.hash(originatingProviderId, person, document, attachmentAccessKeys);
   }
 
   @Override
@@ -184,7 +184,7 @@ public class IdentityData {
     sb.append("    originatingProviderId: ").append(toIndentedString(originatingProviderId)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
-    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+    sb.append("    attachmentAccessKeys: ").append(toIndentedString(attachmentAccessKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -247,9 +247,9 @@ public class IdentityData {
       joiner.add(getDocument().toUrlQueryString(prefix + "document" + suffix));
     }
 
-    // add `attachments` to the URL query string
-    if (getAttachments() != null) {
-      joiner.add(getAttachments().toUrlQueryString(prefix + "attachments" + suffix));
+    // add `attachmentAccessKeys` to the URL query string
+    if (getAttachmentAccessKeys() != null) {
+      joiner.add(getAttachmentAccessKeys().toUrlQueryString(prefix + "attachmentAccessKeys" + suffix));
     }
 
     return joiner.toString();

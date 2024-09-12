@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   DisclosedFields.JSON_PROPERTY_DOCUMENT_PORTRAIT,
   DisclosedFields.JSON_PROPERTY_SELFIE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-05T17:58:46.930776Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-12T18:15:29.677466657Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class DisclosedFields {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private Boolean idNumber;

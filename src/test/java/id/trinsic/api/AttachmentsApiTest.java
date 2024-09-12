@@ -16,6 +16,7 @@ package id.trinsic.api;
 import id.trinsic.ApiException;
 import id.trinsic.api.models.FailureMessage;
 import id.trinsic.api.models.GetAttachmentRequest;
+import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.ValidationResult;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ public class AttachmentsApiTest {
     /**
      * Get Attachment
      *
-     * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
+     * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed.  If so, this endpoint will return an HTTP 503 code, and you should try again later.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -47,7 +48,7 @@ public class AttachmentsApiTest {
     @Test
     public void getAttachmentTest() throws ApiException {
         GetAttachmentRequest getAttachmentRequest = null;
-        
+        GetAttachmentResponse response = 
         api.getAttachment(getAttachmentRequest);
         
         // TODO: test validations

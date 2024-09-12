@@ -24,80 +24,79 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.Session;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import id.trinsic.ApiClient;
 /**
- * CreateSessionResponse
+ * GetAttachmentResponse
  */
 @JsonPropertyOrder({
-  CreateSessionResponse.JSON_PROPERTY_SESSION,
-  CreateSessionResponse.JSON_PROPERTY_LAUNCH_URL
+  GetAttachmentResponse.JSON_PROPERTY_CONTENT,
+  GetAttachmentResponse.JSON_PROPERTY_CONTENT_TYPE
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-12T18:15:29.677466657Z[Etc/UTC]", comments = "Generator version: 7.8.0")
-public class CreateSessionResponse {
-  public static final String JSON_PROPERTY_SESSION = "session";
-  private Session session;
+public class GetAttachmentResponse {
+  public static final String JSON_PROPERTY_CONTENT = "content";
+  private byte[] content;
 
-  public static final String JSON_PROPERTY_LAUNCH_URL = "launchUrl";
-  private String launchUrl;
+  public static final String JSON_PROPERTY_CONTENT_TYPE = "contentType";
+  private String contentType;
 
-  public CreateSessionResponse() { 
+  public GetAttachmentResponse() { 
   }
 
-  public CreateSessionResponse session(Session session) {
-    this.session = session;
+  public GetAttachmentResponse content(byte[] content) {
+    this.content = content;
     return this;
   }
 
   /**
-   * The created Acceptance Session
-   * @return session
+   * The raw file contents of the Attachment
+   * @return content
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public Session getSession() {
-    return session;
+  public byte[] getContent() {
+    return content;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSession(Session session) {
-    this.session = session;
+  public void setContent(byte[] content) {
+    this.content = content;
   }
 
 
-  public CreateSessionResponse launchUrl(String launchUrl) {
-    this.launchUrl = launchUrl;
+  public GetAttachmentResponse contentType(String contentType) {
+    this.contentType = contentType;
     return this;
   }
 
   /**
-   * The URL that should be used to invoke the Acceptance Session on your user&#39;s device.                You can use our frontend SDKs to launch the user into the Acceptance Session, or you can redirect the user&#39;s browser to this URL.  If the Session was created with &#x60;LaunchProviderDirectly&#x60; set to &#x60;true&#x60;, you can&#39;t use the iFrame mode.                This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
-   * @return launchUrl
+   * The MIME type of the Attachment data
+   * @return contentType
    */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAUNCH_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getLaunchUrl() {
-    return launchUrl;
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getContentType() {
+    return contentType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAUNCH_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLaunchUrl(String launchUrl) {
-    this.launchUrl = launchUrl;
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setContentType(String contentType) {
+    this.contentType = contentType;
   }
 
 
   /**
-   * Return true if this CreateSessionResponse object is equal to o.
+   * Return true if this GetAttachmentResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -107,22 +106,22 @@ public class CreateSessionResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateSessionResponse createSessionResponse = (CreateSessionResponse) o;
-    return Objects.equals(this.session, createSessionResponse.session) &&
-        Objects.equals(this.launchUrl, createSessionResponse.launchUrl);
+    GetAttachmentResponse getAttachmentResponse = (GetAttachmentResponse) o;
+    return Arrays.equals(this.content, getAttachmentResponse.content) &&
+        Objects.equals(this.contentType, getAttachmentResponse.contentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(session, launchUrl);
+    return Objects.hash(Arrays.hashCode(content), contentType);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateSessionResponse {\n");
-    sb.append("    session: ").append(toIndentedString(session)).append("\n");
-    sb.append("    launchUrl: ").append(toIndentedString(launchUrl)).append("\n");
+    sb.append("class GetAttachmentResponse {\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,14 +169,14 @@ public class CreateSessionResponse {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `session` to the URL query string
-    if (getSession() != null) {
-      joiner.add(getSession().toUrlQueryString(prefix + "session" + suffix));
+    // add `content` to the URL query string
+    if (getContent() != null) {
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `launchUrl` to the URL query string
-    if (getLaunchUrl() != null) {
-      joiner.add(String.format("%slaunchUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLaunchUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `contentType` to the URL query string
+    if (getContentType() != null) {
+      joiner.add(String.format("%scontentType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContentType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

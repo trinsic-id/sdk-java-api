@@ -18,58 +18,55 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.AttachmentAccessKeys;
-import id.trinsic.api.models.DocumentData;
-import id.trinsic.api.models.PersonData;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for IdentityData
+ * Model tests for AttachmentAccessKeys
  */
-class IdentityDataTest {
-    private final IdentityData model = new IdentityData();
+class AttachmentAccessKeysTest {
+    private final AttachmentAccessKeys model = new AttachmentAccessKeys();
 
     /**
-     * Model tests for IdentityData
+     * Model tests for AttachmentAccessKeys
      */
     @Test
-    void testIdentityData() {
-        // TODO: test IdentityData
+    void testAttachmentAccessKeys() {
+        // TODO: test AttachmentAccessKeys
     }
 
     /**
-     * Test the property 'originatingProviderId'
+     * Test the property 'selfie'
      */
     @Test
-    void originatingProviderIdTest() {
-        // TODO: test originatingProviderId
+    void selfieTest() {
+        // TODO: test selfie
     }
 
     /**
-     * Test the property 'person'
+     * Test the property 'documentFront'
      */
     @Test
-    void personTest() {
-        // TODO: test person
+    void documentFrontTest() {
+        // TODO: test documentFront
     }
 
     /**
-     * Test the property 'document'
+     * Test the property 'documentBack'
      */
     @Test
-    void documentTest() {
-        // TODO: test document
+    void documentBackTest() {
+        // TODO: test documentBack
     }
 
     /**
-     * Test the property 'attachmentAccessKeys'
+     * Test the property 'documentPortrait'
      */
     @Test
-    void attachmentAccessKeysTest() {
-        // TODO: test attachmentAccessKeys
+    void documentPortraitTest() {
+        // TODO: test documentPortrait
     }
 
 }

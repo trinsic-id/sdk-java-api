@@ -19,6 +19,7 @@ import id.trinsic.Pair;
 
 import id.trinsic.api.models.FailureMessage;
 import id.trinsic.api.models.GetAttachmentRequest;
+import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.ValidationResult;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -46,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-05T17:58:46.930776Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-12T18:15:29.677466657Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class AttachmentsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -85,22 +86,24 @@ public class AttachmentsApi {
 
   /**
    * Get Attachment
-   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
+   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed.  If so, this endpoint will return an HTTP 503 code, and you should try again later.
    * @param getAttachmentRequest  (optional)
+   * @return GetAttachmentResponse
    * @throws ApiException if fails to make API call
    */
-  public void getAttachment(GetAttachmentRequest getAttachmentRequest) throws ApiException {
-    getAttachmentWithHttpInfo(getAttachmentRequest);
+  public GetAttachmentResponse getAttachment(GetAttachmentRequest getAttachmentRequest) throws ApiException {
+    ApiResponse<GetAttachmentResponse> localVarResponse = getAttachmentWithHttpInfo(getAttachmentRequest);
+    return localVarResponse.getData();
   }
 
   /**
    * Get Attachment
-   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
+   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed.  If so, this endpoint will return an HTTP 503 code, and you should try again later.
    * @param getAttachmentRequest  (optional)
-   * @return ApiResponse&lt;Void&gt;
+   * @return ApiResponse&lt;GetAttachmentResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> getAttachmentWithHttpInfo(GetAttachmentRequest getAttachmentRequest) throws ApiException {
+  public ApiResponse<GetAttachmentResponse> getAttachmentWithHttpInfo(GetAttachmentRequest getAttachmentRequest) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = getAttachmentRequestBuilder(getAttachmentRequest);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -113,17 +116,12 @@ public class AttachmentsApi {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("getAttachment", localVarResponse);
         }
-        return new ApiResponse<Void>(
+        return new ApiResponse<GetAttachmentResponse>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          null
+          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<GetAttachmentResponse>() {}) // closes the InputStream
         );
       } finally {
-        // Drain the InputStream
-        while (localVarResponse.body().read() != -1) {
-            // Ignore
-        }
-        localVarResponse.body().close();
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -143,7 +141,7 @@ public class AttachmentsApi {
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getAttachmentRequest);

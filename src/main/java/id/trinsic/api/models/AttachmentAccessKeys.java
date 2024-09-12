@@ -33,13 +33,13 @@ import id.trinsic.ApiClient;
  * Attachment Access Keys for attachments (eg document / selfie images)
  */
 @JsonPropertyOrder({
-  Attachments.JSON_PROPERTY_SELFIE,
-  Attachments.JSON_PROPERTY_DOCUMENT_FRONT,
-  Attachments.JSON_PROPERTY_DOCUMENT_BACK,
-  Attachments.JSON_PROPERTY_DOCUMENT_PORTRAIT
+  AttachmentAccessKeys.JSON_PROPERTY_SELFIE,
+  AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_FRONT,
+  AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_BACK,
+  AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_PORTRAIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-05T17:58:46.930776Z[Etc/UTC]", comments = "Generator version: 7.8.0")
-public class Attachments {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-12T18:15:29.677466657Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+public class AttachmentAccessKeys {
   public static final String JSON_PROPERTY_SELFIE = "selfie";
   private String selfie;
 
@@ -52,10 +52,10 @@ public class Attachments {
   public static final String JSON_PROPERTY_DOCUMENT_PORTRAIT = "documentPortrait";
   private String documentPortrait;
 
-  public Attachments() { 
+  public AttachmentAccessKeys() { 
   }
 
-  public Attachments selfie(String selfie) {
+  public AttachmentAccessKeys selfie(String selfie) {
     this.selfie = selfie;
     return this;
   }
@@ -79,7 +79,7 @@ public class Attachments {
   }
 
 
-  public Attachments documentFront(String documentFront) {
+  public AttachmentAccessKeys documentFront(String documentFront) {
     this.documentFront = documentFront;
     return this;
   }
@@ -103,7 +103,7 @@ public class Attachments {
   }
 
 
-  public Attachments documentBack(String documentBack) {
+  public AttachmentAccessKeys documentBack(String documentBack) {
     this.documentBack = documentBack;
     return this;
   }
@@ -127,7 +127,7 @@ public class Attachments {
   }
 
 
-  public Attachments documentPortrait(String documentPortrait) {
+  public AttachmentAccessKeys documentPortrait(String documentPortrait) {
     this.documentPortrait = documentPortrait;
     return this;
   }
@@ -152,7 +152,7 @@ public class Attachments {
 
 
   /**
-   * Return true if this Attachments object is equal to o.
+   * Return true if this AttachmentAccessKeys object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -162,11 +162,11 @@ public class Attachments {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Attachments attachments = (Attachments) o;
-    return Objects.equals(this.selfie, attachments.selfie) &&
-        Objects.equals(this.documentFront, attachments.documentFront) &&
-        Objects.equals(this.documentBack, attachments.documentBack) &&
-        Objects.equals(this.documentPortrait, attachments.documentPortrait);
+    AttachmentAccessKeys attachmentAccessKeys = (AttachmentAccessKeys) o;
+    return Objects.equals(this.selfie, attachmentAccessKeys.selfie) &&
+        Objects.equals(this.documentFront, attachmentAccessKeys.documentFront) &&
+        Objects.equals(this.documentBack, attachmentAccessKeys.documentBack) &&
+        Objects.equals(this.documentPortrait, attachmentAccessKeys.documentPortrait);
   }
 
   @Override
@@ -177,7 +177,7 @@ public class Attachments {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Attachments {\n");
+    sb.append("class AttachmentAccessKeys {\n");
     sb.append("    selfie: ").append(toIndentedString(selfie)).append("\n");
     sb.append("    documentFront: ").append(toIndentedString(documentFront)).append("\n");
     sb.append("    documentBack: ").append(toIndentedString(documentBack)).append("\n");

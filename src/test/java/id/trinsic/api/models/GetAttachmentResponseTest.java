@@ -24,49 +24,33 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Attachments
+ * Model tests for GetAttachmentResponse
  */
-class AttachmentsTest {
-    private final Attachments model = new Attachments();
+class GetAttachmentResponseTest {
+    private final GetAttachmentResponse model = new GetAttachmentResponse();
 
     /**
-     * Model tests for Attachments
+     * Model tests for GetAttachmentResponse
      */
     @Test
-    void testAttachments() {
-        // TODO: test Attachments
+    void testGetAttachmentResponse() {
+        // TODO: test GetAttachmentResponse
     }
 
     /**
-     * Test the property 'selfie'
+     * Test the property 'content'
      */
     @Test
-    void selfieTest() {
-        // TODO: test selfie
+    void contentTest() {
+        // TODO: test content
     }
 
     /**
-     * Test the property 'documentFront'
+     * Test the property 'contentType'
      */
     @Test
-    void documentFrontTest() {
-        // TODO: test documentFront
-    }
-
-    /**
-     * Test the property 'documentBack'
-     */
-    @Test
-    void documentBackTest() {
-        // TODO: test documentBack
-    }
-
-    /**
-     * Test the property 'documentPortrait'
-     */
-    @Test
-    void documentPortraitTest() {
-        // TODO: test documentPortrait
+    void contentTypeTest() {
+        // TODO: test contentType
     }
 
 }
