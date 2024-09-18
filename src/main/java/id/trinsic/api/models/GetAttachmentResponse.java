@@ -36,7 +36,7 @@ import id.trinsic.ApiClient;
   GetAttachmentResponse.JSON_PROPERTY_CONTENT,
   GetAttachmentResponse.JSON_PROPERTY_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-12T18:15:29.677466657Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-18T20:49:40.490361356Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class GetAttachmentResponse {
   public static final String JSON_PROPERTY_CONTENT = "content";
   private byte[] content;
