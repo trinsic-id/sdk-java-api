@@ -37,13 +37,17 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   CreateSessionRequest.JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY,
+  CreateSessionRequest.JSON_PROPERTY_ENABLE_REMEMBER_ME,
   CreateSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateSessionRequest.JSON_PROPERTY_DISCLOSED_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-18T20:49:40.490361356Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-10T20:08:35.008294877Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateSessionRequest {
   public static final String JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY = "launchProviderDirectly";
   private Boolean launchProviderDirectly;
+
+  public static final String JSON_PROPERTY_ENABLE_REMEMBER_ME = "enableRememberMe";
+  private Boolean enableRememberMe;
 
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
   private List<String> providers = new ArrayList<>();
@@ -75,6 +79,30 @@ public class CreateSessionRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLaunchProviderDirectly(Boolean launchProviderDirectly) {
     this.launchProviderDirectly = launchProviderDirectly;
+  }
+
+
+  public CreateSessionRequest enableRememberMe(Boolean enableRememberMe) {
+    this.enableRememberMe = enableRememberMe;
+    return this;
+  }
+
+  /**
+   * Whether to enable Trinsic&#39;s \&quot;Remember Me\&quot; feature, which allows users to save their credentials for future use.                This option is only relevant when &#x60;LaunchProviderDirectly&#x60; is unspecified or set to &#x60;false&#x60;.  If &#x60;LaunchProviderDirectly&#x60; is &#x60;true&#x60;, this field must be unspecified or set to &#x60;false&#x60;.                If this field is set to &#x60;true&#x60;, then:    - The user will be prompted to authenticate with their phone number at the start of the flow    - If the user has previously saved a verification for reuse with Trinsic, they will be offered the ability to reuse it    - After the user has verified their identity (and if the identity provider in question supports it), they will be prompted to save their credentials for future use                If this field is set to &#x60;false&#x60;, then:    - The user will not be prompted to authenticate with their phone number at the start of the flow.      - Instead, the user will be immediately shown the list of available providers    - The user will not be offered the ability to reuse a previously-saved Trinsic credential    - After the user has verified their identity, they will not be prompted to save their credentials for future use      - Instead, they will immediately return to your product
+   * @return enableRememberMe
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ENABLE_REMEMBER_ME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getEnableRememberMe() {
+    return enableRememberMe;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ENABLE_REMEMBER_ME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEnableRememberMe(Boolean enableRememberMe) {
+    this.enableRememberMe = enableRememberMe;
   }
 
 
@@ -147,13 +175,14 @@ public class CreateSessionRequest {
     }
     CreateSessionRequest createSessionRequest = (CreateSessionRequest) o;
     return Objects.equals(this.launchProviderDirectly, createSessionRequest.launchProviderDirectly) &&
+        Objects.equals(this.enableRememberMe, createSessionRequest.enableRememberMe) &&
         Objects.equals(this.providers, createSessionRequest.providers) &&
         Objects.equals(this.disclosedFields, createSessionRequest.disclosedFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(launchProviderDirectly, providers, disclosedFields);
+    return Objects.hash(launchProviderDirectly, enableRememberMe, providers, disclosedFields);
   }
 
   @Override
@@ -161,6 +190,7 @@ public class CreateSessionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateSessionRequest {\n");
     sb.append("    launchProviderDirectly: ").append(toIndentedString(launchProviderDirectly)).append("\n");
+    sb.append("    enableRememberMe: ").append(toIndentedString(enableRememberMe)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
     sb.append("    disclosedFields: ").append(toIndentedString(disclosedFields)).append("\n");
     sb.append("}");
@@ -213,6 +243,11 @@ public class CreateSessionRequest {
     // add `launchProviderDirectly` to the URL query string
     if (getLaunchProviderDirectly() != null) {
       joiner.add(String.format("%slaunchProviderDirectly%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLaunchProviderDirectly()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `enableRememberMe` to the URL query string
+    if (getEnableRememberMe() != null) {
+      joiner.add(String.format("%senableRememberMe%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEnableRememberMe()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `providers` to the URL query string

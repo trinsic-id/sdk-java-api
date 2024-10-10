@@ -49,6 +49,14 @@ class CreateSessionRequestTest {
     }
 
     /**
+     * Test the property 'enableRememberMe'
+     */
+    @Test
+    void enableRememberMeTest() {
+        // TODO: test enableRememberMe
+    }
+
+    /**
      * Test the property 'providers'
      */
     @Test
