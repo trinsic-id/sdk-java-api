@@ -33,17 +33,16 @@ import id.trinsic.ApiClient;
  * Address information for an individual
  */
 @JsonPropertyOrder({
-  Address.JSON_PROPERTY_LINE1,
-  Address.JSON_PROPERTY_LINE2,
-  Address.JSON_PROPERTY_LINE3,
-  Address.JSON_PROPERTY_CITY,
-  Address.JSON_PROPERTY_STATE,
-  Address.JSON_PROPERTY_POSTAL_CODE,
-  Address.JSON_PROPERTY_COUNTRY,
-  Address.JSON_PROPERTY_FULL_ADDRESS
+  KnownAddress.JSON_PROPERTY_LINE1,
+  KnownAddress.JSON_PROPERTY_LINE2,
+  KnownAddress.JSON_PROPERTY_LINE3,
+  KnownAddress.JSON_PROPERTY_CITY,
+  KnownAddress.JSON_PROPERTY_STATE,
+  KnownAddress.JSON_PROPERTY_POSTAL_CODE,
+  KnownAddress.JSON_PROPERTY_COUNTRY
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T14:56:32.436400402Z[Etc/UTC]", comments = "Generator version: 7.8.0")
-public class Address {
+public class KnownAddress {
   public static final String JSON_PROPERTY_LINE1 = "line1";
   private String line1;
 
@@ -65,13 +64,10 @@ public class Address {
   public static final String JSON_PROPERTY_COUNTRY = "country";
   private String country;
 
-  public static final String JSON_PROPERTY_FULL_ADDRESS = "fullAddress";
-  private String fullAddress;
-
-  public Address() { 
+  public KnownAddress() { 
   }
 
-  public Address line1(String line1) {
+  public KnownAddress line1(String line1) {
     this.line1 = line1;
     return this;
   }
@@ -95,7 +91,7 @@ public class Address {
   }
 
 
-  public Address line2(String line2) {
+  public KnownAddress line2(String line2) {
     this.line2 = line2;
     return this;
   }
@@ -119,7 +115,7 @@ public class Address {
   }
 
 
-  public Address line3(String line3) {
+  public KnownAddress line3(String line3) {
     this.line3 = line3;
     return this;
   }
@@ -143,7 +139,7 @@ public class Address {
   }
 
 
-  public Address city(String city) {
+  public KnownAddress city(String city) {
     this.city = city;
     return this;
   }
@@ -167,7 +163,7 @@ public class Address {
   }
 
 
-  public Address state(String state) {
+  public KnownAddress state(String state) {
     this.state = state;
     return this;
   }
@@ -191,7 +187,7 @@ public class Address {
   }
 
 
-  public Address postalCode(String postalCode) {
+  public KnownAddress postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -215,7 +211,7 @@ public class Address {
   }
 
 
-  public Address country(String country) {
+  public KnownAddress country(String country) {
     this.country = country;
     return this;
   }
@@ -239,32 +235,8 @@ public class Address {
   }
 
 
-  public Address fullAddress(String fullAddress) {
-    this.fullAddress = fullAddress;
-    return this;
-  }
-
   /**
-   * The full address as a single string
-   * @return fullAddress
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FULL_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getFullAddress() {
-    return fullAddress;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FULL_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFullAddress(String fullAddress) {
-    this.fullAddress = fullAddress;
-  }
-
-
-  /**
-   * Return true if this Address object is equal to o.
+   * Return true if this KnownAddress object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -274,26 +246,25 @@ public class Address {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Address address = (Address) o;
-    return Objects.equals(this.line1, address.line1) &&
-        Objects.equals(this.line2, address.line2) &&
-        Objects.equals(this.line3, address.line3) &&
-        Objects.equals(this.city, address.city) &&
-        Objects.equals(this.state, address.state) &&
-        Objects.equals(this.postalCode, address.postalCode) &&
-        Objects.equals(this.country, address.country) &&
-        Objects.equals(this.fullAddress, address.fullAddress);
+    KnownAddress knownAddress = (KnownAddress) o;
+    return Objects.equals(this.line1, knownAddress.line1) &&
+        Objects.equals(this.line2, knownAddress.line2) &&
+        Objects.equals(this.line3, knownAddress.line3) &&
+        Objects.equals(this.city, knownAddress.city) &&
+        Objects.equals(this.state, knownAddress.state) &&
+        Objects.equals(this.postalCode, knownAddress.postalCode) &&
+        Objects.equals(this.country, knownAddress.country);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(line1, line2, line3, city, state, postalCode, country, fullAddress);
+    return Objects.hash(line1, line2, line3, city, state, postalCode, country);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Address {\n");
+    sb.append("class KnownAddress {\n");
     sb.append("    line1: ").append(toIndentedString(line1)).append("\n");
     sb.append("    line2: ").append(toIndentedString(line2)).append("\n");
     sb.append("    line3: ").append(toIndentedString(line3)).append("\n");
@@ -301,7 +272,6 @@ public class Address {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    fullAddress: ").append(toIndentedString(fullAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -382,11 +352,6 @@ public class Address {
     // add `country` to the URL query string
     if (getCountry() != null) {
       joiner.add(String.format("%scountry%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCountry()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `fullAddress` to the URL query string
-    if (getFullAddress() != null) {
-      joiner.add(String.format("%sfullAddress%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

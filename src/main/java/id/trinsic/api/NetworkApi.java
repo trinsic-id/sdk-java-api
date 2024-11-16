@@ -20,6 +20,8 @@ import id.trinsic.Pair;
 import id.trinsic.api.models.FailureMessage;
 import id.trinsic.api.models.IdentityLookupResponse;
 import id.trinsic.api.models.ListProvidersResponse;
+import id.trinsic.api.models.RecommendRequest;
+import id.trinsic.api.models.RecommendResponse;
 import id.trinsic.api.models.ValidationResult;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -47,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-10T20:13:31.458389607Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T14:56:32.436400402Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class NetworkApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -214,6 +216,80 @@ public class NetworkApi {
     localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
 
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Recommend Providers
+   * Generate provider recommendations based on the given signals (phone number, countries, states)
+   * @param recommendRequest  (optional)
+   * @return RecommendResponse
+   * @throws ApiException if fails to make API call
+   */
+  public RecommendResponse recommendProviders(RecommendRequest recommendRequest) throws ApiException {
+    ApiResponse<RecommendResponse> localVarResponse = recommendProvidersWithHttpInfo(recommendRequest);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Recommend Providers
+   * Generate provider recommendations based on the given signals (phone number, countries, states)
+   * @param recommendRequest  (optional)
+   * @return ApiResponse&lt;RecommendResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<RecommendResponse> recommendProvidersWithHttpInfo(RecommendRequest recommendRequest) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = recommendProvidersRequestBuilder(recommendRequest);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("recommendProviders", localVarResponse);
+        }
+        return new ApiResponse<RecommendResponse>(
+          localVarResponse.statusCode(),
+          localVarResponse.headers().map(),
+          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<RecommendResponse>() {}) // closes the InputStream
+        );
+      } finally {
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder recommendProvidersRequestBuilder(RecommendRequest recommendRequest) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/api/v1/network/recommend";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(recommendRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

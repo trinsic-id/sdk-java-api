@@ -24,80 +24,52 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.VerificationFailCode;
+import id.trinsic.api.models.KnownPersonData;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import id.trinsic.ApiClient;
 /**
- * A Verification contained within a Session
+ * Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
  */
 @JsonPropertyOrder({
-  Verification.JSON_PROPERTY_PROVIDER,
-  Verification.JSON_PROPERTY_FAIL_CODE
+  KnownIdentityData.JSON_PROPERTY_PERSON
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T14:56:32.436400402Z[Etc/UTC]", comments = "Generator version: 7.8.0")
-public class Verification {
-  public static final String JSON_PROPERTY_PROVIDER = "provider";
-  private String provider;
+public class KnownIdentityData {
+  public static final String JSON_PROPERTY_PERSON = "person";
+  private KnownPersonData person;
 
-  public static final String JSON_PROPERTY_FAIL_CODE = "failCode";
-  private VerificationFailCode failCode;
-
-  public Verification() { 
+  public KnownIdentityData() { 
   }
 
-  public Verification provider(String provider) {
-    this.provider = provider;
+  public KnownIdentityData person(KnownPersonData person) {
+    this.person = person;
     return this;
   }
 
   /**
-   * The identity provider that was used to perform the Verification, if any
-   * @return provider
+   * Known identity data specific to the person being verified
+   * @return person
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(JSON_PROPERTY_PERSON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getProvider() {
-    return provider;
+  public KnownPersonData getPerson() {
+    return person;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(JSON_PROPERTY_PERSON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProvider(String provider) {
-    this.provider = provider;
-  }
-
-
-  public Verification failCode(VerificationFailCode failCode) {
-    this.failCode = failCode;
-    return this;
-  }
-
-  /**
-   * If the Verification is in state &#x60;VerificationFailed&#x60;, this field contains the reason for failure
-   * @return failCode
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FAIL_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public VerificationFailCode getFailCode() {
-    return failCode;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FAIL_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailCode(VerificationFailCode failCode) {
-    this.failCode = failCode;
+  public void setPerson(KnownPersonData person) {
+    this.person = person;
   }
 
 
   /**
-   * Return true if this Verification object is equal to o.
+   * Return true if this KnownIdentityData object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -107,22 +79,20 @@ public class Verification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Verification verification = (Verification) o;
-    return Objects.equals(this.provider, verification.provider) &&
-        Objects.equals(this.failCode, verification.failCode);
+    KnownIdentityData knownIdentityData = (KnownIdentityData) o;
+    return Objects.equals(this.person, knownIdentityData.person);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, failCode);
+    return Objects.hash(person);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Verification {\n");
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    failCode: ").append(toIndentedString(failCode)).append("\n");
+    sb.append("class KnownIdentityData {\n");
+    sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,14 +140,9 @@ public class Verification {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `provider` to the URL query string
-    if (getProvider() != null) {
-      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `failCode` to the URL query string
-    if (getFailCode() != null) {
-      joiner.add(String.format("%sfailCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFailCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `person` to the URL query string
+    if (getPerson() != null) {
+      joiner.add(getPerson().toUrlQueryString(prefix + "person" + suffix));
     }
 
     return joiner.toString();

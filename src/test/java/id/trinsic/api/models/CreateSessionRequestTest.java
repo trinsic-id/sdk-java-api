@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.DisclosedFieldsRequest;
+import id.trinsic.api.models.KnownIdentityData;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -62,6 +63,14 @@ class CreateSessionRequestTest {
     @Test
     void providersTest() {
         // TODO: test providers
+    }
+
+    /**
+     * Test the property 'knownIdentityData'
+     */
+    @Test
+    void knownIdentityDataTest() {
+        // TODO: test knownIdentityData
     }
 
     /**

@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   ValidationResult.JSON_PROPERTY_MEMBER_NAMES,
   ValidationResult.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-10T20:13:31.458389607Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T14:56:32.436400402Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ValidationResult {
   public static final String JSON_PROPERTY_MEMBER_NAMES = "memberNames";
   private List<String> memberNames = new ArrayList<>();

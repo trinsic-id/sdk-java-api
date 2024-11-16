@@ -17,6 +17,8 @@ import id.trinsic.ApiException;
 import id.trinsic.api.models.FailureMessage;
 import id.trinsic.api.models.IdentityLookupResponse;
 import id.trinsic.api.models.ListProvidersResponse;
+import id.trinsic.api.models.RecommendRequest;
+import id.trinsic.api.models.RecommendResponse;
 import id.trinsic.api.models.ValidationResult;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -66,6 +68,23 @@ public class NetworkApiTest {
     public void listProvidersTest() throws ApiException {
         ListProvidersResponse response = 
         api.listProviders();
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Recommend Providers
+     *
+     * Generate provider recommendations based on the given signals (phone number, countries, states)
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void recommendProvidersTest() throws ApiException {
+        RecommendRequest recommendRequest = null;
+        RecommendResponse response = 
+        api.recommendProviders(recommendRequest);
         
         // TODO: test validations
     }

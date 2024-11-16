@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.DisclosedFieldsRequest;
+import id.trinsic.api.models.KnownIdentityData;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,9 +40,10 @@ import id.trinsic.ApiClient;
   CreateSessionRequest.JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY,
   CreateSessionRequest.JSON_PROPERTY_ENABLE_REMEMBER_ME,
   CreateSessionRequest.JSON_PROPERTY_PROVIDERS,
+  CreateSessionRequest.JSON_PROPERTY_KNOWN_IDENTITY_DATA,
   CreateSessionRequest.JSON_PROPERTY_DISCLOSED_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-10T20:13:31.458389607Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T14:56:32.436400402Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateSessionRequest {
   public static final String JSON_PROPERTY_LAUNCH_PROVIDER_DIRECTLY = "launchProviderDirectly";
   private Boolean launchProviderDirectly;
@@ -51,6 +53,9 @@ public class CreateSessionRequest {
 
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
   private List<String> providers = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_KNOWN_IDENTITY_DATA = "knownIdentityData";
+  private KnownIdentityData knownIdentityData;
 
   public static final String JSON_PROPERTY_DISCLOSED_FIELDS = "disclosedFields";
   private DisclosedFieldsRequest disclosedFields;
@@ -138,6 +143,30 @@ public class CreateSessionRequest {
   }
 
 
+  public CreateSessionRequest knownIdentityData(KnownIdentityData knownIdentityData) {
+    this.knownIdentityData = knownIdentityData;
+    return this;
+  }
+
+  /**
+   * Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+   * @return knownIdentityData
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_KNOWN_IDENTITY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public KnownIdentityData getKnownIdentityData() {
+    return knownIdentityData;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_KNOWN_IDENTITY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setKnownIdentityData(KnownIdentityData knownIdentityData) {
+    this.knownIdentityData = knownIdentityData;
+  }
+
+
   public CreateSessionRequest disclosedFields(DisclosedFieldsRequest disclosedFields) {
     this.disclosedFields = disclosedFields;
     return this;
@@ -177,12 +206,13 @@ public class CreateSessionRequest {
     return Objects.equals(this.launchProviderDirectly, createSessionRequest.launchProviderDirectly) &&
         Objects.equals(this.enableRememberMe, createSessionRequest.enableRememberMe) &&
         Objects.equals(this.providers, createSessionRequest.providers) &&
+        Objects.equals(this.knownIdentityData, createSessionRequest.knownIdentityData) &&
         Objects.equals(this.disclosedFields, createSessionRequest.disclosedFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(launchProviderDirectly, enableRememberMe, providers, disclosedFields);
+    return Objects.hash(launchProviderDirectly, enableRememberMe, providers, knownIdentityData, disclosedFields);
   }
 
   @Override
@@ -192,6 +222,7 @@ public class CreateSessionRequest {
     sb.append("    launchProviderDirectly: ").append(toIndentedString(launchProviderDirectly)).append("\n");
     sb.append("    enableRememberMe: ").append(toIndentedString(enableRememberMe)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
+    sb.append("    knownIdentityData: ").append(toIndentedString(knownIdentityData)).append("\n");
     sb.append("    disclosedFields: ").append(toIndentedString(disclosedFields)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -257,6 +288,11 @@ public class CreateSessionRequest {
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
             URLEncoder.encode(ApiClient.valueToString(getProviders().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
+    }
+
+    // add `knownIdentityData` to the URL query string
+    if (getKnownIdentityData() != null) {
+      joiner.add(getKnownIdentityData().toUrlQueryString(prefix + "knownIdentityData" + suffix));
     }
 
     // add `disclosedFields` to the URL query string

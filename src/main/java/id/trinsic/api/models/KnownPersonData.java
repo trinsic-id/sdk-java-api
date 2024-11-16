@@ -24,28 +24,25 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.Address;
+import id.trinsic.api.models.KnownAddress;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import id.trinsic.ApiClient;
 /**
- * Identity information for the individual being verified
+ * KnownPersonData
  */
 @JsonPropertyOrder({
-  PersonData.JSON_PROPERTY_GIVEN_NAME,
-  PersonData.JSON_PROPERTY_FAMILY_NAME,
-  PersonData.JSON_PROPERTY_MIDDLE_NAME,
-  PersonData.JSON_PROPERTY_FULL_NAME,
-  PersonData.JSON_PROPERTY_NATIONALITY,
-  PersonData.JSON_PROPERTY_GENDER,
-  PersonData.JSON_PROPERTY_PHONE_NUMBER,
-  PersonData.JSON_PROPERTY_ADDRESS,
-  PersonData.JSON_PROPERTY_DATE_OF_BIRTH
+  KnownPersonData.JSON_PROPERTY_GIVEN_NAME,
+  KnownPersonData.JSON_PROPERTY_FAMILY_NAME,
+  KnownPersonData.JSON_PROPERTY_MIDDLE_NAME,
+  KnownPersonData.JSON_PROPERTY_PHONE_NUMBER,
+  KnownPersonData.JSON_PROPERTY_ADDRESS,
+  KnownPersonData.JSON_PROPERTY_DATE_OF_BIRTH
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T14:56:32.436400402Z[Etc/UTC]", comments = "Generator version: 7.8.0")
-public class PersonData {
+public class KnownPersonData {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private String givenName;
 
@@ -55,28 +52,19 @@ public class PersonData {
   public static final String JSON_PROPERTY_MIDDLE_NAME = "middleName";
   private String middleName;
 
-  public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  private String fullName;
-
-  public static final String JSON_PROPERTY_NATIONALITY = "nationality";
-  private String nationality;
-
-  public static final String JSON_PROPERTY_GENDER = "gender";
-  private String gender;
-
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private String phoneNumber;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  private Address address;
+  private KnownAddress address;
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private String dateOfBirth;
 
-  public PersonData() { 
+  public KnownPersonData() { 
   }
 
-  public PersonData givenName(String givenName) {
+  public KnownPersonData givenName(String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -100,7 +88,7 @@ public class PersonData {
   }
 
 
-  public PersonData familyName(String familyName) {
+  public KnownPersonData familyName(String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -124,7 +112,7 @@ public class PersonData {
   }
 
 
-  public PersonData middleName(String middleName) {
+  public KnownPersonData middleName(String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -148,85 +136,13 @@ public class PersonData {
   }
 
 
-  public PersonData fullName(String fullName) {
-    this.fullName = fullName;
-    return this;
-  }
-
-  /**
-   * The individual&#39;s full name as a single string.                Useful for names which do not fit into a \&quot;first middle last\&quot; structure.
-   * @return fullName
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getFullName() {
-    return fullName;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
-  }
-
-
-  public PersonData nationality(String nationality) {
-    this.nationality = nationality;
-    return this;
-  }
-
-  /**
-   * Get nationality
-   * @return nationality
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getNationality() {
-    return nationality;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNationality(String nationality) {
-    this.nationality = nationality;
-  }
-
-
-  public PersonData gender(String gender) {
-    this.gender = gender;
-    return this;
-  }
-
-  /**
-   * Get gender
-   * @return gender
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getGender() {
-    return gender;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGender(String gender) {
-    this.gender = gender;
-  }
-
-
-  public PersonData phoneNumber(String phoneNumber) {
+  public KnownPersonData phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
 
   /**
-   * Get phoneNumber
+   * The phone number (with preceding + character and country code) of the individual being verified
    * @return phoneNumber
    */
   @javax.annotation.Nullable
@@ -244,37 +160,37 @@ public class PersonData {
   }
 
 
-  public PersonData address(Address address) {
+  public KnownPersonData address(KnownAddress address) {
     this.address = address;
     return this;
   }
 
   /**
-   * Address information for an individual
+   * The address of the individual being verified
    * @return address
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Address getAddress() {
+  public KnownAddress getAddress() {
     return address;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddress(Address address) {
+  public void setAddress(KnownAddress address) {
     this.address = address;
   }
 
 
-  public PersonData dateOfBirth(String dateOfBirth) {
+  public KnownPersonData dateOfBirth(String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
 
   /**
-   * Get dateOfBirth
+   * Date of birth of the individual, in the format \&quot;YYYY-MM-DD\&quot;
    * @return dateOfBirth
    */
   @javax.annotation.Nullable
@@ -293,7 +209,7 @@ public class PersonData {
 
 
   /**
-   * Return true if this PersonData object is equal to o.
+   * Return true if this KnownPersonData object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -303,33 +219,27 @@ public class PersonData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PersonData personData = (PersonData) o;
-    return Objects.equals(this.givenName, personData.givenName) &&
-        Objects.equals(this.familyName, personData.familyName) &&
-        Objects.equals(this.middleName, personData.middleName) &&
-        Objects.equals(this.fullName, personData.fullName) &&
-        Objects.equals(this.nationality, personData.nationality) &&
-        Objects.equals(this.gender, personData.gender) &&
-        Objects.equals(this.phoneNumber, personData.phoneNumber) &&
-        Objects.equals(this.address, personData.address) &&
-        Objects.equals(this.dateOfBirth, personData.dateOfBirth);
+    KnownPersonData knownPersonData = (KnownPersonData) o;
+    return Objects.equals(this.givenName, knownPersonData.givenName) &&
+        Objects.equals(this.familyName, knownPersonData.familyName) &&
+        Objects.equals(this.middleName, knownPersonData.middleName) &&
+        Objects.equals(this.phoneNumber, knownPersonData.phoneNumber) &&
+        Objects.equals(this.address, knownPersonData.address) &&
+        Objects.equals(this.dateOfBirth, knownPersonData.dateOfBirth);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(givenName, familyName, middleName, fullName, nationality, gender, phoneNumber, address, dateOfBirth);
+    return Objects.hash(givenName, familyName, middleName, phoneNumber, address, dateOfBirth);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PersonData {\n");
+    sb.append("class KnownPersonData {\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
-    sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
@@ -393,21 +303,6 @@ public class PersonData {
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
       joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMiddleName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `fullName` to the URL query string
-    if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `nationality` to the URL query string
-    if (getNationality() != null) {
-      joiner.add(String.format("%snationality%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNationality()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `gender` to the URL query string
-    if (getGender() != null) {
-      joiner.add(String.format("%sgender%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGender()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `phoneNumber` to the URL query string

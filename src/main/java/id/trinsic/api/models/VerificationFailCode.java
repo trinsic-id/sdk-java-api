@@ -38,7 +38,9 @@ public enum VerificationFailCode {
   
   VERIFICATION_FAIL_INAUTHENTIC("VerificationFailInauthentic"),
   
-  VERIFICATION_FAIL_UNSUPPORTED_DOCUMENT("VerificationFailUnsupportedDocument");
+  VERIFICATION_FAIL_UNSUPPORTED_DOCUMENT("VerificationFailUnsupportedDocument"),
+  
+  VERIFICATION_FAIL_USER_ABANDONED("VerificationFailUserAbandoned");
 
   private String value;
 

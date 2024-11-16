@@ -15,5 +15,7 @@
 
 * `VERIFICATION_FAIL_UNSUPPORTED_DOCUMENT` (value: `"VerificationFailUnsupportedDocument"`)
 
+* `VERIFICATION_FAIL_USER_ABANDONED` (value: `"VerificationFailUserAbandoned"`)
+
 
 
