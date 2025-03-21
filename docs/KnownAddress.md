@@ -12,7 +12,8 @@ Address information for an individual
 |**line2** | **String** |  |  [optional] |
 |**line3** | **String** |  |  [optional] |
 |**city** | **String** |  |  [optional] |
-|**state** | **String** |  |  [optional] |
+|**subdivision** | **String** |  |  [optional] |
+|**state** | **String** | Deprecated. Use &#x60;Subdivision&#x60; instead. |  [optional] |
 |**postalCode** | **String** |  |  [optional] |
 |**country** | **String** |  |  [optional] |
 

@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | **String** |  |  [optional] |
+|**type** | **DocumentType** |  |  [optional] |
 |**number** | **String** |  |  [optional] |
-|**issueDate** | **String** |  |  [optional] |
-|**expirationDate** | **String** |  |  [optional] |
+|**issueDate** | **LocalDate** |  |  [optional] |
+|**expirationDate** | **LocalDate** |  |  [optional] |
 |**issuingCountry** | **String** |  |  [optional] |
 |**issuingAuthority** | **String** |  |  [optional] |
 

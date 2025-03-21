@@ -79,10 +79,10 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **503** | Service Unavailable |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 ## getAttachmentWithHttpInfo
 
@@ -157,8 +157,8 @@ ApiResponse<[**GetAttachmentResponse**](GetAttachmentResponse.md)>
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **503** | Service Unavailable |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 

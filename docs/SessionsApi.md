@@ -6,16 +6,22 @@ All URIs are relative to *https://api.trinsic.id*
 |------------- | ------------- | -------------|
 | [**cancelSession**](SessionsApi.md#cancelSession) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
 | [**cancelSessionWithHttpInfo**](SessionsApi.md#cancelSessionWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
-| [**createSession**](SessionsApi.md#createSession) | **POST** /api/v1/sessions | Create Session |
-| [**createSessionWithHttpInfo**](SessionsApi.md#createSessionWithHttpInfo) | **POST** /api/v1/sessions | Create Session |
+| [**createAdvancedProviderSession**](SessionsApi.md#createAdvancedProviderSession) | **POST** /api/v1/sessions/provider/advanced | Create Advanced Provider Session |
+| [**createAdvancedProviderSessionWithHttpInfo**](SessionsApi.md#createAdvancedProviderSessionWithHttpInfo) | **POST** /api/v1/sessions/provider/advanced | Create Advanced Provider Session |
+| [**createHostedProviderSession**](SessionsApi.md#createHostedProviderSession) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
+| [**createHostedProviderSessionWithHttpInfo**](SessionsApi.md#createHostedProviderSessionWithHttpInfo) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
+| [**createWidgetSession**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
+| [**createWidgetSessionWithHttpInfo**](SessionsApi.md#createWidgetSessionWithHttpInfo) | **POST** /api/v1/sessions/widget | Create Widget Session |
 | [**getSession**](SessionsApi.md#getSession) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionWithHttpInfo**](SessionsApi.md#getSessionWithHttpInfo) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
 | [**getSessionResultWithHttpInfo**](SessionsApi.md#getSessionResultWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
-| [**listSessions**](SessionsApi.md#listSessions) | **GET** /api/v1/sessions | List Sessions |
-| [**listSessionsWithHttpInfo**](SessionsApi.md#listSessionsWithHttpInfo) | **GET** /api/v1/sessions | List Sessions |
+| [**listSessions**](SessionsApi.md#listSessions) | **GET** /api/v1/sessions/list | List Sessions |
+| [**listSessionsWithHttpInfo**](SessionsApi.md#listSessionsWithHttpInfo) | **GET** /api/v1/sessions/list | List Sessions |
 | [**redactSession**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**redactSessionWithHttpInfo**](SessionsApi.md#redactSessionWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
+| [**refreshStepContent**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
+| [**refreshStepContentWithHttpInfo**](SessionsApi.md#refreshStepContentWithHttpInfo) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
 
 
 
@@ -88,10 +94,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 ## cancelSessionWithHttpInfo
 
@@ -165,19 +171,19 @@ ApiResponse<[**CancelSessionResponse**](CancelSessionResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 
-## createSession
+## createAdvancedProviderSession
 
-> CreateSessionResponse createSession(createSessionRequest)
+> CreateAdvancedProviderSessionResponse createAdvancedProviderSession(createAdvancedProviderSessionRequest)
 
-Create Session
+Create Advanced Provider Session
 
-Create a Session to verify a user&#39;s identity
+Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.    If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
 
 ### Example
 
@@ -200,12 +206,12 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        CreateSessionRequest createSessionRequest = new CreateSessionRequest(); // CreateSessionRequest | 
+        CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = new CreateAdvancedProviderSessionRequest(); // CreateAdvancedProviderSessionRequest | 
         try {
-            CreateSessionResponse result = apiInstance.createSession(createSessionRequest);
+            CreateAdvancedProviderSessionResponse result = apiInstance.createAdvancedProviderSession(createAdvancedProviderSessionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SessionsApi#createSession");
+            System.err.println("Exception when calling SessionsApi#createAdvancedProviderSession");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -220,11 +226,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createSessionRequest** | [**CreateSessionRequest**](CreateSessionRequest.md)|  | [optional] |
+| **createAdvancedProviderSessionRequest** | [**CreateAdvancedProviderSessionRequest**](CreateAdvancedProviderSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-[**CreateSessionResponse**](CreateSessionResponse.md)
+[**CreateAdvancedProviderSessionResponse**](CreateAdvancedProviderSessionResponse.md)
 
 
 ### Authorization
@@ -240,18 +246,18 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
-## createSessionWithHttpInfo
+## createAdvancedProviderSessionWithHttpInfo
 
-> ApiResponse<CreateSessionResponse> createSession createSessionWithHttpInfo(createSessionRequest)
+> ApiResponse<CreateAdvancedProviderSessionResponse> createAdvancedProviderSession createAdvancedProviderSessionWithHttpInfo(createAdvancedProviderSessionRequest)
 
-Create Session
+Create Advanced Provider Session
 
-Create a Session to verify a user&#39;s identity
+Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.    If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
 
 ### Example
 
@@ -275,14 +281,14 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        CreateSessionRequest createSessionRequest = new CreateSessionRequest(); // CreateSessionRequest | 
+        CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = new CreateAdvancedProviderSessionRequest(); // CreateAdvancedProviderSessionRequest | 
         try {
-            ApiResponse<CreateSessionResponse> response = apiInstance.createSessionWithHttpInfo(createSessionRequest);
+            ApiResponse<CreateAdvancedProviderSessionResponse> response = apiInstance.createAdvancedProviderSessionWithHttpInfo(createAdvancedProviderSessionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SessionsApi#createSession");
+            System.err.println("Exception when calling SessionsApi#createAdvancedProviderSession");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -297,11 +303,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createSessionRequest** | [**CreateSessionRequest**](CreateSessionRequest.md)|  | [optional] |
+| **createAdvancedProviderSessionRequest** | [**CreateAdvancedProviderSessionRequest**](CreateAdvancedProviderSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**CreateSessionResponse**](CreateSessionResponse.md)>
+ApiResponse<[**CreateAdvancedProviderSessionResponse**](CreateAdvancedProviderSessionResponse.md)>
 
 
 ### Authorization
@@ -317,10 +323,314 @@ ApiResponse<[**CreateSessionResponse**](CreateSessionResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
+
+
+## createHostedProviderSession
+
+> CreateHostedProviderSessionResponse createHostedProviderSession(createHostedProviderSessionRequest)
+
+Create Hosted Provider Session
+
+Verify a user&#39;s identity with a specific provider, using Trinsic-hosted UI for providers which require additional user interaction.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        CreateHostedProviderSessionRequest createHostedProviderSessionRequest = new CreateHostedProviderSessionRequest(); // CreateHostedProviderSessionRequest | 
+        try {
+            CreateHostedProviderSessionResponse result = apiInstance.createHostedProviderSession(createHostedProviderSessionRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#createHostedProviderSession");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createHostedProviderSessionRequest** | [**CreateHostedProviderSessionRequest**](CreateHostedProviderSessionRequest.md)|  | [optional] |
+
+### Return type
+
+[**CreateHostedProviderSessionResponse**](CreateHostedProviderSessionResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## createHostedProviderSessionWithHttpInfo
+
+> ApiResponse<CreateHostedProviderSessionResponse> createHostedProviderSession createHostedProviderSessionWithHttpInfo(createHostedProviderSessionRequest)
+
+Create Hosted Provider Session
+
+Verify a user&#39;s identity with a specific provider, using Trinsic-hosted UI for providers which require additional user interaction.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        CreateHostedProviderSessionRequest createHostedProviderSessionRequest = new CreateHostedProviderSessionRequest(); // CreateHostedProviderSessionRequest | 
+        try {
+            ApiResponse<CreateHostedProviderSessionResponse> response = apiInstance.createHostedProviderSessionWithHttpInfo(createHostedProviderSessionRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#createHostedProviderSession");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createHostedProviderSessionRequest** | [**CreateHostedProviderSessionRequest**](CreateHostedProviderSessionRequest.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**CreateHostedProviderSessionResponse**](CreateHostedProviderSessionResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+
+## createWidgetSession
+
+> CreateWidgetSessionResponse createWidgetSession(createWidgetSessionRequest)
+
+Create Widget Session
+
+Verify a user&#39;s identity using Trinsic&#39;s hosted Widget flow.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        CreateWidgetSessionRequest createWidgetSessionRequest = new CreateWidgetSessionRequest(); // CreateWidgetSessionRequest | 
+        try {
+            CreateWidgetSessionResponse result = apiInstance.createWidgetSession(createWidgetSessionRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#createWidgetSession");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createWidgetSessionRequest** | [**CreateWidgetSessionRequest**](CreateWidgetSessionRequest.md)|  | [optional] |
+
+### Return type
+
+[**CreateWidgetSessionResponse**](CreateWidgetSessionResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## createWidgetSessionWithHttpInfo
+
+> ApiResponse<CreateWidgetSessionResponse> createWidgetSession createWidgetSessionWithHttpInfo(createWidgetSessionRequest)
+
+Create Widget Session
+
+Verify a user&#39;s identity using Trinsic&#39;s hosted Widget flow.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        CreateWidgetSessionRequest createWidgetSessionRequest = new CreateWidgetSessionRequest(); // CreateWidgetSessionRequest | 
+        try {
+            ApiResponse<CreateWidgetSessionResponse> response = apiInstance.createWidgetSessionWithHttpInfo(createWidgetSessionRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#createWidgetSession");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createWidgetSessionRequest** | [**CreateWidgetSessionRequest**](CreateWidgetSessionRequest.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**CreateWidgetSessionResponse**](CreateWidgetSessionResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
 
 
 ## getSession
@@ -392,10 +702,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 ## getSessionWithHttpInfo
 
@@ -469,10 +779,10 @@ ApiResponse<[**GetSessionResponse**](GetSessionResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 
 ## getSessionResult
@@ -544,10 +854,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 ## getSessionResultWithHttpInfo
 
@@ -621,10 +931,10 @@ ApiResponse<[**GetSessionResultResponse**](GetSessionResultResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 
 ## listSessions
@@ -702,10 +1012,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 ## listSessionsWithHttpInfo
 
@@ -785,10 +1095,10 @@ ApiResponse<[**ListSessionsResponse**](ListSessionsResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 
 ## redactSession
@@ -859,10 +1169,10 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
 
 ## redactSessionWithHttpInfo
 
@@ -935,8 +1245,164 @@ ApiResponse<Void>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Validation Failed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
-| **500** | Internal Server Error |  -  |
+| **500** | Internal server error |  -  |
+
+
+## refreshStepContent
+
+> RefreshStepContentResponse refreshStepContent(acceptanceSessionId, refreshStepContentRequest)
+
+Refresh Step Content
+
+Refreshes the content of a Step for an Advanced Provider Session.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        RefreshStepContentRequest refreshStepContentRequest = new RefreshStepContentRequest(); // RefreshStepContentRequest | 
+        try {
+            RefreshStepContentResponse result = apiInstance.refreshStepContent(acceptanceSessionId, refreshStepContentRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#refreshStepContent");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **acceptanceSessionId** | **UUID**|  | |
+| **refreshStepContentRequest** | [**RefreshStepContentRequest**](RefreshStepContentRequest.md)|  | [optional] |
+
+### Return type
+
+[**RefreshStepContentResponse**](RefreshStepContentResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## refreshStepContentWithHttpInfo
+
+> ApiResponse<RefreshStepContentResponse> refreshStepContent refreshStepContentWithHttpInfo(acceptanceSessionId, refreshStepContentRequest)
+
+Refresh Step Content
+
+Refreshes the content of a Step for an Advanced Provider Session.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        RefreshStepContentRequest refreshStepContentRequest = new RefreshStepContentRequest(); // RefreshStepContentRequest | 
+        try {
+            ApiResponse<RefreshStepContentResponse> response = apiInstance.refreshStepContentWithHttpInfo(acceptanceSessionId, refreshStepContentRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#refreshStepContent");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **acceptanceSessionId** | **UUID**|  | |
+| **refreshStepContentRequest** | [**RefreshStepContentRequest**](RefreshStepContentRequest.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**RefreshStepContentResponse**](RefreshStepContentResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
 
