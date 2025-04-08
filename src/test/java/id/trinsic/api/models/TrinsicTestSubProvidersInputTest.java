@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.KnownPersonData;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -29,25 +28,25 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for KnownIdentityData
+ * Model tests for TrinsicTestSubProvidersInput
  */
-class KnownIdentityDataTest {
-    private final KnownIdentityData model = new KnownIdentityData();
+class TrinsicTestSubProvidersInputTest {
+    private final TrinsicTestSubProvidersInput model = new TrinsicTestSubProvidersInput();
 
     /**
-     * Model tests for KnownIdentityData
+     * Model tests for TrinsicTestSubProvidersInput
      */
     @Test
-    void testKnownIdentityData() {
-        // TODO: test KnownIdentityData
+    void testTrinsicTestSubProvidersInput() {
+        // TODO: test TrinsicTestSubProvidersInput
     }
 
     /**
-     * Test the property 'person'
+     * Test the property 'subProviderId'
      */
     @Test
-    void personTest() {
-        // TODO: test person
+    void subProviderIdTest() {
+        // TODO: test subProviderId
     }
 
 }

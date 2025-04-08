@@ -45,7 +45,7 @@ import id.trinsic.ApiClient;
   Session.JSON_PROPERTY_CREATED,
   Session.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Session {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -98,7 +98,7 @@ public class Session {
   }
 
   /**
-   * Whether the Session is in a terminal / final state.                If this is &#x60;true&#x60;, inspect the value of &#x60;Success&#x60; to determine whether the Session was successful.
+   * Whether the Session is in a terminal / final state.              If this is &#x60;true&#x60;, inspect the value of &#x60;Success&#x60; to determine whether the Session was successful.
    * @return done
    */
   @javax.annotation.Nonnull
@@ -122,7 +122,7 @@ public class Session {
   }
 
   /**
-   * Whether the Session has completed successfully.                If this is &#x60;false&#x60;, the Session is either not yet done, or has failed. Inspect &#x60;Done&#x60; and &#x60;ErrorCode&#x60; for more information.  If this is &#x60;true&#x60;, the Session has completed successfully.
+   * Whether the Session has completed successfully.              If this is &#x60;false&#x60;, the Session is either not yet done, or has failed. Inspect &#x60;Done&#x60; and &#x60;ErrorCode&#x60; for more information. If this is &#x60;true&#x60;, the Session has completed successfully.
    * @return success
    */
   @javax.annotation.Nonnull
@@ -146,7 +146,7 @@ public class Session {
   }
 
   /**
-   * The reason for the Session&#39;s failure.                Only present if &#x60;Success&#x60; is &#x60;false&#x60;.
+   * The reason for the Session&#39;s failure.              Only present if &#x60;Success&#x60; is &#x60;false&#x60;.
    * @return errorCode
    */
   @javax.annotation.Nullable

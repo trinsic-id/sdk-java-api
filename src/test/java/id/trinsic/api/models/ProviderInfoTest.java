@@ -18,13 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -65,14 +59,6 @@ class ProviderInfoTest {
     @Test
     void logoUrlTest() {
         // TODO: test logoUrl
-    }
-
-    /**
-     * Test the property 'childProviderIds'
-     */
-    @Test
-    void childProviderIdsTest() {
-        // TODO: test childProviderIds
     }
 
 }

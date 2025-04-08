@@ -60,7 +60,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class SessionsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -172,7 +172,7 @@ public class SessionsApi {
 
   /**
    * Create Advanced Provider Session
-   * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.    If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
+   * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
    * @param createAdvancedProviderSessionRequest  (optional)
    * @return CreateAdvancedProviderSessionResponse
    * @throws ApiException if fails to make API call
@@ -184,7 +184,7 @@ public class SessionsApi {
 
   /**
    * Create Advanced Provider Session
-   * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.    If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
+   * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
    * @param createAdvancedProviderSessionRequest  (optional)
    * @return ApiResponse&lt;CreateAdvancedProviderSessionResponse&gt;
    * @throws ApiException if fails to make API call
@@ -643,7 +643,7 @@ public class SessionsApi {
 
   /**
    * Redact Session
-   * Redact a Session, removing all identity data from Trinsic&#39;s servers.  Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session.  You can utilize this endpoint to redact a session immediately.                Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.              Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
    * @param sessionId  (required)
    * @throws ApiException if fails to make API call
    */
@@ -653,7 +653,7 @@ public class SessionsApi {
 
   /**
    * Redact Session
-   * Redact a Session, removing all identity data from Trinsic&#39;s servers.  Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session.  You can utilize this endpoint to redact a session immediately.                Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.              Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
    * @param sessionId  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call

@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   BrazilDigitalCnhInput.JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE,
   BrazilDigitalCnhInput.JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class BrazilDigitalCnhInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
   private String cpfNumber;
@@ -89,7 +89,7 @@ public class BrazilDigitalCnhInput {
   }
 
   /**
-   * The raw bytes of the digital CNH file collected from the user.                TODO: Lucas or JP help me describe these below vvvvvvvv  This can be:  - An image containing a physical or digital QR code  - A PDF file exported from the CNH app  - Some scary third thing?
+   * The raw bytes of the digital CNH file collected from the user.              TODO: Lucas or JP help me describe these below vvvvvvvv This can be: - An image containing a physical or digital QR code - A PDF file exported from the CNH app - Some scary third thing?
    * @return digitalCnhFile
    */
   @javax.annotation.Nullable
@@ -121,7 +121,7 @@ public class BrazilDigitalCnhInput {
   }
 
   /**
-   * The MIME Type of the file contained in &#x60;DigitalCnhFile&#x60;.                Must be one of &#x60;application/pdf&#x60;, &#x60;image/jpeg&#x60;, or &#x60;image/png&#x60;.
+   * The MIME Type of the file contained in &#x60;DigitalCnhFile&#x60;.              Must be one of &#x60;application/pdf&#x60;, &#x60;image/jpeg&#x60;, or &#x60;image/png&#x60;.
    * @return digitalCnhFileContentType
    */
   @javax.annotation.Nullable

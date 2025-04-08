@@ -24,13 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -41,10 +35,9 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ProviderInfo.JSON_PROPERTY_ID,
   ProviderInfo.JSON_PROPERTY_NAME,
-  ProviderInfo.JSON_PROPERTY_LOGO_URL,
-  ProviderInfo.JSON_PROPERTY_CHILD_PROVIDER_IDS
+  ProviderInfo.JSON_PROPERTY_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ProviderInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -54,9 +47,6 @@ public class ProviderInfo {
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   private String logoUrl;
-
-  public static final String JSON_PROPERTY_CHILD_PROVIDER_IDS = "childProviderIds";
-  private JsonNullable<List<String>> childProviderIds = JsonNullable.<List<String>>undefined();
 
   public ProviderInfo() { 
   }
@@ -133,50 +123,6 @@ public class ProviderInfo {
   }
 
 
-  public ProviderInfo childProviderIds(List<String> childProviderIds) {
-    this.childProviderIds = JsonNullable.<List<String>>of(childProviderIds);
-    return this;
-  }
-
-  public ProviderInfo addChildProviderIdsItem(String childProviderIdsItem) {
-    if (this.childProviderIds == null || !this.childProviderIds.isPresent()) {
-      this.childProviderIds = JsonNullable.<List<String>>of(new ArrayList<>());
-    }
-    try {
-      this.childProviderIds.get().add(childProviderIdsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * List of child provider id&#39;s where the provider allows deep-launching of a specific provider.
-   * @return childProviderIds
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public List<String> getChildProviderIds() {
-        return childProviderIds.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_CHILD_PROVIDER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<List<String>> getChildProviderIds_JsonNullable() {
-    return childProviderIds;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_CHILD_PROVIDER_IDS)
-  public void setChildProviderIds_JsonNullable(JsonNullable<List<String>> childProviderIds) {
-    this.childProviderIds = childProviderIds;
-  }
-
-  public void setChildProviderIds(List<String> childProviderIds) {
-    this.childProviderIds = JsonNullable.<List<String>>of(childProviderIds);
-  }
-
-
   /**
    * Return true if this ProviderInfo object is equal to o.
    */
@@ -191,24 +137,12 @@ public class ProviderInfo {
     ProviderInfo providerInfo = (ProviderInfo) o;
     return Objects.equals(this.id, providerInfo.id) &&
         Objects.equals(this.name, providerInfo.name) &&
-        Objects.equals(this.logoUrl, providerInfo.logoUrl) &&
-        equalsNullable(this.childProviderIds, providerInfo.childProviderIds);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.logoUrl, providerInfo.logoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoUrl, hashCodeNullable(childProviderIds));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, name, logoUrl);
   }
 
   @Override
@@ -218,7 +152,6 @@ public class ProviderInfo {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
-    sb.append("    childProviderIds: ").append(toIndentedString(childProviderIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -279,15 +212,6 @@ public class ProviderInfo {
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
       joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLogoUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `childProviderIds` to the URL query string
-    if (getChildProviderIds() != null) {
-      for (int i = 0; i < getChildProviderIds().size(); i++) {
-        joiner.add(String.format("%schildProviderIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getChildProviderIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
     }
 
     return joiner.toString();

@@ -28,81 +28,49 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for KnownAddress
+ * Model tests for TrinsicTestDatabaseLookupInput
  */
-class KnownAddressTest {
-    private final KnownAddress model = new KnownAddress();
+class TrinsicTestDatabaseLookupInputTest {
+    private final TrinsicTestDatabaseLookupInput model = new TrinsicTestDatabaseLookupInput();
 
     /**
-     * Model tests for KnownAddress
+     * Model tests for TrinsicTestDatabaseLookupInput
      */
     @Test
-    void testKnownAddress() {
-        // TODO: test KnownAddress
+    void testTrinsicTestDatabaseLookupInput() {
+        // TODO: test TrinsicTestDatabaseLookupInput
     }
 
     /**
-     * Test the property 'line1'
+     * Test the property 'givenName'
      */
     @Test
-    void line1Test() {
-        // TODO: test line1
+    void givenNameTest() {
+        // TODO: test givenName
     }
 
     /**
-     * Test the property 'line2'
+     * Test the property 'familyName'
      */
     @Test
-    void line2Test() {
-        // TODO: test line2
+    void familyNameTest() {
+        // TODO: test familyName
     }
 
     /**
-     * Test the property 'line3'
+     * Test the property 'identityCode'
      */
     @Test
-    void line3Test() {
-        // TODO: test line3
+    void identityCodeTest() {
+        // TODO: test identityCode
     }
 
     /**
-     * Test the property 'city'
+     * Test the property 'selfieBase64'
      */
     @Test
-    void cityTest() {
-        // TODO: test city
-    }
-
-    /**
-     * Test the property 'subdivision'
-     */
-    @Test
-    void subdivisionTest() {
-        // TODO: test subdivision
-    }
-
-    /**
-     * Test the property 'state'
-     */
-    @Test
-    void stateTest() {
-        // TODO: test state
-    }
-
-    /**
-     * Test the property 'postalCode'
-     */
-    @Test
-    void postalCodeTest() {
-        // TODO: test postalCode
-    }
-
-    /**
-     * Test the property 'country'
-     */
-    @Test
-    void countryTest() {
-        // TODO: test country
+    void selfieBase64Test() {
+        // TODO: test selfieBase64
     }
 
 }

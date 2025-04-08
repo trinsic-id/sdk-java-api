@@ -41,14 +41,18 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   IdentityData.JSON_PROPERTY_ORIGINATING_PROVIDER_ID,
+  IdentityData.JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID,
   IdentityData.JSON_PROPERTY_PERSON,
   IdentityData.JSON_PROPERTY_DOCUMENT,
   IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID = "originatingSubProviderId";
+  private JsonNullable<String> originatingSubProviderId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PERSON = "person";
   private JsonNullable<PersonData> person = JsonNullable.<PersonData>undefined();
@@ -91,6 +95,38 @@ public class IdentityData {
 
   public void setOriginatingProviderId(String originatingProviderId) {
     this.originatingProviderId = JsonNullable.<String>of(originatingProviderId);
+  }
+
+
+  public IdentityData originatingSubProviderId(String originatingSubProviderId) {
+    this.originatingSubProviderId = JsonNullable.<String>of(originatingSubProviderId);
+    return this;
+  }
+
+  /**
+   * Get originatingSubProviderId
+   * @return originatingSubProviderId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getOriginatingSubProviderId() {
+        return originatingSubProviderId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getOriginatingSubProviderId_JsonNullable() {
+    return originatingSubProviderId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID)
+  public void setOriginatingSubProviderId_JsonNullable(JsonNullable<String> originatingSubProviderId) {
+    this.originatingSubProviderId = originatingSubProviderId;
+  }
+
+  public void setOriginatingSubProviderId(String originatingSubProviderId) {
+    this.originatingSubProviderId = JsonNullable.<String>of(originatingSubProviderId);
   }
 
 
@@ -203,6 +239,7 @@ public class IdentityData {
     }
     IdentityData identityData = (IdentityData) o;
     return equalsNullable(this.originatingProviderId, identityData.originatingProviderId) &&
+        equalsNullable(this.originatingSubProviderId, identityData.originatingSubProviderId) &&
         equalsNullable(this.person, identityData.person) &&
         equalsNullable(this.document, identityData.document) &&
         equalsNullable(this.attachmentAccessKeys, identityData.attachmentAccessKeys);
@@ -214,7 +251,7 @@ public class IdentityData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(attachmentAccessKeys));
+    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(attachmentAccessKeys));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -229,6 +266,7 @@ public class IdentityData {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentityData {\n");
     sb.append("    originatingProviderId: ").append(toIndentedString(originatingProviderId)).append("\n");
+    sb.append("    originatingSubProviderId: ").append(toIndentedString(originatingSubProviderId)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    attachmentAccessKeys: ").append(toIndentedString(attachmentAccessKeys)).append("\n");
@@ -282,6 +320,11 @@ public class IdentityData {
     // add `originatingProviderId` to the URL query string
     if (getOriginatingProviderId() != null) {
       joiner.add(String.format("%soriginatingProviderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOriginatingProviderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `originatingSubProviderId` to the URL query string
+    if (getOriginatingSubProviderId() != null) {
+      joiner.add(String.format("%soriginatingSubProviderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOriginatingSubProviderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `person` to the URL query string

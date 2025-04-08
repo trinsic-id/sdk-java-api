@@ -53,6 +53,14 @@ class IdentityDataTest {
     }
 
     /**
+     * Test the property 'originatingSubProviderId'
+     */
+    @Test
+    void originatingSubProviderIdTest() {
+        // TODO: test originatingSubProviderId
+    }
+
+    /**
      * Test the property 'person'
      */
     @Test

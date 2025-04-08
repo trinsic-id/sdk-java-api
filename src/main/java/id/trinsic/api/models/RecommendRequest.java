@@ -24,9 +24,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
+import id.trinsic.api.models.RecommendationInfo;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -39,225 +38,45 @@ import id.trinsic.ApiClient;
  * RecommendRequest
  */
 @JsonPropertyOrder({
-  RecommendRequest.JSON_PROPERTY_PHONE_NUMBER,
-  RecommendRequest.JSON_PROPERTY_COUNTRIES,
-  RecommendRequest.JSON_PROPERTY_SUBDIVISIONS,
-  RecommendRequest.JSON_PROPERTY_IP_ADDRESSES,
-  RecommendRequest.JSON_PROPERTY_INCLUDE_DISABLED_PROVIDERS
+  RecommendRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class RecommendRequest {
-  public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
-  private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_COUNTRIES = "countries";
-  private JsonNullable<List<String>> countries = JsonNullable.<List<String>>undefined();
-
-  public static final String JSON_PROPERTY_SUBDIVISIONS = "subdivisions";
-  private JsonNullable<List<String>> subdivisions = JsonNullable.<List<String>>undefined();
-
-  public static final String JSON_PROPERTY_IP_ADDRESSES = "ipAddresses";
-  private JsonNullable<List<String>> ipAddresses = JsonNullable.<List<String>>undefined();
-
-  public static final String JSON_PROPERTY_INCLUDE_DISABLED_PROVIDERS = "includeDisabledProviders";
-  private JsonNullable<Boolean> includeDisabledProviders = JsonNullable.<Boolean>undefined();
+  public static final String JSON_PROPERTY_RECOMMENDATION_INFO = "recommendationInfo";
+  private JsonNullable<RecommendationInfo> recommendationInfo = JsonNullable.<RecommendationInfo>undefined();
 
   public RecommendRequest() { 
   }
 
-  public RecommendRequest phoneNumber(String phoneNumber) {
-    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+  public RecommendRequest recommendationInfo(RecommendationInfo recommendationInfo) {
+    this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
     return this;
   }
 
   /**
-   * The phone number of the user you wish to generate a recommendation for. Will be used to look up the user&#39;s identity in the network
-   * @return phoneNumber
+   * Information about the user you wish to generate a recommendation for.
+   * @return recommendationInfo
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getPhoneNumber() {
-        return phoneNumber.orElse(null);
+  public RecommendationInfo getRecommendationInfo() {
+        return recommendationInfo.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(JSON_PROPERTY_RECOMMENDATION_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getPhoneNumber_JsonNullable() {
-    return phoneNumber;
+  public JsonNullable<RecommendationInfo> getRecommendationInfo_JsonNullable() {
+    return recommendationInfo;
   }
   
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
-  public void setPhoneNumber_JsonNullable(JsonNullable<String> phoneNumber) {
-    this.phoneNumber = phoneNumber;
+  @JsonProperty(JSON_PROPERTY_RECOMMENDATION_INFO)
+  public void setRecommendationInfo_JsonNullable(JsonNullable<RecommendationInfo> recommendationInfo) {
+    this.recommendationInfo = recommendationInfo;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
-    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
-  }
-
-
-  public RecommendRequest countries(List<String> countries) {
-    this.countries = JsonNullable.<List<String>>of(countries);
-    return this;
-  }
-
-  public RecommendRequest addCountriesItem(String countriesItem) {
-    if (this.countries == null || !this.countries.isPresent()) {
-      this.countries = JsonNullable.<List<String>>of(new ArrayList<>());
-    }
-    try {
-      this.countries.get().add(countriesItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * A list of countries, in alpha-2 ISO 3166 format, you wish to specify for the recommendation, this can include the user&#39;s country of residence, nationality, etc.
-   * @return countries
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public List<String> getCountries() {
-        return countries.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_COUNTRIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<List<String>> getCountries_JsonNullable() {
-    return countries;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_COUNTRIES)
-  public void setCountries_JsonNullable(JsonNullable<List<String>> countries) {
-    this.countries = countries;
-  }
-
-  public void setCountries(List<String> countries) {
-    this.countries = JsonNullable.<List<String>>of(countries);
-  }
-
-
-  public RecommendRequest subdivisions(List<String> subdivisions) {
-    this.subdivisions = JsonNullable.<List<String>>of(subdivisions);
-    return this;
-  }
-
-  public RecommendRequest addSubdivisionsItem(String subdivisionsItem) {
-    if (this.subdivisions == null || !this.subdivisions.isPresent()) {
-      this.subdivisions = JsonNullable.<List<String>>of(new ArrayList<>());
-    }
-    try {
-      this.subdivisions.get().add(subdivisionsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * If one of the countries has subdivisions, for example the US states, you can specify a list of these to further refine the recommendation (e.g., CA, UT, NY)
-   * @return subdivisions
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public List<String> getSubdivisions() {
-        return subdivisions.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_SUBDIVISIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<List<String>> getSubdivisions_JsonNullable() {
-    return subdivisions;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_SUBDIVISIONS)
-  public void setSubdivisions_JsonNullable(JsonNullable<List<String>> subdivisions) {
-    this.subdivisions = subdivisions;
-  }
-
-  public void setSubdivisions(List<String> subdivisions) {
-    this.subdivisions = JsonNullable.<List<String>>of(subdivisions);
-  }
-
-
-  public RecommendRequest ipAddresses(List<String> ipAddresses) {
-    this.ipAddresses = JsonNullable.<List<String>>of(ipAddresses);
-    return this;
-  }
-
-  public RecommendRequest addIpAddressesItem(String ipAddressesItem) {
-    if (this.ipAddresses == null || !this.ipAddresses.isPresent()) {
-      this.ipAddresses = JsonNullable.<List<String>>of(new ArrayList<>());
-    }
-    try {
-      this.ipAddresses.get().add(ipAddressesItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Provide the IP addresses of the user you wish to generate a recommendation for. Will be used to look up the user&#39;s geographic location.
-   * @return ipAddresses
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public List<String> getIpAddresses() {
-        return ipAddresses.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_IP_ADDRESSES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<List<String>> getIpAddresses_JsonNullable() {
-    return ipAddresses;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_IP_ADDRESSES)
-  public void setIpAddresses_JsonNullable(JsonNullable<List<String>> ipAddresses) {
-    this.ipAddresses = ipAddresses;
-  }
-
-  public void setIpAddresses(List<String> ipAddresses) {
-    this.ipAddresses = JsonNullable.<List<String>>of(ipAddresses);
-  }
-
-
-  public RecommendRequest includeDisabledProviders(Boolean includeDisabledProviders) {
-    this.includeDisabledProviders = JsonNullable.<Boolean>of(includeDisabledProviders);
-    return this;
-  }
-
-  /**
-   * If true, the recommendation will include providers that are disabled for the app
-   * @return includeDisabledProviders
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public Boolean getIncludeDisabledProviders() {
-        return includeDisabledProviders.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_INCLUDE_DISABLED_PROVIDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<Boolean> getIncludeDisabledProviders_JsonNullable() {
-    return includeDisabledProviders;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_INCLUDE_DISABLED_PROVIDERS)
-  public void setIncludeDisabledProviders_JsonNullable(JsonNullable<Boolean> includeDisabledProviders) {
-    this.includeDisabledProviders = includeDisabledProviders;
-  }
-
-  public void setIncludeDisabledProviders(Boolean includeDisabledProviders) {
-    this.includeDisabledProviders = JsonNullable.<Boolean>of(includeDisabledProviders);
+  public void setRecommendationInfo(RecommendationInfo recommendationInfo) {
+    this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
   }
 
 
@@ -273,11 +92,7 @@ public class RecommendRequest {
       return false;
     }
     RecommendRequest recommendRequest = (RecommendRequest) o;
-    return equalsNullable(this.phoneNumber, recommendRequest.phoneNumber) &&
-        equalsNullable(this.countries, recommendRequest.countries) &&
-        equalsNullable(this.subdivisions, recommendRequest.subdivisions) &&
-        equalsNullable(this.ipAddresses, recommendRequest.ipAddresses) &&
-        equalsNullable(this.includeDisabledProviders, recommendRequest.includeDisabledProviders);
+    return equalsNullable(this.recommendationInfo, recommendRequest.recommendationInfo);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -286,7 +101,7 @@ public class RecommendRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(phoneNumber), hashCodeNullable(countries), hashCodeNullable(subdivisions), hashCodeNullable(ipAddresses), hashCodeNullable(includeDisabledProviders));
+    return Objects.hash(hashCodeNullable(recommendationInfo));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -300,11 +115,7 @@ public class RecommendRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecommendRequest {\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
-    sb.append("    subdivisions: ").append(toIndentedString(subdivisions)).append("\n");
-    sb.append("    ipAddresses: ").append(toIndentedString(ipAddresses)).append("\n");
-    sb.append("    includeDisabledProviders: ").append(toIndentedString(includeDisabledProviders)).append("\n");
+    sb.append("    recommendationInfo: ").append(toIndentedString(recommendationInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -352,41 +163,9 @@ public class RecommendRequest {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `phoneNumber` to the URL query string
-    if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPhoneNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `countries` to the URL query string
-    if (getCountries() != null) {
-      for (int i = 0; i < getCountries().size(); i++) {
-        joiner.add(String.format("%scountries%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getCountries().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
-    }
-
-    // add `subdivisions` to the URL query string
-    if (getSubdivisions() != null) {
-      for (int i = 0; i < getSubdivisions().size(); i++) {
-        joiner.add(String.format("%ssubdivisions%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getSubdivisions().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
-    }
-
-    // add `ipAddresses` to the URL query string
-    if (getIpAddresses() != null) {
-      for (int i = 0; i < getIpAddresses().size(); i++) {
-        joiner.add(String.format("%sipAddresses%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getIpAddresses().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
-    }
-
-    // add `includeDisabledProviders` to the URL query string
-    if (getIncludeDisabledProviders() != null) {
-      joiner.add(String.format("%sincludeDisabledProviders%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIncludeDisabledProviders()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `recommendationInfo` to the URL query string
+    if (getRecommendationInfo() != null) {
+      joiner.add(getRecommendationInfo().toUrlQueryString(prefix + "recommendationInfo" + suffix));
     }
 
     return joiner.toString();

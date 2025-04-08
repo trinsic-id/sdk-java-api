@@ -18,9 +18,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
+import id.trinsic.api.models.RecommendationInfo;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -44,43 +43,11 @@ class RecommendRequestTest {
     }
 
     /**
-     * Test the property 'phoneNumber'
+     * Test the property 'recommendationInfo'
      */
     @Test
-    void phoneNumberTest() {
-        // TODO: test phoneNumber
-    }
-
-    /**
-     * Test the property 'countries'
-     */
-    @Test
-    void countriesTest() {
-        // TODO: test countries
-    }
-
-    /**
-     * Test the property 'subdivisions'
-     */
-    @Test
-    void subdivisionsTest() {
-        // TODO: test subdivisions
-    }
-
-    /**
-     * Test the property 'ipAddresses'
-     */
-    @Test
-    void ipAddressesTest() {
-        // TODO: test ipAddresses
-    }
-
-    /**
-     * Test the property 'includeDisabledProviders'
-     */
-    @Test
-    void includeDisabledProvidersTest() {
-        // TODO: test includeDisabledProviders
+    void recommendationInfoTest() {
+        // TODO: test recommendationInfo
     }
 
 }

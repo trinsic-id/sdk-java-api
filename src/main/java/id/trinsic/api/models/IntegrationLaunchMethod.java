@@ -32,7 +32,7 @@ public enum IntegrationLaunchMethod {
   
   LAUNCH_BROWSER("LaunchBrowser"),
   
-  POLL_RESULT("PollResult"),
+  NONE("None"),
   
   DEEPLINK_TO_MOBILE("DeeplinkToMobile"),
   

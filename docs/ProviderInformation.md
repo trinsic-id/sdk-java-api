@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**providerId** | **String** |  |  |
-|**providerDisplayName** | **String** |  |  |
-|**providerLogo** | **String** |  |  |
+|**providerId** | **String** |  |  [readonly] |
+|**providerDisplayName** | **String** |  |  [readonly] |
+|**providerLogo** | **String** |  |  [readonly] |
 
 
 

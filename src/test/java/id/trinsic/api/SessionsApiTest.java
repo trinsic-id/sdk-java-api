@@ -70,7 +70,7 @@ public class SessionsApiTest {
     /**
      * Create Advanced Provider Session
      *
-     * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.    If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
+     * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -176,7 +176,7 @@ public class SessionsApiTest {
     /**
      * Redact Session
      *
-     * Redact a Session, removing all identity data from Trinsic&#39;s servers.  Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session.  You can utilize this endpoint to redact a session immediately.                Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
+     * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.              Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
      *
      * @throws ApiException
      *          if the Api call fails

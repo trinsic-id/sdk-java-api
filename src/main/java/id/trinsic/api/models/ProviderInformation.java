@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   ProviderInformation.JSON_PROPERTY_PROVIDER_DISPLAY_NAME,
   ProviderInformation.JSON_PROPERTY_PROVIDER_LOGO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ProviderInformation {
   public static final String JSON_PROPERTY_PROVIDER_ID = "providerId";
   private String providerId;
@@ -51,9 +51,16 @@ public class ProviderInformation {
   public ProviderInformation() { 
   }
 
-  public ProviderInformation providerId(String providerId) {
+  @JsonCreator
+  public ProviderInformation(
+    @JsonProperty(JSON_PROPERTY_PROVIDER_ID) String providerId, 
+    @JsonProperty(JSON_PROPERTY_PROVIDER_DISPLAY_NAME) String providerDisplayName, 
+    @JsonProperty(JSON_PROPERTY_PROVIDER_LOGO) String providerLogo
+  ) {
+  this();
     this.providerId = providerId;
-    return this;
+    this.providerDisplayName = providerDisplayName;
+    this.providerLogo = providerLogo;
   }
 
   /**
@@ -68,17 +75,7 @@ public class ProviderInformation {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProviderId(String providerId) {
-    this.providerId = providerId;
-  }
 
-
-  public ProviderInformation providerDisplayName(String providerDisplayName) {
-    this.providerDisplayName = providerDisplayName;
-    return this;
-  }
 
   /**
    * Get providerDisplayName
@@ -92,17 +89,7 @@ public class ProviderInformation {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER_DISPLAY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProviderDisplayName(String providerDisplayName) {
-    this.providerDisplayName = providerDisplayName;
-  }
 
-
-  public ProviderInformation providerLogo(String providerLogo) {
-    this.providerLogo = providerLogo;
-    return this;
-  }
 
   /**
    * Get providerLogo
@@ -116,11 +103,6 @@ public class ProviderInformation {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER_LOGO)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProviderLogo(String providerLogo) {
-    this.providerLogo = providerLogo;
-  }
 
 
   /**

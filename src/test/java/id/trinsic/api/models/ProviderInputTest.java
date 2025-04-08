@@ -22,13 +22,19 @@ import id.trinsic.api.models.AadhaarInput;
 import id.trinsic.api.models.BangladeshNationalIdInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.MexicoCurpInput;
+import id.trinsic.api.models.MobileIdInput;
 import id.trinsic.api.models.NigeriaNinInput;
 import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
+import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidInput;
+import id.trinsic.api.models.SpidInput;
+import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
+import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -138,6 +144,54 @@ class ProviderInputTest {
     @Test
     void philippineQRTest() {
         // TODO: test philippineQR
+    }
+
+    /**
+     * Test the property 'smartId'
+     */
+    @Test
+    void smartIdTest() {
+        // TODO: test smartId
+    }
+
+    /**
+     * Test the property 'mobileId'
+     */
+    @Test
+    void mobileIdTest() {
+        // TODO: test mobileId
+    }
+
+    /**
+     * Test the property 'idin'
+     */
+    @Test
+    void idinTest() {
+        // TODO: test idin
+    }
+
+    /**
+     * Test the property 'spid'
+     */
+    @Test
+    void spidTest() {
+        // TODO: test spid
+    }
+
+    /**
+     * Test the property 'trinsicTestDatabaseLookup'
+     */
+    @Test
+    void trinsicTestDatabaseLookupTest() {
+        // TODO: test trinsicTestDatabaseLookup
+    }
+
+    /**
+     * Test the property 'trinsicTestSubProviders'
+     */
+    @Test
+    void trinsicTestSubProvidersTest() {
+        // TODO: test trinsicTestSubProviders
     }
 
 }

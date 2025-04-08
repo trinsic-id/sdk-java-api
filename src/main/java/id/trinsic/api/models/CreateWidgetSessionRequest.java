@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.KnownIdentityData;
+import id.trinsic.api.models.RecommendationInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,9 +42,9 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   CreateWidgetSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateWidgetSessionRequest.JSON_PROPERTY_PROVIDERS,
-  CreateWidgetSessionRequest.JSON_PROPERTY_KNOWN_IDENTITY_DATA
+  CreateWidgetSessionRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateWidgetSessionRequest {
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
@@ -52,8 +52,8 @@ public class CreateWidgetSessionRequest {
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
   private JsonNullable<List<String>> providers = JsonNullable.<List<String>>undefined();
 
-  public static final String JSON_PROPERTY_KNOWN_IDENTITY_DATA = "knownIdentityData";
-  private JsonNullable<KnownIdentityData> knownIdentityData = JsonNullable.<KnownIdentityData>undefined();
+  public static final String JSON_PROPERTY_RECOMMENDATION_INFO = "recommendationInfo";
+  private JsonNullable<RecommendationInfo> recommendationInfo = JsonNullable.<RecommendationInfo>undefined();
 
   public CreateWidgetSessionRequest() { 
   }
@@ -64,7 +64,7 @@ public class CreateWidgetSessionRequest {
   }
 
   /**
-   * The URL to redirect the user to after the widget session is complete.                *Note*: this should NOT be set if you intend to use Trinsic&#39;s Web UI SDK to launch the Widget  as an embedded iFrame or popup; in that case, session resolution is handled by our SDK, not via redirect.
+   * The URL to redirect the user to after the widget session is complete.              *Note*: this should NOT be set if you intend to use Trinsic&#39;s Web UI SDK to launch the Widget as an embedded iFrame or popup; in that case, session resolution is handled by our SDK, not via redirect.
    * @return redirectUrl
    */
   @javax.annotation.Nullable
@@ -134,35 +134,35 @@ public class CreateWidgetSessionRequest {
   }
 
 
-  public CreateWidgetSessionRequest knownIdentityData(KnownIdentityData knownIdentityData) {
-    this.knownIdentityData = JsonNullable.<KnownIdentityData>of(knownIdentityData);
+  public CreateWidgetSessionRequest recommendationInfo(RecommendationInfo recommendationInfo) {
+    this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
     return this;
   }
 
   /**
-   * Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
-   * @return knownIdentityData
+   * Data that you already know about the user being verified.   This data is used to improve the user experience during provider selection, by surfacing the most relevant providers first.
+   * @return recommendationInfo
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public KnownIdentityData getKnownIdentityData() {
-        return knownIdentityData.orElse(null);
+  public RecommendationInfo getRecommendationInfo() {
+        return recommendationInfo.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_KNOWN_IDENTITY_DATA)
+  @JsonProperty(JSON_PROPERTY_RECOMMENDATION_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<KnownIdentityData> getKnownIdentityData_JsonNullable() {
-    return knownIdentityData;
+  public JsonNullable<RecommendationInfo> getRecommendationInfo_JsonNullable() {
+    return recommendationInfo;
   }
   
-  @JsonProperty(JSON_PROPERTY_KNOWN_IDENTITY_DATA)
-  public void setKnownIdentityData_JsonNullable(JsonNullable<KnownIdentityData> knownIdentityData) {
-    this.knownIdentityData = knownIdentityData;
+  @JsonProperty(JSON_PROPERTY_RECOMMENDATION_INFO)
+  public void setRecommendationInfo_JsonNullable(JsonNullable<RecommendationInfo> recommendationInfo) {
+    this.recommendationInfo = recommendationInfo;
   }
 
-  public void setKnownIdentityData(KnownIdentityData knownIdentityData) {
-    this.knownIdentityData = JsonNullable.<KnownIdentityData>of(knownIdentityData);
+  public void setRecommendationInfo(RecommendationInfo recommendationInfo) {
+    this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
   }
 
 
@@ -180,7 +180,7 @@ public class CreateWidgetSessionRequest {
     CreateWidgetSessionRequest createWidgetSessionRequest = (CreateWidgetSessionRequest) o;
     return equalsNullable(this.redirectUrl, createWidgetSessionRequest.redirectUrl) &&
         equalsNullable(this.providers, createWidgetSessionRequest.providers) &&
-        equalsNullable(this.knownIdentityData, createWidgetSessionRequest.knownIdentityData);
+        equalsNullable(this.recommendationInfo, createWidgetSessionRequest.recommendationInfo);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -189,7 +189,7 @@ public class CreateWidgetSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(redirectUrl), hashCodeNullable(providers), hashCodeNullable(knownIdentityData));
+    return Objects.hash(hashCodeNullable(redirectUrl), hashCodeNullable(providers), hashCodeNullable(recommendationInfo));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -205,7 +205,7 @@ public class CreateWidgetSessionRequest {
     sb.append("class CreateWidgetSessionRequest {\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
-    sb.append("    knownIdentityData: ").append(toIndentedString(knownIdentityData)).append("\n");
+    sb.append("    recommendationInfo: ").append(toIndentedString(recommendationInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -267,9 +267,9 @@ public class CreateWidgetSessionRequest {
       }
     }
 
-    // add `knownIdentityData` to the URL query string
-    if (getKnownIdentityData() != null) {
-      joiner.add(getKnownIdentityData().toUrlQueryString(prefix + "knownIdentityData" + suffix));
+    // add `recommendationInfo` to the URL query string
+    if (getRecommendationInfo() != null) {
+      joiner.add(getRecommendationInfo().toUrlQueryString(prefix + "recommendationInfo" + suffix));
     }
 
     return joiner.toString();

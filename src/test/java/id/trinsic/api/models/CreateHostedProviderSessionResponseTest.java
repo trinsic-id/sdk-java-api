@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -56,6 +52,14 @@ class CreateHostedProviderSessionResponseTest {
     @Test
     void launchUrlTest() {
         // TODO: test launchUrl
+    }
+
+    /**
+     * Test the property 'resultsAccessKey'
+     */
+    @Test
+    void resultsAccessKeyTest() {
+        // TODO: test resultsAccessKey
     }
 
 }

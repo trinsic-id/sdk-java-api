@@ -26,10 +26,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -39,15 +35,19 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   CreateHostedProviderSessionResponse.JSON_PROPERTY_SESSION_ID,
-  CreateHostedProviderSessionResponse.JSON_PROPERTY_LAUNCH_URL
+  CreateHostedProviderSessionResponse.JSON_PROPERTY_LAUNCH_URL,
+  CreateHostedProviderSessionResponse.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CreateHostedProviderSessionResponse {
   public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
   private UUID sessionId;
 
   public static final String JSON_PROPERTY_LAUNCH_URL = "launchUrl";
-  private JsonNullable<String> launchUrl = JsonNullable.<String>undefined();
+  private String launchUrl;
+
+  public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
+  private String resultsAccessKey;
 
   public CreateHostedProviderSessionResponse() { 
   }
@@ -77,34 +77,50 @@ public class CreateHostedProviderSessionResponse {
 
 
   public CreateHostedProviderSessionResponse launchUrl(String launchUrl) {
-    this.launchUrl = JsonNullable.<String>of(launchUrl);
+    this.launchUrl = launchUrl;
     return this;
   }
 
   /**
-   * The URL that should be used to launch the Hosted Provider Session on your user&#39;s device.                There are two recommended ways to do so:  - Redirect their browser to the &#x60;LaunchUrl&#x60; as a top-level navigation  - Open a popup window and navigate it to the &#x60;LaunchUrl&#x60;                This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
+   * The URL that should be used to launch the Hosted Provider Session on your user&#39;s device.              There are two recommended ways to do so: - Redirect their browser to the &#x60;LaunchUrl&#x60; as a top-level navigation - Open a popup window and navigate it to the &#x60;LaunchUrl&#x60;              This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
    * @return launchUrl
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getLaunchUrl() {
-        return launchUrl.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAUNCH_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getLaunchUrl_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getLaunchUrl() {
     return launchUrl;
   }
-  
+
+
   @JsonProperty(JSON_PROPERTY_LAUNCH_URL)
-  public void setLaunchUrl_JsonNullable(JsonNullable<String> launchUrl) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setLaunchUrl(String launchUrl) {
     this.launchUrl = launchUrl;
   }
 
-  public void setLaunchUrl(String launchUrl) {
-    this.launchUrl = JsonNullable.<String>of(launchUrl);
+
+  public CreateHostedProviderSessionResponse resultsAccessKey(String resultsAccessKey) {
+    this.resultsAccessKey = resultsAccessKey;
+    return this;
+  }
+
+  /**
+   * The &#x60;resultsAccessKey&#x60; for the Acceptance Session.              This is an encrypted payload which contains the decryption key necessary to access the Session&#39;s Data Vault.              Save this securely in your systems; it must be passed back with any API call which requires access to the Session&#39;s Data Vault.              Trinsic cannot access a Session&#39;s Data Vault without this key.
+   * @return resultsAccessKey
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getResultsAccessKey() {
+    return resultsAccessKey;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setResultsAccessKey(String resultsAccessKey) {
+    this.resultsAccessKey = resultsAccessKey;
   }
 
 
@@ -121,23 +137,13 @@ public class CreateHostedProviderSessionResponse {
     }
     CreateHostedProviderSessionResponse createHostedProviderSessionResponse = (CreateHostedProviderSessionResponse) o;
     return Objects.equals(this.sessionId, createHostedProviderSessionResponse.sessionId) &&
-        equalsNullable(this.launchUrl, createHostedProviderSessionResponse.launchUrl);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.launchUrl, createHostedProviderSessionResponse.launchUrl) &&
+        Objects.equals(this.resultsAccessKey, createHostedProviderSessionResponse.resultsAccessKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sessionId, hashCodeNullable(launchUrl));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(sessionId, launchUrl, resultsAccessKey);
   }
 
   @Override
@@ -146,6 +152,7 @@ public class CreateHostedProviderSessionResponse {
     sb.append("class CreateHostedProviderSessionResponse {\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    launchUrl: ").append(toIndentedString(launchUrl)).append("\n");
+    sb.append("    resultsAccessKey: ").append(toIndentedString(resultsAccessKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,6 +208,11 @@ public class CreateHostedProviderSessionResponse {
     // add `launchUrl` to the URL query string
     if (getLaunchUrl() != null) {
       joiner.add(String.format("%slaunchUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLaunchUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `resultsAccessKey` to the URL query string
+    if (getResultsAccessKey() != null) {
+      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResultsAccessKey()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

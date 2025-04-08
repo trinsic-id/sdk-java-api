@@ -26,10 +26,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ResultCollectionMethod;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -41,13 +37,13 @@ import id.trinsic.ApiClient;
   ResultCollection.JSON_PROPERTY_METHOD,
   ResultCollection.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ResultCollection {
   public static final String JSON_PROPERTY_METHOD = "method";
   private ResultCollectionMethod method;
 
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
-  private JsonNullable<String> resultsAccessKey = JsonNullable.<String>undefined();
+  private String resultsAccessKey;
 
   public ResultCollection() { 
   }
@@ -77,34 +73,26 @@ public class ResultCollection {
 
 
   public ResultCollection resultsAccessKey(String resultsAccessKey) {
-    this.resultsAccessKey = JsonNullable.<String>of(resultsAccessKey);
+    this.resultsAccessKey = resultsAccessKey;
     return this;
   }
 
   /**
-   * If the method is &#x60;PollResult&#x60;, this is the key that should be used to poll for the results.
+   * The &#x60;resultsAccessKey&#x60; for the Acceptance Session.              This is an encrypted payload which contains the decryption key necessary to access the Session&#39;s Data Vault.              Save this securely in your systems; it must be passed back with any API call which requires access to the Session&#39;s Data Vault.              Trinsic cannot access a Session&#39;s Data Vault without this key.
    * @return resultsAccessKey
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getResultsAccessKey() {
-        return resultsAccessKey.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getResultsAccessKey_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getResultsAccessKey() {
     return resultsAccessKey;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
-  public void setResultsAccessKey_JsonNullable(JsonNullable<String> resultsAccessKey) {
-    this.resultsAccessKey = resultsAccessKey;
-  }
 
+
+  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setResultsAccessKey(String resultsAccessKey) {
-    this.resultsAccessKey = JsonNullable.<String>of(resultsAccessKey);
+    this.resultsAccessKey = resultsAccessKey;
   }
 
 
@@ -121,23 +109,12 @@ public class ResultCollection {
     }
     ResultCollection resultCollection = (ResultCollection) o;
     return Objects.equals(this.method, resultCollection.method) &&
-        equalsNullable(this.resultsAccessKey, resultCollection.resultsAccessKey);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.resultsAccessKey, resultCollection.resultsAccessKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(method, hashCodeNullable(resultsAccessKey));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(method, resultsAccessKey);
   }
 
   @Override

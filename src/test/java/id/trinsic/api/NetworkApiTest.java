@@ -14,6 +14,7 @@
 package id.trinsic.api;
 
 import id.trinsic.ApiException;
+import id.trinsic.api.models.ListProviderContractsResponse;
 import id.trinsic.api.models.ListProvidersResponse;
 import id.trinsic.api.models.ProblemDetails;
 import id.trinsic.api.models.RecommendRequest;
@@ -38,7 +39,23 @@ public class NetworkApiTest {
 
     
     /**
-     * List Identity Providers
+     * List Provider Contracts
+     *
+     * List the contracts for all Providers available to your App.              If your App is in test mode, this call will only return Providers available in test mode. If your App is not in test mode, this call will only return Providers available in production.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listProviderContractsTest() throws ApiException {
+        ListProviderContractsResponse response = 
+        api.listProviderContracts();
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * List Providers
      *
      * List all identity providers available for use
      *

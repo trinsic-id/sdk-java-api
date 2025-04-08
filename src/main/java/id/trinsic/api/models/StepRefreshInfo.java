@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   StepRefreshInfo.JSON_PROPERTY_REFRESH_AFTER,
   StepRefreshInfo.JSON_PROPERTY_TIME_TO_LIVE_SECONDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class StepRefreshInfo {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expiresAt";
   private OffsetDateTime expiresAt;
@@ -58,7 +58,7 @@ public class StepRefreshInfo {
   }
 
   /**
-   * The UTC date/time at which the step &#x60;content&#x60; will expire and should no longer be used.                Use the &#x60;Refresh Step Content&#x60; API to obtain a new value for &#x60;content&#x60;.
+   * The UTC date/time at which the step &#x60;content&#x60; will expire and should no longer be used.              Use the &#x60;Refresh Step Content&#x60; API to obtain a new value for &#x60;content&#x60;.
    * @return expiresAt
    */
   @javax.annotation.Nonnull

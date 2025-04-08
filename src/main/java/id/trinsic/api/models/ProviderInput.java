@@ -28,13 +28,19 @@ import id.trinsic.api.models.AadhaarInput;
 import id.trinsic.api.models.BangladeshNationalIdInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.MexicoCurpInput;
+import id.trinsic.api.models.MobileIdInput;
 import id.trinsic.api.models.NigeriaNinInput;
 import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
+import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidInput;
+import id.trinsic.api.models.SpidInput;
+import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
+import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -58,9 +64,15 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_BRAZIL_CPF_CHECK,
   ProviderInput.JSON_PROPERTY_BRAZIL_DIGITAL_CNH,
   ProviderInput.JSON_PROPERTY_PHILIPPINE_MATCH,
-  ProviderInput.JSON_PROPERTY_PHILIPPINE_Q_R
+  ProviderInput.JSON_PROPERTY_PHILIPPINE_Q_R,
+  ProviderInput.JSON_PROPERTY_SMART_ID,
+  ProviderInput.JSON_PROPERTY_MOBILE_ID,
+  ProviderInput.JSON_PROPERTY_IDIN,
+  ProviderInput.JSON_PROPERTY_SPID,
+  ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
+  ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
@@ -95,6 +107,24 @@ public class ProviderInput {
   public static final String JSON_PROPERTY_PHILIPPINE_Q_R = "philippineQR";
   private JsonNullable<PhilippineQRInput> philippineQR = JsonNullable.<PhilippineQRInput>undefined();
 
+  public static final String JSON_PROPERTY_SMART_ID = "smartId";
+  private JsonNullable<SmartIdInput> smartId = JsonNullable.<SmartIdInput>undefined();
+
+  public static final String JSON_PROPERTY_MOBILE_ID = "mobileId";
+  private JsonNullable<MobileIdInput> mobileId = JsonNullable.<MobileIdInput>undefined();
+
+  public static final String JSON_PROPERTY_IDIN = "idin";
+  private JsonNullable<IdinInput> idin = JsonNullable.<IdinInput>undefined();
+
+  public static final String JSON_PROPERTY_SPID = "spid";
+  private JsonNullable<SpidInput> spid = JsonNullable.<SpidInput>undefined();
+
+  public static final String JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP = "trinsicTestDatabaseLookup";
+  private JsonNullable<TrinsicTestDatabaseLookupInput> trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS = "trinsicTestSubProviders";
+  private JsonNullable<TrinsicTestSubProvidersInput> trinsicTestSubProviders = JsonNullable.<TrinsicTestSubProvidersInput>undefined();
+
   public ProviderInput() { 
   }
 
@@ -104,7 +134,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-indonesia-nik&#x60; integration
+   * Input for the &#x60;f-indonesia-nik&#x60; provider
    * @return indonesiaNik
    */
   @javax.annotation.Nullable
@@ -136,7 +166,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-mexico-curp&#x60; integration
+   * Input for the &#x60;f-mexico-curp&#x60; provider
    * @return mexicoCurp
    */
   @javax.annotation.Nullable
@@ -168,7 +198,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-south-africa-nid&#x60; integration
+   * Input for the &#x60;f-south-africa-nid&#x60; provider
    * @return southAfricaNid
    */
   @javax.annotation.Nullable
@@ -200,7 +230,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-kenya-nid&#x60; integration
+   * Input for the &#x60;f-kenya-nid&#x60; provider
    * @return kenyaNid
    */
   @javax.annotation.Nullable
@@ -232,7 +262,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-nigeria-nin&#x60; integration
+   * Input for the &#x60;f-nigeria-nin&#x60; provider
    * @return nigeriaNin
    */
   @javax.annotation.Nullable
@@ -264,7 +294,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-india-aadhaar-match&#x60; integration
+   * Input for the &#x60;f-india-aadhaar-match&#x60; provider
    * @return aadhaar
    */
   @javax.annotation.Nullable
@@ -296,7 +326,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;bangladesh-nid&#x60; integration
+   * Input for the &#x60;bangladesh-nid&#x60; provider
    * @return bangladeshNationalId
    */
   @javax.annotation.Nullable
@@ -328,7 +358,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;g-brazil-cpf&#x60; integration
+   * Input for the &#x60;g-brazil-cpf&#x60; provider
    * @return brazilCpfCheck
    */
   @javax.annotation.Nullable
@@ -360,7 +390,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;g-brazil-digital-cnh&#x60; integration
+   * Input for the &#x60;g-brazil-digital-cnh&#x60; provider
    * @return brazilDigitalCnh
    */
   @javax.annotation.Nullable
@@ -392,7 +422,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;b-philsys-biometric&#x60; integration
+   * Input for the &#x60;b-philsys-biometric&#x60; provider
    * @return philippineMatch
    */
   @javax.annotation.Nullable
@@ -424,7 +454,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;b-philippine-qr-digital-national-id&#x60; and &#x60;b-philippine-qr-ephill-id&#x60; integrations
+   * Input for the &#x60;b-philippine-qr-digital-national-id&#x60; and &#x60;b-philippine-qr-ephill-id&#x60; providers
    * @return philippineQR
    */
   @javax.annotation.Nullable
@@ -450,6 +480,198 @@ public class ProviderInput {
   }
 
 
+  public ProviderInput smartId(SmartIdInput smartId) {
+    this.smartId = JsonNullable.<SmartIdInput>of(smartId);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;smart-id&#x60; provider
+   * @return smartId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SmartIdInput getSmartId() {
+        return smartId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SMART_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SmartIdInput> getSmartId_JsonNullable() {
+    return smartId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SMART_ID)
+  public void setSmartId_JsonNullable(JsonNullable<SmartIdInput> smartId) {
+    this.smartId = smartId;
+  }
+
+  public void setSmartId(SmartIdInput smartId) {
+    this.smartId = JsonNullable.<SmartIdInput>of(smartId);
+  }
+
+
+  public ProviderInput mobileId(MobileIdInput mobileId) {
+    this.mobileId = JsonNullable.<MobileIdInput>of(mobileId);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;mobile-id&#x60; provider
+   * @return mobileId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MobileIdInput getMobileId() {
+        return mobileId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_MOBILE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MobileIdInput> getMobileId_JsonNullable() {
+    return mobileId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOBILE_ID)
+  public void setMobileId_JsonNullable(JsonNullable<MobileIdInput> mobileId) {
+    this.mobileId = mobileId;
+  }
+
+  public void setMobileId(MobileIdInput mobileId) {
+    this.mobileId = JsonNullable.<MobileIdInput>of(mobileId);
+  }
+
+
+  public ProviderInput idin(IdinInput idin) {
+    this.idin = JsonNullable.<IdinInput>of(idin);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;idin&#x60; provider
+   * @return idin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public IdinInput getIdin() {
+        return idin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_IDIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<IdinInput> getIdin_JsonNullable() {
+    return idin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IDIN)
+  public void setIdin_JsonNullable(JsonNullable<IdinInput> idin) {
+    this.idin = idin;
+  }
+
+  public void setIdin(IdinInput idin) {
+    this.idin = JsonNullable.<IdinInput>of(idin);
+  }
+
+
+  public ProviderInput spid(SpidInput spid) {
+    this.spid = JsonNullable.<SpidInput>of(spid);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;spid&#x60; provider
+   * @return spid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SpidInput getSpid() {
+        return spid.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SPID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SpidInput> getSpid_JsonNullable() {
+    return spid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SPID)
+  public void setSpid_JsonNullable(JsonNullable<SpidInput> spid) {
+    this.spid = spid;
+  }
+
+  public void setSpid(SpidInput spid) {
+    this.spid = JsonNullable.<SpidInput>of(spid);
+  }
+
+
+  public ProviderInput trinsicTestDatabaseLookup(TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
+    this.trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>of(trinsicTestDatabaseLookup);
+    return this;
+  }
+
+  /**
+   * *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider
+   * @return trinsicTestDatabaseLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public TrinsicTestDatabaseLookupInput getTrinsicTestDatabaseLookup() {
+        return trinsicTestDatabaseLookup.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<TrinsicTestDatabaseLookupInput> getTrinsicTestDatabaseLookup_JsonNullable() {
+    return trinsicTestDatabaseLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP)
+  public void setTrinsicTestDatabaseLookup_JsonNullable(JsonNullable<TrinsicTestDatabaseLookupInput> trinsicTestDatabaseLookup) {
+    this.trinsicTestDatabaseLookup = trinsicTestDatabaseLookup;
+  }
+
+  public void setTrinsicTestDatabaseLookup(TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
+    this.trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>of(trinsicTestDatabaseLookup);
+  }
+
+
+  public ProviderInput trinsicTestSubProviders(TrinsicTestSubProvidersInput trinsicTestSubProviders) {
+    this.trinsicTestSubProviders = JsonNullable.<TrinsicTestSubProvidersInput>of(trinsicTestSubProviders);
+    return this;
+  }
+
+  /**
+   * *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider
+   * @return trinsicTestSubProviders
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public TrinsicTestSubProvidersInput getTrinsicTestSubProviders() {
+        return trinsicTestSubProviders.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<TrinsicTestSubProvidersInput> getTrinsicTestSubProviders_JsonNullable() {
+    return trinsicTestSubProviders;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS)
+  public void setTrinsicTestSubProviders_JsonNullable(JsonNullable<TrinsicTestSubProvidersInput> trinsicTestSubProviders) {
+    this.trinsicTestSubProviders = trinsicTestSubProviders;
+  }
+
+  public void setTrinsicTestSubProviders(TrinsicTestSubProvidersInput trinsicTestSubProviders) {
+    this.trinsicTestSubProviders = JsonNullable.<TrinsicTestSubProvidersInput>of(trinsicTestSubProviders);
+  }
+
+
   /**
    * Return true if this ProviderInput object is equal to o.
    */
@@ -472,7 +694,13 @@ public class ProviderInput {
         equalsNullable(this.brazilCpfCheck, providerInput.brazilCpfCheck) &&
         equalsNullable(this.brazilDigitalCnh, providerInput.brazilDigitalCnh) &&
         equalsNullable(this.philippineMatch, providerInput.philippineMatch) &&
-        equalsNullable(this.philippineQR, providerInput.philippineQR);
+        equalsNullable(this.philippineQR, providerInput.philippineQR) &&
+        equalsNullable(this.smartId, providerInput.smartId) &&
+        equalsNullable(this.mobileId, providerInput.mobileId) &&
+        equalsNullable(this.idin, providerInput.idin) &&
+        equalsNullable(this.spid, providerInput.spid) &&
+        equalsNullable(this.trinsicTestDatabaseLookup, providerInput.trinsicTestDatabaseLookup) &&
+        equalsNullable(this.trinsicTestSubProviders, providerInput.trinsicTestSubProviders);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -481,7 +709,7 @@ public class ProviderInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR));
+    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -506,6 +734,12 @@ public class ProviderInput {
     sb.append("    brazilDigitalCnh: ").append(toIndentedString(brazilDigitalCnh)).append("\n");
     sb.append("    philippineMatch: ").append(toIndentedString(philippineMatch)).append("\n");
     sb.append("    philippineQR: ").append(toIndentedString(philippineQR)).append("\n");
+    sb.append("    smartId: ").append(toIndentedString(smartId)).append("\n");
+    sb.append("    mobileId: ").append(toIndentedString(mobileId)).append("\n");
+    sb.append("    idin: ").append(toIndentedString(idin)).append("\n");
+    sb.append("    spid: ").append(toIndentedString(spid)).append("\n");
+    sb.append("    trinsicTestDatabaseLookup: ").append(toIndentedString(trinsicTestDatabaseLookup)).append("\n");
+    sb.append("    trinsicTestSubProviders: ").append(toIndentedString(trinsicTestSubProviders)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -606,6 +840,36 @@ public class ProviderInput {
     // add `philippineQR` to the URL query string
     if (getPhilippineQR() != null) {
       joiner.add(getPhilippineQR().toUrlQueryString(prefix + "philippineQR" + suffix));
+    }
+
+    // add `smartId` to the URL query string
+    if (getSmartId() != null) {
+      joiner.add(getSmartId().toUrlQueryString(prefix + "smartId" + suffix));
+    }
+
+    // add `mobileId` to the URL query string
+    if (getMobileId() != null) {
+      joiner.add(getMobileId().toUrlQueryString(prefix + "mobileId" + suffix));
+    }
+
+    // add `idin` to the URL query string
+    if (getIdin() != null) {
+      joiner.add(getIdin().toUrlQueryString(prefix + "idin" + suffix));
+    }
+
+    // add `spid` to the URL query string
+    if (getSpid() != null) {
+      joiner.add(getSpid().toUrlQueryString(prefix + "spid" + suffix));
+    }
+
+    // add `trinsicTestDatabaseLookup` to the URL query string
+    if (getTrinsicTestDatabaseLookup() != null) {
+      joiner.add(getTrinsicTestDatabaseLookup().toUrlQueryString(prefix + "trinsicTestDatabaseLookup" + suffix));
+    }
+
+    // add `trinsicTestSubProviders` to the URL query string
+    if (getTrinsicTestSubProviders() != null) {
+      joiner.add(getTrinsicTestSubProviders().toUrlQueryString(prefix + "trinsicTestSubProviders" + suffix));
     }
 
     return joiner.toString();

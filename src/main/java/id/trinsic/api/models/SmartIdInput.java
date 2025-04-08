@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.KnownPersonData;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -35,53 +34,53 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+ * SmartIdInput
  */
 @JsonPropertyOrder({
-  KnownIdentityData.JSON_PROPERTY_PERSON
+  SmartIdInput.JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
-public class KnownIdentityData {
-  public static final String JSON_PROPERTY_PERSON = "person";
-  private JsonNullable<KnownPersonData> person = JsonNullable.<KnownPersonData>undefined();
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+public class SmartIdInput {
+  public static final String JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER = "smartIdDocumentNumber";
+  private JsonNullable<String> smartIdDocumentNumber = JsonNullable.<String>undefined();
 
-  public KnownIdentityData() { 
+  public SmartIdInput() { 
   }
 
-  public KnownIdentityData person(KnownPersonData person) {
-    this.person = JsonNullable.<KnownPersonData>of(person);
+  public SmartIdInput smartIdDocumentNumber(String smartIdDocumentNumber) {
+    this.smartIdDocumentNumber = JsonNullable.<String>of(smartIdDocumentNumber);
     return this;
   }
 
   /**
-   * Known identity data specific to the person being verified
-   * @return person
+   * The user&#39;s Smart ID Document Number
+   * @return smartIdDocumentNumber
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public KnownPersonData getPerson() {
-        return person.orElse(null);
+  public String getSmartIdDocumentNumber() {
+        return smartIdDocumentNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSON)
+  @JsonProperty(JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<KnownPersonData> getPerson_JsonNullable() {
-    return person;
+  public JsonNullable<String> getSmartIdDocumentNumber_JsonNullable() {
+    return smartIdDocumentNumber;
   }
   
-  @JsonProperty(JSON_PROPERTY_PERSON)
-  public void setPerson_JsonNullable(JsonNullable<KnownPersonData> person) {
-    this.person = person;
+  @JsonProperty(JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER)
+  public void setSmartIdDocumentNumber_JsonNullable(JsonNullable<String> smartIdDocumentNumber) {
+    this.smartIdDocumentNumber = smartIdDocumentNumber;
   }
 
-  public void setPerson(KnownPersonData person) {
-    this.person = JsonNullable.<KnownPersonData>of(person);
+  public void setSmartIdDocumentNumber(String smartIdDocumentNumber) {
+    this.smartIdDocumentNumber = JsonNullable.<String>of(smartIdDocumentNumber);
   }
 
 
   /**
-   * Return true if this KnownIdentityData object is equal to o.
+   * Return true if this SmartIdInput object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -91,8 +90,8 @@ public class KnownIdentityData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    KnownIdentityData knownIdentityData = (KnownIdentityData) o;
-    return equalsNullable(this.person, knownIdentityData.person);
+    SmartIdInput smartIdInput = (SmartIdInput) o;
+    return equalsNullable(this.smartIdDocumentNumber, smartIdInput.smartIdDocumentNumber);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -101,7 +100,7 @@ public class KnownIdentityData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(person));
+    return Objects.hash(hashCodeNullable(smartIdDocumentNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -114,8 +113,8 @@ public class KnownIdentityData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class KnownIdentityData {\n");
-    sb.append("    person: ").append(toIndentedString(person)).append("\n");
+    sb.append("class SmartIdInput {\n");
+    sb.append("    smartIdDocumentNumber: ").append(toIndentedString(smartIdDocumentNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -163,9 +162,9 @@ public class KnownIdentityData {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `person` to the URL query string
-    if (getPerson() != null) {
-      joiner.add(getPerson().toUrlQueryString(prefix + "person" + suffix));
+    // add `smartIdDocumentNumber` to the URL query string
+    if (getSmartIdDocumentNumber() != null) {
+      joiner.add(String.format("%ssmartIdDocumentNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSmartIdDocumentNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

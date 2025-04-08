@@ -17,6 +17,7 @@ import id.trinsic.ApiException;
 import id.trinsic.ApiResponse;
 import id.trinsic.Pair;
 
+import id.trinsic.api.models.ListProviderContractsResponse;
 import id.trinsic.api.models.ListProvidersResponse;
 import id.trinsic.api.models.ProblemDetails;
 import id.trinsic.api.models.RecommendRequest;
@@ -47,7 +48,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-21T00:14:35.168070879Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class NetworkApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -85,7 +86,73 @@ public class NetworkApi {
   }
 
   /**
-   * List Identity Providers
+   * List Provider Contracts
+   * List the contracts for all Providers available to your App.              If your App is in test mode, this call will only return Providers available in test mode. If your App is not in test mode, this call will only return Providers available in production.
+   * @return ListProviderContractsResponse
+   * @throws ApiException if fails to make API call
+   */
+  public ListProviderContractsResponse listProviderContracts() throws ApiException {
+    ApiResponse<ListProviderContractsResponse> localVarResponse = listProviderContractsWithHttpInfo();
+    return localVarResponse.getData();
+  }
+
+  /**
+   * List Provider Contracts
+   * List the contracts for all Providers available to your App.              If your App is in test mode, this call will only return Providers available in test mode. If your App is not in test mode, this call will only return Providers available in production.
+   * @return ApiResponse&lt;ListProviderContractsResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ListProviderContractsResponse> listProviderContractsWithHttpInfo() throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listProviderContractsRequestBuilder();
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("listProviderContracts", localVarResponse);
+        }
+        return new ApiResponse<ListProviderContractsResponse>(
+          localVarResponse.statusCode(),
+          localVarResponse.headers().map(),
+          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<ListProviderContractsResponse>() {}) // closes the InputStream
+        );
+      } finally {
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder listProviderContractsRequestBuilder() throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/api/v1/network/providers/contracts";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * List Providers
    * List all identity providers available for use
    * @return ListProvidersResponse
    * @throws ApiException if fails to make API call
@@ -96,7 +163,7 @@ public class NetworkApi {
   }
 
   /**
-   * List Identity Providers
+   * List Providers
    * List all identity providers available for use
    * @return ApiResponse&lt;ListProvidersResponse&gt;
    * @throws ApiException if fails to make API call
