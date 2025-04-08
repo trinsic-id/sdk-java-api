@@ -72,7 +72,7 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:35:52.899758918Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
