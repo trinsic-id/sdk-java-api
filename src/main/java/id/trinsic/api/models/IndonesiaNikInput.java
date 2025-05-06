@@ -38,21 +38,24 @@ import id.trinsic.ApiClient;
   IndonesiaNikInput.JSON_PROPERTY_DATE_OF_BIRTH,
   IndonesiaNikInput.JSON_PROPERTY_NIK_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IndonesiaNikInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  @javax.annotation.Nonnull
   private String fullName;
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  @javax.annotation.Nonnull
   private LocalDate dateOfBirth;
 
   public static final String JSON_PROPERTY_NIK_ID_NUMBER = "nikIdNumber";
+  @javax.annotation.Nonnull
   private String nikIdNumber;
 
   public IndonesiaNikInput() { 
   }
 
-  public IndonesiaNikInput fullName(String fullName) {
+  public IndonesiaNikInput fullName(@javax.annotation.Nonnull String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -71,12 +74,12 @@ public class IndonesiaNikInput {
 
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nonnull String fullName) {
     this.fullName = fullName;
   }
 
 
-  public IndonesiaNikInput dateOfBirth(LocalDate dateOfBirth) {
+  public IndonesiaNikInput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -95,12 +98,12 @@ public class IndonesiaNikInput {
 
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public IndonesiaNikInput nikIdNumber(String nikIdNumber) {
+  public IndonesiaNikInput nikIdNumber(@javax.annotation.Nonnull String nikIdNumber) {
     this.nikIdNumber = nikIdNumber;
     return this;
   }
@@ -119,7 +122,7 @@ public class IndonesiaNikInput {
 
   @JsonProperty(JSON_PROPERTY_NIK_ID_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNikIdNumber(String nikIdNumber) {
+  public void setNikIdNumber(@javax.annotation.Nonnull String nikIdNumber) {
     this.nikIdNumber = nikIdNumber;
   }
 
@@ -202,17 +205,17 @@ public class IndonesiaNikInput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOfBirth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `nikIdNumber` to the URL query string
     if (getNikIdNumber() != null) {
-      joiner.add(String.format("%snikIdNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNikIdNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snikIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNikIdNumber()))));
     }
 
     return joiner.toString();

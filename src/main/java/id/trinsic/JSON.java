@@ -26,7 +26,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class JSON {
   private ObjectMapper mapper;
 
@@ -34,7 +34,7 @@ public class JSON {
     mapper = JsonMapper.builder()
         .serializationInclusion(JsonInclude.Include.NON_NULL)
         .disable(MapperFeature.ALLOW_COERCION_OF_SCALARS)
-        .enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+        .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
         .enable(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE)
         .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
         .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
@@ -82,7 +82,7 @@ public class JSON {
   /**
    * Helper class to register the discriminator mappings.
    */
-  @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+  @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
   private static class ClassDiscriminatorMapping {
     // The model class name.
     Class<?> modelClass;

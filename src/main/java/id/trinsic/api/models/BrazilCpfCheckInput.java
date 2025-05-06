@@ -35,15 +35,16 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   BrazilCpfCheckInput.JSON_PROPERTY_CPF_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BrazilCpfCheckInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
+  @javax.annotation.Nonnull
   private String cpfNumber;
 
   public BrazilCpfCheckInput() { 
   }
 
-  public BrazilCpfCheckInput cpfNumber(String cpfNumber) {
+  public BrazilCpfCheckInput cpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
     return this;
   }
@@ -62,7 +63,7 @@ public class BrazilCpfCheckInput {
 
   @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCpfNumber(String cpfNumber) {
+  public void setCpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
   }
 
@@ -141,7 +142,7 @@ public class BrazilCpfCheckInput {
 
     // add `cpfNumber` to the URL query string
     if (getCpfNumber() != null) {
-      joiner.add(String.format("%scpfNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCpfNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
     }
 
     return joiner.toString();

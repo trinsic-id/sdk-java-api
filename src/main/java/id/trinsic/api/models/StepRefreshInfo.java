@@ -38,21 +38,24 @@ import id.trinsic.ApiClient;
   StepRefreshInfo.JSON_PROPERTY_REFRESH_AFTER,
   StepRefreshInfo.JSON_PROPERTY_TIME_TO_LIVE_SECONDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class StepRefreshInfo {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expiresAt";
+  @javax.annotation.Nonnull
   private OffsetDateTime expiresAt;
 
   public static final String JSON_PROPERTY_REFRESH_AFTER = "refreshAfter";
+  @javax.annotation.Nonnull
   private OffsetDateTime refreshAfter;
 
   public static final String JSON_PROPERTY_TIME_TO_LIVE_SECONDS = "timeToLiveSeconds";
+  @javax.annotation.Nonnull
   private Integer timeToLiveSeconds;
 
   public StepRefreshInfo() { 
   }
 
-  public StepRefreshInfo expiresAt(OffsetDateTime expiresAt) {
+  public StepRefreshInfo expiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -71,12 +74,12 @@ public class StepRefreshInfo {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpiresAt(OffsetDateTime expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public StepRefreshInfo refreshAfter(OffsetDateTime refreshAfter) {
+  public StepRefreshInfo refreshAfter(@javax.annotation.Nonnull OffsetDateTime refreshAfter) {
     this.refreshAfter = refreshAfter;
     return this;
   }
@@ -95,12 +98,12 @@ public class StepRefreshInfo {
 
   @JsonProperty(JSON_PROPERTY_REFRESH_AFTER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRefreshAfter(OffsetDateTime refreshAfter) {
+  public void setRefreshAfter(@javax.annotation.Nonnull OffsetDateTime refreshAfter) {
     this.refreshAfter = refreshAfter;
   }
 
 
-  public StepRefreshInfo timeToLiveSeconds(Integer timeToLiveSeconds) {
+  public StepRefreshInfo timeToLiveSeconds(@javax.annotation.Nonnull Integer timeToLiveSeconds) {
     this.timeToLiveSeconds = timeToLiveSeconds;
     return this;
   }
@@ -119,7 +122,7 @@ public class StepRefreshInfo {
 
   @JsonProperty(JSON_PROPERTY_TIME_TO_LIVE_SECONDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTimeToLiveSeconds(Integer timeToLiveSeconds) {
+  public void setTimeToLiveSeconds(@javax.annotation.Nonnull Integer timeToLiveSeconds) {
     this.timeToLiveSeconds = timeToLiveSeconds;
   }
 
@@ -202,17 +205,17 @@ public class StepRefreshInfo {
 
     // add `expiresAt` to the URL query string
     if (getExpiresAt() != null) {
-      joiner.add(String.format("%sexpiresAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExpiresAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sexpiresAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpiresAt()))));
     }
 
     // add `refreshAfter` to the URL query string
     if (getRefreshAfter() != null) {
-      joiner.add(String.format("%srefreshAfter%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRefreshAfter()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%srefreshAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefreshAfter()))));
     }
 
     // add `timeToLiveSeconds` to the URL query string
     if (getTimeToLiveSeconds() != null) {
-      joiner.add(String.format("%stimeToLiveSeconds%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeToLiveSeconds()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeToLiveSeconds%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeToLiveSeconds()))));
     }
 
     return joiner.toString();

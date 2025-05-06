@@ -36,15 +36,16 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   CancelSessionResponse.JSON_PROPERTY_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CancelSessionResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
+  @javax.annotation.Nonnull
   private Session session;
 
   public CancelSessionResponse() { 
   }
 
-  public CancelSessionResponse session(Session session) {
+  public CancelSessionResponse session(@javax.annotation.Nonnull Session session) {
     this.session = session;
     return this;
   }
@@ -63,7 +64,7 @@ public class CancelSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSession(Session session) {
+  public void setSession(@javax.annotation.Nonnull Session session) {
     this.session = session;
   }
 

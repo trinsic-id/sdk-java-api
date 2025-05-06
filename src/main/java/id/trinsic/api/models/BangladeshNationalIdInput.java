@@ -43,7 +43,7 @@ import id.trinsic.ApiClient;
   BangladeshNationalIdInput.JSON_PROPERTY_NAME,
   BangladeshNationalIdInput.JSON_PROPERTY_PHOTO_BASE64
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BangladeshNationalIdInput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
   private JsonNullable<String> nationalIdNumber = JsonNullable.<String>undefined();
@@ -60,7 +60,7 @@ public class BangladeshNationalIdInput {
   public BangladeshNationalIdInput() { 
   }
 
-  public BangladeshNationalIdInput nationalIdNumber(String nationalIdNumber) {
+  public BangladeshNationalIdInput nationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
     this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
     return this;
   }
@@ -87,12 +87,12 @@ public class BangladeshNationalIdInput {
     this.nationalIdNumber = nationalIdNumber;
   }
 
-  public void setNationalIdNumber(String nationalIdNumber) {
+  public void setNationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
     this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
   }
 
 
-  public BangladeshNationalIdInput dateOfBirth(LocalDate dateOfBirth) {
+  public BangladeshNationalIdInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
@@ -119,12 +119,12 @@ public class BangladeshNationalIdInput {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
 
-  public BangladeshNationalIdInput name(String name) {
+  public BangladeshNationalIdInput name(@javax.annotation.Nullable String name) {
     this.name = JsonNullable.<String>of(name);
     return this;
   }
@@ -151,12 +151,12 @@ public class BangladeshNationalIdInput {
     this.name = name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = JsonNullable.<String>of(name);
   }
 
 
-  public BangladeshNationalIdInput photoBase64(String photoBase64) {
+  public BangladeshNationalIdInput photoBase64(@javax.annotation.Nullable String photoBase64) {
     this.photoBase64 = JsonNullable.<String>of(photoBase64);
     return this;
   }
@@ -183,7 +183,7 @@ public class BangladeshNationalIdInput {
     this.photoBase64 = photoBase64;
   }
 
-  public void setPhotoBase64(String photoBase64) {
+  public void setPhotoBase64(@javax.annotation.Nullable String photoBase64) {
     this.photoBase64 = JsonNullable.<String>of(photoBase64);
   }
 
@@ -279,22 +279,22 @@ public class BangladeshNationalIdInput {
 
     // add `nationalIdNumber` to the URL query string
     if (getNationalIdNumber() != null) {
-      joiner.add(String.format("%snationalIdNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNationalIdNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snationalIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalIdNumber()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOfBirth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `photoBase64` to the URL query string
     if (getPhotoBase64() != null) {
-      joiner.add(String.format("%sphotoBase64%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPhotoBase64()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sphotoBase64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhotoBase64()))));
     }
 
     return joiner.toString();

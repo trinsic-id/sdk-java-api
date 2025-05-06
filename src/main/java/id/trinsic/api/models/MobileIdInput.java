@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_NATIONAL_IDENTITY_NUMBER,
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_LANGUAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MobileIdInput {
   public static final String JSON_PROPERTY_MOBILE_ID_PHONE_NUMBER = "mobileIdPhoneNumber";
   private JsonNullable<String> mobileIdPhoneNumber = JsonNullable.<String>undefined();
@@ -56,7 +56,7 @@ public class MobileIdInput {
   public MobileIdInput() { 
   }
 
-  public MobileIdInput mobileIdPhoneNumber(String mobileIdPhoneNumber) {
+  public MobileIdInput mobileIdPhoneNumber(@javax.annotation.Nullable String mobileIdPhoneNumber) {
     this.mobileIdPhoneNumber = JsonNullable.<String>of(mobileIdPhoneNumber);
     return this;
   }
@@ -83,12 +83,12 @@ public class MobileIdInput {
     this.mobileIdPhoneNumber = mobileIdPhoneNumber;
   }
 
-  public void setMobileIdPhoneNumber(String mobileIdPhoneNumber) {
+  public void setMobileIdPhoneNumber(@javax.annotation.Nullable String mobileIdPhoneNumber) {
     this.mobileIdPhoneNumber = JsonNullable.<String>of(mobileIdPhoneNumber);
   }
 
 
-  public MobileIdInput mobileIdNationalIdentityNumber(String mobileIdNationalIdentityNumber) {
+  public MobileIdInput mobileIdNationalIdentityNumber(@javax.annotation.Nullable String mobileIdNationalIdentityNumber) {
     this.mobileIdNationalIdentityNumber = JsonNullable.<String>of(mobileIdNationalIdentityNumber);
     return this;
   }
@@ -115,12 +115,12 @@ public class MobileIdInput {
     this.mobileIdNationalIdentityNumber = mobileIdNationalIdentityNumber;
   }
 
-  public void setMobileIdNationalIdentityNumber(String mobileIdNationalIdentityNumber) {
+  public void setMobileIdNationalIdentityNumber(@javax.annotation.Nullable String mobileIdNationalIdentityNumber) {
     this.mobileIdNationalIdentityNumber = JsonNullable.<String>of(mobileIdNationalIdentityNumber);
   }
 
 
-  public MobileIdInput mobileIdLanguage(Language mobileIdLanguage) {
+  public MobileIdInput mobileIdLanguage(@javax.annotation.Nullable Language mobileIdLanguage) {
     this.mobileIdLanguage = JsonNullable.<Language>of(mobileIdLanguage);
     return this;
   }
@@ -147,7 +147,7 @@ public class MobileIdInput {
     this.mobileIdLanguage = mobileIdLanguage;
   }
 
-  public void setMobileIdLanguage(Language mobileIdLanguage) {
+  public void setMobileIdLanguage(@javax.annotation.Nullable Language mobileIdLanguage) {
     this.mobileIdLanguage = JsonNullable.<Language>of(mobileIdLanguage);
   }
 
@@ -241,17 +241,17 @@ public class MobileIdInput {
 
     // add `mobileIdPhoneNumber` to the URL query string
     if (getMobileIdPhoneNumber() != null) {
-      joiner.add(String.format("%smobileIdPhoneNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMobileIdPhoneNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smobileIdPhoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdPhoneNumber()))));
     }
 
     // add `mobileIdNationalIdentityNumber` to the URL query string
     if (getMobileIdNationalIdentityNumber() != null) {
-      joiner.add(String.format("%smobileIdNationalIdentityNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMobileIdNationalIdentityNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smobileIdNationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdNationalIdentityNumber()))));
     }
 
     // add `mobileIdLanguage` to the URL query string
     if (getMobileIdLanguage() != null) {
-      joiner.add(String.format("%smobileIdLanguage%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMobileIdLanguage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smobileIdLanguage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdLanguage()))));
     }
 
     return joiner.toString();

@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RefreshStepContentRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RefreshStepContentRequest {
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
   private JsonNullable<String> resultsAccessKey = JsonNullable.<String>undefined();
@@ -47,7 +47,7 @@ public class RefreshStepContentRequest {
   public RefreshStepContentRequest() { 
   }
 
-  public RefreshStepContentRequest resultsAccessKey(String resultsAccessKey) {
+  public RefreshStepContentRequest resultsAccessKey(@javax.annotation.Nullable String resultsAccessKey) {
     this.resultsAccessKey = JsonNullable.<String>of(resultsAccessKey);
     return this;
   }
@@ -74,7 +74,7 @@ public class RefreshStepContentRequest {
     this.resultsAccessKey = resultsAccessKey;
   }
 
-  public void setResultsAccessKey(String resultsAccessKey) {
+  public void setResultsAccessKey(@javax.annotation.Nullable String resultsAccessKey) {
     this.resultsAccessKey = JsonNullable.<String>of(resultsAccessKey);
   }
 
@@ -164,7 +164,7 @@ public class RefreshStepContentRequest {
 
     // add `resultsAccessKey` to the URL query string
     if (getResultsAccessKey() != null) {
-      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResultsAccessKey()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsAccessKey()))));
     }
 
     return joiner.toString();

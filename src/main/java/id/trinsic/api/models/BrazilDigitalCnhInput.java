@@ -42,9 +42,10 @@ import id.trinsic.ApiClient;
   BrazilDigitalCnhInput.JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE,
   BrazilDigitalCnhInput.JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BrazilDigitalCnhInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
+  @javax.annotation.Nonnull
   private String cpfNumber;
 
   public static final String JSON_PROPERTY_DIGITAL_CNH_FILE = "digitalCnhFile";
@@ -59,7 +60,7 @@ public class BrazilDigitalCnhInput {
   public BrazilDigitalCnhInput() { 
   }
 
-  public BrazilDigitalCnhInput cpfNumber(String cpfNumber) {
+  public BrazilDigitalCnhInput cpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
     return this;
   }
@@ -78,12 +79,12 @@ public class BrazilDigitalCnhInput {
 
   @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCpfNumber(String cpfNumber) {
+  public void setCpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
   }
 
 
-  public BrazilDigitalCnhInput digitalCnhFile(byte[] digitalCnhFile) {
+  public BrazilDigitalCnhInput digitalCnhFile(@javax.annotation.Nullable byte[] digitalCnhFile) {
     this.digitalCnhFile = JsonNullable.<byte[]>of(digitalCnhFile);
     return this;
   }
@@ -110,12 +111,12 @@ public class BrazilDigitalCnhInput {
     this.digitalCnhFile = digitalCnhFile;
   }
 
-  public void setDigitalCnhFile(byte[] digitalCnhFile) {
+  public void setDigitalCnhFile(@javax.annotation.Nullable byte[] digitalCnhFile) {
     this.digitalCnhFile = JsonNullable.<byte[]>of(digitalCnhFile);
   }
 
 
-  public BrazilDigitalCnhInput digitalCnhFileContentType(String digitalCnhFileContentType) {
+  public BrazilDigitalCnhInput digitalCnhFileContentType(@javax.annotation.Nullable String digitalCnhFileContentType) {
     this.digitalCnhFileContentType = JsonNullable.<String>of(digitalCnhFileContentType);
     return this;
   }
@@ -142,12 +143,12 @@ public class BrazilDigitalCnhInput {
     this.digitalCnhFileContentType = digitalCnhFileContentType;
   }
 
-  public void setDigitalCnhFileContentType(String digitalCnhFileContentType) {
+  public void setDigitalCnhFileContentType(@javax.annotation.Nullable String digitalCnhFileContentType) {
     this.digitalCnhFileContentType = JsonNullable.<String>of(digitalCnhFileContentType);
   }
 
 
-  public BrazilDigitalCnhInput facialBiometryPhoto(byte[] facialBiometryPhoto) {
+  public BrazilDigitalCnhInput facialBiometryPhoto(@javax.annotation.Nullable byte[] facialBiometryPhoto) {
     this.facialBiometryPhoto = JsonNullable.<byte[]>of(facialBiometryPhoto);
     return this;
   }
@@ -174,7 +175,7 @@ public class BrazilDigitalCnhInput {
     this.facialBiometryPhoto = facialBiometryPhoto;
   }
 
-  public void setFacialBiometryPhoto(byte[] facialBiometryPhoto) {
+  public void setFacialBiometryPhoto(@javax.annotation.Nullable byte[] facialBiometryPhoto) {
     this.facialBiometryPhoto = JsonNullable.<byte[]>of(facialBiometryPhoto);
   }
 
@@ -270,22 +271,22 @@ public class BrazilDigitalCnhInput {
 
     // add `cpfNumber` to the URL query string
     if (getCpfNumber() != null) {
-      joiner.add(String.format("%scpfNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCpfNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
     }
 
     // add `digitalCnhFile` to the URL query string
     if (getDigitalCnhFile() != null) {
-      joiner.add(String.format("%sdigitalCnhFile%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDigitalCnhFile()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdigitalCnhFile%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalCnhFile()))));
     }
 
     // add `digitalCnhFileContentType` to the URL query string
     if (getDigitalCnhFileContentType() != null) {
-      joiner.add(String.format("%sdigitalCnhFileContentType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDigitalCnhFileContentType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdigitalCnhFileContentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalCnhFileContentType()))));
     }
 
     // add `facialBiometryPhoto` to the URL query string
     if (getFacialBiometryPhoto() != null) {
-      joiner.add(String.format("%sfacialBiometryPhoto%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFacialBiometryPhoto()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfacialBiometryPhoto%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFacialBiometryPhoto()))));
     }
 
     return joiner.toString();

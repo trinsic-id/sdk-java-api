@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   PhilippineMatchInput.JSON_PROPERTY_SUFFIX,
   PhilippineMatchInput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PhilippineMatchInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -64,7 +64,7 @@ public class PhilippineMatchInput {
   public PhilippineMatchInput() { 
   }
 
-  public PhilippineMatchInput givenName(String givenName) {
+  public PhilippineMatchInput givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
@@ -91,12 +91,12 @@ public class PhilippineMatchInput {
     this.givenName = givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = JsonNullable.<String>of(givenName);
   }
 
 
-  public PhilippineMatchInput middleName(String middleName) {
+  public PhilippineMatchInput middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = JsonNullable.<String>of(middleName);
     return this;
   }
@@ -123,12 +123,12 @@ public class PhilippineMatchInput {
     this.middleName = middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = JsonNullable.<String>of(middleName);
   }
 
 
-  public PhilippineMatchInput familyName(String familyName) {
+  public PhilippineMatchInput familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
@@ -155,12 +155,12 @@ public class PhilippineMatchInput {
     this.familyName = familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
-  public PhilippineMatchInput suffix(String suffix) {
+  public PhilippineMatchInput suffix(@javax.annotation.Nullable String suffix) {
     this.suffix = JsonNullable.<String>of(suffix);
     return this;
   }
@@ -187,12 +187,12 @@ public class PhilippineMatchInput {
     this.suffix = suffix;
   }
 
-  public void setSuffix(String suffix) {
+  public void setSuffix(@javax.annotation.Nullable String suffix) {
     this.suffix = JsonNullable.<String>of(suffix);
   }
 
 
-  public PhilippineMatchInput dateOfBirth(LocalDate dateOfBirth) {
+  public PhilippineMatchInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
@@ -219,7 +219,7 @@ public class PhilippineMatchInput {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
@@ -317,27 +317,27 @@ public class PhilippineMatchInput {
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMiddleName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `suffix` to the URL query string
     if (getSuffix() != null) {
-      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSuffix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOfBirth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

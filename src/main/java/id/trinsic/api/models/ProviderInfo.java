@@ -37,21 +37,24 @@ import id.trinsic.ApiClient;
   ProviderInfo.JSON_PROPERTY_NAME,
   ProviderInfo.JSON_PROPERTY_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInfo {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
+  @javax.annotation.Nonnull
   private String logoUrl;
 
   public ProviderInfo() { 
   }
 
-  public ProviderInfo id(String id) {
+  public ProviderInfo id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -70,12 +73,12 @@ public class ProviderInfo {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ProviderInfo name(String name) {
+  public ProviderInfo name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -94,12 +97,12 @@ public class ProviderInfo {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ProviderInfo logoUrl(String logoUrl) {
+  public ProviderInfo logoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
     return this;
   }
@@ -118,7 +121,7 @@ public class ProviderInfo {
 
   @JsonProperty(JSON_PROPERTY_LOGO_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLogoUrl(String logoUrl) {
+  public void setLogoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
   }
 
@@ -201,17 +204,17 @@ public class ProviderInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
-      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLogoUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
     }
 
     return joiner.toString();

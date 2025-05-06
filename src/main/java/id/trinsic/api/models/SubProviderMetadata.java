@@ -38,24 +38,28 @@ import id.trinsic.ApiClient;
   SubProviderMetadata.JSON_PROPERTY_DESCRIPTION,
   SubProviderMetadata.JSON_PROPERTY_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SubProviderMetadata {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
+  @javax.annotation.Nonnull
   private String logoUrl;
 
   public SubProviderMetadata() { 
   }
 
-  public SubProviderMetadata id(String id) {
+  public SubProviderMetadata id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -74,12 +78,12 @@ public class SubProviderMetadata {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public SubProviderMetadata name(String name) {
+  public SubProviderMetadata name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -98,12 +102,12 @@ public class SubProviderMetadata {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SubProviderMetadata description(String description) {
+  public SubProviderMetadata description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
@@ -122,12 +126,12 @@ public class SubProviderMetadata {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public SubProviderMetadata logoUrl(String logoUrl) {
+  public SubProviderMetadata logoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
     return this;
   }
@@ -146,7 +150,7 @@ public class SubProviderMetadata {
 
   @JsonProperty(JSON_PROPERTY_LOGO_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLogoUrl(String logoUrl) {
+  public void setLogoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
   }
 
@@ -231,22 +235,22 @@ public class SubProviderMetadata {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
-      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLogoUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
     }
 
     return joiner.toString();

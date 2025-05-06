@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   TrinsicTestDatabaseLookupInput.JSON_PROPERTY_IDENTITY_CODE,
   TrinsicTestDatabaseLookupInput.JSON_PROPERTY_SELFIE_BASE64
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TrinsicTestDatabaseLookupInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -59,7 +59,7 @@ public class TrinsicTestDatabaseLookupInput {
   public TrinsicTestDatabaseLookupInput() { 
   }
 
-  public TrinsicTestDatabaseLookupInput givenName(String givenName) {
+  public TrinsicTestDatabaseLookupInput givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
@@ -86,12 +86,12 @@ public class TrinsicTestDatabaseLookupInput {
     this.givenName = givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = JsonNullable.<String>of(givenName);
   }
 
 
-  public TrinsicTestDatabaseLookupInput familyName(String familyName) {
+  public TrinsicTestDatabaseLookupInput familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
@@ -118,12 +118,12 @@ public class TrinsicTestDatabaseLookupInput {
     this.familyName = familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
-  public TrinsicTestDatabaseLookupInput identityCode(String identityCode) {
+  public TrinsicTestDatabaseLookupInput identityCode(@javax.annotation.Nullable String identityCode) {
     this.identityCode = JsonNullable.<String>of(identityCode);
     return this;
   }
@@ -150,12 +150,12 @@ public class TrinsicTestDatabaseLookupInput {
     this.identityCode = identityCode;
   }
 
-  public void setIdentityCode(String identityCode) {
+  public void setIdentityCode(@javax.annotation.Nullable String identityCode) {
     this.identityCode = JsonNullable.<String>of(identityCode);
   }
 
 
-  public TrinsicTestDatabaseLookupInput selfieBase64(String selfieBase64) {
+  public TrinsicTestDatabaseLookupInput selfieBase64(@javax.annotation.Nullable String selfieBase64) {
     this.selfieBase64 = JsonNullable.<String>of(selfieBase64);
     return this;
   }
@@ -182,7 +182,7 @@ public class TrinsicTestDatabaseLookupInput {
     this.selfieBase64 = selfieBase64;
   }
 
-  public void setSelfieBase64(String selfieBase64) {
+  public void setSelfieBase64(@javax.annotation.Nullable String selfieBase64) {
     this.selfieBase64 = JsonNullable.<String>of(selfieBase64);
   }
 
@@ -278,22 +278,22 @@ public class TrinsicTestDatabaseLookupInput {
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `identityCode` to the URL query string
     if (getIdentityCode() != null) {
-      joiner.add(String.format("%sidentityCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIdentityCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sidentityCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityCode()))));
     }
 
     // add `selfieBase64` to the URL query string
     if (getSelfieBase64() != null) {
-      joiner.add(String.format("%sselfieBase64%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSelfieBase64()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sselfieBase64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieBase64()))));
     }
 
     return joiner.toString();

@@ -47,9 +47,10 @@ import id.trinsic.ApiClient;
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_CAPABILITIES,
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAdvancedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
+  @javax.annotation.Nonnull
   private String provider;
 
   public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
@@ -59,6 +60,7 @@ public class CreateAdvancedProviderSessionRequest {
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CAPABILITIES = "capabilities";
+  @javax.annotation.Nonnull
   private List<IntegrationCapability> capabilities = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I = "fallbackToHostedUI";
@@ -67,7 +69,7 @@ public class CreateAdvancedProviderSessionRequest {
   public CreateAdvancedProviderSessionRequest() { 
   }
 
-  public CreateAdvancedProviderSessionRequest provider(String provider) {
+  public CreateAdvancedProviderSessionRequest provider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
     return this;
   }
@@ -86,12 +88,12 @@ public class CreateAdvancedProviderSessionRequest {
 
   @JsonProperty(JSON_PROPERTY_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProvider(String provider) {
+  public void setProvider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
   }
 
 
-  public CreateAdvancedProviderSessionRequest providerInput(ProviderInput providerInput) {
+  public CreateAdvancedProviderSessionRequest providerInput(@javax.annotation.Nullable ProviderInput providerInput) {
     this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
     return this;
   }
@@ -118,12 +120,12 @@ public class CreateAdvancedProviderSessionRequest {
     this.providerInput = providerInput;
   }
 
-  public void setProviderInput(ProviderInput providerInput) {
+  public void setProviderInput(@javax.annotation.Nullable ProviderInput providerInput) {
     this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
   }
 
 
-  public CreateAdvancedProviderSessionRequest redirectUrl(String redirectUrl) {
+  public CreateAdvancedProviderSessionRequest redirectUrl(@javax.annotation.Nullable String redirectUrl) {
     this.redirectUrl = JsonNullable.<String>of(redirectUrl);
     return this;
   }
@@ -150,12 +152,12 @@ public class CreateAdvancedProviderSessionRequest {
     this.redirectUrl = redirectUrl;
   }
 
-  public void setRedirectUrl(String redirectUrl) {
+  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
     this.redirectUrl = JsonNullable.<String>of(redirectUrl);
   }
 
 
-  public CreateAdvancedProviderSessionRequest capabilities(List<IntegrationCapability> capabilities) {
+  public CreateAdvancedProviderSessionRequest capabilities(@javax.annotation.Nonnull List<IntegrationCapability> capabilities) {
     this.capabilities = capabilities;
     return this;
   }
@@ -182,12 +184,12 @@ public class CreateAdvancedProviderSessionRequest {
 
   @JsonProperty(JSON_PROPERTY_CAPABILITIES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCapabilities(List<IntegrationCapability> capabilities) {
+  public void setCapabilities(@javax.annotation.Nonnull List<IntegrationCapability> capabilities) {
     this.capabilities = capabilities;
   }
 
 
-  public CreateAdvancedProviderSessionRequest fallbackToHostedUI(Boolean fallbackToHostedUI) {
+  public CreateAdvancedProviderSessionRequest fallbackToHostedUI(@javax.annotation.Nullable Boolean fallbackToHostedUI) {
     this.fallbackToHostedUI = JsonNullable.<Boolean>of(fallbackToHostedUI);
     return this;
   }
@@ -214,7 +216,7 @@ public class CreateAdvancedProviderSessionRequest {
     this.fallbackToHostedUI = fallbackToHostedUI;
   }
 
-  public void setFallbackToHostedUI(Boolean fallbackToHostedUI) {
+  public void setFallbackToHostedUI(@javax.annotation.Nullable Boolean fallbackToHostedUI) {
     this.fallbackToHostedUI = JsonNullable.<Boolean>of(fallbackToHostedUI);
   }
 
@@ -312,7 +314,7 @@ public class CreateAdvancedProviderSessionRequest {
 
     // add `provider` to the URL query string
     if (getProvider() != null) {
-      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
     }
 
     // add `providerInput` to the URL query string
@@ -322,7 +324,7 @@ public class CreateAdvancedProviderSessionRequest {
 
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
-      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRedirectUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
     }
 
     // add `capabilities` to the URL query string
@@ -331,14 +333,14 @@ public class CreateAdvancedProviderSessionRequest {
         if (getCapabilities().get(i) != null) {
           joiner.add(String.format("%scapabilities%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getCapabilities().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getCapabilities().get(i)))));
         }
       }
     }
 
     // add `fallbackToHostedUI` to the URL query string
     if (getFallbackToHostedUI() != null) {
-      joiner.add(String.format("%sfallbackToHostedUI%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFallbackToHostedUI()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfallbackToHostedUI%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFallbackToHostedUI()))));
     }
 
     return joiner.toString();

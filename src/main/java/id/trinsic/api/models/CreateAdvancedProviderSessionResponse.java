@@ -40,21 +40,24 @@ import id.trinsic.ApiClient;
   CreateAdvancedProviderSessionResponse.JSON_PROPERTY_RESULT_COLLECTION,
   CreateAdvancedProviderSessionResponse.JSON_PROPERTY_NEXT_STEP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAdvancedProviderSessionResponse {
   public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
+  @javax.annotation.Nonnull
   private UUID sessionId;
 
   public static final String JSON_PROPERTY_RESULT_COLLECTION = "resultCollection";
+  @javax.annotation.Nonnull
   private ResultCollection resultCollection;
 
   public static final String JSON_PROPERTY_NEXT_STEP = "nextStep";
+  @javax.annotation.Nonnull
   private IntegrationStep nextStep;
 
   public CreateAdvancedProviderSessionResponse() { 
   }
 
-  public CreateAdvancedProviderSessionResponse sessionId(UUID sessionId) {
+  public CreateAdvancedProviderSessionResponse sessionId(@javax.annotation.Nonnull UUID sessionId) {
     this.sessionId = sessionId;
     return this;
   }
@@ -73,12 +76,12 @@ public class CreateAdvancedProviderSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_SESSION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSessionId(UUID sessionId) {
+  public void setSessionId(@javax.annotation.Nonnull UUID sessionId) {
     this.sessionId = sessionId;
   }
 
 
-  public CreateAdvancedProviderSessionResponse resultCollection(ResultCollection resultCollection) {
+  public CreateAdvancedProviderSessionResponse resultCollection(@javax.annotation.Nonnull ResultCollection resultCollection) {
     this.resultCollection = resultCollection;
     return this;
   }
@@ -97,12 +100,12 @@ public class CreateAdvancedProviderSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_RESULT_COLLECTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setResultCollection(ResultCollection resultCollection) {
+  public void setResultCollection(@javax.annotation.Nonnull ResultCollection resultCollection) {
     this.resultCollection = resultCollection;
   }
 
 
-  public CreateAdvancedProviderSessionResponse nextStep(IntegrationStep nextStep) {
+  public CreateAdvancedProviderSessionResponse nextStep(@javax.annotation.Nonnull IntegrationStep nextStep) {
     this.nextStep = nextStep;
     return this;
   }
@@ -121,7 +124,7 @@ public class CreateAdvancedProviderSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_NEXT_STEP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNextStep(IntegrationStep nextStep) {
+  public void setNextStep(@javax.annotation.Nonnull IntegrationStep nextStep) {
     this.nextStep = nextStep;
   }
 
@@ -204,7 +207,7 @@ public class CreateAdvancedProviderSessionResponse {
 
     // add `sessionId` to the URL query string
     if (getSessionId() != null) {
-      joiner.add(String.format("%ssessionId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSessionId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssessionId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionId()))));
     }
 
     // add `resultCollection` to the URL query string

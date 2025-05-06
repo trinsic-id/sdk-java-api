@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   DocumentScanAttachments.JSON_PROPERTY_REPORT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DocumentScanAttachments {
   public static final String JSON_PROPERTY_REPORT = "report";
   private JsonNullable<String> report = JsonNullable.<String>undefined();
@@ -47,7 +47,7 @@ public class DocumentScanAttachments {
   public DocumentScanAttachments() { 
   }
 
-  public DocumentScanAttachments report(String report) {
+  public DocumentScanAttachments report(@javax.annotation.Nullable String report) {
     this.report = JsonNullable.<String>of(report);
     return this;
   }
@@ -74,7 +74,7 @@ public class DocumentScanAttachments {
     this.report = report;
   }
 
-  public void setReport(String report) {
+  public void setReport(@javax.annotation.Nullable String report) {
     this.report = JsonNullable.<String>of(report);
   }
 
@@ -164,7 +164,7 @@ public class DocumentScanAttachments {
 
     // add `report` to the URL query string
     if (getReport() != null) {
-      joiner.add(String.format("%sreport%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReport()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreport%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReport()))));
     }
 
     return joiner.toString();

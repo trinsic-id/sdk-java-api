@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   AadhaarInput.JSON_PROPERTY_FULL_NAME,
   AadhaarInput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AadhaarInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -52,7 +52,7 @@ public class AadhaarInput {
   public AadhaarInput() { 
   }
 
-  public AadhaarInput fullName(String fullName) {
+  public AadhaarInput fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
@@ -79,12 +79,12 @@ public class AadhaarInput {
     this.fullName = fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = JsonNullable.<String>of(fullName);
   }
 
 
-  public AadhaarInput dateOfBirth(LocalDate dateOfBirth) {
+  public AadhaarInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
@@ -111,7 +111,7 @@ public class AadhaarInput {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
@@ -203,12 +203,12 @@ public class AadhaarInput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOfBirth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

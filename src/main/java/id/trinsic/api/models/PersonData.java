@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   PersonData.JSON_PROPERTY_ADDRESS,
   PersonData.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PersonData {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -86,7 +86,7 @@ public class PersonData {
   public PersonData() { 
   }
 
-  public PersonData givenName(String givenName) {
+  public PersonData givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
@@ -113,12 +113,12 @@ public class PersonData {
     this.givenName = givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = JsonNullable.<String>of(givenName);
   }
 
 
-  public PersonData familyName(String familyName) {
+  public PersonData familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
@@ -145,12 +145,12 @@ public class PersonData {
     this.familyName = familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
-  public PersonData middleName(String middleName) {
+  public PersonData middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = JsonNullable.<String>of(middleName);
     return this;
   }
@@ -177,12 +177,12 @@ public class PersonData {
     this.middleName = middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = JsonNullable.<String>of(middleName);
   }
 
 
-  public PersonData fullName(String fullName) {
+  public PersonData fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
@@ -209,12 +209,12 @@ public class PersonData {
     this.fullName = fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = JsonNullable.<String>of(fullName);
   }
 
 
-  public PersonData suffix(String suffix) {
+  public PersonData suffix(@javax.annotation.Nullable String suffix) {
     this.suffix = JsonNullable.<String>of(suffix);
     return this;
   }
@@ -241,12 +241,12 @@ public class PersonData {
     this.suffix = suffix;
   }
 
-  public void setSuffix(String suffix) {
+  public void setSuffix(@javax.annotation.Nullable String suffix) {
     this.suffix = JsonNullable.<String>of(suffix);
   }
 
 
-  public PersonData nationality(String nationality) {
+  public PersonData nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = JsonNullable.<String>of(nationality);
     return this;
   }
@@ -273,12 +273,12 @@ public class PersonData {
     this.nationality = nationality;
   }
 
-  public void setNationality(String nationality) {
+  public void setNationality(@javax.annotation.Nullable String nationality) {
     this.nationality = JsonNullable.<String>of(nationality);
   }
 
 
-  public PersonData sex(Sex sex) {
+  public PersonData sex(@javax.annotation.Nullable Sex sex) {
     this.sex = JsonNullable.<Sex>of(sex);
     return this;
   }
@@ -305,12 +305,12 @@ public class PersonData {
     this.sex = sex;
   }
 
-  public void setSex(Sex sex) {
+  public void setSex(@javax.annotation.Nullable Sex sex) {
     this.sex = JsonNullable.<Sex>of(sex);
   }
 
 
-  public PersonData phoneNumber(String phoneNumber) {
+  public PersonData phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = JsonNullable.<String>of(phoneNumber);
     return this;
   }
@@ -337,12 +337,12 @@ public class PersonData {
     this.phoneNumber = phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = JsonNullable.<String>of(phoneNumber);
   }
 
 
-  public PersonData address(Address address) {
+  public PersonData address(@javax.annotation.Nullable Address address) {
     this.address = JsonNullable.<Address>of(address);
     return this;
   }
@@ -369,12 +369,12 @@ public class PersonData {
     this.address = address;
   }
 
-  public void setAddress(Address address) {
+  public void setAddress(@javax.annotation.Nullable Address address) {
     this.address = JsonNullable.<Address>of(address);
   }
 
 
-  public PersonData dateOfBirth(LocalDate dateOfBirth) {
+  public PersonData dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
@@ -401,7 +401,7 @@ public class PersonData {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
@@ -509,42 +509,42 @@ public class PersonData {
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMiddleName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `suffix` to the URL query string
     if (getSuffix() != null) {
-      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSuffix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
     }
 
     // add `nationality` to the URL query string
     if (getNationality() != null) {
-      joiner.add(String.format("%snationality%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNationality()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSex()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPhoneNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `address` to the URL query string
@@ -554,7 +554,7 @@ public class PersonData {
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOfBirth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

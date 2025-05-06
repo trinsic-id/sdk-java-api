@@ -38,21 +38,24 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionResponse.JSON_PROPERTY_LAUNCH_URL,
   CreateHostedProviderSessionResponse.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateHostedProviderSessionResponse {
   public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
+  @javax.annotation.Nonnull
   private UUID sessionId;
 
   public static final String JSON_PROPERTY_LAUNCH_URL = "launchUrl";
+  @javax.annotation.Nonnull
   private String launchUrl;
 
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
+  @javax.annotation.Nonnull
   private String resultsAccessKey;
 
   public CreateHostedProviderSessionResponse() { 
   }
 
-  public CreateHostedProviderSessionResponse sessionId(UUID sessionId) {
+  public CreateHostedProviderSessionResponse sessionId(@javax.annotation.Nonnull UUID sessionId) {
     this.sessionId = sessionId;
     return this;
   }
@@ -71,12 +74,12 @@ public class CreateHostedProviderSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_SESSION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSessionId(UUID sessionId) {
+  public void setSessionId(@javax.annotation.Nonnull UUID sessionId) {
     this.sessionId = sessionId;
   }
 
 
-  public CreateHostedProviderSessionResponse launchUrl(String launchUrl) {
+  public CreateHostedProviderSessionResponse launchUrl(@javax.annotation.Nonnull String launchUrl) {
     this.launchUrl = launchUrl;
     return this;
   }
@@ -95,12 +98,12 @@ public class CreateHostedProviderSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_LAUNCH_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLaunchUrl(String launchUrl) {
+  public void setLaunchUrl(@javax.annotation.Nonnull String launchUrl) {
     this.launchUrl = launchUrl;
   }
 
 
-  public CreateHostedProviderSessionResponse resultsAccessKey(String resultsAccessKey) {
+  public CreateHostedProviderSessionResponse resultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
     this.resultsAccessKey = resultsAccessKey;
     return this;
   }
@@ -119,7 +122,7 @@ public class CreateHostedProviderSessionResponse {
 
   @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setResultsAccessKey(String resultsAccessKey) {
+  public void setResultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
     this.resultsAccessKey = resultsAccessKey;
   }
 
@@ -202,17 +205,17 @@ public class CreateHostedProviderSessionResponse {
 
     // add `sessionId` to the URL query string
     if (getSessionId() != null) {
-      joiner.add(String.format("%ssessionId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSessionId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssessionId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionId()))));
     }
 
     // add `launchUrl` to the URL query string
     if (getLaunchUrl() != null) {
-      joiner.add(String.format("%slaunchUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLaunchUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slaunchUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLaunchUrl()))));
     }
 
     // add `resultsAccessKey` to the URL query string
     if (getResultsAccessKey() != null) {
-      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResultsAccessKey()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsAccessKey()))));
     }
 
     return joiner.toString();

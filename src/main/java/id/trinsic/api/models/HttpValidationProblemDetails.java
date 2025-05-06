@@ -47,7 +47,7 @@ import id.trinsic.ApiClient;
   HttpValidationProblemDetails.JSON_PROPERTY_INSTANCE,
   HttpValidationProblemDetails.JSON_PROPERTY_ERRORS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class HttpValidationProblemDetails {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
@@ -65,12 +65,13 @@ public class HttpValidationProblemDetails {
   private JsonNullable<String> instance = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
+  @javax.annotation.Nullable
   private Map<String, List<String>> errors = new HashMap<>();
 
   public HttpValidationProblemDetails() { 
   }
 
-  public HttpValidationProblemDetails type(String type) {
+  public HttpValidationProblemDetails type(@javax.annotation.Nullable String type) {
     this.type = JsonNullable.<String>of(type);
     return this;
   }
@@ -97,12 +98,12 @@ public class HttpValidationProblemDetails {
     this.type = type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = JsonNullable.<String>of(type);
   }
 
 
-  public HttpValidationProblemDetails title(String title) {
+  public HttpValidationProblemDetails title(@javax.annotation.Nullable String title) {
     this.title = JsonNullable.<String>of(title);
     return this;
   }
@@ -129,12 +130,12 @@ public class HttpValidationProblemDetails {
     this.title = title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = JsonNullable.<String>of(title);
   }
 
 
-  public HttpValidationProblemDetails status(Integer status) {
+  public HttpValidationProblemDetails status(@javax.annotation.Nullable Integer status) {
     this.status = JsonNullable.<Integer>of(status);
     return this;
   }
@@ -161,12 +162,12 @@ public class HttpValidationProblemDetails {
     this.status = status;
   }
 
-  public void setStatus(Integer status) {
+  public void setStatus(@javax.annotation.Nullable Integer status) {
     this.status = JsonNullable.<Integer>of(status);
   }
 
 
-  public HttpValidationProblemDetails detail(String detail) {
+  public HttpValidationProblemDetails detail(@javax.annotation.Nullable String detail) {
     this.detail = JsonNullable.<String>of(detail);
     return this;
   }
@@ -193,12 +194,12 @@ public class HttpValidationProblemDetails {
     this.detail = detail;
   }
 
-  public void setDetail(String detail) {
+  public void setDetail(@javax.annotation.Nullable String detail) {
     this.detail = JsonNullable.<String>of(detail);
   }
 
 
-  public HttpValidationProblemDetails instance(String instance) {
+  public HttpValidationProblemDetails instance(@javax.annotation.Nullable String instance) {
     this.instance = JsonNullable.<String>of(instance);
     return this;
   }
@@ -225,12 +226,12 @@ public class HttpValidationProblemDetails {
     this.instance = instance;
   }
 
-  public void setInstance(String instance) {
+  public void setInstance(@javax.annotation.Nullable String instance) {
     this.instance = JsonNullable.<String>of(instance);
   }
 
 
-  public HttpValidationProblemDetails errors(Map<String, List<String>> errors) {
+  public HttpValidationProblemDetails errors(@javax.annotation.Nullable Map<String, List<String>> errors) {
     this.errors = errors;
     return this;
   }
@@ -257,7 +258,7 @@ public class HttpValidationProblemDetails {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setErrors(Map<String, List<String>> errors) {
+  public void setErrors(@javax.annotation.Nullable Map<String, List<String>> errors) {
     this.errors = errors;
   }
 
@@ -357,27 +358,27 @@ public class HttpValidationProblemDetails {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `detail` to the URL query string
     if (getDetail() != null) {
-      joiner.add(String.format("%sdetail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDetail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdetail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDetail()))));
     }
 
     // add `instance` to the URL query string
     if (getInstance() != null) {
-      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInstance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInstance()))));
     }
 
     // add `errors` to the URL query string
@@ -385,7 +386,7 @@ public class HttpValidationProblemDetails {
       for (String _key : getErrors().keySet()) {
         joiner.add(String.format("%serrors%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getErrors().get(_key), URLEncoder.encode(ApiClient.valueToString(getErrors().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getErrors().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getErrors().get(_key)))));
       }
     }
 

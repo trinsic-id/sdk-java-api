@@ -51,6 +51,7 @@ docs/PhilippineQRInput.md
 docs/ProblemDetails.md
 docs/ProviderAttachments.md
 docs/ProviderContract.md
+docs/ProviderHealth.md
 docs/ProviderInfo.md
 docs/ProviderInformation.md
 docs/ProviderInput.md
@@ -73,6 +74,7 @@ docs/StepRefreshInfo.md
 docs/SubProviderMetadata.md
 docs/TrinsicTestDatabaseLookupInput.md
 docs/TrinsicTestSubProvidersInput.md
+docs/WellKnownApi.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -89,11 +91,14 @@ src/main/java/id/trinsic/Configuration.java
 src/main/java/id/trinsic/JSON.java
 src/main/java/id/trinsic/Pair.java
 src/main/java/id/trinsic/RFC3339DateFormat.java
+src/main/java/id/trinsic/RFC3339InstantDeserializer.java
+src/main/java/id/trinsic/RFC3339JavaTimeModule.java
 src/main/java/id/trinsic/ServerConfiguration.java
 src/main/java/id/trinsic/ServerVariable.java
 src/main/java/id/trinsic/api/AttachmentsApi.java
 src/main/java/id/trinsic/api/NetworkApi.java
 src/main/java/id/trinsic/api/SessionsApi.java
+src/main/java/id/trinsic/api/WellKnownApi.java
 src/main/java/id/trinsic/api/models/AadhaarInput.java
 src/main/java/id/trinsic/api/models/AbstractOpenApiSchema.java
 src/main/java/id/trinsic/api/models/Address.java
@@ -138,6 +143,7 @@ src/main/java/id/trinsic/api/models/PhilippineQRInput.java
 src/main/java/id/trinsic/api/models/ProblemDetails.java
 src/main/java/id/trinsic/api/models/ProviderAttachments.java
 src/main/java/id/trinsic/api/models/ProviderContract.java
+src/main/java/id/trinsic/api/models/ProviderHealth.java
 src/main/java/id/trinsic/api/models/ProviderInfo.java
 src/main/java/id/trinsic/api/models/ProviderInformation.java
 src/main/java/id/trinsic/api/models/ProviderInput.java
@@ -162,6 +168,7 @@ src/main/java/id/trinsic/api/models/TrinsicTestSubProvidersInput.java
 src/test/java/id/trinsic/api/AttachmentsApiTest.java
 src/test/java/id/trinsic/api/NetworkApiTest.java
 src/test/java/id/trinsic/api/SessionsApiTest.java
+src/test/java/id/trinsic/api/WellKnownApiTest.java
 src/test/java/id/trinsic/api/models/AadhaarInputTest.java
 src/test/java/id/trinsic/api/models/AddressTest.java
 src/test/java/id/trinsic/api/models/AttachmentAccessKeysTest.java
@@ -205,6 +212,7 @@ src/test/java/id/trinsic/api/models/PhilippineQRInputTest.java
 src/test/java/id/trinsic/api/models/ProblemDetailsTest.java
 src/test/java/id/trinsic/api/models/ProviderAttachmentsTest.java
 src/test/java/id/trinsic/api/models/ProviderContractTest.java
+src/test/java/id/trinsic/api/models/ProviderHealthTest.java
 src/test/java/id/trinsic/api/models/ProviderInfoTest.java
 src/test/java/id/trinsic/api/models/ProviderInformationTest.java
 src/test/java/id/trinsic/api/models/ProviderInputTest.java

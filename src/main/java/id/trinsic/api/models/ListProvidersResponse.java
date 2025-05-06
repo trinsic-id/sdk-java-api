@@ -38,15 +38,16 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ListProvidersResponse.JSON_PROPERTY_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ListProvidersResponse {
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
+  @javax.annotation.Nonnull
   private List<ProviderInfo> providers = new ArrayList<>();
 
   public ListProvidersResponse() { 
   }
 
-  public ListProvidersResponse providers(List<ProviderInfo> providers) {
+  public ListProvidersResponse providers(@javax.annotation.Nonnull List<ProviderInfo> providers) {
     this.providers = providers;
     return this;
   }
@@ -73,7 +74,7 @@ public class ListProvidersResponse {
 
   @JsonProperty(JSON_PROPERTY_PROVIDERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProviders(List<ProviderInfo> providers) {
+  public void setProviders(@javax.annotation.Nonnull List<ProviderInfo> providers) {
     this.providers = providers;
   }
 

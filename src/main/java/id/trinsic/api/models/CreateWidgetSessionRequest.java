@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   CreateWidgetSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateWidgetSessionRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateWidgetSessionRequest {
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
@@ -58,7 +58,7 @@ public class CreateWidgetSessionRequest {
   public CreateWidgetSessionRequest() { 
   }
 
-  public CreateWidgetSessionRequest redirectUrl(String redirectUrl) {
+  public CreateWidgetSessionRequest redirectUrl(@javax.annotation.Nullable String redirectUrl) {
     this.redirectUrl = JsonNullable.<String>of(redirectUrl);
     return this;
   }
@@ -85,12 +85,12 @@ public class CreateWidgetSessionRequest {
     this.redirectUrl = redirectUrl;
   }
 
-  public void setRedirectUrl(String redirectUrl) {
+  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
     this.redirectUrl = JsonNullable.<String>of(redirectUrl);
   }
 
 
-  public CreateWidgetSessionRequest providers(List<String> providers) {
+  public CreateWidgetSessionRequest providers(@javax.annotation.Nullable List<String> providers) {
     this.providers = JsonNullable.<List<String>>of(providers);
     return this;
   }
@@ -129,12 +129,12 @@ public class CreateWidgetSessionRequest {
     this.providers = providers;
   }
 
-  public void setProviders(List<String> providers) {
+  public void setProviders(@javax.annotation.Nullable List<String> providers) {
     this.providers = JsonNullable.<List<String>>of(providers);
   }
 
 
-  public CreateWidgetSessionRequest recommendationInfo(RecommendationInfo recommendationInfo) {
+  public CreateWidgetSessionRequest recommendationInfo(@javax.annotation.Nullable RecommendationInfo recommendationInfo) {
     this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
     return this;
   }
@@ -161,7 +161,7 @@ public class CreateWidgetSessionRequest {
     this.recommendationInfo = recommendationInfo;
   }
 
-  public void setRecommendationInfo(RecommendationInfo recommendationInfo) {
+  public void setRecommendationInfo(@javax.annotation.Nullable RecommendationInfo recommendationInfo) {
     this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
   }
 
@@ -255,7 +255,7 @@ public class CreateWidgetSessionRequest {
 
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
-      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRedirectUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
     }
 
     // add `providers` to the URL query string
@@ -263,7 +263,7 @@ public class CreateWidgetSessionRequest {
       for (int i = 0; i < getProviders().size(); i++) {
         joiner.add(String.format("%sproviders%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getProviders().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getProviders().get(i)))));
       }
     }
 

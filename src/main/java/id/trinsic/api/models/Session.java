@@ -45,30 +45,35 @@ import id.trinsic.ApiClient;
   Session.JSON_PROPERTY_CREATED,
   Session.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Session {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_DONE = "done";
+  @javax.annotation.Nonnull
   private Boolean done;
 
   public static final String JSON_PROPERTY_SUCCESS = "success";
+  @javax.annotation.Nonnull
   private Boolean success;
 
   public static final String JSON_PROPERTY_ERROR_CODE = "errorCode";
   private JsonNullable<SessionErrorCode> errorCode = JsonNullable.<SessionErrorCode>undefined();
 
   public static final String JSON_PROPERTY_CREATED = "created";
+  @javax.annotation.Nonnull
   private Long created;
 
   public static final String JSON_PROPERTY_UPDATED = "updated";
+  @javax.annotation.Nonnull
   private Long updated;
 
   public Session() { 
   }
 
-  public Session id(String id) {
+  public Session id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -87,12 +92,12 @@ public class Session {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Session done(Boolean done) {
+  public Session done(@javax.annotation.Nonnull Boolean done) {
     this.done = done;
     return this;
   }
@@ -111,12 +116,12 @@ public class Session {
 
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDone(Boolean done) {
+  public void setDone(@javax.annotation.Nonnull Boolean done) {
     this.done = done;
   }
 
 
-  public Session success(Boolean success) {
+  public Session success(@javax.annotation.Nonnull Boolean success) {
     this.success = success;
     return this;
   }
@@ -135,12 +140,12 @@ public class Session {
 
   @JsonProperty(JSON_PROPERTY_SUCCESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSuccess(Boolean success) {
+  public void setSuccess(@javax.annotation.Nonnull Boolean success) {
     this.success = success;
   }
 
 
-  public Session errorCode(SessionErrorCode errorCode) {
+  public Session errorCode(@javax.annotation.Nullable SessionErrorCode errorCode) {
     this.errorCode = JsonNullable.<SessionErrorCode>of(errorCode);
     return this;
   }
@@ -167,12 +172,12 @@ public class Session {
     this.errorCode = errorCode;
   }
 
-  public void setErrorCode(SessionErrorCode errorCode) {
+  public void setErrorCode(@javax.annotation.Nullable SessionErrorCode errorCode) {
     this.errorCode = JsonNullable.<SessionErrorCode>of(errorCode);
   }
 
 
-  public Session created(Long created) {
+  public Session created(@javax.annotation.Nonnull Long created) {
     this.created = created;
     return this;
   }
@@ -191,12 +196,12 @@ public class Session {
 
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreated(Long created) {
+  public void setCreated(@javax.annotation.Nonnull Long created) {
     this.created = created;
   }
 
 
-  public Session updated(Long updated) {
+  public Session updated(@javax.annotation.Nonnull Long updated) {
     this.updated = updated;
     return this;
   }
@@ -215,7 +220,7 @@ public class Session {
 
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUpdated(Long updated) {
+  public void setUpdated(@javax.annotation.Nonnull Long updated) {
     this.updated = updated;
   }
 
@@ -315,32 +320,32 @@ public class Session {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `done` to the URL query string
     if (getDone() != null) {
-      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDone()))));
     }
 
     // add `success` to the URL query string
     if (getSuccess() != null) {
-      joiner.add(String.format("%ssuccess%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSuccess()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssuccess%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuccess()))));
     }
 
     // add `errorCode` to the URL query string
     if (getErrorCode() != null) {
-      joiner.add(String.format("%serrorCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getErrorCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%serrorCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getErrorCode()))));
     }
 
     // add `created` to the URL query string
     if (getCreated() != null) {
-      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreated()))));
     }
 
     // add `updated` to the URL query string
     if (getUpdated() != null) {
-      joiner.add(String.format("%supdated%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUpdated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%supdated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUpdated()))));
     }
 
     return joiner.toString();

@@ -40,21 +40,24 @@ import id.trinsic.ApiClient;
   RecommendResponse.JSON_PROPERTY_RELEVANT,
   RecommendResponse.JSON_PROPERTY_REMAINDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendResponse {
   public static final String JSON_PROPERTY_RECOGNIZED = "recognized";
+  @javax.annotation.Nonnull
   private List<ProviderInformation> recognized = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RELEVANT = "relevant";
+  @javax.annotation.Nonnull
   private List<ProviderInformation> relevant = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REMAINDER = "remainder";
+  @javax.annotation.Nonnull
   private List<ProviderInformation> remainder = new ArrayList<>();
 
   public RecommendResponse() { 
   }
 
-  public RecommendResponse recognized(List<ProviderInformation> recognized) {
+  public RecommendResponse recognized(@javax.annotation.Nonnull List<ProviderInformation> recognized) {
     this.recognized = recognized;
     return this;
   }
@@ -81,12 +84,12 @@ public class RecommendResponse {
 
   @JsonProperty(JSON_PROPERTY_RECOGNIZED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRecognized(List<ProviderInformation> recognized) {
+  public void setRecognized(@javax.annotation.Nonnull List<ProviderInformation> recognized) {
     this.recognized = recognized;
   }
 
 
-  public RecommendResponse relevant(List<ProviderInformation> relevant) {
+  public RecommendResponse relevant(@javax.annotation.Nonnull List<ProviderInformation> relevant) {
     this.relevant = relevant;
     return this;
   }
@@ -113,12 +116,12 @@ public class RecommendResponse {
 
   @JsonProperty(JSON_PROPERTY_RELEVANT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRelevant(List<ProviderInformation> relevant) {
+  public void setRelevant(@javax.annotation.Nonnull List<ProviderInformation> relevant) {
     this.relevant = relevant;
   }
 
 
-  public RecommendResponse remainder(List<ProviderInformation> remainder) {
+  public RecommendResponse remainder(@javax.annotation.Nonnull List<ProviderInformation> remainder) {
     this.remainder = remainder;
     return this;
   }
@@ -145,7 +148,7 @@ public class RecommendResponse {
 
   @JsonProperty(JSON_PROPERTY_REMAINDER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRemainder(List<ProviderInformation> remainder) {
+  public void setRemainder(@javax.annotation.Nonnull List<ProviderInformation> remainder) {
     this.remainder = remainder;
   }
 

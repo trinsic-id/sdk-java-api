@@ -35,15 +35,16 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   MexicoCurpInput.JSON_PROPERTY_CURP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MexicoCurpInput {
   public static final String JSON_PROPERTY_CURP = "curp";
+  @javax.annotation.Nonnull
   private String curp;
 
   public MexicoCurpInput() { 
   }
 
-  public MexicoCurpInput curp(String curp) {
+  public MexicoCurpInput curp(@javax.annotation.Nonnull String curp) {
     this.curp = curp;
     return this;
   }
@@ -62,7 +63,7 @@ public class MexicoCurpInput {
 
   @JsonProperty(JSON_PROPERTY_CURP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurp(String curp) {
+  public void setCurp(@javax.annotation.Nonnull String curp) {
     this.curp = curp;
   }
 
@@ -141,7 +142,7 @@ public class MexicoCurpInput {
 
     // add `curp` to the URL query string
     if (getCurp() != null) {
-      joiner.add(String.format("%scurp%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCurp()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scurp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCurp()))));
     }
 
     return joiner.toString();

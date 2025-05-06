@@ -35,15 +35,16 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   GetAttachmentRequest.JSON_PROPERTY_ATTACHMENT_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetAttachmentRequest {
   public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEY = "attachmentAccessKey";
+  @javax.annotation.Nonnull
   private String attachmentAccessKey;
 
   public GetAttachmentRequest() { 
   }
 
-  public GetAttachmentRequest attachmentAccessKey(String attachmentAccessKey) {
+  public GetAttachmentRequest attachmentAccessKey(@javax.annotation.Nonnull String attachmentAccessKey) {
     this.attachmentAccessKey = attachmentAccessKey;
     return this;
   }
@@ -62,7 +63,7 @@ public class GetAttachmentRequest {
 
   @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAttachmentAccessKey(String attachmentAccessKey) {
+  public void setAttachmentAccessKey(@javax.annotation.Nonnull String attachmentAccessKey) {
     this.attachmentAccessKey = attachmentAccessKey;
   }
 
@@ -141,7 +142,7 @@ public class GetAttachmentRequest {
 
     // add `attachmentAccessKey` to the URL query string
     if (getAttachmentAccessKey() != null) {
-      joiner.add(String.format("%sattachmentAccessKey%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAttachmentAccessKey()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sattachmentAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAttachmentAccessKey()))));
     }
 
     return joiner.toString();

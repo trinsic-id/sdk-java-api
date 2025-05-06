@@ -36,15 +36,16 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RefreshStepContentResponse.JSON_PROPERTY_NEXT_STEP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RefreshStepContentResponse {
   public static final String JSON_PROPERTY_NEXT_STEP = "nextStep";
+  @javax.annotation.Nonnull
   private IntegrationStep nextStep;
 
   public RefreshStepContentResponse() { 
   }
 
-  public RefreshStepContentResponse nextStep(IntegrationStep nextStep) {
+  public RefreshStepContentResponse nextStep(@javax.annotation.Nonnull IntegrationStep nextStep) {
     this.nextStep = nextStep;
     return this;
   }
@@ -63,7 +64,7 @@ public class RefreshStepContentResponse {
 
   @JsonProperty(JSON_PROPERTY_NEXT_STEP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNextStep(IntegrationStep nextStep) {
+  public void setNextStep(@javax.annotation.Nonnull IntegrationStep nextStep) {
     this.nextStep = nextStep;
   }
 

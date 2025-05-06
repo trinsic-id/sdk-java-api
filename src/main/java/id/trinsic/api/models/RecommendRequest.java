@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RecommendRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendRequest {
   public static final String JSON_PROPERTY_RECOMMENDATION_INFO = "recommendationInfo";
   private JsonNullable<RecommendationInfo> recommendationInfo = JsonNullable.<RecommendationInfo>undefined();
@@ -48,7 +48,7 @@ public class RecommendRequest {
   public RecommendRequest() { 
   }
 
-  public RecommendRequest recommendationInfo(RecommendationInfo recommendationInfo) {
+  public RecommendRequest recommendationInfo(@javax.annotation.Nullable RecommendationInfo recommendationInfo) {
     this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
     return this;
   }
@@ -75,7 +75,7 @@ public class RecommendRequest {
     this.recommendationInfo = recommendationInfo;
   }
 
-  public void setRecommendationInfo(RecommendationInfo recommendationInfo) {
+  public void setRecommendationInfo(@javax.annotation.Nullable RecommendationInfo recommendationInfo) {
     this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
   }
 

@@ -37,15 +37,18 @@ import id.trinsic.ApiClient;
   ProviderInformation.JSON_PROPERTY_PROVIDER_DISPLAY_NAME,
   ProviderInformation.JSON_PROPERTY_PROVIDER_LOGO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInformation {
   public static final String JSON_PROPERTY_PROVIDER_ID = "providerId";
+  @javax.annotation.Nonnull
   private String providerId;
 
   public static final String JSON_PROPERTY_PROVIDER_DISPLAY_NAME = "providerDisplayName";
+  @javax.annotation.Nonnull
   private String providerDisplayName;
 
   public static final String JSON_PROPERTY_PROVIDER_LOGO = "providerLogo";
+  @javax.annotation.Nonnull
   private String providerLogo;
 
   public ProviderInformation() { 
@@ -183,17 +186,17 @@ public class ProviderInformation {
 
     // add `providerId` to the URL query string
     if (getProviderId() != null) {
-      joiner.add(String.format("%sproviderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProviderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sproviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProviderId()))));
     }
 
     // add `providerDisplayName` to the URL query string
     if (getProviderDisplayName() != null) {
-      joiner.add(String.format("%sproviderDisplayName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProviderDisplayName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sproviderDisplayName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProviderDisplayName()))));
     }
 
     // add `providerLogo` to the URL query string
     if (getProviderLogo() != null) {
-      joiner.add(String.format("%sproviderLogo%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProviderLogo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sproviderLogo%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProviderLogo()))));
     }
 
     return joiner.toString();

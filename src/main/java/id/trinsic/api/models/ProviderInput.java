@@ -72,7 +72,7 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
@@ -128,7 +128,7 @@ public class ProviderInput {
   public ProviderInput() { 
   }
 
-  public ProviderInput indonesiaNik(IndonesiaNikInput indonesiaNik) {
+  public ProviderInput indonesiaNik(@javax.annotation.Nullable IndonesiaNikInput indonesiaNik) {
     this.indonesiaNik = JsonNullable.<IndonesiaNikInput>of(indonesiaNik);
     return this;
   }
@@ -155,12 +155,12 @@ public class ProviderInput {
     this.indonesiaNik = indonesiaNik;
   }
 
-  public void setIndonesiaNik(IndonesiaNikInput indonesiaNik) {
+  public void setIndonesiaNik(@javax.annotation.Nullable IndonesiaNikInput indonesiaNik) {
     this.indonesiaNik = JsonNullable.<IndonesiaNikInput>of(indonesiaNik);
   }
 
 
-  public ProviderInput mexicoCurp(MexicoCurpInput mexicoCurp) {
+  public ProviderInput mexicoCurp(@javax.annotation.Nullable MexicoCurpInput mexicoCurp) {
     this.mexicoCurp = JsonNullable.<MexicoCurpInput>of(mexicoCurp);
     return this;
   }
@@ -187,12 +187,12 @@ public class ProviderInput {
     this.mexicoCurp = mexicoCurp;
   }
 
-  public void setMexicoCurp(MexicoCurpInput mexicoCurp) {
+  public void setMexicoCurp(@javax.annotation.Nullable MexicoCurpInput mexicoCurp) {
     this.mexicoCurp = JsonNullable.<MexicoCurpInput>of(mexicoCurp);
   }
 
 
-  public ProviderInput southAfricaNid(SouthAfricaNidInput southAfricaNid) {
+  public ProviderInput southAfricaNid(@javax.annotation.Nullable SouthAfricaNidInput southAfricaNid) {
     this.southAfricaNid = JsonNullable.<SouthAfricaNidInput>of(southAfricaNid);
     return this;
   }
@@ -219,12 +219,12 @@ public class ProviderInput {
     this.southAfricaNid = southAfricaNid;
   }
 
-  public void setSouthAfricaNid(SouthAfricaNidInput southAfricaNid) {
+  public void setSouthAfricaNid(@javax.annotation.Nullable SouthAfricaNidInput southAfricaNid) {
     this.southAfricaNid = JsonNullable.<SouthAfricaNidInput>of(southAfricaNid);
   }
 
 
-  public ProviderInput kenyaNid(KenyaNidInput kenyaNid) {
+  public ProviderInput kenyaNid(@javax.annotation.Nullable KenyaNidInput kenyaNid) {
     this.kenyaNid = JsonNullable.<KenyaNidInput>of(kenyaNid);
     return this;
   }
@@ -251,12 +251,12 @@ public class ProviderInput {
     this.kenyaNid = kenyaNid;
   }
 
-  public void setKenyaNid(KenyaNidInput kenyaNid) {
+  public void setKenyaNid(@javax.annotation.Nullable KenyaNidInput kenyaNid) {
     this.kenyaNid = JsonNullable.<KenyaNidInput>of(kenyaNid);
   }
 
 
-  public ProviderInput nigeriaNin(NigeriaNinInput nigeriaNin) {
+  public ProviderInput nigeriaNin(@javax.annotation.Nullable NigeriaNinInput nigeriaNin) {
     this.nigeriaNin = JsonNullable.<NigeriaNinInput>of(nigeriaNin);
     return this;
   }
@@ -283,12 +283,12 @@ public class ProviderInput {
     this.nigeriaNin = nigeriaNin;
   }
 
-  public void setNigeriaNin(NigeriaNinInput nigeriaNin) {
+  public void setNigeriaNin(@javax.annotation.Nullable NigeriaNinInput nigeriaNin) {
     this.nigeriaNin = JsonNullable.<NigeriaNinInput>of(nigeriaNin);
   }
 
 
-  public ProviderInput aadhaar(AadhaarInput aadhaar) {
+  public ProviderInput aadhaar(@javax.annotation.Nullable AadhaarInput aadhaar) {
     this.aadhaar = JsonNullable.<AadhaarInput>of(aadhaar);
     return this;
   }
@@ -315,12 +315,12 @@ public class ProviderInput {
     this.aadhaar = aadhaar;
   }
 
-  public void setAadhaar(AadhaarInput aadhaar) {
+  public void setAadhaar(@javax.annotation.Nullable AadhaarInput aadhaar) {
     this.aadhaar = JsonNullable.<AadhaarInput>of(aadhaar);
   }
 
 
-  public ProviderInput bangladeshNationalId(BangladeshNationalIdInput bangladeshNationalId) {
+  public ProviderInput bangladeshNationalId(@javax.annotation.Nullable BangladeshNationalIdInput bangladeshNationalId) {
     this.bangladeshNationalId = JsonNullable.<BangladeshNationalIdInput>of(bangladeshNationalId);
     return this;
   }
@@ -347,12 +347,12 @@ public class ProviderInput {
     this.bangladeshNationalId = bangladeshNationalId;
   }
 
-  public void setBangladeshNationalId(BangladeshNationalIdInput bangladeshNationalId) {
+  public void setBangladeshNationalId(@javax.annotation.Nullable BangladeshNationalIdInput bangladeshNationalId) {
     this.bangladeshNationalId = JsonNullable.<BangladeshNationalIdInput>of(bangladeshNationalId);
   }
 
 
-  public ProviderInput brazilCpfCheck(BrazilCpfCheckInput brazilCpfCheck) {
+  public ProviderInput brazilCpfCheck(@javax.annotation.Nullable BrazilCpfCheckInput brazilCpfCheck) {
     this.brazilCpfCheck = JsonNullable.<BrazilCpfCheckInput>of(brazilCpfCheck);
     return this;
   }
@@ -379,12 +379,12 @@ public class ProviderInput {
     this.brazilCpfCheck = brazilCpfCheck;
   }
 
-  public void setBrazilCpfCheck(BrazilCpfCheckInput brazilCpfCheck) {
+  public void setBrazilCpfCheck(@javax.annotation.Nullable BrazilCpfCheckInput brazilCpfCheck) {
     this.brazilCpfCheck = JsonNullable.<BrazilCpfCheckInput>of(brazilCpfCheck);
   }
 
 
-  public ProviderInput brazilDigitalCnh(BrazilDigitalCnhInput brazilDigitalCnh) {
+  public ProviderInput brazilDigitalCnh(@javax.annotation.Nullable BrazilDigitalCnhInput brazilDigitalCnh) {
     this.brazilDigitalCnh = JsonNullable.<BrazilDigitalCnhInput>of(brazilDigitalCnh);
     return this;
   }
@@ -411,12 +411,12 @@ public class ProviderInput {
     this.brazilDigitalCnh = brazilDigitalCnh;
   }
 
-  public void setBrazilDigitalCnh(BrazilDigitalCnhInput brazilDigitalCnh) {
+  public void setBrazilDigitalCnh(@javax.annotation.Nullable BrazilDigitalCnhInput brazilDigitalCnh) {
     this.brazilDigitalCnh = JsonNullable.<BrazilDigitalCnhInput>of(brazilDigitalCnh);
   }
 
 
-  public ProviderInput philippineMatch(PhilippineMatchInput philippineMatch) {
+  public ProviderInput philippineMatch(@javax.annotation.Nullable PhilippineMatchInput philippineMatch) {
     this.philippineMatch = JsonNullable.<PhilippineMatchInput>of(philippineMatch);
     return this;
   }
@@ -443,12 +443,12 @@ public class ProviderInput {
     this.philippineMatch = philippineMatch;
   }
 
-  public void setPhilippineMatch(PhilippineMatchInput philippineMatch) {
+  public void setPhilippineMatch(@javax.annotation.Nullable PhilippineMatchInput philippineMatch) {
     this.philippineMatch = JsonNullable.<PhilippineMatchInput>of(philippineMatch);
   }
 
 
-  public ProviderInput philippineQR(PhilippineQRInput philippineQR) {
+  public ProviderInput philippineQR(@javax.annotation.Nullable PhilippineQRInput philippineQR) {
     this.philippineQR = JsonNullable.<PhilippineQRInput>of(philippineQR);
     return this;
   }
@@ -475,12 +475,12 @@ public class ProviderInput {
     this.philippineQR = philippineQR;
   }
 
-  public void setPhilippineQR(PhilippineQRInput philippineQR) {
+  public void setPhilippineQR(@javax.annotation.Nullable PhilippineQRInput philippineQR) {
     this.philippineQR = JsonNullable.<PhilippineQRInput>of(philippineQR);
   }
 
 
-  public ProviderInput smartId(SmartIdInput smartId) {
+  public ProviderInput smartId(@javax.annotation.Nullable SmartIdInput smartId) {
     this.smartId = JsonNullable.<SmartIdInput>of(smartId);
     return this;
   }
@@ -507,12 +507,12 @@ public class ProviderInput {
     this.smartId = smartId;
   }
 
-  public void setSmartId(SmartIdInput smartId) {
+  public void setSmartId(@javax.annotation.Nullable SmartIdInput smartId) {
     this.smartId = JsonNullable.<SmartIdInput>of(smartId);
   }
 
 
-  public ProviderInput mobileId(MobileIdInput mobileId) {
+  public ProviderInput mobileId(@javax.annotation.Nullable MobileIdInput mobileId) {
     this.mobileId = JsonNullable.<MobileIdInput>of(mobileId);
     return this;
   }
@@ -539,12 +539,12 @@ public class ProviderInput {
     this.mobileId = mobileId;
   }
 
-  public void setMobileId(MobileIdInput mobileId) {
+  public void setMobileId(@javax.annotation.Nullable MobileIdInput mobileId) {
     this.mobileId = JsonNullable.<MobileIdInput>of(mobileId);
   }
 
 
-  public ProviderInput idin(IdinInput idin) {
+  public ProviderInput idin(@javax.annotation.Nullable IdinInput idin) {
     this.idin = JsonNullable.<IdinInput>of(idin);
     return this;
   }
@@ -571,12 +571,12 @@ public class ProviderInput {
     this.idin = idin;
   }
 
-  public void setIdin(IdinInput idin) {
+  public void setIdin(@javax.annotation.Nullable IdinInput idin) {
     this.idin = JsonNullable.<IdinInput>of(idin);
   }
 
 
-  public ProviderInput spid(SpidInput spid) {
+  public ProviderInput spid(@javax.annotation.Nullable SpidInput spid) {
     this.spid = JsonNullable.<SpidInput>of(spid);
     return this;
   }
@@ -603,12 +603,12 @@ public class ProviderInput {
     this.spid = spid;
   }
 
-  public void setSpid(SpidInput spid) {
+  public void setSpid(@javax.annotation.Nullable SpidInput spid) {
     this.spid = JsonNullable.<SpidInput>of(spid);
   }
 
 
-  public ProviderInput trinsicTestDatabaseLookup(TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
+  public ProviderInput trinsicTestDatabaseLookup(@javax.annotation.Nullable TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
     this.trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>of(trinsicTestDatabaseLookup);
     return this;
   }
@@ -635,12 +635,12 @@ public class ProviderInput {
     this.trinsicTestDatabaseLookup = trinsicTestDatabaseLookup;
   }
 
-  public void setTrinsicTestDatabaseLookup(TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
+  public void setTrinsicTestDatabaseLookup(@javax.annotation.Nullable TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
     this.trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>of(trinsicTestDatabaseLookup);
   }
 
 
-  public ProviderInput trinsicTestSubProviders(TrinsicTestSubProvidersInput trinsicTestSubProviders) {
+  public ProviderInput trinsicTestSubProviders(@javax.annotation.Nullable TrinsicTestSubProvidersInput trinsicTestSubProviders) {
     this.trinsicTestSubProviders = JsonNullable.<TrinsicTestSubProvidersInput>of(trinsicTestSubProviders);
     return this;
   }
@@ -667,7 +667,7 @@ public class ProviderInput {
     this.trinsicTestSubProviders = trinsicTestSubProviders;
   }
 
-  public void setTrinsicTestSubProviders(TrinsicTestSubProvidersInput trinsicTestSubProviders) {
+  public void setTrinsicTestSubProviders(@javax.annotation.Nullable TrinsicTestSubProvidersInput trinsicTestSubProviders) {
     this.trinsicTestSubProviders = JsonNullable.<TrinsicTestSubProvidersInput>of(trinsicTestSubProviders);
   }
 

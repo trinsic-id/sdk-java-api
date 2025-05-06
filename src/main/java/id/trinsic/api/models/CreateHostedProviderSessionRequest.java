@@ -42,12 +42,14 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
+  @javax.annotation.Nonnull
   private String provider;
 
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
+  @javax.annotation.Nonnull
   private String redirectUrl;
 
   public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
@@ -56,7 +58,7 @@ public class CreateHostedProviderSessionRequest {
   public CreateHostedProviderSessionRequest() { 
   }
 
-  public CreateHostedProviderSessionRequest provider(String provider) {
+  public CreateHostedProviderSessionRequest provider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
     return this;
   }
@@ -75,12 +77,12 @@ public class CreateHostedProviderSessionRequest {
 
   @JsonProperty(JSON_PROPERTY_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProvider(String provider) {
+  public void setProvider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
   }
 
 
-  public CreateHostedProviderSessionRequest redirectUrl(String redirectUrl) {
+  public CreateHostedProviderSessionRequest redirectUrl(@javax.annotation.Nonnull String redirectUrl) {
     this.redirectUrl = redirectUrl;
     return this;
   }
@@ -99,12 +101,12 @@ public class CreateHostedProviderSessionRequest {
 
   @JsonProperty(JSON_PROPERTY_REDIRECT_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRedirectUrl(String redirectUrl) {
+  public void setRedirectUrl(@javax.annotation.Nonnull String redirectUrl) {
     this.redirectUrl = redirectUrl;
   }
 
 
-  public CreateHostedProviderSessionRequest providerInput(ProviderInput providerInput) {
+  public CreateHostedProviderSessionRequest providerInput(@javax.annotation.Nullable ProviderInput providerInput) {
     this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
     return this;
   }
@@ -131,7 +133,7 @@ public class CreateHostedProviderSessionRequest {
     this.providerInput = providerInput;
   }
 
-  public void setProviderInput(ProviderInput providerInput) {
+  public void setProviderInput(@javax.annotation.Nullable ProviderInput providerInput) {
     this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
   }
 
@@ -225,12 +227,12 @@ public class CreateHostedProviderSessionRequest {
 
     // add `provider` to the URL query string
     if (getProvider() != null) {
-      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
     }
 
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
-      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRedirectUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
     }
 
     // add `providerInput` to the URL query string

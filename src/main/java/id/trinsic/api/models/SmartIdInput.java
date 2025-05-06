@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   SmartIdInput.JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SmartIdInput {
   public static final String JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER = "smartIdDocumentNumber";
   private JsonNullable<String> smartIdDocumentNumber = JsonNullable.<String>undefined();
@@ -47,7 +47,7 @@ public class SmartIdInput {
   public SmartIdInput() { 
   }
 
-  public SmartIdInput smartIdDocumentNumber(String smartIdDocumentNumber) {
+  public SmartIdInput smartIdDocumentNumber(@javax.annotation.Nullable String smartIdDocumentNumber) {
     this.smartIdDocumentNumber = JsonNullable.<String>of(smartIdDocumentNumber);
     return this;
   }
@@ -74,7 +74,7 @@ public class SmartIdInput {
     this.smartIdDocumentNumber = smartIdDocumentNumber;
   }
 
-  public void setSmartIdDocumentNumber(String smartIdDocumentNumber) {
+  public void setSmartIdDocumentNumber(@javax.annotation.Nullable String smartIdDocumentNumber) {
     this.smartIdDocumentNumber = JsonNullable.<String>of(smartIdDocumentNumber);
   }
 
@@ -164,7 +164,7 @@ public class SmartIdInput {
 
     // add `smartIdDocumentNumber` to the URL query string
     if (getSmartIdDocumentNumber() != null) {
-      joiner.add(String.format("%ssmartIdDocumentNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSmartIdDocumentNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssmartIdDocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSmartIdDocumentNumber()))));
     }
 
     return joiner.toString();

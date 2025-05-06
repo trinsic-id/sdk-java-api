@@ -39,24 +39,28 @@ import id.trinsic.ApiClient;
   SouthAfricaNidInput.JSON_PROPERTY_GENDER,
   SouthAfricaNidInput.JSON_PROPERTY_NATIONAL_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SouthAfricaNidInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  @javax.annotation.Nonnull
   private String fullName;
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  @javax.annotation.Nonnull
   private LocalDate dateOfBirth;
 
   public static final String JSON_PROPERTY_GENDER = "gender";
+  @javax.annotation.Nonnull
   private String gender;
 
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
+  @javax.annotation.Nonnull
   private String nationalIdNumber;
 
   public SouthAfricaNidInput() { 
   }
 
-  public SouthAfricaNidInput fullName(String fullName) {
+  public SouthAfricaNidInput fullName(@javax.annotation.Nonnull String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -75,12 +79,12 @@ public class SouthAfricaNidInput {
 
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nonnull String fullName) {
     this.fullName = fullName;
   }
 
 
-  public SouthAfricaNidInput dateOfBirth(LocalDate dateOfBirth) {
+  public SouthAfricaNidInput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -99,12 +103,12 @@ public class SouthAfricaNidInput {
 
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public SouthAfricaNidInput gender(String gender) {
+  public SouthAfricaNidInput gender(@javax.annotation.Nonnull String gender) {
     this.gender = gender;
     return this;
   }
@@ -123,12 +127,12 @@ public class SouthAfricaNidInput {
 
   @JsonProperty(JSON_PROPERTY_GENDER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nonnull String gender) {
     this.gender = gender;
   }
 
 
-  public SouthAfricaNidInput nationalIdNumber(String nationalIdNumber) {
+  public SouthAfricaNidInput nationalIdNumber(@javax.annotation.Nonnull String nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
     return this;
   }
@@ -147,7 +151,7 @@ public class SouthAfricaNidInput {
 
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdNumber(String nationalIdNumber) {
+  public void setNationalIdNumber(@javax.annotation.Nonnull String nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
@@ -232,22 +236,22 @@ public class SouthAfricaNidInput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOfBirth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `gender` to the URL query string
     if (getGender() != null) {
-      joiner.add(String.format("%sgender%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGender()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
     }
 
     // add `nationalIdNumber` to the URL query string
     if (getNationalIdNumber() != null) {
-      joiner.add(String.format("%snationalIdNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNationalIdNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snationalIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalIdNumber()))));
     }
 
     return joiner.toString();

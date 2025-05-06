@@ -36,18 +36,20 @@ import id.trinsic.ApiClient;
   GetAttachmentResponse.JSON_PROPERTY_CONTENT,
   GetAttachmentResponse.JSON_PROPERTY_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetAttachmentResponse {
   public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nonnull
   private byte[] content;
 
   public static final String JSON_PROPERTY_CONTENT_TYPE = "contentType";
+  @javax.annotation.Nonnull
   private String contentType;
 
   public GetAttachmentResponse() { 
   }
 
-  public GetAttachmentResponse content(byte[] content) {
+  public GetAttachmentResponse content(@javax.annotation.Nonnull byte[] content) {
     this.content = content;
     return this;
   }
@@ -66,12 +68,12 @@ public class GetAttachmentResponse {
 
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setContent(byte[] content) {
+  public void setContent(@javax.annotation.Nonnull byte[] content) {
     this.content = content;
   }
 
 
-  public GetAttachmentResponse contentType(String contentType) {
+  public GetAttachmentResponse contentType(@javax.annotation.Nonnull String contentType) {
     this.contentType = contentType;
     return this;
   }
@@ -90,7 +92,7 @@ public class GetAttachmentResponse {
 
   @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setContentType(String contentType) {
+  public void setContentType(@javax.annotation.Nonnull String contentType) {
     this.contentType = contentType;
   }
 
@@ -171,12 +173,12 @@ public class GetAttachmentResponse {
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
     }
 
     // add `contentType` to the URL query string
     if (getContentType() != null) {
-      joiner.add(String.format("%scontentType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContentType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContentType()))));
     }
 
     return joiner.toString();

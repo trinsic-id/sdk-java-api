@@ -27,6 +27,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.StepRefreshInfo;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -39,21 +43,23 @@ import id.trinsic.ApiClient;
   IntegrationStep.JSON_PROPERTY_CONTENT,
   IntegrationStep.JSON_PROPERTY_REFRESH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IntegrationStep {
   public static final String JSON_PROPERTY_METHOD = "method";
+  @javax.annotation.Nonnull
   private IntegrationLaunchMethod method;
 
   public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nonnull
   private String content;
 
   public static final String JSON_PROPERTY_REFRESH = "refresh";
-  private StepRefreshInfo refresh;
+  private JsonNullable<StepRefreshInfo> refresh = JsonNullable.<StepRefreshInfo>undefined();
 
   public IntegrationStep() { 
   }
 
-  public IntegrationStep method(IntegrationLaunchMethod method) {
+  public IntegrationStep method(@javax.annotation.Nonnull IntegrationLaunchMethod method) {
     this.method = method;
     return this;
   }
@@ -72,12 +78,12 @@ public class IntegrationStep {
 
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMethod(IntegrationLaunchMethod method) {
+  public void setMethod(@javax.annotation.Nonnull IntegrationLaunchMethod method) {
     this.method = method;
   }
 
 
-  public IntegrationStep content(String content) {
+  public IntegrationStep content(@javax.annotation.Nonnull String content) {
     this.content = content;
     return this;
   }
@@ -96,13 +102,13 @@ public class IntegrationStep {
 
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nonnull String content) {
     this.content = content;
   }
 
 
-  public IntegrationStep refresh(StepRefreshInfo refresh) {
-    this.refresh = refresh;
+  public IntegrationStep refresh(@javax.annotation.Nullable StepRefreshInfo refresh) {
+    this.refresh = JsonNullable.<StepRefreshInfo>of(refresh);
     return this;
   }
 
@@ -111,17 +117,25 @@ public class IntegrationStep {
    * @return refresh
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFRESH)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonIgnore
   public StepRefreshInfo getRefresh() {
-    return refresh;
+        return refresh.orElse(null);
   }
 
-
   @JsonProperty(JSON_PROPERTY_REFRESH)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRefresh(StepRefreshInfo refresh) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<StepRefreshInfo> getRefresh_JsonNullable() {
+    return refresh;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REFRESH)
+  public void setRefresh_JsonNullable(JsonNullable<StepRefreshInfo> refresh) {
     this.refresh = refresh;
+  }
+
+  public void setRefresh(@javax.annotation.Nullable StepRefreshInfo refresh) {
+    this.refresh = JsonNullable.<StepRefreshInfo>of(refresh);
   }
 
 
@@ -139,12 +153,23 @@ public class IntegrationStep {
     IntegrationStep integrationStep = (IntegrationStep) o;
     return Objects.equals(this.method, integrationStep.method) &&
         Objects.equals(this.content, integrationStep.content) &&
-        Objects.equals(this.refresh, integrationStep.refresh);
+        equalsNullable(this.refresh, integrationStep.refresh);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(method, content, refresh);
+    return Objects.hash(method, content, hashCodeNullable(refresh));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -203,12 +228,12 @@ public class IntegrationStep {
 
     // add `method` to the URL query string
     if (getMethod() != null) {
-      joiner.add(String.format("%smethod%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMethod()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMethod()))));
     }
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
     }
 
     // add `refresh` to the URL query string

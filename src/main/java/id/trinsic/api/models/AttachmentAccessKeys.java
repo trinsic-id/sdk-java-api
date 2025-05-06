@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_PORTRAIT,
   AttachmentAccessKeys.JSON_PROPERTY_PROVIDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AttachmentAccessKeys {
   public static final String JSON_PROPERTY_SELFIE = "selfie";
   private JsonNullable<String> selfie = JsonNullable.<String>undefined();
@@ -59,12 +59,13 @@ public class AttachmentAccessKeys {
   private JsonNullable<String> documentPortrait = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PROVIDER = "provider";
+  @javax.annotation.Nonnull
   private ProviderAttachments provider;
 
   public AttachmentAccessKeys() { 
   }
 
-  public AttachmentAccessKeys selfie(String selfie) {
+  public AttachmentAccessKeys selfie(@javax.annotation.Nullable String selfie) {
     this.selfie = JsonNullable.<String>of(selfie);
     return this;
   }
@@ -91,12 +92,12 @@ public class AttachmentAccessKeys {
     this.selfie = selfie;
   }
 
-  public void setSelfie(String selfie) {
+  public void setSelfie(@javax.annotation.Nullable String selfie) {
     this.selfie = JsonNullable.<String>of(selfie);
   }
 
 
-  public AttachmentAccessKeys documentFront(String documentFront) {
+  public AttachmentAccessKeys documentFront(@javax.annotation.Nullable String documentFront) {
     this.documentFront = JsonNullable.<String>of(documentFront);
     return this;
   }
@@ -123,12 +124,12 @@ public class AttachmentAccessKeys {
     this.documentFront = documentFront;
   }
 
-  public void setDocumentFront(String documentFront) {
+  public void setDocumentFront(@javax.annotation.Nullable String documentFront) {
     this.documentFront = JsonNullable.<String>of(documentFront);
   }
 
 
-  public AttachmentAccessKeys documentBack(String documentBack) {
+  public AttachmentAccessKeys documentBack(@javax.annotation.Nullable String documentBack) {
     this.documentBack = JsonNullable.<String>of(documentBack);
     return this;
   }
@@ -155,12 +156,12 @@ public class AttachmentAccessKeys {
     this.documentBack = documentBack;
   }
 
-  public void setDocumentBack(String documentBack) {
+  public void setDocumentBack(@javax.annotation.Nullable String documentBack) {
     this.documentBack = JsonNullable.<String>of(documentBack);
   }
 
 
-  public AttachmentAccessKeys documentPortrait(String documentPortrait) {
+  public AttachmentAccessKeys documentPortrait(@javax.annotation.Nullable String documentPortrait) {
     this.documentPortrait = JsonNullable.<String>of(documentPortrait);
     return this;
   }
@@ -187,12 +188,12 @@ public class AttachmentAccessKeys {
     this.documentPortrait = documentPortrait;
   }
 
-  public void setDocumentPortrait(String documentPortrait) {
+  public void setDocumentPortrait(@javax.annotation.Nullable String documentPortrait) {
     this.documentPortrait = JsonNullable.<String>of(documentPortrait);
   }
 
 
-  public AttachmentAccessKeys provider(ProviderAttachments provider) {
+  public AttachmentAccessKeys provider(@javax.annotation.Nonnull ProviderAttachments provider) {
     this.provider = provider;
     return this;
   }
@@ -211,7 +212,7 @@ public class AttachmentAccessKeys {
 
   @JsonProperty(JSON_PROPERTY_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProvider(ProviderAttachments provider) {
+  public void setProvider(@javax.annotation.Nonnull ProviderAttachments provider) {
     this.provider = provider;
   }
 
@@ -309,22 +310,22 @@ public class AttachmentAccessKeys {
 
     // add `selfie` to the URL query string
     if (getSelfie() != null) {
-      joiner.add(String.format("%sselfie%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSelfie()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sselfie%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfie()))));
     }
 
     // add `documentFront` to the URL query string
     if (getDocumentFront() != null) {
-      joiner.add(String.format("%sdocumentFront%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDocumentFront()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdocumentFront%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentFront()))));
     }
 
     // add `documentBack` to the URL query string
     if (getDocumentBack() != null) {
-      joiner.add(String.format("%sdocumentBack%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDocumentBack()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdocumentBack%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentBack()))));
     }
 
     // add `documentPortrait` to the URL query string
     if (getDocumentPortrait() != null) {
-      joiner.add(String.format("%sdocumentPortrait%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDocumentPortrait()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdocumentPortrait%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentPortrait()))));
     }
 
     // add `provider` to the URL query string

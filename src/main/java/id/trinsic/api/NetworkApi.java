@@ -15,6 +15,7 @@ package id.trinsic.api;
 import id.trinsic.ApiClient;
 import id.trinsic.ApiException;
 import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
 import id.trinsic.Pair;
 
 import id.trinsic.api.models.ListProviderContractsResponse;
@@ -48,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NetworkApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -59,7 +60,7 @@ public class NetworkApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public NetworkApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public NetworkApi(ApiClient apiClient) {
@@ -115,10 +116,21 @@ public class NetworkApi {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("listProviderContracts", localVarResponse);
         }
+        if (localVarResponse.body() == null) {
+          return new ApiResponse<ListProviderContractsResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        String responseBody = new String(localVarResponse.body().readAllBytes());
+        localVarResponse.body().close();
+
         return new ApiResponse<ListProviderContractsResponse>(
-          localVarResponse.statusCode(),
-          localVarResponse.headers().map(),
-          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<ListProviderContractsResponse>() {}) // closes the InputStream
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ListProviderContractsResponse>() {})
         );
       } finally {
       }
@@ -181,10 +193,21 @@ public class NetworkApi {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("listProviders", localVarResponse);
         }
+        if (localVarResponse.body() == null) {
+          return new ApiResponse<ListProvidersResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        String responseBody = new String(localVarResponse.body().readAllBytes());
+        localVarResponse.body().close();
+
         return new ApiResponse<ListProvidersResponse>(
-          localVarResponse.statusCode(),
-          localVarResponse.headers().map(),
-          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<ListProvidersResponse>() {}) // closes the InputStream
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ListProvidersResponse>() {})
         );
       } finally {
       }
@@ -224,7 +247,7 @@ public class NetworkApi {
    * @return RecommendResponse
    * @throws ApiException if fails to make API call
    */
-  public RecommendResponse recommendProviders(RecommendRequest recommendRequest) throws ApiException {
+  public RecommendResponse recommendProviders(@javax.annotation.Nullable RecommendRequest recommendRequest) throws ApiException {
     ApiResponse<RecommendResponse> localVarResponse = recommendProvidersWithHttpInfo(recommendRequest);
     return localVarResponse.getData();
   }
@@ -236,7 +259,7 @@ public class NetworkApi {
    * @return ApiResponse&lt;RecommendResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RecommendResponse> recommendProvidersWithHttpInfo(RecommendRequest recommendRequest) throws ApiException {
+  public ApiResponse<RecommendResponse> recommendProvidersWithHttpInfo(@javax.annotation.Nullable RecommendRequest recommendRequest) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = recommendProvidersRequestBuilder(recommendRequest);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -249,10 +272,21 @@ public class NetworkApi {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("recommendProviders", localVarResponse);
         }
+        if (localVarResponse.body() == null) {
+          return new ApiResponse<RecommendResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        String responseBody = new String(localVarResponse.body().readAllBytes());
+        localVarResponse.body().close();
+
         return new ApiResponse<RecommendResponse>(
-          localVarResponse.statusCode(),
-          localVarResponse.headers().map(),
-          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<RecommendResponse>() {}) // closes the InputStream
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RecommendResponse>() {})
         );
       } finally {
       }
@@ -265,7 +299,7 @@ public class NetworkApi {
     }
   }
 
-  private HttpRequest.Builder recommendProvidersRequestBuilder(RecommendRequest recommendRequest) throws ApiException {
+  private HttpRequest.Builder recommendProvidersRequestBuilder(@javax.annotation.Nullable RecommendRequest recommendRequest) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

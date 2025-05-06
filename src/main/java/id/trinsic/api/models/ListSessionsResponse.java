@@ -40,21 +40,24 @@ import id.trinsic.ApiClient;
   ListSessionsResponse.JSON_PROPERTY_TOTAL,
   ListSessionsResponse.JSON_PROPERTY_MORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ListSessionsResponse {
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
+  @javax.annotation.Nonnull
   private List<Session> sessions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TOTAL = "total";
+  @javax.annotation.Nonnull
   private Integer total;
 
   public static final String JSON_PROPERTY_MORE = "more";
+  @javax.annotation.Nonnull
   private Boolean more;
 
   public ListSessionsResponse() { 
   }
 
-  public ListSessionsResponse sessions(List<Session> sessions) {
+  public ListSessionsResponse sessions(@javax.annotation.Nonnull List<Session> sessions) {
     this.sessions = sessions;
     return this;
   }
@@ -81,12 +84,12 @@ public class ListSessionsResponse {
 
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSessions(List<Session> sessions) {
+  public void setSessions(@javax.annotation.Nonnull List<Session> sessions) {
     this.sessions = sessions;
   }
 
 
-  public ListSessionsResponse total(Integer total) {
+  public ListSessionsResponse total(@javax.annotation.Nonnull Integer total) {
     this.total = total;
     return this;
   }
@@ -105,12 +108,12 @@ public class ListSessionsResponse {
 
   @JsonProperty(JSON_PROPERTY_TOTAL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTotal(Integer total) {
+  public void setTotal(@javax.annotation.Nonnull Integer total) {
     this.total = total;
   }
 
 
-  public ListSessionsResponse more(Boolean more) {
+  public ListSessionsResponse more(@javax.annotation.Nonnull Boolean more) {
     this.more = more;
     return this;
   }
@@ -129,7 +132,7 @@ public class ListSessionsResponse {
 
   @JsonProperty(JSON_PROPERTY_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMore(Boolean more) {
+  public void setMore(@javax.annotation.Nonnull Boolean more) {
     this.more = more;
   }
 
@@ -222,12 +225,12 @@ public class ListSessionsResponse {
 
     // add `total` to the URL query string
     if (getTotal() != null) {
-      joiner.add(String.format("%stotal%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTotal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stotal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotal()))));
     }
 
     // add `more` to the URL query string
     if (getMore() != null) {
-      joiner.add(String.format("%smore%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMore()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMore()))));
     }
 
     return joiner.toString();

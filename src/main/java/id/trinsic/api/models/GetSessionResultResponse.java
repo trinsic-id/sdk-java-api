@@ -42,9 +42,10 @@ import id.trinsic.ApiClient;
   GetSessionResultResponse.JSON_PROPERTY_SESSION,
   GetSessionResultResponse.JSON_PROPERTY_IDENTITY_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetSessionResultResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
+  @javax.annotation.Nonnull
   private Session session;
 
   public static final String JSON_PROPERTY_IDENTITY_DATA = "identityData";
@@ -53,7 +54,7 @@ public class GetSessionResultResponse {
   public GetSessionResultResponse() { 
   }
 
-  public GetSessionResultResponse session(Session session) {
+  public GetSessionResultResponse session(@javax.annotation.Nonnull Session session) {
     this.session = session;
     return this;
   }
@@ -72,12 +73,12 @@ public class GetSessionResultResponse {
 
   @JsonProperty(JSON_PROPERTY_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSession(Session session) {
+  public void setSession(@javax.annotation.Nonnull Session session) {
     this.session = session;
   }
 
 
-  public GetSessionResultResponse identityData(IdentityData identityData) {
+  public GetSessionResultResponse identityData(@javax.annotation.Nullable IdentityData identityData) {
     this.identityData = JsonNullable.<IdentityData>of(identityData);
     return this;
   }
@@ -104,7 +105,7 @@ public class GetSessionResultResponse {
     this.identityData = identityData;
   }
 
-  public void setIdentityData(IdentityData identityData) {
+  public void setIdentityData(@javax.annotation.Nullable IdentityData identityData) {
     this.identityData = JsonNullable.<IdentityData>of(identityData);
   }
 

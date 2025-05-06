@@ -49,7 +49,7 @@ import id.trinsic.ApiClient;
   ProblemDetails.JSON_PROPERTY_DETAIL,
   ProblemDetails.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProblemDetails extends HashMap<String, Object> {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
@@ -69,7 +69,7 @@ public class ProblemDetails extends HashMap<String, Object> {
   public ProblemDetails() { 
   }
 
-  public ProblemDetails type(String type) {
+  public ProblemDetails type(@javax.annotation.Nullable String type) {
     this.type = JsonNullable.<String>of(type);
     return this;
   }
@@ -96,12 +96,12 @@ public class ProblemDetails extends HashMap<String, Object> {
     this.type = type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = JsonNullable.<String>of(type);
   }
 
 
-  public ProblemDetails title(String title) {
+  public ProblemDetails title(@javax.annotation.Nullable String title) {
     this.title = JsonNullable.<String>of(title);
     return this;
   }
@@ -128,12 +128,12 @@ public class ProblemDetails extends HashMap<String, Object> {
     this.title = title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = JsonNullable.<String>of(title);
   }
 
 
-  public ProblemDetails status(Integer status) {
+  public ProblemDetails status(@javax.annotation.Nullable Integer status) {
     this.status = JsonNullable.<Integer>of(status);
     return this;
   }
@@ -160,12 +160,12 @@ public class ProblemDetails extends HashMap<String, Object> {
     this.status = status;
   }
 
-  public void setStatus(Integer status) {
+  public void setStatus(@javax.annotation.Nullable Integer status) {
     this.status = JsonNullable.<Integer>of(status);
   }
 
 
-  public ProblemDetails detail(String detail) {
+  public ProblemDetails detail(@javax.annotation.Nullable String detail) {
     this.detail = JsonNullable.<String>of(detail);
     return this;
   }
@@ -192,12 +192,12 @@ public class ProblemDetails extends HashMap<String, Object> {
     this.detail = detail;
   }
 
-  public void setDetail(String detail) {
+  public void setDetail(@javax.annotation.Nullable String detail) {
     this.detail = JsonNullable.<String>of(detail);
   }
 
 
-  public ProblemDetails instance(String instance) {
+  public ProblemDetails instance(@javax.annotation.Nullable String instance) {
     this.instance = JsonNullable.<String>of(instance);
     return this;
   }
@@ -224,7 +224,7 @@ public class ProblemDetails extends HashMap<String, Object> {
     this.instance = instance;
   }
 
-  public void setInstance(String instance) {
+  public void setInstance(@javax.annotation.Nullable String instance) {
     this.instance = JsonNullable.<String>of(instance);
   }
 
@@ -369,27 +369,27 @@ public class ProblemDetails extends HashMap<String, Object> {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `detail` to the URL query string
     if (getDetail() != null) {
-      joiner.add(String.format("%sdetail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDetail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdetail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDetail()))));
     }
 
     // add `instance` to the URL query string
     if (getInstance() != null) {
-      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInstance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInstance()))));
     }
 
     return joiner.toString();

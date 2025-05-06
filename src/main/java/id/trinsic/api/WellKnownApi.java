@@ -18,8 +18,6 @@ import id.trinsic.ApiResponse;
 import id.trinsic.Configuration;
 import id.trinsic.Pair;
 
-import id.trinsic.api.models.GetAttachmentRequest;
-import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.ProblemDetails;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -48,7 +46,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class AttachmentsApi {
+public class WellKnownApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
   private final String memberVarBaseUri;
@@ -57,11 +55,11 @@ public class AttachmentsApi {
   private final Consumer<HttpResponse<InputStream>> memberVarResponseInterceptor;
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
-  public AttachmentsApi() {
+  public WellKnownApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public AttachmentsApi(ApiClient apiClient) {
+  public WellKnownApi(ApiClient apiClient) {
     memberVarHttpClient = apiClient.getHttpClient();
     memberVarObjectMapper = apiClient.getObjectMapper();
     memberVarBaseUri = apiClient.getBaseUri();
@@ -85,26 +83,22 @@ public class AttachmentsApi {
   }
 
   /**
-   * Get Attachment
-   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
-   * @param getAttachmentRequest  (optional)
-   * @return GetAttachmentResponse
+   * 
+   * 
    * @throws ApiException if fails to make API call
    */
-  public GetAttachmentResponse getAttachment(@javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
-    ApiResponse<GetAttachmentResponse> localVarResponse = getAttachmentWithHttpInfo(getAttachmentRequest);
-    return localVarResponse.getData();
+  public void interacJwk() throws ApiException {
+    interacJwkWithHttpInfo();
   }
 
   /**
-   * Get Attachment
-   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
-   * @param getAttachmentRequest  (optional)
-   * @return ApiResponse&lt;GetAttachmentResponse&gt;
+   * 
+   * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GetAttachmentResponse> getAttachmentWithHttpInfo(@javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = getAttachmentRequestBuilder(getAttachmentRequest);
+  public ApiResponse<Void> interacJwkWithHttpInfo() throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = interacJwkRequestBuilder();
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -114,25 +108,19 @@ public class AttachmentsApi {
       }
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("getAttachment", localVarResponse);
+          throw getApiException("interacJwk", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
-          return new ApiResponse<GetAttachmentResponse>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
-
-        return new ApiResponse<GetAttachmentResponse>(
+        return new ApiResponse<>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAttachmentResponse>() {})
+            null
         );
       } finally {
+        // Drain the InputStream
+        while (localVarResponse.body().read() != -1) {
+          // Ignore
+        }
+        localVarResponse.body().close();
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -143,23 +131,17 @@ public class AttachmentsApi {
     }
   }
 
-  private HttpRequest.Builder getAttachmentRequestBuilder(@javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
+  private HttpRequest.Builder interacJwkRequestBuilder() throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/api/v1/attachments/attachment";
+    String localVarPath = "/api/integrations/v1/interac/.well-known/jwks.json";
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "application/json");
 
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getAttachmentRequest);
-      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

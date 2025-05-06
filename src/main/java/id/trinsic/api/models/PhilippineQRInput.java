@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   PhilippineQRInput.JSON_PROPERTY_QR_CODE_TEXT,
   PhilippineQRInput.JSON_PROPERTY_QR_CODE_IMAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PhilippineQRInput {
   public static final String JSON_PROPERTY_QR_CODE_TEXT = "qrCodeText";
   private JsonNullable<String> qrCodeText = JsonNullable.<String>undefined();
@@ -51,7 +51,7 @@ public class PhilippineQRInput {
   public PhilippineQRInput() { 
   }
 
-  public PhilippineQRInput qrCodeText(String qrCodeText) {
+  public PhilippineQRInput qrCodeText(@javax.annotation.Nullable String qrCodeText) {
     this.qrCodeText = JsonNullable.<String>of(qrCodeText);
     return this;
   }
@@ -78,12 +78,12 @@ public class PhilippineQRInput {
     this.qrCodeText = qrCodeText;
   }
 
-  public void setQrCodeText(String qrCodeText) {
+  public void setQrCodeText(@javax.annotation.Nullable String qrCodeText) {
     this.qrCodeText = JsonNullable.<String>of(qrCodeText);
   }
 
 
-  public PhilippineQRInput qrCodeImage(byte[] qrCodeImage) {
+  public PhilippineQRInput qrCodeImage(@javax.annotation.Nullable byte[] qrCodeImage) {
     this.qrCodeImage = JsonNullable.<byte[]>of(qrCodeImage);
     return this;
   }
@@ -110,7 +110,7 @@ public class PhilippineQRInput {
     this.qrCodeImage = qrCodeImage;
   }
 
-  public void setQrCodeImage(byte[] qrCodeImage) {
+  public void setQrCodeImage(@javax.annotation.Nullable byte[] qrCodeImage) {
     this.qrCodeImage = JsonNullable.<byte[]>of(qrCodeImage);
   }
 
@@ -202,12 +202,12 @@ public class PhilippineQRInput {
 
     // add `qrCodeText` to the URL query string
     if (getQrCodeText() != null) {
-      joiner.add(String.format("%sqrCodeText%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getQrCodeText()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sqrCodeText%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQrCodeText()))));
     }
 
     // add `qrCodeImage` to the URL query string
     if (getQrCodeImage() != null) {
-      joiner.add(String.format("%sqrCodeImage%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getQrCodeImage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sqrCodeImage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQrCodeImage()))));
     }
 
     return joiner.toString();

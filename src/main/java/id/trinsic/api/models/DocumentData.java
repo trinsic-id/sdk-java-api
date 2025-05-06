@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   DocumentData.JSON_PROPERTY_ISSUING_COUNTRY,
   DocumentData.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DocumentData {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<DocumentType> type = JsonNullable.<DocumentType>undefined();
@@ -69,7 +69,7 @@ public class DocumentData {
   public DocumentData() { 
   }
 
-  public DocumentData type(DocumentType type) {
+  public DocumentData type(@javax.annotation.Nullable DocumentType type) {
     this.type = JsonNullable.<DocumentType>of(type);
     return this;
   }
@@ -96,12 +96,12 @@ public class DocumentData {
     this.type = type;
   }
 
-  public void setType(DocumentType type) {
+  public void setType(@javax.annotation.Nullable DocumentType type) {
     this.type = JsonNullable.<DocumentType>of(type);
   }
 
 
-  public DocumentData number(String number) {
+  public DocumentData number(@javax.annotation.Nullable String number) {
     this.number = JsonNullable.<String>of(number);
     return this;
   }
@@ -128,12 +128,12 @@ public class DocumentData {
     this.number = number;
   }
 
-  public void setNumber(String number) {
+  public void setNumber(@javax.annotation.Nullable String number) {
     this.number = JsonNullable.<String>of(number);
   }
 
 
-  public DocumentData issueDate(LocalDate issueDate) {
+  public DocumentData issueDate(@javax.annotation.Nullable LocalDate issueDate) {
     this.issueDate = JsonNullable.<LocalDate>of(issueDate);
     return this;
   }
@@ -160,12 +160,12 @@ public class DocumentData {
     this.issueDate = issueDate;
   }
 
-  public void setIssueDate(LocalDate issueDate) {
+  public void setIssueDate(@javax.annotation.Nullable LocalDate issueDate) {
     this.issueDate = JsonNullable.<LocalDate>of(issueDate);
   }
 
 
-  public DocumentData expirationDate(LocalDate expirationDate) {
+  public DocumentData expirationDate(@javax.annotation.Nullable LocalDate expirationDate) {
     this.expirationDate = JsonNullable.<LocalDate>of(expirationDate);
     return this;
   }
@@ -192,12 +192,12 @@ public class DocumentData {
     this.expirationDate = expirationDate;
   }
 
-  public void setExpirationDate(LocalDate expirationDate) {
+  public void setExpirationDate(@javax.annotation.Nullable LocalDate expirationDate) {
     this.expirationDate = JsonNullable.<LocalDate>of(expirationDate);
   }
 
 
-  public DocumentData issuingCountry(String issuingCountry) {
+  public DocumentData issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = JsonNullable.<String>of(issuingCountry);
     return this;
   }
@@ -224,12 +224,12 @@ public class DocumentData {
     this.issuingCountry = issuingCountry;
   }
 
-  public void setIssuingCountry(String issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = JsonNullable.<String>of(issuingCountry);
   }
 
 
-  public DocumentData issuingAuthority(String issuingAuthority) {
+  public DocumentData issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = JsonNullable.<String>of(issuingAuthority);
     return this;
   }
@@ -256,7 +256,7 @@ public class DocumentData {
     this.issuingAuthority = issuingAuthority;
   }
 
-  public void setIssuingAuthority(String issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = JsonNullable.<String>of(issuingAuthority);
   }
 
@@ -356,32 +356,32 @@ public class DocumentData {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `number` to the URL query string
     if (getNumber() != null) {
-      joiner.add(String.format("%snumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNumber()))));
     }
 
     // add `issueDate` to the URL query string
     if (getIssueDate() != null) {
-      joiner.add(String.format("%sissueDate%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIssueDate()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sissueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssueDate()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExpirationDate()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `issuingCountry` to the URL query string
     if (getIssuingCountry() != null) {
-      joiner.add(String.format("%sissuingCountry%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIssuingCountry()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
     }
 
     // add `issuingAuthority` to the URL query string
     if (getIssuingAuthority() != null) {
-      joiner.add(String.format("%sissuingAuthority%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIssuingAuthority()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
     }
 
     return joiner.toString();

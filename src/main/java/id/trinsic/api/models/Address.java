@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   Address.JSON_PROPERTY_COUNTRY,
   Address.JSON_PROPERTY_FULL_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Address {
   public static final String JSON_PROPERTY_LINE1 = "line1";
   private JsonNullable<String> line1 = JsonNullable.<String>undefined();
@@ -75,7 +75,7 @@ public class Address {
   public Address() { 
   }
 
-  public Address line1(String line1) {
+  public Address line1(@javax.annotation.Nullable String line1) {
     this.line1 = JsonNullable.<String>of(line1);
     return this;
   }
@@ -102,12 +102,12 @@ public class Address {
     this.line1 = line1;
   }
 
-  public void setLine1(String line1) {
+  public void setLine1(@javax.annotation.Nullable String line1) {
     this.line1 = JsonNullable.<String>of(line1);
   }
 
 
-  public Address line2(String line2) {
+  public Address line2(@javax.annotation.Nullable String line2) {
     this.line2 = JsonNullable.<String>of(line2);
     return this;
   }
@@ -134,12 +134,12 @@ public class Address {
     this.line2 = line2;
   }
 
-  public void setLine2(String line2) {
+  public void setLine2(@javax.annotation.Nullable String line2) {
     this.line2 = JsonNullable.<String>of(line2);
   }
 
 
-  public Address line3(String line3) {
+  public Address line3(@javax.annotation.Nullable String line3) {
     this.line3 = JsonNullable.<String>of(line3);
     return this;
   }
@@ -166,12 +166,12 @@ public class Address {
     this.line3 = line3;
   }
 
-  public void setLine3(String line3) {
+  public void setLine3(@javax.annotation.Nullable String line3) {
     this.line3 = JsonNullable.<String>of(line3);
   }
 
 
-  public Address city(String city) {
+  public Address city(@javax.annotation.Nullable String city) {
     this.city = JsonNullable.<String>of(city);
     return this;
   }
@@ -198,12 +198,12 @@ public class Address {
     this.city = city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = JsonNullable.<String>of(city);
   }
 
 
-  public Address subdivision(String subdivision) {
+  public Address subdivision(@javax.annotation.Nullable String subdivision) {
     this.subdivision = JsonNullable.<String>of(subdivision);
     return this;
   }
@@ -230,12 +230,12 @@ public class Address {
     this.subdivision = subdivision;
   }
 
-  public void setSubdivision(String subdivision) {
+  public void setSubdivision(@javax.annotation.Nullable String subdivision) {
     this.subdivision = JsonNullable.<String>of(subdivision);
   }
 
 
-  public Address postalCode(String postalCode) {
+  public Address postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = JsonNullable.<String>of(postalCode);
     return this;
   }
@@ -262,12 +262,12 @@ public class Address {
     this.postalCode = postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = JsonNullable.<String>of(postalCode);
   }
 
 
-  public Address country(String country) {
+  public Address country(@javax.annotation.Nullable String country) {
     this.country = JsonNullable.<String>of(country);
     return this;
   }
@@ -294,12 +294,12 @@ public class Address {
     this.country = country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = JsonNullable.<String>of(country);
   }
 
 
-  public Address fullAddress(String fullAddress) {
+  public Address fullAddress(@javax.annotation.Nullable String fullAddress) {
     this.fullAddress = JsonNullable.<String>of(fullAddress);
     return this;
   }
@@ -326,7 +326,7 @@ public class Address {
     this.fullAddress = fullAddress;
   }
 
-  public void setFullAddress(String fullAddress) {
+  public void setFullAddress(@javax.annotation.Nullable String fullAddress) {
     this.fullAddress = JsonNullable.<String>of(fullAddress);
   }
 
@@ -430,42 +430,42 @@ public class Address {
 
     // add `line1` to the URL query string
     if (getLine1() != null) {
-      joiner.add(String.format("%sline1%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLine1()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sline1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine1()))));
     }
 
     // add `line2` to the URL query string
     if (getLine2() != null) {
-      joiner.add(String.format("%sline2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLine2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sline2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine2()))));
     }
 
     // add `line3` to the URL query string
     if (getLine3() != null) {
-      joiner.add(String.format("%sline3%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLine3()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sline3%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine3()))));
     }
 
     // add `city` to the URL query string
     if (getCity() != null) {
-      joiner.add(String.format("%scity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCity()))));
     }
 
     // add `subdivision` to the URL query string
     if (getSubdivision() != null) {
-      joiner.add(String.format("%ssubdivision%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubdivision()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubdivision()))));
     }
 
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPostalCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCountry()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `fullAddress` to the URL query string
     if (getFullAddress() != null) {
-      joiner.add(String.format("%sfullAddress%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullAddress()))));
     }
 
     return joiner.toString();

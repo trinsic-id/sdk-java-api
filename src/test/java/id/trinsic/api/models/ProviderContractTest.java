@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.IntegrationLaunchMethod;
+import id.trinsic.api.models.ProviderHealth;
 import id.trinsic.api.models.ResultCollectionMethod;
 import id.trinsic.api.models.SubProviderMetadata;
 import java.util.ArrayList;
@@ -164,6 +165,14 @@ class ProviderContractTest {
     @Test
     void subProvidersTest() {
         // TODO: test subProviders
+    }
+
+    /**
+     * Test the property 'status'
+     */
+    @Test
+    void statusTest() {
+        // TODO: test status
     }
 
 }

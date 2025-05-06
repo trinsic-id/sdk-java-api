@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ProviderAttachments.JSON_PROPERTY_DOCUMENT_SCAN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderAttachments {
   public static final String JSON_PROPERTY_DOCUMENT_SCAN = "document-scan";
   private JsonNullable<DocumentScanAttachments> documentScan = JsonNullable.<DocumentScanAttachments>undefined();
@@ -48,7 +48,7 @@ public class ProviderAttachments {
   public ProviderAttachments() { 
   }
 
-  public ProviderAttachments documentScan(DocumentScanAttachments documentScan) {
+  public ProviderAttachments documentScan(@javax.annotation.Nullable DocumentScanAttachments documentScan) {
     this.documentScan = JsonNullable.<DocumentScanAttachments>of(documentScan);
     return this;
   }
@@ -75,7 +75,7 @@ public class ProviderAttachments {
     this.documentScan = documentScan;
   }
 
-  public void setDocumentScan(DocumentScanAttachments documentScan) {
+  public void setDocumentScan(@javax.annotation.Nullable DocumentScanAttachments documentScan) {
     this.documentScan = JsonNullable.<DocumentScanAttachments>of(documentScan);
   }
 

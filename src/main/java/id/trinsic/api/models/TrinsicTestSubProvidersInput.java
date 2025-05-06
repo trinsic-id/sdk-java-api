@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   TrinsicTestSubProvidersInput.JSON_PROPERTY_SUB_PROVIDER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TrinsicTestSubProvidersInput {
   public static final String JSON_PROPERTY_SUB_PROVIDER_ID = "subProviderId";
   private JsonNullable<String> subProviderId = JsonNullable.<String>undefined();
@@ -47,7 +47,7 @@ public class TrinsicTestSubProvidersInput {
   public TrinsicTestSubProvidersInput() { 
   }
 
-  public TrinsicTestSubProvidersInput subProviderId(String subProviderId) {
+  public TrinsicTestSubProvidersInput subProviderId(@javax.annotation.Nullable String subProviderId) {
     this.subProviderId = JsonNullable.<String>of(subProviderId);
     return this;
   }
@@ -74,7 +74,7 @@ public class TrinsicTestSubProvidersInput {
     this.subProviderId = subProviderId;
   }
 
-  public void setSubProviderId(String subProviderId) {
+  public void setSubProviderId(@javax.annotation.Nullable String subProviderId) {
     this.subProviderId = JsonNullable.<String>of(subProviderId);
   }
 
@@ -164,7 +164,7 @@ public class TrinsicTestSubProvidersInput {
 
     // add `subProviderId` to the URL query string
     if (getSubProviderId() != null) {
-      joiner.add(String.format("%ssubProviderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubProviderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubProviderId()))));
     }
 
     return joiner.toString();

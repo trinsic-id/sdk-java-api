@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   RecommendationInfo.JSON_PROPERTY_SUBDIVISIONS,
   RecommendationInfo.JSON_PROPERTY_IP_ADDRESSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendationInfo {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
@@ -61,7 +61,7 @@ public class RecommendationInfo {
   public RecommendationInfo() { 
   }
 
-  public RecommendationInfo phoneNumber(String phoneNumber) {
+  public RecommendationInfo phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = JsonNullable.<String>of(phoneNumber);
     return this;
   }
@@ -88,12 +88,12 @@ public class RecommendationInfo {
     this.phoneNumber = phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = JsonNullable.<String>of(phoneNumber);
   }
 
 
-  public RecommendationInfo countries(List<String> countries) {
+  public RecommendationInfo countries(@javax.annotation.Nullable List<String> countries) {
     this.countries = JsonNullable.<List<String>>of(countries);
     return this;
   }
@@ -132,12 +132,12 @@ public class RecommendationInfo {
     this.countries = countries;
   }
 
-  public void setCountries(List<String> countries) {
+  public void setCountries(@javax.annotation.Nullable List<String> countries) {
     this.countries = JsonNullable.<List<String>>of(countries);
   }
 
 
-  public RecommendationInfo subdivisions(List<String> subdivisions) {
+  public RecommendationInfo subdivisions(@javax.annotation.Nullable List<String> subdivisions) {
     this.subdivisions = JsonNullable.<List<String>>of(subdivisions);
     return this;
   }
@@ -176,12 +176,12 @@ public class RecommendationInfo {
     this.subdivisions = subdivisions;
   }
 
-  public void setSubdivisions(List<String> subdivisions) {
+  public void setSubdivisions(@javax.annotation.Nullable List<String> subdivisions) {
     this.subdivisions = JsonNullable.<List<String>>of(subdivisions);
   }
 
 
-  public RecommendationInfo ipAddresses(List<String> ipAddresses) {
+  public RecommendationInfo ipAddresses(@javax.annotation.Nullable List<String> ipAddresses) {
     this.ipAddresses = JsonNullable.<List<String>>of(ipAddresses);
     return this;
   }
@@ -220,7 +220,7 @@ public class RecommendationInfo {
     this.ipAddresses = ipAddresses;
   }
 
-  public void setIpAddresses(List<String> ipAddresses) {
+  public void setIpAddresses(@javax.annotation.Nullable List<String> ipAddresses) {
     this.ipAddresses = JsonNullable.<List<String>>of(ipAddresses);
   }
 
@@ -316,7 +316,7 @@ public class RecommendationInfo {
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPhoneNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `countries` to the URL query string
@@ -324,7 +324,7 @@ public class RecommendationInfo {
       for (int i = 0; i < getCountries().size(); i++) {
         joiner.add(String.format("%scountries%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getCountries().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getCountries().get(i)))));
       }
     }
 
@@ -333,7 +333,7 @@ public class RecommendationInfo {
       for (int i = 0; i < getSubdivisions().size(); i++) {
         joiner.add(String.format("%ssubdivisions%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getSubdivisions().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getSubdivisions().get(i)))));
       }
     }
 
@@ -342,7 +342,7 @@ public class RecommendationInfo {
       for (int i = 0; i < getIpAddresses().size(); i++) {
         joiner.add(String.format("%sipAddresses%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getIpAddresses().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getIpAddresses().get(i)))));
       }
     }
 

@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_DOCUMENT,
   IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T20:37:53.342254032Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
@@ -66,7 +66,7 @@ public class IdentityData {
   public IdentityData() { 
   }
 
-  public IdentityData originatingProviderId(String originatingProviderId) {
+  public IdentityData originatingProviderId(@javax.annotation.Nullable String originatingProviderId) {
     this.originatingProviderId = JsonNullable.<String>of(originatingProviderId);
     return this;
   }
@@ -93,12 +93,12 @@ public class IdentityData {
     this.originatingProviderId = originatingProviderId;
   }
 
-  public void setOriginatingProviderId(String originatingProviderId) {
+  public void setOriginatingProviderId(@javax.annotation.Nullable String originatingProviderId) {
     this.originatingProviderId = JsonNullable.<String>of(originatingProviderId);
   }
 
 
-  public IdentityData originatingSubProviderId(String originatingSubProviderId) {
+  public IdentityData originatingSubProviderId(@javax.annotation.Nullable String originatingSubProviderId) {
     this.originatingSubProviderId = JsonNullable.<String>of(originatingSubProviderId);
     return this;
   }
@@ -125,12 +125,12 @@ public class IdentityData {
     this.originatingSubProviderId = originatingSubProviderId;
   }
 
-  public void setOriginatingSubProviderId(String originatingSubProviderId) {
+  public void setOriginatingSubProviderId(@javax.annotation.Nullable String originatingSubProviderId) {
     this.originatingSubProviderId = JsonNullable.<String>of(originatingSubProviderId);
   }
 
 
-  public IdentityData person(PersonData person) {
+  public IdentityData person(@javax.annotation.Nullable PersonData person) {
     this.person = JsonNullable.<PersonData>of(person);
     return this;
   }
@@ -157,12 +157,12 @@ public class IdentityData {
     this.person = person;
   }
 
-  public void setPerson(PersonData person) {
+  public void setPerson(@javax.annotation.Nullable PersonData person) {
     this.person = JsonNullable.<PersonData>of(person);
   }
 
 
-  public IdentityData document(DocumentData document) {
+  public IdentityData document(@javax.annotation.Nullable DocumentData document) {
     this.document = JsonNullable.<DocumentData>of(document);
     return this;
   }
@@ -189,12 +189,12 @@ public class IdentityData {
     this.document = document;
   }
 
-  public void setDocument(DocumentData document) {
+  public void setDocument(@javax.annotation.Nullable DocumentData document) {
     this.document = JsonNullable.<DocumentData>of(document);
   }
 
 
-  public IdentityData attachmentAccessKeys(AttachmentAccessKeys attachmentAccessKeys) {
+  public IdentityData attachmentAccessKeys(@javax.annotation.Nullable AttachmentAccessKeys attachmentAccessKeys) {
     this.attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>of(attachmentAccessKeys);
     return this;
   }
@@ -221,7 +221,7 @@ public class IdentityData {
     this.attachmentAccessKeys = attachmentAccessKeys;
   }
 
-  public void setAttachmentAccessKeys(AttachmentAccessKeys attachmentAccessKeys) {
+  public void setAttachmentAccessKeys(@javax.annotation.Nullable AttachmentAccessKeys attachmentAccessKeys) {
     this.attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>of(attachmentAccessKeys);
   }
 
@@ -319,12 +319,12 @@ public class IdentityData {
 
     // add `originatingProviderId` to the URL query string
     if (getOriginatingProviderId() != null) {
-      joiner.add(String.format("%soriginatingProviderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOriginatingProviderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soriginatingProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginatingProviderId()))));
     }
 
     // add `originatingSubProviderId` to the URL query string
     if (getOriginatingSubProviderId() != null) {
-      joiner.add(String.format("%soriginatingSubProviderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOriginatingSubProviderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soriginatingSubProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginatingSubProviderId()))));
     }
 
     // add `person` to the URL query string
