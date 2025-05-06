@@ -168,11 +168,11 @@ class ProviderContractTest {
     }
 
     /**
-     * Test the property 'status'
+     * Test the property 'health'
      */
     @Test
-    void statusTest() {
-        // TODO: test status
+    void healthTest() {
+        // TODO: test health
     }
 
 }

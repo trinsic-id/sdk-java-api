@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RefreshStepContentRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RefreshStepContentRequest {
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
   private JsonNullable<String> resultsAccessKey = JsonNullable.<String>undefined();

@@ -1650,6 +1650,7 @@ components:
           available: true
           description: dmv.ca.gov
           requiresInput: false
+          health: Offline
           launchMethod: DeeplinkToMobile
           logoUrl: https://content.trinsic.id/connect/integrations/ca-dmv.png
           supportsAdvancedProviderSessions: true
@@ -1668,7 +1669,6 @@ components:
             description: description
             id: id
             logoUrl: logoUrl
-          status: Disabled
         - collectionMethod: PollResult
           regions:
           - United States
@@ -1676,6 +1676,7 @@ components:
           available: true
           description: dmv.ca.gov
           requiresInput: false
+          health: Offline
           launchMethod: DeeplinkToMobile
           logoUrl: https://content.trinsic.id/connect/integrations/ca-dmv.png
           supportsAdvancedProviderSessions: true
@@ -1694,7 +1695,6 @@ components:
             description: description
             id: id
             logoUrl: logoUrl
-          status: Disabled
       properties:
         providerContracts:
           description: "Contracts for all Providers available to your App, filtered\
@@ -1956,6 +1956,7 @@ components:
         available: true
         description: dmv.ca.gov
         requiresInput: false
+        health: Offline
         launchMethod: DeeplinkToMobile
         logoUrl: https://content.trinsic.id/connect/integrations/ca-dmv.png
         supportsAdvancedProviderSessions: true
@@ -1974,7 +1975,6 @@ components:
           description: description
           id: id
           logoUrl: logoUrl
-        status: Disabled
       properties:
         id:
           description: The ID of the Provider for this contract.
@@ -2093,13 +2093,12 @@ components:
             $ref: '#/components/schemas/SubProviderMetadata'
           nullable: true
           type: array
-        status:
+        health:
           allOf:
           - $ref: '#/components/schemas/ProviderHealth'
-          description: |-
-            The current status of the provider and if it is available to launch.
-            If the status is disabled, there is an issue that prevents a provider being able to launch a session.
-          example: Disabled
+          description: The health for an integration to be able to successfully perform
+            a verification session.
+          example: Offline
           x-enumDescriptions:
             Online: The integration is up and available to support verification sessions.
             Offline: The integration has been disabled and unavailable at this time
@@ -2111,6 +2110,7 @@ components:
       - geography
       - hasRefreshableContent
       - hasTrinsicInterface
+      - health
       - id
       - launchMethod
       - logoUrl
@@ -2118,7 +2118,6 @@ components:
       - regions
       - requiresInput
       - resultsMayBeDelayedAfterRedirect
-      - status
       - supportsAdvancedProviderSessions
       type: object
     ProviderHealth:

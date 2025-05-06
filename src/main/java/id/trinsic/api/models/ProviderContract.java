@@ -58,9 +58,9 @@ import id.trinsic.ApiClient;
   ProviderContract.JSON_PROPERTY_HAS_TRINSIC_INTERFACE,
   ProviderContract.JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS,
   ProviderContract.JSON_PROPERTY_SUB_PROVIDERS,
-  ProviderContract.JSON_PROPERTY_STATUS
+  ProviderContract.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderContract {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -121,9 +121,9 @@ public class ProviderContract {
   public static final String JSON_PROPERTY_SUB_PROVIDERS = "subProviders";
   private JsonNullable<List<SubProviderMetadata>> subProviders = JsonNullable.<List<SubProviderMetadata>>undefined();
 
-  public static final String JSON_PROPERTY_STATUS = "status";
+  public static final String JSON_PROPERTY_HEALTH = "health";
   @javax.annotation.Nonnull
-  private ProviderHealth status;
+  private ProviderHealth health;
 
   public ProviderContract() { 
   }
@@ -524,27 +524,27 @@ public class ProviderContract {
   }
 
 
-  public ProviderContract status(@javax.annotation.Nonnull ProviderHealth status) {
-    this.status = status;
+  public ProviderContract health(@javax.annotation.Nonnull ProviderHealth health) {
+    this.health = health;
     return this;
   }
 
   /**
-   * The current status of the provider and if it is available to launch. If the status is disabled, there is an issue that prevents a provider being able to launch a session.
-   * @return status
+   * The health for an integration to be able to successfully perform a verification session.
+   * @return health
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(JSON_PROPERTY_HEALTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public ProviderHealth getStatus() {
-    return status;
+  public ProviderHealth getHealth() {
+    return health;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(JSON_PROPERTY_HEALTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStatus(@javax.annotation.Nonnull ProviderHealth status) {
-    this.status = status;
+  public void setHealth(@javax.annotation.Nonnull ProviderHealth health) {
+    this.health = health;
   }
 
 
@@ -575,7 +575,7 @@ public class ProviderContract {
         Objects.equals(this.hasTrinsicInterface, providerContract.hasTrinsicInterface) &&
         Objects.equals(this.supportsAdvancedProviderSessions, providerContract.supportsAdvancedProviderSessions) &&
         equalsNullable(this.subProviders, providerContract.subProviders) &&
-        Objects.equals(this.status, providerContract.status);
+        Objects.equals(this.health, providerContract.health);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -584,7 +584,7 @@ public class ProviderContract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, hashCodeNullable(subProviders), status);
+    return Objects.hash(id, name, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, hashCodeNullable(subProviders), health);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -613,7 +613,7 @@ public class ProviderContract {
     sb.append("    hasTrinsicInterface: ").append(toIndentedString(hasTrinsicInterface)).append("\n");
     sb.append("    supportsAdvancedProviderSessions: ").append(toIndentedString(supportsAdvancedProviderSessions)).append("\n");
     sb.append("    subProviders: ").append(toIndentedString(subProviders)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    health: ").append(toIndentedString(health)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -749,9 +749,9 @@ public class ProviderContract {
       }
     }
 
-    // add `status` to the URL query string
-    if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
+    // add `health` to the URL query string
+    if (getHealth() != null) {
+      joiner.add(String.format("%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
     }
 
     return joiner.toString();

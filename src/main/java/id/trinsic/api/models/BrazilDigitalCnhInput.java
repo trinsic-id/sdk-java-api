@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   BrazilDigitalCnhInput.JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE,
   BrazilDigitalCnhInput.JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BrazilDigitalCnhInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
   @javax.annotation.Nonnull

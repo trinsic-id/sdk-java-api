@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   IndonesiaNikInput.JSON_PROPERTY_DATE_OF_BIRTH,
   IndonesiaNikInput.JSON_PROPERTY_NIK_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T18:08:41.863161290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IndonesiaNikInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   @javax.annotation.Nonnull
