@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   TrinsicTestSubProvidersInput.JSON_PROPERTY_SUB_PROVIDER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:17:39.795847311Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TrinsicTestSubProvidersInput {
   public static final String JSON_PROPERTY_SUB_PROVIDER_ID = "subProviderId";
   private JsonNullable<String> subProviderId = JsonNullable.<String>undefined();

@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   ProviderInformation.JSON_PROPERTY_PROVIDER_DISPLAY_NAME,
   ProviderInformation.JSON_PROPERTY_PROVIDER_LOGO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:17:39.795847311Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInformation {
   public static final String JSON_PROPERTY_PROVIDER_ID = "providerId";
   @javax.annotation.Nonnull
