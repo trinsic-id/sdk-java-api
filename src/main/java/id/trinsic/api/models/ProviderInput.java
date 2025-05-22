@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
-import id.trinsic.api.models.BangladeshNationalIdInput;
+import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.IdinInput;
@@ -72,7 +72,7 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
@@ -93,7 +93,7 @@ public class ProviderInput {
   private JsonNullable<AadhaarInput> aadhaar = JsonNullable.<AadhaarInput>undefined();
 
   public static final String JSON_PROPERTY_BANGLADESH_NATIONAL_ID = "bangladeshNationalId";
-  private JsonNullable<BangladeshNationalIdInput> bangladeshNationalId = JsonNullable.<BangladeshNationalIdInput>undefined();
+  private JsonNullable<BangladeshNidInput> bangladeshNationalId = JsonNullable.<BangladeshNidInput>undefined();
 
   public static final String JSON_PROPERTY_BRAZIL_CPF_CHECK = "brazilCpfCheck";
   private JsonNullable<BrazilCpfCheckInput> brazilCpfCheck = JsonNullable.<BrazilCpfCheckInput>undefined();
@@ -320,8 +320,8 @@ public class ProviderInput {
   }
 
 
-  public ProviderInput bangladeshNationalId(@javax.annotation.Nullable BangladeshNationalIdInput bangladeshNationalId) {
-    this.bangladeshNationalId = JsonNullable.<BangladeshNationalIdInput>of(bangladeshNationalId);
+  public ProviderInput bangladeshNationalId(@javax.annotation.Nullable BangladeshNidInput bangladeshNationalId) {
+    this.bangladeshNationalId = JsonNullable.<BangladeshNidInput>of(bangladeshNationalId);
     return this;
   }
 
@@ -331,24 +331,24 @@ public class ProviderInput {
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public BangladeshNationalIdInput getBangladeshNationalId() {
+  public BangladeshNidInput getBangladeshNationalId() {
         return bangladeshNationalId.orElse(null);
   }
 
   @JsonProperty(JSON_PROPERTY_BANGLADESH_NATIONAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BangladeshNationalIdInput> getBangladeshNationalId_JsonNullable() {
+  public JsonNullable<BangladeshNidInput> getBangladeshNationalId_JsonNullable() {
     return bangladeshNationalId;
   }
   
   @JsonProperty(JSON_PROPERTY_BANGLADESH_NATIONAL_ID)
-  public void setBangladeshNationalId_JsonNullable(JsonNullable<BangladeshNationalIdInput> bangladeshNationalId) {
+  public void setBangladeshNationalId_JsonNullable(JsonNullable<BangladeshNidInput> bangladeshNationalId) {
     this.bangladeshNationalId = bangladeshNationalId;
   }
 
-  public void setBangladeshNationalId(@javax.annotation.Nullable BangladeshNationalIdInput bangladeshNationalId) {
-    this.bangladeshNationalId = JsonNullable.<BangladeshNationalIdInput>of(bangladeshNationalId);
+  public void setBangladeshNationalId(@javax.annotation.Nullable BangladeshNidInput bangladeshNationalId) {
+    this.bangladeshNationalId = JsonNullable.<BangladeshNidInput>of(bangladeshNationalId);
   }
 
 

@@ -72,7 +72,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -145,7 +145,7 @@ ApiResponse<[**ListProviderContractsResponse**](ListProviderContractsResponse.md
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -216,7 +216,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -289,7 +289,7 @@ ApiResponse<[**ListProvidersResponse**](ListProvidersResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -364,7 +364,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -441,7 +441,7 @@ ApiResponse<[**RecommendResponse**](RecommendResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |

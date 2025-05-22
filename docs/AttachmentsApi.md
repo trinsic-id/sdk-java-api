@@ -72,13 +72,12 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **503** | Service Unavailable |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -150,13 +149,12 @@ ApiResponse<[**GetAttachmentResponse**](GetAttachmentResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **503** | Service Unavailable |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |

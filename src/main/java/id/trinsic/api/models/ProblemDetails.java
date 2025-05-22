@@ -49,7 +49,7 @@ import id.trinsic.ApiClient;
   ProblemDetails.JSON_PROPERTY_DETAIL,
   ProblemDetails.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProblemDetails extends HashMap<String, Object> {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
@@ -75,7 +75,7 @@ public class ProblemDetails extends HashMap<String, Object> {
   }
 
   /**
-   * Get type
+   * A URI reference that identifies the problem type.
    * @return type
    */
   @javax.annotation.Nullable
@@ -107,7 +107,7 @@ public class ProblemDetails extends HashMap<String, Object> {
   }
 
   /**
-   * Get title
+   * A short, human-readable summary of the error.
    * @return title
    */
   @javax.annotation.Nullable
@@ -139,7 +139,7 @@ public class ProblemDetails extends HashMap<String, Object> {
   }
 
   /**
-   * Get status
+   * The HTTP status code returned for the request.
    * @return status
    */
   @javax.annotation.Nullable
@@ -171,7 +171,7 @@ public class ProblemDetails extends HashMap<String, Object> {
   }
 
   /**
-   * Get detail
+   * A human-readable explanation specific of the problem.
    * @return detail
    */
   @javax.annotation.Nullable
@@ -203,7 +203,7 @@ public class ProblemDetails extends HashMap<String, Object> {
   }
 
   /**
-   * Get instance
+   * A URI reference that identifies the specific occurrence of the problem.
    * @return instance
    */
   @javax.annotation.Nullable

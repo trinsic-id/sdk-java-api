@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
-import id.trinsic.api.models.BangladeshNationalIdInput;
+import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.IdinInput;

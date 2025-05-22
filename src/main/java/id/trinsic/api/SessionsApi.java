@@ -61,7 +61,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SessionsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -105,7 +105,7 @@ public class SessionsApi {
    * @return CancelSessionResponse
    * @throws ApiException if fails to make API call
    */
-  public CancelSessionResponse cancelSession(@javax.annotation.Nonnull String sessionId) throws ApiException {
+  public CancelSessionResponse cancelSession(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
     ApiResponse<CancelSessionResponse> localVarResponse = cancelSessionWithHttpInfo(sessionId);
     return localVarResponse.getData();
   }
@@ -117,7 +117,7 @@ public class SessionsApi {
    * @return ApiResponse&lt;CancelSessionResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CancelSessionResponse> cancelSessionWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
+  public ApiResponse<CancelSessionResponse> cancelSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = cancelSessionRequestBuilder(sessionId);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -157,7 +157,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder cancelSessionRequestBuilder(@javax.annotation.Nonnull String sessionId) throws ApiException {
+  private HttpRequest.Builder cancelSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling cancelSession");
@@ -170,7 +170,7 @@ public class SessionsApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
@@ -250,7 +250,7 @@ public class SessionsApi {
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createAdvancedProviderSessionRequest);
@@ -335,7 +335,7 @@ public class SessionsApi {
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createHostedProviderSessionRequest);
@@ -420,7 +420,7 @@ public class SessionsApi {
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createWidgetSessionRequest);
@@ -509,7 +509,7 @@ public class SessionsApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
@@ -596,7 +596,7 @@ public class SessionsApi {
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getSessionResultRequest);
@@ -707,7 +707,7 @@ public class SessionsApi {
       localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
     }
 
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
@@ -725,7 +725,7 @@ public class SessionsApi {
    * @param sessionId  (required)
    * @throws ApiException if fails to make API call
    */
-  public void redactSession(@javax.annotation.Nonnull String sessionId) throws ApiException {
+  public void redactSession(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
     redactSessionWithHttpInfo(sessionId);
   }
 
@@ -736,7 +736,7 @@ public class SessionsApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> redactSessionWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
+  public ApiResponse<Void> redactSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
     HttpRequest.Builder localVarRequestBuilder = redactSessionRequestBuilder(sessionId);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
@@ -770,7 +770,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder redactSessionRequestBuilder(@javax.annotation.Nonnull String sessionId) throws ApiException {
+  private HttpRequest.Builder redactSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling redactSession");
@@ -783,7 +783,7 @@ public class SessionsApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    localVarRequestBuilder.header("Accept", "application/json");
+    localVarRequestBuilder.header("Accept", "application/problem+json");
 
     localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
@@ -870,7 +870,7 @@ public class SessionsApi {
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(refreshStepContentRequest);

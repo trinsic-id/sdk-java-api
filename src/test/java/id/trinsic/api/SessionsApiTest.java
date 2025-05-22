@@ -60,7 +60,7 @@ public class SessionsApiTest {
      */
     @Test
     public void cancelSessionTest() throws ApiException {
-        String sessionId = null;
+        UUID sessionId = null;
         CancelSessionResponse response = 
         api.cancelSession(sessionId);
         
@@ -183,7 +183,7 @@ public class SessionsApiTest {
      */
     @Test
     public void redactSessionTest() throws ApiException {
-        String sessionId = null;
+        UUID sessionId = null;
         
         api.redactSession(sessionId);
         

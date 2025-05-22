@@ -10,7 +10,7 @@ docs/AadhaarInput.md
 docs/Address.md
 docs/AttachmentAccessKeys.md
 docs/AttachmentsApi.md
-docs/BangladeshNationalIdInput.md
+docs/BangladeshNidInput.md
 docs/BrazilCpfCheckInput.md
 docs/BrazilDigitalCnhInput.md
 docs/CancelSessionResponse.md
@@ -74,7 +74,6 @@ docs/StepRefreshInfo.md
 docs/SubProviderMetadata.md
 docs/TrinsicTestDatabaseLookupInput.md
 docs/TrinsicTestSubProvidersInput.md
-docs/WellKnownApi.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -98,12 +97,11 @@ src/main/java/id/trinsic/ServerVariable.java
 src/main/java/id/trinsic/api/AttachmentsApi.java
 src/main/java/id/trinsic/api/NetworkApi.java
 src/main/java/id/trinsic/api/SessionsApi.java
-src/main/java/id/trinsic/api/WellKnownApi.java
 src/main/java/id/trinsic/api/models/AadhaarInput.java
 src/main/java/id/trinsic/api/models/AbstractOpenApiSchema.java
 src/main/java/id/trinsic/api/models/Address.java
 src/main/java/id/trinsic/api/models/AttachmentAccessKeys.java
-src/main/java/id/trinsic/api/models/BangladeshNationalIdInput.java
+src/main/java/id/trinsic/api/models/BangladeshNidInput.java
 src/main/java/id/trinsic/api/models/BrazilCpfCheckInput.java
 src/main/java/id/trinsic/api/models/BrazilDigitalCnhInput.java
 src/main/java/id/trinsic/api/models/CancelSessionResponse.java
@@ -168,11 +166,10 @@ src/main/java/id/trinsic/api/models/TrinsicTestSubProvidersInput.java
 src/test/java/id/trinsic/api/AttachmentsApiTest.java
 src/test/java/id/trinsic/api/NetworkApiTest.java
 src/test/java/id/trinsic/api/SessionsApiTest.java
-src/test/java/id/trinsic/api/WellKnownApiTest.java
 src/test/java/id/trinsic/api/models/AadhaarInputTest.java
 src/test/java/id/trinsic/api/models/AddressTest.java
 src/test/java/id/trinsic/api/models/AttachmentAccessKeysTest.java
-src/test/java/id/trinsic/api/models/BangladeshNationalIdInputTest.java
+src/test/java/id/trinsic/api/models/BangladeshNidInputTest.java
 src/test/java/id/trinsic/api/models/BrazilCpfCheckInputTest.java
 src/test/java/id/trinsic/api/models/BrazilDigitalCnhInputTest.java
 src/test/java/id/trinsic/api/models/CancelSessionResponseTest.java

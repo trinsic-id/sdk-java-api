@@ -54,7 +54,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         try {
             CancelSessionResponse result = apiInstance.cancelSession(sessionId);
             System.out.println(result);
@@ -74,7 +74,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 
 ### Return type
 
@@ -88,7 +88,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -129,7 +129,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         try {
             ApiResponse<CancelSessionResponse> response = apiInstance.cancelSessionWithHttpInfo(sessionId);
             System.out.println("Status code: " + response.getStatusCode());
@@ -151,7 +151,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 
 ### Return type
 
@@ -165,7 +165,7 @@ ApiResponse<[**CancelSessionResponse**](CancelSessionResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -240,7 +240,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -317,7 +317,7 @@ ApiResponse<[**CreateAdvancedProviderSessionResponse**](CreateAdvancedProviderSe
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -392,7 +392,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -469,7 +469,7 @@ ApiResponse<[**CreateHostedProviderSessionResponse**](CreateHostedProviderSessio
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -544,7 +544,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -621,7 +621,7 @@ ApiResponse<[**CreateWidgetSessionResponse**](CreateWidgetSessionResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -696,7 +696,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -773,7 +773,7 @@ ApiResponse<[**GetSessionResponse**](GetSessionResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -848,7 +848,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -925,7 +925,7 @@ ApiResponse<[**GetSessionResultResponse**](GetSessionResultResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1006,7 +1006,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1089,7 +1089,7 @@ ApiResponse<[**ListSessionsResponse**](ListSessionsResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1130,7 +1130,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         try {
             apiInstance.redactSession(sessionId);
         } catch (ApiException e) {
@@ -1149,7 +1149,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 
 ### Return type
 
@@ -1163,7 +1163,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1204,7 +1204,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         try {
             ApiResponse<Void> response = apiInstance.redactSessionWithHttpInfo(sessionId);
             System.out.println("Status code: " + response.getStatusCode());
@@ -1225,7 +1225,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 
 ### Return type
 
@@ -1239,7 +1239,7 @@ ApiResponse<Void>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1316,7 +1316,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1395,7 +1395,7 @@ ApiResponse<[**RefreshStepContentResponse**](RefreshStepContentResponse.md)>
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -25,10 +25,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -39,16 +35,17 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RefreshStepContentRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RefreshStepContentRequest {
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
-  private JsonNullable<String> resultsAccessKey = JsonNullable.<String>undefined();
+  @javax.annotation.Nonnull
+  private String resultsAccessKey;
 
   public RefreshStepContentRequest() { 
   }
 
-  public RefreshStepContentRequest resultsAccessKey(@javax.annotation.Nullable String resultsAccessKey) {
-    this.resultsAccessKey = JsonNullable.<String>of(resultsAccessKey);
+  public RefreshStepContentRequest resultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
+    this.resultsAccessKey = resultsAccessKey;
     return this;
   }
 
@@ -56,26 +53,18 @@ public class RefreshStepContentRequest {
    * The &#x60;ResultsAccessKey&#x60; returned when the Session was created
    * @return resultsAccessKey
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getResultsAccessKey() {
-        return resultsAccessKey.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getResultsAccessKey_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getResultsAccessKey() {
     return resultsAccessKey;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
-  public void setResultsAccessKey_JsonNullable(JsonNullable<String> resultsAccessKey) {
-    this.resultsAccessKey = resultsAccessKey;
-  }
 
-  public void setResultsAccessKey(@javax.annotation.Nullable String resultsAccessKey) {
-    this.resultsAccessKey = JsonNullable.<String>of(resultsAccessKey);
+
+  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setResultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
+    this.resultsAccessKey = resultsAccessKey;
   }
 
 
@@ -91,23 +80,12 @@ public class RefreshStepContentRequest {
       return false;
     }
     RefreshStepContentRequest refreshStepContentRequest = (RefreshStepContentRequest) o;
-    return equalsNullable(this.resultsAccessKey, refreshStepContentRequest.resultsAccessKey);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.resultsAccessKey, refreshStepContentRequest.resultsAccessKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(resultsAccessKey));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(resultsAccessKey);
   }
 
   @Override

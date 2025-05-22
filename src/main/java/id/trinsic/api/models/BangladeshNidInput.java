@@ -35,16 +35,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * BangladeshNationalIdInput
+ * BangladeshNidInput
  */
 @JsonPropertyOrder({
-  BangladeshNationalIdInput.JSON_PROPERTY_NATIONAL_ID_NUMBER,
-  BangladeshNationalIdInput.JSON_PROPERTY_DATE_OF_BIRTH,
-  BangladeshNationalIdInput.JSON_PROPERTY_NAME,
-  BangladeshNationalIdInput.JSON_PROPERTY_PHOTO_BASE64
+  BangladeshNidInput.JSON_PROPERTY_NATIONAL_ID_NUMBER,
+  BangladeshNidInput.JSON_PROPERTY_DATE_OF_BIRTH,
+  BangladeshNidInput.JSON_PROPERTY_NAME,
+  BangladeshNidInput.JSON_PROPERTY_PHOTO_BYES,
+  BangladeshNidInput.JSON_PROPERTY_PHOTO_IMAGE_MIME_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T22:37:43.647894878Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class BangladeshNationalIdInput {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class BangladeshNidInput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
   private JsonNullable<String> nationalIdNumber = JsonNullable.<String>undefined();
 
@@ -54,13 +55,16 @@ public class BangladeshNationalIdInput {
   public static final String JSON_PROPERTY_NAME = "name";
   private JsonNullable<String> name = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_PHOTO_BASE64 = "photoBase64";
-  private JsonNullable<String> photoBase64 = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_PHOTO_BYES = "photoByes";
+  private JsonNullable<byte[]> photoByes = JsonNullable.<byte[]>undefined();
 
-  public BangladeshNationalIdInput() { 
+  public static final String JSON_PROPERTY_PHOTO_IMAGE_MIME_TYPE = "photoImageMimeType";
+  private JsonNullable<String> photoImageMimeType = JsonNullable.<String>undefined();
+
+  public BangladeshNidInput() { 
   }
 
-  public BangladeshNationalIdInput nationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
+  public BangladeshNidInput nationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
     this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
     return this;
   }
@@ -92,7 +96,7 @@ public class BangladeshNationalIdInput {
   }
 
 
-  public BangladeshNationalIdInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+  public BangladeshNidInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
@@ -124,7 +128,7 @@ public class BangladeshNationalIdInput {
   }
 
 
-  public BangladeshNationalIdInput name(@javax.annotation.Nullable String name) {
+  public BangladeshNidInput name(@javax.annotation.Nullable String name) {
     this.name = JsonNullable.<String>of(name);
     return this;
   }
@@ -156,40 +160,72 @@ public class BangladeshNationalIdInput {
   }
 
 
-  public BangladeshNationalIdInput photoBase64(@javax.annotation.Nullable String photoBase64) {
-    this.photoBase64 = JsonNullable.<String>of(photoBase64);
+  public BangladeshNidInput photoByes(@javax.annotation.Nullable byte[] photoByes) {
+    this.photoByes = JsonNullable.<byte[]>of(photoByes);
     return this;
   }
 
   /**
-   * The base64-encoded bytes of the photo collected from the user
-   * @return photoBase64
+   * The raw bytes of the photo file collected from the user.
+   * @return photoByes
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getPhotoBase64() {
-        return photoBase64.orElse(null);
+  public byte[] getPhotoByes() {
+        return photoByes.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHOTO_BASE64)
+  @JsonProperty(JSON_PROPERTY_PHOTO_BYES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getPhotoBase64_JsonNullable() {
-    return photoBase64;
+  public JsonNullable<byte[]> getPhotoByes_JsonNullable() {
+    return photoByes;
   }
   
-  @JsonProperty(JSON_PROPERTY_PHOTO_BASE64)
-  public void setPhotoBase64_JsonNullable(JsonNullable<String> photoBase64) {
-    this.photoBase64 = photoBase64;
+  @JsonProperty(JSON_PROPERTY_PHOTO_BYES)
+  public void setPhotoByes_JsonNullable(JsonNullable<byte[]> photoByes) {
+    this.photoByes = photoByes;
   }
 
-  public void setPhotoBase64(@javax.annotation.Nullable String photoBase64) {
-    this.photoBase64 = JsonNullable.<String>of(photoBase64);
+  public void setPhotoByes(@javax.annotation.Nullable byte[] photoByes) {
+    this.photoByes = JsonNullable.<byte[]>of(photoByes);
+  }
+
+
+  public BangladeshNidInput photoImageMimeType(@javax.annotation.Nullable String photoImageMimeType) {
+    this.photoImageMimeType = JsonNullable.<String>of(photoImageMimeType);
+    return this;
+  }
+
+  /**
+   * The MIME Type of the file contained in &#x60;PhotoByes&#x60;.              Must be one of &#x60;image/jpeg&#x60;, or &#x60;image/png&#x60;.
+   * @return photoImageMimeType
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getPhotoImageMimeType() {
+        return photoImageMimeType.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHOTO_IMAGE_MIME_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getPhotoImageMimeType_JsonNullable() {
+    return photoImageMimeType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHOTO_IMAGE_MIME_TYPE)
+  public void setPhotoImageMimeType_JsonNullable(JsonNullable<String> photoImageMimeType) {
+    this.photoImageMimeType = photoImageMimeType;
+  }
+
+  public void setPhotoImageMimeType(@javax.annotation.Nullable String photoImageMimeType) {
+    this.photoImageMimeType = JsonNullable.<String>of(photoImageMimeType);
   }
 
 
   /**
-   * Return true if this BangladeshNationalIdInput object is equal to o.
+   * Return true if this BangladeshNidInput object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -199,11 +235,12 @@ public class BangladeshNationalIdInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BangladeshNationalIdInput bangladeshNationalIdInput = (BangladeshNationalIdInput) o;
-    return equalsNullable(this.nationalIdNumber, bangladeshNationalIdInput.nationalIdNumber) &&
-        equalsNullable(this.dateOfBirth, bangladeshNationalIdInput.dateOfBirth) &&
-        equalsNullable(this.name, bangladeshNationalIdInput.name) &&
-        equalsNullable(this.photoBase64, bangladeshNationalIdInput.photoBase64);
+    BangladeshNidInput bangladeshNidInput = (BangladeshNidInput) o;
+    return equalsNullable(this.nationalIdNumber, bangladeshNidInput.nationalIdNumber) &&
+        equalsNullable(this.dateOfBirth, bangladeshNidInput.dateOfBirth) &&
+        equalsNullable(this.name, bangladeshNidInput.name) &&
+        equalsNullable(this.photoByes, bangladeshNidInput.photoByes) &&
+        equalsNullable(this.photoImageMimeType, bangladeshNidInput.photoImageMimeType);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -212,7 +249,7 @@ public class BangladeshNationalIdInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(dateOfBirth), hashCodeNullable(name), hashCodeNullable(photoBase64));
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(dateOfBirth), hashCodeNullable(name), hashCodeNullable(photoByes), hashCodeNullable(photoImageMimeType));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -225,11 +262,12 @@ public class BangladeshNationalIdInput {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BangladeshNationalIdInput {\n");
+    sb.append("class BangladeshNidInput {\n");
     sb.append("    nationalIdNumber: ").append(toIndentedString(nationalIdNumber)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    photoBase64: ").append(toIndentedString(photoBase64)).append("\n");
+    sb.append("    photoByes: ").append(toIndentedString(photoByes)).append("\n");
+    sb.append("    photoImageMimeType: ").append(toIndentedString(photoImageMimeType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -292,9 +330,14 @@ public class BangladeshNationalIdInput {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
-    // add `photoBase64` to the URL query string
-    if (getPhotoBase64() != null) {
-      joiner.add(String.format("%sphotoBase64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhotoBase64()))));
+    // add `photoByes` to the URL query string
+    if (getPhotoByes() != null) {
+      joiner.add(String.format("%sphotoByes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhotoByes()))));
+    }
+
+    // add `photoImageMimeType` to the URL query string
+    if (getPhotoImageMimeType() != null) {
+      joiner.add(String.format("%sphotoImageMimeType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhotoImageMimeType()))));
     }
 
     return joiner.toString();

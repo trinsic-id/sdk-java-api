@@ -29,17 +29,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BangladeshNationalIdInput
+ * Model tests for BangladeshNidInput
  */
-class BangladeshNationalIdInputTest {
-    private final BangladeshNationalIdInput model = new BangladeshNationalIdInput();
+class BangladeshNidInputTest {
+    private final BangladeshNidInput model = new BangladeshNidInput();
 
     /**
-     * Model tests for BangladeshNationalIdInput
+     * Model tests for BangladeshNidInput
      */
     @Test
-    void testBangladeshNationalIdInput() {
-        // TODO: test BangladeshNationalIdInput
+    void testBangladeshNidInput() {
+        // TODO: test BangladeshNidInput
     }
 
     /**
@@ -67,11 +67,19 @@ class BangladeshNationalIdInputTest {
     }
 
     /**
-     * Test the property 'photoBase64'
+     * Test the property 'photoByes'
      */
     @Test
-    void photoBase64Test() {
-        // TODO: test photoBase64
+    void photoByesTest() {
+        // TODO: test photoByes
+    }
+
+    /**
+     * Test the property 'photoImageMimeType'
+     */
+    @Test
+    void photoImageMimeTypeTest() {
+        // TODO: test photoImageMimeType
     }
 
 }

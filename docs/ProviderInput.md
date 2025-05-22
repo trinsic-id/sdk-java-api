@@ -13,7 +13,7 @@
 |**kenyaNid** | [**KenyaNidInput**](KenyaNidInput.md) | Input for the &#x60;f-kenya-nid&#x60; provider |  [optional] |
 |**nigeriaNin** | [**NigeriaNinInput**](NigeriaNinInput.md) | Input for the &#x60;f-nigeria-nin&#x60; provider |  [optional] |
 |**aadhaar** | [**AadhaarInput**](AadhaarInput.md) | Input for the &#x60;f-india-aadhaar-match&#x60; provider |  [optional] |
-|**bangladeshNationalId** | [**BangladeshNationalIdInput**](BangladeshNationalIdInput.md) | Input for the &#x60;bangladesh-nid&#x60; provider |  [optional] |
+|**bangladeshNationalId** | [**BangladeshNidInput**](BangladeshNidInput.md) | Input for the &#x60;bangladesh-nid&#x60; provider |  [optional] |
 |**brazilCpfCheck** | [**BrazilCpfCheckInput**](BrazilCpfCheckInput.md) | Input for the &#x60;g-brazil-cpf&#x60; provider |  [optional] |
 |**brazilDigitalCnh** | [**BrazilDigitalCnhInput**](BrazilDigitalCnhInput.md) | Input for the &#x60;g-brazil-digital-cnh&#x60; provider |  [optional] |
 |**philippineMatch** | [**PhilippineMatchInput**](PhilippineMatchInput.md) | Input for the &#x60;b-philsys-biometric&#x60; provider |  [optional] |
