@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   CreateAdvancedProviderSessionResponse.JSON_PROPERTY_RESULT_COLLECTION,
   CreateAdvancedProviderSessionResponse.JSON_PROPERTY_NEXT_STEP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:17:39.795847311Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAdvancedProviderSessionResponse {
   public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
   @javax.annotation.Nonnull

@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   SubProviderMetadata.JSON_PROPERTY_DESCRIPTION,
   SubProviderMetadata.JSON_PROPERTY_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:17:39.795847311Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SubProviderMetadata {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull

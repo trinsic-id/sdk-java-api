@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:15:48.156257273Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:17:39.795847311Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
