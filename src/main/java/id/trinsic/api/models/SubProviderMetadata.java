@@ -35,10 +35,11 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   SubProviderMetadata.JSON_PROPERTY_ID,
   SubProviderMetadata.JSON_PROPERTY_NAME,
+  SubProviderMetadata.JSON_PROPERTY_SUBTEXT,
   SubProviderMetadata.JSON_PROPERTY_DESCRIPTION,
   SubProviderMetadata.JSON_PROPERTY_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SubProviderMetadata {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -47,6 +48,10 @@ public class SubProviderMetadata {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
   private String name;
+
+  public static final String JSON_PROPERTY_SUBTEXT = "subtext";
+  @javax.annotation.Nonnull
+  private String subtext;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nonnull
@@ -107,15 +112,41 @@ public class SubProviderMetadata {
   }
 
 
+  public SubProviderMetadata subtext(@javax.annotation.Nonnull String subtext) {
+    this.subtext = subtext;
+    return this;
+  }
+
+  /**
+   * The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
+   * @return subtext
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getSubtext() {
+    return subtext;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSubtext(@javax.annotation.Nonnull String subtext) {
+    this.subtext = subtext;
+  }
+
+
   public SubProviderMetadata description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
   /**
-   * Flavor text for the sub-provider
+   * The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
    * @return description
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -169,13 +200,14 @@ public class SubProviderMetadata {
     SubProviderMetadata subProviderMetadata = (SubProviderMetadata) o;
     return Objects.equals(this.id, subProviderMetadata.id) &&
         Objects.equals(this.name, subProviderMetadata.name) &&
+        Objects.equals(this.subtext, subProviderMetadata.subtext) &&
         Objects.equals(this.description, subProviderMetadata.description) &&
         Objects.equals(this.logoUrl, subProviderMetadata.logoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, logoUrl);
+    return Objects.hash(id, name, subtext, description, logoUrl);
   }
 
   @Override
@@ -184,6 +216,7 @@ public class SubProviderMetadata {
     sb.append("class SubProviderMetadata {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("}");
@@ -241,6 +274,11 @@ public class SubProviderMetadata {
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `subtext` to the URL query string
+    if (getSubtext() != null) {
+      joiner.add(String.format("%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
     }
 
     // add `description` to the URL query string

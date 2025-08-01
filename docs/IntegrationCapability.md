@@ -17,5 +17,7 @@
 
 * `POLL_RESULT` (value: `"PollResult"`)
 
+* `POLL_AFTER_REDIRECT` (value: `"PollAfterRedirect"`)
+
 
 

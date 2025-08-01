@@ -38,12 +38,16 @@ import id.trinsic.ApiClient;
  * RecommendRequest
  */
 @JsonPropertyOrder({
-  RecommendRequest.JSON_PROPERTY_RECOMMENDATION_INFO
+  RecommendRequest.JSON_PROPERTY_RECOMMENDATION_INFO,
+  RecommendRequest.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendRequest {
   public static final String JSON_PROPERTY_RECOMMENDATION_INFO = "recommendationInfo";
   private JsonNullable<RecommendationInfo> recommendationInfo = JsonNullable.<RecommendationInfo>undefined();
+
+  public static final String JSON_PROPERTY_HEALTH = "health";
+  private JsonNullable<String> health = JsonNullable.<String>undefined();
 
   public RecommendRequest() { 
   }
@@ -80,6 +84,38 @@ public class RecommendRequest {
   }
 
 
+  public RecommendRequest health(@javax.annotation.Nullable String health) {
+    this.health = JsonNullable.<String>of(health);
+    return this;
+  }
+
+  /**
+   * Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;online\&quot;.
+   * @return health
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getHealth() {
+        return health.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_HEALTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getHealth_JsonNullable() {
+    return health;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_HEALTH)
+  public void setHealth_JsonNullable(JsonNullable<String> health) {
+    this.health = health;
+  }
+
+  public void setHealth(@javax.annotation.Nullable String health) {
+    this.health = JsonNullable.<String>of(health);
+  }
+
+
   /**
    * Return true if this RecommendRequest object is equal to o.
    */
@@ -92,7 +128,8 @@ public class RecommendRequest {
       return false;
     }
     RecommendRequest recommendRequest = (RecommendRequest) o;
-    return equalsNullable(this.recommendationInfo, recommendRequest.recommendationInfo);
+    return equalsNullable(this.recommendationInfo, recommendRequest.recommendationInfo) &&
+        equalsNullable(this.health, recommendRequest.health);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -101,7 +138,7 @@ public class RecommendRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(recommendationInfo));
+    return Objects.hash(hashCodeNullable(recommendationInfo), hashCodeNullable(health));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -116,6 +153,7 @@ public class RecommendRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecommendRequest {\n");
     sb.append("    recommendationInfo: ").append(toIndentedString(recommendationInfo)).append("\n");
+    sb.append("    health: ").append(toIndentedString(health)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,6 +204,11 @@ public class RecommendRequest {
     // add `recommendationInfo` to the URL query string
     if (getRecommendationInfo() != null) {
       joiner.add(getRecommendationInfo().toUrlQueryString(prefix + "recommendationInfo" + suffix));
+    }
+
+    // add `health` to the URL query string
+    if (getHealth() != null) {
+      joiner.add(String.format("%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
     }
 
     return joiner.toString();

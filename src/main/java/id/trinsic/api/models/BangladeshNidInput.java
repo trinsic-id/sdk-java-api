@@ -44,16 +44,19 @@ import id.trinsic.ApiClient;
   BangladeshNidInput.JSON_PROPERTY_PHOTO_BYES,
   BangladeshNidInput.JSON_PROPERTY_PHOTO_IMAGE_MIME_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BangladeshNidInput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
-  private JsonNullable<String> nationalIdNumber = JsonNullable.<String>undefined();
+  @javax.annotation.Nonnull
+  private String nationalIdNumber;
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+  @javax.annotation.Nonnull
+  private LocalDate dateOfBirth;
 
   public static final String JSON_PROPERTY_NAME = "name";
-  private JsonNullable<String> name = JsonNullable.<String>undefined();
+  @javax.annotation.Nonnull
+  private String name;
 
   public static final String JSON_PROPERTY_PHOTO_BYES = "photoByes";
   private JsonNullable<byte[]> photoByes = JsonNullable.<byte[]>undefined();
@@ -64,8 +67,8 @@ public class BangladeshNidInput {
   public BangladeshNidInput() { 
   }
 
-  public BangladeshNidInput nationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
-    this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
+  public BangladeshNidInput nationalIdNumber(@javax.annotation.Nonnull String nationalIdNumber) {
+    this.nationalIdNumber = nationalIdNumber;
     return this;
   }
 
@@ -73,31 +76,23 @@ public class BangladeshNidInput {
    * The user&#39;s Bangladesh National ID number.
    * @return nationalIdNumber
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getNationalIdNumber() {
-        return nationalIdNumber.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getNationalIdNumber_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getNationalIdNumber() {
     return nationalIdNumber;
   }
-  
+
+
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
-  public void setNationalIdNumber_JsonNullable(JsonNullable<String> nationalIdNumber) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setNationalIdNumber(@javax.annotation.Nonnull String nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
-  public void setNationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
-    this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
-  }
 
-
-  public BangladeshNidInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
-    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  public BangladeshNidInput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
     return this;
   }
 
@@ -105,31 +100,23 @@ public class BangladeshNidInput {
    * The user&#39;s date of birth, in &#x60;YYYY-MM-DD&#x60; format
    * @return dateOfBirth
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public LocalDate getDateOfBirth() {
-        return dateOfBirth.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
-  
+
+
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
-    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
-  }
 
-
-  public BangladeshNidInput name(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
+  public BangladeshNidInput name(@javax.annotation.Nonnull String name) {
+    this.name = name;
     return this;
   }
 
@@ -137,26 +124,18 @@ public class BangladeshNidInput {
    * The user&#39;s full name
    * @return name
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getName() {
-        return name.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getName_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getName() {
     return name;
   }
-  
-  @JsonProperty(JSON_PROPERTY_NAME)
-  public void setName_JsonNullable(JsonNullable<String> name) {
-    this.name = name;
-  }
 
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setName(@javax.annotation.Nonnull String name) {
+    this.name = name;
   }
 
 
@@ -236,9 +215,9 @@ public class BangladeshNidInput {
       return false;
     }
     BangladeshNidInput bangladeshNidInput = (BangladeshNidInput) o;
-    return equalsNullable(this.nationalIdNumber, bangladeshNidInput.nationalIdNumber) &&
-        equalsNullable(this.dateOfBirth, bangladeshNidInput.dateOfBirth) &&
-        equalsNullable(this.name, bangladeshNidInput.name) &&
+    return Objects.equals(this.nationalIdNumber, bangladeshNidInput.nationalIdNumber) &&
+        Objects.equals(this.dateOfBirth, bangladeshNidInput.dateOfBirth) &&
+        Objects.equals(this.name, bangladeshNidInput.name) &&
         equalsNullable(this.photoByes, bangladeshNidInput.photoByes) &&
         equalsNullable(this.photoImageMimeType, bangladeshNidInput.photoImageMimeType);
   }
@@ -249,7 +228,7 @@ public class BangladeshNidInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(dateOfBirth), hashCodeNullable(name), hashCodeNullable(photoByes), hashCodeNullable(photoImageMimeType));
+    return Objects.hash(nationalIdNumber, dateOfBirth, name, hashCodeNullable(photoByes), hashCodeNullable(photoImageMimeType));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

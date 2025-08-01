@@ -159,7 +159,7 @@ ApiResponse<[**ListProviderContractsResponse**](ListProviderContractsResponse.md
 
 ## listProviders
 
-> ListProvidersResponse listProviders()
+> ListProvidersResponse listProviders(health)
 
 List Providers
 
@@ -186,8 +186,9 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
+        String health = "health_example"; // String | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
         try {
-            ListProvidersResponse result = apiInstance.listProviders();
+            ListProvidersResponse result = apiInstance.listProviders(health);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling NetworkApi#listProviders");
@@ -202,7 +203,10 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **health** | **String**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
 
 ### Return type
 
@@ -229,7 +233,7 @@ This endpoint does not need any parameter.
 
 ## listProvidersWithHttpInfo
 
-> ApiResponse<ListProvidersResponse> listProviders listProvidersWithHttpInfo()
+> ApiResponse<ListProvidersResponse> listProviders listProvidersWithHttpInfo(health)
 
 List Providers
 
@@ -257,8 +261,9 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
+        String health = "health_example"; // String | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
         try {
-            ApiResponse<ListProvidersResponse> response = apiInstance.listProvidersWithHttpInfo();
+            ApiResponse<ListProvidersResponse> response = apiInstance.listProvidersWithHttpInfo(health);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -275,7 +280,10 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **health** | **String**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
 
 ### Return type
 
@@ -307,7 +315,7 @@ ApiResponse<[**ListProvidersResponse**](ListProvidersResponse.md)>
 
 Recommend Providers
 
-Generate provider recommendations based on the given signals (phone number, countries, states).
+Generate provider recommendations based on signals about the user&#39;s location (phone number, countries, states).
 
 ### Example
 
@@ -381,7 +389,7 @@ public class Example {
 
 Recommend Providers
 
-Generate provider recommendations based on the given signals (phone number, countries, states).
+Generate provider recommendations based on signals about the user&#39;s location (phone number, countries, states).
 
 ### Example
 

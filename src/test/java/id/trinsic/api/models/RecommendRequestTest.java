@@ -50,4 +50,12 @@ class RecommendRequestTest {
         // TODO: test recommendationInfo
     }
 
+    /**
+     * Test the property 'health'
+     */
+    @Test
+    void healthTest() {
+        // TODO: test health
+    }
+
 }

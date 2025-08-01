@@ -64,8 +64,9 @@ public class NetworkApiTest {
      */
     @Test
     public void listProvidersTest() throws ApiException {
+        String health = null;
         ListProvidersResponse response = 
-        api.listProviders();
+        api.listProviders(health);
         
         // TODO: test validations
     }
@@ -73,7 +74,7 @@ public class NetworkApiTest {
     /**
      * Recommend Providers
      *
-     * Generate provider recommendations based on the given signals (phone number, countries, states).
+     * Generate provider recommendations based on signals about the user&#39;s location (phone number, countries, states).
      *
      * @throws ApiException
      *          if the Api call fails

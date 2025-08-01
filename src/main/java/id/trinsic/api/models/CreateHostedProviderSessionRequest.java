@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -112,9 +112,11 @@ public class CreateHostedProviderSessionRequest {
   }
 
   /**
-   * Provider-specific input for those providers which require it.
+   * Provider-specific input for those providers which require it.   &lt;b&gt;Deprecated:&lt;/b&gt; In the future, Hosted Provider Sessions will not accept input on creation, and will instead always redirect the user to a hosted interface to collect input. If you need to collect input from the user yourself, please use the Create Advanced Session endpoint instead.
    * @return providerInput
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   @JsonIgnore
   public ProviderInput getProviderInput() {

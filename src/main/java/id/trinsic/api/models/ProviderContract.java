@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.ContractField;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.ProviderHealth;
 import id.trinsic.api.models.ResultCollectionMethod;
@@ -45,6 +46,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ProviderContract.JSON_PROPERTY_ID,
   ProviderContract.JSON_PROPERTY_NAME,
+  ProviderContract.JSON_PROPERTY_SUBTEXT,
   ProviderContract.JSON_PROPERTY_DESCRIPTION,
   ProviderContract.JSON_PROPERTY_LOGO_URL,
   ProviderContract.JSON_PROPERTY_AVAILABLE,
@@ -57,10 +59,11 @@ import id.trinsic.ApiClient;
   ProviderContract.JSON_PROPERTY_REQUIRES_INPUT,
   ProviderContract.JSON_PROPERTY_HAS_TRINSIC_INTERFACE,
   ProviderContract.JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS,
+  ProviderContract.JSON_PROPERTY_AVAILABLE_FIELDS,
   ProviderContract.JSON_PROPERTY_SUB_PROVIDERS,
   ProviderContract.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderContract {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -69,6 +72,10 @@ public class ProviderContract {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
   private String name;
+
+  public static final String JSON_PROPERTY_SUBTEXT = "subtext";
+  @javax.annotation.Nonnull
+  private String subtext;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nonnull
@@ -117,6 +124,9 @@ public class ProviderContract {
   public static final String JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS = "supportsAdvancedProviderSessions";
   @javax.annotation.Nonnull
   private Boolean supportsAdvancedProviderSessions;
+
+  public static final String JSON_PROPERTY_AVAILABLE_FIELDS = "availableFields";
+  private JsonNullable<List<ContractField>> availableFields = JsonNullable.<List<ContractField>>undefined();
 
   public static final String JSON_PROPERTY_SUB_PROVIDERS = "subProviders";
   private JsonNullable<List<SubProviderMetadata>> subProviders = JsonNullable.<List<SubProviderMetadata>>undefined();
@@ -176,6 +186,30 @@ public class ProviderContract {
   }
 
 
+  public ProviderContract subtext(@javax.annotation.Nonnull String subtext) {
+    this.subtext = subtext;
+    return this;
+  }
+
+  /**
+   * The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
+   * @return subtext
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getSubtext() {
+    return subtext;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSubtext(@javax.annotation.Nonnull String subtext) {
+    this.subtext = subtext;
+  }
+
+
   public ProviderContract description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
@@ -184,7 +218,9 @@ public class ProviderContract {
   /**
    * The Provider&#39;s description as it appears in Trinsic&#39;s Widget.              This is flavor text, not a full, human-readable description of the provider.
    * @return description
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -366,7 +402,7 @@ public class ProviderContract {
   }
 
   /**
-   * If &#x60;true&#x60;, then the results for this Provider may not be available immediately after the user is redirected back to your application. In this case, the &#x60;GetSessionResults&#x60; API must be called until results are available.              This is an uncommon scenario, and typically only applies to Providers which use a biometric check or traditional document scan.
+   * If &#x60;true&#x60;, then the results for this Provider may not be available immediately after the user is redirected back to your application. In this case, the &#x60;GetSessionResults&#x60; API must be called until results are available.              This is an uncommon scenario, and only applies to Providers which cannot guarantee the availability of results immediately after the user is redirected back to your application.
    * @return resultsMayBeDelayedAfterRedirect
    */
   @javax.annotation.Nonnull
@@ -480,6 +516,50 @@ public class ProviderContract {
   }
 
 
+  public ProviderContract availableFields(@javax.annotation.Nullable List<ContractField> availableFields) {
+    this.availableFields = JsonNullable.<List<ContractField>>of(availableFields);
+    return this;
+  }
+
+  public ProviderContract addAvailableFieldsItem(ContractField availableFieldsItem) {
+    if (this.availableFields == null || !this.availableFields.isPresent()) {
+      this.availableFields = JsonNullable.<List<ContractField>>of(new ArrayList<>());
+    }
+    try {
+      this.availableFields.get().add(availableFieldsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Information about the fields that this Provider will return in verification results.
+   * @return availableFields
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<ContractField> getAvailableFields() {
+        return availableFields.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_AVAILABLE_FIELDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<ContractField>> getAvailableFields_JsonNullable() {
+    return availableFields;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AVAILABLE_FIELDS)
+  public void setAvailableFields_JsonNullable(JsonNullable<List<ContractField>> availableFields) {
+    this.availableFields = availableFields;
+  }
+
+  public void setAvailableFields(@javax.annotation.Nullable List<ContractField> availableFields) {
+    this.availableFields = JsonNullable.<List<ContractField>>of(availableFields);
+  }
+
+
   public ProviderContract subProviders(@javax.annotation.Nullable List<SubProviderMetadata> subProviders) {
     this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(subProviders);
     return this;
@@ -562,6 +642,7 @@ public class ProviderContract {
     ProviderContract providerContract = (ProviderContract) o;
     return Objects.equals(this.id, providerContract.id) &&
         Objects.equals(this.name, providerContract.name) &&
+        Objects.equals(this.subtext, providerContract.subtext) &&
         Objects.equals(this.description, providerContract.description) &&
         Objects.equals(this.logoUrl, providerContract.logoUrl) &&
         Objects.equals(this.available, providerContract.available) &&
@@ -574,6 +655,7 @@ public class ProviderContract {
         Objects.equals(this.requiresInput, providerContract.requiresInput) &&
         Objects.equals(this.hasTrinsicInterface, providerContract.hasTrinsicInterface) &&
         Objects.equals(this.supportsAdvancedProviderSessions, providerContract.supportsAdvancedProviderSessions) &&
+        equalsNullable(this.availableFields, providerContract.availableFields) &&
         equalsNullable(this.subProviders, providerContract.subProviders) &&
         Objects.equals(this.health, providerContract.health);
   }
@@ -584,7 +666,7 @@ public class ProviderContract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, hashCodeNullable(subProviders), health);
+    return Objects.hash(id, name, subtext, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, hashCodeNullable(availableFields), hashCodeNullable(subProviders), health);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -600,6 +682,7 @@ public class ProviderContract {
     sb.append("class ProviderContract {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    available: ").append(toIndentedString(available)).append("\n");
@@ -612,6 +695,7 @@ public class ProviderContract {
     sb.append("    requiresInput: ").append(toIndentedString(requiresInput)).append("\n");
     sb.append("    hasTrinsicInterface: ").append(toIndentedString(hasTrinsicInterface)).append("\n");
     sb.append("    supportsAdvancedProviderSessions: ").append(toIndentedString(supportsAdvancedProviderSessions)).append("\n");
+    sb.append("    availableFields: ").append(toIndentedString(availableFields)).append("\n");
     sb.append("    subProviders: ").append(toIndentedString(subProviders)).append("\n");
     sb.append("    health: ").append(toIndentedString(health)).append("\n");
     sb.append("}");
@@ -669,6 +753,11 @@ public class ProviderContract {
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `subtext` to the URL query string
+    if (getSubtext() != null) {
+      joiner.add(String.format("%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
     }
 
     // add `description` to the URL query string
@@ -737,6 +826,16 @@ public class ProviderContract {
     // add `supportsAdvancedProviderSessions` to the URL query string
     if (getSupportsAdvancedProviderSessions() != null) {
       joiner.add(String.format("%ssupportsAdvancedProviderSessions%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSupportsAdvancedProviderSessions()))));
+    }
+
+    // add `availableFields` to the URL query string
+    if (getAvailableFields() != null) {
+      for (int i = 0; i < getAvailableFields().size(); i++) {
+        if (getAvailableFields().get(i) != null) {
+          joiner.add(getAvailableFields().get(i).toUrlQueryString(String.format("%savailableFields%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     // add `subProviders` to the URL query string

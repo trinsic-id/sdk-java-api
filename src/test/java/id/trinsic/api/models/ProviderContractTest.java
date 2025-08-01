@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.ContractField;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.ProviderHealth;
 import id.trinsic.api.models.ResultCollectionMethod;
@@ -61,6 +62,14 @@ class ProviderContractTest {
     @Test
     void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'subtext'
+     */
+    @Test
+    void subtextTest() {
+        // TODO: test subtext
     }
 
     /**
@@ -157,6 +166,14 @@ class ProviderContractTest {
     @Test
     void supportsAdvancedProviderSessionsTest() {
         // TODO: test supportsAdvancedProviderSessions
+    }
+
+    /**
+     * Test the property 'availableFields'
+     */
+    @Test
+    void availableFieldsTest() {
+        // TODO: test availableFields
     }
 
     /**

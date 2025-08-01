@@ -72,7 +72,7 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
@@ -134,7 +134,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-indonesia-nik&#x60; provider
+   * Input for the &#x60;indonesia-nik-lookup&#x60; provider
    * @return indonesiaNik
    */
   @javax.annotation.Nullable
@@ -166,7 +166,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-mexico-curp&#x60; provider
+   * Input for the &#x60;mexico-curp-lookup&#x60; provider
    * @return mexicoCurp
    */
   @javax.annotation.Nullable
@@ -198,7 +198,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-south-africa-nid&#x60; provider
+   * Input for the &#x60;south-africa-nid-lookup&#x60; provider
    * @return southAfricaNid
    */
   @javax.annotation.Nullable
@@ -230,7 +230,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-kenya-nid&#x60; provider
+   * Input for the &#x60;kenya-nid-lookup&#x60; provider
    * @return kenyaNid
    */
   @javax.annotation.Nullable
@@ -262,7 +262,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-nigeria-nin&#x60; provider
+   * Input for the &#x60;nigeria-nin-lookup&#x60; provider
    * @return nigeriaNin
    */
   @javax.annotation.Nullable
@@ -294,7 +294,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;f-india-aadhaar-match&#x60; provider
+   * Input for the &#x60;india-digilocker-aadhaar-match&#x60; provider
    * @return aadhaar
    */
   @javax.annotation.Nullable
@@ -358,7 +358,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;g-brazil-cpf&#x60; provider
+   * Input for the &#x60;brazil-cpf-lookup&#x60; provider
    * @return brazilCpfCheck
    */
   @javax.annotation.Nullable
@@ -390,7 +390,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;g-brazil-digital-cnh&#x60; provider
+   * Input for the &#x60;brazil-digital-cnh&#x60; provider
    * @return brazilDigitalCnh
    */
   @javax.annotation.Nullable
@@ -422,7 +422,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;b-philsys-biometric&#x60; provider
+   * Input for the &#x60;philippines-philsys-match&#x60; provider
    * @return philippineMatch
    */
   @javax.annotation.Nullable
@@ -454,7 +454,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;b-philippine-qr-digital-national-id&#x60; and &#x60;b-philippine-qr-ephill-id&#x60; providers
+   * Input for the &#x60;philippines-digital-national-id-qr&#x60; and &#x60;philippines-physical-national-id-qr&#x60; providers
    * @return philippineQR
    */
   @javax.annotation.Nullable
@@ -550,7 +550,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;idin&#x60; provider
+   * Input for the &#x60;netherlands-idin&#x60; provider
    * @return idin
    */
   @javax.annotation.Nullable
@@ -582,7 +582,7 @@ public class ProviderInput {
   }
 
   /**
-   * Input for the &#x60;spid&#x60; provider
+   * Input for the &#x60;italy-spid&#x60; provider
    * @return spid
    */
   @javax.annotation.Nullable

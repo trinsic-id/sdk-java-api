@@ -24,7 +24,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.SubProviderMetadata;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -35,9 +42,13 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ProviderInfo.JSON_PROPERTY_ID,
   ProviderInfo.JSON_PROPERTY_NAME,
-  ProviderInfo.JSON_PROPERTY_LOGO_URL
+  ProviderInfo.JSON_PROPERTY_LOGO_URL,
+  ProviderInfo.JSON_PROPERTY_SUBTEXT,
+  ProviderInfo.JSON_PROPERTY_DESCRIPTION,
+  ProviderInfo.JSON_PROPERTY_HEALTH,
+  ProviderInfo.JSON_PROPERTY_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInfo {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -50,6 +61,21 @@ public class ProviderInfo {
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
   private String logoUrl;
+
+  public static final String JSON_PROPERTY_SUBTEXT = "subtext";
+  @javax.annotation.Nonnull
+  private String subtext;
+
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nonnull
+  private String description;
+
+  public static final String JSON_PROPERTY_HEALTH = "health";
+  @javax.annotation.Nonnull
+  private String health;
+
+  public static final String JSON_PROPERTY_SUB_PROVIDERS = "subProviders";
+  private JsonNullable<List<SubProviderMetadata>> subProviders = JsonNullable.<List<SubProviderMetadata>>undefined();
 
   public ProviderInfo() { 
   }
@@ -126,6 +152,124 @@ public class ProviderInfo {
   }
 
 
+  public ProviderInfo subtext(@javax.annotation.Nonnull String subtext) {
+    this.subtext = subtext;
+    return this;
+  }
+
+  /**
+   * The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
+   * @return subtext
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getSubtext() {
+    return subtext;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSubtext(@javax.annotation.Nonnull String subtext) {
+    this.subtext = subtext;
+  }
+
+
+  public ProviderInfo description(@javax.annotation.Nonnull String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * The Provider&#39;s description recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
+   * @return description
+   * @deprecated
+   */
+  @Deprecated
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getDescription() {
+    return description;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDescription(@javax.annotation.Nonnull String description) {
+    this.description = description;
+  }
+
+
+  public ProviderInfo health(@javax.annotation.Nonnull String health) {
+    this.health = health;
+    return this;
+  }
+
+  /**
+   * The current health status of the provider
+   * @return health
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_HEALTH)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getHealth() {
+    return health;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HEALTH)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setHealth(@javax.annotation.Nonnull String health) {
+    this.health = health;
+  }
+
+
+  public ProviderInfo subProviders(@javax.annotation.Nullable List<SubProviderMetadata> subProviders) {
+    this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(subProviders);
+    return this;
+  }
+
+  public ProviderInfo addSubProvidersItem(SubProviderMetadata subProvidersItem) {
+    if (this.subProviders == null || !this.subProviders.isPresent()) {
+      this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(new ArrayList<>());
+    }
+    try {
+      this.subProviders.get().add(subProvidersItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Metadata about the sub-providers which are available for this Provider.              For example, Italy&#39;s SPID is a Provider which aggregates access to multiple sub-providers.
+   * @return subProviders
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<SubProviderMetadata> getSubProviders() {
+        return subProviders.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SUB_PROVIDERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<SubProviderMetadata>> getSubProviders_JsonNullable() {
+    return subProviders;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUB_PROVIDERS)
+  public void setSubProviders_JsonNullable(JsonNullable<List<SubProviderMetadata>> subProviders) {
+    this.subProviders = subProviders;
+  }
+
+  public void setSubProviders(@javax.annotation.Nullable List<SubProviderMetadata> subProviders) {
+    this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(subProviders);
+  }
+
+
   /**
    * Return true if this ProviderInfo object is equal to o.
    */
@@ -140,12 +284,27 @@ public class ProviderInfo {
     ProviderInfo providerInfo = (ProviderInfo) o;
     return Objects.equals(this.id, providerInfo.id) &&
         Objects.equals(this.name, providerInfo.name) &&
-        Objects.equals(this.logoUrl, providerInfo.logoUrl);
+        Objects.equals(this.logoUrl, providerInfo.logoUrl) &&
+        Objects.equals(this.subtext, providerInfo.subtext) &&
+        Objects.equals(this.description, providerInfo.description) &&
+        Objects.equals(this.health, providerInfo.health) &&
+        equalsNullable(this.subProviders, providerInfo.subProviders);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoUrl);
+    return Objects.hash(id, name, logoUrl, subtext, description, health, hashCodeNullable(subProviders));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -155,6 +314,10 @@ public class ProviderInfo {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
+    sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    health: ").append(toIndentedString(health)).append("\n");
+    sb.append("    subProviders: ").append(toIndentedString(subProviders)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -215,6 +378,31 @@ public class ProviderInfo {
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
       joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
+    }
+
+    // add `subtext` to the URL query string
+    if (getSubtext() != null) {
+      joiner.add(String.format("%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
+    }
+
+    // add `description` to the URL query string
+    if (getDescription() != null) {
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
+    }
+
+    // add `health` to the URL query string
+    if (getHealth() != null) {
+      joiner.add(String.format("%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
+    }
+
+    // add `subProviders` to the URL query string
+    if (getSubProviders() != null) {
+      for (int i = 0; i < getSubProviders().size(); i++) {
+        if (getSubProviders().get(i) != null) {
+          joiner.add(getSubProviders().get(i).toUrlQueryString(String.format("%ssubProviders%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

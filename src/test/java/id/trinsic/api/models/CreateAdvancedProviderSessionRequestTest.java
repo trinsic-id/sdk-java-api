@@ -54,14 +54,6 @@ class CreateAdvancedProviderSessionRequestTest {
     }
 
     /**
-     * Test the property 'providerInput'
-     */
-    @Test
-    void providerInputTest() {
-        // TODO: test providerInput
-    }
-
-    /**
      * Test the property 'redirectUrl'
      */
     @Test
@@ -83,6 +75,14 @@ class CreateAdvancedProviderSessionRequestTest {
     @Test
     void fallbackToHostedUITest() {
         // TODO: test fallbackToHostedUI
+    }
+
+    /**
+     * Test the property 'providerInput'
+     */
+    @Test
+    void providerInputTest() {
+        // TODO: test providerInput
     }
 
 }

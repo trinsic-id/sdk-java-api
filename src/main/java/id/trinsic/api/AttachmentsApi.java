@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AttachmentsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -86,7 +86,7 @@ public class AttachmentsApi {
 
   /**
    * Get Attachment
-   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
+   * Exchange an Attachment Access Key (from &#x60;IdentityData.AttachmentAccessKeys&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
    * @param getAttachmentRequest  (optional)
    * @return GetAttachmentResponse
    * @throws ApiException if fails to make API call
@@ -98,7 +98,7 @@ public class AttachmentsApi {
 
   /**
    * Get Attachment
-   * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
+   * Exchange an Attachment Access Key (from &#x60;IdentityData.AttachmentAccessKeys&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
    * @param getAttachmentRequest  (optional)
    * @return ApiResponse&lt;GetAttachmentResponse&gt;
    * @throws ApiException if fails to make API call

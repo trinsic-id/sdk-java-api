@@ -14,6 +14,7 @@ docs/BangladeshNidInput.md
 docs/BrazilCpfCheckInput.md
 docs/BrazilDigitalCnhInput.md
 docs/CancelSessionResponse.md
+docs/ContractField.md
 docs/CreateAdvancedProviderSessionRequest.md
 docs/CreateAdvancedProviderSessionResponse.md
 docs/CreateHostedProviderSessionRequest.md
@@ -23,6 +24,7 @@ docs/CreateWidgetSessionResponse.md
 docs/DocumentData.md
 docs/DocumentScanAttachments.md
 docs/DocumentType.md
+docs/FieldAvailability.md
 docs/GetAttachmentRequest.md
 docs/GetAttachmentResponse.md
 docs/GetSessionResponse.md
@@ -105,6 +107,7 @@ src/main/java/id/trinsic/api/models/BangladeshNidInput.java
 src/main/java/id/trinsic/api/models/BrazilCpfCheckInput.java
 src/main/java/id/trinsic/api/models/BrazilDigitalCnhInput.java
 src/main/java/id/trinsic/api/models/CancelSessionResponse.java
+src/main/java/id/trinsic/api/models/ContractField.java
 src/main/java/id/trinsic/api/models/CreateAdvancedProviderSessionRequest.java
 src/main/java/id/trinsic/api/models/CreateAdvancedProviderSessionResponse.java
 src/main/java/id/trinsic/api/models/CreateHostedProviderSessionRequest.java
@@ -114,6 +117,7 @@ src/main/java/id/trinsic/api/models/CreateWidgetSessionResponse.java
 src/main/java/id/trinsic/api/models/DocumentData.java
 src/main/java/id/trinsic/api/models/DocumentScanAttachments.java
 src/main/java/id/trinsic/api/models/DocumentType.java
+src/main/java/id/trinsic/api/models/FieldAvailability.java
 src/main/java/id/trinsic/api/models/GetAttachmentRequest.java
 src/main/java/id/trinsic/api/models/GetAttachmentResponse.java
 src/main/java/id/trinsic/api/models/GetSessionResponse.java
@@ -173,6 +177,7 @@ src/test/java/id/trinsic/api/models/BangladeshNidInputTest.java
 src/test/java/id/trinsic/api/models/BrazilCpfCheckInputTest.java
 src/test/java/id/trinsic/api/models/BrazilDigitalCnhInputTest.java
 src/test/java/id/trinsic/api/models/CancelSessionResponseTest.java
+src/test/java/id/trinsic/api/models/ContractFieldTest.java
 src/test/java/id/trinsic/api/models/CreateAdvancedProviderSessionRequestTest.java
 src/test/java/id/trinsic/api/models/CreateAdvancedProviderSessionResponseTest.java
 src/test/java/id/trinsic/api/models/CreateHostedProviderSessionRequestTest.java
@@ -182,6 +187,7 @@ src/test/java/id/trinsic/api/models/CreateWidgetSessionResponseTest.java
 src/test/java/id/trinsic/api/models/DocumentDataTest.java
 src/test/java/id/trinsic/api/models/DocumentScanAttachmentsTest.java
 src/test/java/id/trinsic/api/models/DocumentTypeTest.java
+src/test/java/id/trinsic/api/models/FieldAvailabilityTest.java
 src/test/java/id/trinsic/api/models/GetAttachmentRequestTest.java
 src/test/java/id/trinsic/api/models/GetAttachmentResponseTest.java
 src/test/java/id/trinsic/api/models/GetSessionResponseTest.java

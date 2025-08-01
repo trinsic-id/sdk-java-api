@@ -15,7 +15,7 @@ All URIs are relative to *https://api.trinsic.id*
 
 Get Attachment
 
-Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
+Exchange an Attachment Access Key (from &#x60;IdentityData.AttachmentAccessKeys&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
 
 ### Example
 
@@ -89,7 +89,7 @@ public class Example {
 
 Get Attachment
 
-Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
+Exchange an Attachment Access Key (from &#x60;IdentityData.AttachmentAccessKeys&#x60;) for the raw contents of the attachment.              Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.              In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 503 code, and you should try again later.
 
 ### Example
 

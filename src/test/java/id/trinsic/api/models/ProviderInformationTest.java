@@ -18,7 +18,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.SubProviderMetadata;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -35,6 +42,38 @@ class ProviderInformationTest {
     @Test
     void testProviderInformation() {
         // TODO: test ProviderInformation
+    }
+
+    /**
+     * Test the property 'id'
+     */
+    @Test
+    void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    void nameTest() {
+        // TODO: test name
+    }
+
+    /**
+     * Test the property 'logoUrl'
+     */
+    @Test
+    void logoUrlTest() {
+        // TODO: test logoUrl
+    }
+
+    /**
+     * Test the property 'subtext'
+     */
+    @Test
+    void subtextTest() {
+        // TODO: test subtext
     }
 
     /**
@@ -59,6 +98,22 @@ class ProviderInformationTest {
     @Test
     void providerLogoTest() {
         // TODO: test providerLogo
+    }
+
+    /**
+     * Test the property 'health'
+     */
+    @Test
+    void healthTest() {
+        // TODO: test health
+    }
+
+    /**
+     * Test the property 'subProviders'
+     */
+    @Test
+    void subProvidersTest() {
+        // TODO: test subProviders
     }
 
 }

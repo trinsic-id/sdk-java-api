@@ -26,27 +26,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets IntegrationCapability
+ * Indicates when a field will be available in verification results.
  */
-public enum IntegrationCapability {
+public enum FieldAvailability {
   
-  LAUNCH_BROWSER("LaunchBrowser"),
+  NEVER("Never"),
   
-  DEEPLINK_TO_MOBILE("DeeplinkToMobile"),
+  SOMETIMES("Sometimes"),
   
-  SHOW_CONTENT("ShowContent"),
-  
-  REFRESH_STEP_CONTENT("RefreshStepContent"),
-  
-  CAPTURE_REDIRECT("CaptureRedirect"),
-  
-  POLL_RESULT("PollResult"),
-  
-  POLL_AFTER_REDIRECT("PollAfterRedirect");
+  ALWAYS("Always");
 
   private String value;
 
-  IntegrationCapability(String value) {
+  FieldAvailability(String value) {
     this.value = value;
   }
 
@@ -61,8 +53,8 @@ public enum IntegrationCapability {
   }
 
   @JsonCreator
-  public static IntegrationCapability fromValue(String value) {
-    for (IntegrationCapability b : IntegrationCapability.values()) {
+  public static FieldAvailability fromValue(String value) {
+    for (FieldAvailability b : FieldAvailability.values()) {
       if (b.value.equals(value)) {
         return b;
       }

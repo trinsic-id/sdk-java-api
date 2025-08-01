@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   RecommendResponse.JSON_PROPERTY_RELEVANT,
   RecommendResponse.JSON_PROPERTY_REMAINDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendResponse {
   public static final String JSON_PROPERTY_RECOGNIZED = "recognized";
   @javax.annotation.Nonnull
@@ -71,7 +71,7 @@ public class RecommendResponse {
   }
 
   /**
-   * The list of providers that were recognized in Trinsic&#39;s network. These are providers that already verified this user
+   * The providers which the user is known to have a credential with.
    * @return recognized
    */
   @javax.annotation.Nonnull
@@ -103,7 +103,7 @@ public class RecommendResponse {
   }
 
   /**
-   * The list of providers that although not recognized, are relevant to the user&#39;s identity. The user may have been verified by these providers
+   * The providers which the user is deemed sufficiently likely to have a credential with.
    * @return relevant
    */
   @javax.annotation.Nonnull
@@ -135,7 +135,7 @@ public class RecommendResponse {
   }
 
   /**
-   * The list of providers that are not recognized and are not relevant to the user&#39;s identity
+   * The providers which the user is unlikely to have a credential with.              This includes all providers available to your app which were not included in the Recognized or Relevant lists.
    * @return remainder
    */
   @javax.annotation.Nonnull

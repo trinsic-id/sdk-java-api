@@ -45,7 +45,7 @@ import id.trinsic.ApiClient;
   Session.JSON_PROPERTY_CREATED,
   Session.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Session {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -207,7 +207,7 @@ public class Session {
   }
 
   /**
-   * The unix timestamp, in seconds, when this session&#39;s state last changed
+   * The unix timestamp, in seconds, when this session&#39;s data was last updated
    * @return updated
    */
   @javax.annotation.Nonnull

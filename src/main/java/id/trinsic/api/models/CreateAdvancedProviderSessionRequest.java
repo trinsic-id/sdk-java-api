@@ -42,19 +42,16 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_PROVIDER,
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT,
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_CAPABILITIES,
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I
+  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I,
+  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAdvancedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
   private String provider;
-
-  public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
-  private JsonNullable<ProviderInput> providerInput = JsonNullable.<ProviderInput>undefined();
 
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
@@ -65,6 +62,9 @@ public class CreateAdvancedProviderSessionRequest {
 
   public static final String JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I = "fallbackToHostedUI";
   private JsonNullable<Boolean> fallbackToHostedUI = JsonNullable.<Boolean>undefined();
+
+  public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
+  private JsonNullable<ProviderInput> providerInput = JsonNullable.<ProviderInput>undefined();
 
   public CreateAdvancedProviderSessionRequest() { 
   }
@@ -90,38 +90,6 @@ public class CreateAdvancedProviderSessionRequest {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProvider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
-  }
-
-
-  public CreateAdvancedProviderSessionRequest providerInput(@javax.annotation.Nullable ProviderInput providerInput) {
-    this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
-    return this;
-  }
-
-  /**
-   * Provider-specific input for those providers which require it.
-   * @return providerInput
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public ProviderInput getProviderInput() {
-        return providerInput.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_PROVIDER_INPUT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<ProviderInput> getProviderInput_JsonNullable() {
-    return providerInput;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_PROVIDER_INPUT)
-  public void setProviderInput_JsonNullable(JsonNullable<ProviderInput> providerInput) {
-    this.providerInput = providerInput;
-  }
-
-  public void setProviderInput(@javax.annotation.Nullable ProviderInput providerInput) {
-    this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
   }
 
 
@@ -221,6 +189,38 @@ public class CreateAdvancedProviderSessionRequest {
   }
 
 
+  public CreateAdvancedProviderSessionRequest providerInput(@javax.annotation.Nullable ProviderInput providerInput) {
+    this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
+    return this;
+  }
+
+  /**
+   * Provider-specific input for those providers which require it.
+   * @return providerInput
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ProviderInput getProviderInput() {
+        return providerInput.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PROVIDER_INPUT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ProviderInput> getProviderInput_JsonNullable() {
+    return providerInput;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROVIDER_INPUT)
+  public void setProviderInput_JsonNullable(JsonNullable<ProviderInput> providerInput) {
+    this.providerInput = providerInput;
+  }
+
+  public void setProviderInput(@javax.annotation.Nullable ProviderInput providerInput) {
+    this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
+  }
+
+
   /**
    * Return true if this CreateAdvancedProviderSessionRequest object is equal to o.
    */
@@ -234,10 +234,10 @@ public class CreateAdvancedProviderSessionRequest {
     }
     CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = (CreateAdvancedProviderSessionRequest) o;
     return Objects.equals(this.provider, createAdvancedProviderSessionRequest.provider) &&
-        equalsNullable(this.providerInput, createAdvancedProviderSessionRequest.providerInput) &&
         equalsNullable(this.redirectUrl, createAdvancedProviderSessionRequest.redirectUrl) &&
         Objects.equals(this.capabilities, createAdvancedProviderSessionRequest.capabilities) &&
-        equalsNullable(this.fallbackToHostedUI, createAdvancedProviderSessionRequest.fallbackToHostedUI);
+        equalsNullable(this.fallbackToHostedUI, createAdvancedProviderSessionRequest.fallbackToHostedUI) &&
+        equalsNullable(this.providerInput, createAdvancedProviderSessionRequest.providerInput);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -246,7 +246,7 @@ public class CreateAdvancedProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, hashCodeNullable(providerInput), hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI));
+    return Objects.hash(provider, hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -261,10 +261,10 @@ public class CreateAdvancedProviderSessionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateAdvancedProviderSessionRequest {\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    providerInput: ").append(toIndentedString(providerInput)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
     sb.append("    fallbackToHostedUI: ").append(toIndentedString(fallbackToHostedUI)).append("\n");
+    sb.append("    providerInput: ").append(toIndentedString(providerInput)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -317,11 +317,6 @@ public class CreateAdvancedProviderSessionRequest {
       joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
     }
 
-    // add `providerInput` to the URL query string
-    if (getProviderInput() != null) {
-      joiner.add(getProviderInput().toUrlQueryString(prefix + "providerInput" + suffix));
-    }
-
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
       joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
@@ -341,6 +336,11 @@ public class CreateAdvancedProviderSessionRequest {
     // add `fallbackToHostedUI` to the URL query string
     if (getFallbackToHostedUI() != null) {
       joiner.add(String.format("%sfallbackToHostedUI%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFallbackToHostedUI()))));
+    }
+
+    // add `providerInput` to the URL query string
+    if (getProviderInput() != null) {
+      joiner.add(getProviderInput().toUrlQueryString(prefix + "providerInput" + suffix));
     }
 
     return joiner.toString();

@@ -24,53 +24,82 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.Session;
+import id.trinsic.api.models.FieldAvailability;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import id.trinsic.ApiClient;
 /**
- * CancelSessionResponse
+ * Information about a field that a Provider will return in verification results.
  */
 @JsonPropertyOrder({
-  CancelSessionResponse.JSON_PROPERTY_SESSION
+  ContractField.JSON_PROPERTY_NAME,
+  ContractField.JSON_PROPERTY_OUTPUTTED
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class CancelSessionResponse {
-  public static final String JSON_PROPERTY_SESSION = "session";
+public class ContractField {
+  public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
-  private Session session;
+  private String name;
 
-  public CancelSessionResponse() { 
+  public static final String JSON_PROPERTY_OUTPUTTED = "outputted";
+  @javax.annotation.Nonnull
+  private FieldAvailability outputted;
+
+  public ContractField() { 
   }
 
-  public CancelSessionResponse session(@javax.annotation.Nonnull Session session) {
-    this.session = session;
+  public ContractField name(@javax.annotation.Nonnull String name) {
+    this.name = name;
     return this;
   }
 
   /**
-   * Get session
-   * @return session
+   * The name of the field as it appears in verification results.
+   * @return name
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public Session getSession() {
-    return session;
+  public String getName() {
+    return name;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSession(@javax.annotation.Nonnull Session session) {
-    this.session = session;
+  public void setName(@javax.annotation.Nonnull String name) {
+    this.name = name;
+  }
+
+
+  public ContractField outputted(@javax.annotation.Nonnull FieldAvailability outputted) {
+    this.outputted = outputted;
+    return this;
+  }
+
+  /**
+   * Indicates when this field will be present in verification results.
+   * @return outputted
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_OUTPUTTED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public FieldAvailability getOutputted() {
+    return outputted;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OUTPUTTED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setOutputted(@javax.annotation.Nonnull FieldAvailability outputted) {
+    this.outputted = outputted;
   }
 
 
   /**
-   * Return true if this CancelSessionResponse object is equal to o.
+   * Return true if this ContractField object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -80,20 +109,22 @@ public class CancelSessionResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CancelSessionResponse cancelSessionResponse = (CancelSessionResponse) o;
-    return Objects.equals(this.session, cancelSessionResponse.session);
+    ContractField contractField = (ContractField) o;
+    return Objects.equals(this.name, contractField.name) &&
+        Objects.equals(this.outputted, contractField.outputted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(session);
+    return Objects.hash(name, outputted);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CancelSessionResponse {\n");
-    sb.append("    session: ").append(toIndentedString(session)).append("\n");
+    sb.append("class ContractField {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    outputted: ").append(toIndentedString(outputted)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,9 +172,14 @@ public class CancelSessionResponse {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `session` to the URL query string
-    if (getSession() != null) {
-      joiner.add(getSession().toUrlQueryString(prefix + "session" + suffix));
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `outputted` to the URL query string
+    if (getOutputted() != null) {
+      joiner.add(String.format("%soutputted%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOutputted()))));
     }
 
     return joiner.toString();

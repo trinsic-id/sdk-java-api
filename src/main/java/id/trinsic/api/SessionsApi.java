@@ -61,7 +61,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SessionsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -721,7 +721,7 @@ public class SessionsApi {
 
   /**
    * Redact Session
-   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.              Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
    * @param sessionId  (required)
    * @throws ApiException if fails to make API call
    */
@@ -731,7 +731,7 @@ public class SessionsApi {
 
   /**
    * Redact Session
-   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.              Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
    * @param sessionId  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call

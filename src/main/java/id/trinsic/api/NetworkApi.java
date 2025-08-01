@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T03:19:23.819872077Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NetworkApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -166,22 +166,24 @@ public class NetworkApi {
   /**
    * List Providers
    * List all identity providers available for use
+   * @param health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
    * @return ListProvidersResponse
    * @throws ApiException if fails to make API call
    */
-  public ListProvidersResponse listProviders() throws ApiException {
-    ApiResponse<ListProvidersResponse> localVarResponse = listProvidersWithHttpInfo();
+  public ListProvidersResponse listProviders(@javax.annotation.Nullable String health) throws ApiException {
+    ApiResponse<ListProvidersResponse> localVarResponse = listProvidersWithHttpInfo(health);
     return localVarResponse.getData();
   }
 
   /**
    * List Providers
    * List all identity providers available for use
+   * @param health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
    * @return ApiResponse&lt;ListProvidersResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ListProvidersResponse> listProvidersWithHttpInfo() throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = listProvidersRequestBuilder();
+  public ApiResponse<ListProvidersResponse> listProvidersWithHttpInfo(@javax.annotation.Nullable String health) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listProvidersRequestBuilder(health);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -220,13 +222,28 @@ public class NetworkApi {
     }
   }
 
-  private HttpRequest.Builder listProvidersRequestBuilder() throws ApiException {
+  private HttpRequest.Builder listProvidersRequestBuilder(@javax.annotation.Nullable String health) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
     String localVarPath = "/api/v1/network/providers";
 
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "health";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("health", health));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
 
     localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
 
@@ -242,7 +259,7 @@ public class NetworkApi {
 
   /**
    * Recommend Providers
-   * Generate provider recommendations based on the given signals (phone number, countries, states).
+   * Generate provider recommendations based on signals about the user&#39;s location (phone number, countries, states).
    * @param recommendRequest  (optional)
    * @return RecommendResponse
    * @throws ApiException if fails to make API call
@@ -254,7 +271,7 @@ public class NetworkApi {
 
   /**
    * Recommend Providers
-   * Generate provider recommendations based on the given signals (phone number, countries, states).
+   * Generate provider recommendations based on signals about the user&#39;s location (phone number, countries, states).
    * @param recommendRequest  (optional)
    * @return ApiResponse&lt;RecommendResponse&gt;
    * @throws ApiException if fails to make API call

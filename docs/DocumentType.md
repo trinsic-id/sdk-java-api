@@ -13,5 +13,7 @@
 
 * `ID_CARD` (value: `"IdCard"`)
 
+* `OTHER` (value: `"Other"`)
+
 
 

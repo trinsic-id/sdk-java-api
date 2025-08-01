@@ -18,31 +18,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.FieldAvailability;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SubProviderMetadata
+ * Model tests for ContractField
  */
-class SubProviderMetadataTest {
-    private final SubProviderMetadata model = new SubProviderMetadata();
+class ContractFieldTest {
+    private final ContractField model = new ContractField();
 
     /**
-     * Model tests for SubProviderMetadata
+     * Model tests for ContractField
      */
     @Test
-    void testSubProviderMetadata() {
-        // TODO: test SubProviderMetadata
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    void idTest() {
-        // TODO: test id
+    void testContractField() {
+        // TODO: test ContractField
     }
 
     /**
@@ -54,27 +47,11 @@ class SubProviderMetadataTest {
     }
 
     /**
-     * Test the property 'subtext'
+     * Test the property 'outputted'
      */
     @Test
-    void subtextTest() {
-        // TODO: test subtext
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'logoUrl'
-     */
-    @Test
-    void logoUrlTest() {
-        // TODO: test logoUrl
+    void outputtedTest() {
+        // TODO: test outputted
     }
 
 }

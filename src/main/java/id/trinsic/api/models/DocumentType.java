@@ -36,7 +36,9 @@ public enum DocumentType {
   
   NATIONAL_ID("NationalId"),
   
-  ID_CARD("IdCard");
+  ID_CARD("IdCard"),
+  
+  OTHER("Other");
 
   private String value;
 
