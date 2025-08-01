@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   DocumentScanAttachments.JSON_PROPERTY_REPORT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DocumentScanAttachments {
   public static final String JSON_PROPERTY_REPORT = "report";
   private JsonNullable<String> report = JsonNullable.<String>undefined();

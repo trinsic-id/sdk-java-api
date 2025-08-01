@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_DOCUMENT,
   IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();

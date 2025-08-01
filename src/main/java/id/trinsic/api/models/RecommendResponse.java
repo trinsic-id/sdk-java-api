@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   RecommendResponse.JSON_PROPERTY_RELEVANT,
   RecommendResponse.JSON_PROPERTY_REMAINDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendResponse {
   public static final String JSON_PROPERTY_RECOGNIZED = "recognized";
   @javax.annotation.Nonnull

@@ -43,7 +43,7 @@ import id.trinsic.ApiClient;
   IntegrationStep.JSON_PROPERTY_CONTENT,
   IntegrationStep.JSON_PROPERTY_REFRESH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IntegrationStep {
   public static final String JSON_PROPERTY_METHOD = "method";
   @javax.annotation.Nonnull

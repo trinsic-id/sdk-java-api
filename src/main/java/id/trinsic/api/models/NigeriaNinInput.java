@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   NigeriaNinInput.JSON_PROPERTY_GENDER,
   NigeriaNinInput.JSON_PROPERTY_NATIONAL_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NigeriaNinInput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull

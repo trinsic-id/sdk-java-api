@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_PORTRAIT,
   AttachmentAccessKeys.JSON_PROPERTY_PROVIDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AttachmentAccessKeys {
   public static final String JSON_PROPERTY_SELFIE = "selfie";
   private JsonNullable<String> selfie = JsonNullable.<String>undefined();
