@@ -47,7 +47,7 @@ import id.trinsic.ApiClient;
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I,
   CreateAdvancedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T16:34:27.933530262Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T18:44:32.211018983Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAdvancedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
