@@ -36,7 +36,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RefreshStepContentResponse.JSON_PROPERTY_NEXT_STEP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RefreshStepContentResponse {
   public static final String JSON_PROPERTY_NEXT_STEP = "nextStep";
   @javax.annotation.Nonnull

@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**indonesiaNik** | [**IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider |  [optional] |
+|**indonesiaDukcapilBiometricMatch** | [**IndonesiaDukcapilBiometricMatchInput**](IndonesiaDukcapilBiometricMatchInput.md) | Input for the &#x60;indonesia-dukcapil-biometric-match&#x60; provider |  [optional] |
 |**mexicoCurp** | [**MexicoCurpInput**](MexicoCurpInput.md) | Input for the &#x60;mexico-curp-lookup&#x60; provider |  [optional] |
 |**southAfricaNid** | [**SouthAfricaNidInput**](SouthAfricaNidInput.md) | Input for the &#x60;south-africa-nid-lookup&#x60; provider |  [optional] |
 |**kenyaNid** | [**KenyaNidInput**](KenyaNidInput.md) | Input for the &#x60;kenya-nid-lookup&#x60; provider |  [optional] |

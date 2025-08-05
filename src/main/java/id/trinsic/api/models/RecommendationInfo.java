@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   RecommendationInfo.JSON_PROPERTY_SUBDIVISIONS,
   RecommendationInfo.JSON_PROPERTY_IP_ADDRESSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendationInfo {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();

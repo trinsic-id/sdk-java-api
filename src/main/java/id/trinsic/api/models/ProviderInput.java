@@ -29,6 +29,7 @@ import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.IdinInput;
+import id.trinsic.api.models.IndonesiaDukcapilBiometricMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.MexicoCurpInput;
@@ -55,6 +56,7 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   ProviderInput.JSON_PROPERTY_INDONESIA_NIK,
+  ProviderInput.JSON_PROPERTY_INDONESIA_DUKCAPIL_BIOMETRIC_MATCH,
   ProviderInput.JSON_PROPERTY_MEXICO_CURP,
   ProviderInput.JSON_PROPERTY_SOUTH_AFRICA_NID,
   ProviderInput.JSON_PROPERTY_KENYA_NID,
@@ -72,10 +74,13 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
+
+  public static final String JSON_PROPERTY_INDONESIA_DUKCAPIL_BIOMETRIC_MATCH = "indonesiaDukcapilBiometricMatch";
+  private JsonNullable<IndonesiaDukcapilBiometricMatchInput> indonesiaDukcapilBiometricMatch = JsonNullable.<IndonesiaDukcapilBiometricMatchInput>undefined();
 
   public static final String JSON_PROPERTY_MEXICO_CURP = "mexicoCurp";
   private JsonNullable<MexicoCurpInput> mexicoCurp = JsonNullable.<MexicoCurpInput>undefined();
@@ -157,6 +162,38 @@ public class ProviderInput {
 
   public void setIndonesiaNik(@javax.annotation.Nullable IndonesiaNikInput indonesiaNik) {
     this.indonesiaNik = JsonNullable.<IndonesiaNikInput>of(indonesiaNik);
+  }
+
+
+  public ProviderInput indonesiaDukcapilBiometricMatch(@javax.annotation.Nullable IndonesiaDukcapilBiometricMatchInput indonesiaDukcapilBiometricMatch) {
+    this.indonesiaDukcapilBiometricMatch = JsonNullable.<IndonesiaDukcapilBiometricMatchInput>of(indonesiaDukcapilBiometricMatch);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;indonesia-dukcapil-biometric-match&#x60; provider
+   * @return indonesiaDukcapilBiometricMatch
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public IndonesiaDukcapilBiometricMatchInput getIndonesiaDukcapilBiometricMatch() {
+        return indonesiaDukcapilBiometricMatch.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_INDONESIA_DUKCAPIL_BIOMETRIC_MATCH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<IndonesiaDukcapilBiometricMatchInput> getIndonesiaDukcapilBiometricMatch_JsonNullable() {
+    return indonesiaDukcapilBiometricMatch;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INDONESIA_DUKCAPIL_BIOMETRIC_MATCH)
+  public void setIndonesiaDukcapilBiometricMatch_JsonNullable(JsonNullable<IndonesiaDukcapilBiometricMatchInput> indonesiaDukcapilBiometricMatch) {
+    this.indonesiaDukcapilBiometricMatch = indonesiaDukcapilBiometricMatch;
+  }
+
+  public void setIndonesiaDukcapilBiometricMatch(@javax.annotation.Nullable IndonesiaDukcapilBiometricMatchInput indonesiaDukcapilBiometricMatch) {
+    this.indonesiaDukcapilBiometricMatch = JsonNullable.<IndonesiaDukcapilBiometricMatchInput>of(indonesiaDukcapilBiometricMatch);
   }
 
 
@@ -685,6 +722,7 @@ public class ProviderInput {
     }
     ProviderInput providerInput = (ProviderInput) o;
     return equalsNullable(this.indonesiaNik, providerInput.indonesiaNik) &&
+        equalsNullable(this.indonesiaDukcapilBiometricMatch, providerInput.indonesiaDukcapilBiometricMatch) &&
         equalsNullable(this.mexicoCurp, providerInput.mexicoCurp) &&
         equalsNullable(this.southAfricaNid, providerInput.southAfricaNid) &&
         equalsNullable(this.kenyaNid, providerInput.kenyaNid) &&
@@ -709,7 +747,7 @@ public class ProviderInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
+    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(indonesiaDukcapilBiometricMatch), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -724,6 +762,7 @@ public class ProviderInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProviderInput {\n");
     sb.append("    indonesiaNik: ").append(toIndentedString(indonesiaNik)).append("\n");
+    sb.append("    indonesiaDukcapilBiometricMatch: ").append(toIndentedString(indonesiaDukcapilBiometricMatch)).append("\n");
     sb.append("    mexicoCurp: ").append(toIndentedString(mexicoCurp)).append("\n");
     sb.append("    southAfricaNid: ").append(toIndentedString(southAfricaNid)).append("\n");
     sb.append("    kenyaNid: ").append(toIndentedString(kenyaNid)).append("\n");
@@ -790,6 +829,11 @@ public class ProviderInput {
     // add `indonesiaNik` to the URL query string
     if (getIndonesiaNik() != null) {
       joiner.add(getIndonesiaNik().toUrlQueryString(prefix + "indonesiaNik" + suffix));
+    }
+
+    // add `indonesiaDukcapilBiometricMatch` to the URL query string
+    if (getIndonesiaDukcapilBiometricMatch() != null) {
+      joiner.add(getIndonesiaDukcapilBiometricMatch().toUrlQueryString(prefix + "indonesiaDukcapilBiometricMatch" + suffix));
     }
 
     // add `mexicoCurp` to the URL query string

@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   CreateWidgetSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateWidgetSessionRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-01T19:33:26.347436485Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateWidgetSessionRequest {
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
