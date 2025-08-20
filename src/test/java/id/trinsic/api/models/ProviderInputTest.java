@@ -23,7 +23,7 @@ import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.IdinInput;
-import id.trinsic.api.models.IndonesiaDukcapilBiometricMatchInput;
+import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.MexicoCurpInput;
@@ -68,11 +68,11 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'indonesiaDukcapilBiometricMatch'
+     * Test the property 'indonesiaDukcapilMatch'
      */
     @Test
-    void indonesiaDukcapilBiometricMatchTest() {
-        // TODO: test indonesiaDukcapilBiometricMatch
+    void indonesiaDukcapilMatchTest() {
+        // TODO: test indonesiaDukcapilMatch
     }
 
     /**

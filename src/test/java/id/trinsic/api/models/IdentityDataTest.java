@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AttachmentAccessKeys;
 import id.trinsic.api.models.DocumentData;
+import id.trinsic.api.models.MatchData;
 import id.trinsic.api.models.PersonData;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -74,6 +75,14 @@ class IdentityDataTest {
     @Test
     void documentTest() {
         // TODO: test document
+    }
+
+    /**
+     * Test the property 'match'
+     */
+    @Test
+    void matchTest() {
+        // TODO: test match
     }
 
     /**

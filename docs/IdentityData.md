@@ -11,6 +11,7 @@
 |**originatingSubProviderId** | **String** |  |  [optional] |
 |**person** | [**PersonData**](PersonData.md) |  |  [optional] |
 |**document** | [**DocumentData**](DocumentData.md) |  |  [optional] |
+|**match** | [**MatchData**](MatchData.md) |  |  [optional] |
 |**attachmentAccessKeys** | [**AttachmentAccessKeys**](AttachmentAccessKeys.md) |  |  [optional] |
 
 

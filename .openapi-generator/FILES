@@ -33,7 +33,7 @@ docs/GetSessionResultResponse.md
 docs/HttpValidationProblemDetails.md
 docs/IdentityData.md
 docs/IdinInput.md
-docs/IndonesiaDukcapilBiometricMatchInput.md
+docs/IndonesiaDukcapilMatchInput.md
 docs/IndonesiaNikInput.md
 docs/IntegrationCapability.md
 docs/IntegrationLaunchMethod.md
@@ -43,6 +43,8 @@ docs/Language.md
 docs/ListProviderContractsResponse.md
 docs/ListProvidersResponse.md
 docs/ListSessionsResponse.md
+docs/Match.md
+docs/MatchData.md
 docs/MexicoCurpInput.md
 docs/MobileIdInput.md
 docs/NetworkApi.md
@@ -127,7 +129,7 @@ src/main/java/id/trinsic/api/models/GetSessionResultResponse.java
 src/main/java/id/trinsic/api/models/HttpValidationProblemDetails.java
 src/main/java/id/trinsic/api/models/IdentityData.java
 src/main/java/id/trinsic/api/models/IdinInput.java
-src/main/java/id/trinsic/api/models/IndonesiaDukcapilBiometricMatchInput.java
+src/main/java/id/trinsic/api/models/IndonesiaDukcapilMatchInput.java
 src/main/java/id/trinsic/api/models/IndonesiaNikInput.java
 src/main/java/id/trinsic/api/models/IntegrationCapability.java
 src/main/java/id/trinsic/api/models/IntegrationLaunchMethod.java
@@ -137,6 +139,8 @@ src/main/java/id/trinsic/api/models/Language.java
 src/main/java/id/trinsic/api/models/ListProviderContractsResponse.java
 src/main/java/id/trinsic/api/models/ListProvidersResponse.java
 src/main/java/id/trinsic/api/models/ListSessionsResponse.java
+src/main/java/id/trinsic/api/models/Match.java
+src/main/java/id/trinsic/api/models/MatchData.java
 src/main/java/id/trinsic/api/models/MexicoCurpInput.java
 src/main/java/id/trinsic/api/models/MobileIdInput.java
 src/main/java/id/trinsic/api/models/NigeriaNinInput.java
@@ -198,7 +202,7 @@ src/test/java/id/trinsic/api/models/GetSessionResultResponseTest.java
 src/test/java/id/trinsic/api/models/HttpValidationProblemDetailsTest.java
 src/test/java/id/trinsic/api/models/IdentityDataTest.java
 src/test/java/id/trinsic/api/models/IdinInputTest.java
-src/test/java/id/trinsic/api/models/IndonesiaDukcapilBiometricMatchInputTest.java
+src/test/java/id/trinsic/api/models/IndonesiaDukcapilMatchInputTest.java
 src/test/java/id/trinsic/api/models/IndonesiaNikInputTest.java
 src/test/java/id/trinsic/api/models/IntegrationCapabilityTest.java
 src/test/java/id/trinsic/api/models/IntegrationLaunchMethodTest.java
@@ -208,6 +212,8 @@ src/test/java/id/trinsic/api/models/LanguageTest.java
 src/test/java/id/trinsic/api/models/ListProviderContractsResponseTest.java
 src/test/java/id/trinsic/api/models/ListProvidersResponseTest.java
 src/test/java/id/trinsic/api/models/ListSessionsResponseTest.java
+src/test/java/id/trinsic/api/models/MatchDataTest.java
+src/test/java/id/trinsic/api/models/MatchTest.java
 src/test/java/id/trinsic/api/models/MexicoCurpInputTest.java
 src/test/java/id/trinsic/api/models/MobileIdInputTest.java
 src/test/java/id/trinsic/api/models/NigeriaNinInputTest.java

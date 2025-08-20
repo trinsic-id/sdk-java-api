@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   SmartIdInput.JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER,
   SmartIdInput.JSON_PROPERTY_SMART_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SmartIdInput {
   public static final String JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER = "smartIdDocumentNumber";
   private JsonNullable<String> smartIdDocumentNumber = JsonNullable.<String>undefined();

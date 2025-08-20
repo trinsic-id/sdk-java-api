@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AttachmentAccessKeys;
 import id.trinsic.api.models.DocumentData;
+import id.trinsic.api.models.MatchData;
 import id.trinsic.api.models.PersonData;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -44,9 +45,10 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID,
   IdentityData.JSON_PROPERTY_PERSON,
   IdentityData.JSON_PROPERTY_DOCUMENT,
+  IdentityData.JSON_PROPERTY_MATCH,
   IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
@@ -59,6 +61,9 @@ public class IdentityData {
 
   public static final String JSON_PROPERTY_DOCUMENT = "document";
   private JsonNullable<DocumentData> document = JsonNullable.<DocumentData>undefined();
+
+  public static final String JSON_PROPERTY_MATCH = "match";
+  private JsonNullable<MatchData> match = JsonNullable.<MatchData>undefined();
 
   public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS = "attachmentAccessKeys";
   private JsonNullable<AttachmentAccessKeys> attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>undefined();
@@ -194,6 +199,38 @@ public class IdentityData {
   }
 
 
+  public IdentityData match(@javax.annotation.Nullable MatchData match) {
+    this.match = JsonNullable.<MatchData>of(match);
+    return this;
+  }
+
+  /**
+   * Get match
+   * @return match
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MatchData getMatch() {
+        return match.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_MATCH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MatchData> getMatch_JsonNullable() {
+    return match;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MATCH)
+  public void setMatch_JsonNullable(JsonNullable<MatchData> match) {
+    this.match = match;
+  }
+
+  public void setMatch(@javax.annotation.Nullable MatchData match) {
+    this.match = JsonNullable.<MatchData>of(match);
+  }
+
+
   public IdentityData attachmentAccessKeys(@javax.annotation.Nullable AttachmentAccessKeys attachmentAccessKeys) {
     this.attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>of(attachmentAccessKeys);
     return this;
@@ -242,6 +279,7 @@ public class IdentityData {
         equalsNullable(this.originatingSubProviderId, identityData.originatingSubProviderId) &&
         equalsNullable(this.person, identityData.person) &&
         equalsNullable(this.document, identityData.document) &&
+        equalsNullable(this.match, identityData.match) &&
         equalsNullable(this.attachmentAccessKeys, identityData.attachmentAccessKeys);
   }
 
@@ -251,7 +289,7 @@ public class IdentityData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(attachmentAccessKeys));
+    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), hashCodeNullable(attachmentAccessKeys));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -269,6 +307,7 @@ public class IdentityData {
     sb.append("    originatingSubProviderId: ").append(toIndentedString(originatingSubProviderId)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    match: ").append(toIndentedString(match)).append("\n");
     sb.append("    attachmentAccessKeys: ").append(toIndentedString(attachmentAccessKeys)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -335,6 +374,11 @@ public class IdentityData {
     // add `document` to the URL query string
     if (getDocument() != null) {
       joiner.add(getDocument().toUrlQueryString(prefix + "document" + suffix));
+    }
+
+    // add `match` to the URL query string
+    if (getMatch() != null) {
+      joiner.add(getMatch().toUrlQueryString(prefix + "match" + suffix));
     }
 
     // add `attachmentAccessKeys` to the URL query string

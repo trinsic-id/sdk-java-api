@@ -36,20 +36,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * IndonesiaDukcapilBiometricMatchInput
+ * IndonesiaDukcapilMatchInput
  */
 @JsonPropertyOrder({
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_FULL_NAME,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_DATE_OF_BIRTH,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_NIK_ID_NUMBER,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_EMAIL,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_PHONE_NUMBER,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_SELFIE_IMAGE,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_DOCUMENT_IMAGE,
-  IndonesiaDukcapilBiometricMatchInput.JSON_PROPERTY_CONSENT_GIVEN_AT
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_FULL_NAME,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_DATE_OF_BIRTH,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_NIK_ID_NUMBER,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_EMAIL,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_PHONE_NUMBER,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_SELFIE_IMAGE,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_DOCUMENT_IMAGE,
+  IndonesiaDukcapilMatchInput.JSON_PROPERTY_CONSENT_GIVEN_AT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class IndonesiaDukcapilBiometricMatchInput {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class IndonesiaDukcapilMatchInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
@@ -74,10 +74,10 @@ public class IndonesiaDukcapilBiometricMatchInput {
   public static final String JSON_PROPERTY_CONSENT_GIVEN_AT = "consentGivenAt";
   private JsonNullable<OffsetDateTime> consentGivenAt = JsonNullable.<OffsetDateTime>undefined();
 
-  public IndonesiaDukcapilBiometricMatchInput() { 
+  public IndonesiaDukcapilMatchInput() { 
   }
 
-  public IndonesiaDukcapilBiometricMatchInput fullName(@javax.annotation.Nullable String fullName) {
+  public IndonesiaDukcapilMatchInput fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
@@ -109,7 +109,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+  public IndonesiaDukcapilMatchInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
@@ -141,7 +141,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput nikIdNumber(@javax.annotation.Nullable String nikIdNumber) {
+  public IndonesiaDukcapilMatchInput nikIdNumber(@javax.annotation.Nullable String nikIdNumber) {
     this.nikIdNumber = JsonNullable.<String>of(nikIdNumber);
     return this;
   }
@@ -173,7 +173,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput email(@javax.annotation.Nullable String email) {
+  public IndonesiaDukcapilMatchInput email(@javax.annotation.Nullable String email) {
     this.email = JsonNullable.<String>of(email);
     return this;
   }
@@ -205,7 +205,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public IndonesiaDukcapilMatchInput phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = JsonNullable.<String>of(phoneNumber);
     return this;
   }
@@ -237,13 +237,13 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput selfieImage(@javax.annotation.Nullable byte[] selfieImage) {
+  public IndonesiaDukcapilMatchInput selfieImage(@javax.annotation.Nullable byte[] selfieImage) {
     this.selfieImage = JsonNullable.<byte[]>of(selfieImage);
     return this;
   }
 
   /**
-   * The raw bytes of the selfie image of the individual.              Must be JPEG format; 1MB maximum.
+   * The raw bytes of the selfie image of the individual.              Must be JPEG or PNG format; 10MB maximum.
    * @return selfieImage
    */
   @javax.annotation.Nullable
@@ -269,7 +269,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput documentImage(@javax.annotation.Nullable byte[] documentImage) {
+  public IndonesiaDukcapilMatchInput documentImage(@javax.annotation.Nullable byte[] documentImage) {
     this.documentImage = JsonNullable.<byte[]>of(documentImage);
     return this;
   }
@@ -301,7 +301,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   }
 
 
-  public IndonesiaDukcapilBiometricMatchInput consentGivenAt(@javax.annotation.Nullable OffsetDateTime consentGivenAt) {
+  public IndonesiaDukcapilMatchInput consentGivenAt(@javax.annotation.Nullable OffsetDateTime consentGivenAt) {
     this.consentGivenAt = JsonNullable.<OffsetDateTime>of(consentGivenAt);
     return this;
   }
@@ -334,7 +334,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
 
 
   /**
-   * Return true if this IndonesiaDukcapilBiometricMatchInput object is equal to o.
+   * Return true if this IndonesiaDukcapilMatchInput object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -344,15 +344,15 @@ public class IndonesiaDukcapilBiometricMatchInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IndonesiaDukcapilBiometricMatchInput indonesiaDukcapilBiometricMatchInput = (IndonesiaDukcapilBiometricMatchInput) o;
-    return equalsNullable(this.fullName, indonesiaDukcapilBiometricMatchInput.fullName) &&
-        equalsNullable(this.dateOfBirth, indonesiaDukcapilBiometricMatchInput.dateOfBirth) &&
-        equalsNullable(this.nikIdNumber, indonesiaDukcapilBiometricMatchInput.nikIdNumber) &&
-        equalsNullable(this.email, indonesiaDukcapilBiometricMatchInput.email) &&
-        equalsNullable(this.phoneNumber, indonesiaDukcapilBiometricMatchInput.phoneNumber) &&
-        equalsNullable(this.selfieImage, indonesiaDukcapilBiometricMatchInput.selfieImage) &&
-        equalsNullable(this.documentImage, indonesiaDukcapilBiometricMatchInput.documentImage) &&
-        equalsNullable(this.consentGivenAt, indonesiaDukcapilBiometricMatchInput.consentGivenAt);
+    IndonesiaDukcapilMatchInput indonesiaDukcapilMatchInput = (IndonesiaDukcapilMatchInput) o;
+    return equalsNullable(this.fullName, indonesiaDukcapilMatchInput.fullName) &&
+        equalsNullable(this.dateOfBirth, indonesiaDukcapilMatchInput.dateOfBirth) &&
+        equalsNullable(this.nikIdNumber, indonesiaDukcapilMatchInput.nikIdNumber) &&
+        equalsNullable(this.email, indonesiaDukcapilMatchInput.email) &&
+        equalsNullable(this.phoneNumber, indonesiaDukcapilMatchInput.phoneNumber) &&
+        equalsNullable(this.selfieImage, indonesiaDukcapilMatchInput.selfieImage) &&
+        equalsNullable(this.documentImage, indonesiaDukcapilMatchInput.documentImage) &&
+        equalsNullable(this.consentGivenAt, indonesiaDukcapilMatchInput.consentGivenAt);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -374,7 +374,7 @@ public class IndonesiaDukcapilBiometricMatchInput {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class IndonesiaDukcapilBiometricMatchInput {\n");
+    sb.append("class IndonesiaDukcapilMatchInput {\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    nikIdNumber: ").append(toIndentedString(nikIdNumber)).append("\n");

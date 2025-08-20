@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   AadhaarInput.JSON_PROPERTY_FULL_NAME,
   AadhaarInput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T13:48:03.792198397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AadhaarInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();

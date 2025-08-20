@@ -34,53 +34,89 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * SpidInput
+ * Match
  */
 @JsonPropertyOrder({
-  SpidInput.JSON_PROPERTY_SUB_PROVIDER_ID
+  Match.JSON_PROPERTY_PROBABILITY_VALUE,
+  Match.JSON_PROPERTY_BOOLEAN_VALUE
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class SpidInput {
-  public static final String JSON_PROPERTY_SUB_PROVIDER_ID = "subProviderId";
-  private JsonNullable<String> subProviderId = JsonNullable.<String>undefined();
+public class Match {
+  public static final String JSON_PROPERTY_PROBABILITY_VALUE = "probabilityValue";
+  private JsonNullable<Double> probabilityValue = JsonNullable.<Double>undefined();
 
-  public SpidInput() { 
+  public static final String JSON_PROPERTY_BOOLEAN_VALUE = "booleanValue";
+  private JsonNullable<Boolean> booleanValue = JsonNullable.<Boolean>undefined();
+
+  public Match() { 
   }
 
-  public SpidInput subProviderId(@javax.annotation.Nullable String subProviderId) {
-    this.subProviderId = JsonNullable.<String>of(subProviderId);
+  public Match probabilityValue(@javax.annotation.Nullable Double probabilityValue) {
+    this.probabilityValue = JsonNullable.<Double>of(probabilityValue);
     return this;
   }
 
   /**
-   * The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
-   * @return subProviderId
+   * Get probabilityValue
+   * @return probabilityValue
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getSubProviderId() {
-        return subProviderId.orElse(null);
+  public Double getProbabilityValue() {
+        return probabilityValue.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB_PROVIDER_ID)
+  @JsonProperty(JSON_PROPERTY_PROBABILITY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getSubProviderId_JsonNullable() {
-    return subProviderId;
+  public JsonNullable<Double> getProbabilityValue_JsonNullable() {
+    return probabilityValue;
   }
   
-  @JsonProperty(JSON_PROPERTY_SUB_PROVIDER_ID)
-  public void setSubProviderId_JsonNullable(JsonNullable<String> subProviderId) {
-    this.subProviderId = subProviderId;
+  @JsonProperty(JSON_PROPERTY_PROBABILITY_VALUE)
+  public void setProbabilityValue_JsonNullable(JsonNullable<Double> probabilityValue) {
+    this.probabilityValue = probabilityValue;
   }
 
-  public void setSubProviderId(@javax.annotation.Nullable String subProviderId) {
-    this.subProviderId = JsonNullable.<String>of(subProviderId);
+  public void setProbabilityValue(@javax.annotation.Nullable Double probabilityValue) {
+    this.probabilityValue = JsonNullable.<Double>of(probabilityValue);
+  }
+
+
+  public Match booleanValue(@javax.annotation.Nullable Boolean booleanValue) {
+    this.booleanValue = JsonNullable.<Boolean>of(booleanValue);
+    return this;
+  }
+
+  /**
+   * Get booleanValue
+   * @return booleanValue
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getBooleanValue() {
+        return booleanValue.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_BOOLEAN_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getBooleanValue_JsonNullable() {
+    return booleanValue;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BOOLEAN_VALUE)
+  public void setBooleanValue_JsonNullable(JsonNullable<Boolean> booleanValue) {
+    this.booleanValue = booleanValue;
+  }
+
+  public void setBooleanValue(@javax.annotation.Nullable Boolean booleanValue) {
+    this.booleanValue = JsonNullable.<Boolean>of(booleanValue);
   }
 
 
   /**
-   * Return true if this SpidInput object is equal to o.
+   * Return true if this Match object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -90,8 +126,9 @@ public class SpidInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SpidInput spidInput = (SpidInput) o;
-    return equalsNullable(this.subProviderId, spidInput.subProviderId);
+    Match match = (Match) o;
+    return equalsNullable(this.probabilityValue, match.probabilityValue) &&
+        equalsNullable(this.booleanValue, match.booleanValue);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -100,7 +137,7 @@ public class SpidInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(subProviderId));
+    return Objects.hash(hashCodeNullable(probabilityValue), hashCodeNullable(booleanValue));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -113,8 +150,9 @@ public class SpidInput {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SpidInput {\n");
-    sb.append("    subProviderId: ").append(toIndentedString(subProviderId)).append("\n");
+    sb.append("class Match {\n");
+    sb.append("    probabilityValue: ").append(toIndentedString(probabilityValue)).append("\n");
+    sb.append("    booleanValue: ").append(toIndentedString(booleanValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -162,9 +200,14 @@ public class SpidInput {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `subProviderId` to the URL query string
-    if (getSubProviderId() != null) {
-      joiner.add(String.format("%ssubProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubProviderId()))));
+    // add `probabilityValue` to the URL query string
+    if (getProbabilityValue() != null) {
+      joiner.add(String.format("%sprobabilityValue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProbabilityValue()))));
+    }
+
+    // add `booleanValue` to the URL query string
+    if (getBooleanValue() != null) {
+      joiner.add(String.format("%sbooleanValue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBooleanValue()))));
     }
 
     return joiner.toString();

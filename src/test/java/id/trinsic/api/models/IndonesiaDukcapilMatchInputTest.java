@@ -30,17 +30,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for IndonesiaDukcapilBiometricMatchInput
+ * Model tests for IndonesiaDukcapilMatchInput
  */
-class IndonesiaDukcapilBiometricMatchInputTest {
-    private final IndonesiaDukcapilBiometricMatchInput model = new IndonesiaDukcapilBiometricMatchInput();
+class IndonesiaDukcapilMatchInputTest {
+    private final IndonesiaDukcapilMatchInput model = new IndonesiaDukcapilMatchInput();
 
     /**
-     * Model tests for IndonesiaDukcapilBiometricMatchInput
+     * Model tests for IndonesiaDukcapilMatchInput
      */
     @Test
-    void testIndonesiaDukcapilBiometricMatchInput() {
-        // TODO: test IndonesiaDukcapilBiometricMatchInput
+    void testIndonesiaDukcapilMatchInput() {
+        // TODO: test IndonesiaDukcapilMatchInput
     }
 
     /**
