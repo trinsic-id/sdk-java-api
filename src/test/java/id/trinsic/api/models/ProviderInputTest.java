@@ -19,9 +19,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
+import id.trinsic.api.models.AppleWalletInput;
 import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
@@ -185,6 +187,22 @@ class ProviderInputTest {
     @Test
     void spidTest() {
         // TODO: test spid
+    }
+
+    /**
+     * Test the property 'googleWallet'
+     */
+    @Test
+    void googleWalletTest() {
+        // TODO: test googleWallet
+    }
+
+    /**
+     * Test the property 'appleWallet'
+     */
+    @Test
+    void appleWalletTest() {
+        // TODO: test appleWallet
     }
 
     /**

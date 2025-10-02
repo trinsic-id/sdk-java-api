@@ -2,7 +2,7 @@
 
 # IntegrationStep
 
-A step to perform in the process of executing an Advanced Provider Session
+A step to perform in the process of executing an Direct Provider Session
 
 ## Properties
 

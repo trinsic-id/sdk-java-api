@@ -13,5 +13,7 @@
 
 * `SHOW_CONTENT` (value: `"ShowContent"`)
 
+* `PERFORM_NATIVE_CHALLENGE` (value: `"PerformNativeChallenge"`)
+
 
 

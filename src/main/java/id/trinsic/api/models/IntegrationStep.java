@@ -36,14 +36,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * A step to perform in the process of executing an Advanced Provider Session
+ * A step to perform in the process of executing an Direct Provider Session
  */
 @JsonPropertyOrder({
   IntegrationStep.JSON_PROPERTY_METHOD,
   IntegrationStep.JSON_PROPERTY_CONTENT,
   IntegrationStep.JSON_PROPERTY_REFRESH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IntegrationStep {
   public static final String JSON_PROPERTY_METHOD = "method";
   @javax.annotation.Nonnull

@@ -28,6 +28,7 @@ import id.trinsic.api.models.RecommendationInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -40,12 +41,17 @@ import id.trinsic.ApiClient;
  * CreateWidgetSessionRequest
  */
 @JsonPropertyOrder({
+  CreateWidgetSessionRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
   CreateWidgetSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateWidgetSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateWidgetSessionRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateWidgetSessionRequest {
+  public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
+  @javax.annotation.Nonnull
+  private UUID verificationProfileId;
+
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
 
@@ -58,13 +64,37 @@ public class CreateWidgetSessionRequest {
   public CreateWidgetSessionRequest() { 
   }
 
+  public CreateWidgetSessionRequest verificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+    return this;
+  }
+
+  /**
+   * The ID of the Verification Profile to use for this session.
+   * @return verificationProfileId
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public UUID getVerificationProfileId() {
+    return verificationProfileId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+  }
+
+
   public CreateWidgetSessionRequest redirectUrl(@javax.annotation.Nullable String redirectUrl) {
     this.redirectUrl = JsonNullable.<String>of(redirectUrl);
     return this;
   }
 
   /**
-   * The URL to redirect the user to after the widget session is complete.              *Note*: this should NOT be set if you intend to use Trinsic&#39;s Web UI SDK to launch the Widget as an embedded iFrame or popup; in that case, session resolution is handled by our SDK, not via redirect.
+   * The URL to redirect the user to after the widget session is complete.              *Note*: this should NOT be set if you intend to use Trinsic&#39;s Web UI SDK to launch the Widget as a popup; in that case, session resolution is handled by our SDK, not via redirect.
    * @return redirectUrl
    */
   @javax.annotation.Nullable
@@ -178,7 +208,8 @@ public class CreateWidgetSessionRequest {
       return false;
     }
     CreateWidgetSessionRequest createWidgetSessionRequest = (CreateWidgetSessionRequest) o;
-    return equalsNullable(this.redirectUrl, createWidgetSessionRequest.redirectUrl) &&
+    return Objects.equals(this.verificationProfileId, createWidgetSessionRequest.verificationProfileId) &&
+        equalsNullable(this.redirectUrl, createWidgetSessionRequest.redirectUrl) &&
         equalsNullable(this.providers, createWidgetSessionRequest.providers) &&
         equalsNullable(this.recommendationInfo, createWidgetSessionRequest.recommendationInfo);
   }
@@ -189,7 +220,7 @@ public class CreateWidgetSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(redirectUrl), hashCodeNullable(providers), hashCodeNullable(recommendationInfo));
+    return Objects.hash(verificationProfileId, hashCodeNullable(redirectUrl), hashCodeNullable(providers), hashCodeNullable(recommendationInfo));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -203,6 +234,7 @@ public class CreateWidgetSessionRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateWidgetSessionRequest {\n");
+    sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
     sb.append("    recommendationInfo: ").append(toIndentedString(recommendationInfo)).append("\n");
@@ -252,6 +284,11 @@ public class CreateWidgetSessionRequest {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `verificationProfileId` to the URL query string
+    if (getVerificationProfileId() != null) {
+      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
+    }
 
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {

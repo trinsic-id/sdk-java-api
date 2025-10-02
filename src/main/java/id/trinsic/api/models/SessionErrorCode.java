@@ -48,7 +48,11 @@ public enum SessionErrorCode {
   
   UNSUPPORTED_DOCUMENT("UnsupportedDocument"),
   
-  ASSURANCE_LEVEL_NOT_MET("AssuranceLevelNotMet");
+  ASSURANCE_LEVEL_NOT_MET("AssuranceLevelNotMet"),
+  
+  SECURITY_VALIDATION_FAILED("SecurityValidationFailed"),
+  
+  INVALID_RESPONSE("InvalidResponse");
 
   private String value;
 

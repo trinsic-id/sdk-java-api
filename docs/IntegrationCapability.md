@@ -19,5 +19,7 @@
 
 * `POLL_AFTER_REDIRECT` (value: `"PollAfterRedirect"`)
 
+* `NATIVE_CHALLENGE` (value: `"NativeChallenge"`)
+
 
 

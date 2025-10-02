@@ -6,8 +6,8 @@ All URIs are relative to *https://api.trinsic.id*
 |------------- | ------------- | -------------|
 | [**cancelSession**](SessionsApi.md#cancelSession) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
 | [**cancelSessionWithHttpInfo**](SessionsApi.md#cancelSessionWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
-| [**createAdvancedProviderSession**](SessionsApi.md#createAdvancedProviderSession) | **POST** /api/v1/sessions/provider/advanced | Create Advanced Provider Session |
-| [**createAdvancedProviderSessionWithHttpInfo**](SessionsApi.md#createAdvancedProviderSessionWithHttpInfo) | **POST** /api/v1/sessions/provider/advanced | Create Advanced Provider Session |
+| [**createDirectProviderSession**](SessionsApi.md#createDirectProviderSession) | **POST** /api/v1/sessions/provider/direct | Create Direct Provider Session |
+| [**createDirectProviderSessionWithHttpInfo**](SessionsApi.md#createDirectProviderSessionWithHttpInfo) | **POST** /api/v1/sessions/provider/direct | Create Direct Provider Session |
 | [**createHostedProviderSession**](SessionsApi.md#createHostedProviderSession) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
 | [**createHostedProviderSessionWithHttpInfo**](SessionsApi.md#createHostedProviderSessionWithHttpInfo) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
 | [**createWidgetSession**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
@@ -16,12 +16,14 @@ All URIs are relative to *https://api.trinsic.id*
 | [**getSessionWithHttpInfo**](SessionsApi.md#getSessionWithHttpInfo) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
 | [**getSessionResultWithHttpInfo**](SessionsApi.md#getSessionResultWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
-| [**listSessions**](SessionsApi.md#listSessions) | **GET** /api/v1/sessions/list | List Sessions |
-| [**listSessionsWithHttpInfo**](SessionsApi.md#listSessionsWithHttpInfo) | **GET** /api/v1/sessions/list | List Sessions |
+| [**listSessions**](SessionsApi.md#listSessions) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
+| [**listSessionsWithHttpInfo**](SessionsApi.md#listSessionsWithHttpInfo) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
 | [**redactSession**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**redactSessionWithHttpInfo**](SessionsApi.md#redactSessionWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**refreshStepContent**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
 | [**refreshStepContentWithHttpInfo**](SessionsApi.md#refreshStepContentWithHttpInfo) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
+| [**submitNativeChallengeResponse**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit | Submit Native Challenge Response |
+| [**submitNativeChallengeResponseWithHttpInfo**](SessionsApi.md#submitNativeChallengeResponseWithHttpInfo) | **POST** /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit | Submit Native Challenge Response |
 
 
 
@@ -177,11 +179,11 @@ ApiResponse<[**CancelSessionResponse**](CancelSessionResponse.md)>
 | **500** | Internal server error |  -  |
 
 
-## createAdvancedProviderSession
+## createDirectProviderSession
 
-> CreateAdvancedProviderSessionResponse createAdvancedProviderSession(createAdvancedProviderSessionRequest)
+> CreateDirectProviderSessionResponse createDirectProviderSession(createDirectProviderSessionRequest)
 
-Create Advanced Provider Session
+Create Direct Provider Session
 
 Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
 
@@ -206,12 +208,12 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = new CreateAdvancedProviderSessionRequest(); // CreateAdvancedProviderSessionRequest | 
+        CreateDirectProviderSessionRequest createDirectProviderSessionRequest = new CreateDirectProviderSessionRequest(); // CreateDirectProviderSessionRequest | 
         try {
-            CreateAdvancedProviderSessionResponse result = apiInstance.createAdvancedProviderSession(createAdvancedProviderSessionRequest);
+            CreateDirectProviderSessionResponse result = apiInstance.createDirectProviderSession(createDirectProviderSessionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SessionsApi#createAdvancedProviderSession");
+            System.err.println("Exception when calling SessionsApi#createDirectProviderSession");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -226,11 +228,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createAdvancedProviderSessionRequest** | [**CreateAdvancedProviderSessionRequest**](CreateAdvancedProviderSessionRequest.md)|  | [optional] |
+| **createDirectProviderSessionRequest** | [**CreateDirectProviderSessionRequest**](CreateDirectProviderSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-[**CreateAdvancedProviderSessionResponse**](CreateAdvancedProviderSessionResponse.md)
+[**CreateDirectProviderSessionResponse**](CreateDirectProviderSessionResponse.md)
 
 
 ### Authorization
@@ -251,11 +253,11 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal server error |  -  |
 
-## createAdvancedProviderSessionWithHttpInfo
+## createDirectProviderSessionWithHttpInfo
 
-> ApiResponse<CreateAdvancedProviderSessionResponse> createAdvancedProviderSession createAdvancedProviderSessionWithHttpInfo(createAdvancedProviderSessionRequest)
+> ApiResponse<CreateDirectProviderSessionResponse> createDirectProviderSession createDirectProviderSessionWithHttpInfo(createDirectProviderSessionRequest)
 
-Create Advanced Provider Session
+Create Direct Provider Session
 
 Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
 
@@ -281,14 +283,14 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = new CreateAdvancedProviderSessionRequest(); // CreateAdvancedProviderSessionRequest | 
+        CreateDirectProviderSessionRequest createDirectProviderSessionRequest = new CreateDirectProviderSessionRequest(); // CreateDirectProviderSessionRequest | 
         try {
-            ApiResponse<CreateAdvancedProviderSessionResponse> response = apiInstance.createAdvancedProviderSessionWithHttpInfo(createAdvancedProviderSessionRequest);
+            ApiResponse<CreateDirectProviderSessionResponse> response = apiInstance.createDirectProviderSessionWithHttpInfo(createDirectProviderSessionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling SessionsApi#createAdvancedProviderSession");
+            System.err.println("Exception when calling SessionsApi#createDirectProviderSession");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -303,11 +305,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createAdvancedProviderSessionRequest** | [**CreateAdvancedProviderSessionRequest**](CreateAdvancedProviderSessionRequest.md)|  | [optional] |
+| **createDirectProviderSessionRequest** | [**CreateDirectProviderSessionRequest**](CreateDirectProviderSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**CreateAdvancedProviderSessionResponse**](CreateAdvancedProviderSessionResponse.md)>
+ApiResponse<[**CreateDirectProviderSessionResponse**](CreateDirectProviderSessionResponse.md)>
 
 
 ### Authorization
@@ -662,7 +664,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         try {
             GetSessionResponse result = apiInstance.getSession(sessionId);
             System.out.println(result);
@@ -682,7 +684,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 
 ### Return type
 
@@ -737,7 +739,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         try {
             ApiResponse<GetSessionResponse> response = apiInstance.getSessionWithHttpInfo(sessionId);
             System.out.println("Status code: " + response.getStatusCode());
@@ -759,7 +761,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 
 ### Return type
 
@@ -812,7 +814,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         GetSessionResultRequest getSessionResultRequest = new GetSessionResultRequest(); // GetSessionResultRequest | 
         try {
             GetSessionResultResponse result = apiInstance.getSessionResult(sessionId, getSessionResultRequest);
@@ -833,7 +835,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 | **getSessionResultRequest** | [**GetSessionResultRequest**](GetSessionResultRequest.md)|  | [optional] |
 
 ### Return type
@@ -887,7 +889,7 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        String sessionId = "sessionId_example"; // String | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         GetSessionResultRequest getSessionResultRequest = new GetSessionResultRequest(); // GetSessionResultRequest | 
         try {
             ApiResponse<GetSessionResultResponse> response = apiInstance.getSessionResultWithHttpInfo(sessionId, getSessionResultRequest);
@@ -910,7 +912,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**|  | |
+| **sessionId** | **UUID**|  | |
 | **getSessionResultRequest** | [**GetSessionResultRequest**](GetSessionResultRequest.md)|  | [optional] |
 
 ### Return type
@@ -939,11 +941,11 @@ ApiResponse<[**GetSessionResultResponse**](GetSessionResultResponse.md)>
 
 ## listSessions
 
-> ListSessionsResponse listSessions(orderBy, orderDirection, pageSize, page)
+> ListSessionsResponse listSessions(verificationProfileId, orderBy, orderDirection, pageSize, page)
 
 List Sessions
 
-List Sessions created by your account
+List Sessions created for a specific Verification Profile
 
 ### Example
 
@@ -966,12 +968,13 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID verificationProfileId = UUID.randomUUID(); // UUID | 
         SessionOrdering orderBy = SessionOrdering.fromValue("Created"); // SessionOrdering | The field by which sessions should be ordered
         OrderDirection orderDirection = OrderDirection.fromValue("Ascending"); // OrderDirection | 
         Integer pageSize = 50; // Integer | The number of items to return per page -- must be between `1` and `50`
         Integer page = 1; // Integer | The page number to return -- starts at `1`
         try {
-            ListSessionsResponse result = apiInstance.listSessions(orderBy, orderDirection, pageSize, page);
+            ListSessionsResponse result = apiInstance.listSessions(verificationProfileId, orderBy, orderDirection, pageSize, page);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SessionsApi#listSessions");
@@ -989,6 +992,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **verificationProfileId** | **UUID**|  | |
 | **orderBy** | [**SessionOrdering**](.md)| The field by which sessions should be ordered | [optional] [enum: Created, Updated, State] |
 | **orderDirection** | [**OrderDirection**](.md)|  | [optional] [enum: Ascending, Descending] |
 | **pageSize** | **Integer**| The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; | [optional] |
@@ -1019,11 +1023,11 @@ public class Example {
 
 ## listSessionsWithHttpInfo
 
-> ApiResponse<ListSessionsResponse> listSessions listSessionsWithHttpInfo(orderBy, orderDirection, pageSize, page)
+> ApiResponse<ListSessionsResponse> listSessions listSessionsWithHttpInfo(verificationProfileId, orderBy, orderDirection, pageSize, page)
 
 List Sessions
 
-List Sessions created by your account
+List Sessions created for a specific Verification Profile
 
 ### Example
 
@@ -1047,12 +1051,13 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID verificationProfileId = UUID.randomUUID(); // UUID | 
         SessionOrdering orderBy = SessionOrdering.fromValue("Created"); // SessionOrdering | The field by which sessions should be ordered
         OrderDirection orderDirection = OrderDirection.fromValue("Ascending"); // OrderDirection | 
         Integer pageSize = 50; // Integer | The number of items to return per page -- must be between `1` and `50`
         Integer page = 1; // Integer | The page number to return -- starts at `1`
         try {
-            ApiResponse<ListSessionsResponse> response = apiInstance.listSessionsWithHttpInfo(orderBy, orderDirection, pageSize, page);
+            ApiResponse<ListSessionsResponse> response = apiInstance.listSessionsWithHttpInfo(verificationProfileId, orderBy, orderDirection, pageSize, page);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1072,6 +1077,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **verificationProfileId** | **UUID**|  | |
 | **orderBy** | [**SessionOrdering**](.md)| The field by which sessions should be ordered | [optional] [enum: Created, Updated, State] |
 | **orderDirection** | [**OrderDirection**](.md)|  | [optional] [enum: Ascending, Descending] |
 | **pageSize** | **Integer**| The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; | [optional] |
@@ -1257,7 +1263,7 @@ ApiResponse<Void>
 
 Refresh Step Content
 
-Refreshes the content of a Step for an Advanced Provider Session.
+Refreshes the content of a Step for a Direct Provider Session.
 
 ### Example
 
@@ -1333,7 +1339,7 @@ public class Example {
 
 Refresh Step Content
 
-Refreshes the content of a Step for an Advanced Provider Session.
+Refreshes the content of a Step for a Direct Provider Session.
 
 ### Example
 
@@ -1386,6 +1392,162 @@ public class Example {
 ### Return type
 
 ApiResponse<[**RefreshStepContentResponse**](RefreshStepContentResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+
+## submitNativeChallengeResponse
+
+> SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(acceptanceSessionId, submitNativeChallengeResponseRequest)
+
+Submit Native Challenge Response
+
+Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest = new SubmitNativeChallengeResponseRequest(); // SubmitNativeChallengeResponseRequest | 
+        try {
+            SubmitNativeChallengeResponseResponse result = apiInstance.submitNativeChallengeResponse(acceptanceSessionId, submitNativeChallengeResponseRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#submitNativeChallengeResponse");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **acceptanceSessionId** | **UUID**|  | |
+| **submitNativeChallengeResponseRequest** | [**SubmitNativeChallengeResponseRequest**](SubmitNativeChallengeResponseRequest.md)|  | [optional] |
+
+### Return type
+
+[**SubmitNativeChallengeResponseResponse**](SubmitNativeChallengeResponseResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## submitNativeChallengeResponseWithHttpInfo
+
+> ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponse submitNativeChallengeResponseWithHttpInfo(acceptanceSessionId, submitNativeChallengeResponseRequest)
+
+Submit Native Challenge Response
+
+Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest = new SubmitNativeChallengeResponseRequest(); // SubmitNativeChallengeResponseRequest | 
+        try {
+            ApiResponse<SubmitNativeChallengeResponseResponse> response = apiInstance.submitNativeChallengeResponseWithHttpInfo(acceptanceSessionId, submitNativeChallengeResponseRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#submitNativeChallengeResponse");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **acceptanceSessionId** | **UUID**|  | |
+| **submitNativeChallengeResponseRequest** | [**SubmitNativeChallengeResponseRequest**](SubmitNativeChallengeResponseRequest.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**SubmitNativeChallengeResponseResponse**](SubmitNativeChallengeResponseResponse.md)>
 
 
 ### Authorization

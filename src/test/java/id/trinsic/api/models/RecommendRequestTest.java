@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.RecommendationInfo;
 import java.util.Arrays;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -40,6 +41,14 @@ class RecommendRequestTest {
     @Test
     void testRecommendRequest() {
         // TODO: test RecommendRequest
+    }
+
+    /**
+     * Test the property 'verificationProfileId'
+     */
+    @Test
+    void verificationProfileIdTest() {
+        // TODO: test verificationProfileId
     }
 
     /**

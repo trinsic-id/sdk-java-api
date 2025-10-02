@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ProviderInput;
 import java.util.Arrays;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -39,14 +40,19 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER,
+  CreateHostedProviderSessionRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
   private String provider;
+
+  public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
+  @javax.annotation.Nonnull
+  private UUID verificationProfileId;
 
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   @javax.annotation.Nonnull
@@ -82,6 +88,30 @@ public class CreateHostedProviderSessionRequest {
   }
 
 
+  public CreateHostedProviderSessionRequest verificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+    return this;
+  }
+
+  /**
+   * The ID of the Verification Profile to use for this session.
+   * @return verificationProfileId
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public UUID getVerificationProfileId() {
+    return verificationProfileId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+  }
+
+
   public CreateHostedProviderSessionRequest redirectUrl(@javax.annotation.Nonnull String redirectUrl) {
     this.redirectUrl = redirectUrl;
     return this;
@@ -112,7 +142,7 @@ public class CreateHostedProviderSessionRequest {
   }
 
   /**
-   * Provider-specific input for those providers which require it.   &lt;b&gt;Deprecated:&lt;/b&gt; In the future, Hosted Provider Sessions will not accept input on creation, and will instead always redirect the user to a hosted interface to collect input. If you need to collect input from the user yourself, please use the Create Advanced Session endpoint instead.
+   * Provider-specific input for those providers which require it.   &lt;b&gt;Deprecated:&lt;/b&gt; In the future, Hosted Provider Sessions will not accept input on creation, and will instead always redirect the user to a hosted interface to collect input. If you need to collect input from the user yourself, please use the Create Direct Session endpoint instead.
    * @return providerInput
    * @deprecated
    */
@@ -153,6 +183,7 @@ public class CreateHostedProviderSessionRequest {
     }
     CreateHostedProviderSessionRequest createHostedProviderSessionRequest = (CreateHostedProviderSessionRequest) o;
     return Objects.equals(this.provider, createHostedProviderSessionRequest.provider) &&
+        Objects.equals(this.verificationProfileId, createHostedProviderSessionRequest.verificationProfileId) &&
         Objects.equals(this.redirectUrl, createHostedProviderSessionRequest.redirectUrl) &&
         equalsNullable(this.providerInput, createHostedProviderSessionRequest.providerInput);
   }
@@ -163,7 +194,7 @@ public class CreateHostedProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, redirectUrl, hashCodeNullable(providerInput));
+    return Objects.hash(provider, verificationProfileId, redirectUrl, hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -178,6 +209,7 @@ public class CreateHostedProviderSessionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateHostedProviderSessionRequest {\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    providerInput: ").append(toIndentedString(providerInput)).append("\n");
     sb.append("}");
@@ -230,6 +262,11 @@ public class CreateHostedProviderSessionRequest {
     // add `provider` to the URL query string
     if (getProvider() != null) {
       joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
+    }
+
+    // add `verificationProfileId` to the URL query string
+    if (getVerificationProfileId() != null) {
+      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
     }
 
     // add `redirectUrl` to the URL query string

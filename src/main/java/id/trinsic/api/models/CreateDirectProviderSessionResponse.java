@@ -33,15 +33,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * CreateAdvancedProviderSessionResponse
+ * CreateDirectProviderSessionResponse
  */
 @JsonPropertyOrder({
-  CreateAdvancedProviderSessionResponse.JSON_PROPERTY_SESSION_ID,
-  CreateAdvancedProviderSessionResponse.JSON_PROPERTY_RESULT_COLLECTION,
-  CreateAdvancedProviderSessionResponse.JSON_PROPERTY_NEXT_STEP
+  CreateDirectProviderSessionResponse.JSON_PROPERTY_SESSION_ID,
+  CreateDirectProviderSessionResponse.JSON_PROPERTY_RESULT_COLLECTION,
+  CreateDirectProviderSessionResponse.JSON_PROPERTY_NEXT_STEP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class CreateAdvancedProviderSessionResponse {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class CreateDirectProviderSessionResponse {
   public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
   @javax.annotation.Nonnull
   private UUID sessionId;
@@ -54,10 +54,10 @@ public class CreateAdvancedProviderSessionResponse {
   @javax.annotation.Nonnull
   private IntegrationStep nextStep;
 
-  public CreateAdvancedProviderSessionResponse() { 
+  public CreateDirectProviderSessionResponse() { 
   }
 
-  public CreateAdvancedProviderSessionResponse sessionId(@javax.annotation.Nonnull UUID sessionId) {
+  public CreateDirectProviderSessionResponse sessionId(@javax.annotation.Nonnull UUID sessionId) {
     this.sessionId = sessionId;
     return this;
   }
@@ -81,7 +81,7 @@ public class CreateAdvancedProviderSessionResponse {
   }
 
 
-  public CreateAdvancedProviderSessionResponse resultCollection(@javax.annotation.Nonnull ResultCollection resultCollection) {
+  public CreateDirectProviderSessionResponse resultCollection(@javax.annotation.Nonnull ResultCollection resultCollection) {
     this.resultCollection = resultCollection;
     return this;
   }
@@ -105,7 +105,7 @@ public class CreateAdvancedProviderSessionResponse {
   }
 
 
-  public CreateAdvancedProviderSessionResponse nextStep(@javax.annotation.Nonnull IntegrationStep nextStep) {
+  public CreateDirectProviderSessionResponse nextStep(@javax.annotation.Nonnull IntegrationStep nextStep) {
     this.nextStep = nextStep;
     return this;
   }
@@ -130,7 +130,7 @@ public class CreateAdvancedProviderSessionResponse {
 
 
   /**
-   * Return true if this CreateAdvancedProviderSessionResponse object is equal to o.
+   * Return true if this CreateDirectProviderSessionResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -140,10 +140,10 @@ public class CreateAdvancedProviderSessionResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateAdvancedProviderSessionResponse createAdvancedProviderSessionResponse = (CreateAdvancedProviderSessionResponse) o;
-    return Objects.equals(this.sessionId, createAdvancedProviderSessionResponse.sessionId) &&
-        Objects.equals(this.resultCollection, createAdvancedProviderSessionResponse.resultCollection) &&
-        Objects.equals(this.nextStep, createAdvancedProviderSessionResponse.nextStep);
+    CreateDirectProviderSessionResponse createDirectProviderSessionResponse = (CreateDirectProviderSessionResponse) o;
+    return Objects.equals(this.sessionId, createDirectProviderSessionResponse.sessionId) &&
+        Objects.equals(this.resultCollection, createDirectProviderSessionResponse.resultCollection) &&
+        Objects.equals(this.nextStep, createDirectProviderSessionResponse.nextStep);
   }
 
   @Override
@@ -154,7 +154,7 @@ public class CreateAdvancedProviderSessionResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateAdvancedProviderSessionResponse {\n");
+    sb.append("class CreateDirectProviderSessionResponse {\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    resultCollection: ").append(toIndentedString(resultCollection)).append("\n");
     sb.append("    nextStep: ").append(toIndentedString(nextStep)).append("\n");

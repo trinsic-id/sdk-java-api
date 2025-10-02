@@ -29,6 +29,7 @@ import id.trinsic.api.models.ProviderInput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -38,20 +39,25 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * CreateAdvancedProviderSessionRequest
+ * CreateDirectProviderSessionRequest
  */
 @JsonPropertyOrder({
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_PROVIDER,
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_CAPABILITIES,
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I,
-  CreateAdvancedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_PROVIDER,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_CAPABILITIES,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class CreateAdvancedProviderSessionRequest {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class CreateDirectProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
   private String provider;
+
+  public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
+  @javax.annotation.Nonnull
+  private UUID verificationProfileId;
 
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
@@ -66,10 +72,10 @@ public class CreateAdvancedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
   private JsonNullable<ProviderInput> providerInput = JsonNullable.<ProviderInput>undefined();
 
-  public CreateAdvancedProviderSessionRequest() { 
+  public CreateDirectProviderSessionRequest() { 
   }
 
-  public CreateAdvancedProviderSessionRequest provider(@javax.annotation.Nonnull String provider) {
+  public CreateDirectProviderSessionRequest provider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
     return this;
   }
@@ -93,7 +99,31 @@ public class CreateAdvancedProviderSessionRequest {
   }
 
 
-  public CreateAdvancedProviderSessionRequest redirectUrl(@javax.annotation.Nullable String redirectUrl) {
+  public CreateDirectProviderSessionRequest verificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+    return this;
+  }
+
+  /**
+   * The ID of the Verification Profile to use for this session.
+   * @return verificationProfileId
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public UUID getVerificationProfileId() {
+    return verificationProfileId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+  }
+
+
+  public CreateDirectProviderSessionRequest redirectUrl(@javax.annotation.Nullable String redirectUrl) {
     this.redirectUrl = JsonNullable.<String>of(redirectUrl);
     return this;
   }
@@ -125,12 +155,12 @@ public class CreateAdvancedProviderSessionRequest {
   }
 
 
-  public CreateAdvancedProviderSessionRequest capabilities(@javax.annotation.Nonnull List<IntegrationCapability> capabilities) {
+  public CreateDirectProviderSessionRequest capabilities(@javax.annotation.Nonnull List<IntegrationCapability> capabilities) {
     this.capabilities = capabilities;
     return this;
   }
 
-  public CreateAdvancedProviderSessionRequest addCapabilitiesItem(IntegrationCapability capabilitiesItem) {
+  public CreateDirectProviderSessionRequest addCapabilitiesItem(IntegrationCapability capabilitiesItem) {
     if (this.capabilities == null) {
       this.capabilities = new ArrayList<>();
     }
@@ -139,7 +169,7 @@ public class CreateAdvancedProviderSessionRequest {
   }
 
   /**
-   * The list of capabilities your integration supports. Capabilities are the core of Trinsic&#39;s whitelabel-with-optional-fallback offering.              Most capabilities align with either an &#x60;IntegrationLaunchMethod&#x60; or an &#x60;IntegrationCollectionMethod&#x60;. The exception being refresh content to support updating the content of the launch method.              For example, to support a basic redirect-based flow, you must include the &#x60;LaunchRedirect&#x60; and &#x60;CaptureRedirect&#x60; capabilities. To support a mobile deeplink / polling flow, you must include the &#x60;DeeplinkToMobile&#x60; and &#x60;PollForResults&#x60; capabilities.              If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic will automatically fall back to a Trinsic-hosted UI to cover any gaps in your integration&#39;s capabilities. If &#x60;FallbackToHostedUi&#x60; is &#x60;false&#x60;, gaps in your integration&#39;s capabilities will result in an error during Session creation.              Read more on how to integrate at &lt;a href&#x3D;\&quot;https://docs.trinsic.id/docs/advanced-provider-sessions\&quot;&gt;the guide on Advanced Provider Sessions&lt;/a&gt;
+   * The list of capabilities your integration supports. Capabilities are the core of Trinsic&#39;s whitelabel-with-optional-fallback offering.              Most capabilities align with either an &#x60;IntegrationLaunchMethod&#x60; or an &#x60;IntegrationCollectionMethod&#x60;. The exception being refresh content to support updating the content of the launch method.              For example, to support a basic redirect-based flow, you must include the &#x60;LaunchRedirect&#x60; and &#x60;CaptureRedirect&#x60; capabilities. To support a mobile deeplink / polling flow, you must include the &#x60;DeeplinkToMobile&#x60; and &#x60;PollForResults&#x60; capabilities.              If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic will automatically fall back to a Trinsic-hosted UI to cover any gaps in your integration&#39;s capabilities. If &#x60;FallbackToHostedUi&#x60; is &#x60;false&#x60;, gaps in your integration&#39;s capabilities will result in an error during Session creation.              Read more on how to integrate at &lt;a href&#x3D;\&quot;https://docs.trinsic.id/docs/direct-provider-sessions\&quot;&gt;the guide on Direct Provider Sessions&lt;/a&gt;
    * @return capabilities
    */
   @javax.annotation.Nonnull
@@ -157,7 +187,7 @@ public class CreateAdvancedProviderSessionRequest {
   }
 
 
-  public CreateAdvancedProviderSessionRequest fallbackToHostedUI(@javax.annotation.Nullable Boolean fallbackToHostedUI) {
+  public CreateDirectProviderSessionRequest fallbackToHostedUI(@javax.annotation.Nullable Boolean fallbackToHostedUI) {
     this.fallbackToHostedUI = JsonNullable.<Boolean>of(fallbackToHostedUI);
     return this;
   }
@@ -189,7 +219,7 @@ public class CreateAdvancedProviderSessionRequest {
   }
 
 
-  public CreateAdvancedProviderSessionRequest providerInput(@javax.annotation.Nullable ProviderInput providerInput) {
+  public CreateDirectProviderSessionRequest providerInput(@javax.annotation.Nullable ProviderInput providerInput) {
     this.providerInput = JsonNullable.<ProviderInput>of(providerInput);
     return this;
   }
@@ -222,7 +252,7 @@ public class CreateAdvancedProviderSessionRequest {
 
 
   /**
-   * Return true if this CreateAdvancedProviderSessionRequest object is equal to o.
+   * Return true if this CreateDirectProviderSessionRequest object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -232,12 +262,13 @@ public class CreateAdvancedProviderSessionRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = (CreateAdvancedProviderSessionRequest) o;
-    return Objects.equals(this.provider, createAdvancedProviderSessionRequest.provider) &&
-        equalsNullable(this.redirectUrl, createAdvancedProviderSessionRequest.redirectUrl) &&
-        Objects.equals(this.capabilities, createAdvancedProviderSessionRequest.capabilities) &&
-        equalsNullable(this.fallbackToHostedUI, createAdvancedProviderSessionRequest.fallbackToHostedUI) &&
-        equalsNullable(this.providerInput, createAdvancedProviderSessionRequest.providerInput);
+    CreateDirectProviderSessionRequest createDirectProviderSessionRequest = (CreateDirectProviderSessionRequest) o;
+    return Objects.equals(this.provider, createDirectProviderSessionRequest.provider) &&
+        Objects.equals(this.verificationProfileId, createDirectProviderSessionRequest.verificationProfileId) &&
+        equalsNullable(this.redirectUrl, createDirectProviderSessionRequest.redirectUrl) &&
+        Objects.equals(this.capabilities, createDirectProviderSessionRequest.capabilities) &&
+        equalsNullable(this.fallbackToHostedUI, createDirectProviderSessionRequest.fallbackToHostedUI) &&
+        equalsNullable(this.providerInput, createDirectProviderSessionRequest.providerInput);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -246,7 +277,7 @@ public class CreateAdvancedProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(providerInput));
+    return Objects.hash(provider, verificationProfileId, hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -259,8 +290,9 @@ public class CreateAdvancedProviderSessionRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateAdvancedProviderSessionRequest {\n");
+    sb.append("class CreateDirectProviderSessionRequest {\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
     sb.append("    fallbackToHostedUI: ").append(toIndentedString(fallbackToHostedUI)).append("\n");
@@ -315,6 +347,11 @@ public class CreateAdvancedProviderSessionRequest {
     // add `provider` to the URL query string
     if (getProvider() != null) {
       joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
+    }
+
+    // add `verificationProfileId` to the URL query string
+    if (getVerificationProfileId() != null) {
+      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
     }
 
     // add `redirectUrl` to the URL query string

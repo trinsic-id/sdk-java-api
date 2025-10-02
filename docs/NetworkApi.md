@@ -4,10 +4,10 @@ All URIs are relative to *https://api.trinsic.id*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**listProviderContracts**](NetworkApi.md#listProviderContracts) | **GET** /api/v1/network/providers/contracts | List Provider Contracts |
-| [**listProviderContractsWithHttpInfo**](NetworkApi.md#listProviderContractsWithHttpInfo) | **GET** /api/v1/network/providers/contracts | List Provider Contracts |
-| [**listProviders**](NetworkApi.md#listProviders) | **GET** /api/v1/network/providers | List Providers |
-| [**listProvidersWithHttpInfo**](NetworkApi.md#listProvidersWithHttpInfo) | **GET** /api/v1/network/providers | List Providers |
+| [**listProviderContracts**](NetworkApi.md#listProviderContracts) | **GET** /api/v1/network/{verificationProfileId}/providers/contracts | List Provider Contracts |
+| [**listProviderContractsWithHttpInfo**](NetworkApi.md#listProviderContractsWithHttpInfo) | **GET** /api/v1/network/{verificationProfileId}/providers/contracts | List Provider Contracts |
+| [**listProviders**](NetworkApi.md#listProviders) | **GET** /api/v1/network/{verificationProfileId}/providers |  |
+| [**listProvidersWithHttpInfo**](NetworkApi.md#listProvidersWithHttpInfo) | **GET** /api/v1/network/{verificationProfileId}/providers |  |
 | [**recommendProviders**](NetworkApi.md#recommendProviders) | **POST** /api/v1/network/recommend | Recommend Providers |
 | [**recommendProvidersWithHttpInfo**](NetworkApi.md#recommendProvidersWithHttpInfo) | **POST** /api/v1/network/recommend | Recommend Providers |
 
@@ -15,7 +15,7 @@ All URIs are relative to *https://api.trinsic.id*
 
 ## listProviderContracts
 
-> ListProviderContractsResponse listProviderContracts()
+> ListProviderContractsResponse listProviderContracts(verificationProfileId)
 
 List Provider Contracts
 
@@ -42,8 +42,9 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
+        UUID verificationProfileId = UUID.randomUUID(); // UUID | 
         try {
-            ListProviderContractsResponse result = apiInstance.listProviderContracts();
+            ListProviderContractsResponse result = apiInstance.listProviderContracts(verificationProfileId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling NetworkApi#listProviderContracts");
@@ -58,7 +59,10 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **verificationProfileId** | **UUID**|  | |
 
 ### Return type
 
@@ -85,7 +89,7 @@ This endpoint does not need any parameter.
 
 ## listProviderContractsWithHttpInfo
 
-> ApiResponse<ListProviderContractsResponse> listProviderContracts listProviderContractsWithHttpInfo()
+> ApiResponse<ListProviderContractsResponse> listProviderContracts listProviderContractsWithHttpInfo(verificationProfileId)
 
 List Provider Contracts
 
@@ -113,8 +117,9 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
+        UUID verificationProfileId = UUID.randomUUID(); // UUID | 
         try {
-            ApiResponse<ListProviderContractsResponse> response = apiInstance.listProviderContractsWithHttpInfo();
+            ApiResponse<ListProviderContractsResponse> response = apiInstance.listProviderContractsWithHttpInfo(verificationProfileId);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -131,7 +136,10 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **verificationProfileId** | **UUID**|  | |
 
 ### Return type
 
@@ -159,11 +167,9 @@ ApiResponse<[**ListProviderContractsResponse**](ListProviderContractsResponse.md
 
 ## listProviders
 
-> ListProvidersResponse listProviders(health)
+> ListProvidersResponse listProviders(verificationProfileId, health)
 
-List Providers
 
-List all identity providers available for use
 
 ### Example
 
@@ -186,9 +192,10 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
-        String health = "health_example"; // String | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
+        UUID verificationProfileId = UUID.randomUUID(); // UUID | 
+        String health = "health_example"; // String | 
         try {
-            ListProvidersResponse result = apiInstance.listProviders(health);
+            ListProvidersResponse result = apiInstance.listProviders(verificationProfileId, health);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling NetworkApi#listProviders");
@@ -206,7 +213,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **health** | **String**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
+| **verificationProfileId** | **UUID**|  | |
+| **health** | **String**|  | [optional] |
 
 ### Return type
 
@@ -233,11 +241,9 @@ public class Example {
 
 ## listProvidersWithHttpInfo
 
-> ApiResponse<ListProvidersResponse> listProviders listProvidersWithHttpInfo(health)
+> ApiResponse<ListProvidersResponse> listProviders listProvidersWithHttpInfo(verificationProfileId, health)
 
-List Providers
 
-List all identity providers available for use
 
 ### Example
 
@@ -261,9 +267,10 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
-        String health = "health_example"; // String | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
+        UUID verificationProfileId = UUID.randomUUID(); // UUID | 
+        String health = "health_example"; // String | 
         try {
-            ApiResponse<ListProvidersResponse> response = apiInstance.listProvidersWithHttpInfo(health);
+            ApiResponse<ListProvidersResponse> response = apiInstance.listProvidersWithHttpInfo(verificationProfileId, health);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -283,7 +290,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **health** | **String**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
+| **verificationProfileId** | **UUID**|  | |
+| **health** | **String**|  | [optional] |
 
 ### Return type
 

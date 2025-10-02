@@ -23,6 +23,7 @@ import id.trinsic.api.models.ListProvidersResponse;
 import id.trinsic.api.models.ProblemDetails;
 import id.trinsic.api.models.RecommendRequest;
 import id.trinsic.api.models.RecommendResponse;
+import java.util.UUID;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,7 +50,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NetworkApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -89,22 +90,24 @@ public class NetworkApi {
   /**
    * List Provider Contracts
    * List the contracts for all Providers available to your App.              If your App is in test mode, this call will only return Providers available in test mode. If your App is not in test mode, this call will only return Providers available in production.
+   * @param verificationProfileId  (required)
    * @return ListProviderContractsResponse
    * @throws ApiException if fails to make API call
    */
-  public ListProviderContractsResponse listProviderContracts() throws ApiException {
-    ApiResponse<ListProviderContractsResponse> localVarResponse = listProviderContractsWithHttpInfo();
+  public ListProviderContractsResponse listProviderContracts(@javax.annotation.Nonnull UUID verificationProfileId) throws ApiException {
+    ApiResponse<ListProviderContractsResponse> localVarResponse = listProviderContractsWithHttpInfo(verificationProfileId);
     return localVarResponse.getData();
   }
 
   /**
    * List Provider Contracts
    * List the contracts for all Providers available to your App.              If your App is in test mode, this call will only return Providers available in test mode. If your App is not in test mode, this call will only return Providers available in production.
+   * @param verificationProfileId  (required)
    * @return ApiResponse&lt;ListProviderContractsResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ListProviderContractsResponse> listProviderContractsWithHttpInfo() throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = listProviderContractsRequestBuilder();
+  public ApiResponse<ListProviderContractsResponse> listProviderContractsWithHttpInfo(@javax.annotation.Nonnull UUID verificationProfileId) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listProviderContractsRequestBuilder(verificationProfileId);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -143,11 +146,16 @@ public class NetworkApi {
     }
   }
 
-  private HttpRequest.Builder listProviderContractsRequestBuilder() throws ApiException {
+  private HttpRequest.Builder listProviderContractsRequestBuilder(@javax.annotation.Nonnull UUID verificationProfileId) throws ApiException {
+    // verify the required parameter 'verificationProfileId' is set
+    if (verificationProfileId == null) {
+      throw new ApiException(400, "Missing the required parameter 'verificationProfileId' when calling listProviderContracts");
+    }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/api/v1/network/providers/contracts";
+    String localVarPath = "/api/v1/network/{verificationProfileId}/providers/contracts"
+        .replace("{verificationProfileId}", ApiClient.urlEncode(verificationProfileId.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
@@ -164,26 +172,28 @@ public class NetworkApi {
   }
 
   /**
-   * List Providers
-   * List all identity providers available for use
-   * @param health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+   * 
+   * 
+   * @param verificationProfileId  (required)
+   * @param health  (optional)
    * @return ListProvidersResponse
    * @throws ApiException if fails to make API call
    */
-  public ListProvidersResponse listProviders(@javax.annotation.Nullable String health) throws ApiException {
-    ApiResponse<ListProvidersResponse> localVarResponse = listProvidersWithHttpInfo(health);
+  public ListProvidersResponse listProviders(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable String health) throws ApiException {
+    ApiResponse<ListProvidersResponse> localVarResponse = listProvidersWithHttpInfo(verificationProfileId, health);
     return localVarResponse.getData();
   }
 
   /**
-   * List Providers
-   * List all identity providers available for use
-   * @param health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+   * 
+   * 
+   * @param verificationProfileId  (required)
+   * @param health  (optional)
    * @return ApiResponse&lt;ListProvidersResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ListProvidersResponse> listProvidersWithHttpInfo(@javax.annotation.Nullable String health) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = listProvidersRequestBuilder(health);
+  public ApiResponse<ListProvidersResponse> listProvidersWithHttpInfo(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable String health) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listProvidersRequestBuilder(verificationProfileId, health);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -222,11 +232,16 @@ public class NetworkApi {
     }
   }
 
-  private HttpRequest.Builder listProvidersRequestBuilder(@javax.annotation.Nullable String health) throws ApiException {
+  private HttpRequest.Builder listProvidersRequestBuilder(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable String health) throws ApiException {
+    // verify the required parameter 'verificationProfileId' is set
+    if (verificationProfileId == null) {
+      throw new ApiException(400, "Missing the required parameter 'verificationProfileId' when calling listProviders");
+    }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/api/v1/network/providers";
+    String localVarPath = "/api/v1/network/{verificationProfileId}/providers"
+        .replace("{verificationProfileId}", ApiClient.urlEncode(verificationProfileId.toString()));
 
     List<Pair> localVarQueryParams = new ArrayList<>();
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");

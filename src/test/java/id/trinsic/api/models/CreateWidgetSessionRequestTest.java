@@ -22,6 +22,7 @@ import id.trinsic.api.models.RecommendationInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -42,6 +43,14 @@ class CreateWidgetSessionRequestTest {
     @Test
     void testCreateWidgetSessionRequest() {
         // TODO: test CreateWidgetSessionRequest
+    }
+
+    /**
+     * Test the property 'verificationProfileId'
+     */
+    @Test
+    void verificationProfileIdTest() {
+        // TODO: test verificationProfileId
     }
 
     /**

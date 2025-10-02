@@ -25,9 +25,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
+import id.trinsic.api.models.AppleWalletInput;
 import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
@@ -71,10 +73,12 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_MOBILE_ID,
   ProviderInput.JSON_PROPERTY_IDIN,
   ProviderInput.JSON_PROPERTY_SPID,
+  ProviderInput.JSON_PROPERTY_GOOGLE_WALLET,
+  ProviderInput.JSON_PROPERTY_APPLE_WALLET,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
@@ -123,6 +127,12 @@ public class ProviderInput {
 
   public static final String JSON_PROPERTY_SPID = "spid";
   private JsonNullable<SpidInput> spid = JsonNullable.<SpidInput>undefined();
+
+  public static final String JSON_PROPERTY_GOOGLE_WALLET = "googleWallet";
+  private JsonNullable<GoogleWalletInput> googleWallet = JsonNullable.<GoogleWalletInput>undefined();
+
+  public static final String JSON_PROPERTY_APPLE_WALLET = "appleWallet";
+  private JsonNullable<AppleWalletInput> appleWallet = JsonNullable.<AppleWalletInput>undefined();
 
   public static final String JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP = "trinsicTestDatabaseLookup";
   private JsonNullable<TrinsicTestDatabaseLookupInput> trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>undefined();
@@ -645,6 +655,70 @@ public class ProviderInput {
   }
 
 
+  public ProviderInput googleWallet(@javax.annotation.Nullable GoogleWalletInput googleWallet) {
+    this.googleWallet = JsonNullable.<GoogleWalletInput>of(googleWallet);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;google-wallet&#x60; provider
+   * @return googleWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public GoogleWalletInput getGoogleWallet() {
+        return googleWallet.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_GOOGLE_WALLET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<GoogleWalletInput> getGoogleWallet_JsonNullable() {
+    return googleWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GOOGLE_WALLET)
+  public void setGoogleWallet_JsonNullable(JsonNullable<GoogleWalletInput> googleWallet) {
+    this.googleWallet = googleWallet;
+  }
+
+  public void setGoogleWallet(@javax.annotation.Nullable GoogleWalletInput googleWallet) {
+    this.googleWallet = JsonNullable.<GoogleWalletInput>of(googleWallet);
+  }
+
+
+  public ProviderInput appleWallet(@javax.annotation.Nullable AppleWalletInput appleWallet) {
+    this.appleWallet = JsonNullable.<AppleWalletInput>of(appleWallet);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;apple-wallet&#x60; provider
+   * @return appleWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public AppleWalletInput getAppleWallet() {
+        return appleWallet.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_APPLE_WALLET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<AppleWalletInput> getAppleWallet_JsonNullable() {
+    return appleWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_APPLE_WALLET)
+  public void setAppleWallet_JsonNullable(JsonNullable<AppleWalletInput> appleWallet) {
+    this.appleWallet = appleWallet;
+  }
+
+  public void setAppleWallet(@javax.annotation.Nullable AppleWalletInput appleWallet) {
+    this.appleWallet = JsonNullable.<AppleWalletInput>of(appleWallet);
+  }
+
+
   public ProviderInput trinsicTestDatabaseLookup(@javax.annotation.Nullable TrinsicTestDatabaseLookupInput trinsicTestDatabaseLookup) {
     this.trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>of(trinsicTestDatabaseLookup);
     return this;
@@ -737,6 +811,8 @@ public class ProviderInput {
         equalsNullable(this.mobileId, providerInput.mobileId) &&
         equalsNullable(this.idin, providerInput.idin) &&
         equalsNullable(this.spid, providerInput.spid) &&
+        equalsNullable(this.googleWallet, providerInput.googleWallet) &&
+        equalsNullable(this.appleWallet, providerInput.appleWallet) &&
         equalsNullable(this.trinsicTestDatabaseLookup, providerInput.trinsicTestDatabaseLookup) &&
         equalsNullable(this.trinsicTestSubProviders, providerInput.trinsicTestSubProviders);
   }
@@ -747,7 +823,7 @@ public class ProviderInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
+    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -777,6 +853,8 @@ public class ProviderInput {
     sb.append("    mobileId: ").append(toIndentedString(mobileId)).append("\n");
     sb.append("    idin: ").append(toIndentedString(idin)).append("\n");
     sb.append("    spid: ").append(toIndentedString(spid)).append("\n");
+    sb.append("    googleWallet: ").append(toIndentedString(googleWallet)).append("\n");
+    sb.append("    appleWallet: ").append(toIndentedString(appleWallet)).append("\n");
     sb.append("    trinsicTestDatabaseLookup: ").append(toIndentedString(trinsicTestDatabaseLookup)).append("\n");
     sb.append("    trinsicTestSubProviders: ").append(toIndentedString(trinsicTestSubProviders)).append("\n");
     sb.append("}");
@@ -904,6 +982,16 @@ public class ProviderInput {
     // add `spid` to the URL query string
     if (getSpid() != null) {
       joiner.add(getSpid().toUrlQueryString(prefix + "spid" + suffix));
+    }
+
+    // add `googleWallet` to the URL query string
+    if (getGoogleWallet() != null) {
+      joiner.add(getGoogleWallet().toUrlQueryString(prefix + "googleWallet" + suffix));
+    }
+
+    // add `appleWallet` to the URL query string
+    if (getAppleWallet() != null) {
+      joiner.add(getAppleWallet().toUrlQueryString(prefix + "appleWallet" + suffix));
     }
 
     // add `trinsicTestDatabaseLookup` to the URL query string

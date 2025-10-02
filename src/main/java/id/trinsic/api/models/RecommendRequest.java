@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.RecommendationInfo;
 import java.util.Arrays;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -38,11 +39,16 @@ import id.trinsic.ApiClient;
  * RecommendRequest
  */
 @JsonPropertyOrder({
+  RecommendRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
   RecommendRequest.JSON_PROPERTY_RECOMMENDATION_INFO,
   RecommendRequest.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendRequest {
+  public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
+  @javax.annotation.Nonnull
+  private UUID verificationProfileId;
+
   public static final String JSON_PROPERTY_RECOMMENDATION_INFO = "recommendationInfo";
   private JsonNullable<RecommendationInfo> recommendationInfo = JsonNullable.<RecommendationInfo>undefined();
 
@@ -51,6 +57,30 @@ public class RecommendRequest {
 
   public RecommendRequest() { 
   }
+
+  public RecommendRequest verificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+    return this;
+  }
+
+  /**
+   * The ID of the VerificationProfile to use for this recommendation.
+   * @return verificationProfileId
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public UUID getVerificationProfileId() {
+    return verificationProfileId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
+    this.verificationProfileId = verificationProfileId;
+  }
+
 
   public RecommendRequest recommendationInfo(@javax.annotation.Nullable RecommendationInfo recommendationInfo) {
     this.recommendationInfo = JsonNullable.<RecommendationInfo>of(recommendationInfo);
@@ -128,7 +158,8 @@ public class RecommendRequest {
       return false;
     }
     RecommendRequest recommendRequest = (RecommendRequest) o;
-    return equalsNullable(this.recommendationInfo, recommendRequest.recommendationInfo) &&
+    return Objects.equals(this.verificationProfileId, recommendRequest.verificationProfileId) &&
+        equalsNullable(this.recommendationInfo, recommendRequest.recommendationInfo) &&
         equalsNullable(this.health, recommendRequest.health);
   }
 
@@ -138,7 +169,7 @@ public class RecommendRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(recommendationInfo), hashCodeNullable(health));
+    return Objects.hash(verificationProfileId, hashCodeNullable(recommendationInfo), hashCodeNullable(health));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -152,6 +183,7 @@ public class RecommendRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecommendRequest {\n");
+    sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    recommendationInfo: ").append(toIndentedString(recommendationInfo)).append("\n");
     sb.append("    health: ").append(toIndentedString(health)).append("\n");
     sb.append("}");
@@ -200,6 +232,11 @@ public class RecommendRequest {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `verificationProfileId` to the URL query string
+    if (getVerificationProfileId() != null) {
+      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
+    }
 
     // add `recommendationInfo` to the URL query string
     if (getRecommendationInfo() != null) {

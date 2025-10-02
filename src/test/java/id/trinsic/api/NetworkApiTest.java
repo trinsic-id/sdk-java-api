@@ -19,6 +19,7 @@ import id.trinsic.api.models.ListProvidersResponse;
 import id.trinsic.api.models.ProblemDetails;
 import id.trinsic.api.models.RecommendRequest;
 import id.trinsic.api.models.RecommendResponse;
+import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -48,25 +49,27 @@ public class NetworkApiTest {
      */
     @Test
     public void listProviderContractsTest() throws ApiException {
+        UUID verificationProfileId = null;
         ListProviderContractsResponse response = 
-        api.listProviderContracts();
+        api.listProviderContracts(verificationProfileId);
         
         // TODO: test validations
     }
     
     /**
-     * List Providers
+     * 
      *
-     * List all identity providers available for use
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void listProvidersTest() throws ApiException {
+        UUID verificationProfileId = null;
         String health = null;
         ListProvidersResponse response = 
-        api.listProviders(health);
+        api.listProviders(verificationProfileId, health);
         
         // TODO: test validations
     }

@@ -59,11 +59,12 @@ import id.trinsic.ApiClient;
   ProviderContract.JSON_PROPERTY_REQUIRES_INPUT,
   ProviderContract.JSON_PROPERTY_HAS_TRINSIC_INTERFACE,
   ProviderContract.JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS,
+  ProviderContract.JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS,
   ProviderContract.JSON_PROPERTY_AVAILABLE_FIELDS,
   ProviderContract.JSON_PROPERTY_SUB_PROVIDERS,
   ProviderContract.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderContract {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -124,6 +125,10 @@ public class ProviderContract {
   public static final String JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS = "supportsAdvancedProviderSessions";
   @javax.annotation.Nonnull
   private Boolean supportsAdvancedProviderSessions;
+
+  public static final String JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS = "supportsDirectProviderSessions";
+  @javax.annotation.Nonnull
+  private Boolean supportsDirectProviderSessions;
 
   public static final String JSON_PROPERTY_AVAILABLE_FIELDS = "availableFields";
   private JsonNullable<List<ContractField>> availableFields = JsonNullable.<List<ContractField>>undefined();
@@ -354,7 +359,7 @@ public class ProviderContract {
   }
 
   /**
-   * Relevant only to Advanced Provider Sessions.              The &#x60;LaunchMethod&#x60; which must be supported to launch the Provider Session in Advanced Provider Sessions.
+   * Relevant only to Direct Provider Sessions.              The &#x60;LaunchMethod&#x60; which must be supported to launch the Provider Session in Direct Provider Sessions.
    * @return launchMethod
    */
   @javax.annotation.Nonnull
@@ -378,7 +383,7 @@ public class ProviderContract {
   }
 
   /**
-   * Relevant only to Advanced Provider Sessions.              The &#x60;CollectionMethod&#x60; which must be supported to launch the Provider Session in Advanced Provider Sessions.
+   * Relevant only to Direct Provider Sessions.              The &#x60;CollectionMethod&#x60; which must be supported to launch the Provider Session in Direct Provider Sessions.
    * @return collectionMethod
    */
   @javax.annotation.Nonnull
@@ -426,7 +431,7 @@ public class ProviderContract {
   }
 
   /**
-   * Relevant only to Advanced Provider Sessions.              Whether the Provider requires the &#x60;RefreshStepContent&#x60; capability.              For example, Samsung Wallet&#39;s deep links expire every 30 seconds, and must be refreshed periodically for a resilient user flow.
+   * Relevant only to Direct Provider Sessions.              Whether the Provider requires the &#x60;RefreshStepContent&#x60; capability.              For example, Samsung Wallet&#39;s deep links expire every 30 seconds, and must be refreshed periodically for a resilient user flow.
    * @return hasRefreshableContent
    */
   @javax.annotation.Nonnull
@@ -450,7 +455,7 @@ public class ProviderContract {
   }
 
   /**
-   * Relevant to Hosted Provider Sessions and Advanced Provider Sessions.              If &#x60;true&#x60;, this Provider requires provider-specific input on Session creation. If this input is not provided, Trinsic&#39;s Hosted UI will be invoked to collect the input from the user.
+   * Relevant to Hosted Provider Sessions and Direct Provider Sessions.              If &#x60;true&#x60;, this Provider requires provider-specific input on Session creation. If this input is not provided, Trinsic&#39;s Hosted UI will be invoked to collect the input from the user.
    * @return requiresInput
    */
   @javax.annotation.Nonnull
@@ -498,9 +503,11 @@ public class ProviderContract {
   }
 
   /**
-   * Whether this Provider can be fully whitelabeled/OEMed through the Advanced Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Advanced Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function.
+   * Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function.
    * @return supportsAdvancedProviderSessions
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -513,6 +520,30 @@ public class ProviderContract {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSupportsAdvancedProviderSessions(@javax.annotation.Nonnull Boolean supportsAdvancedProviderSessions) {
     this.supportsAdvancedProviderSessions = supportsAdvancedProviderSessions;
+  }
+
+
+  public ProviderContract supportsDirectProviderSessions(@javax.annotation.Nonnull Boolean supportsDirectProviderSessions) {
+    this.supportsDirectProviderSessions = supportsDirectProviderSessions;
+    return this;
+  }
+
+  /**
+   * Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function.
+   * @return supportsDirectProviderSessions
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public Boolean getSupportsDirectProviderSessions() {
+    return supportsDirectProviderSessions;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSupportsDirectProviderSessions(@javax.annotation.Nonnull Boolean supportsDirectProviderSessions) {
+    this.supportsDirectProviderSessions = supportsDirectProviderSessions;
   }
 
 
@@ -655,6 +686,7 @@ public class ProviderContract {
         Objects.equals(this.requiresInput, providerContract.requiresInput) &&
         Objects.equals(this.hasTrinsicInterface, providerContract.hasTrinsicInterface) &&
         Objects.equals(this.supportsAdvancedProviderSessions, providerContract.supportsAdvancedProviderSessions) &&
+        Objects.equals(this.supportsDirectProviderSessions, providerContract.supportsDirectProviderSessions) &&
         equalsNullable(this.availableFields, providerContract.availableFields) &&
         equalsNullable(this.subProviders, providerContract.subProviders) &&
         Objects.equals(this.health, providerContract.health);
@@ -666,7 +698,7 @@ public class ProviderContract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, subtext, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, hashCodeNullable(availableFields), hashCodeNullable(subProviders), health);
+    return Objects.hash(id, name, subtext, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, supportsDirectProviderSessions, hashCodeNullable(availableFields), hashCodeNullable(subProviders), health);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -695,6 +727,7 @@ public class ProviderContract {
     sb.append("    requiresInput: ").append(toIndentedString(requiresInput)).append("\n");
     sb.append("    hasTrinsicInterface: ").append(toIndentedString(hasTrinsicInterface)).append("\n");
     sb.append("    supportsAdvancedProviderSessions: ").append(toIndentedString(supportsAdvancedProviderSessions)).append("\n");
+    sb.append("    supportsDirectProviderSessions: ").append(toIndentedString(supportsDirectProviderSessions)).append("\n");
     sb.append("    availableFields: ").append(toIndentedString(availableFields)).append("\n");
     sb.append("    subProviders: ").append(toIndentedString(subProviders)).append("\n");
     sb.append("    health: ").append(toIndentedString(health)).append("\n");
@@ -826,6 +859,11 @@ public class ProviderContract {
     // add `supportsAdvancedProviderSessions` to the URL query string
     if (getSupportsAdvancedProviderSessions() != null) {
       joiner.add(String.format("%ssupportsAdvancedProviderSessions%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSupportsAdvancedProviderSessions()))));
+    }
+
+    // add `supportsDirectProviderSessions` to the URL query string
+    if (getSupportsDirectProviderSessions() != null) {
+      joiner.add(String.format("%ssupportsDirectProviderSessions%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSupportsDirectProviderSessions()))));
     }
 
     // add `availableFields` to the URL query string

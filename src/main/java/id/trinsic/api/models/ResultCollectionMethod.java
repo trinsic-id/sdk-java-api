@@ -32,7 +32,9 @@ public enum ResultCollectionMethod {
   
   POLL_RESULT("PollResult"),
   
-  CAPTURE_REDIRECT("CaptureRedirect");
+  CAPTURE_REDIRECT("CaptureRedirect"),
+  
+  SUBMIT_NATIVE_CHALLENGE_RESPONSE("SubmitNativeChallengeResponse");
 
   private String value;
 

@@ -23,6 +23,8 @@
 |**mobileId** | [**MobileIdInput**](MobileIdInput.md) | Input for the &#x60;mobile-id&#x60; provider |  [optional] |
 |**idin** | [**IdinInput**](IdinInput.md) | Input for the &#x60;netherlands-idin&#x60; provider |  [optional] |
 |**spid** | [**SpidInput**](SpidInput.md) | Input for the &#x60;italy-spid&#x60; provider |  [optional] |
+|**googleWallet** | [**GoogleWalletInput**](GoogleWalletInput.md) | Input for the &#x60;google-wallet&#x60; provider |  [optional] |
+|**appleWallet** | [**AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider |  [optional] |
 |**trinsicTestDatabaseLookup** | [**TrinsicTestDatabaseLookupInput**](TrinsicTestDatabaseLookupInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider |  [optional] |
 |**trinsicTestSubProviders** | [**TrinsicTestSubProvidersInput**](TrinsicTestSubProvidersInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider |  [optional] |
 

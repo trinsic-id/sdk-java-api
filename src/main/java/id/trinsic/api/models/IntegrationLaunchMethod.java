@@ -36,7 +36,9 @@ public enum IntegrationLaunchMethod {
   
   DEEPLINK_TO_MOBILE("DeeplinkToMobile"),
   
-  SHOW_CONTENT("ShowContent");
+  SHOW_CONTENT("ShowContent"),
+  
+  PERFORM_NATIVE_CHALLENGE("PerformNativeChallenge");
 
   private String value;
 

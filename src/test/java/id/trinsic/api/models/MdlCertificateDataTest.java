@@ -18,50 +18,64 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.IntegrationStep;
-import id.trinsic.api.models.ResultCollection;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for CreateAdvancedProviderSessionResponse
+ * Model tests for MdlCertificateData
  */
-class CreateAdvancedProviderSessionResponseTest {
-    private final CreateAdvancedProviderSessionResponse model = new CreateAdvancedProviderSessionResponse();
+class MdlCertificateDataTest {
+    private final MdlCertificateData model = new MdlCertificateData();
 
     /**
-     * Model tests for CreateAdvancedProviderSessionResponse
+     * Model tests for MdlCertificateData
      */
     @Test
-    void testCreateAdvancedProviderSessionResponse() {
-        // TODO: test CreateAdvancedProviderSessionResponse
+    void testMdlCertificateData() {
+        // TODO: test MdlCertificateData
     }
 
     /**
-     * Test the property 'sessionId'
+     * Test the property 'serialNumber'
      */
     @Test
-    void sessionIdTest() {
-        // TODO: test sessionId
+    void serialNumberTest() {
+        // TODO: test serialNumber
     }
 
     /**
-     * Test the property 'resultCollection'
+     * Test the property 'commonName'
      */
     @Test
-    void resultCollectionTest() {
-        // TODO: test resultCollection
+    void commonNameTest() {
+        // TODO: test commonName
     }
 
     /**
-     * Test the property 'nextStep'
+     * Test the property 'stateOrProvinceName'
      */
     @Test
-    void nextStepTest() {
-        // TODO: test nextStep
+    void stateOrProvinceNameTest() {
+        // TODO: test stateOrProvinceName
+    }
+
+    /**
+     * Test the property 'notBefore'
+     */
+    @Test
+    void notBeforeTest() {
+        // TODO: test notBefore
+    }
+
+    /**
+     * Test the property 'notAfter'
+     */
+    @Test
+    void notAfterTest() {
+        // TODO: test notAfter
     }
 
 }

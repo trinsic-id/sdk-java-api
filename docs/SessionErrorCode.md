@@ -25,5 +25,9 @@
 
 * `ASSURANCE_LEVEL_NOT_MET` (value: `"AssuranceLevelNotMet"`)
 
+* `SECURITY_VALIDATION_FAILED` (value: `"SecurityValidationFailed"`)
+
+* `INVALID_RESPONSE` (value: `"InvalidResponse"`)
+
 
 

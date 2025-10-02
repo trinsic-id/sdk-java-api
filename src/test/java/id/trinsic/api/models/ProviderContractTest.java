@@ -169,6 +169,14 @@ class ProviderContractTest {
     }
 
     /**
+     * Test the property 'supportsDirectProviderSessions'
+     */
+    @Test
+    void supportsDirectProviderSessionsTest() {
+        // TODO: test supportsDirectProviderSessions
+    }
+
+    /**
      * Test the property 'availableFields'
      */
     @Test

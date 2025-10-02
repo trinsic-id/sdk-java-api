@@ -1,6 +1,6 @@
 
 
-# CreateAdvancedProviderSessionResponse
+# CreateDirectProviderSessionResponse
 
 
 ## Properties

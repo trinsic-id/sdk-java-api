@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -33,13 +34,18 @@ import id.trinsic.ApiClient;
  * GetAttachmentRequest
  */
 @JsonPropertyOrder({
-  GetAttachmentRequest.JSON_PROPERTY_ATTACHMENT_ACCESS_KEY
+  GetAttachmentRequest.JSON_PROPERTY_ATTACHMENT_ACCESS_KEY,
+  GetAttachmentRequest.JSON_PROPERTY_SESSION_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T14:00:36.523251123Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetAttachmentRequest {
   public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEY = "attachmentAccessKey";
   @javax.annotation.Nonnull
   private String attachmentAccessKey;
+
+  public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
+  @javax.annotation.Nonnull
+  private UUID sessionId;
 
   public GetAttachmentRequest() { 
   }
@@ -68,6 +74,30 @@ public class GetAttachmentRequest {
   }
 
 
+  public GetAttachmentRequest sessionId(@javax.annotation.Nonnull UUID sessionId) {
+    this.sessionId = sessionId;
+    return this;
+  }
+
+  /**
+   * The ID of the Acceptance Session for which the Attachment is being requested.
+   * @return sessionId
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SESSION_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public UUID getSessionId() {
+    return sessionId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SESSION_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSessionId(@javax.annotation.Nonnull UUID sessionId) {
+    this.sessionId = sessionId;
+  }
+
+
   /**
    * Return true if this GetAttachmentRequest object is equal to o.
    */
@@ -80,12 +110,13 @@ public class GetAttachmentRequest {
       return false;
     }
     GetAttachmentRequest getAttachmentRequest = (GetAttachmentRequest) o;
-    return Objects.equals(this.attachmentAccessKey, getAttachmentRequest.attachmentAccessKey);
+    return Objects.equals(this.attachmentAccessKey, getAttachmentRequest.attachmentAccessKey) &&
+        Objects.equals(this.sessionId, getAttachmentRequest.sessionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentAccessKey);
+    return Objects.hash(attachmentAccessKey, sessionId);
   }
 
   @Override
@@ -93,6 +124,7 @@ public class GetAttachmentRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAttachmentRequest {\n");
     sb.append("    attachmentAccessKey: ").append(toIndentedString(attachmentAccessKey)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -143,6 +175,11 @@ public class GetAttachmentRequest {
     // add `attachmentAccessKey` to the URL query string
     if (getAttachmentAccessKey() != null) {
       joiner.add(String.format("%sattachmentAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAttachmentAccessKey()))));
+    }
+
+    // add `sessionId` to the URL query string
+    if (getSessionId() != null) {
+      joiner.add(String.format("%ssessionId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionId()))));
     }
 
     return joiner.toString();

@@ -42,7 +42,9 @@ public enum IntegrationCapability {
   
   POLL_RESULT("PollResult"),
   
-  POLL_AFTER_REDIRECT("PollAfterRedirect");
+  POLL_AFTER_REDIRECT("PollAfterRedirect"),
+  
+  NATIVE_CHALLENGE("NativeChallenge");
 
   private String value;
 

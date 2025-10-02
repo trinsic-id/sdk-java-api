@@ -15,8 +15,8 @@ package id.trinsic.api;
 
 import id.trinsic.ApiException;
 import id.trinsic.api.models.CancelSessionResponse;
-import id.trinsic.api.models.CreateAdvancedProviderSessionRequest;
-import id.trinsic.api.models.CreateAdvancedProviderSessionResponse;
+import id.trinsic.api.models.CreateDirectProviderSessionRequest;
+import id.trinsic.api.models.CreateDirectProviderSessionResponse;
 import id.trinsic.api.models.CreateHostedProviderSessionRequest;
 import id.trinsic.api.models.CreateHostedProviderSessionResponse;
 import id.trinsic.api.models.CreateWidgetSessionRequest;
@@ -30,6 +30,8 @@ import id.trinsic.api.models.ProblemDetails;
 import id.trinsic.api.models.RefreshStepContentRequest;
 import id.trinsic.api.models.RefreshStepContentResponse;
 import id.trinsic.api.models.SessionOrdering;
+import id.trinsic.api.models.SubmitNativeChallengeResponseRequest;
+import id.trinsic.api.models.SubmitNativeChallengeResponseResponse;
 import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -68,7 +70,7 @@ public class SessionsApiTest {
     }
     
     /**
-     * Create Advanced Provider Session
+     * Create Direct Provider Session
      *
      * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
      *
@@ -76,10 +78,10 @@ public class SessionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createAdvancedProviderSessionTest() throws ApiException {
-        CreateAdvancedProviderSessionRequest createAdvancedProviderSessionRequest = null;
-        CreateAdvancedProviderSessionResponse response = 
-        api.createAdvancedProviderSession(createAdvancedProviderSessionRequest);
+    public void createDirectProviderSessionTest() throws ApiException {
+        CreateDirectProviderSessionRequest createDirectProviderSessionRequest = null;
+        CreateDirectProviderSessionResponse response = 
+        api.createDirectProviderSession(createDirectProviderSessionRequest);
         
         // TODO: test validations
     }
@@ -128,7 +130,7 @@ public class SessionsApiTest {
      */
     @Test
     public void getSessionTest() throws ApiException {
-        String sessionId = null;
+        UUID sessionId = null;
         GetSessionResponse response = 
         api.getSession(sessionId);
         
@@ -145,7 +147,7 @@ public class SessionsApiTest {
      */
     @Test
     public void getSessionResultTest() throws ApiException {
-        String sessionId = null;
+        UUID sessionId = null;
         GetSessionResultRequest getSessionResultRequest = null;
         GetSessionResultResponse response = 
         api.getSessionResult(sessionId, getSessionResultRequest);
@@ -156,19 +158,20 @@ public class SessionsApiTest {
     /**
      * List Sessions
      *
-     * List Sessions created by your account
+     * List Sessions created for a specific Verification Profile
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void listSessionsTest() throws ApiException {
+        UUID verificationProfileId = null;
         SessionOrdering orderBy = null;
         OrderDirection orderDirection = null;
         Integer pageSize = null;
         Integer page = null;
         ListSessionsResponse response = 
-        api.listSessions(orderBy, orderDirection, pageSize, page);
+        api.listSessions(verificationProfileId, orderBy, orderDirection, pageSize, page);
         
         // TODO: test validations
     }
@@ -193,7 +196,7 @@ public class SessionsApiTest {
     /**
      * Refresh Step Content
      *
-     * Refreshes the content of a Step for an Advanced Provider Session.
+     * Refreshes the content of a Step for a Direct Provider Session.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -204,6 +207,24 @@ public class SessionsApiTest {
         RefreshStepContentRequest refreshStepContentRequest = null;
         RefreshStepContentResponse response = 
         api.refreshStepContent(acceptanceSessionId, refreshStepContentRequest);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Submit Native Challenge Response
+     *
+     * Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void submitNativeChallengeResponseTest() throws ApiException {
+        UUID acceptanceSessionId = null;
+        SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest = null;
+        SubmitNativeChallengeResponseResponse response = 
+        api.submitNativeChallengeResponse(acceptanceSessionId, submitNativeChallengeResponseRequest);
         
         // TODO: test validations
     }

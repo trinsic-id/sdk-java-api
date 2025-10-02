@@ -18,11 +18,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.IntegrationCapability;
-import id.trinsic.api.models.ProviderInput;
-import java.util.ArrayList;
+import id.trinsic.api.models.IdentityData;
+import id.trinsic.api.models.MdlIdentityData;
+import id.trinsic.api.models.Session;
 import java.util.Arrays;
-import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -32,57 +32,49 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for CreateAdvancedProviderSessionRequest
+ * Model tests for FinalizeMdlExchangeResponse
  */
-class CreateAdvancedProviderSessionRequestTest {
-    private final CreateAdvancedProviderSessionRequest model = new CreateAdvancedProviderSessionRequest();
+class FinalizeMdlExchangeResponseTest {
+    private final FinalizeMdlExchangeResponse model = new FinalizeMdlExchangeResponse();
 
     /**
-     * Model tests for CreateAdvancedProviderSessionRequest
+     * Model tests for FinalizeMdlExchangeResponse
      */
     @Test
-    void testCreateAdvancedProviderSessionRequest() {
-        // TODO: test CreateAdvancedProviderSessionRequest
+    void testFinalizeMdlExchangeResponse() {
+        // TODO: test FinalizeMdlExchangeResponse
     }
 
     /**
-     * Test the property 'provider'
+     * Test the property 'exchangeId'
      */
     @Test
-    void providerTest() {
-        // TODO: test provider
+    void exchangeIdTest() {
+        // TODO: test exchangeId
     }
 
     /**
-     * Test the property 'redirectUrl'
+     * Test the property 'createdSession'
      */
     @Test
-    void redirectUrlTest() {
-        // TODO: test redirectUrl
+    void createdSessionTest() {
+        // TODO: test createdSession
     }
 
     /**
-     * Test the property 'capabilities'
+     * Test the property 'mdlData'
      */
     @Test
-    void capabilitiesTest() {
-        // TODO: test capabilities
+    void mdlDataTest() {
+        // TODO: test mdlData
     }
 
     /**
-     * Test the property 'fallbackToHostedUI'
+     * Test the property 'normalizedIdentityData'
      */
     @Test
-    void fallbackToHostedUITest() {
-        // TODO: test fallbackToHostedUI
-    }
-
-    /**
-     * Test the property 'providerInput'
-     */
-    @Test
-    void providerInputTest() {
-        // TODO: test providerInput
+    void normalizedIdentityDataTest() {
+        // TODO: test normalizedIdentityData
     }
 
 }
