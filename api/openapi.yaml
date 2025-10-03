@@ -297,6 +297,7 @@ paths:
       - text/plain
   /api/v1/network/{verificationProfileId}/providers:
     get:
+      description: List all identity providers available for use
       operationId: ListProviders
       parameters:
       - explode: false
@@ -307,7 +308,9 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: true
+      - description: "Filter providers by health status. Valid values: \"online\"\
+          , \"offline\", \"all\". Defaults to \"all\"."
+        explode: true
         in: query
         name: health
         required: false
@@ -376,6 +379,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
           description: Internal server error
+      summary: List Providers
       tags:
       - Network
       x-accepts:
@@ -1131,14 +1135,14 @@ paths:
       - application/problem+json
       - text/json
       - text/plain
-  /api/v1/sessions/{acceptanceSessionId}/step/refresh:
+  /api/v1/sessions/{sessionId}/step/refresh:
     post:
       description: Refreshes the content of a Step for a Direct Provider Session.
       operationId: RefreshStepContent
       parameters:
       - explode: false
         in: path
-        name: acceptanceSessionId
+        name: sessionId
         required: true
         schema:
           format: uuid
@@ -1229,7 +1233,7 @@ paths:
       - application/problem+json
       - text/json
       - text/plain
-  /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit:
+  /api/v1/sessions/{sessionId}/native-challenge/submit:
     post:
       description: "Submits the response from a Native Challenge (e.g., mDL exchange\
         \ via DC API) and processes the results."
@@ -1237,7 +1241,7 @@ paths:
       parameters:
       - explode: false
         in: path
-        name: acceptanceSessionId
+        name: sessionId
         required: true
         schema:
           format: uuid

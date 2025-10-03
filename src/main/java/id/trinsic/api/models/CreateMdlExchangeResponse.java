@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   CreateMdlExchangeResponse.JSON_PROPERTY_REQUEST_OBJECT_BASE64_URL,
   CreateMdlExchangeResponse.JSON_PROPERTY_EXCHANGE_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMdlExchangeResponse {
   public static final String JSON_PROPERTY_EXCHANGE_ID = "exchangeId";
   @javax.annotation.Nonnull

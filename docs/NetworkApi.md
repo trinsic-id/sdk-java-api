@@ -6,8 +6,8 @@ All URIs are relative to *https://api.trinsic.id*
 |------------- | ------------- | -------------|
 | [**listProviderContracts**](NetworkApi.md#listProviderContracts) | **GET** /api/v1/network/{verificationProfileId}/providers/contracts | List Provider Contracts |
 | [**listProviderContractsWithHttpInfo**](NetworkApi.md#listProviderContractsWithHttpInfo) | **GET** /api/v1/network/{verificationProfileId}/providers/contracts | List Provider Contracts |
-| [**listProviders**](NetworkApi.md#listProviders) | **GET** /api/v1/network/{verificationProfileId}/providers |  |
-| [**listProvidersWithHttpInfo**](NetworkApi.md#listProvidersWithHttpInfo) | **GET** /api/v1/network/{verificationProfileId}/providers |  |
+| [**listProviders**](NetworkApi.md#listProviders) | **GET** /api/v1/network/{verificationProfileId}/providers | List Providers |
+| [**listProvidersWithHttpInfo**](NetworkApi.md#listProvidersWithHttpInfo) | **GET** /api/v1/network/{verificationProfileId}/providers | List Providers |
 | [**recommendProviders**](NetworkApi.md#recommendProviders) | **POST** /api/v1/network/recommend | Recommend Providers |
 | [**recommendProvidersWithHttpInfo**](NetworkApi.md#recommendProvidersWithHttpInfo) | **POST** /api/v1/network/recommend | Recommend Providers |
 
@@ -169,7 +169,9 @@ ApiResponse<[**ListProviderContractsResponse**](ListProviderContractsResponse.md
 
 > ListProvidersResponse listProviders(verificationProfileId, health)
 
+List Providers
 
+List all identity providers available for use
 
 ### Example
 
@@ -193,7 +195,7 @@ public class Example {
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
         UUID verificationProfileId = UUID.randomUUID(); // UUID | 
-        String health = "health_example"; // String | 
+        String health = "health_example"; // String | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
         try {
             ListProvidersResponse result = apiInstance.listProviders(verificationProfileId, health);
             System.out.println(result);
@@ -214,7 +216,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **verificationProfileId** | **UUID**|  | |
-| **health** | **String**|  | [optional] |
+| **health** | **String**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
 
 ### Return type
 
@@ -243,7 +245,9 @@ public class Example {
 
 > ApiResponse<ListProvidersResponse> listProviders listProvidersWithHttpInfo(verificationProfileId, health)
 
+List Providers
 
+List all identity providers available for use
 
 ### Example
 
@@ -268,7 +272,7 @@ public class Example {
 
         NetworkApi apiInstance = new NetworkApi(defaultClient);
         UUID verificationProfileId = UUID.randomUUID(); // UUID | 
-        String health = "health_example"; // String | 
+        String health = "health_example"; // String | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
         try {
             ApiResponse<ListProvidersResponse> response = apiInstance.listProvidersWithHttpInfo(verificationProfileId, health);
             System.out.println("Status code: " + response.getStatusCode());
@@ -291,7 +295,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **verificationProfileId** | **UUID**|  | |
-| **health** | **String**|  | [optional] |
+| **health** | **String**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
 
 ### Return type
 

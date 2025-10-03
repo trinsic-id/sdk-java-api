@@ -203,10 +203,10 @@ public class SessionsApiTest {
      */
     @Test
     public void refreshStepContentTest() throws ApiException {
-        UUID acceptanceSessionId = null;
+        UUID sessionId = null;
         RefreshStepContentRequest refreshStepContentRequest = null;
         RefreshStepContentResponse response = 
-        api.refreshStepContent(acceptanceSessionId, refreshStepContentRequest);
+        api.refreshStepContent(sessionId, refreshStepContentRequest);
         
         // TODO: test validations
     }
@@ -221,10 +221,10 @@ public class SessionsApiTest {
      */
     @Test
     public void submitNativeChallengeResponseTest() throws ApiException {
-        UUID acceptanceSessionId = null;
+        UUID sessionId = null;
         SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest = null;
         SubmitNativeChallengeResponseResponse response = 
-        api.submitNativeChallengeResponse(acceptanceSessionId, submitNativeChallengeResponseRequest);
+        api.submitNativeChallengeResponse(sessionId, submitNativeChallengeResponseRequest);
         
         // TODO: test validations
     }

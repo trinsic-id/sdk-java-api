@@ -50,7 +50,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NetworkApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -172,10 +172,10 @@ public class NetworkApi {
   }
 
   /**
-   * 
-   * 
+   * List Providers
+   * List all identity providers available for use
    * @param verificationProfileId  (required)
-   * @param health  (optional)
+   * @param health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
    * @return ListProvidersResponse
    * @throws ApiException if fails to make API call
    */
@@ -185,10 +185,10 @@ public class NetworkApi {
   }
 
   /**
-   * 
-   * 
+   * List Providers
+   * List all identity providers available for use
    * @param verificationProfileId  (required)
-   * @param health  (optional)
+   * @param health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
    * @return ApiResponse&lt;ListProvidersResponse&gt;
    * @throws ApiException if fails to make API call
    */

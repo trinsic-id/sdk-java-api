@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'id.trinsic'
-version = '2.2.0-alpha1'
+version = '2.2.0'
 
 buildscript {
     repositories {

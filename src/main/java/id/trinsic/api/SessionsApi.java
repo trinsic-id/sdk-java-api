@@ -63,7 +63,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SessionsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -807,26 +807,26 @@ public class SessionsApi {
   /**
    * Refresh Step Content
    * Refreshes the content of a Step for a Direct Provider Session.
-   * @param acceptanceSessionId  (required)
+   * @param sessionId  (required)
    * @param refreshStepContentRequest  (optional)
    * @return RefreshStepContentResponse
    * @throws ApiException if fails to make API call
    */
-  public RefreshStepContentResponse refreshStepContent(@javax.annotation.Nonnull UUID acceptanceSessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
-    ApiResponse<RefreshStepContentResponse> localVarResponse = refreshStepContentWithHttpInfo(acceptanceSessionId, refreshStepContentRequest);
+  public RefreshStepContentResponse refreshStepContent(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
+    ApiResponse<RefreshStepContentResponse> localVarResponse = refreshStepContentWithHttpInfo(sessionId, refreshStepContentRequest);
     return localVarResponse.getData();
   }
 
   /**
    * Refresh Step Content
    * Refreshes the content of a Step for a Direct Provider Session.
-   * @param acceptanceSessionId  (required)
+   * @param sessionId  (required)
    * @param refreshStepContentRequest  (optional)
    * @return ApiResponse&lt;RefreshStepContentResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RefreshStepContentResponse> refreshStepContentWithHttpInfo(@javax.annotation.Nonnull UUID acceptanceSessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = refreshStepContentRequestBuilder(acceptanceSessionId, refreshStepContentRequest);
+  public ApiResponse<RefreshStepContentResponse> refreshStepContentWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = refreshStepContentRequestBuilder(sessionId, refreshStepContentRequest);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -865,16 +865,16 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder refreshStepContentRequestBuilder(@javax.annotation.Nonnull UUID acceptanceSessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
-    // verify the required parameter 'acceptanceSessionId' is set
-    if (acceptanceSessionId == null) {
-      throw new ApiException(400, "Missing the required parameter 'acceptanceSessionId' when calling refreshStepContent");
+  private HttpRequest.Builder refreshStepContentRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
+    // verify the required parameter 'sessionId' is set
+    if (sessionId == null) {
+      throw new ApiException(400, "Missing the required parameter 'sessionId' when calling refreshStepContent");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/api/v1/sessions/{acceptanceSessionId}/step/refresh"
-        .replace("{acceptanceSessionId}", ApiClient.urlEncode(acceptanceSessionId.toString()));
+    String localVarPath = "/api/v1/sessions/{sessionId}/step/refresh"
+        .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
@@ -899,26 +899,26 @@ public class SessionsApi {
   /**
    * Submit Native Challenge Response
    * Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
-   * @param acceptanceSessionId  (required)
+   * @param sessionId  (required)
    * @param submitNativeChallengeResponseRequest  (optional)
    * @return SubmitNativeChallengeResponseResponse
    * @throws ApiException if fails to make API call
    */
-  public SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(@javax.annotation.Nonnull UUID acceptanceSessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
-    ApiResponse<SubmitNativeChallengeResponseResponse> localVarResponse = submitNativeChallengeResponseWithHttpInfo(acceptanceSessionId, submitNativeChallengeResponseRequest);
+  public SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
+    ApiResponse<SubmitNativeChallengeResponseResponse> localVarResponse = submitNativeChallengeResponseWithHttpInfo(sessionId, submitNativeChallengeResponseRequest);
     return localVarResponse.getData();
   }
 
   /**
    * Submit Native Challenge Response
    * Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
-   * @param acceptanceSessionId  (required)
+   * @param sessionId  (required)
    * @param submitNativeChallengeResponseRequest  (optional)
    * @return ApiResponse&lt;SubmitNativeChallengeResponseResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponseWithHttpInfo(@javax.annotation.Nonnull UUID acceptanceSessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = submitNativeChallengeResponseRequestBuilder(acceptanceSessionId, submitNativeChallengeResponseRequest);
+  public ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponseWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = submitNativeChallengeResponseRequestBuilder(sessionId, submitNativeChallengeResponseRequest);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -957,16 +957,16 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder submitNativeChallengeResponseRequestBuilder(@javax.annotation.Nonnull UUID acceptanceSessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
-    // verify the required parameter 'acceptanceSessionId' is set
-    if (acceptanceSessionId == null) {
-      throw new ApiException(400, "Missing the required parameter 'acceptanceSessionId' when calling submitNativeChallengeResponse");
+  private HttpRequest.Builder submitNativeChallengeResponseRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
+    // verify the required parameter 'sessionId' is set
+    if (sessionId == null) {
+      throw new ApiException(400, "Missing the required parameter 'sessionId' when calling submitNativeChallengeResponse");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/api/v1/sessions/{acceptanceSessionId}/native-challenge/submit"
-        .replace("{acceptanceSessionId}", ApiClient.urlEncode(acceptanceSessionId.toString()));
+    String localVarPath = "/api/v1/sessions/{sessionId}/native-challenge/submit"
+        .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 

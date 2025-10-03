@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   CreateWidgetSessionRequest.JSON_PROPERTY_PROVIDERS,
   CreateWidgetSessionRequest.JSON_PROPERTY_RECOMMENDATION_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateWidgetSessionRequest {
   public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
   @javax.annotation.Nonnull

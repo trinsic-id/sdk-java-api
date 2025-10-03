@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   Match.JSON_PROPERTY_PROBABILITY_VALUE,
   Match.JSON_PROPERTY_BOOLEAN_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:44:25.982348346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Match {
   public static final String JSON_PROPERTY_PROBABILITY_VALUE = "probabilityValue";
   private JsonNullable<Double> probabilityValue = JsonNullable.<Double>undefined();

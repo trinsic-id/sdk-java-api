@@ -57,9 +57,9 @@ public class NetworkApiTest {
     }
     
     /**
-     * 
+     * List Providers
      *
-     * 
+     * List all identity providers available for use
      *
      * @throws ApiException
      *          if the Api call fails

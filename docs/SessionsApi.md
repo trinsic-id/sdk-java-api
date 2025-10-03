@@ -20,10 +20,10 @@ All URIs are relative to *https://api.trinsic.id*
 | [**listSessionsWithHttpInfo**](SessionsApi.md#listSessionsWithHttpInfo) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
 | [**redactSession**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**redactSessionWithHttpInfo**](SessionsApi.md#redactSessionWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
-| [**refreshStepContent**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
-| [**refreshStepContentWithHttpInfo**](SessionsApi.md#refreshStepContentWithHttpInfo) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
-| [**submitNativeChallengeResponse**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit | Submit Native Challenge Response |
-| [**submitNativeChallengeResponseWithHttpInfo**](SessionsApi.md#submitNativeChallengeResponseWithHttpInfo) | **POST** /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit | Submit Native Challenge Response |
+| [**refreshStepContent**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{sessionId}/step/refresh | Refresh Step Content |
+| [**refreshStepContentWithHttpInfo**](SessionsApi.md#refreshStepContentWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/step/refresh | Refresh Step Content |
+| [**submitNativeChallengeResponse**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{sessionId}/native-challenge/submit | Submit Native Challenge Response |
+| [**submitNativeChallengeResponseWithHttpInfo**](SessionsApi.md#submitNativeChallengeResponseWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/native-challenge/submit | Submit Native Challenge Response |
 
 
 
@@ -1259,7 +1259,7 @@ ApiResponse<Void>
 
 ## refreshStepContent
 
-> RefreshStepContentResponse refreshStepContent(acceptanceSessionId, refreshStepContentRequest)
+> RefreshStepContentResponse refreshStepContent(sessionId, refreshStepContentRequest)
 
 Refresh Step Content
 
@@ -1286,10 +1286,10 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         RefreshStepContentRequest refreshStepContentRequest = new RefreshStepContentRequest(); // RefreshStepContentRequest | 
         try {
-            RefreshStepContentResponse result = apiInstance.refreshStepContent(acceptanceSessionId, refreshStepContentRequest);
+            RefreshStepContentResponse result = apiInstance.refreshStepContent(sessionId, refreshStepContentRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SessionsApi#refreshStepContent");
@@ -1307,7 +1307,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **acceptanceSessionId** | **UUID**|  | |
+| **sessionId** | **UUID**|  | |
 | **refreshStepContentRequest** | [**RefreshStepContentRequest**](RefreshStepContentRequest.md)|  | [optional] |
 
 ### Return type
@@ -1335,7 +1335,7 @@ public class Example {
 
 ## refreshStepContentWithHttpInfo
 
-> ApiResponse<RefreshStepContentResponse> refreshStepContent refreshStepContentWithHttpInfo(acceptanceSessionId, refreshStepContentRequest)
+> ApiResponse<RefreshStepContentResponse> refreshStepContent refreshStepContentWithHttpInfo(sessionId, refreshStepContentRequest)
 
 Refresh Step Content
 
@@ -1363,10 +1363,10 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         RefreshStepContentRequest refreshStepContentRequest = new RefreshStepContentRequest(); // RefreshStepContentRequest | 
         try {
-            ApiResponse<RefreshStepContentResponse> response = apiInstance.refreshStepContentWithHttpInfo(acceptanceSessionId, refreshStepContentRequest);
+            ApiResponse<RefreshStepContentResponse> response = apiInstance.refreshStepContentWithHttpInfo(sessionId, refreshStepContentRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1386,7 +1386,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **acceptanceSessionId** | **UUID**|  | |
+| **sessionId** | **UUID**|  | |
 | **refreshStepContentRequest** | [**RefreshStepContentRequest**](RefreshStepContentRequest.md)|  | [optional] |
 
 ### Return type
@@ -1415,7 +1415,7 @@ ApiResponse<[**RefreshStepContentResponse**](RefreshStepContentResponse.md)>
 
 ## submitNativeChallengeResponse
 
-> SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(acceptanceSessionId, submitNativeChallengeResponseRequest)
+> SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(sessionId, submitNativeChallengeResponseRequest)
 
 Submit Native Challenge Response
 
@@ -1442,10 +1442,10 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest = new SubmitNativeChallengeResponseRequest(); // SubmitNativeChallengeResponseRequest | 
         try {
-            SubmitNativeChallengeResponseResponse result = apiInstance.submitNativeChallengeResponse(acceptanceSessionId, submitNativeChallengeResponseRequest);
+            SubmitNativeChallengeResponseResponse result = apiInstance.submitNativeChallengeResponse(sessionId, submitNativeChallengeResponseRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SessionsApi#submitNativeChallengeResponse");
@@ -1463,7 +1463,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **acceptanceSessionId** | **UUID**|  | |
+| **sessionId** | **UUID**|  | |
 | **submitNativeChallengeResponseRequest** | [**SubmitNativeChallengeResponseRequest**](SubmitNativeChallengeResponseRequest.md)|  | [optional] |
 
 ### Return type
@@ -1491,7 +1491,7 @@ public class Example {
 
 ## submitNativeChallengeResponseWithHttpInfo
 
-> ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponse submitNativeChallengeResponseWithHttpInfo(acceptanceSessionId, submitNativeChallengeResponseRequest)
+> ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponse submitNativeChallengeResponseWithHttpInfo(sessionId, submitNativeChallengeResponseRequest)
 
 Submit Native Challenge Response
 
@@ -1519,10 +1519,10 @@ public class Example {
         Bearer.setBearerToken("BEARER TOKEN");
 
         SessionsApi apiInstance = new SessionsApi(defaultClient);
-        UUID acceptanceSessionId = UUID.randomUUID(); // UUID | 
+        UUID sessionId = UUID.randomUUID(); // UUID | 
         SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest = new SubmitNativeChallengeResponseRequest(); // SubmitNativeChallengeResponseRequest | 
         try {
-            ApiResponse<SubmitNativeChallengeResponseResponse> response = apiInstance.submitNativeChallengeResponseWithHttpInfo(acceptanceSessionId, submitNativeChallengeResponseRequest);
+            ApiResponse<SubmitNativeChallengeResponseResponse> response = apiInstance.submitNativeChallengeResponseWithHttpInfo(sessionId, submitNativeChallengeResponseRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1542,7 +1542,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **acceptanceSessionId** | **UUID**|  | |
+| **sessionId** | **UUID**|  | |
 | **submitNativeChallengeResponseRequest** | [**SubmitNativeChallengeResponseRequest**](SubmitNativeChallengeResponseRequest.md)|  | [optional] |
 
 ### Return type
