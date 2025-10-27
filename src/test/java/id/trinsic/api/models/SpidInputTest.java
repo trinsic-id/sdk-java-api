@@ -49,4 +49,12 @@ class SpidInputTest {
         // TODO: test subProviderId
     }
 
+    /**
+     * Test the property 'billingTrackingSecret'
+     */
+    @Test
+    void billingTrackingSecretTest() {
+        // TODO: test billingTrackingSecret
+    }
+
 }

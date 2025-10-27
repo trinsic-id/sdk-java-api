@@ -20,9 +20,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AttachmentAccessKeys;
 import id.trinsic.api.models.DocumentData;
+import id.trinsic.api.models.Identifier;
 import id.trinsic.api.models.MatchData;
 import id.trinsic.api.models.PersonData;
+import id.trinsic.api.models.ProviderOutput;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -91,6 +95,22 @@ class IdentityDataTest {
     @Test
     void attachmentAccessKeysTest() {
         // TODO: test attachmentAccessKeys
+    }
+
+    /**
+     * Test the property 'providerOutput'
+     */
+    @Test
+    void providerOutputTest() {
+        // TODO: test providerOutput
+    }
+
+    /**
+     * Test the property 'identifiers'
+     */
+    @Test
+    void identifiersTest() {
+        // TODO: test identifiers
     }
 
 }

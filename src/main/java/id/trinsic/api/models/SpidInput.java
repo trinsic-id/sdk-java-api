@@ -37,12 +37,16 @@ import id.trinsic.ApiClient;
  * SpidInput
  */
 @JsonPropertyOrder({
-  SpidInput.JSON_PROPERTY_SUB_PROVIDER_ID
+  SpidInput.JSON_PROPERTY_SUB_PROVIDER_ID,
+  SpidInput.JSON_PROPERTY_BILLING_TRACKING_SECRET
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SpidInput {
   public static final String JSON_PROPERTY_SUB_PROVIDER_ID = "subProviderId";
   private JsonNullable<String> subProviderId = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_BILLING_TRACKING_SECRET = "billingTrackingSecret";
+  private JsonNullable<String> billingTrackingSecret = JsonNullable.<String>undefined();
 
   public SpidInput() { 
   }
@@ -79,6 +83,38 @@ public class SpidInput {
   }
 
 
+  public SpidInput billingTrackingSecret(@javax.annotation.Nullable String billingTrackingSecret) {
+    this.billingTrackingSecret = JsonNullable.<String>of(billingTrackingSecret);
+    return this;
+  }
+
+  /**
+   * Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+   * @return billingTrackingSecret
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getBillingTrackingSecret() {
+        return billingTrackingSecret.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_BILLING_TRACKING_SECRET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getBillingTrackingSecret_JsonNullable() {
+    return billingTrackingSecret;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BILLING_TRACKING_SECRET)
+  public void setBillingTrackingSecret_JsonNullable(JsonNullable<String> billingTrackingSecret) {
+    this.billingTrackingSecret = billingTrackingSecret;
+  }
+
+  public void setBillingTrackingSecret(@javax.annotation.Nullable String billingTrackingSecret) {
+    this.billingTrackingSecret = JsonNullable.<String>of(billingTrackingSecret);
+  }
+
+
   /**
    * Return true if this SpidInput object is equal to o.
    */
@@ -91,7 +127,8 @@ public class SpidInput {
       return false;
     }
     SpidInput spidInput = (SpidInput) o;
-    return equalsNullable(this.subProviderId, spidInput.subProviderId);
+    return equalsNullable(this.subProviderId, spidInput.subProviderId) &&
+        equalsNullable(this.billingTrackingSecret, spidInput.billingTrackingSecret);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -100,7 +137,7 @@ public class SpidInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(subProviderId));
+    return Objects.hash(hashCodeNullable(subProviderId), hashCodeNullable(billingTrackingSecret));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -115,6 +152,7 @@ public class SpidInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class SpidInput {\n");
     sb.append("    subProviderId: ").append(toIndentedString(subProviderId)).append("\n");
+    sb.append("    billingTrackingSecret: ").append(toIndentedString(billingTrackingSecret)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -165,6 +203,11 @@ public class SpidInput {
     // add `subProviderId` to the URL query string
     if (getSubProviderId() != null) {
       joiner.add(String.format("%ssubProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubProviderId()))));
+    }
+
+    // add `billingTrackingSecret` to the URL query string
+    if (getBillingTrackingSecret() != null) {
+      joiner.add(String.format("%sbillingTrackingSecret%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBillingTrackingSecret()))));
     }
 
     return joiner.toString();

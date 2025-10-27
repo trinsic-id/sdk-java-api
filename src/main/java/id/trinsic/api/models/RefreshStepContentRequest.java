@@ -35,7 +35,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RefreshStepContentRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RefreshStepContentRequest {
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
   @javax.annotation.Nonnull

@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ContractField;
+import id.trinsic.api.models.ContractIdentifierField;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.ProviderHealth;
 import id.trinsic.api.models.ResultCollectionMethod;
@@ -182,6 +183,14 @@ class ProviderContractTest {
     @Test
     void availableFieldsTest() {
         // TODO: test availableFields
+    }
+
+    /**
+     * Test the property 'availableIdentifiers'
+     */
+    @Test
+    void availableIdentifiersTest() {
+        // TODO: test availableIdentifiers
     }
 
     /**

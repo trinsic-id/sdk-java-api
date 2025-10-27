@@ -35,13 +35,18 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   ContractField.JSON_PROPERTY_NAME,
+  ContractField.JSON_PROPERTY_SCOPE,
   ContractField.JSON_PROPERTY_OUTPUTTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ContractField {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
   private String name;
+
+  public static final String JSON_PROPERTY_SCOPE = "scope";
+  @javax.annotation.Nonnull
+  private String scope;
 
   public static final String JSON_PROPERTY_OUTPUTTED = "outputted";
   @javax.annotation.Nonnull
@@ -58,7 +63,9 @@ public class ContractField {
   /**
    * The name of the field as it appears in verification results.
    * @return name
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -71,6 +78,30 @@ public class ContractField {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
+  }
+
+
+  public ContractField scope(@javax.annotation.Nonnull String scope) {
+    this.scope = scope;
+    return this;
+  }
+
+  /**
+   * The scope of the field as it appears in verification results.
+   * @return scope
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SCOPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getScope() {
+    return scope;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SCOPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setScope(@javax.annotation.Nonnull String scope) {
+    this.scope = scope;
   }
 
 
@@ -111,12 +142,13 @@ public class ContractField {
     }
     ContractField contractField = (ContractField) o;
     return Objects.equals(this.name, contractField.name) &&
+        Objects.equals(this.scope, contractField.scope) &&
         Objects.equals(this.outputted, contractField.outputted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, outputted);
+    return Objects.hash(name, scope, outputted);
   }
 
   @Override
@@ -124,6 +156,7 @@ public class ContractField {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContractField {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    outputted: ").append(toIndentedString(outputted)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -175,6 +208,11 @@ public class ContractField {
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `scope` to the URL query string
+    if (getScope() != null) {
+      joiner.add(String.format("%sscope%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getScope()))));
     }
 
     // add `outputted` to the URL query string

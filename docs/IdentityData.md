@@ -13,6 +13,8 @@
 |**document** | [**DocumentData**](DocumentData.md) |  |  [optional] |
 |**match** | [**MatchData**](MatchData.md) |  |  [optional] |
 |**attachmentAccessKeys** | [**AttachmentAccessKeys**](AttachmentAccessKeys.md) |  |  [optional] |
+|**providerOutput** | [**ProviderOutput**](ProviderOutput.md) |  |  [optional] |
+|**identifiers** | [**List&lt;Identifier&gt;**](Identifier.md) |  |  |
 
 
 

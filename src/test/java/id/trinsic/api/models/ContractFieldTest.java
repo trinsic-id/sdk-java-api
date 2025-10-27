@@ -47,6 +47,14 @@ class ContractFieldTest {
     }
 
     /**
+     * Test the property 'scope'
+     */
+    @Test
+    void scopeTest() {
+        // TODO: test scope
+    }
+
+    /**
      * Test the property 'outputted'
      */
     @Test

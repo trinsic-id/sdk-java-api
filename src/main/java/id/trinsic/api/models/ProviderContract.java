@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ContractField;
+import id.trinsic.api.models.ContractIdentifierField;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.ProviderHealth;
 import id.trinsic.api.models.ResultCollectionMethod;
@@ -61,10 +62,11 @@ import id.trinsic.ApiClient;
   ProviderContract.JSON_PROPERTY_SUPPORTS_ADVANCED_PROVIDER_SESSIONS,
   ProviderContract.JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS,
   ProviderContract.JSON_PROPERTY_AVAILABLE_FIELDS,
+  ProviderContract.JSON_PROPERTY_AVAILABLE_IDENTIFIERS,
   ProviderContract.JSON_PROPERTY_SUB_PROVIDERS,
   ProviderContract.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderContract {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -132,6 +134,9 @@ public class ProviderContract {
 
   public static final String JSON_PROPERTY_AVAILABLE_FIELDS = "availableFields";
   private JsonNullable<List<ContractField>> availableFields = JsonNullable.<List<ContractField>>undefined();
+
+  public static final String JSON_PROPERTY_AVAILABLE_IDENTIFIERS = "availableIdentifiers";
+  private JsonNullable<List<ContractIdentifierField>> availableIdentifiers = JsonNullable.<List<ContractIdentifierField>>undefined();
 
   public static final String JSON_PROPERTY_SUB_PROVIDERS = "subProviders";
   private JsonNullable<List<SubProviderMetadata>> subProviders = JsonNullable.<List<SubProviderMetadata>>undefined();
@@ -591,6 +596,50 @@ public class ProviderContract {
   }
 
 
+  public ProviderContract availableIdentifiers(@javax.annotation.Nullable List<ContractIdentifierField> availableIdentifiers) {
+    this.availableIdentifiers = JsonNullable.<List<ContractIdentifierField>>of(availableIdentifiers);
+    return this;
+  }
+
+  public ProviderContract addAvailableIdentifiersItem(ContractIdentifierField availableIdentifiersItem) {
+    if (this.availableIdentifiers == null || !this.availableIdentifiers.isPresent()) {
+      this.availableIdentifiers = JsonNullable.<List<ContractIdentifierField>>of(new ArrayList<>());
+    }
+    try {
+      this.availableIdentifiers.get().add(availableIdentifiersItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Information about the identifiers this Provider returns in verification results.
+   * @return availableIdentifiers
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<ContractIdentifierField> getAvailableIdentifiers() {
+        return availableIdentifiers.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_AVAILABLE_IDENTIFIERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<ContractIdentifierField>> getAvailableIdentifiers_JsonNullable() {
+    return availableIdentifiers;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AVAILABLE_IDENTIFIERS)
+  public void setAvailableIdentifiers_JsonNullable(JsonNullable<List<ContractIdentifierField>> availableIdentifiers) {
+    this.availableIdentifiers = availableIdentifiers;
+  }
+
+  public void setAvailableIdentifiers(@javax.annotation.Nullable List<ContractIdentifierField> availableIdentifiers) {
+    this.availableIdentifiers = JsonNullable.<List<ContractIdentifierField>>of(availableIdentifiers);
+  }
+
+
   public ProviderContract subProviders(@javax.annotation.Nullable List<SubProviderMetadata> subProviders) {
     this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(subProviders);
     return this;
@@ -688,6 +737,7 @@ public class ProviderContract {
         Objects.equals(this.supportsAdvancedProviderSessions, providerContract.supportsAdvancedProviderSessions) &&
         Objects.equals(this.supportsDirectProviderSessions, providerContract.supportsDirectProviderSessions) &&
         equalsNullable(this.availableFields, providerContract.availableFields) &&
+        equalsNullable(this.availableIdentifiers, providerContract.availableIdentifiers) &&
         equalsNullable(this.subProviders, providerContract.subProviders) &&
         Objects.equals(this.health, providerContract.health);
   }
@@ -698,7 +748,7 @@ public class ProviderContract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, subtext, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, supportsDirectProviderSessions, hashCodeNullable(availableFields), hashCodeNullable(subProviders), health);
+    return Objects.hash(id, name, subtext, description, logoUrl, available, geography, regions, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsAdvancedProviderSessions, supportsDirectProviderSessions, hashCodeNullable(availableFields), hashCodeNullable(availableIdentifiers), hashCodeNullable(subProviders), health);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -729,6 +779,7 @@ public class ProviderContract {
     sb.append("    supportsAdvancedProviderSessions: ").append(toIndentedString(supportsAdvancedProviderSessions)).append("\n");
     sb.append("    supportsDirectProviderSessions: ").append(toIndentedString(supportsDirectProviderSessions)).append("\n");
     sb.append("    availableFields: ").append(toIndentedString(availableFields)).append("\n");
+    sb.append("    availableIdentifiers: ").append(toIndentedString(availableIdentifiers)).append("\n");
     sb.append("    subProviders: ").append(toIndentedString(subProviders)).append("\n");
     sb.append("    health: ").append(toIndentedString(health)).append("\n");
     sb.append("}");
@@ -871,6 +922,16 @@ public class ProviderContract {
       for (int i = 0; i < getAvailableFields().size(); i++) {
         if (getAvailableFields().get(i) != null) {
           joiner.add(getAvailableFields().get(i).toUrlQueryString(String.format("%savailableFields%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `availableIdentifiers` to the URL query string
+    if (getAvailableIdentifiers() != null) {
+      for (int i = 0; i < getAvailableIdentifiers().size(); i++) {
+        if (getAvailableIdentifiers().get(i) != null) {
+          joiner.add(getAvailableIdentifiers().get(i).toUrlQueryString(String.format("%savailableIdentifiers%s%s", prefix, suffix,
           "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }

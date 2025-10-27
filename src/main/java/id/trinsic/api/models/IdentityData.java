@@ -26,9 +26,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AttachmentAccessKeys;
 import id.trinsic.api.models.DocumentData;
+import id.trinsic.api.models.Identifier;
 import id.trinsic.api.models.MatchData;
 import id.trinsic.api.models.PersonData;
+import id.trinsic.api.models.ProviderOutput;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -46,9 +50,11 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_PERSON,
   IdentityData.JSON_PROPERTY_DOCUMENT,
   IdentityData.JSON_PROPERTY_MATCH,
-  IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS
+  IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS,
+  IdentityData.JSON_PROPERTY_PROVIDER_OUTPUT,
+  IdentityData.JSON_PROPERTY_IDENTIFIERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-03T18:19:51.997950752Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
@@ -67,6 +73,13 @@ public class IdentityData {
 
   public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS = "attachmentAccessKeys";
   private JsonNullable<AttachmentAccessKeys> attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>undefined();
+
+  public static final String JSON_PROPERTY_PROVIDER_OUTPUT = "providerOutput";
+  private JsonNullable<ProviderOutput> providerOutput = JsonNullable.<ProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_IDENTIFIERS = "identifiers";
+  @javax.annotation.Nonnull
+  private List<Identifier> identifiers = new ArrayList<>();
 
   public IdentityData() { 
   }
@@ -263,6 +276,70 @@ public class IdentityData {
   }
 
 
+  public IdentityData providerOutput(@javax.annotation.Nullable ProviderOutput providerOutput) {
+    this.providerOutput = JsonNullable.<ProviderOutput>of(providerOutput);
+    return this;
+  }
+
+  /**
+   * Get providerOutput
+   * @return providerOutput
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ProviderOutput getProviderOutput() {
+        return providerOutput.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PROVIDER_OUTPUT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ProviderOutput> getProviderOutput_JsonNullable() {
+    return providerOutput;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROVIDER_OUTPUT)
+  public void setProviderOutput_JsonNullable(JsonNullable<ProviderOutput> providerOutput) {
+    this.providerOutput = providerOutput;
+  }
+
+  public void setProviderOutput(@javax.annotation.Nullable ProviderOutput providerOutput) {
+    this.providerOutput = JsonNullable.<ProviderOutput>of(providerOutput);
+  }
+
+
+  public IdentityData identifiers(@javax.annotation.Nonnull List<Identifier> identifiers) {
+    this.identifiers = identifiers;
+    return this;
+  }
+
+  public IdentityData addIdentifiersItem(Identifier identifiersItem) {
+    if (this.identifiers == null) {
+      this.identifiers = new ArrayList<>();
+    }
+    this.identifiers.add(identifiersItem);
+    return this;
+  }
+
+  /**
+   * Get identifiers
+   * @return identifiers
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_IDENTIFIERS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public List<Identifier> getIdentifiers() {
+    return identifiers;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IDENTIFIERS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setIdentifiers(@javax.annotation.Nonnull List<Identifier> identifiers) {
+    this.identifiers = identifiers;
+  }
+
+
   /**
    * Return true if this IdentityData object is equal to o.
    */
@@ -280,7 +357,9 @@ public class IdentityData {
         equalsNullable(this.person, identityData.person) &&
         equalsNullable(this.document, identityData.document) &&
         equalsNullable(this.match, identityData.match) &&
-        equalsNullable(this.attachmentAccessKeys, identityData.attachmentAccessKeys);
+        equalsNullable(this.attachmentAccessKeys, identityData.attachmentAccessKeys) &&
+        equalsNullable(this.providerOutput, identityData.providerOutput) &&
+        Objects.equals(this.identifiers, identityData.identifiers);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -289,7 +368,7 @@ public class IdentityData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), hashCodeNullable(attachmentAccessKeys));
+    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), hashCodeNullable(attachmentAccessKeys), hashCodeNullable(providerOutput), identifiers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -309,6 +388,8 @@ public class IdentityData {
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    match: ").append(toIndentedString(match)).append("\n");
     sb.append("    attachmentAccessKeys: ").append(toIndentedString(attachmentAccessKeys)).append("\n");
+    sb.append("    providerOutput: ").append(toIndentedString(providerOutput)).append("\n");
+    sb.append("    identifiers: ").append(toIndentedString(identifiers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -384,6 +465,21 @@ public class IdentityData {
     // add `attachmentAccessKeys` to the URL query string
     if (getAttachmentAccessKeys() != null) {
       joiner.add(getAttachmentAccessKeys().toUrlQueryString(prefix + "attachmentAccessKeys" + suffix));
+    }
+
+    // add `providerOutput` to the URL query string
+    if (getProviderOutput() != null) {
+      joiner.add(getProviderOutput().toUrlQueryString(prefix + "providerOutput" + suffix));
+    }
+
+    // add `identifiers` to the URL query string
+    if (getIdentifiers() != null) {
+      for (int i = 0; i < getIdentifiers().size(); i++) {
+        if (getIdentifiers().get(i) != null) {
+          joiner.add(getIdentifiers().get(i).toUrlQueryString(String.format("%sidentifiers%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();
