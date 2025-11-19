@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   SouthAfricaNidInput.JSON_PROPERTY_GENDER,
   SouthAfricaNidInput.JSON_PROPERTY_NATIONAL_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SouthAfricaNidInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   @javax.annotation.Nonnull
@@ -138,7 +138,7 @@ public class SouthAfricaNidInput {
   }
 
   /**
-   * The user&#39;s South African National ID number
+   * The user&#39;s National ID number
    * @return nationalIdNumber
    */
   @javax.annotation.Nonnull

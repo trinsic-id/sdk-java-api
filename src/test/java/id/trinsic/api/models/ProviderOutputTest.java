@@ -20,6 +20,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.FaydaProviderOutput;
 import id.trinsic.api.models.MexicoCurpProviderOutput;
+import id.trinsic.api.models.PhilippinesDigitalNidProviderOutput;
+import id.trinsic.api.models.PhilippinesPhysicalNidProviderOutput;
 import id.trinsic.api.models.SpidProviderOutput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -66,6 +68,22 @@ class ProviderOutputTest {
     @Test
     void ethiopiaFaydaTest() {
         // TODO: test ethiopiaFayda
+    }
+
+    /**
+     * Test the property 'philippinesPhysicalNationalIdQr'
+     */
+    @Test
+    void philippinesPhysicalNationalIdQrTest() {
+        // TODO: test philippinesPhysicalNationalIdQr
+    }
+
+    /**
+     * Test the property 'philippinesDigitalNationalIdQr'
+     */
+    @Test
+    void philippinesDigitalNationalIdQrTest() {
+        // TODO: test philippinesDigitalNationalIdQr
     }
 
 }

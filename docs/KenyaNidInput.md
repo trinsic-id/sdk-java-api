@@ -12,7 +12,7 @@
 |**lastName** | **String** | The user&#39;s middle name as it appears in their National ID (optional) |  |
 |**dateOfBirth** | **LocalDate** | The user&#39;s date of birth, in &#x60;YYYY-MM-DD&#x60; format |  |
 |**gender** | **String** | The user&#39;s gender as it appears in their National ID (e.g., male, female) |  |
-|**nationalIdNumber** | **String** | The user&#39;s South Kenya National ID number |  |
+|**nationalIdNumber** | **String** | The user&#39;s Kenya National ID number |  |
 
 
 

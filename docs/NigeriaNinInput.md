@@ -13,7 +13,7 @@
 |**phoneNumber** | **String** | The user&#39;s phone number (optional) |  [optional] |
 |**dateOfBirth** | **LocalDate** | The user&#39;s date of birth, in &#x60;YYYY-MM-DD&#x60; format |  |
 |**gender** | **String** | The user&#39;s gender as it appears in their National ID (e.g., male, female) |  [optional] |
-|**nationalIdNumber** | **String** | The user&#39;s South African National ID number |  |
+|**nationalIdNumber** | **String** | The user&#39;s National ID number |  |
 
 
 

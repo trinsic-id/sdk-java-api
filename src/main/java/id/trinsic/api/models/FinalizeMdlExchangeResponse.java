@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   FinalizeMdlExchangeResponse.JSON_PROPERTY_MDL_DATA,
   FinalizeMdlExchangeResponse.JSON_PROPERTY_NORMALIZED_IDENTITY_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FinalizeMdlExchangeResponse {
   public static final String JSON_PROPERTY_EXCHANGE_ID = "exchangeId";
   @javax.annotation.Nonnull

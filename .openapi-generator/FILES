@@ -52,7 +52,10 @@ docs/IndonesiaNikInput.md
 docs/IntegrationCapability.md
 docs/IntegrationLaunchMethod.md
 docs/IntegrationStep.md
+docs/KenyaNidBiometric2Input.md
 docs/KenyaNidInput.md
+docs/KenyaNidLookup2Input.md
+docs/KenyaNidMatch2Input.md
 docs/Language.md
 docs/ListEnvironmentRedirectUrisResponse.md
 docs/ListProviderContractsResponse.md
@@ -75,6 +78,8 @@ docs/OrderDirection.md
 docs/PersonData.md
 docs/PhilippineMatchInput.md
 docs/PhilippineQRInput.md
+docs/PhilippinesDigitalNidProviderOutput.md
+docs/PhilippinesPhysicalNidProviderOutput.md
 docs/ProblemDetails.md
 docs/ProviderAttachments.md
 docs/ProviderContract.md
@@ -96,8 +101,10 @@ docs/SessionErrorCode.md
 docs/SessionOrdering.md
 docs/SessionsApi.md
 docs/Sex.md
+docs/SexV1.md
 docs/SmartIdInput.md
 docs/SouthAfricaNidInput.md
+docs/SouthAfricaNidLookup2Input.md
 docs/SpidBillingInformation.md
 docs/SpidInput.md
 docs/SpidProviderOutput.md
@@ -180,7 +187,10 @@ src/main/java/id/trinsic/api/models/IndonesiaNikInput.java
 src/main/java/id/trinsic/api/models/IntegrationCapability.java
 src/main/java/id/trinsic/api/models/IntegrationLaunchMethod.java
 src/main/java/id/trinsic/api/models/IntegrationStep.java
+src/main/java/id/trinsic/api/models/KenyaNidBiometric2Input.java
 src/main/java/id/trinsic/api/models/KenyaNidInput.java
+src/main/java/id/trinsic/api/models/KenyaNidLookup2Input.java
+src/main/java/id/trinsic/api/models/KenyaNidMatch2Input.java
 src/main/java/id/trinsic/api/models/Language.java
 src/main/java/id/trinsic/api/models/ListEnvironmentRedirectUrisResponse.java
 src/main/java/id/trinsic/api/models/ListProviderContractsResponse.java
@@ -201,6 +211,8 @@ src/main/java/id/trinsic/api/models/OrderDirection.java
 src/main/java/id/trinsic/api/models/PersonData.java
 src/main/java/id/trinsic/api/models/PhilippineMatchInput.java
 src/main/java/id/trinsic/api/models/PhilippineQRInput.java
+src/main/java/id/trinsic/api/models/PhilippinesDigitalNidProviderOutput.java
+src/main/java/id/trinsic/api/models/PhilippinesPhysicalNidProviderOutput.java
 src/main/java/id/trinsic/api/models/ProblemDetails.java
 src/main/java/id/trinsic/api/models/ProviderAttachments.java
 src/main/java/id/trinsic/api/models/ProviderContract.java
@@ -221,8 +233,10 @@ src/main/java/id/trinsic/api/models/Session.java
 src/main/java/id/trinsic/api/models/SessionErrorCode.java
 src/main/java/id/trinsic/api/models/SessionOrdering.java
 src/main/java/id/trinsic/api/models/Sex.java
+src/main/java/id/trinsic/api/models/SexV1.java
 src/main/java/id/trinsic/api/models/SmartIdInput.java
 src/main/java/id/trinsic/api/models/SouthAfricaNidInput.java
+src/main/java/id/trinsic/api/models/SouthAfricaNidLookup2Input.java
 src/main/java/id/trinsic/api/models/SpidBillingInformation.java
 src/main/java/id/trinsic/api/models/SpidInput.java
 src/main/java/id/trinsic/api/models/SpidProviderOutput.java
@@ -283,7 +297,10 @@ src/test/java/id/trinsic/api/models/IndonesiaNikInputTest.java
 src/test/java/id/trinsic/api/models/IntegrationCapabilityTest.java
 src/test/java/id/trinsic/api/models/IntegrationLaunchMethodTest.java
 src/test/java/id/trinsic/api/models/IntegrationStepTest.java
+src/test/java/id/trinsic/api/models/KenyaNidBiometric2InputTest.java
 src/test/java/id/trinsic/api/models/KenyaNidInputTest.java
+src/test/java/id/trinsic/api/models/KenyaNidLookup2InputTest.java
+src/test/java/id/trinsic/api/models/KenyaNidMatch2InputTest.java
 src/test/java/id/trinsic/api/models/LanguageTest.java
 src/test/java/id/trinsic/api/models/ListEnvironmentRedirectUrisResponseTest.java
 src/test/java/id/trinsic/api/models/ListProviderContractsResponseTest.java
@@ -304,6 +321,8 @@ src/test/java/id/trinsic/api/models/OrderDirectionTest.java
 src/test/java/id/trinsic/api/models/PersonDataTest.java
 src/test/java/id/trinsic/api/models/PhilippineMatchInputTest.java
 src/test/java/id/trinsic/api/models/PhilippineQRInputTest.java
+src/test/java/id/trinsic/api/models/PhilippinesDigitalNidProviderOutputTest.java
+src/test/java/id/trinsic/api/models/PhilippinesPhysicalNidProviderOutputTest.java
 src/test/java/id/trinsic/api/models/ProblemDetailsTest.java
 src/test/java/id/trinsic/api/models/ProviderAttachmentsTest.java
 src/test/java/id/trinsic/api/models/ProviderContractTest.java
@@ -324,8 +343,10 @@ src/test/java/id/trinsic/api/models/SessionErrorCodeTest.java
 src/test/java/id/trinsic/api/models/SessionOrderingTest.java
 src/test/java/id/trinsic/api/models/SessionTest.java
 src/test/java/id/trinsic/api/models/SexTest.java
+src/test/java/id/trinsic/api/models/SexV1Test.java
 src/test/java/id/trinsic/api/models/SmartIdInputTest.java
 src/test/java/id/trinsic/api/models/SouthAfricaNidInputTest.java
+src/test/java/id/trinsic/api/models/SouthAfricaNidLookup2InputTest.java
 src/test/java/id/trinsic/api/models/SpidBillingInformationTest.java
 src/test/java/id/trinsic/api/models/SpidInputTest.java
 src/test/java/id/trinsic/api/models/SpidProviderOutputTest.java

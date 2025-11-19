@@ -26,6 +26,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.FaydaProviderOutput;
 import id.trinsic.api.models.MexicoCurpProviderOutput;
+import id.trinsic.api.models.PhilippinesDigitalNidProviderOutput;
+import id.trinsic.api.models.PhilippinesPhysicalNidProviderOutput;
 import id.trinsic.api.models.SpidProviderOutput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -42,9 +44,11 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ProviderOutput.JSON_PROPERTY_ITALY_SPID,
   ProviderOutput.JSON_PROPERTY_MEXICO_CURP_LOOKUP,
-  ProviderOutput.JSON_PROPERTY_ETHIOPIA_FAYDA
+  ProviderOutput.JSON_PROPERTY_ETHIOPIA_FAYDA,
+  ProviderOutput.JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR,
+  ProviderOutput.JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderOutput {
   public static final String JSON_PROPERTY_ITALY_SPID = "italy-spid";
   private JsonNullable<SpidProviderOutput> italySpid = JsonNullable.<SpidProviderOutput>undefined();
@@ -54,6 +58,12 @@ public class ProviderOutput {
 
   public static final String JSON_PROPERTY_ETHIOPIA_FAYDA = "ethiopia-fayda";
   private JsonNullable<FaydaProviderOutput> ethiopiaFayda = JsonNullable.<FaydaProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR = "philippines-physical-national-id-qr";
+  private JsonNullable<PhilippinesPhysicalNidProviderOutput> philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR = "philippines-digital-national-id-qr";
+  private JsonNullable<PhilippinesDigitalNidProviderOutput> philippinesDigitalNationalIdQr = JsonNullable.<PhilippinesDigitalNidProviderOutput>undefined();
 
   public ProviderOutput() { 
   }
@@ -154,6 +164,70 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput philippinesPhysicalNationalIdQr(@javax.annotation.Nullable PhilippinesPhysicalNidProviderOutput philippinesPhysicalNationalIdQr) {
+    this.philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>of(philippinesPhysicalNationalIdQr);
+    return this;
+  }
+
+  /**
+   * Get philippinesPhysicalNationalIdQr
+   * @return philippinesPhysicalNationalIdQr
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PhilippinesPhysicalNidProviderOutput getPhilippinesPhysicalNationalIdQr() {
+        return philippinesPhysicalNationalIdQr.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PhilippinesPhysicalNidProviderOutput> getPhilippinesPhysicalNationalIdQr_JsonNullable() {
+    return philippinesPhysicalNationalIdQr;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
+  public void setPhilippinesPhysicalNationalIdQr_JsonNullable(JsonNullable<PhilippinesPhysicalNidProviderOutput> philippinesPhysicalNationalIdQr) {
+    this.philippinesPhysicalNationalIdQr = philippinesPhysicalNationalIdQr;
+  }
+
+  public void setPhilippinesPhysicalNationalIdQr(@javax.annotation.Nullable PhilippinesPhysicalNidProviderOutput philippinesPhysicalNationalIdQr) {
+    this.philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>of(philippinesPhysicalNationalIdQr);
+  }
+
+
+  public ProviderOutput philippinesDigitalNationalIdQr(@javax.annotation.Nullable PhilippinesDigitalNidProviderOutput philippinesDigitalNationalIdQr) {
+    this.philippinesDigitalNationalIdQr = JsonNullable.<PhilippinesDigitalNidProviderOutput>of(philippinesDigitalNationalIdQr);
+    return this;
+  }
+
+  /**
+   * Get philippinesDigitalNationalIdQr
+   * @return philippinesDigitalNationalIdQr
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PhilippinesDigitalNidProviderOutput getPhilippinesDigitalNationalIdQr() {
+        return philippinesDigitalNationalIdQr.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PhilippinesDigitalNidProviderOutput> getPhilippinesDigitalNationalIdQr_JsonNullable() {
+    return philippinesDigitalNationalIdQr;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR)
+  public void setPhilippinesDigitalNationalIdQr_JsonNullable(JsonNullable<PhilippinesDigitalNidProviderOutput> philippinesDigitalNationalIdQr) {
+    this.philippinesDigitalNationalIdQr = philippinesDigitalNationalIdQr;
+  }
+
+  public void setPhilippinesDigitalNationalIdQr(@javax.annotation.Nullable PhilippinesDigitalNidProviderOutput philippinesDigitalNationalIdQr) {
+    this.philippinesDigitalNationalIdQr = JsonNullable.<PhilippinesDigitalNidProviderOutput>of(philippinesDigitalNationalIdQr);
+  }
+
+
   /**
    * Return true if this ProviderOutput object is equal to o.
    */
@@ -168,7 +242,9 @@ public class ProviderOutput {
     ProviderOutput providerOutput = (ProviderOutput) o;
     return equalsNullable(this.italySpid, providerOutput.italySpid) &&
         equalsNullable(this.mexicoCurpLookup, providerOutput.mexicoCurpLookup) &&
-        equalsNullable(this.ethiopiaFayda, providerOutput.ethiopiaFayda);
+        equalsNullable(this.ethiopiaFayda, providerOutput.ethiopiaFayda) &&
+        equalsNullable(this.philippinesPhysicalNationalIdQr, providerOutput.philippinesPhysicalNationalIdQr) &&
+        equalsNullable(this.philippinesDigitalNationalIdQr, providerOutput.philippinesDigitalNationalIdQr);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -177,7 +253,7 @@ public class ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(italySpid), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(ethiopiaFayda));
+    return Objects.hash(hashCodeNullable(italySpid), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(ethiopiaFayda), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(philippinesDigitalNationalIdQr));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -194,6 +270,8 @@ public class ProviderOutput {
     sb.append("    italySpid: ").append(toIndentedString(italySpid)).append("\n");
     sb.append("    mexicoCurpLookup: ").append(toIndentedString(mexicoCurpLookup)).append("\n");
     sb.append("    ethiopiaFayda: ").append(toIndentedString(ethiopiaFayda)).append("\n");
+    sb.append("    philippinesPhysicalNationalIdQr: ").append(toIndentedString(philippinesPhysicalNationalIdQr)).append("\n");
+    sb.append("    philippinesDigitalNationalIdQr: ").append(toIndentedString(philippinesDigitalNationalIdQr)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -254,6 +332,16 @@ public class ProviderOutput {
     // add `ethiopia-fayda` to the URL query string
     if (getEthiopiaFayda() != null) {
       joiner.add(getEthiopiaFayda().toUrlQueryString(prefix + "ethiopia-fayda" + suffix));
+    }
+
+    // add `philippines-physical-national-id-qr` to the URL query string
+    if (getPhilippinesPhysicalNationalIdQr() != null) {
+      joiner.add(getPhilippinesPhysicalNationalIdQr().toUrlQueryString(prefix + "philippines-physical-national-id-qr" + suffix));
+    }
+
+    // add `philippines-digital-national-id-qr` to the URL query string
+    if (getPhilippinesDigitalNationalIdQr() != null) {
+      joiner.add(getPhilippinesDigitalNationalIdQr().toUrlQueryString(prefix + "philippines-digital-national-id-qr" + suffix));
     }
 
     return joiner.toString();

@@ -40,27 +40,65 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   SpidProviderOutput.JSON_PROPERTY_BILLING_INFORMATION,
-  SpidProviderOutput.JSON_PROPERTY_FISCAL_NUMBER,
+  SpidProviderOutput.JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID,
   SpidProviderOutput.JSON_PROPERTY_SPID_CODE,
+  SpidProviderOutput.JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE,
+  SpidProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
+  SpidProviderOutput.JSON_PROPERTY_COUNTY_OF_BIRTH,
+  SpidProviderOutput.JSON_PROPERTY_RAW_ID_CARD,
+  SpidProviderOutput.JSON_PROPERTY_EMAIL,
+  SpidProviderOutput.JSON_PROPERTY_DIGITAL_ADDRESS,
+  SpidProviderOutput.JSON_PROPERTY_FISCAL_NUMBER,
   SpidProviderOutput.JSON_PROPERTY_IVA_CODE,
-  SpidProviderOutput.JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE
+  SpidProviderOutput.JSON_PROPERTY_COMPANY_NAME,
+  SpidProviderOutput.JSON_PROPERTY_COMPANY_FISCAL_NUMBER,
+  SpidProviderOutput.JSON_PROPERTY_REGISTERED_OFFICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SpidProviderOutput {
   public static final String JSON_PROPERTY_BILLING_INFORMATION = "billingInformation";
   private JsonNullable<SpidBillingInformation> billingInformation = JsonNullable.<SpidBillingInformation>undefined();
 
-  public static final String JSON_PROPERTY_FISCAL_NUMBER = "fiscalNumber";
-  private JsonNullable<String> fiscalNumber = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID = "identityProviderEntityId";
+  @javax.annotation.Nonnull
+  private String identityProviderEntityId;
 
   public static final String JSON_PROPERTY_SPID_CODE = "spidCode";
-  private JsonNullable<String> spidCode = JsonNullable.<String>undefined();
+  @javax.annotation.Nonnull
+  private String spidCode;
+
+  public static final String JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE = "spidCredentialExpirationDate";
+  private JsonNullable<LocalDate> spidCredentialExpirationDate = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "placeOfBirth";
+  private JsonNullable<String> placeOfBirth = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_COUNTY_OF_BIRTH = "countyOfBirth";
+  private JsonNullable<String> countyOfBirth = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_RAW_ID_CARD = "rawIdCard";
+  private JsonNullable<String> rawIdCard = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_EMAIL = "email";
+  private JsonNullable<String> email = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DIGITAL_ADDRESS = "digitalAddress";
+  private JsonNullable<String> digitalAddress = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_FISCAL_NUMBER = "fiscalNumber";
+  private JsonNullable<String> fiscalNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_IVA_CODE = "ivaCode";
   private JsonNullable<String> ivaCode = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE = "spidCredentialExpirationDate";
-  private JsonNullable<LocalDate> spidCredentialExpirationDate = JsonNullable.<LocalDate>undefined();
+  public static final String JSON_PROPERTY_COMPANY_NAME = "companyName";
+  private JsonNullable<String> companyName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_COMPANY_FISCAL_NUMBER = "companyFiscalNumber";
+  private JsonNullable<String> companyFiscalNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_REGISTERED_OFFICE = "registeredOffice";
+  private JsonNullable<String> registeredOffice = JsonNullable.<String>undefined();
 
   public SpidProviderOutput() { 
   }
@@ -97,99 +135,51 @@ public class SpidProviderOutput {
   }
 
 
-  public SpidProviderOutput fiscalNumber(@javax.annotation.Nullable String fiscalNumber) {
-    this.fiscalNumber = JsonNullable.<String>of(fiscalNumber);
+  public SpidProviderOutput identityProviderEntityId(@javax.annotation.Nonnull String identityProviderEntityId) {
+    this.identityProviderEntityId = identityProviderEntityId;
     return this;
   }
 
   /**
-   * Fiscal tax number for the subject.
-   * @return fiscalNumber
+   * The SPID Entity ID of the Identity Provider which issued the SPID identity.              This is an HTTPS URI which uniquely identifies the IdP within the SPID federation.              A normalized / simplified representation of this value is present in the &#x60;originatingSubProviderId&#x60; field in Trinsic&#39;s normalized data model.
+   * @return identityProviderEntityId
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getFiscalNumber() {
-        return fiscalNumber.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_FISCAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getFiscalNumber_JsonNullable() {
-    return fiscalNumber;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_FISCAL_NUMBER)
-  public void setFiscalNumber_JsonNullable(JsonNullable<String> fiscalNumber) {
-    this.fiscalNumber = fiscalNumber;
-  }
-
-  public void setFiscalNumber(@javax.annotation.Nullable String fiscalNumber) {
-    this.fiscalNumber = JsonNullable.<String>of(fiscalNumber);
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getIdentityProviderEntityId() {
+    return identityProviderEntityId;
   }
 
 
-  public SpidProviderOutput spidCode(@javax.annotation.Nullable String spidCode) {
-    this.spidCode = JsonNullable.<String>of(spidCode);
+  @JsonProperty(JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setIdentityProviderEntityId(@javax.annotation.Nonnull String identityProviderEntityId) {
+    this.identityProviderEntityId = identityProviderEntityId;
+  }
+
+
+  public SpidProviderOutput spidCode(@javax.annotation.Nonnull String spidCode) {
+    this.spidCode = spidCode;
     return this;
   }
 
   /**
-   * Unique user identifier contained within the SPID identity.
+   * The identifier of the user&#39;s SPID credential.              This uniquely identifies the credential within the SPID federation.
    * @return spidCode
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getSpidCode() {
-        return spidCode.orElse(null);
-  }
-
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SPID_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getSpidCode_JsonNullable() {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getSpidCode() {
     return spidCode;
   }
-  
+
+
   @JsonProperty(JSON_PROPERTY_SPID_CODE)
-  public void setSpidCode_JsonNullable(JsonNullable<String> spidCode) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSpidCode(@javax.annotation.Nonnull String spidCode) {
     this.spidCode = spidCode;
-  }
-
-  public void setSpidCode(@javax.annotation.Nullable String spidCode) {
-    this.spidCode = JsonNullable.<String>of(spidCode);
-  }
-
-
-  public SpidProviderOutput ivaCode(@javax.annotation.Nullable String ivaCode) {
-    this.ivaCode = JsonNullable.<String>of(ivaCode);
-    return this;
-  }
-
-  /**
-   * VAT number for the subject.
-   * @return ivaCode
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getIvaCode() {
-        return ivaCode.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_IVA_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getIvaCode_JsonNullable() {
-    return ivaCode;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_IVA_CODE)
-  public void setIvaCode_JsonNullable(JsonNullable<String> ivaCode) {
-    this.ivaCode = ivaCode;
-  }
-
-  public void setIvaCode(@javax.annotation.Nullable String ivaCode) {
-    this.ivaCode = JsonNullable.<String>of(ivaCode);
   }
 
 
@@ -225,6 +215,326 @@ public class SpidProviderOutput {
   }
 
 
+  public SpidProviderOutput placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
+    this.placeOfBirth = JsonNullable.<String>of(placeOfBirth);
+    return this;
+  }
+
+  /**
+   * The user&#39;s place of birth.
+   * @return placeOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getPlaceOfBirth() {
+        return placeOfBirth.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getPlaceOfBirth_JsonNullable() {
+    return placeOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  public void setPlaceOfBirth_JsonNullable(JsonNullable<String> placeOfBirth) {
+    this.placeOfBirth = placeOfBirth;
+  }
+
+  public void setPlaceOfBirth(@javax.annotation.Nullable String placeOfBirth) {
+    this.placeOfBirth = JsonNullable.<String>of(placeOfBirth);
+  }
+
+
+  public SpidProviderOutput countyOfBirth(@javax.annotation.Nullable String countyOfBirth) {
+    this.countyOfBirth = JsonNullable.<String>of(countyOfBirth);
+    return this;
+  }
+
+  /**
+   * The user&#39;s county of birth.
+   * @return countyOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCountyOfBirth() {
+        return countyOfBirth.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_COUNTY_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCountyOfBirth_JsonNullable() {
+    return countyOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTY_OF_BIRTH)
+  public void setCountyOfBirth_JsonNullable(JsonNullable<String> countyOfBirth) {
+    this.countyOfBirth = countyOfBirth;
+  }
+
+  public void setCountyOfBirth(@javax.annotation.Nullable String countyOfBirth) {
+    this.countyOfBirth = JsonNullable.<String>of(countyOfBirth);
+  }
+
+
+  public SpidProviderOutput rawIdCard(@javax.annotation.Nullable String rawIdCard) {
+    this.rawIdCard = JsonNullable.<String>of(rawIdCard);
+    return this;
+  }
+
+  /**
+   * The raw, space-separated string value for the \&quot;IdCard\&quot; field from the SPID identity.              Trinsic additionally parses this field and uses it to populate the &#x60;Document&#x60; object in the normalized data model.
+   * @return rawIdCard
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRawIdCard() {
+        return rawIdCard.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRawIdCard_JsonNullable() {
+    return rawIdCard;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
+  public void setRawIdCard_JsonNullable(JsonNullable<String> rawIdCard) {
+    this.rawIdCard = rawIdCard;
+  }
+
+  public void setRawIdCard(@javax.annotation.Nullable String rawIdCard) {
+    this.rawIdCard = JsonNullable.<String>of(rawIdCard);
+  }
+
+
+  public SpidProviderOutput email(@javax.annotation.Nullable String email) {
+    this.email = JsonNullable.<String>of(email);
+    return this;
+  }
+
+  /**
+   * The email address of the user.
+   * @return email
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getEmail() {
+        return email.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getEmail_JsonNullable() {
+    return email;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  public void setEmail_JsonNullable(JsonNullable<String> email) {
+    this.email = email;
+  }
+
+  public void setEmail(@javax.annotation.Nullable String email) {
+    this.email = JsonNullable.<String>of(email);
+  }
+
+
+  public SpidProviderOutput digitalAddress(@javax.annotation.Nullable String digitalAddress) {
+    this.digitalAddress = JsonNullable.<String>of(digitalAddress);
+    return this;
+  }
+
+  /**
+   * The digital address of the user.
+   * @return digitalAddress
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDigitalAddress() {
+        return digitalAddress.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DIGITAL_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDigitalAddress_JsonNullable() {
+    return digitalAddress;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DIGITAL_ADDRESS)
+  public void setDigitalAddress_JsonNullable(JsonNullable<String> digitalAddress) {
+    this.digitalAddress = digitalAddress;
+  }
+
+  public void setDigitalAddress(@javax.annotation.Nullable String digitalAddress) {
+    this.digitalAddress = JsonNullable.<String>of(digitalAddress);
+  }
+
+
+  public SpidProviderOutput fiscalNumber(@javax.annotation.Nullable String fiscalNumber) {
+    this.fiscalNumber = JsonNullable.<String>of(fiscalNumber);
+    return this;
+  }
+
+  /**
+   * Fiscal tax number for the subject.
+   * @return fiscalNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFiscalNumber() {
+        return fiscalNumber.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_FISCAL_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFiscalNumber_JsonNullable() {
+    return fiscalNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FISCAL_NUMBER)
+  public void setFiscalNumber_JsonNullable(JsonNullable<String> fiscalNumber) {
+    this.fiscalNumber = fiscalNumber;
+  }
+
+  public void setFiscalNumber(@javax.annotation.Nullable String fiscalNumber) {
+    this.fiscalNumber = JsonNullable.<String>of(fiscalNumber);
+  }
+
+
+  public SpidProviderOutput ivaCode(@javax.annotation.Nullable String ivaCode) {
+    this.ivaCode = JsonNullable.<String>of(ivaCode);
+    return this;
+  }
+
+  /**
+   * VAT number for the subject.
+   * @return ivaCode
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getIvaCode() {
+        return ivaCode.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_IVA_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getIvaCode_JsonNullable() {
+    return ivaCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IVA_CODE)
+  public void setIvaCode_JsonNullable(JsonNullable<String> ivaCode) {
+    this.ivaCode = ivaCode;
+  }
+
+  public void setIvaCode(@javax.annotation.Nullable String ivaCode) {
+    this.ivaCode = JsonNullable.<String>of(ivaCode);
+  }
+
+
+  public SpidProviderOutput companyName(@javax.annotation.Nullable String companyName) {
+    this.companyName = JsonNullable.<String>of(companyName);
+    return this;
+  }
+
+  /**
+   * The name of the company which the user is associated with.
+   * @return companyName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCompanyName() {
+        return companyName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_COMPANY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCompanyName_JsonNullable() {
+    return companyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COMPANY_NAME)
+  public void setCompanyName_JsonNullable(JsonNullable<String> companyName) {
+    this.companyName = companyName;
+  }
+
+  public void setCompanyName(@javax.annotation.Nullable String companyName) {
+    this.companyName = JsonNullable.<String>of(companyName);
+  }
+
+
+  public SpidProviderOutput companyFiscalNumber(@javax.annotation.Nullable String companyFiscalNumber) {
+    this.companyFiscalNumber = JsonNullable.<String>of(companyFiscalNumber);
+    return this;
+  }
+
+  /**
+   * The fiscal tax number of the company which the user is associated with.
+   * @return companyFiscalNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCompanyFiscalNumber() {
+        return companyFiscalNumber.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_COMPANY_FISCAL_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCompanyFiscalNumber_JsonNullable() {
+    return companyFiscalNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COMPANY_FISCAL_NUMBER)
+  public void setCompanyFiscalNumber_JsonNullable(JsonNullable<String> companyFiscalNumber) {
+    this.companyFiscalNumber = companyFiscalNumber;
+  }
+
+  public void setCompanyFiscalNumber(@javax.annotation.Nullable String companyFiscalNumber) {
+    this.companyFiscalNumber = JsonNullable.<String>of(companyFiscalNumber);
+  }
+
+
+  public SpidProviderOutput registeredOffice(@javax.annotation.Nullable String registeredOffice) {
+    this.registeredOffice = JsonNullable.<String>of(registeredOffice);
+    return this;
+  }
+
+  /**
+   * The registered office address of the company which the user is associated with.
+   * @return registeredOffice
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRegisteredOffice() {
+        return registeredOffice.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_REGISTERED_OFFICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRegisteredOffice_JsonNullable() {
+    return registeredOffice;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REGISTERED_OFFICE)
+  public void setRegisteredOffice_JsonNullable(JsonNullable<String> registeredOffice) {
+    this.registeredOffice = registeredOffice;
+  }
+
+  public void setRegisteredOffice(@javax.annotation.Nullable String registeredOffice) {
+    this.registeredOffice = JsonNullable.<String>of(registeredOffice);
+  }
+
+
   /**
    * Return true if this SpidProviderOutput object is equal to o.
    */
@@ -238,10 +548,19 @@ public class SpidProviderOutput {
     }
     SpidProviderOutput spidProviderOutput = (SpidProviderOutput) o;
     return equalsNullable(this.billingInformation, spidProviderOutput.billingInformation) &&
+        Objects.equals(this.identityProviderEntityId, spidProviderOutput.identityProviderEntityId) &&
+        Objects.equals(this.spidCode, spidProviderOutput.spidCode) &&
+        equalsNullable(this.spidCredentialExpirationDate, spidProviderOutput.spidCredentialExpirationDate) &&
+        equalsNullable(this.placeOfBirth, spidProviderOutput.placeOfBirth) &&
+        equalsNullable(this.countyOfBirth, spidProviderOutput.countyOfBirth) &&
+        equalsNullable(this.rawIdCard, spidProviderOutput.rawIdCard) &&
+        equalsNullable(this.email, spidProviderOutput.email) &&
+        equalsNullable(this.digitalAddress, spidProviderOutput.digitalAddress) &&
         equalsNullable(this.fiscalNumber, spidProviderOutput.fiscalNumber) &&
-        equalsNullable(this.spidCode, spidProviderOutput.spidCode) &&
         equalsNullable(this.ivaCode, spidProviderOutput.ivaCode) &&
-        equalsNullable(this.spidCredentialExpirationDate, spidProviderOutput.spidCredentialExpirationDate);
+        equalsNullable(this.companyName, spidProviderOutput.companyName) &&
+        equalsNullable(this.companyFiscalNumber, spidProviderOutput.companyFiscalNumber) &&
+        equalsNullable(this.registeredOffice, spidProviderOutput.registeredOffice);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -250,7 +569,7 @@ public class SpidProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(billingInformation), hashCodeNullable(fiscalNumber), hashCodeNullable(spidCode), hashCodeNullable(ivaCode), hashCodeNullable(spidCredentialExpirationDate));
+    return Objects.hash(hashCodeNullable(billingInformation), identityProviderEntityId, spidCode, hashCodeNullable(spidCredentialExpirationDate), hashCodeNullable(placeOfBirth), hashCodeNullable(countyOfBirth), hashCodeNullable(rawIdCard), hashCodeNullable(email), hashCodeNullable(digitalAddress), hashCodeNullable(fiscalNumber), hashCodeNullable(ivaCode), hashCodeNullable(companyName), hashCodeNullable(companyFiscalNumber), hashCodeNullable(registeredOffice));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -265,10 +584,19 @@ public class SpidProviderOutput {
     StringBuilder sb = new StringBuilder();
     sb.append("class SpidProviderOutput {\n");
     sb.append("    billingInformation: ").append(toIndentedString(billingInformation)).append("\n");
-    sb.append("    fiscalNumber: ").append(toIndentedString(fiscalNumber)).append("\n");
+    sb.append("    identityProviderEntityId: ").append(toIndentedString(identityProviderEntityId)).append("\n");
     sb.append("    spidCode: ").append(toIndentedString(spidCode)).append("\n");
-    sb.append("    ivaCode: ").append(toIndentedString(ivaCode)).append("\n");
     sb.append("    spidCredentialExpirationDate: ").append(toIndentedString(spidCredentialExpirationDate)).append("\n");
+    sb.append("    placeOfBirth: ").append(toIndentedString(placeOfBirth)).append("\n");
+    sb.append("    countyOfBirth: ").append(toIndentedString(countyOfBirth)).append("\n");
+    sb.append("    rawIdCard: ").append(toIndentedString(rawIdCard)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    digitalAddress: ").append(toIndentedString(digitalAddress)).append("\n");
+    sb.append("    fiscalNumber: ").append(toIndentedString(fiscalNumber)).append("\n");
+    sb.append("    ivaCode: ").append(toIndentedString(ivaCode)).append("\n");
+    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+    sb.append("    companyFiscalNumber: ").append(toIndentedString(companyFiscalNumber)).append("\n");
+    sb.append("    registeredOffice: ").append(toIndentedString(registeredOffice)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -321,9 +649,9 @@ public class SpidProviderOutput {
       joiner.add(getBillingInformation().toUrlQueryString(prefix + "billingInformation" + suffix));
     }
 
-    // add `fiscalNumber` to the URL query string
-    if (getFiscalNumber() != null) {
-      joiner.add(String.format("%sfiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFiscalNumber()))));
+    // add `identityProviderEntityId` to the URL query string
+    if (getIdentityProviderEntityId() != null) {
+      joiner.add(String.format("%sidentityProviderEntityId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityProviderEntityId()))));
     }
 
     // add `spidCode` to the URL query string
@@ -331,14 +659,59 @@ public class SpidProviderOutput {
       joiner.add(String.format("%sspidCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCode()))));
     }
 
+    // add `spidCredentialExpirationDate` to the URL query string
+    if (getSpidCredentialExpirationDate() != null) {
+      joiner.add(String.format("%sspidCredentialExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCredentialExpirationDate()))));
+    }
+
+    // add `placeOfBirth` to the URL query string
+    if (getPlaceOfBirth() != null) {
+      joiner.add(String.format("%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
+    }
+
+    // add `countyOfBirth` to the URL query string
+    if (getCountyOfBirth() != null) {
+      joiner.add(String.format("%scountyOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountyOfBirth()))));
+    }
+
+    // add `rawIdCard` to the URL query string
+    if (getRawIdCard() != null) {
+      joiner.add(String.format("%srawIdCard%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRawIdCard()))));
+    }
+
+    // add `email` to the URL query string
+    if (getEmail() != null) {
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+    }
+
+    // add `digitalAddress` to the URL query string
+    if (getDigitalAddress() != null) {
+      joiner.add(String.format("%sdigitalAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalAddress()))));
+    }
+
+    // add `fiscalNumber` to the URL query string
+    if (getFiscalNumber() != null) {
+      joiner.add(String.format("%sfiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFiscalNumber()))));
+    }
+
     // add `ivaCode` to the URL query string
     if (getIvaCode() != null) {
       joiner.add(String.format("%sivaCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIvaCode()))));
     }
 
-    // add `spidCredentialExpirationDate` to the URL query string
-    if (getSpidCredentialExpirationDate() != null) {
-      joiner.add(String.format("%sspidCredentialExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCredentialExpirationDate()))));
+    // add `companyName` to the URL query string
+    if (getCompanyName() != null) {
+      joiner.add(String.format("%scompanyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyName()))));
+    }
+
+    // add `companyFiscalNumber` to the URL query string
+    if (getCompanyFiscalNumber() != null) {
+      joiner.add(String.format("%scompanyFiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyFiscalNumber()))));
+    }
+
+    // add `registeredOffice` to the URL query string
+    if (getRegisteredOffice() != null) {
+      joiner.add(String.format("%sregisteredOffice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegisteredOffice()))));
     }
 
     return joiner.toString();

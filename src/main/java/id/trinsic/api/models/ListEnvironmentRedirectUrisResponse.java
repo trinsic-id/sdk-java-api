@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   ListEnvironmentRedirectUrisResponse.JSON_PROPERTY_URIS,
   ListEnvironmentRedirectUrisResponse.JSON_PROPERTY_MORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ListEnvironmentRedirectUrisResponse {
   public static final String JSON_PROPERTY_URIS = "uris";
   @javax.annotation.Nonnull

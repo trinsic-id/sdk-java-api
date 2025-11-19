@@ -45,7 +45,7 @@ import id.trinsic.ApiClient;
   KenyaNidInput.JSON_PROPERTY_GENDER,
   KenyaNidInput.JSON_PROPERTY_NATIONAL_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class KenyaNidInput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull
@@ -207,7 +207,7 @@ public class KenyaNidInput {
   }
 
   /**
-   * The user&#39;s South Kenya National ID number
+   * The user&#39;s Kenya National ID number
    * @return nationalIdNumber
    */
   @javax.annotation.Nonnull

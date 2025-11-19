@@ -11,6 +11,7 @@
 |**documentFront** | **String** |  |  [optional] |
 |**documentBack** | **String** |  |  [optional] |
 |**documentPortrait** | **String** |  |  [optional] |
+|**documentSignature** | **String** |  |  [optional] |
 |**provider** | [**ProviderAttachments**](ProviderAttachments.md) |  |  |
 
 

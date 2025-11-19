@@ -7,11 +7,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**kenyaBiometric2** | [**KenyaNidBiometric2Input**](KenyaNidBiometric2Input.md) | Input for the &#x60;kenya-nid-match-biometric-2&#x60; provider |  [optional] |
 |**indonesiaNik** | [**IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider |  [optional] |
 |**indonesiaDukcapilMatch** | [**IndonesiaDukcapilMatchInput**](IndonesiaDukcapilMatchInput.md) | Input for the &#x60;indonesia-dukcapil-match&#x60; provider |  [optional] |
 |**mexicoCurp** | [**MexicoCurpInput**](MexicoCurpInput.md) | Input for the &#x60;mexico-curp-lookup&#x60; provider |  [optional] |
 |**southAfricaNid** | [**SouthAfricaNidInput**](SouthAfricaNidInput.md) | Input for the &#x60;south-africa-nid-lookup&#x60; provider |  [optional] |
 |**kenyaNid** | [**KenyaNidInput**](KenyaNidInput.md) | Input for the &#x60;kenya-nid-lookup&#x60; provider |  [optional] |
+|**kenyaNidMatch2** | [**KenyaNidMatch2Input**](KenyaNidMatch2Input.md) | Input for the &#x60;kenya-nid-match-2&#x60; provider |  [optional] |
+|**kenyaNidLookup2** | [**KenyaNidLookup2Input**](KenyaNidLookup2Input.md) | Input for the &#x60;kenya-nid-lookup-2&#x60; provider |  [optional] |
+|**southAfricaNidLookup2** | [**SouthAfricaNidLookup2Input**](SouthAfricaNidLookup2Input.md) | Input for the &#x60;south-africa-nid-lookup-2&#x60; provider |  [optional] |
 |**nigeriaNin** | [**NigeriaNinInput**](NigeriaNinInput.md) | Input for the &#x60;nigeria-nin-lookup&#x60; provider |  [optional] |
 |**aadhaar** | [**AadhaarInput**](AadhaarInput.md) | Input for the &#x60;india-digilocker-aadhaar-match&#x60; provider |  [optional] |
 |**bangladeshNationalId** | [**BangladeshNidInput**](BangladeshNidInput.md) | Input for the &#x60;bangladesh-nid&#x60; provider |  [optional] |

@@ -42,9 +42,10 @@ import id.trinsic.ApiClient;
   AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_FRONT,
   AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_BACK,
   AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_PORTRAIT,
+  AttachmentAccessKeys.JSON_PROPERTY_DOCUMENT_SIGNATURE,
   AttachmentAccessKeys.JSON_PROPERTY_PROVIDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AttachmentAccessKeys {
   public static final String JSON_PROPERTY_SELFIE = "selfie";
   private JsonNullable<String> selfie = JsonNullable.<String>undefined();
@@ -57,6 +58,9 @@ public class AttachmentAccessKeys {
 
   public static final String JSON_PROPERTY_DOCUMENT_PORTRAIT = "documentPortrait";
   private JsonNullable<String> documentPortrait = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOCUMENT_SIGNATURE = "documentSignature";
+  private JsonNullable<String> documentSignature = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -193,6 +197,38 @@ public class AttachmentAccessKeys {
   }
 
 
+  public AttachmentAccessKeys documentSignature(@javax.annotation.Nullable String documentSignature) {
+    this.documentSignature = JsonNullable.<String>of(documentSignature);
+    return this;
+  }
+
+  /**
+   * Get documentSignature
+   * @return documentSignature
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDocumentSignature() {
+        return documentSignature.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNATURE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDocumentSignature_JsonNullable() {
+    return documentSignature;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNATURE)
+  public void setDocumentSignature_JsonNullable(JsonNullable<String> documentSignature) {
+    this.documentSignature = documentSignature;
+  }
+
+  public void setDocumentSignature(@javax.annotation.Nullable String documentSignature) {
+    this.documentSignature = JsonNullable.<String>of(documentSignature);
+  }
+
+
   public AttachmentAccessKeys provider(@javax.annotation.Nonnull ProviderAttachments provider) {
     this.provider = provider;
     return this;
@@ -233,6 +269,7 @@ public class AttachmentAccessKeys {
         equalsNullable(this.documentFront, attachmentAccessKeys.documentFront) &&
         equalsNullable(this.documentBack, attachmentAccessKeys.documentBack) &&
         equalsNullable(this.documentPortrait, attachmentAccessKeys.documentPortrait) &&
+        equalsNullable(this.documentSignature, attachmentAccessKeys.documentSignature) &&
         Objects.equals(this.provider, attachmentAccessKeys.provider);
   }
 
@@ -242,7 +279,7 @@ public class AttachmentAccessKeys {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(selfie), hashCodeNullable(documentFront), hashCodeNullable(documentBack), hashCodeNullable(documentPortrait), provider);
+    return Objects.hash(hashCodeNullable(selfie), hashCodeNullable(documentFront), hashCodeNullable(documentBack), hashCodeNullable(documentPortrait), hashCodeNullable(documentSignature), provider);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -260,6 +297,7 @@ public class AttachmentAccessKeys {
     sb.append("    documentFront: ").append(toIndentedString(documentFront)).append("\n");
     sb.append("    documentBack: ").append(toIndentedString(documentBack)).append("\n");
     sb.append("    documentPortrait: ").append(toIndentedString(documentPortrait)).append("\n");
+    sb.append("    documentSignature: ").append(toIndentedString(documentSignature)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -326,6 +364,11 @@ public class AttachmentAccessKeys {
     // add `documentPortrait` to the URL query string
     if (getDocumentPortrait() != null) {
       joiner.add(String.format("%sdocumentPortrait%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentPortrait()))));
+    }
+
+    // add `documentSignature` to the URL query string
+    if (getDocumentSignature() != null) {
+      joiner.add(String.format("%sdocumentSignature%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentSignature()))));
     }
 
     // add `provider` to the URL query string

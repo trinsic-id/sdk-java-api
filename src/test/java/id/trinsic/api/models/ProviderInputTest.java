@@ -27,7 +27,10 @@ import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
+import id.trinsic.api.models.KenyaNidBiometric2Input;
 import id.trinsic.api.models.KenyaNidInput;
+import id.trinsic.api.models.KenyaNidLookup2Input;
+import id.trinsic.api.models.KenyaNidMatch2Input;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
 import id.trinsic.api.models.NigeriaNinInput;
@@ -35,6 +38,7 @@ import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
 import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidInput;
+import id.trinsic.api.models.SouthAfricaNidLookup2Input;
 import id.trinsic.api.models.SpidInput;
 import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
@@ -59,6 +63,14 @@ class ProviderInputTest {
     @Test
     void testProviderInput() {
         // TODO: test ProviderInput
+    }
+
+    /**
+     * Test the property 'kenyaBiometric2'
+     */
+    @Test
+    void kenyaBiometric2Test() {
+        // TODO: test kenyaBiometric2
     }
 
     /**
@@ -99,6 +111,30 @@ class ProviderInputTest {
     @Test
     void kenyaNidTest() {
         // TODO: test kenyaNid
+    }
+
+    /**
+     * Test the property 'kenyaNidMatch2'
+     */
+    @Test
+    void kenyaNidMatch2Test() {
+        // TODO: test kenyaNidMatch2
+    }
+
+    /**
+     * Test the property 'kenyaNidLookup2'
+     */
+    @Test
+    void kenyaNidLookup2Test() {
+        // TODO: test kenyaNidLookup2
+    }
+
+    /**
+     * Test the property 'southAfricaNidLookup2'
+     */
+    @Test
+    void southAfricaNidLookup2Test() {
+        // TODO: test southAfricaNidLookup2
     }
 
     /**

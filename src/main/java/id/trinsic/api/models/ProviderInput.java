@@ -33,7 +33,10 @@ import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
+import id.trinsic.api.models.KenyaNidBiometric2Input;
 import id.trinsic.api.models.KenyaNidInput;
+import id.trinsic.api.models.KenyaNidLookup2Input;
+import id.trinsic.api.models.KenyaNidMatch2Input;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
 import id.trinsic.api.models.NigeriaNinInput;
@@ -41,6 +44,7 @@ import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
 import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidInput;
+import id.trinsic.api.models.SouthAfricaNidLookup2Input;
 import id.trinsic.api.models.SpidInput;
 import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
@@ -57,11 +61,15 @@ import id.trinsic.ApiClient;
  * ProviderInput
  */
 @JsonPropertyOrder({
+  ProviderInput.JSON_PROPERTY_KENYA_BIOMETRIC2,
   ProviderInput.JSON_PROPERTY_INDONESIA_NIK,
   ProviderInput.JSON_PROPERTY_INDONESIA_DUKCAPIL_MATCH,
   ProviderInput.JSON_PROPERTY_MEXICO_CURP,
   ProviderInput.JSON_PROPERTY_SOUTH_AFRICA_NID,
   ProviderInput.JSON_PROPERTY_KENYA_NID,
+  ProviderInput.JSON_PROPERTY_KENYA_NID_MATCH2,
+  ProviderInput.JSON_PROPERTY_KENYA_NID_LOOKUP2,
+  ProviderInput.JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP2,
   ProviderInput.JSON_PROPERTY_NIGERIA_NIN,
   ProviderInput.JSON_PROPERTY_AADHAAR,
   ProviderInput.JSON_PROPERTY_BANGLADESH_NATIONAL_ID,
@@ -78,8 +86,11 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T20:32:45.746999564Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderInput {
+  public static final String JSON_PROPERTY_KENYA_BIOMETRIC2 = "kenyaBiometric2";
+  private JsonNullable<KenyaNidBiometric2Input> kenyaBiometric2 = JsonNullable.<KenyaNidBiometric2Input>undefined();
+
   public static final String JSON_PROPERTY_INDONESIA_NIK = "indonesiaNik";
   private JsonNullable<IndonesiaNikInput> indonesiaNik = JsonNullable.<IndonesiaNikInput>undefined();
 
@@ -94,6 +105,15 @@ public class ProviderInput {
 
   public static final String JSON_PROPERTY_KENYA_NID = "kenyaNid";
   private JsonNullable<KenyaNidInput> kenyaNid = JsonNullable.<KenyaNidInput>undefined();
+
+  public static final String JSON_PROPERTY_KENYA_NID_MATCH2 = "kenyaNidMatch2";
+  private JsonNullable<KenyaNidMatch2Input> kenyaNidMatch2 = JsonNullable.<KenyaNidMatch2Input>undefined();
+
+  public static final String JSON_PROPERTY_KENYA_NID_LOOKUP2 = "kenyaNidLookup2";
+  private JsonNullable<KenyaNidLookup2Input> kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2Input>undefined();
+
+  public static final String JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP2 = "southAfricaNidLookup2";
+  private JsonNullable<SouthAfricaNidLookup2Input> southAfricaNidLookup2 = JsonNullable.<SouthAfricaNidLookup2Input>undefined();
 
   public static final String JSON_PROPERTY_NIGERIA_NIN = "nigeriaNin";
   private JsonNullable<NigeriaNinInput> nigeriaNin = JsonNullable.<NigeriaNinInput>undefined();
@@ -142,6 +162,38 @@ public class ProviderInput {
 
   public ProviderInput() { 
   }
+
+  public ProviderInput kenyaBiometric2(@javax.annotation.Nullable KenyaNidBiometric2Input kenyaBiometric2) {
+    this.kenyaBiometric2 = JsonNullable.<KenyaNidBiometric2Input>of(kenyaBiometric2);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;kenya-nid-match-biometric-2&#x60; provider
+   * @return kenyaBiometric2
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public KenyaNidBiometric2Input getKenyaBiometric2() {
+        return kenyaBiometric2.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_KENYA_BIOMETRIC2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<KenyaNidBiometric2Input> getKenyaBiometric2_JsonNullable() {
+    return kenyaBiometric2;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_KENYA_BIOMETRIC2)
+  public void setKenyaBiometric2_JsonNullable(JsonNullable<KenyaNidBiometric2Input> kenyaBiometric2) {
+    this.kenyaBiometric2 = kenyaBiometric2;
+  }
+
+  public void setKenyaBiometric2(@javax.annotation.Nullable KenyaNidBiometric2Input kenyaBiometric2) {
+    this.kenyaBiometric2 = JsonNullable.<KenyaNidBiometric2Input>of(kenyaBiometric2);
+  }
+
 
   public ProviderInput indonesiaNik(@javax.annotation.Nullable IndonesiaNikInput indonesiaNik) {
     this.indonesiaNik = JsonNullable.<IndonesiaNikInput>of(indonesiaNik);
@@ -300,6 +352,102 @@ public class ProviderInput {
 
   public void setKenyaNid(@javax.annotation.Nullable KenyaNidInput kenyaNid) {
     this.kenyaNid = JsonNullable.<KenyaNidInput>of(kenyaNid);
+  }
+
+
+  public ProviderInput kenyaNidMatch2(@javax.annotation.Nullable KenyaNidMatch2Input kenyaNidMatch2) {
+    this.kenyaNidMatch2 = JsonNullable.<KenyaNidMatch2Input>of(kenyaNidMatch2);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;kenya-nid-match-2&#x60; provider
+   * @return kenyaNidMatch2
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public KenyaNidMatch2Input getKenyaNidMatch2() {
+        return kenyaNidMatch2.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_MATCH2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<KenyaNidMatch2Input> getKenyaNidMatch2_JsonNullable() {
+    return kenyaNidMatch2;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_MATCH2)
+  public void setKenyaNidMatch2_JsonNullable(JsonNullable<KenyaNidMatch2Input> kenyaNidMatch2) {
+    this.kenyaNidMatch2 = kenyaNidMatch2;
+  }
+
+  public void setKenyaNidMatch2(@javax.annotation.Nullable KenyaNidMatch2Input kenyaNidMatch2) {
+    this.kenyaNidMatch2 = JsonNullable.<KenyaNidMatch2Input>of(kenyaNidMatch2);
+  }
+
+
+  public ProviderInput kenyaNidLookup2(@javax.annotation.Nullable KenyaNidLookup2Input kenyaNidLookup2) {
+    this.kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2Input>of(kenyaNidLookup2);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;kenya-nid-lookup-2&#x60; provider
+   * @return kenyaNidLookup2
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public KenyaNidLookup2Input getKenyaNidLookup2() {
+        return kenyaNidLookup2.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<KenyaNidLookup2Input> getKenyaNidLookup2_JsonNullable() {
+    return kenyaNidLookup2;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP2)
+  public void setKenyaNidLookup2_JsonNullable(JsonNullable<KenyaNidLookup2Input> kenyaNidLookup2) {
+    this.kenyaNidLookup2 = kenyaNidLookup2;
+  }
+
+  public void setKenyaNidLookup2(@javax.annotation.Nullable KenyaNidLookup2Input kenyaNidLookup2) {
+    this.kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2Input>of(kenyaNidLookup2);
+  }
+
+
+  public ProviderInput southAfricaNidLookup2(@javax.annotation.Nullable SouthAfricaNidLookup2Input southAfricaNidLookup2) {
+    this.southAfricaNidLookup2 = JsonNullable.<SouthAfricaNidLookup2Input>of(southAfricaNidLookup2);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;south-africa-nid-lookup-2&#x60; provider
+   * @return southAfricaNidLookup2
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SouthAfricaNidLookup2Input getSouthAfricaNidLookup2() {
+        return southAfricaNidLookup2.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SouthAfricaNidLookup2Input> getSouthAfricaNidLookup2_JsonNullable() {
+    return southAfricaNidLookup2;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP2)
+  public void setSouthAfricaNidLookup2_JsonNullable(JsonNullable<SouthAfricaNidLookup2Input> southAfricaNidLookup2) {
+    this.southAfricaNidLookup2 = southAfricaNidLookup2;
+  }
+
+  public void setSouthAfricaNidLookup2(@javax.annotation.Nullable SouthAfricaNidLookup2Input southAfricaNidLookup2) {
+    this.southAfricaNidLookup2 = JsonNullable.<SouthAfricaNidLookup2Input>of(southAfricaNidLookup2);
   }
 
 
@@ -795,11 +943,15 @@ public class ProviderInput {
       return false;
     }
     ProviderInput providerInput = (ProviderInput) o;
-    return equalsNullable(this.indonesiaNik, providerInput.indonesiaNik) &&
+    return equalsNullable(this.kenyaBiometric2, providerInput.kenyaBiometric2) &&
+        equalsNullable(this.indonesiaNik, providerInput.indonesiaNik) &&
         equalsNullable(this.indonesiaDukcapilMatch, providerInput.indonesiaDukcapilMatch) &&
         equalsNullable(this.mexicoCurp, providerInput.mexicoCurp) &&
         equalsNullable(this.southAfricaNid, providerInput.southAfricaNid) &&
         equalsNullable(this.kenyaNid, providerInput.kenyaNid) &&
+        equalsNullable(this.kenyaNidMatch2, providerInput.kenyaNidMatch2) &&
+        equalsNullable(this.kenyaNidLookup2, providerInput.kenyaNidLookup2) &&
+        equalsNullable(this.southAfricaNidLookup2, providerInput.southAfricaNidLookup2) &&
         equalsNullable(this.nigeriaNin, providerInput.nigeriaNin) &&
         equalsNullable(this.aadhaar, providerInput.aadhaar) &&
         equalsNullable(this.bangladeshNationalId, providerInput.bangladeshNationalId) &&
@@ -823,7 +975,7 @@ public class ProviderInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(indonesiaNik), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
+    return Objects.hash(hashCodeNullable(kenyaBiometric2), hashCodeNullable(indonesiaNik), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurp), hashCodeNullable(southAfricaNid), hashCodeNullable(kenyaNid), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(nigeriaNin), hashCodeNullable(aadhaar), hashCodeNullable(bangladeshNationalId), hashCodeNullable(brazilCpfCheck), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippineMatch), hashCodeNullable(philippineQR), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(idin), hashCodeNullable(spid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -837,11 +989,15 @@ public class ProviderInput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProviderInput {\n");
+    sb.append("    kenyaBiometric2: ").append(toIndentedString(kenyaBiometric2)).append("\n");
     sb.append("    indonesiaNik: ").append(toIndentedString(indonesiaNik)).append("\n");
     sb.append("    indonesiaDukcapilMatch: ").append(toIndentedString(indonesiaDukcapilMatch)).append("\n");
     sb.append("    mexicoCurp: ").append(toIndentedString(mexicoCurp)).append("\n");
     sb.append("    southAfricaNid: ").append(toIndentedString(southAfricaNid)).append("\n");
     sb.append("    kenyaNid: ").append(toIndentedString(kenyaNid)).append("\n");
+    sb.append("    kenyaNidMatch2: ").append(toIndentedString(kenyaNidMatch2)).append("\n");
+    sb.append("    kenyaNidLookup2: ").append(toIndentedString(kenyaNidLookup2)).append("\n");
+    sb.append("    southAfricaNidLookup2: ").append(toIndentedString(southAfricaNidLookup2)).append("\n");
     sb.append("    nigeriaNin: ").append(toIndentedString(nigeriaNin)).append("\n");
     sb.append("    aadhaar: ").append(toIndentedString(aadhaar)).append("\n");
     sb.append("    bangladeshNationalId: ").append(toIndentedString(bangladeshNationalId)).append("\n");
@@ -904,6 +1060,11 @@ public class ProviderInput {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `kenyaBiometric2` to the URL query string
+    if (getKenyaBiometric2() != null) {
+      joiner.add(getKenyaBiometric2().toUrlQueryString(prefix + "kenyaBiometric2" + suffix));
+    }
+
     // add `indonesiaNik` to the URL query string
     if (getIndonesiaNik() != null) {
       joiner.add(getIndonesiaNik().toUrlQueryString(prefix + "indonesiaNik" + suffix));
@@ -927,6 +1088,21 @@ public class ProviderInput {
     // add `kenyaNid` to the URL query string
     if (getKenyaNid() != null) {
       joiner.add(getKenyaNid().toUrlQueryString(prefix + "kenyaNid" + suffix));
+    }
+
+    // add `kenyaNidMatch2` to the URL query string
+    if (getKenyaNidMatch2() != null) {
+      joiner.add(getKenyaNidMatch2().toUrlQueryString(prefix + "kenyaNidMatch2" + suffix));
+    }
+
+    // add `kenyaNidLookup2` to the URL query string
+    if (getKenyaNidLookup2() != null) {
+      joiner.add(getKenyaNidLookup2().toUrlQueryString(prefix + "kenyaNidLookup2" + suffix));
+    }
+
+    // add `southAfricaNidLookup2` to the URL query string
+    if (getSouthAfricaNidLookup2() != null) {
+      joiner.add(getSouthAfricaNidLookup2().toUrlQueryString(prefix + "southAfricaNidLookup2" + suffix));
     }
 
     // add `nigeriaNin` to the URL query string

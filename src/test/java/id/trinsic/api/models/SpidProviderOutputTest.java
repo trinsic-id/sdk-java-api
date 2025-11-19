@@ -52,11 +52,11 @@ class SpidProviderOutputTest {
     }
 
     /**
-     * Test the property 'fiscalNumber'
+     * Test the property 'identityProviderEntityId'
      */
     @Test
-    void fiscalNumberTest() {
-        // TODO: test fiscalNumber
+    void identityProviderEntityIdTest() {
+        // TODO: test identityProviderEntityId
     }
 
     /**
@@ -68,6 +68,62 @@ class SpidProviderOutputTest {
     }
 
     /**
+     * Test the property 'spidCredentialExpirationDate'
+     */
+    @Test
+    void spidCredentialExpirationDateTest() {
+        // TODO: test spidCredentialExpirationDate
+    }
+
+    /**
+     * Test the property 'placeOfBirth'
+     */
+    @Test
+    void placeOfBirthTest() {
+        // TODO: test placeOfBirth
+    }
+
+    /**
+     * Test the property 'countyOfBirth'
+     */
+    @Test
+    void countyOfBirthTest() {
+        // TODO: test countyOfBirth
+    }
+
+    /**
+     * Test the property 'rawIdCard'
+     */
+    @Test
+    void rawIdCardTest() {
+        // TODO: test rawIdCard
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    void emailTest() {
+        // TODO: test email
+    }
+
+    /**
+     * Test the property 'digitalAddress'
+     */
+    @Test
+    void digitalAddressTest() {
+        // TODO: test digitalAddress
+    }
+
+    /**
+     * Test the property 'fiscalNumber'
+     */
+    @Test
+    void fiscalNumberTest() {
+        // TODO: test fiscalNumber
+    }
+
+    /**
      * Test the property 'ivaCode'
      */
     @Test
@@ -76,11 +132,27 @@ class SpidProviderOutputTest {
     }
 
     /**
-     * Test the property 'spidCredentialExpirationDate'
+     * Test the property 'companyName'
      */
     @Test
-    void spidCredentialExpirationDateTest() {
-        // TODO: test spidCredentialExpirationDate
+    void companyNameTest() {
+        // TODO: test companyName
+    }
+
+    /**
+     * Test the property 'companyFiscalNumber'
+     */
+    @Test
+    void companyFiscalNumberTest() {
+        // TODO: test companyFiscalNumber
+    }
+
+    /**
+     * Test the property 'registeredOffice'
+     */
+    @Test
+    void registeredOfficeTest() {
+        // TODO: test registeredOffice
     }
 
 }

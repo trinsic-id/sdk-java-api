@@ -75,6 +75,14 @@ class AttachmentAccessKeysTest {
     }
 
     /**
+     * Test the property 'documentSignature'
+     */
+    @Test
+    void documentSignatureTest() {
+        // TODO: test documentSignature
+    }
+
+    /**
      * Test the property 'provider'
      */
     @Test
