@@ -88,4 +88,12 @@ class VerificationProfileResponseTest {
         // TODO: test enabledProviders
     }
 
+    /**
+     * Test the property 'isProductionUsage'
+     */
+    @Test
+    void isProductionUsageTest() {
+        // TODO: test isProductionUsage
+    }
+
 }

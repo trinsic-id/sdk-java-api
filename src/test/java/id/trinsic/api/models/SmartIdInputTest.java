@@ -42,14 +42,6 @@ class SmartIdInputTest {
     }
 
     /**
-     * Test the property 'smartIdDocumentNumber'
-     */
-    @Test
-    void smartIdDocumentNumberTest() {
-        // TODO: test smartIdDocumentNumber
-    }
-
-    /**
      * Test the property 'smartIdNumber'
      */
     @Test

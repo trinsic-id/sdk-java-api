@@ -1,0 +1,26 @@
+
+
+# SmartIdProviderOutput
+
+Exposed properties for the `smart-id` Provider which do not directly map to the normalized IdentityData model.
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**givenName** | **String** | The given name (first name) of the individual, extracted from the Smart ID authentication certificate&#39;s Subject Distinguished Name \&quot;G\&quot; (givenName) attribute. |  [optional] |
+|**familyName** | **String** | The family name (surname) of the individual, extracted from the Smart ID authentication certificate&#39;s Subject Distinguished Name \&quot;SN\&quot; (surname) attribute. |  [optional] |
+|**dateOfBirth** | **LocalDate** | The individual&#39;s date of birth, derived from the personal code.              NOTE: Newer Latvian personal codes starting with \&quot;32\&quot; do not contain date of birth information. |  [optional] |
+|**sex** | **String** | The individual&#39;s sex, derived from the first digit of the personal code.              NOTE: Not available for Latvian personal codes.              Possible values: - Male - Female |  [optional] |
+|**country** | **String** | The ISO 3166-1 alpha-2 country code extracted from the Smart ID authentication certificate&#39;s Subject Distinguished Name \&quot;C\&quot; (country) attribute.              This represents the country of the certificate issuer, not the person&#39;s nationality or citizenship. For Smart ID, this will be \&quot;EE\&quot; (Estonia), \&quot;LT\&quot; (Lithuania), or \&quot;LV\&quot; (Latvia). |  [optional] |
+|**identityType** | **String** | The identity document type, extracted from the first 3 characters of the SERIALNUMBER field (before the country code).              Possible values: - PNO: Personal Number (national civic registration number) - PAS: Passport - IDC: National identity card |  [optional] |
+|**personalCode** | **String** | The personal code (Estonian: isikukood, Lithuanian: asmens kodas, Latvian: personas kods) of the individual, extracted from the SERIALNUMBER field of the Smart ID authentication certificate. This is the portion after the identity type and country prefix (e.g., \&quot;48501010014\&quot; from \&quot;PNOEE-48501010014\&quot;).              Estonian and Lithuanian personal codes are 11 digits in the format GYYMMDDSSSC where: - G &#x3D; century/gender (3-4 &#x3D; 1900s, 5-6 &#x3D; 2000s; odd &#x3D; male, even &#x3D; female) - YYMMDD &#x3D; date of birth - SSS &#x3D; sequence number - C &#x3D; checksum digit              Latvian personal codes use the format DDMMYY-NNNNN (6 digits, a dash, and 5 digits).              See: - https://en.wikipedia.org/wiki/National_identification_number#Estonia - https://en.wikipedia.org/wiki/National_identification_number#Lithuania - https://en.wikipedia.org/wiki/National_identification_number#Latvia |  [optional] |
+|**serialNumber** | **String** | The SERIALNUMBER attribute from the Smart ID authentication certificate&#39;s Subject Distinguished Name. Format: \&quot;{identity-type}{country-code}-{identifier}\&quot;              Components: - identity-type (3 chars): PNO (Personal Number), PAS (Passport), IDC (ID Card) - country-code (2 chars): ISO 3166-1 alpha-2 (EE, LT, LV) - identifier: The personal code |  [optional] |
+|**certificateSubject** | **String** | The full Subject Distinguished Name (Subject DN) from the Smart ID authentication certificate. Contains comma-separated RDN (Relative Distinguished Name) components including C (Country), CN (Common Name), SN (Surname), G (Given Name), and SERIALNUMBER (Personal identifier). |  [optional] |
+|**certificateLevel** | **String** | The certificate level indicating the authentication assurance level.              Possible values: - QUALIFIED: Highest assurance level (eIDAS QES - Qualified Electronic Signature),   legally equivalent to a handwritten signature. This is the standard production level. - ADVANCED: Lower assurance level (eIDAS AdES), also called \&quot;Smart-ID Basic\&quot;.   Only available in test environments for test accounts. |  [optional] |
+|**documentNumber** | **String** | A unique identifier for the Smart ID account/document used for this authentication. Format: PNO{CC}-{personal-code}-{device-id}-{qualification}              Components: - PNO &#x3D; Personal Number (identity type) - CC &#x3D; Country code (EE, LT, LV) - personal-code &#x3D; The individual&#39;s personal code - device-id &#x3D; Random 4-character device identifier - qualification &#x3D; NQ (non-qualified) or Q (qualified certificate)              This is a stable identifier that can be used to recognize returning users across sessions. |  [optional] |
+|**interactionFlowUsed** | **String** | Indicates which interaction flow was used during the Smart ID authentication process. This reflects which of the allowedInteractionsOrder options was actually used.              Possible values: - displayTextAndPIN: User saw text and entered PIN - verificationCodeChoice: User selected from multiple verification codes - confirmationMessage: User confirmed a message - confirmationMessageAndVerificationCodeChoice: Combination of both |  [optional] |
+|**deviceIpAddress** | **String** | The IP address of the device where the Smart ID app was used for authentication. Can be IPv4 or IPv6 format. |  [optional] |
+
+
+

@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   RedirectUriResponse.JSON_PROPERTY_ID,
   RedirectUriResponse.JSON_PROPERTY_URI
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RedirectUriResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull

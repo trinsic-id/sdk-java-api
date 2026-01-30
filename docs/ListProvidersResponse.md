@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**providers** | [**List&lt;ProviderInfo&gt;**](ProviderInfo.md) | The list of identity providers available to your account |  |
+|**providers** | [**List&lt;Provider&gt;**](Provider.md) | The list of providers available to this organization |  |
 
 
 

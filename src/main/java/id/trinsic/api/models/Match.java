@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   Match.JSON_PROPERTY_PROBABILITY_VALUE,
   Match.JSON_PROPERTY_BOOLEAN_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Match {
   public static final String JSON_PROPERTY_PROBABILITY_VALUE = "probabilityValue";
   private JsonNullable<Double> probabilityValue = JsonNullable.<Double>undefined();
@@ -57,7 +57,7 @@ public class Match {
   }
 
   /**
-   * Get probabilityValue
+   * The probability value of the match.              This is a value between 0 and 1, where 1 indicates a perfect match and 0 indicates no match.              This field is non-null when the underlying Provider&#39;s match output is in the form of a probability score.
    * @return probabilityValue
    */
   @javax.annotation.Nullable
@@ -89,7 +89,7 @@ public class Match {
   }
 
   /**
-   * Get booleanValue
+   * The boolean value of the match.              This is a value of true or false, where true indicates a match and false indicates no match.              This field is non-null when the underlying Provider&#39;s match output is in the form of a boolean value.
    * @return booleanValue
    */
   @javax.annotation.Nullable

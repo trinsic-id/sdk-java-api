@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * PersonData
+ * Identity information for the individual being verified
  */
 @JsonPropertyOrder({
   PersonData.JSON_PROPERTY_GIVEN_NAME,
@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   PersonData.JSON_PROPERTY_ADDRESS,
   PersonData.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PersonData {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -92,7 +92,7 @@ public class PersonData {
   }
 
   /**
-   * Get givenName
+   * Given (first) name of the individual
    * @return givenName
    */
   @javax.annotation.Nullable
@@ -124,7 +124,7 @@ public class PersonData {
   }
 
   /**
-   * Get familyName
+   * Family (last) name of the individual
    * @return familyName
    */
   @javax.annotation.Nullable
@@ -156,7 +156,7 @@ public class PersonData {
   }
 
   /**
-   * Get middleName
+   * Middle name of the individual
    * @return middleName
    */
   @javax.annotation.Nullable
@@ -188,7 +188,7 @@ public class PersonData {
   }
 
   /**
-   * Get fullName
+   * The individual&#39;s full name as a single string.              Useful for names which do not fit into a \&quot;first middle last\&quot; structure.
    * @return fullName
    */
   @javax.annotation.Nullable
@@ -220,7 +220,7 @@ public class PersonData {
   }
 
   /**
-   * Get suffix
+   * Suffix of the individual&#39;s name
    * @return suffix
    */
   @javax.annotation.Nullable
@@ -348,7 +348,7 @@ public class PersonData {
   }
 
   /**
-   * Get address
+   * Address information for an individual
    * @return address
    */
   @javax.annotation.Nullable

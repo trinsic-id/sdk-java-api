@@ -2,6 +2,7 @@
 
 # MexicoCurpProviderOutput
 
+Exposed properties for the `mexico-curp-lookup` Provider which do not directly map to the normalized IdentityData model.
 
 ## Properties
 

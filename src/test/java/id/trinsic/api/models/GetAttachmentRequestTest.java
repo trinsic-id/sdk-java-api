@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -39,19 +38,11 @@ class GetAttachmentRequestTest {
     }
 
     /**
-     * Test the property 'attachmentAccessKey'
+     * Test the property 'resultsAccessKey'
      */
     @Test
-    void attachmentAccessKeyTest() {
-        // TODO: test attachmentAccessKey
-    }
-
-    /**
-     * Test the property 'sessionId'
-     */
-    @Test
-    void sessionIdTest() {
-        // TODO: test sessionId
+    void resultsAccessKeyTest() {
+        // TODO: test resultsAccessKey
     }
 
 }

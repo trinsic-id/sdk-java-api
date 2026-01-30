@@ -44,9 +44,10 @@ import id.trinsic.ApiClient;
   DocumentData.JSON_PROPERTY_ISSUE_DATE,
   DocumentData.JSON_PROPERTY_EXPIRATION_DATE,
   DocumentData.JSON_PROPERTY_ISSUING_COUNTRY,
+  DocumentData.JSON_PROPERTY_ISSUING_SUBDIVISION,
   DocumentData.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DocumentData {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<DocumentType> type = JsonNullable.<DocumentType>undefined();
@@ -63,6 +64,9 @@ public class DocumentData {
   public static final String JSON_PROPERTY_ISSUING_COUNTRY = "issuingCountry";
   private JsonNullable<String> issuingCountry = JsonNullable.<String>undefined();
 
+  public static final String JSON_PROPERTY_ISSUING_SUBDIVISION = "issuingSubdivision";
+  private JsonNullable<String> issuingSubdivision = JsonNullable.<String>undefined();
+
   public static final String JSON_PROPERTY_ISSUING_AUTHORITY = "issuingAuthority";
   private JsonNullable<String> issuingAuthority = JsonNullable.<String>undefined();
 
@@ -75,7 +79,7 @@ public class DocumentData {
   }
 
   /**
-   * Get type
+   * The type of the document.
    * @return type
    */
   @javax.annotation.Nullable
@@ -107,7 +111,7 @@ public class DocumentData {
   }
 
   /**
-   * Get number
+   * The primary identifying number of the document.
    * @return number
    */
   @javax.annotation.Nullable
@@ -139,7 +143,7 @@ public class DocumentData {
   }
 
   /**
-   * Get issueDate
+   * The date the document was issued.
    * @return issueDate
    */
   @javax.annotation.Nullable
@@ -171,7 +175,7 @@ public class DocumentData {
   }
 
   /**
-   * Get expirationDate
+   * The date the document expires.
    * @return expirationDate
    */
   @javax.annotation.Nullable
@@ -203,7 +207,7 @@ public class DocumentData {
   }
 
   /**
-   * Get issuingCountry
+   * The ISO 3166-1 alpha-2 country code of the country that issued the document.
    * @return issuingCountry
    */
   @javax.annotation.Nullable
@@ -229,13 +233,45 @@ public class DocumentData {
   }
 
 
+  public DocumentData issuingSubdivision(@javax.annotation.Nullable String issuingSubdivision) {
+    this.issuingSubdivision = JsonNullable.<String>of(issuingSubdivision);
+    return this;
+  }
+
+  /**
+   * The ISO 3166-2 subdivision code of the issuing authority which issued the document.              This is always in the form {CountryCode}-{SubdivisionCode}, where CountryCode is 2 letters and SubdivisionCode is 1-3 alphanumeric characters.
+   * @return issuingSubdivision
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getIssuingSubdivision() {
+        return issuingSubdivision.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ISSUING_SUBDIVISION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getIssuingSubdivision_JsonNullable() {
+    return issuingSubdivision;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ISSUING_SUBDIVISION)
+  public void setIssuingSubdivision_JsonNullable(JsonNullable<String> issuingSubdivision) {
+    this.issuingSubdivision = issuingSubdivision;
+  }
+
+  public void setIssuingSubdivision(@javax.annotation.Nullable String issuingSubdivision) {
+    this.issuingSubdivision = JsonNullable.<String>of(issuingSubdivision);
+  }
+
+
   public DocumentData issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = JsonNullable.<String>of(issuingAuthority);
     return this;
   }
 
   /**
-   * Get issuingAuthority
+   * The name of the authority which issued the document.
    * @return issuingAuthority
    */
   @javax.annotation.Nullable
@@ -278,6 +314,7 @@ public class DocumentData {
         equalsNullable(this.issueDate, documentData.issueDate) &&
         equalsNullable(this.expirationDate, documentData.expirationDate) &&
         equalsNullable(this.issuingCountry, documentData.issuingCountry) &&
+        equalsNullable(this.issuingSubdivision, documentData.issuingSubdivision) &&
         equalsNullable(this.issuingAuthority, documentData.issuingAuthority);
   }
 
@@ -287,7 +324,7 @@ public class DocumentData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(type), hashCodeNullable(number), hashCodeNullable(issueDate), hashCodeNullable(expirationDate), hashCodeNullable(issuingCountry), hashCodeNullable(issuingAuthority));
+    return Objects.hash(hashCodeNullable(type), hashCodeNullable(number), hashCodeNullable(issueDate), hashCodeNullable(expirationDate), hashCodeNullable(issuingCountry), hashCodeNullable(issuingSubdivision), hashCodeNullable(issuingAuthority));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -306,6 +343,7 @@ public class DocumentData {
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
+    sb.append("    issuingSubdivision: ").append(toIndentedString(issuingSubdivision)).append("\n");
     sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -377,6 +415,11 @@ public class DocumentData {
     // add `issuingCountry` to the URL query string
     if (getIssuingCountry() != null) {
       joiner.add(String.format("%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
+    }
+
+    // add `issuingSubdivision` to the URL query string
+    if (getIssuingSubdivision() != null) {
+      joiner.add(String.format("%sissuingSubdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingSubdivision()))));
     }
 
     // add `issuingAuthority` to the URL query string

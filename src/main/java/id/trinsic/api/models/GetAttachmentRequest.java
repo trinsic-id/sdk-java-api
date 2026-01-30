@@ -25,7 +25,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -34,67 +33,38 @@ import id.trinsic.ApiClient;
  * GetAttachmentRequest
  */
 @JsonPropertyOrder({
-  GetAttachmentRequest.JSON_PROPERTY_ATTACHMENT_ACCESS_KEY,
-  GetAttachmentRequest.JSON_PROPERTY_SESSION_ID
+  GetAttachmentRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetAttachmentRequest {
-  public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEY = "attachmentAccessKey";
+  public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
   @javax.annotation.Nonnull
-  private String attachmentAccessKey;
-
-  public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
-  @javax.annotation.Nonnull
-  private UUID sessionId;
+  private String resultsAccessKey;
 
   public GetAttachmentRequest() { 
   }
 
-  public GetAttachmentRequest attachmentAccessKey(@javax.annotation.Nonnull String attachmentAccessKey) {
-    this.attachmentAccessKey = attachmentAccessKey;
+  public GetAttachmentRequest resultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
+    this.resultsAccessKey = resultsAccessKey;
     return this;
   }
 
   /**
-   * The Attachment Access Key to exchange for the raw file contents of the related Attachment
-   * @return attachmentAccessKey
+   * The Results Access Key for the Session associated with the Attachment being retrieved.              This is returned during Session creation.
+   * @return resultsAccessKey
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEY)
+  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getAttachmentAccessKey() {
-    return attachmentAccessKey;
+  public String getResultsAccessKey() {
+    return resultsAccessKey;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEY)
+  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAttachmentAccessKey(@javax.annotation.Nonnull String attachmentAccessKey) {
-    this.attachmentAccessKey = attachmentAccessKey;
-  }
-
-
-  public GetAttachmentRequest sessionId(@javax.annotation.Nonnull UUID sessionId) {
-    this.sessionId = sessionId;
-    return this;
-  }
-
-  /**
-   * The ID of the Acceptance Session for which the Attachment is being requested.
-   * @return sessionId
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSION_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public UUID getSessionId() {
-    return sessionId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SESSION_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSessionId(@javax.annotation.Nonnull UUID sessionId) {
-    this.sessionId = sessionId;
+  public void setResultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
+    this.resultsAccessKey = resultsAccessKey;
   }
 
 
@@ -110,21 +80,19 @@ public class GetAttachmentRequest {
       return false;
     }
     GetAttachmentRequest getAttachmentRequest = (GetAttachmentRequest) o;
-    return Objects.equals(this.attachmentAccessKey, getAttachmentRequest.attachmentAccessKey) &&
-        Objects.equals(this.sessionId, getAttachmentRequest.sessionId);
+    return Objects.equals(this.resultsAccessKey, getAttachmentRequest.resultsAccessKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentAccessKey, sessionId);
+    return Objects.hash(resultsAccessKey);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAttachmentRequest {\n");
-    sb.append("    attachmentAccessKey: ").append(toIndentedString(attachmentAccessKey)).append("\n");
-    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    resultsAccessKey: ").append(toIndentedString(resultsAccessKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -172,14 +140,9 @@ public class GetAttachmentRequest {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `attachmentAccessKey` to the URL query string
-    if (getAttachmentAccessKey() != null) {
-      joiner.add(String.format("%sattachmentAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAttachmentAccessKey()))));
-    }
-
-    // add `sessionId` to the URL query string
-    if (getSessionId() != null) {
-      joiner.add(String.format("%ssessionId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionId()))));
+    // add `resultsAccessKey` to the URL query string
+    if (getResultsAccessKey() != null) {
+      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsAccessKey()))));
     }
 
     return joiner.toString();

@@ -30,12 +30,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * PhilippinesPhysicalNidProviderOutput
+ * Exposed properties for the &#x60;philippines-physical-national-id-qr&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
   PhilippinesPhysicalNidProviderOutput.JSON_PROPERTY_PHILSYS_CARD_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PhilippinesPhysicalNidProviderOutput {
   public static final String JSON_PROPERTY_PHILSYS_CARD_NUMBER = "philsysCardNumber";
   @javax.annotation.Nonnull
@@ -50,7 +50,7 @@ public class PhilippinesPhysicalNidProviderOutput {
   }
 
   /**
-   * The PhilSys card number.
+   * The PhilSys Card Number (PCN). Every citizen or resident alien registered in PhilSys has a PhilSys Number (PSN). This number is tokenized into a card number to protect the PSN. The PhilSys Card Number is 12 characters long, and often is written in octets with dashes in between.
    * @return philsysCardNumber
    */
   @javax.annotation.Nonnull

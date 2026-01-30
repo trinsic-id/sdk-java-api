@@ -36,10 +36,9 @@ import id.trinsic.ApiClient;
   SubProviderMetadata.JSON_PROPERTY_ID,
   SubProviderMetadata.JSON_PROPERTY_NAME,
   SubProviderMetadata.JSON_PROPERTY_SUBTEXT,
-  SubProviderMetadata.JSON_PROPERTY_DESCRIPTION,
   SubProviderMetadata.JSON_PROPERTY_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SubProviderMetadata {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -52,10 +51,6 @@ public class SubProviderMetadata {
   public static final String JSON_PROPERTY_SUBTEXT = "subtext";
   @javax.annotation.Nonnull
   private String subtext;
-
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  @javax.annotation.Nonnull
-  private String description;
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
@@ -136,32 +131,6 @@ public class SubProviderMetadata {
   }
 
 
-  public SubProviderMetadata description(@javax.annotation.Nonnull String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
-   * @return description
-   * @deprecated
-   */
-  @Deprecated
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getDescription() {
-    return description;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDescription(@javax.annotation.Nonnull String description) {
-    this.description = description;
-  }
-
-
   public SubProviderMetadata logoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
     return this;
@@ -201,13 +170,12 @@ public class SubProviderMetadata {
     return Objects.equals(this.id, subProviderMetadata.id) &&
         Objects.equals(this.name, subProviderMetadata.name) &&
         Objects.equals(this.subtext, subProviderMetadata.subtext) &&
-        Objects.equals(this.description, subProviderMetadata.description) &&
         Objects.equals(this.logoUrl, subProviderMetadata.logoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, subtext, description, logoUrl);
+    return Objects.hash(id, name, subtext, logoUrl);
   }
 
   @Override
@@ -217,7 +185,6 @@ public class SubProviderMetadata {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -279,11 +246,6 @@ public class SubProviderMetadata {
     // add `subtext` to the URL query string
     if (getSubtext() != null) {
       joiner.add(String.format("%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
-    }
-
-    // add `description` to the URL query string
-    if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `logoUrl` to the URL query string

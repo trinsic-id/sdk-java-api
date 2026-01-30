@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * MatchData
+ * Match results for the data being matched against.              This applies to Providers which operate based on matching data / biometrics against a government database, returning match scores or results as opposed to the data itself.
  */
 @JsonPropertyOrder({
   MatchData.JSON_PROPERTY_NATIONAL_ID_NUMBER,
@@ -45,11 +45,12 @@ import id.trinsic.ApiClient;
   MatchData.JSON_PROPERTY_FAMILY_NAME,
   MatchData.JSON_PROPERTY_SEX,
   MatchData.JSON_PROPERTY_DATE_OF_BIRTH,
+  MatchData.JSON_PROPERTY_PHONE_NUMBER,
   MatchData.JSON_PROPERTY_FACE_MATCH,
   MatchData.JSON_PROPERTY_LIVENESS,
   MatchData.JSON_PROPERTY_IMAGE_AUTHENTICITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MatchData {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
   private JsonNullable<Match> nationalIdNumber = JsonNullable.<Match>undefined();
@@ -72,6 +73,9 @@ public class MatchData {
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<Match> dateOfBirth = JsonNullable.<Match>undefined();
 
+  public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
+  private JsonNullable<Match> phoneNumber = JsonNullable.<Match>undefined();
+
   public static final String JSON_PROPERTY_FACE_MATCH = "faceMatch";
   private JsonNullable<Match> faceMatch = JsonNullable.<Match>undefined();
 
@@ -90,7 +94,7 @@ public class MatchData {
   }
 
   /**
-   * Get nationalIdNumber
+   * Whether the provided National ID Number matched the information on file for the individual
    * @return nationalIdNumber
    */
   @javax.annotation.Nullable
@@ -122,7 +126,7 @@ public class MatchData {
   }
 
   /**
-   * Get fullName
+   * The match score for the full name of the individual.              Higher values indicate a closer match.
    * @return fullName
    */
   @javax.annotation.Nullable
@@ -154,7 +158,7 @@ public class MatchData {
   }
 
   /**
-   * Get givenName
+   * The match score for the given (first) name of the individual.              Higher values indicate a closer match.
    * @return givenName
    */
   @javax.annotation.Nullable
@@ -186,7 +190,7 @@ public class MatchData {
   }
 
   /**
-   * Get middleName
+   * The match score for the middle name(s) of the individual.              Higher values indicate a closer match.
    * @return middleName
    */
   @javax.annotation.Nullable
@@ -218,7 +222,7 @@ public class MatchData {
   }
 
   /**
-   * Get familyName
+   * The match score for the family (last) name of the individual.              Higher values indicate a closer match.
    * @return familyName
    */
   @javax.annotation.Nullable
@@ -250,7 +254,7 @@ public class MatchData {
   }
 
   /**
-   * Get sex
+   * Whether the provided sex of the individual matched the information on file for the individual
    * @return sex
    */
   @javax.annotation.Nullable
@@ -282,7 +286,7 @@ public class MatchData {
   }
 
   /**
-   * Get dateOfBirth
+   * Whether the provided date of birth matched the information on file for the individual
    * @return dateOfBirth
    */
   @javax.annotation.Nullable
@@ -308,13 +312,45 @@ public class MatchData {
   }
 
 
+  public MatchData phoneNumber(@javax.annotation.Nullable Match phoneNumber) {
+    this.phoneNumber = JsonNullable.<Match>of(phoneNumber);
+    return this;
+  }
+
+  /**
+   * Whether the provided phone number matched the information on file for the individual
+   * @return phoneNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Match getPhoneNumber() {
+        return phoneNumber.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Match> getPhoneNumber_JsonNullable() {
+    return phoneNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  public void setPhoneNumber_JsonNullable(JsonNullable<Match> phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public void setPhoneNumber(@javax.annotation.Nullable Match phoneNumber) {
+    this.phoneNumber = JsonNullable.<Match>of(phoneNumber);
+  }
+
+
   public MatchData faceMatch(@javax.annotation.Nullable Match faceMatch) {
     this.faceMatch = JsonNullable.<Match>of(faceMatch);
     return this;
   }
 
   /**
-   * Get faceMatch
+   * The match score for the face match between the provided selfie image and the biometrics on file for the individual.              Higher values indicate greater match confidence.
    * @return faceMatch
    */
   @javax.annotation.Nullable
@@ -346,7 +382,7 @@ public class MatchData {
   }
 
   /**
-   * Get liveness
+   * The confidence score for the liveness check performed against the selfie image of the individual.              Higher values indicate lower suspicion.
    * @return liveness
    */
   @javax.annotation.Nullable
@@ -378,7 +414,7 @@ public class MatchData {
   }
 
   /**
-   * Get imageAuthenticity
+   * The confidence score for the image manipulation check performed against the selfie image of the individual.              Higher values indicate lower suspicion of image manipulation.
    * @return imageAuthenticity
    */
   @javax.annotation.Nullable
@@ -423,6 +459,7 @@ public class MatchData {
         equalsNullable(this.familyName, matchData.familyName) &&
         equalsNullable(this.sex, matchData.sex) &&
         equalsNullable(this.dateOfBirth, matchData.dateOfBirth) &&
+        equalsNullable(this.phoneNumber, matchData.phoneNumber) &&
         equalsNullable(this.faceMatch, matchData.faceMatch) &&
         equalsNullable(this.liveness, matchData.liveness) &&
         equalsNullable(this.imageAuthenticity, matchData.imageAuthenticity);
@@ -434,7 +471,7 @@ public class MatchData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(sex), hashCodeNullable(dateOfBirth), hashCodeNullable(faceMatch), hashCodeNullable(liveness), hashCodeNullable(imageAuthenticity));
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(sex), hashCodeNullable(dateOfBirth), hashCodeNullable(phoneNumber), hashCodeNullable(faceMatch), hashCodeNullable(liveness), hashCodeNullable(imageAuthenticity));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -455,6 +492,7 @@ public class MatchData {
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
     sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    faceMatch: ").append(toIndentedString(faceMatch)).append("\n");
     sb.append("    liveness: ").append(toIndentedString(liveness)).append("\n");
     sb.append("    imageAuthenticity: ").append(toIndentedString(imageAuthenticity)).append("\n");
@@ -538,6 +576,11 @@ public class MatchData {
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
       joiner.add(getDateOfBirth().toUrlQueryString(prefix + "dateOfBirth" + suffix));
+    }
+
+    // add `phoneNumber` to the URL query string
+    if (getPhoneNumber() != null) {
+      joiner.add(getPhoneNumber().toUrlQueryString(prefix + "phoneNumber" + suffix));
     }
 
     // add `faceMatch` to the URL query string

@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
 import id.trinsic.api.models.AppleWalletInput;
-import id.trinsic.api.models.BangladeshNidInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
 import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
@@ -33,15 +33,23 @@ import id.trinsic.api.models.KenyaNidLookup2Input;
 import id.trinsic.api.models.KenyaNidMatch2Input;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
+import id.trinsic.api.models.NigeriaNinBiometric2Input;
 import id.trinsic.api.models.NigeriaNinInput;
+import id.trinsic.api.models.NigeriaNinLookup2Input;
+import id.trinsic.api.models.NigeriaNinMatch2Input;
+import id.trinsic.api.models.PeruDniLookupInput;
 import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
 import id.trinsic.api.models.SmartIdInput;
+import id.trinsic.api.models.SouthAfricaNidBiometric2Input;
 import id.trinsic.api.models.SouthAfricaNidInput;
 import id.trinsic.api.models.SouthAfricaNidLookup2Input;
+import id.trinsic.api.models.SouthAfricaNidMatch2Input;
 import id.trinsic.api.models.SpidInput;
 import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
+import id.trinsic.api.models.UgandaNidMatch2Input;
+import id.trinsic.api.models.ZimbabweNidLookup2Input;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -66,19 +74,19 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'kenyaBiometric2'
+     * Test the property 'kenyaNidMatchBiometric2'
      */
     @Test
-    void kenyaBiometric2Test() {
-        // TODO: test kenyaBiometric2
+    void kenyaNidMatchBiometric2Test() {
+        // TODO: test kenyaNidMatchBiometric2
     }
 
     /**
-     * Test the property 'indonesiaNik'
+     * Test the property 'indonesiaNikLookup'
      */
     @Test
-    void indonesiaNikTest() {
-        // TODO: test indonesiaNik
+    void indonesiaNikLookupTest() {
+        // TODO: test indonesiaNikLookup
     }
 
     /**
@@ -90,27 +98,27 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'mexicoCurp'
+     * Test the property 'mexicoCurpLookup'
      */
     @Test
-    void mexicoCurpTest() {
-        // TODO: test mexicoCurp
+    void mexicoCurpLookupTest() {
+        // TODO: test mexicoCurpLookup
     }
 
     /**
-     * Test the property 'southAfricaNid'
+     * Test the property 'southAfricaNidLookup'
      */
     @Test
-    void southAfricaNidTest() {
-        // TODO: test southAfricaNid
+    void southAfricaNidLookupTest() {
+        // TODO: test southAfricaNidLookup
     }
 
     /**
-     * Test the property 'kenyaNid'
+     * Test the property 'kenyaNidLookup'
      */
     @Test
-    void kenyaNidTest() {
-        // TODO: test kenyaNid
+    void kenyaNidLookupTest() {
+        // TODO: test kenyaNidLookup
     }
 
     /**
@@ -138,35 +146,91 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'nigeriaNin'
+     * Test the property 'southAfricaNidMatch2'
      */
     @Test
-    void nigeriaNinTest() {
-        // TODO: test nigeriaNin
+    void southAfricaNidMatch2Test() {
+        // TODO: test southAfricaNidMatch2
     }
 
     /**
-     * Test the property 'aadhaar'
+     * Test the property 'southAfricaNidMatchBiometric2'
      */
     @Test
-    void aadhaarTest() {
-        // TODO: test aadhaar
+    void southAfricaNidMatchBiometric2Test() {
+        // TODO: test southAfricaNidMatchBiometric2
     }
 
     /**
-     * Test the property 'bangladeshNationalId'
+     * Test the property 'nigeriaNinLookup2'
      */
     @Test
-    void bangladeshNationalIdTest() {
-        // TODO: test bangladeshNationalId
+    void nigeriaNinLookup2Test() {
+        // TODO: test nigeriaNinLookup2
     }
 
     /**
-     * Test the property 'brazilCpfCheck'
+     * Test the property 'coteDivoireNidLookup2'
      */
     @Test
-    void brazilCpfCheckTest() {
-        // TODO: test brazilCpfCheck
+    void coteDivoireNidLookup2Test() {
+        // TODO: test coteDivoireNidLookup2
+    }
+
+    /**
+     * Test the property 'zimbabweNidLookup2'
+     */
+    @Test
+    void zimbabweNidLookup2Test() {
+        // TODO: test zimbabweNidLookup2
+    }
+
+    /**
+     * Test the property 'nigeriaNinMatch2'
+     */
+    @Test
+    void nigeriaNinMatch2Test() {
+        // TODO: test nigeriaNinMatch2
+    }
+
+    /**
+     * Test the property 'ugandaNidMatch2'
+     */
+    @Test
+    void ugandaNidMatch2Test() {
+        // TODO: test ugandaNidMatch2
+    }
+
+    /**
+     * Test the property 'nigeriaNinMatchBiometric2'
+     */
+    @Test
+    void nigeriaNinMatchBiometric2Test() {
+        // TODO: test nigeriaNinMatchBiometric2
+    }
+
+    /**
+     * Test the property 'nigeriaNinLookup'
+     */
+    @Test
+    void nigeriaNinLookupTest() {
+        // TODO: test nigeriaNinLookup
+    }
+
+    /**
+     * Test the property 'indiaDigilockerAadhaarMatch'
+     */
+    @Test
+    void indiaDigilockerAadhaarMatchTest() {
+        // TODO: test indiaDigilockerAadhaarMatch
+    }
+
+    /**
+     * Test the property 'brazilCpfLookup'
+     */
+    @Test
+    void brazilCpfLookupTest() {
+        // TODO: test brazilCpfLookup
     }
 
     /**
@@ -178,19 +242,27 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'philippineMatch'
+     * Test the property 'philippinesPhilsysMatch'
      */
     @Test
-    void philippineMatchTest() {
-        // TODO: test philippineMatch
+    void philippinesPhilsysMatchTest() {
+        // TODO: test philippinesPhilsysMatch
     }
 
     /**
-     * Test the property 'philippineQR'
+     * Test the property 'philippinesPhysicalNationalIdQr'
      */
     @Test
-    void philippineQRTest() {
-        // TODO: test philippineQR
+    void philippinesPhysicalNationalIdQrTest() {
+        // TODO: test philippinesPhysicalNationalIdQr
+    }
+
+    /**
+     * Test the property 'philippinesDigitalNationalIdQr'
+     */
+    @Test
+    void philippinesDigitalNationalIdQrTest() {
+        // TODO: test philippinesDigitalNationalIdQr
     }
 
     /**
@@ -210,19 +282,19 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'idin'
+     * Test the property 'netherlandsIdin'
      */
     @Test
-    void idinTest() {
-        // TODO: test idin
+    void netherlandsIdinTest() {
+        // TODO: test netherlandsIdin
     }
 
     /**
-     * Test the property 'spid'
+     * Test the property 'italySpid'
      */
     @Test
-    void spidTest() {
-        // TODO: test spid
+    void italySpidTest() {
+        // TODO: test italySpid
     }
 
     /**
@@ -239,6 +311,14 @@ class ProviderInputTest {
     @Test
     void appleWalletTest() {
         // TODO: test appleWallet
+    }
+
+    /**
+     * Test the property 'peruDniLookup'
+     */
+    @Test
+    void peruDniLookupTest() {
+        // TODO: test peruDniLookup
     }
 
     /**

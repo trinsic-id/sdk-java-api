@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.SexV1;
+import id.trinsic.api.models.KenyaNidMatch2InputSex;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   KenyaNidMatch2Input.JSON_PROPERTY_DATE_OF_BIRTH,
   KenyaNidMatch2Input.JSON_PROPERTY_SEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class KenyaNidMatch2Input {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private JsonNullable<String> idNumber = JsonNullable.<String>undefined();
@@ -64,7 +64,7 @@ public class KenyaNidMatch2Input {
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
-  private JsonNullable<SexV1> sex = JsonNullable.<SexV1>undefined();
+  private JsonNullable<KenyaNidMatch2InputSex> sex = JsonNullable.<KenyaNidMatch2InputSex>undefined();
 
   public KenyaNidMatch2Input() { 
   }
@@ -229,8 +229,8 @@ public class KenyaNidMatch2Input {
   }
 
 
-  public KenyaNidMatch2Input sex(@javax.annotation.Nullable SexV1 sex) {
-    this.sex = JsonNullable.<SexV1>of(sex);
+  public KenyaNidMatch2Input sex(@javax.annotation.Nullable KenyaNidMatch2InputSex sex) {
+    this.sex = JsonNullable.<KenyaNidMatch2InputSex>of(sex);
     return this;
   }
 
@@ -240,24 +240,24 @@ public class KenyaNidMatch2Input {
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public SexV1 getSex() {
+  public KenyaNidMatch2InputSex getSex() {
         return sex.orElse(null);
   }
 
   @JsonProperty(JSON_PROPERTY_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SexV1> getSex_JsonNullable() {
+  public JsonNullable<KenyaNidMatch2InputSex> getSex_JsonNullable() {
     return sex;
   }
   
   @JsonProperty(JSON_PROPERTY_SEX)
-  public void setSex_JsonNullable(JsonNullable<SexV1> sex) {
+  public void setSex_JsonNullable(JsonNullable<KenyaNidMatch2InputSex> sex) {
     this.sex = sex;
   }
 
-  public void setSex(@javax.annotation.Nullable SexV1 sex) {
-    this.sex = JsonNullable.<SexV1>of(sex);
+  public void setSex(@javax.annotation.Nullable KenyaNidMatch2InputSex sex) {
+    this.sex = JsonNullable.<KenyaNidMatch2InputSex>of(sex);
   }
 
 

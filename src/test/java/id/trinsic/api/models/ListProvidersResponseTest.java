@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.ProviderInfo;
+import id.trinsic.api.models.Provider;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

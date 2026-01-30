@@ -43,7 +43,7 @@ import id.trinsic.ApiClient;
   KenyaNidBiometric2Input.JSON_PROPERTY_LIVENESS_IMAGES,
   KenyaNidBiometric2Input.JSON_PROPERTY_TEST_SELFIE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class KenyaNidBiometric2Input {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private JsonNullable<String> idNumber = JsonNullable.<String>undefined();

@@ -56,7 +56,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class VerificationProfilesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -101,11 +101,12 @@ public class VerificationProfilesApi {
    * @param primaryColor The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
    * @param providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
    * @param logo The logo of the verification profile. (optional)
+   * @param isProductionUsage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
    * @return CreateVerificationProfileResponse
    * @throws ApiException if fails to make API call
    */
-  public CreateVerificationProfileResponse createVerificationProfile(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo) throws ApiException {
-    ApiResponse<CreateVerificationProfileResponse> localVarResponse = createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo);
+  public CreateVerificationProfileResponse createVerificationProfile(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
+    ApiResponse<CreateVerificationProfileResponse> localVarResponse = createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, isProductionUsage);
     return localVarResponse.getData();
   }
 
@@ -117,11 +118,12 @@ public class VerificationProfilesApi {
    * @param primaryColor The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
    * @param providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
    * @param logo The logo of the verification profile. (optional)
+   * @param isProductionUsage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
    * @return ApiResponse&lt;CreateVerificationProfileResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateVerificationProfileResponse> createVerificationProfileWithHttpInfo(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = createVerificationProfileRequestBuilder(alias, brandName, primaryColor, providers, logo);
+  public ApiResponse<CreateVerificationProfileResponse> createVerificationProfileWithHttpInfo(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createVerificationProfileRequestBuilder(alias, brandName, primaryColor, providers, logo, isProductionUsage);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -160,7 +162,7 @@ public class VerificationProfilesApi {
     }
   }
 
-  private HttpRequest.Builder createVerificationProfileRequestBuilder(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo) throws ApiException {
+  private HttpRequest.Builder createVerificationProfileRequestBuilder(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
     // verify the required parameter 'alias' is set
     if (alias == null) {
       throw new ApiException(400, "Missing the required parameter 'alias' when calling createVerificationProfile");
@@ -188,6 +190,7 @@ public class VerificationProfilesApi {
     }
     multiPartBuilder.addBinaryBody("Logo", logo);
     hasFiles = true;
+    multiPartBuilder.addTextBody("IsProductionUsage", isProductionUsage.toString());
     HttpEntity entity = multiPartBuilder.build();
     HttpRequest.BodyPublisher formDataPublisher;
     if (hasFiles) {

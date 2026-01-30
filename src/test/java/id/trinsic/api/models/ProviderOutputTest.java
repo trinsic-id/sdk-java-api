@@ -18,11 +18,38 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.AppleWalletProviderOutput;
+import id.trinsic.api.models.AustriaHandySignaturProviderOutput;
+import id.trinsic.api.models.BelgiumIdCardProviderOutput;
+import id.trinsic.api.models.CzechiaMojeIdProviderOutput;
+import id.trinsic.api.models.EstoniaIdCardProviderOutput;
 import id.trinsic.api.models.FaydaProviderOutput;
+import id.trinsic.api.models.FinlandIdCardProviderOutput;
+import id.trinsic.api.models.FrejaProviderOutput;
+import id.trinsic.api.models.FrenchNumeriqueProviderOutput;
+import id.trinsic.api.models.GoogleWalletProviderOutput;
+import id.trinsic.api.models.ItsmeProviderOutput;
+import id.trinsic.api.models.LaWalletProviderOutput;
+import id.trinsic.api.models.LatviaEparakstsMobileProviderOutput;
+import id.trinsic.api.models.LatviaEparakstsProviderOutput;
+import id.trinsic.api.models.LithuaniaIdCardProviderOutput;
+import id.trinsic.api.models.LloydsSmartIdProviderOutput;
 import id.trinsic.api.models.MexicoCurpProviderOutput;
+import id.trinsic.api.models.MitIdProviderOutput;
+import id.trinsic.api.models.MobileIdProviderOutput;
+import id.trinsic.api.models.PeruDniProviderOutput;
 import id.trinsic.api.models.PhilippinesDigitalNidProviderOutput;
 import id.trinsic.api.models.PhilippinesPhysicalNidProviderOutput;
+import id.trinsic.api.models.PolandEdoAppProviderOutput;
+import id.trinsic.api.models.PolandMojeIdProviderOutput;
+import id.trinsic.api.models.PortugalIdCardProviderOutput;
+import id.trinsic.api.models.PostOfficeEasyIdProviderOutput;
+import id.trinsic.api.models.SamsungWalletProviderOutput;
+import id.trinsic.api.models.SerbiaIdCardProviderOutput;
+import id.trinsic.api.models.SmartIdProviderOutput;
 import id.trinsic.api.models.SpidProviderOutput;
+import id.trinsic.api.models.SwedenBankIdProviderOutput;
+import id.trinsic.api.models.YotiProviderOutput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -47,19 +74,131 @@ class ProviderOutputTest {
     }
 
     /**
-     * Test the property 'italySpid'
+     * Test the property 'aAtHandySignaturLogin'
      */
     @Test
-    void italySpidTest() {
-        // TODO: test italySpid
+    void aAtHandySignaturLoginTest() {
+        // TODO: test aAtHandySignaturLogin
     }
 
     /**
-     * Test the property 'mexicoCurpLookup'
+     * Test the property 'aBeIdLogin'
      */
     @Test
-    void mexicoCurpLookupTest() {
-        // TODO: test mexicoCurpLookup
+    void aBeIdLoginTest() {
+        // TODO: test aBeIdLogin
+    }
+
+    /**
+     * Test the property 'aEdoappEidLogin'
+     */
+    @Test
+    void aEdoappEidLoginTest() {
+        // TODO: test aEdoappEidLogin
+    }
+
+    /**
+     * Test the property 'aEeWebEidLogin'
+     */
+    @Test
+    void aEeWebEidLoginTest() {
+        // TODO: test aEeWebEidLogin
+    }
+
+    /**
+     * Test the property 'aFiIdLogin'
+     */
+    @Test
+    void aFiIdLoginTest() {
+        // TODO: test aFiIdLogin
+    }
+
+    /**
+     * Test the property 'aFrejaEidLogin'
+     */
+    @Test
+    void aFrejaEidLoginTest() {
+        // TODO: test aFrejaEidLogin
+    }
+
+    /**
+     * Test the property 'aItsmeLogin'
+     */
+    @Test
+    void aItsmeLoginTest() {
+        // TODO: test aItsmeLogin
+    }
+
+    /**
+     * Test the property 'aLtIdLogin'
+     */
+    @Test
+    void aLtIdLoginTest() {
+        // TODO: test aLtIdLogin
+    }
+
+    /**
+     * Test the property 'aLvEparakstsIdLogin'
+     */
+    @Test
+    void aLvEparakstsIdLoginTest() {
+        // TODO: test aLvEparakstsIdLogin
+    }
+
+    /**
+     * Test the property 'aLvEparakstsMobileLogin'
+     */
+    @Test
+    void aLvEparakstsMobileLoginTest() {
+        // TODO: test aLvEparakstsMobileLogin
+    }
+
+    /**
+     * Test the property 'aMojeid'
+     */
+    @Test
+    void aMojeidTest() {
+        // TODO: test aMojeid
+    }
+
+    /**
+     * Test the property 'aPlMojeidLogin'
+     */
+    @Test
+    void aPlMojeidLoginTest() {
+        // TODO: test aPlMojeidLogin
+    }
+
+    /**
+     * Test the property 'aPtIdLogin'
+     */
+    @Test
+    void aPtIdLoginTest() {
+        // TODO: test aPtIdLogin
+    }
+
+    /**
+     * Test the property 'aRsIdLogin'
+     */
+    @Test
+    void aRsIdLoginTest() {
+        // TODO: test aRsIdLogin
+    }
+
+    /**
+     * Test the property 'appleWallet'
+     */
+    @Test
+    void appleWalletTest() {
+        // TODO: test appleWallet
+    }
+
+    /**
+     * Test the property 'denmarkMitid'
+     */
+    @Test
+    void denmarkMitidTest() {
+        // TODO: test denmarkMitid
     }
 
     /**
@@ -71,11 +210,59 @@ class ProviderOutputTest {
     }
 
     /**
-     * Test the property 'philippinesPhysicalNationalIdQr'
+     * Test the property 'franceIdentiteNumerique'
      */
     @Test
-    void philippinesPhysicalNationalIdQrTest() {
-        // TODO: test philippinesPhysicalNationalIdQr
+    void franceIdentiteNumeriqueTest() {
+        // TODO: test franceIdentiteNumerique
+    }
+
+    /**
+     * Test the property 'googleWallet'
+     */
+    @Test
+    void googleWalletTest() {
+        // TODO: test googleWallet
+    }
+
+    /**
+     * Test the property 'italySpid'
+     */
+    @Test
+    void italySpidTest() {
+        // TODO: test italySpid
+    }
+
+    /**
+     * Test the property 'lloydsSmartId'
+     */
+    @Test
+    void lloydsSmartIdTest() {
+        // TODO: test lloydsSmartId
+    }
+
+    /**
+     * Test the property 'mexicoCurpLookup'
+     */
+    @Test
+    void mexicoCurpLookupTest() {
+        // TODO: test mexicoCurpLookup
+    }
+
+    /**
+     * Test the property 'mobileId'
+     */
+    @Test
+    void mobileIdTest() {
+        // TODO: test mobileId
+    }
+
+    /**
+     * Test the property 'peruDniLookup'
+     */
+    @Test
+    void peruDniLookupTest() {
+        // TODO: test peruDniLookup
     }
 
     /**
@@ -84,6 +271,62 @@ class ProviderOutputTest {
     @Test
     void philippinesDigitalNationalIdQrTest() {
         // TODO: test philippinesDigitalNationalIdQr
+    }
+
+    /**
+     * Test the property 'philippinesPhysicalNationalIdQr'
+     */
+    @Test
+    void philippinesPhysicalNationalIdQrTest() {
+        // TODO: test philippinesPhysicalNationalIdQr
+    }
+
+    /**
+     * Test the property 'postOfficeEasyid'
+     */
+    @Test
+    void postOfficeEasyidTest() {
+        // TODO: test postOfficeEasyid
+    }
+
+    /**
+     * Test the property 'samsungWallet'
+     */
+    @Test
+    void samsungWalletTest() {
+        // TODO: test samsungWallet
+    }
+
+    /**
+     * Test the property 'smartId'
+     */
+    @Test
+    void smartIdTest() {
+        // TODO: test smartId
+    }
+
+    /**
+     * Test the property 'swedenBankid'
+     */
+    @Test
+    void swedenBankidTest() {
+        // TODO: test swedenBankid
+    }
+
+    /**
+     * Test the property 'usaLouisianaWallet'
+     */
+    @Test
+    void usaLouisianaWalletTest() {
+        // TODO: test usaLouisianaWallet
+    }
+
+    /**
+     * Test the property 'yoti'
+     */
+    @Test
+    void yotiTest() {
+        // TODO: test yoti
     }
 
 }

@@ -99,6 +99,14 @@ class MatchDataTest {
     }
 
     /**
+     * Test the property 'phoneNumber'
+     */
+    @Test
+    void phoneNumberTest() {
+        // TODO: test phoneNumber
+    }
+
+    /**
      * Test the property 'faceMatch'
      */
     @Test

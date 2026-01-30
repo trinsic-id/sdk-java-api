@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.ProviderInfo;
+import id.trinsic.api.models.Provider;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,21 +38,21 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ListProvidersResponse.JSON_PROPERTY_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ListProvidersResponse {
   public static final String JSON_PROPERTY_PROVIDERS = "providers";
   @javax.annotation.Nonnull
-  private List<ProviderInfo> providers = new ArrayList<>();
+  private List<Provider> providers = new ArrayList<>();
 
   public ListProvidersResponse() { 
   }
 
-  public ListProvidersResponse providers(@javax.annotation.Nonnull List<ProviderInfo> providers) {
+  public ListProvidersResponse providers(@javax.annotation.Nonnull List<Provider> providers) {
     this.providers = providers;
     return this;
   }
 
-  public ListProvidersResponse addProvidersItem(ProviderInfo providersItem) {
+  public ListProvidersResponse addProvidersItem(Provider providersItem) {
     if (this.providers == null) {
       this.providers = new ArrayList<>();
     }
@@ -61,20 +61,20 @@ public class ListProvidersResponse {
   }
 
   /**
-   * The list of identity providers available to your account
+   * The list of providers available to this organization
    * @return providers
    */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PROVIDERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public List<ProviderInfo> getProviders() {
+  public List<Provider> getProviders() {
     return providers;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PROVIDERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProviders(@javax.annotation.Nonnull List<ProviderInfo> providers) {
+  public void setProviders(@javax.annotation.Nonnull List<Provider> providers) {
     this.providers = providers;
   }
 

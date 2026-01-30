@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.Language;
+import id.trinsic.api.models.MobileIdLanguage;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_NATIONAL_IDENTITY_NUMBER,
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_LANGUAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MobileIdInput {
   public static final String JSON_PROPERTY_MOBILE_ID_PHONE_NUMBER = "mobileIdPhoneNumber";
   private JsonNullable<String> mobileIdPhoneNumber = JsonNullable.<String>undefined();
@@ -51,7 +51,7 @@ public class MobileIdInput {
   private JsonNullable<String> mobileIdNationalIdentityNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_MOBILE_ID_LANGUAGE = "mobileIdLanguage";
-  private JsonNullable<Language> mobileIdLanguage = JsonNullable.<Language>undefined();
+  private JsonNullable<MobileIdLanguage> mobileIdLanguage = JsonNullable.<MobileIdLanguage>undefined();
 
   public MobileIdInput() { 
   }
@@ -120,8 +120,8 @@ public class MobileIdInput {
   }
 
 
-  public MobileIdInput mobileIdLanguage(@javax.annotation.Nullable Language mobileIdLanguage) {
-    this.mobileIdLanguage = JsonNullable.<Language>of(mobileIdLanguage);
+  public MobileIdInput mobileIdLanguage(@javax.annotation.Nullable MobileIdLanguage mobileIdLanguage) {
+    this.mobileIdLanguage = JsonNullable.<MobileIdLanguage>of(mobileIdLanguage);
     return this;
   }
 
@@ -131,24 +131,24 @@ public class MobileIdInput {
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public Language getMobileIdLanguage() {
+  public MobileIdLanguage getMobileIdLanguage() {
         return mobileIdLanguage.orElse(null);
   }
 
   @JsonProperty(JSON_PROPERTY_MOBILE_ID_LANGUAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Language> getMobileIdLanguage_JsonNullable() {
+  public JsonNullable<MobileIdLanguage> getMobileIdLanguage_JsonNullable() {
     return mobileIdLanguage;
   }
   
   @JsonProperty(JSON_PROPERTY_MOBILE_ID_LANGUAGE)
-  public void setMobileIdLanguage_JsonNullable(JsonNullable<Language> mobileIdLanguage) {
+  public void setMobileIdLanguage_JsonNullable(JsonNullable<MobileIdLanguage> mobileIdLanguage) {
     this.mobileIdLanguage = mobileIdLanguage;
   }
 
-  public void setMobileIdLanguage(@javax.annotation.Nullable Language mobileIdLanguage) {
-    this.mobileIdLanguage = JsonNullable.<Language>of(mobileIdLanguage);
+  public void setMobileIdLanguage(@javax.annotation.Nullable MobileIdLanguage mobileIdLanguage) {
+    this.mobileIdLanguage = JsonNullable.<MobileIdLanguage>of(mobileIdLanguage);
   }
 
 

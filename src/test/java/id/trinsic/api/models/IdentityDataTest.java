@@ -18,9 +18,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.AttachmentAccessKeys;
+import id.trinsic.api.models.AttachmentInfo;
 import id.trinsic.api.models.DocumentData;
-import id.trinsic.api.models.Identifier;
 import id.trinsic.api.models.MatchData;
 import id.trinsic.api.models.PersonData;
 import id.trinsic.api.models.ProviderOutput;
@@ -90,11 +89,11 @@ class IdentityDataTest {
     }
 
     /**
-     * Test the property 'attachmentAccessKeys'
+     * Test the property 'attachments'
      */
     @Test
-    void attachmentAccessKeysTest() {
-        // TODO: test attachmentAccessKeys
+    void attachmentsTest() {
+        // TODO: test attachments
     }
 
     /**
@@ -103,14 +102,6 @@ class IdentityDataTest {
     @Test
     void providerOutputTest() {
         // TODO: test providerOutput
-    }
-
-    /**
-     * Test the property 'identifiers'
-     */
-    @Test
-    void identifiersTest() {
-        // TODO: test identifiers
     }
 
 }

@@ -84,6 +84,14 @@ class DocumentDataTest {
     }
 
     /**
+     * Test the property 'issuingSubdivision'
+     */
+    @Test
+    void issuingSubdivisionTest() {
+        // TODO: test issuingSubdivision
+    }
+
+    /**
      * Test the property 'issuingAuthority'
      */
     @Test

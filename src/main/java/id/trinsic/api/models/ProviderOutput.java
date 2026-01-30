@@ -24,11 +24,38 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.AppleWalletProviderOutput;
+import id.trinsic.api.models.AustriaHandySignaturProviderOutput;
+import id.trinsic.api.models.BelgiumIdCardProviderOutput;
+import id.trinsic.api.models.CzechiaMojeIdProviderOutput;
+import id.trinsic.api.models.EstoniaIdCardProviderOutput;
 import id.trinsic.api.models.FaydaProviderOutput;
+import id.trinsic.api.models.FinlandIdCardProviderOutput;
+import id.trinsic.api.models.FrejaProviderOutput;
+import id.trinsic.api.models.FrenchNumeriqueProviderOutput;
+import id.trinsic.api.models.GoogleWalletProviderOutput;
+import id.trinsic.api.models.ItsmeProviderOutput;
+import id.trinsic.api.models.LaWalletProviderOutput;
+import id.trinsic.api.models.LatviaEparakstsMobileProviderOutput;
+import id.trinsic.api.models.LatviaEparakstsProviderOutput;
+import id.trinsic.api.models.LithuaniaIdCardProviderOutput;
+import id.trinsic.api.models.LloydsSmartIdProviderOutput;
 import id.trinsic.api.models.MexicoCurpProviderOutput;
+import id.trinsic.api.models.MitIdProviderOutput;
+import id.trinsic.api.models.MobileIdProviderOutput;
+import id.trinsic.api.models.PeruDniProviderOutput;
 import id.trinsic.api.models.PhilippinesDigitalNidProviderOutput;
 import id.trinsic.api.models.PhilippinesPhysicalNidProviderOutput;
+import id.trinsic.api.models.PolandEdoAppProviderOutput;
+import id.trinsic.api.models.PolandMojeIdProviderOutput;
+import id.trinsic.api.models.PortugalIdCardProviderOutput;
+import id.trinsic.api.models.PostOfficeEasyIdProviderOutput;
+import id.trinsic.api.models.SamsungWalletProviderOutput;
+import id.trinsic.api.models.SerbiaIdCardProviderOutput;
+import id.trinsic.api.models.SmartIdProviderOutput;
 import id.trinsic.api.models.SpidProviderOutput;
+import id.trinsic.api.models.SwedenBankIdProviderOutput;
+import id.trinsic.api.models.YotiProviderOutput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -42,93 +69,649 @@ import id.trinsic.ApiClient;
  * ProviderOutput
  */
 @JsonPropertyOrder({
-  ProviderOutput.JSON_PROPERTY_ITALY_SPID,
-  ProviderOutput.JSON_PROPERTY_MEXICO_CURP_LOOKUP,
+  ProviderOutput.JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_BE_ID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_EDOAPP_EID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_EE_WEB_EID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_FI_ID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_FREJA_EID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_ITSME_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_LT_ID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_LV_EPARAKSTS_ID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_LV_EPARAKSTS_MOBILE_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_MOJEID,
+  ProviderOutput.JSON_PROPERTY_A_PL_MOJEID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_PT_ID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_A_RS_ID_LOGIN,
+  ProviderOutput.JSON_PROPERTY_APPLE_WALLET,
+  ProviderOutput.JSON_PROPERTY_DENMARK_MITID,
   ProviderOutput.JSON_PROPERTY_ETHIOPIA_FAYDA,
+  ProviderOutput.JSON_PROPERTY_FRANCE_IDENTITE_NUMERIQUE,
+  ProviderOutput.JSON_PROPERTY_GOOGLE_WALLET,
+  ProviderOutput.JSON_PROPERTY_ITALY_SPID,
+  ProviderOutput.JSON_PROPERTY_LLOYDS_SMART_ID,
+  ProviderOutput.JSON_PROPERTY_MEXICO_CURP_LOOKUP,
+  ProviderOutput.JSON_PROPERTY_MOBILE_ID,
+  ProviderOutput.JSON_PROPERTY_PERU_DNI_LOOKUP,
+  ProviderOutput.JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR,
   ProviderOutput.JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR,
-  ProviderOutput.JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR
+  ProviderOutput.JSON_PROPERTY_POST_OFFICE_EASYID,
+  ProviderOutput.JSON_PROPERTY_SAMSUNG_WALLET,
+  ProviderOutput.JSON_PROPERTY_SMART_ID,
+  ProviderOutput.JSON_PROPERTY_SWEDEN_BANKID,
+  ProviderOutput.JSON_PROPERTY_USA_LOUISIANA_WALLET,
+  ProviderOutput.JSON_PROPERTY_YOTI
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderOutput {
-  public static final String JSON_PROPERTY_ITALY_SPID = "italy-spid";
-  private JsonNullable<SpidProviderOutput> italySpid = JsonNullable.<SpidProviderOutput>undefined();
+  public static final String JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN = "a-at-handy-signatur-login";
+  private JsonNullable<AustriaHandySignaturProviderOutput> aAtHandySignaturLogin = JsonNullable.<AustriaHandySignaturProviderOutput>undefined();
 
-  public static final String JSON_PROPERTY_MEXICO_CURP_LOOKUP = "mexico-curp-lookup";
-  private JsonNullable<MexicoCurpProviderOutput> mexicoCurpLookup = JsonNullable.<MexicoCurpProviderOutput>undefined();
+  public static final String JSON_PROPERTY_A_BE_ID_LOGIN = "a-be-id-login";
+  private JsonNullable<BelgiumIdCardProviderOutput> aBeIdLogin = JsonNullable.<BelgiumIdCardProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_EDOAPP_EID_LOGIN = "a-edoapp-eid-login";
+  private JsonNullable<PolandEdoAppProviderOutput> aEdoappEidLogin = JsonNullable.<PolandEdoAppProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_EE_WEB_EID_LOGIN = "a-ee-web-eid-login";
+  private JsonNullable<EstoniaIdCardProviderOutput> aEeWebEidLogin = JsonNullable.<EstoniaIdCardProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_FI_ID_LOGIN = "a-fi-id-login";
+  private JsonNullable<FinlandIdCardProviderOutput> aFiIdLogin = JsonNullable.<FinlandIdCardProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_FREJA_EID_LOGIN = "a-freja-eid-login";
+  private JsonNullable<FrejaProviderOutput> aFrejaEidLogin = JsonNullable.<FrejaProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_ITSME_LOGIN = "a-itsme-login";
+  private JsonNullable<ItsmeProviderOutput> aItsmeLogin = JsonNullable.<ItsmeProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_LT_ID_LOGIN = "a-lt-id-login";
+  private JsonNullable<LithuaniaIdCardProviderOutput> aLtIdLogin = JsonNullable.<LithuaniaIdCardProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_LV_EPARAKSTS_ID_LOGIN = "a-lv-eparaksts-id-login";
+  private JsonNullable<LatviaEparakstsProviderOutput> aLvEparakstsIdLogin = JsonNullable.<LatviaEparakstsProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_LV_EPARAKSTS_MOBILE_LOGIN = "a-lv-eparaksts-mobile-login";
+  private JsonNullable<LatviaEparakstsMobileProviderOutput> aLvEparakstsMobileLogin = JsonNullable.<LatviaEparakstsMobileProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_MOJEID = "a-mojeid";
+  private JsonNullable<CzechiaMojeIdProviderOutput> aMojeid = JsonNullable.<CzechiaMojeIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_PL_MOJEID_LOGIN = "a-pl-mojeid-login";
+  private JsonNullable<PolandMojeIdProviderOutput> aPlMojeidLogin = JsonNullable.<PolandMojeIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_PT_ID_LOGIN = "a-pt-id-login";
+  private JsonNullable<PortugalIdCardProviderOutput> aPtIdLogin = JsonNullable.<PortugalIdCardProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_A_RS_ID_LOGIN = "a-rs-id-login";
+  private JsonNullable<SerbiaIdCardProviderOutput> aRsIdLogin = JsonNullable.<SerbiaIdCardProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_APPLE_WALLET = "apple-wallet";
+  private JsonNullable<AppleWalletProviderOutput> appleWallet = JsonNullable.<AppleWalletProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_DENMARK_MITID = "denmark-mitid";
+  private JsonNullable<MitIdProviderOutput> denmarkMitid = JsonNullable.<MitIdProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_ETHIOPIA_FAYDA = "ethiopia-fayda";
   private JsonNullable<FaydaProviderOutput> ethiopiaFayda = JsonNullable.<FaydaProviderOutput>undefined();
 
-  public static final String JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR = "philippines-physical-national-id-qr";
-  private JsonNullable<PhilippinesPhysicalNidProviderOutput> philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>undefined();
+  public static final String JSON_PROPERTY_FRANCE_IDENTITE_NUMERIQUE = "france-identite-numerique";
+  private JsonNullable<FrenchNumeriqueProviderOutput> franceIdentiteNumerique = JsonNullable.<FrenchNumeriqueProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_GOOGLE_WALLET = "google-wallet";
+  private JsonNullable<GoogleWalletProviderOutput> googleWallet = JsonNullable.<GoogleWalletProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_ITALY_SPID = "italy-spid";
+  private JsonNullable<SpidProviderOutput> italySpid = JsonNullable.<SpidProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_LLOYDS_SMART_ID = "lloyds-smart-id";
+  private JsonNullable<LloydsSmartIdProviderOutput> lloydsSmartId = JsonNullable.<LloydsSmartIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_MEXICO_CURP_LOOKUP = "mexico-curp-lookup";
+  private JsonNullable<MexicoCurpProviderOutput> mexicoCurpLookup = JsonNullable.<MexicoCurpProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_MOBILE_ID = "mobile-id";
+  private JsonNullable<MobileIdProviderOutput> mobileId = JsonNullable.<MobileIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_PERU_DNI_LOOKUP = "peru-dni-lookup";
+  private JsonNullable<PeruDniProviderOutput> peruDniLookup = JsonNullable.<PeruDniProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR = "philippines-digital-national-id-qr";
   private JsonNullable<PhilippinesDigitalNidProviderOutput> philippinesDigitalNationalIdQr = JsonNullable.<PhilippinesDigitalNidProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR = "philippines-physical-national-id-qr";
+  private JsonNullable<PhilippinesPhysicalNidProviderOutput> philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_POST_OFFICE_EASYID = "post-office-easyid";
+  private JsonNullable<PostOfficeEasyIdProviderOutput> postOfficeEasyid = JsonNullable.<PostOfficeEasyIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_SAMSUNG_WALLET = "samsung-wallet";
+  private JsonNullable<SamsungWalletProviderOutput> samsungWallet = JsonNullable.<SamsungWalletProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_SMART_ID = "smart-id";
+  private JsonNullable<SmartIdProviderOutput> smartId = JsonNullable.<SmartIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_SWEDEN_BANKID = "sweden-bankid";
+  private JsonNullable<SwedenBankIdProviderOutput> swedenBankid = JsonNullable.<SwedenBankIdProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_USA_LOUISIANA_WALLET = "usa-louisiana-wallet";
+  private JsonNullable<LaWalletProviderOutput> usaLouisianaWallet = JsonNullable.<LaWalletProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_YOTI = "yoti";
+  private JsonNullable<YotiProviderOutput> yoti = JsonNullable.<YotiProviderOutput>undefined();
+
   public ProviderOutput() { 
   }
 
-  public ProviderOutput italySpid(@javax.annotation.Nullable SpidProviderOutput italySpid) {
-    this.italySpid = JsonNullable.<SpidProviderOutput>of(italySpid);
+  public ProviderOutput aAtHandySignaturLogin(@javax.annotation.Nullable AustriaHandySignaturProviderOutput aAtHandySignaturLogin) {
+    this.aAtHandySignaturLogin = JsonNullable.<AustriaHandySignaturProviderOutput>of(aAtHandySignaturLogin);
     return this;
   }
 
   /**
-   * Get italySpid
-   * @return italySpid
+   * Exposed properties for the &#x60;a-at-handy-signatur-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aAtHandySignaturLogin
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public SpidProviderOutput getItalySpid() {
-        return italySpid.orElse(null);
+  public AustriaHandySignaturProviderOutput getaAtHandySignaturLogin() {
+        return aAtHandySignaturLogin.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ITALY_SPID)
+  @JsonProperty(JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SpidProviderOutput> getItalySpid_JsonNullable() {
-    return italySpid;
+  public JsonNullable<AustriaHandySignaturProviderOutput> getaAtHandySignaturLogin_JsonNullable() {
+    return aAtHandySignaturLogin;
   }
   
-  @JsonProperty(JSON_PROPERTY_ITALY_SPID)
-  public void setItalySpid_JsonNullable(JsonNullable<SpidProviderOutput> italySpid) {
-    this.italySpid = italySpid;
+  @JsonProperty(JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN)
+  public void setaAtHandySignaturLogin_JsonNullable(JsonNullable<AustriaHandySignaturProviderOutput> aAtHandySignaturLogin) {
+    this.aAtHandySignaturLogin = aAtHandySignaturLogin;
   }
 
-  public void setItalySpid(@javax.annotation.Nullable SpidProviderOutput italySpid) {
-    this.italySpid = JsonNullable.<SpidProviderOutput>of(italySpid);
+  public void setaAtHandySignaturLogin(@javax.annotation.Nullable AustriaHandySignaturProviderOutput aAtHandySignaturLogin) {
+    this.aAtHandySignaturLogin = JsonNullable.<AustriaHandySignaturProviderOutput>of(aAtHandySignaturLogin);
   }
 
 
-  public ProviderOutput mexicoCurpLookup(@javax.annotation.Nullable MexicoCurpProviderOutput mexicoCurpLookup) {
-    this.mexicoCurpLookup = JsonNullable.<MexicoCurpProviderOutput>of(mexicoCurpLookup);
+  public ProviderOutput aBeIdLogin(@javax.annotation.Nullable BelgiumIdCardProviderOutput aBeIdLogin) {
+    this.aBeIdLogin = JsonNullable.<BelgiumIdCardProviderOutput>of(aBeIdLogin);
     return this;
   }
 
   /**
-   * Get mexicoCurpLookup
-   * @return mexicoCurpLookup
+   * Exposed properties for the &#x60;a-be-id-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aBeIdLogin
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public MexicoCurpProviderOutput getMexicoCurpLookup() {
-        return mexicoCurpLookup.orElse(null);
+  public BelgiumIdCardProviderOutput getaBeIdLogin() {
+        return aBeIdLogin.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MEXICO_CURP_LOOKUP)
+  @JsonProperty(JSON_PROPERTY_A_BE_ID_LOGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<MexicoCurpProviderOutput> getMexicoCurpLookup_JsonNullable() {
-    return mexicoCurpLookup;
+  public JsonNullable<BelgiumIdCardProviderOutput> getaBeIdLogin_JsonNullable() {
+    return aBeIdLogin;
   }
   
-  @JsonProperty(JSON_PROPERTY_MEXICO_CURP_LOOKUP)
-  public void setMexicoCurpLookup_JsonNullable(JsonNullable<MexicoCurpProviderOutput> mexicoCurpLookup) {
-    this.mexicoCurpLookup = mexicoCurpLookup;
+  @JsonProperty(JSON_PROPERTY_A_BE_ID_LOGIN)
+  public void setaBeIdLogin_JsonNullable(JsonNullable<BelgiumIdCardProviderOutput> aBeIdLogin) {
+    this.aBeIdLogin = aBeIdLogin;
   }
 
-  public void setMexicoCurpLookup(@javax.annotation.Nullable MexicoCurpProviderOutput mexicoCurpLookup) {
-    this.mexicoCurpLookup = JsonNullable.<MexicoCurpProviderOutput>of(mexicoCurpLookup);
+  public void setaBeIdLogin(@javax.annotation.Nullable BelgiumIdCardProviderOutput aBeIdLogin) {
+    this.aBeIdLogin = JsonNullable.<BelgiumIdCardProviderOutput>of(aBeIdLogin);
+  }
+
+
+  public ProviderOutput aEdoappEidLogin(@javax.annotation.Nullable PolandEdoAppProviderOutput aEdoappEidLogin) {
+    this.aEdoappEidLogin = JsonNullable.<PolandEdoAppProviderOutput>of(aEdoappEidLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-edoapp-eid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aEdoappEidLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PolandEdoAppProviderOutput getaEdoappEidLogin() {
+        return aEdoappEidLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_EDOAPP_EID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PolandEdoAppProviderOutput> getaEdoappEidLogin_JsonNullable() {
+    return aEdoappEidLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_EDOAPP_EID_LOGIN)
+  public void setaEdoappEidLogin_JsonNullable(JsonNullable<PolandEdoAppProviderOutput> aEdoappEidLogin) {
+    this.aEdoappEidLogin = aEdoappEidLogin;
+  }
+
+  public void setaEdoappEidLogin(@javax.annotation.Nullable PolandEdoAppProviderOutput aEdoappEidLogin) {
+    this.aEdoappEidLogin = JsonNullable.<PolandEdoAppProviderOutput>of(aEdoappEidLogin);
+  }
+
+
+  public ProviderOutput aEeWebEidLogin(@javax.annotation.Nullable EstoniaIdCardProviderOutput aEeWebEidLogin) {
+    this.aEeWebEidLogin = JsonNullable.<EstoniaIdCardProviderOutput>of(aEeWebEidLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-ee-web-eid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aEeWebEidLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public EstoniaIdCardProviderOutput getaEeWebEidLogin() {
+        return aEeWebEidLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_EE_WEB_EID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<EstoniaIdCardProviderOutput> getaEeWebEidLogin_JsonNullable() {
+    return aEeWebEidLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_EE_WEB_EID_LOGIN)
+  public void setaEeWebEidLogin_JsonNullable(JsonNullable<EstoniaIdCardProviderOutput> aEeWebEidLogin) {
+    this.aEeWebEidLogin = aEeWebEidLogin;
+  }
+
+  public void setaEeWebEidLogin(@javax.annotation.Nullable EstoniaIdCardProviderOutput aEeWebEidLogin) {
+    this.aEeWebEidLogin = JsonNullable.<EstoniaIdCardProviderOutput>of(aEeWebEidLogin);
+  }
+
+
+  public ProviderOutput aFiIdLogin(@javax.annotation.Nullable FinlandIdCardProviderOutput aFiIdLogin) {
+    this.aFiIdLogin = JsonNullable.<FinlandIdCardProviderOutput>of(aFiIdLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-fi-id-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aFiIdLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FinlandIdCardProviderOutput getaFiIdLogin() {
+        return aFiIdLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_FI_ID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FinlandIdCardProviderOutput> getaFiIdLogin_JsonNullable() {
+    return aFiIdLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_FI_ID_LOGIN)
+  public void setaFiIdLogin_JsonNullable(JsonNullable<FinlandIdCardProviderOutput> aFiIdLogin) {
+    this.aFiIdLogin = aFiIdLogin;
+  }
+
+  public void setaFiIdLogin(@javax.annotation.Nullable FinlandIdCardProviderOutput aFiIdLogin) {
+    this.aFiIdLogin = JsonNullable.<FinlandIdCardProviderOutput>of(aFiIdLogin);
+  }
+
+
+  public ProviderOutput aFrejaEidLogin(@javax.annotation.Nullable FrejaProviderOutput aFrejaEidLogin) {
+    this.aFrejaEidLogin = JsonNullable.<FrejaProviderOutput>of(aFrejaEidLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-freja-eid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aFrejaEidLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FrejaProviderOutput getaFrejaEidLogin() {
+        return aFrejaEidLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_FREJA_EID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FrejaProviderOutput> getaFrejaEidLogin_JsonNullable() {
+    return aFrejaEidLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_FREJA_EID_LOGIN)
+  public void setaFrejaEidLogin_JsonNullable(JsonNullable<FrejaProviderOutput> aFrejaEidLogin) {
+    this.aFrejaEidLogin = aFrejaEidLogin;
+  }
+
+  public void setaFrejaEidLogin(@javax.annotation.Nullable FrejaProviderOutput aFrejaEidLogin) {
+    this.aFrejaEidLogin = JsonNullable.<FrejaProviderOutput>of(aFrejaEidLogin);
+  }
+
+
+  public ProviderOutput aItsmeLogin(@javax.annotation.Nullable ItsmeProviderOutput aItsmeLogin) {
+    this.aItsmeLogin = JsonNullable.<ItsmeProviderOutput>of(aItsmeLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-itsme-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aItsmeLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmeProviderOutput getaItsmeLogin() {
+        return aItsmeLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_ITSME_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmeProviderOutput> getaItsmeLogin_JsonNullable() {
+    return aItsmeLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_ITSME_LOGIN)
+  public void setaItsmeLogin_JsonNullable(JsonNullable<ItsmeProviderOutput> aItsmeLogin) {
+    this.aItsmeLogin = aItsmeLogin;
+  }
+
+  public void setaItsmeLogin(@javax.annotation.Nullable ItsmeProviderOutput aItsmeLogin) {
+    this.aItsmeLogin = JsonNullable.<ItsmeProviderOutput>of(aItsmeLogin);
+  }
+
+
+  public ProviderOutput aLtIdLogin(@javax.annotation.Nullable LithuaniaIdCardProviderOutput aLtIdLogin) {
+    this.aLtIdLogin = JsonNullable.<LithuaniaIdCardProviderOutput>of(aLtIdLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-lt-id-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aLtIdLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LithuaniaIdCardProviderOutput getaLtIdLogin() {
+        return aLtIdLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_LT_ID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LithuaniaIdCardProviderOutput> getaLtIdLogin_JsonNullable() {
+    return aLtIdLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_LT_ID_LOGIN)
+  public void setaLtIdLogin_JsonNullable(JsonNullable<LithuaniaIdCardProviderOutput> aLtIdLogin) {
+    this.aLtIdLogin = aLtIdLogin;
+  }
+
+  public void setaLtIdLogin(@javax.annotation.Nullable LithuaniaIdCardProviderOutput aLtIdLogin) {
+    this.aLtIdLogin = JsonNullable.<LithuaniaIdCardProviderOutput>of(aLtIdLogin);
+  }
+
+
+  public ProviderOutput aLvEparakstsIdLogin(@javax.annotation.Nullable LatviaEparakstsProviderOutput aLvEparakstsIdLogin) {
+    this.aLvEparakstsIdLogin = JsonNullable.<LatviaEparakstsProviderOutput>of(aLvEparakstsIdLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-lv-eparaksts-id-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aLvEparakstsIdLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LatviaEparakstsProviderOutput getaLvEparakstsIdLogin() {
+        return aLvEparakstsIdLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_LV_EPARAKSTS_ID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LatviaEparakstsProviderOutput> getaLvEparakstsIdLogin_JsonNullable() {
+    return aLvEparakstsIdLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_LV_EPARAKSTS_ID_LOGIN)
+  public void setaLvEparakstsIdLogin_JsonNullable(JsonNullable<LatviaEparakstsProviderOutput> aLvEparakstsIdLogin) {
+    this.aLvEparakstsIdLogin = aLvEparakstsIdLogin;
+  }
+
+  public void setaLvEparakstsIdLogin(@javax.annotation.Nullable LatviaEparakstsProviderOutput aLvEparakstsIdLogin) {
+    this.aLvEparakstsIdLogin = JsonNullable.<LatviaEparakstsProviderOutput>of(aLvEparakstsIdLogin);
+  }
+
+
+  public ProviderOutput aLvEparakstsMobileLogin(@javax.annotation.Nullable LatviaEparakstsMobileProviderOutput aLvEparakstsMobileLogin) {
+    this.aLvEparakstsMobileLogin = JsonNullable.<LatviaEparakstsMobileProviderOutput>of(aLvEparakstsMobileLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-lv-eparaksts-mobile-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aLvEparakstsMobileLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LatviaEparakstsMobileProviderOutput getaLvEparakstsMobileLogin() {
+        return aLvEparakstsMobileLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_LV_EPARAKSTS_MOBILE_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LatviaEparakstsMobileProviderOutput> getaLvEparakstsMobileLogin_JsonNullable() {
+    return aLvEparakstsMobileLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_LV_EPARAKSTS_MOBILE_LOGIN)
+  public void setaLvEparakstsMobileLogin_JsonNullable(JsonNullable<LatviaEparakstsMobileProviderOutput> aLvEparakstsMobileLogin) {
+    this.aLvEparakstsMobileLogin = aLvEparakstsMobileLogin;
+  }
+
+  public void setaLvEparakstsMobileLogin(@javax.annotation.Nullable LatviaEparakstsMobileProviderOutput aLvEparakstsMobileLogin) {
+    this.aLvEparakstsMobileLogin = JsonNullable.<LatviaEparakstsMobileProviderOutput>of(aLvEparakstsMobileLogin);
+  }
+
+
+  public ProviderOutput aMojeid(@javax.annotation.Nullable CzechiaMojeIdProviderOutput aMojeid) {
+    this.aMojeid = JsonNullable.<CzechiaMojeIdProviderOutput>of(aMojeid);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-mojeid&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aMojeid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public CzechiaMojeIdProviderOutput getaMojeid() {
+        return aMojeid.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_MOJEID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<CzechiaMojeIdProviderOutput> getaMojeid_JsonNullable() {
+    return aMojeid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_MOJEID)
+  public void setaMojeid_JsonNullable(JsonNullable<CzechiaMojeIdProviderOutput> aMojeid) {
+    this.aMojeid = aMojeid;
+  }
+
+  public void setaMojeid(@javax.annotation.Nullable CzechiaMojeIdProviderOutput aMojeid) {
+    this.aMojeid = JsonNullable.<CzechiaMojeIdProviderOutput>of(aMojeid);
+  }
+
+
+  public ProviderOutput aPlMojeidLogin(@javax.annotation.Nullable PolandMojeIdProviderOutput aPlMojeidLogin) {
+    this.aPlMojeidLogin = JsonNullable.<PolandMojeIdProviderOutput>of(aPlMojeidLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-pl-mojeid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aPlMojeidLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PolandMojeIdProviderOutput getaPlMojeidLogin() {
+        return aPlMojeidLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_PL_MOJEID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PolandMojeIdProviderOutput> getaPlMojeidLogin_JsonNullable() {
+    return aPlMojeidLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_PL_MOJEID_LOGIN)
+  public void setaPlMojeidLogin_JsonNullable(JsonNullable<PolandMojeIdProviderOutput> aPlMojeidLogin) {
+    this.aPlMojeidLogin = aPlMojeidLogin;
+  }
+
+  public void setaPlMojeidLogin(@javax.annotation.Nullable PolandMojeIdProviderOutput aPlMojeidLogin) {
+    this.aPlMojeidLogin = JsonNullable.<PolandMojeIdProviderOutput>of(aPlMojeidLogin);
+  }
+
+
+  public ProviderOutput aPtIdLogin(@javax.annotation.Nullable PortugalIdCardProviderOutput aPtIdLogin) {
+    this.aPtIdLogin = JsonNullable.<PortugalIdCardProviderOutput>of(aPtIdLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-pt-id-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aPtIdLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PortugalIdCardProviderOutput getaPtIdLogin() {
+        return aPtIdLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_PT_ID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PortugalIdCardProviderOutput> getaPtIdLogin_JsonNullable() {
+    return aPtIdLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_PT_ID_LOGIN)
+  public void setaPtIdLogin_JsonNullable(JsonNullable<PortugalIdCardProviderOutput> aPtIdLogin) {
+    this.aPtIdLogin = aPtIdLogin;
+  }
+
+  public void setaPtIdLogin(@javax.annotation.Nullable PortugalIdCardProviderOutput aPtIdLogin) {
+    this.aPtIdLogin = JsonNullable.<PortugalIdCardProviderOutput>of(aPtIdLogin);
+  }
+
+
+  public ProviderOutput aRsIdLogin(@javax.annotation.Nullable SerbiaIdCardProviderOutput aRsIdLogin) {
+    this.aRsIdLogin = JsonNullable.<SerbiaIdCardProviderOutput>of(aRsIdLogin);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;a-rs-id-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return aRsIdLogin
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SerbiaIdCardProviderOutput getaRsIdLogin() {
+        return aRsIdLogin.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_A_RS_ID_LOGIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SerbiaIdCardProviderOutput> getaRsIdLogin_JsonNullable() {
+    return aRsIdLogin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_A_RS_ID_LOGIN)
+  public void setaRsIdLogin_JsonNullable(JsonNullable<SerbiaIdCardProviderOutput> aRsIdLogin) {
+    this.aRsIdLogin = aRsIdLogin;
+  }
+
+  public void setaRsIdLogin(@javax.annotation.Nullable SerbiaIdCardProviderOutput aRsIdLogin) {
+    this.aRsIdLogin = JsonNullable.<SerbiaIdCardProviderOutput>of(aRsIdLogin);
+  }
+
+
+  public ProviderOutput appleWallet(@javax.annotation.Nullable AppleWalletProviderOutput appleWallet) {
+    this.appleWallet = JsonNullable.<AppleWalletProviderOutput>of(appleWallet);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;apple-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return appleWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public AppleWalletProviderOutput getAppleWallet() {
+        return appleWallet.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_APPLE_WALLET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<AppleWalletProviderOutput> getAppleWallet_JsonNullable() {
+    return appleWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_APPLE_WALLET)
+  public void setAppleWallet_JsonNullable(JsonNullable<AppleWalletProviderOutput> appleWallet) {
+    this.appleWallet = appleWallet;
+  }
+
+  public void setAppleWallet(@javax.annotation.Nullable AppleWalletProviderOutput appleWallet) {
+    this.appleWallet = JsonNullable.<AppleWalletProviderOutput>of(appleWallet);
+  }
+
+
+  public ProviderOutput denmarkMitid(@javax.annotation.Nullable MitIdProviderOutput denmarkMitid) {
+    this.denmarkMitid = JsonNullable.<MitIdProviderOutput>of(denmarkMitid);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;denmark-mitid&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return denmarkMitid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MitIdProviderOutput getDenmarkMitid() {
+        return denmarkMitid.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DENMARK_MITID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MitIdProviderOutput> getDenmarkMitid_JsonNullable() {
+    return denmarkMitid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DENMARK_MITID)
+  public void setDenmarkMitid_JsonNullable(JsonNullable<MitIdProviderOutput> denmarkMitid) {
+    this.denmarkMitid = denmarkMitid;
+  }
+
+  public void setDenmarkMitid(@javax.annotation.Nullable MitIdProviderOutput denmarkMitid) {
+    this.denmarkMitid = JsonNullable.<MitIdProviderOutput>of(denmarkMitid);
   }
 
 
@@ -138,7 +721,7 @@ public class ProviderOutput {
   }
 
   /**
-   * Get ethiopiaFayda
+   * Exposed properties for the &#x60;ethiopia-fayda&#x60; Provider which do not directly map to the normalized IdentityData model.
    * @return ethiopiaFayda
    */
   @javax.annotation.Nullable
@@ -164,35 +747,227 @@ public class ProviderOutput {
   }
 
 
-  public ProviderOutput philippinesPhysicalNationalIdQr(@javax.annotation.Nullable PhilippinesPhysicalNidProviderOutput philippinesPhysicalNationalIdQr) {
-    this.philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>of(philippinesPhysicalNationalIdQr);
+  public ProviderOutput franceIdentiteNumerique(@javax.annotation.Nullable FrenchNumeriqueProviderOutput franceIdentiteNumerique) {
+    this.franceIdentiteNumerique = JsonNullable.<FrenchNumeriqueProviderOutput>of(franceIdentiteNumerique);
     return this;
   }
 
   /**
-   * Get philippinesPhysicalNationalIdQr
-   * @return philippinesPhysicalNationalIdQr
+   * Exposed properties for the &#x60;france-identite-numerique&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return franceIdentiteNumerique
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public PhilippinesPhysicalNidProviderOutput getPhilippinesPhysicalNationalIdQr() {
-        return philippinesPhysicalNationalIdQr.orElse(null);
+  public FrenchNumeriqueProviderOutput getFranceIdentiteNumerique() {
+        return franceIdentiteNumerique.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
+  @JsonProperty(JSON_PROPERTY_FRANCE_IDENTITE_NUMERIQUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PhilippinesPhysicalNidProviderOutput> getPhilippinesPhysicalNationalIdQr_JsonNullable() {
-    return philippinesPhysicalNationalIdQr;
+  public JsonNullable<FrenchNumeriqueProviderOutput> getFranceIdentiteNumerique_JsonNullable() {
+    return franceIdentiteNumerique;
   }
   
-  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
-  public void setPhilippinesPhysicalNationalIdQr_JsonNullable(JsonNullable<PhilippinesPhysicalNidProviderOutput> philippinesPhysicalNationalIdQr) {
-    this.philippinesPhysicalNationalIdQr = philippinesPhysicalNationalIdQr;
+  @JsonProperty(JSON_PROPERTY_FRANCE_IDENTITE_NUMERIQUE)
+  public void setFranceIdentiteNumerique_JsonNullable(JsonNullable<FrenchNumeriqueProviderOutput> franceIdentiteNumerique) {
+    this.franceIdentiteNumerique = franceIdentiteNumerique;
   }
 
-  public void setPhilippinesPhysicalNationalIdQr(@javax.annotation.Nullable PhilippinesPhysicalNidProviderOutput philippinesPhysicalNationalIdQr) {
-    this.philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>of(philippinesPhysicalNationalIdQr);
+  public void setFranceIdentiteNumerique(@javax.annotation.Nullable FrenchNumeriqueProviderOutput franceIdentiteNumerique) {
+    this.franceIdentiteNumerique = JsonNullable.<FrenchNumeriqueProviderOutput>of(franceIdentiteNumerique);
+  }
+
+
+  public ProviderOutput googleWallet(@javax.annotation.Nullable GoogleWalletProviderOutput googleWallet) {
+    this.googleWallet = JsonNullable.<GoogleWalletProviderOutput>of(googleWallet);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;google-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return googleWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public GoogleWalletProviderOutput getGoogleWallet() {
+        return googleWallet.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_GOOGLE_WALLET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<GoogleWalletProviderOutput> getGoogleWallet_JsonNullable() {
+    return googleWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GOOGLE_WALLET)
+  public void setGoogleWallet_JsonNullable(JsonNullable<GoogleWalletProviderOutput> googleWallet) {
+    this.googleWallet = googleWallet;
+  }
+
+  public void setGoogleWallet(@javax.annotation.Nullable GoogleWalletProviderOutput googleWallet) {
+    this.googleWallet = JsonNullable.<GoogleWalletProviderOutput>of(googleWallet);
+  }
+
+
+  public ProviderOutput italySpid(@javax.annotation.Nullable SpidProviderOutput italySpid) {
+    this.italySpid = JsonNullable.<SpidProviderOutput>of(italySpid);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;italy-spid&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return italySpid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SpidProviderOutput getItalySpid() {
+        return italySpid.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ITALY_SPID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SpidProviderOutput> getItalySpid_JsonNullable() {
+    return italySpid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ITALY_SPID)
+  public void setItalySpid_JsonNullable(JsonNullable<SpidProviderOutput> italySpid) {
+    this.italySpid = italySpid;
+  }
+
+  public void setItalySpid(@javax.annotation.Nullable SpidProviderOutput italySpid) {
+    this.italySpid = JsonNullable.<SpidProviderOutput>of(italySpid);
+  }
+
+
+  public ProviderOutput lloydsSmartId(@javax.annotation.Nullable LloydsSmartIdProviderOutput lloydsSmartId) {
+    this.lloydsSmartId = JsonNullable.<LloydsSmartIdProviderOutput>of(lloydsSmartId);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;lloyds-smart-id&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return lloydsSmartId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LloydsSmartIdProviderOutput getLloydsSmartId() {
+        return lloydsSmartId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_LLOYDS_SMART_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LloydsSmartIdProviderOutput> getLloydsSmartId_JsonNullable() {
+    return lloydsSmartId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LLOYDS_SMART_ID)
+  public void setLloydsSmartId_JsonNullable(JsonNullable<LloydsSmartIdProviderOutput> lloydsSmartId) {
+    this.lloydsSmartId = lloydsSmartId;
+  }
+
+  public void setLloydsSmartId(@javax.annotation.Nullable LloydsSmartIdProviderOutput lloydsSmartId) {
+    this.lloydsSmartId = JsonNullable.<LloydsSmartIdProviderOutput>of(lloydsSmartId);
+  }
+
+
+  public ProviderOutput mexicoCurpLookup(@javax.annotation.Nullable MexicoCurpProviderOutput mexicoCurpLookup) {
+    this.mexicoCurpLookup = JsonNullable.<MexicoCurpProviderOutput>of(mexicoCurpLookup);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;mexico-curp-lookup&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return mexicoCurpLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MexicoCurpProviderOutput getMexicoCurpLookup() {
+        return mexicoCurpLookup.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_MEXICO_CURP_LOOKUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MexicoCurpProviderOutput> getMexicoCurpLookup_JsonNullable() {
+    return mexicoCurpLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MEXICO_CURP_LOOKUP)
+  public void setMexicoCurpLookup_JsonNullable(JsonNullable<MexicoCurpProviderOutput> mexicoCurpLookup) {
+    this.mexicoCurpLookup = mexicoCurpLookup;
+  }
+
+  public void setMexicoCurpLookup(@javax.annotation.Nullable MexicoCurpProviderOutput mexicoCurpLookup) {
+    this.mexicoCurpLookup = JsonNullable.<MexicoCurpProviderOutput>of(mexicoCurpLookup);
+  }
+
+
+  public ProviderOutput mobileId(@javax.annotation.Nullable MobileIdProviderOutput mobileId) {
+    this.mobileId = JsonNullable.<MobileIdProviderOutput>of(mobileId);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;mobile-id&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return mobileId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MobileIdProviderOutput getMobileId() {
+        return mobileId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_MOBILE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MobileIdProviderOutput> getMobileId_JsonNullable() {
+    return mobileId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOBILE_ID)
+  public void setMobileId_JsonNullable(JsonNullable<MobileIdProviderOutput> mobileId) {
+    this.mobileId = mobileId;
+  }
+
+  public void setMobileId(@javax.annotation.Nullable MobileIdProviderOutput mobileId) {
+    this.mobileId = JsonNullable.<MobileIdProviderOutput>of(mobileId);
+  }
+
+
+  public ProviderOutput peruDniLookup(@javax.annotation.Nullable PeruDniProviderOutput peruDniLookup) {
+    this.peruDniLookup = JsonNullable.<PeruDniProviderOutput>of(peruDniLookup);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;peru-dni-lookup&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return peruDniLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PeruDniProviderOutput getPeruDniLookup() {
+        return peruDniLookup.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PERU_DNI_LOOKUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PeruDniProviderOutput> getPeruDniLookup_JsonNullable() {
+    return peruDniLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PERU_DNI_LOOKUP)
+  public void setPeruDniLookup_JsonNullable(JsonNullable<PeruDniProviderOutput> peruDniLookup) {
+    this.peruDniLookup = peruDniLookup;
+  }
+
+  public void setPeruDniLookup(@javax.annotation.Nullable PeruDniProviderOutput peruDniLookup) {
+    this.peruDniLookup = JsonNullable.<PeruDniProviderOutput>of(peruDniLookup);
   }
 
 
@@ -202,7 +977,7 @@ public class ProviderOutput {
   }
 
   /**
-   * Get philippinesDigitalNationalIdQr
+   * Exposed properties for the &#x60;philippines-digital-national-id-qr&#x60; Provider which do not directly map to the normalized IdentityData model.
    * @return philippinesDigitalNationalIdQr
    */
   @javax.annotation.Nullable
@@ -228,6 +1003,230 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput philippinesPhysicalNationalIdQr(@javax.annotation.Nullable PhilippinesPhysicalNidProviderOutput philippinesPhysicalNationalIdQr) {
+    this.philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>of(philippinesPhysicalNationalIdQr);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;philippines-physical-national-id-qr&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return philippinesPhysicalNationalIdQr
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PhilippinesPhysicalNidProviderOutput getPhilippinesPhysicalNationalIdQr() {
+        return philippinesPhysicalNationalIdQr.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PhilippinesPhysicalNidProviderOutput> getPhilippinesPhysicalNationalIdQr_JsonNullable() {
+    return philippinesPhysicalNationalIdQr;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
+  public void setPhilippinesPhysicalNationalIdQr_JsonNullable(JsonNullable<PhilippinesPhysicalNidProviderOutput> philippinesPhysicalNationalIdQr) {
+    this.philippinesPhysicalNationalIdQr = philippinesPhysicalNationalIdQr;
+  }
+
+  public void setPhilippinesPhysicalNationalIdQr(@javax.annotation.Nullable PhilippinesPhysicalNidProviderOutput philippinesPhysicalNationalIdQr) {
+    this.philippinesPhysicalNationalIdQr = JsonNullable.<PhilippinesPhysicalNidProviderOutput>of(philippinesPhysicalNationalIdQr);
+  }
+
+
+  public ProviderOutput postOfficeEasyid(@javax.annotation.Nullable PostOfficeEasyIdProviderOutput postOfficeEasyid) {
+    this.postOfficeEasyid = JsonNullable.<PostOfficeEasyIdProviderOutput>of(postOfficeEasyid);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;post-office-easyid&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return postOfficeEasyid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PostOfficeEasyIdProviderOutput getPostOfficeEasyid() {
+        return postOfficeEasyid.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_POST_OFFICE_EASYID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PostOfficeEasyIdProviderOutput> getPostOfficeEasyid_JsonNullable() {
+    return postOfficeEasyid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_POST_OFFICE_EASYID)
+  public void setPostOfficeEasyid_JsonNullable(JsonNullable<PostOfficeEasyIdProviderOutput> postOfficeEasyid) {
+    this.postOfficeEasyid = postOfficeEasyid;
+  }
+
+  public void setPostOfficeEasyid(@javax.annotation.Nullable PostOfficeEasyIdProviderOutput postOfficeEasyid) {
+    this.postOfficeEasyid = JsonNullable.<PostOfficeEasyIdProviderOutput>of(postOfficeEasyid);
+  }
+
+
+  public ProviderOutput samsungWallet(@javax.annotation.Nullable SamsungWalletProviderOutput samsungWallet) {
+    this.samsungWallet = JsonNullable.<SamsungWalletProviderOutput>of(samsungWallet);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;samsung-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return samsungWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SamsungWalletProviderOutput getSamsungWallet() {
+        return samsungWallet.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SAMSUNG_WALLET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SamsungWalletProviderOutput> getSamsungWallet_JsonNullable() {
+    return samsungWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SAMSUNG_WALLET)
+  public void setSamsungWallet_JsonNullable(JsonNullable<SamsungWalletProviderOutput> samsungWallet) {
+    this.samsungWallet = samsungWallet;
+  }
+
+  public void setSamsungWallet(@javax.annotation.Nullable SamsungWalletProviderOutput samsungWallet) {
+    this.samsungWallet = JsonNullable.<SamsungWalletProviderOutput>of(samsungWallet);
+  }
+
+
+  public ProviderOutput smartId(@javax.annotation.Nullable SmartIdProviderOutput smartId) {
+    this.smartId = JsonNullable.<SmartIdProviderOutput>of(smartId);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;smart-id&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return smartId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SmartIdProviderOutput getSmartId() {
+        return smartId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SMART_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SmartIdProviderOutput> getSmartId_JsonNullable() {
+    return smartId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SMART_ID)
+  public void setSmartId_JsonNullable(JsonNullable<SmartIdProviderOutput> smartId) {
+    this.smartId = smartId;
+  }
+
+  public void setSmartId(@javax.annotation.Nullable SmartIdProviderOutput smartId) {
+    this.smartId = JsonNullable.<SmartIdProviderOutput>of(smartId);
+  }
+
+
+  public ProviderOutput swedenBankid(@javax.annotation.Nullable SwedenBankIdProviderOutput swedenBankid) {
+    this.swedenBankid = JsonNullable.<SwedenBankIdProviderOutput>of(swedenBankid);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;sweden-bankid&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return swedenBankid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SwedenBankIdProviderOutput getSwedenBankid() {
+        return swedenBankid.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SWEDEN_BANKID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SwedenBankIdProviderOutput> getSwedenBankid_JsonNullable() {
+    return swedenBankid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SWEDEN_BANKID)
+  public void setSwedenBankid_JsonNullable(JsonNullable<SwedenBankIdProviderOutput> swedenBankid) {
+    this.swedenBankid = swedenBankid;
+  }
+
+  public void setSwedenBankid(@javax.annotation.Nullable SwedenBankIdProviderOutput swedenBankid) {
+    this.swedenBankid = JsonNullable.<SwedenBankIdProviderOutput>of(swedenBankid);
+  }
+
+
+  public ProviderOutput usaLouisianaWallet(@javax.annotation.Nullable LaWalletProviderOutput usaLouisianaWallet) {
+    this.usaLouisianaWallet = JsonNullable.<LaWalletProviderOutput>of(usaLouisianaWallet);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;usa-louisiana-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return usaLouisianaWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LaWalletProviderOutput getUsaLouisianaWallet() {
+        return usaLouisianaWallet.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_USA_LOUISIANA_WALLET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LaWalletProviderOutput> getUsaLouisianaWallet_JsonNullable() {
+    return usaLouisianaWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USA_LOUISIANA_WALLET)
+  public void setUsaLouisianaWallet_JsonNullable(JsonNullable<LaWalletProviderOutput> usaLouisianaWallet) {
+    this.usaLouisianaWallet = usaLouisianaWallet;
+  }
+
+  public void setUsaLouisianaWallet(@javax.annotation.Nullable LaWalletProviderOutput usaLouisianaWallet) {
+    this.usaLouisianaWallet = JsonNullable.<LaWalletProviderOutput>of(usaLouisianaWallet);
+  }
+
+
+  public ProviderOutput yoti(@javax.annotation.Nullable YotiProviderOutput yoti) {
+    this.yoti = JsonNullable.<YotiProviderOutput>of(yoti);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;yoti&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return yoti
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public YotiProviderOutput getYoti() {
+        return yoti.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_YOTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<YotiProviderOutput> getYoti_JsonNullable() {
+    return yoti;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_YOTI)
+  public void setYoti_JsonNullable(JsonNullable<YotiProviderOutput> yoti) {
+    this.yoti = yoti;
+  }
+
+  public void setYoti(@javax.annotation.Nullable YotiProviderOutput yoti) {
+    this.yoti = JsonNullable.<YotiProviderOutput>of(yoti);
+  }
+
+
   /**
    * Return true if this ProviderOutput object is equal to o.
    */
@@ -240,11 +1239,38 @@ public class ProviderOutput {
       return false;
     }
     ProviderOutput providerOutput = (ProviderOutput) o;
-    return equalsNullable(this.italySpid, providerOutput.italySpid) &&
-        equalsNullable(this.mexicoCurpLookup, providerOutput.mexicoCurpLookup) &&
+    return equalsNullable(this.aAtHandySignaturLogin, providerOutput.aAtHandySignaturLogin) &&
+        equalsNullable(this.aBeIdLogin, providerOutput.aBeIdLogin) &&
+        equalsNullable(this.aEdoappEidLogin, providerOutput.aEdoappEidLogin) &&
+        equalsNullable(this.aEeWebEidLogin, providerOutput.aEeWebEidLogin) &&
+        equalsNullable(this.aFiIdLogin, providerOutput.aFiIdLogin) &&
+        equalsNullable(this.aFrejaEidLogin, providerOutput.aFrejaEidLogin) &&
+        equalsNullable(this.aItsmeLogin, providerOutput.aItsmeLogin) &&
+        equalsNullable(this.aLtIdLogin, providerOutput.aLtIdLogin) &&
+        equalsNullable(this.aLvEparakstsIdLogin, providerOutput.aLvEparakstsIdLogin) &&
+        equalsNullable(this.aLvEparakstsMobileLogin, providerOutput.aLvEparakstsMobileLogin) &&
+        equalsNullable(this.aMojeid, providerOutput.aMojeid) &&
+        equalsNullable(this.aPlMojeidLogin, providerOutput.aPlMojeidLogin) &&
+        equalsNullable(this.aPtIdLogin, providerOutput.aPtIdLogin) &&
+        equalsNullable(this.aRsIdLogin, providerOutput.aRsIdLogin) &&
+        equalsNullable(this.appleWallet, providerOutput.appleWallet) &&
+        equalsNullable(this.denmarkMitid, providerOutput.denmarkMitid) &&
         equalsNullable(this.ethiopiaFayda, providerOutput.ethiopiaFayda) &&
+        equalsNullable(this.franceIdentiteNumerique, providerOutput.franceIdentiteNumerique) &&
+        equalsNullable(this.googleWallet, providerOutput.googleWallet) &&
+        equalsNullable(this.italySpid, providerOutput.italySpid) &&
+        equalsNullable(this.lloydsSmartId, providerOutput.lloydsSmartId) &&
+        equalsNullable(this.mexicoCurpLookup, providerOutput.mexicoCurpLookup) &&
+        equalsNullable(this.mobileId, providerOutput.mobileId) &&
+        equalsNullable(this.peruDniLookup, providerOutput.peruDniLookup) &&
+        equalsNullable(this.philippinesDigitalNationalIdQr, providerOutput.philippinesDigitalNationalIdQr) &&
         equalsNullable(this.philippinesPhysicalNationalIdQr, providerOutput.philippinesPhysicalNationalIdQr) &&
-        equalsNullable(this.philippinesDigitalNationalIdQr, providerOutput.philippinesDigitalNationalIdQr);
+        equalsNullable(this.postOfficeEasyid, providerOutput.postOfficeEasyid) &&
+        equalsNullable(this.samsungWallet, providerOutput.samsungWallet) &&
+        equalsNullable(this.smartId, providerOutput.smartId) &&
+        equalsNullable(this.swedenBankid, providerOutput.swedenBankid) &&
+        equalsNullable(this.usaLouisianaWallet, providerOutput.usaLouisianaWallet) &&
+        equalsNullable(this.yoti, providerOutput.yoti);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -253,7 +1279,7 @@ public class ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(italySpid), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(ethiopiaFayda), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(philippinesDigitalNationalIdQr));
+    return Objects.hash(hashCodeNullable(aAtHandySignaturLogin), hashCodeNullable(aBeIdLogin), hashCodeNullable(aEdoappEidLogin), hashCodeNullable(aEeWebEidLogin), hashCodeNullable(aFiIdLogin), hashCodeNullable(aFrejaEidLogin), hashCodeNullable(aItsmeLogin), hashCodeNullable(aLtIdLogin), hashCodeNullable(aLvEparakstsIdLogin), hashCodeNullable(aLvEparakstsMobileLogin), hashCodeNullable(aMojeid), hashCodeNullable(aPlMojeidLogin), hashCodeNullable(aPtIdLogin), hashCodeNullable(aRsIdLogin), hashCodeNullable(appleWallet), hashCodeNullable(denmarkMitid), hashCodeNullable(ethiopiaFayda), hashCodeNullable(franceIdentiteNumerique), hashCodeNullable(googleWallet), hashCodeNullable(italySpid), hashCodeNullable(lloydsSmartId), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(mobileId), hashCodeNullable(peruDniLookup), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(postOfficeEasyid), hashCodeNullable(samsungWallet), hashCodeNullable(smartId), hashCodeNullable(swedenBankid), hashCodeNullable(usaLouisianaWallet), hashCodeNullable(yoti));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -267,11 +1293,38 @@ public class ProviderOutput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProviderOutput {\n");
-    sb.append("    italySpid: ").append(toIndentedString(italySpid)).append("\n");
-    sb.append("    mexicoCurpLookup: ").append(toIndentedString(mexicoCurpLookup)).append("\n");
+    sb.append("    aAtHandySignaturLogin: ").append(toIndentedString(aAtHandySignaturLogin)).append("\n");
+    sb.append("    aBeIdLogin: ").append(toIndentedString(aBeIdLogin)).append("\n");
+    sb.append("    aEdoappEidLogin: ").append(toIndentedString(aEdoappEidLogin)).append("\n");
+    sb.append("    aEeWebEidLogin: ").append(toIndentedString(aEeWebEidLogin)).append("\n");
+    sb.append("    aFiIdLogin: ").append(toIndentedString(aFiIdLogin)).append("\n");
+    sb.append("    aFrejaEidLogin: ").append(toIndentedString(aFrejaEidLogin)).append("\n");
+    sb.append("    aItsmeLogin: ").append(toIndentedString(aItsmeLogin)).append("\n");
+    sb.append("    aLtIdLogin: ").append(toIndentedString(aLtIdLogin)).append("\n");
+    sb.append("    aLvEparakstsIdLogin: ").append(toIndentedString(aLvEparakstsIdLogin)).append("\n");
+    sb.append("    aLvEparakstsMobileLogin: ").append(toIndentedString(aLvEparakstsMobileLogin)).append("\n");
+    sb.append("    aMojeid: ").append(toIndentedString(aMojeid)).append("\n");
+    sb.append("    aPlMojeidLogin: ").append(toIndentedString(aPlMojeidLogin)).append("\n");
+    sb.append("    aPtIdLogin: ").append(toIndentedString(aPtIdLogin)).append("\n");
+    sb.append("    aRsIdLogin: ").append(toIndentedString(aRsIdLogin)).append("\n");
+    sb.append("    appleWallet: ").append(toIndentedString(appleWallet)).append("\n");
+    sb.append("    denmarkMitid: ").append(toIndentedString(denmarkMitid)).append("\n");
     sb.append("    ethiopiaFayda: ").append(toIndentedString(ethiopiaFayda)).append("\n");
-    sb.append("    philippinesPhysicalNationalIdQr: ").append(toIndentedString(philippinesPhysicalNationalIdQr)).append("\n");
+    sb.append("    franceIdentiteNumerique: ").append(toIndentedString(franceIdentiteNumerique)).append("\n");
+    sb.append("    googleWallet: ").append(toIndentedString(googleWallet)).append("\n");
+    sb.append("    italySpid: ").append(toIndentedString(italySpid)).append("\n");
+    sb.append("    lloydsSmartId: ").append(toIndentedString(lloydsSmartId)).append("\n");
+    sb.append("    mexicoCurpLookup: ").append(toIndentedString(mexicoCurpLookup)).append("\n");
+    sb.append("    mobileId: ").append(toIndentedString(mobileId)).append("\n");
+    sb.append("    peruDniLookup: ").append(toIndentedString(peruDniLookup)).append("\n");
     sb.append("    philippinesDigitalNationalIdQr: ").append(toIndentedString(philippinesDigitalNationalIdQr)).append("\n");
+    sb.append("    philippinesPhysicalNationalIdQr: ").append(toIndentedString(philippinesPhysicalNationalIdQr)).append("\n");
+    sb.append("    postOfficeEasyid: ").append(toIndentedString(postOfficeEasyid)).append("\n");
+    sb.append("    samsungWallet: ").append(toIndentedString(samsungWallet)).append("\n");
+    sb.append("    smartId: ").append(toIndentedString(smartId)).append("\n");
+    sb.append("    swedenBankid: ").append(toIndentedString(swedenBankid)).append("\n");
+    sb.append("    usaLouisianaWallet: ").append(toIndentedString(usaLouisianaWallet)).append("\n");
+    sb.append("    yoti: ").append(toIndentedString(yoti)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -319,14 +1372,84 @@ public class ProviderOutput {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `italy-spid` to the URL query string
-    if (getItalySpid() != null) {
-      joiner.add(getItalySpid().toUrlQueryString(prefix + "italy-spid" + suffix));
+    // add `a-at-handy-signatur-login` to the URL query string
+    if (getaAtHandySignaturLogin() != null) {
+      joiner.add(getaAtHandySignaturLogin().toUrlQueryString(prefix + "a-at-handy-signatur-login" + suffix));
     }
 
-    // add `mexico-curp-lookup` to the URL query string
-    if (getMexicoCurpLookup() != null) {
-      joiner.add(getMexicoCurpLookup().toUrlQueryString(prefix + "mexico-curp-lookup" + suffix));
+    // add `a-be-id-login` to the URL query string
+    if (getaBeIdLogin() != null) {
+      joiner.add(getaBeIdLogin().toUrlQueryString(prefix + "a-be-id-login" + suffix));
+    }
+
+    // add `a-edoapp-eid-login` to the URL query string
+    if (getaEdoappEidLogin() != null) {
+      joiner.add(getaEdoappEidLogin().toUrlQueryString(prefix + "a-edoapp-eid-login" + suffix));
+    }
+
+    // add `a-ee-web-eid-login` to the URL query string
+    if (getaEeWebEidLogin() != null) {
+      joiner.add(getaEeWebEidLogin().toUrlQueryString(prefix + "a-ee-web-eid-login" + suffix));
+    }
+
+    // add `a-fi-id-login` to the URL query string
+    if (getaFiIdLogin() != null) {
+      joiner.add(getaFiIdLogin().toUrlQueryString(prefix + "a-fi-id-login" + suffix));
+    }
+
+    // add `a-freja-eid-login` to the URL query string
+    if (getaFrejaEidLogin() != null) {
+      joiner.add(getaFrejaEidLogin().toUrlQueryString(prefix + "a-freja-eid-login" + suffix));
+    }
+
+    // add `a-itsme-login` to the URL query string
+    if (getaItsmeLogin() != null) {
+      joiner.add(getaItsmeLogin().toUrlQueryString(prefix + "a-itsme-login" + suffix));
+    }
+
+    // add `a-lt-id-login` to the URL query string
+    if (getaLtIdLogin() != null) {
+      joiner.add(getaLtIdLogin().toUrlQueryString(prefix + "a-lt-id-login" + suffix));
+    }
+
+    // add `a-lv-eparaksts-id-login` to the URL query string
+    if (getaLvEparakstsIdLogin() != null) {
+      joiner.add(getaLvEparakstsIdLogin().toUrlQueryString(prefix + "a-lv-eparaksts-id-login" + suffix));
+    }
+
+    // add `a-lv-eparaksts-mobile-login` to the URL query string
+    if (getaLvEparakstsMobileLogin() != null) {
+      joiner.add(getaLvEparakstsMobileLogin().toUrlQueryString(prefix + "a-lv-eparaksts-mobile-login" + suffix));
+    }
+
+    // add `a-mojeid` to the URL query string
+    if (getaMojeid() != null) {
+      joiner.add(getaMojeid().toUrlQueryString(prefix + "a-mojeid" + suffix));
+    }
+
+    // add `a-pl-mojeid-login` to the URL query string
+    if (getaPlMojeidLogin() != null) {
+      joiner.add(getaPlMojeidLogin().toUrlQueryString(prefix + "a-pl-mojeid-login" + suffix));
+    }
+
+    // add `a-pt-id-login` to the URL query string
+    if (getaPtIdLogin() != null) {
+      joiner.add(getaPtIdLogin().toUrlQueryString(prefix + "a-pt-id-login" + suffix));
+    }
+
+    // add `a-rs-id-login` to the URL query string
+    if (getaRsIdLogin() != null) {
+      joiner.add(getaRsIdLogin().toUrlQueryString(prefix + "a-rs-id-login" + suffix));
+    }
+
+    // add `apple-wallet` to the URL query string
+    if (getAppleWallet() != null) {
+      joiner.add(getAppleWallet().toUrlQueryString(prefix + "apple-wallet" + suffix));
+    }
+
+    // add `denmark-mitid` to the URL query string
+    if (getDenmarkMitid() != null) {
+      joiner.add(getDenmarkMitid().toUrlQueryString(prefix + "denmark-mitid" + suffix));
     }
 
     // add `ethiopia-fayda` to the URL query string
@@ -334,14 +1457,79 @@ public class ProviderOutput {
       joiner.add(getEthiopiaFayda().toUrlQueryString(prefix + "ethiopia-fayda" + suffix));
     }
 
-    // add `philippines-physical-national-id-qr` to the URL query string
-    if (getPhilippinesPhysicalNationalIdQr() != null) {
-      joiner.add(getPhilippinesPhysicalNationalIdQr().toUrlQueryString(prefix + "philippines-physical-national-id-qr" + suffix));
+    // add `france-identite-numerique` to the URL query string
+    if (getFranceIdentiteNumerique() != null) {
+      joiner.add(getFranceIdentiteNumerique().toUrlQueryString(prefix + "france-identite-numerique" + suffix));
+    }
+
+    // add `google-wallet` to the URL query string
+    if (getGoogleWallet() != null) {
+      joiner.add(getGoogleWallet().toUrlQueryString(prefix + "google-wallet" + suffix));
+    }
+
+    // add `italy-spid` to the URL query string
+    if (getItalySpid() != null) {
+      joiner.add(getItalySpid().toUrlQueryString(prefix + "italy-spid" + suffix));
+    }
+
+    // add `lloyds-smart-id` to the URL query string
+    if (getLloydsSmartId() != null) {
+      joiner.add(getLloydsSmartId().toUrlQueryString(prefix + "lloyds-smart-id" + suffix));
+    }
+
+    // add `mexico-curp-lookup` to the URL query string
+    if (getMexicoCurpLookup() != null) {
+      joiner.add(getMexicoCurpLookup().toUrlQueryString(prefix + "mexico-curp-lookup" + suffix));
+    }
+
+    // add `mobile-id` to the URL query string
+    if (getMobileId() != null) {
+      joiner.add(getMobileId().toUrlQueryString(prefix + "mobile-id" + suffix));
+    }
+
+    // add `peru-dni-lookup` to the URL query string
+    if (getPeruDniLookup() != null) {
+      joiner.add(getPeruDniLookup().toUrlQueryString(prefix + "peru-dni-lookup" + suffix));
     }
 
     // add `philippines-digital-national-id-qr` to the URL query string
     if (getPhilippinesDigitalNationalIdQr() != null) {
       joiner.add(getPhilippinesDigitalNationalIdQr().toUrlQueryString(prefix + "philippines-digital-national-id-qr" + suffix));
+    }
+
+    // add `philippines-physical-national-id-qr` to the URL query string
+    if (getPhilippinesPhysicalNationalIdQr() != null) {
+      joiner.add(getPhilippinesPhysicalNationalIdQr().toUrlQueryString(prefix + "philippines-physical-national-id-qr" + suffix));
+    }
+
+    // add `post-office-easyid` to the URL query string
+    if (getPostOfficeEasyid() != null) {
+      joiner.add(getPostOfficeEasyid().toUrlQueryString(prefix + "post-office-easyid" + suffix));
+    }
+
+    // add `samsung-wallet` to the URL query string
+    if (getSamsungWallet() != null) {
+      joiner.add(getSamsungWallet().toUrlQueryString(prefix + "samsung-wallet" + suffix));
+    }
+
+    // add `smart-id` to the URL query string
+    if (getSmartId() != null) {
+      joiner.add(getSmartId().toUrlQueryString(prefix + "smart-id" + suffix));
+    }
+
+    // add `sweden-bankid` to the URL query string
+    if (getSwedenBankid() != null) {
+      joiner.add(getSwedenBankid().toUrlQueryString(prefix + "sweden-bankid" + suffix));
+    }
+
+    // add `usa-louisiana-wallet` to the URL query string
+    if (getUsaLouisianaWallet() != null) {
+      joiner.add(getUsaLouisianaWallet().toUrlQueryString(prefix + "usa-louisiana-wallet" + suffix));
+    }
+
+    // add `yoti` to the URL query string
+    if (getYoti() != null) {
+      joiner.add(getYoti().toUrlQueryString(prefix + "yoti" + suffix));
     }
 
     return joiner.toString();

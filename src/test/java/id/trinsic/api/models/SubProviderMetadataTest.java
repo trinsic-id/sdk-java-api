@@ -62,14 +62,6 @@ class SubProviderMetadataTest {
     }
 
     /**
-     * Test the property 'description'
-     */
-    @Test
-    void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
      * Test the property 'logoUrl'
      */
     @Test

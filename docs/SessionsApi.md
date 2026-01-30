@@ -12,12 +12,16 @@ All URIs are relative to *https://api.trinsic.id*
 | [**createHostedProviderSessionWithHttpInfo**](SessionsApi.md#createHostedProviderSessionWithHttpInfo) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
 | [**createWidgetSession**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
 | [**createWidgetSessionWithHttpInfo**](SessionsApi.md#createWidgetSessionWithHttpInfo) | **POST** /api/v1/sessions/widget | Create Widget Session |
+| [**getAttachment**](SessionsApi.md#getAttachment) | **POST** /api/v1/sessions/{sessionId}/attachments/{attachmentId}/get | Get Attachment |
+| [**getAttachmentWithHttpInfo**](SessionsApi.md#getAttachmentWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/attachments/{attachmentId}/get | Get Attachment |
 | [**getSession**](SessionsApi.md#getSession) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionWithHttpInfo**](SessionsApi.md#getSessionWithHttpInfo) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
 | [**getSessionResultWithHttpInfo**](SessionsApi.md#getSessionResultWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
 | [**listSessions**](SessionsApi.md#listSessions) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
 | [**listSessionsWithHttpInfo**](SessionsApi.md#listSessionsWithHttpInfo) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
+| [**recommendProviders**](SessionsApi.md#recommendProviders) | **POST** /api/v1/sessions/providers/recommend | Recommend Providers |
+| [**recommendProvidersWithHttpInfo**](SessionsApi.md#recommendProvidersWithHttpInfo) | **POST** /api/v1/sessions/providers/recommend | Recommend Providers |
 | [**redactSession**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**redactSessionWithHttpInfo**](SessionsApi.md#redactSessionWithHttpInfo) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**refreshStepContent**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{sessionId}/step/refresh | Refresh Step Content |
@@ -635,6 +639,166 @@ ApiResponse<[**CreateWidgetSessionResponse**](CreateWidgetSessionResponse.md)>
 | **500** | Internal server error |  -  |
 
 
+## getAttachment
+
+> GetAttachmentResponse getAttachment(sessionId, attachmentId, getAttachmentRequest)
+
+Get Attachment
+
+Fetch an Attachment&#39;s contents.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID sessionId = UUID.randomUUID(); // UUID | The ID of the Session to fetch the Attachment from
+        UUID attachmentId = UUID.randomUUID(); // UUID | The ID of the Attachment to fetch
+        GetAttachmentRequest getAttachmentRequest = new GetAttachmentRequest(); // GetAttachmentRequest | 
+        try {
+            GetAttachmentResponse result = apiInstance.getAttachment(sessionId, attachmentId, getAttachmentRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#getAttachment");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sessionId** | **UUID**| The ID of the Session to fetch the Attachment from | |
+| **attachmentId** | **UUID**| The ID of the Attachment to fetch | |
+| **getAttachmentRequest** | [**GetAttachmentRequest**](GetAttachmentRequest.md)|  | [optional] |
+
+### Return type
+
+[**GetAttachmentResponse**](GetAttachmentResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## getAttachmentWithHttpInfo
+
+> ApiResponse<GetAttachmentResponse> getAttachment getAttachmentWithHttpInfo(sessionId, attachmentId, getAttachmentRequest)
+
+Get Attachment
+
+Fetch an Attachment&#39;s contents.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        UUID sessionId = UUID.randomUUID(); // UUID | The ID of the Session to fetch the Attachment from
+        UUID attachmentId = UUID.randomUUID(); // UUID | The ID of the Attachment to fetch
+        GetAttachmentRequest getAttachmentRequest = new GetAttachmentRequest(); // GetAttachmentRequest | 
+        try {
+            ApiResponse<GetAttachmentResponse> response = apiInstance.getAttachmentWithHttpInfo(sessionId, attachmentId, getAttachmentRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#getAttachment");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sessionId** | **UUID**| The ID of the Session to fetch the Attachment from | |
+| **attachmentId** | **UUID**| The ID of the Attachment to fetch | |
+| **getAttachmentRequest** | [**GetAttachmentRequest**](GetAttachmentRequest.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**GetAttachmentResponse**](GetAttachmentResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+
 ## getSession
 
 > GetSessionResponse getSession(sessionId)
@@ -1107,13 +1271,165 @@ ApiResponse<[**ListSessionsResponse**](ListSessionsResponse.md)>
 | **500** | Internal server error |  -  |
 
 
+## recommendProviders
+
+> RecommendProvidersResponse recommendProviders(recommendProvidersRequest)
+
+Recommend Providers
+
+Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        RecommendProvidersRequest recommendProvidersRequest = new RecommendProvidersRequest(); // RecommendProvidersRequest | 
+        try {
+            RecommendProvidersResponse result = apiInstance.recommendProviders(recommendProvidersRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#recommendProviders");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recommendProvidersRequest** | [**RecommendProvidersRequest**](RecommendProvidersRequest.md)|  | [optional] |
+
+### Return type
+
+[**RecommendProvidersResponse**](RecommendProvidersResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## recommendProvidersWithHttpInfo
+
+> ApiResponse<RecommendProvidersResponse> recommendProviders recommendProvidersWithHttpInfo(recommendProvidersRequest)
+
+Recommend Providers
+
+Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.SessionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        SessionsApi apiInstance = new SessionsApi(defaultClient);
+        RecommendProvidersRequest recommendProvidersRequest = new RecommendProvidersRequest(); // RecommendProvidersRequest | 
+        try {
+            ApiResponse<RecommendProvidersResponse> response = apiInstance.recommendProvidersWithHttpInfo(recommendProvidersRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SessionsApi#recommendProviders");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recommendProvidersRequest** | [**RecommendProvidersRequest**](RecommendProvidersRequest.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**RecommendProvidersResponse**](RecommendProvidersResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+
 ## redactSession
 
 > void redactSession(sessionId)
 
 Redact Session
 
-Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
 
 ### Example
 
@@ -1186,7 +1502,7 @@ null (empty response body)
 
 Redact Session
 
-Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
 
 ### Example
 

@@ -37,53 +37,15 @@ import id.trinsic.ApiClient;
  * SmartIdInput
  */
 @JsonPropertyOrder({
-  SmartIdInput.JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER,
   SmartIdInput.JSON_PROPERTY_SMART_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SmartIdInput {
-  public static final String JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER = "smartIdDocumentNumber";
-  private JsonNullable<String> smartIdDocumentNumber = JsonNullable.<String>undefined();
-
   public static final String JSON_PROPERTY_SMART_ID_NUMBER = "smartIdNumber";
   private JsonNullable<String> smartIdNumber = JsonNullable.<String>undefined();
 
   public SmartIdInput() { 
   }
-
-  public SmartIdInput smartIdDocumentNumber(@javax.annotation.Nullable String smartIdDocumentNumber) {
-    this.smartIdDocumentNumber = JsonNullable.<String>of(smartIdDocumentNumber);
-    return this;
-  }
-
-  /**
-   * The user&#39;s Smart ID Document Number
-   * @return smartIdDocumentNumber
-   * @deprecated
-   */
-  @Deprecated
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getSmartIdDocumentNumber() {
-        return smartIdDocumentNumber.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getSmartIdDocumentNumber_JsonNullable() {
-    return smartIdDocumentNumber;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_SMART_ID_DOCUMENT_NUMBER)
-  public void setSmartIdDocumentNumber_JsonNullable(JsonNullable<String> smartIdDocumentNumber) {
-    this.smartIdDocumentNumber = smartIdDocumentNumber;
-  }
-
-  public void setSmartIdDocumentNumber(@javax.annotation.Nullable String smartIdDocumentNumber) {
-    this.smartIdDocumentNumber = JsonNullable.<String>of(smartIdDocumentNumber);
-  }
-
 
   public SmartIdInput smartIdNumber(@javax.annotation.Nullable String smartIdNumber) {
     this.smartIdNumber = JsonNullable.<String>of(smartIdNumber);
@@ -129,8 +91,7 @@ public class SmartIdInput {
       return false;
     }
     SmartIdInput smartIdInput = (SmartIdInput) o;
-    return equalsNullable(this.smartIdDocumentNumber, smartIdInput.smartIdDocumentNumber) &&
-        equalsNullable(this.smartIdNumber, smartIdInput.smartIdNumber);
+    return equalsNullable(this.smartIdNumber, smartIdInput.smartIdNumber);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -139,7 +100,7 @@ public class SmartIdInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(smartIdDocumentNumber), hashCodeNullable(smartIdNumber));
+    return Objects.hash(hashCodeNullable(smartIdNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -153,7 +114,6 @@ public class SmartIdInput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartIdInput {\n");
-    sb.append("    smartIdDocumentNumber: ").append(toIndentedString(smartIdDocumentNumber)).append("\n");
     sb.append("    smartIdNumber: ").append(toIndentedString(smartIdNumber)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -201,11 +161,6 @@ public class SmartIdInput {
     }
 
     StringJoiner joiner = new StringJoiner("&");
-
-    // add `smartIdDocumentNumber` to the URL query string
-    if (getSmartIdDocumentNumber() != null) {
-      joiner.add(String.format("%ssmartIdDocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSmartIdDocumentNumber()))));
-    }
 
     // add `smartIdNumber` to the URL query string
     if (getSmartIdNumber() != null) {

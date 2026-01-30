@@ -54,8 +54,9 @@ public class VerificationProfilesApiTest {
         String primaryColor = null;
         List<String> providers = null;
         File logo = null;
+        Boolean isProductionUsage = null;
         CreateVerificationProfileResponse response = 
-        api.createVerificationProfile(alias, brandName, primaryColor, providers, logo);
+        api.createVerificationProfile(alias, brandName, primaryColor, providers, logo, isProductionUsage);
         
         // TODO: test validations
     }

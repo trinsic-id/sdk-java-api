@@ -7,8 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**attachmentAccessKey** | **String** | The Attachment Access Key to exchange for the raw file contents of the related Attachment |  |
-|**sessionId** | **UUID** | The ID of the Acceptance Session for which the Attachment is being requested. |  |
+|**resultsAccessKey** | **String** | The Results Access Key for the Session associated with the Attachment being retrieved.              This is returned during Session creation. |  |
 
 
 

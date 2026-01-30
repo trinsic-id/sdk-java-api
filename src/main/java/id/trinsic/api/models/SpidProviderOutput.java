@@ -36,17 +36,27 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * SpidProviderOutput
+ * Exposed properties for the &#x60;italy-spid&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
   SpidProviderOutput.JSON_PROPERTY_BILLING_INFORMATION,
   SpidProviderOutput.JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID,
   SpidProviderOutput.JSON_PROPERTY_SPID_CODE,
   SpidProviderOutput.JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE,
+  SpidProviderOutput.JSON_PROPERTY_RAW_ID_CARD,
+  SpidProviderOutput.JSON_PROPERTY_GIVEN_NAME,
+  SpidProviderOutput.JSON_PROPERTY_FAMILY_NAME,
+  SpidProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
+  SpidProviderOutput.JSON_PROPERTY_GENDER,
   SpidProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
   SpidProviderOutput.JSON_PROPERTY_COUNTY_OF_BIRTH,
-  SpidProviderOutput.JSON_PROPERTY_RAW_ID_CARD,
+  SpidProviderOutput.JSON_PROPERTY_DOMICILE_STREET_ADDRESS,
+  SpidProviderOutput.JSON_PROPERTY_DOMICILE_POSTAL_CODE,
+  SpidProviderOutput.JSON_PROPERTY_DOMICILE_MUNICIPALITY,
+  SpidProviderOutput.JSON_PROPERTY_DOMICILE_PROVINCE,
+  SpidProviderOutput.JSON_PROPERTY_DOMICILE_NATION,
   SpidProviderOutput.JSON_PROPERTY_EMAIL,
+  SpidProviderOutput.JSON_PROPERTY_MOBILE_PHONE,
   SpidProviderOutput.JSON_PROPERTY_DIGITAL_ADDRESS,
   SpidProviderOutput.JSON_PROPERTY_FISCAL_NUMBER,
   SpidProviderOutput.JSON_PROPERTY_IVA_CODE,
@@ -54,7 +64,7 @@ import id.trinsic.ApiClient;
   SpidProviderOutput.JSON_PROPERTY_COMPANY_FISCAL_NUMBER,
   SpidProviderOutput.JSON_PROPERTY_REGISTERED_OFFICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SpidProviderOutput {
   public static final String JSON_PROPERTY_BILLING_INFORMATION = "billingInformation";
   private JsonNullable<SpidBillingInformation> billingInformation = JsonNullable.<SpidBillingInformation>undefined();
@@ -70,17 +80,47 @@ public class SpidProviderOutput {
   public static final String JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE = "spidCredentialExpirationDate";
   private JsonNullable<LocalDate> spidCredentialExpirationDate = JsonNullable.<LocalDate>undefined();
 
+  public static final String JSON_PROPERTY_RAW_ID_CARD = "rawIdCard";
+  private JsonNullable<String> rawIdCard = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_GENDER = "gender";
+  private JsonNullable<String> gender = JsonNullable.<String>undefined();
+
   public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "placeOfBirth";
   private JsonNullable<String> placeOfBirth = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COUNTY_OF_BIRTH = "countyOfBirth";
   private JsonNullable<String> countyOfBirth = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_RAW_ID_CARD = "rawIdCard";
-  private JsonNullable<String> rawIdCard = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_DOMICILE_STREET_ADDRESS = "domicileStreetAddress";
+  private JsonNullable<String> domicileStreetAddress = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOMICILE_POSTAL_CODE = "domicilePostalCode";
+  private JsonNullable<String> domicilePostalCode = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOMICILE_MUNICIPALITY = "domicileMunicipality";
+  private JsonNullable<String> domicileMunicipality = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOMICILE_PROVINCE = "domicileProvince";
+  private JsonNullable<String> domicileProvince = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOMICILE_NATION = "domicileNation";
+  private JsonNullable<String> domicileNation = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   private JsonNullable<String> email = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_MOBILE_PHONE = "mobilePhone";
+  private JsonNullable<String> mobilePhone = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DIGITAL_ADDRESS = "digitalAddress";
   private JsonNullable<String> digitalAddress = JsonNullable.<String>undefined();
@@ -165,7 +205,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * The identifier of the user&#39;s SPID credential.              This uniquely identifies the credential within the SPID federation.
+   * The identifier of the SPID credential, uniquely identifying it within the SPID federation.              The format of this string is specific to each individual Identity Provider.
    * @return spidCode
    */
   @javax.annotation.Nonnull
@@ -189,7 +229,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * Expiration date of the user&#39;s SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
+   * Expiration date of the SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
    * @return spidCredentialExpirationDate
    */
   @javax.annotation.Nullable
@@ -215,13 +255,173 @@ public class SpidProviderOutput {
   }
 
 
+  public SpidProviderOutput rawIdCard(@javax.annotation.Nullable String rawIdCard) {
+    this.rawIdCard = JsonNullable.<String>of(rawIdCard);
+    return this;
+  }
+
+  /**
+   * The raw, space-separated string value for the \&quot;IdCard\&quot; field from the SPID credential.              Trinsic additionally parses this field and uses it to populate the &#x60;Document&#x60; object in the normalized data model.
+   * @return rawIdCard
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRawIdCard() {
+        return rawIdCard.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRawIdCard_JsonNullable() {
+    return rawIdCard;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
+  public void setRawIdCard_JsonNullable(JsonNullable<String> rawIdCard) {
+    this.rawIdCard = rawIdCard;
+  }
+
+  public void setRawIdCard(@javax.annotation.Nullable String rawIdCard) {
+    this.rawIdCard = JsonNullable.<String>of(rawIdCard);
+  }
+
+
+  public SpidProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s first / given name(s)
+   * @return givenName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGivenName() {
+        return givenName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
+    this.givenName = givenName;
+  }
+
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
+
+
+  public SpidProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s last / family name(s)
+   * @return familyName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFamilyName() {
+        return familyName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
+    this.familyName = familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+  }
+
+
+  public SpidProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+    return this;
+  }
+
+  /**
+   * The date of birth of the individual
+   * @return dateOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDateOfBirth() {
+        return dateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
+
+
+  public SpidProviderOutput gender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
+    return this;
+  }
+
+  /**
+   * The gender of the individual.              Possible values: \&quot;M\&quot; | \&quot;F\&quot;
+   * @return gender
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGender() {
+        return gender.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_GENDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGender_JsonNullable() {
+    return gender;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GENDER)
+  public void setGender_JsonNullable(JsonNullable<String> gender) {
+    this.gender = gender;
+  }
+
+  public void setGender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
+  }
+
+
   public SpidProviderOutput placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = JsonNullable.<String>of(placeOfBirth);
     return this;
   }
 
   /**
-   * The user&#39;s place of birth.
+   * The individual&#39;s place of birth.              This is a 4-digit Belfiore Code identifying either the municipality of birth (for births in Italy) or a foreign country (for births outside Italy).
    * @return placeOfBirth
    */
   @javax.annotation.Nullable
@@ -253,7 +453,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * The user&#39;s county of birth.
+   * The individual&#39;s county (province) of birth, abbreviated.              For foreign births, this is \&quot;EE\&quot;.
    * @return countyOfBirth
    */
   @javax.annotation.Nullable
@@ -279,35 +479,163 @@ public class SpidProviderOutput {
   }
 
 
-  public SpidProviderOutput rawIdCard(@javax.annotation.Nullable String rawIdCard) {
-    this.rawIdCard = JsonNullable.<String>of(rawIdCard);
+  public SpidProviderOutput domicileStreetAddress(@javax.annotation.Nullable String domicileStreetAddress) {
+    this.domicileStreetAddress = JsonNullable.<String>of(domicileStreetAddress);
     return this;
   }
 
   /**
-   * The raw, space-separated string value for the \&quot;IdCard\&quot; field from the SPID identity.              Trinsic additionally parses this field and uses it to populate the &#x60;Document&#x60; object in the normalized data model.
-   * @return rawIdCard
+   * The street address of the individual&#39;s residence.              This includes street name, street type, and house number, in the standard format for the given state.
+   * @return domicileStreetAddress
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getRawIdCard() {
-        return rawIdCard.orElse(null);
+  public String getDomicileStreetAddress() {
+        return domicileStreetAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
+  @JsonProperty(JSON_PROPERTY_DOMICILE_STREET_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getRawIdCard_JsonNullable() {
-    return rawIdCard;
+  public JsonNullable<String> getDomicileStreetAddress_JsonNullable() {
+    return domicileStreetAddress;
   }
   
-  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
-  public void setRawIdCard_JsonNullable(JsonNullable<String> rawIdCard) {
-    this.rawIdCard = rawIdCard;
+  @JsonProperty(JSON_PROPERTY_DOMICILE_STREET_ADDRESS)
+  public void setDomicileStreetAddress_JsonNullable(JsonNullable<String> domicileStreetAddress) {
+    this.domicileStreetAddress = domicileStreetAddress;
   }
 
-  public void setRawIdCard(@javax.annotation.Nullable String rawIdCard) {
-    this.rawIdCard = JsonNullable.<String>of(rawIdCard);
+  public void setDomicileStreetAddress(@javax.annotation.Nullable String domicileStreetAddress) {
+    this.domicileStreetAddress = JsonNullable.<String>of(domicileStreetAddress);
+  }
+
+
+  public SpidProviderOutput domicilePostalCode(@javax.annotation.Nullable String domicilePostalCode) {
+    this.domicilePostalCode = JsonNullable.<String>of(domicilePostalCode);
+    return this;
+  }
+
+  /**
+   * The postal code of the individual&#39;s residence
+   * @return domicilePostalCode
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDomicilePostalCode() {
+        return domicilePostalCode.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOMICILE_POSTAL_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDomicilePostalCode_JsonNullable() {
+    return domicilePostalCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOMICILE_POSTAL_CODE)
+  public void setDomicilePostalCode_JsonNullable(JsonNullable<String> domicilePostalCode) {
+    this.domicilePostalCode = domicilePostalCode;
+  }
+
+  public void setDomicilePostalCode(@javax.annotation.Nullable String domicilePostalCode) {
+    this.domicilePostalCode = JsonNullable.<String>of(domicilePostalCode);
+  }
+
+
+  public SpidProviderOutput domicileMunicipality(@javax.annotation.Nullable String domicileMunicipality) {
+    this.domicileMunicipality = JsonNullable.<String>of(domicileMunicipality);
+    return this;
+  }
+
+  /**
+   * The municipality of the individual&#39;s residence
+   * @return domicileMunicipality
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDomicileMunicipality() {
+        return domicileMunicipality.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOMICILE_MUNICIPALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDomicileMunicipality_JsonNullable() {
+    return domicileMunicipality;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOMICILE_MUNICIPALITY)
+  public void setDomicileMunicipality_JsonNullable(JsonNullable<String> domicileMunicipality) {
+    this.domicileMunicipality = domicileMunicipality;
+  }
+
+  public void setDomicileMunicipality(@javax.annotation.Nullable String domicileMunicipality) {
+    this.domicileMunicipality = JsonNullable.<String>of(domicileMunicipality);
+  }
+
+
+  public SpidProviderOutput domicileProvince(@javax.annotation.Nullable String domicileProvince) {
+    this.domicileProvince = JsonNullable.<String>of(domicileProvince);
+    return this;
+  }
+
+  /**
+   * The province of the individual&#39;s residence
+   * @return domicileProvince
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDomicileProvince() {
+        return domicileProvince.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOMICILE_PROVINCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDomicileProvince_JsonNullable() {
+    return domicileProvince;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOMICILE_PROVINCE)
+  public void setDomicileProvince_JsonNullable(JsonNullable<String> domicileProvince) {
+    this.domicileProvince = domicileProvince;
+  }
+
+  public void setDomicileProvince(@javax.annotation.Nullable String domicileProvince) {
+    this.domicileProvince = JsonNullable.<String>of(domicileProvince);
+  }
+
+
+  public SpidProviderOutput domicileNation(@javax.annotation.Nullable String domicileNation) {
+    this.domicileNation = JsonNullable.<String>of(domicileNation);
+    return this;
+  }
+
+  /**
+   * The 2-digit country code of the individual&#39;s residence
+   * @return domicileNation
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDomicileNation() {
+        return domicileNation.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOMICILE_NATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDomicileNation_JsonNullable() {
+    return domicileNation;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOMICILE_NATION)
+  public void setDomicileNation_JsonNullable(JsonNullable<String> domicileNation) {
+    this.domicileNation = domicileNation;
+  }
+
+  public void setDomicileNation(@javax.annotation.Nullable String domicileNation) {
+    this.domicileNation = JsonNullable.<String>of(domicileNation);
   }
 
 
@@ -317,7 +645,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * The email address of the user.
+   * The email address of the individual
    * @return email
    */
   @javax.annotation.Nullable
@@ -343,13 +671,45 @@ public class SpidProviderOutput {
   }
 
 
+  public SpidProviderOutput mobilePhone(@javax.annotation.Nullable String mobilePhone) {
+    this.mobilePhone = JsonNullable.<String>of(mobilePhone);
+    return this;
+  }
+
+  /**
+   * The mobile phone number of the individual, in Italian format.
+   * @return mobilePhone
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getMobilePhone() {
+        return mobilePhone.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_MOBILE_PHONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getMobilePhone_JsonNullable() {
+    return mobilePhone;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOBILE_PHONE)
+  public void setMobilePhone_JsonNullable(JsonNullable<String> mobilePhone) {
+    this.mobilePhone = mobilePhone;
+  }
+
+  public void setMobilePhone(@javax.annotation.Nullable String mobilePhone) {
+    this.mobilePhone = JsonNullable.<String>of(mobilePhone);
+  }
+
+
   public SpidProviderOutput digitalAddress(@javax.annotation.Nullable String digitalAddress) {
     this.digitalAddress = JsonNullable.<String>of(digitalAddress);
     return this;
   }
 
   /**
-   * The digital address of the user.
+   * The PEC (Italian Certified Email) address of the individual or organization.
    * @return digitalAddress
    */
   @javax.annotation.Nullable
@@ -381,7 +741,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * Fiscal tax number for the subject.
+   * Fiscal tax number for the individual.
    * @return fiscalNumber
    */
   @javax.annotation.Nullable
@@ -413,7 +773,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * VAT number for the subject.
+   * The VAT number of the organization which was verified, or of the organization which the verified individual is associated with.
    * @return ivaCode
    */
   @javax.annotation.Nullable
@@ -445,7 +805,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * The name of the company which the user is associated with.
+   * The name of the organization which was verified, or of the organization which the verified individual is associated with.
    * @return companyName
    */
   @javax.annotation.Nullable
@@ -477,7 +837,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * The fiscal tax number of the company which the user is associated with.
+   * The fiscal tax number of the organization which was verified, or of the organization which the verified individual is associated with.
    * @return companyFiscalNumber
    */
   @javax.annotation.Nullable
@@ -509,7 +869,7 @@ public class SpidProviderOutput {
   }
 
   /**
-   * The registered office address of the company which the user is associated with.
+   * The registered office address of the organization which was verified, or of the organization which the verified individual is associated with.
    * @return registeredOffice
    */
   @javax.annotation.Nullable
@@ -551,10 +911,20 @@ public class SpidProviderOutput {
         Objects.equals(this.identityProviderEntityId, spidProviderOutput.identityProviderEntityId) &&
         Objects.equals(this.spidCode, spidProviderOutput.spidCode) &&
         equalsNullable(this.spidCredentialExpirationDate, spidProviderOutput.spidCredentialExpirationDate) &&
+        equalsNullable(this.rawIdCard, spidProviderOutput.rawIdCard) &&
+        equalsNullable(this.givenName, spidProviderOutput.givenName) &&
+        equalsNullable(this.familyName, spidProviderOutput.familyName) &&
+        equalsNullable(this.dateOfBirth, spidProviderOutput.dateOfBirth) &&
+        equalsNullable(this.gender, spidProviderOutput.gender) &&
         equalsNullable(this.placeOfBirth, spidProviderOutput.placeOfBirth) &&
         equalsNullable(this.countyOfBirth, spidProviderOutput.countyOfBirth) &&
-        equalsNullable(this.rawIdCard, spidProviderOutput.rawIdCard) &&
+        equalsNullable(this.domicileStreetAddress, spidProviderOutput.domicileStreetAddress) &&
+        equalsNullable(this.domicilePostalCode, spidProviderOutput.domicilePostalCode) &&
+        equalsNullable(this.domicileMunicipality, spidProviderOutput.domicileMunicipality) &&
+        equalsNullable(this.domicileProvince, spidProviderOutput.domicileProvince) &&
+        equalsNullable(this.domicileNation, spidProviderOutput.domicileNation) &&
         equalsNullable(this.email, spidProviderOutput.email) &&
+        equalsNullable(this.mobilePhone, spidProviderOutput.mobilePhone) &&
         equalsNullable(this.digitalAddress, spidProviderOutput.digitalAddress) &&
         equalsNullable(this.fiscalNumber, spidProviderOutput.fiscalNumber) &&
         equalsNullable(this.ivaCode, spidProviderOutput.ivaCode) &&
@@ -569,7 +939,7 @@ public class SpidProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(billingInformation), identityProviderEntityId, spidCode, hashCodeNullable(spidCredentialExpirationDate), hashCodeNullable(placeOfBirth), hashCodeNullable(countyOfBirth), hashCodeNullable(rawIdCard), hashCodeNullable(email), hashCodeNullable(digitalAddress), hashCodeNullable(fiscalNumber), hashCodeNullable(ivaCode), hashCodeNullable(companyName), hashCodeNullable(companyFiscalNumber), hashCodeNullable(registeredOffice));
+    return Objects.hash(hashCodeNullable(billingInformation), identityProviderEntityId, spidCode, hashCodeNullable(spidCredentialExpirationDate), hashCodeNullable(rawIdCard), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(placeOfBirth), hashCodeNullable(countyOfBirth), hashCodeNullable(domicileStreetAddress), hashCodeNullable(domicilePostalCode), hashCodeNullable(domicileMunicipality), hashCodeNullable(domicileProvince), hashCodeNullable(domicileNation), hashCodeNullable(email), hashCodeNullable(mobilePhone), hashCodeNullable(digitalAddress), hashCodeNullable(fiscalNumber), hashCodeNullable(ivaCode), hashCodeNullable(companyName), hashCodeNullable(companyFiscalNumber), hashCodeNullable(registeredOffice));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -587,10 +957,20 @@ public class SpidProviderOutput {
     sb.append("    identityProviderEntityId: ").append(toIndentedString(identityProviderEntityId)).append("\n");
     sb.append("    spidCode: ").append(toIndentedString(spidCode)).append("\n");
     sb.append("    spidCredentialExpirationDate: ").append(toIndentedString(spidCredentialExpirationDate)).append("\n");
+    sb.append("    rawIdCard: ").append(toIndentedString(rawIdCard)).append("\n");
+    sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
+    sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    placeOfBirth: ").append(toIndentedString(placeOfBirth)).append("\n");
     sb.append("    countyOfBirth: ").append(toIndentedString(countyOfBirth)).append("\n");
-    sb.append("    rawIdCard: ").append(toIndentedString(rawIdCard)).append("\n");
+    sb.append("    domicileStreetAddress: ").append(toIndentedString(domicileStreetAddress)).append("\n");
+    sb.append("    domicilePostalCode: ").append(toIndentedString(domicilePostalCode)).append("\n");
+    sb.append("    domicileMunicipality: ").append(toIndentedString(domicileMunicipality)).append("\n");
+    sb.append("    domicileProvince: ").append(toIndentedString(domicileProvince)).append("\n");
+    sb.append("    domicileNation: ").append(toIndentedString(domicileNation)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
     sb.append("    digitalAddress: ").append(toIndentedString(digitalAddress)).append("\n");
     sb.append("    fiscalNumber: ").append(toIndentedString(fiscalNumber)).append("\n");
     sb.append("    ivaCode: ").append(toIndentedString(ivaCode)).append("\n");
@@ -664,6 +1044,31 @@ public class SpidProviderOutput {
       joiner.add(String.format("%sspidCredentialExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCredentialExpirationDate()))));
     }
 
+    // add `rawIdCard` to the URL query string
+    if (getRawIdCard() != null) {
+      joiner.add(String.format("%srawIdCard%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRawIdCard()))));
+    }
+
+    // add `givenName` to the URL query string
+    if (getGivenName() != null) {
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+    }
+
+    // add `familyName` to the URL query string
+    if (getFamilyName() != null) {
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+    }
+
+    // add `dateOfBirth` to the URL query string
+    if (getDateOfBirth() != null) {
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+    }
+
+    // add `gender` to the URL query string
+    if (getGender() != null) {
+      joiner.add(String.format("%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+    }
+
     // add `placeOfBirth` to the URL query string
     if (getPlaceOfBirth() != null) {
       joiner.add(String.format("%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
@@ -674,14 +1079,39 @@ public class SpidProviderOutput {
       joiner.add(String.format("%scountyOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountyOfBirth()))));
     }
 
-    // add `rawIdCard` to the URL query string
-    if (getRawIdCard() != null) {
-      joiner.add(String.format("%srawIdCard%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRawIdCard()))));
+    // add `domicileStreetAddress` to the URL query string
+    if (getDomicileStreetAddress() != null) {
+      joiner.add(String.format("%sdomicileStreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileStreetAddress()))));
+    }
+
+    // add `domicilePostalCode` to the URL query string
+    if (getDomicilePostalCode() != null) {
+      joiner.add(String.format("%sdomicilePostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicilePostalCode()))));
+    }
+
+    // add `domicileMunicipality` to the URL query string
+    if (getDomicileMunicipality() != null) {
+      joiner.add(String.format("%sdomicileMunicipality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileMunicipality()))));
+    }
+
+    // add `domicileProvince` to the URL query string
+    if (getDomicileProvince() != null) {
+      joiner.add(String.format("%sdomicileProvince%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileProvince()))));
+    }
+
+    // add `domicileNation` to the URL query string
+    if (getDomicileNation() != null) {
+      joiner.add(String.format("%sdomicileNation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileNation()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
       joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+    }
+
+    // add `mobilePhone` to the URL query string
+    if (getMobilePhone() != null) {
+      joiner.add(String.format("%smobilePhone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobilePhone()))));
     }
 
     // add `digitalAddress` to the URL query string

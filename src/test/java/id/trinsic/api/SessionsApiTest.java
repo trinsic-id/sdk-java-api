@@ -21,12 +21,16 @@ import id.trinsic.api.models.CreateHostedProviderSessionRequest;
 import id.trinsic.api.models.CreateHostedProviderSessionResponse;
 import id.trinsic.api.models.CreateWidgetSessionRequest;
 import id.trinsic.api.models.CreateWidgetSessionResponse;
+import id.trinsic.api.models.GetAttachmentRequest;
+import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.GetSessionResponse;
 import id.trinsic.api.models.GetSessionResultRequest;
 import id.trinsic.api.models.GetSessionResultResponse;
 import id.trinsic.api.models.ListSessionsResponse;
 import id.trinsic.api.models.OrderDirection;
 import id.trinsic.api.models.ProblemDetails;
+import id.trinsic.api.models.RecommendProvidersRequest;
+import id.trinsic.api.models.RecommendProvidersResponse;
 import id.trinsic.api.models.RefreshStepContentRequest;
 import id.trinsic.api.models.RefreshStepContentResponse;
 import id.trinsic.api.models.SessionOrdering;
@@ -121,6 +125,25 @@ public class SessionsApiTest {
     }
     
     /**
+     * Get Attachment
+     *
+     * Fetch an Attachment&#39;s contents.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAttachmentTest() throws ApiException {
+        UUID sessionId = null;
+        UUID attachmentId = null;
+        GetAttachmentRequest getAttachmentRequest = null;
+        GetAttachmentResponse response = 
+        api.getAttachment(sessionId, attachmentId, getAttachmentRequest);
+        
+        // TODO: test validations
+    }
+    
+    /**
      * Get Session
      *
      * Get a Session by its ID
@@ -177,9 +200,26 @@ public class SessionsApiTest {
     }
     
     /**
+     * Recommend Providers
+     *
+     * Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void recommendProvidersTest() throws ApiException {
+        RecommendProvidersRequest recommendProvidersRequest = null;
+        RecommendProvidersResponse response = 
+        api.recommendProviders(recommendProvidersRequest);
+        
+        // TODO: test validations
+    }
+    
+    /**
      * Redact Session
      *
-     * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+     * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
      *
      * @throws ApiException
      *          if the Api call fails

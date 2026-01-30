@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * Address
+ * Address information for an individual
  */
 @JsonPropertyOrder({
   Address.JSON_PROPERTY_LINE1,
@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   Address.JSON_PROPERTY_COUNTRY,
   Address.JSON_PROPERTY_FULL_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Address {
   public static final String JSON_PROPERTY_LINE1 = "line1";
   private JsonNullable<String> line1 = JsonNullable.<String>undefined();
@@ -209,7 +209,7 @@ public class Address {
   }
 
   /**
-   * Get subdivision
+   * The subdivision code of the address.              Subdivision refers to a state, province, or other similar division of a country. Examples include \&quot;CA\&quot; for California, \&quot;QC\&quot; for Québec, \&quot;MD\&quot; for Madrid, or \&quot;NSW\&quot; for New South Wales.
    * @return subdivision
    */
   @javax.annotation.Nullable
@@ -305,7 +305,7 @@ public class Address {
   }
 
   /**
-   * Get fullAddress
+   * The full address as a single string
    * @return fullAddress
    */
   @javax.annotation.Nullable

@@ -2,6 +2,7 @@
 
 # FaydaProviderOutput
 
+Exposed properties for the `ethiopia-fayda` Provider which do not directly map to the normalized IdentityData model.
 
 ## Properties
 

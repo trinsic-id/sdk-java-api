@@ -24,9 +24,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.AttachmentAccessKeys;
+import id.trinsic.api.models.AttachmentInfo;
 import id.trinsic.api.models.DocumentData;
-import id.trinsic.api.models.Identifier;
 import id.trinsic.api.models.MatchData;
 import id.trinsic.api.models.PersonData;
 import id.trinsic.api.models.ProviderOutput;
@@ -50,11 +49,10 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_PERSON,
   IdentityData.JSON_PROPERTY_DOCUMENT,
   IdentityData.JSON_PROPERTY_MATCH,
-  IdentityData.JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS,
-  IdentityData.JSON_PROPERTY_PROVIDER_OUTPUT,
-  IdentityData.JSON_PROPERTY_IDENTIFIERS
+  IdentityData.JSON_PROPERTY_ATTACHMENTS,
+  IdentityData.JSON_PROPERTY_PROVIDER_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
@@ -71,15 +69,12 @@ public class IdentityData {
   public static final String JSON_PROPERTY_MATCH = "match";
   private JsonNullable<MatchData> match = JsonNullable.<MatchData>undefined();
 
-  public static final String JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS = "attachmentAccessKeys";
-  private JsonNullable<AttachmentAccessKeys> attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>undefined();
+  public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
+  @javax.annotation.Nonnull
+  private List<AttachmentInfo> attachments = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PROVIDER_OUTPUT = "providerOutput";
   private JsonNullable<ProviderOutput> providerOutput = JsonNullable.<ProviderOutput>undefined();
-
-  public static final String JSON_PROPERTY_IDENTIFIERS = "identifiers";
-  @javax.annotation.Nonnull
-  private List<Identifier> identifiers = new ArrayList<>();
 
   public IdentityData() { 
   }
@@ -90,7 +85,7 @@ public class IdentityData {
   }
 
   /**
-   * Get originatingProviderId
+   * The ID of the provider from which this data originated (eg \&quot;yoti\&quot;, \&quot;clear\&quot;)
    * @return originatingProviderId
    */
   @javax.annotation.Nullable
@@ -122,7 +117,7 @@ public class IdentityData {
   }
 
   /**
-   * Get originatingSubProviderId
+   * The sub-provider ID of the provider from which this data originated (eg \&quot;rabo\&quot;, \&quot;poste-italiane\&quot;)              This is applicable only to federated Identity Providers such as SPID and IDIN.
    * @return originatingSubProviderId
    */
   @javax.annotation.Nullable
@@ -154,7 +149,7 @@ public class IdentityData {
   }
 
   /**
-   * Get person
+   * Identity data of the individual who was verified
    * @return person
    */
   @javax.annotation.Nullable
@@ -186,7 +181,7 @@ public class IdentityData {
   }
 
   /**
-   * Get document
+   * Identity data of the document involved in verification, if relevant
    * @return document
    */
   @javax.annotation.Nullable
@@ -218,7 +213,7 @@ public class IdentityData {
   }
 
   /**
-   * Get match
+   * Match results for the data being matched against.              This applies to Providers which operate based on matching data / biometrics against a government database, returning match scores or results as opposed to the data itself.
    * @return match
    */
   @javax.annotation.Nullable
@@ -244,35 +239,35 @@ public class IdentityData {
   }
 
 
-  public IdentityData attachmentAccessKeys(@javax.annotation.Nullable AttachmentAccessKeys attachmentAccessKeys) {
-    this.attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>of(attachmentAccessKeys);
+  public IdentityData attachments(@javax.annotation.Nonnull List<AttachmentInfo> attachments) {
+    this.attachments = attachments;
+    return this;
+  }
+
+  public IdentityData addAttachmentsItem(AttachmentInfo attachmentsItem) {
+    if (this.attachments == null) {
+      this.attachments = new ArrayList<>();
+    }
+    this.attachments.add(attachmentsItem);
     return this;
   }
 
   /**
-   * Get attachmentAccessKeys
-   * @return attachmentAccessKeys
+   * Information for each attachment included with this set of identity data.              Use the Attachments API to fetch an attachment by its ID for a given Session.
+   * @return attachments
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public AttachmentAccessKeys getAttachmentAccessKeys() {
-        return attachmentAccessKeys.orElse(null);
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public List<AttachmentInfo> getAttachments() {
+    return attachments;
   }
 
-  @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AttachmentAccessKeys> getAttachmentAccessKeys_JsonNullable() {
-    return attachmentAccessKeys;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_ATTACHMENT_ACCESS_KEYS)
-  public void setAttachmentAccessKeys_JsonNullable(JsonNullable<AttachmentAccessKeys> attachmentAccessKeys) {
-    this.attachmentAccessKeys = attachmentAccessKeys;
-  }
-
-  public void setAttachmentAccessKeys(@javax.annotation.Nullable AttachmentAccessKeys attachmentAccessKeys) {
-    this.attachmentAccessKeys = JsonNullable.<AttachmentAccessKeys>of(attachmentAccessKeys);
+  @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAttachments(@javax.annotation.Nonnull List<AttachmentInfo> attachments) {
+    this.attachments = attachments;
   }
 
 
@@ -282,7 +277,7 @@ public class IdentityData {
   }
 
   /**
-   * Get providerOutput
+   * Provider-specific output data that doesn&#39;t fit the standard identity data schema.              The structure of this object varies by provider.
    * @return providerOutput
    */
   @javax.annotation.Nullable
@@ -308,38 +303,6 @@ public class IdentityData {
   }
 
 
-  public IdentityData identifiers(@javax.annotation.Nonnull List<Identifier> identifiers) {
-    this.identifiers = identifiers;
-    return this;
-  }
-
-  public IdentityData addIdentifiersItem(Identifier identifiersItem) {
-    if (this.identifiers == null) {
-      this.identifiers = new ArrayList<>();
-    }
-    this.identifiers.add(identifiersItem);
-    return this;
-  }
-
-  /**
-   * Get identifiers
-   * @return identifiers
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IDENTIFIERS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public List<Identifier> getIdentifiers() {
-    return identifiers;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IDENTIFIERS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIdentifiers(@javax.annotation.Nonnull List<Identifier> identifiers) {
-    this.identifiers = identifiers;
-  }
-
-
   /**
    * Return true if this IdentityData object is equal to o.
    */
@@ -357,9 +320,8 @@ public class IdentityData {
         equalsNullable(this.person, identityData.person) &&
         equalsNullable(this.document, identityData.document) &&
         equalsNullable(this.match, identityData.match) &&
-        equalsNullable(this.attachmentAccessKeys, identityData.attachmentAccessKeys) &&
-        equalsNullable(this.providerOutput, identityData.providerOutput) &&
-        Objects.equals(this.identifiers, identityData.identifiers);
+        Objects.equals(this.attachments, identityData.attachments) &&
+        equalsNullable(this.providerOutput, identityData.providerOutput);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -368,7 +330,7 @@ public class IdentityData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), hashCodeNullable(attachmentAccessKeys), hashCodeNullable(providerOutput), identifiers);
+    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), attachments, hashCodeNullable(providerOutput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -387,9 +349,8 @@ public class IdentityData {
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    match: ").append(toIndentedString(match)).append("\n");
-    sb.append("    attachmentAccessKeys: ").append(toIndentedString(attachmentAccessKeys)).append("\n");
+    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    providerOutput: ").append(toIndentedString(providerOutput)).append("\n");
-    sb.append("    identifiers: ").append(toIndentedString(identifiers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -462,24 +423,19 @@ public class IdentityData {
       joiner.add(getMatch().toUrlQueryString(prefix + "match" + suffix));
     }
 
-    // add `attachmentAccessKeys` to the URL query string
-    if (getAttachmentAccessKeys() != null) {
-      joiner.add(getAttachmentAccessKeys().toUrlQueryString(prefix + "attachmentAccessKeys" + suffix));
+    // add `attachments` to the URL query string
+    if (getAttachments() != null) {
+      for (int i = 0; i < getAttachments().size(); i++) {
+        if (getAttachments().get(i) != null) {
+          joiner.add(getAttachments().get(i).toUrlQueryString(String.format("%sattachments%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     // add `providerOutput` to the URL query string
     if (getProviderOutput() != null) {
       joiner.add(getProviderOutput().toUrlQueryString(prefix + "providerOutput" + suffix));
-    }
-
-    // add `identifiers` to the URL query string
-    if (getIdentifiers() != null) {
-      for (int i = 0; i < getIdentifiers().size(); i++) {
-        if (getIdentifiers().get(i) != null) {
-          joiner.add(getIdentifiers().get(i).toUrlQueryString(String.format("%sidentifiers%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
     }
 
     return joiner.toString();

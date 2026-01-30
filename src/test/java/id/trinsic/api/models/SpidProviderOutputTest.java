@@ -76,6 +76,46 @@ class SpidProviderOutputTest {
     }
 
     /**
+     * Test the property 'rawIdCard'
+     */
+    @Test
+    void rawIdCardTest() {
+        // TODO: test rawIdCard
+    }
+
+    /**
+     * Test the property 'givenName'
+     */
+    @Test
+    void givenNameTest() {
+        // TODO: test givenName
+    }
+
+    /**
+     * Test the property 'familyName'
+     */
+    @Test
+    void familyNameTest() {
+        // TODO: test familyName
+    }
+
+    /**
+     * Test the property 'dateOfBirth'
+     */
+    @Test
+    void dateOfBirthTest() {
+        // TODO: test dateOfBirth
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
      * Test the property 'placeOfBirth'
      */
     @Test
@@ -92,11 +132,43 @@ class SpidProviderOutputTest {
     }
 
     /**
-     * Test the property 'rawIdCard'
+     * Test the property 'domicileStreetAddress'
      */
     @Test
-    void rawIdCardTest() {
-        // TODO: test rawIdCard
+    void domicileStreetAddressTest() {
+        // TODO: test domicileStreetAddress
+    }
+
+    /**
+     * Test the property 'domicilePostalCode'
+     */
+    @Test
+    void domicilePostalCodeTest() {
+        // TODO: test domicilePostalCode
+    }
+
+    /**
+     * Test the property 'domicileMunicipality'
+     */
+    @Test
+    void domicileMunicipalityTest() {
+        // TODO: test domicileMunicipality
+    }
+
+    /**
+     * Test the property 'domicileProvince'
+     */
+    @Test
+    void domicileProvinceTest() {
+        // TODO: test domicileProvince
+    }
+
+    /**
+     * Test the property 'domicileNation'
+     */
+    @Test
+    void domicileNationTest() {
+        // TODO: test domicileNation
     }
 
     /**
@@ -105,6 +177,14 @@ class SpidProviderOutputTest {
     @Test
     void emailTest() {
         // TODO: test email
+    }
+
+    /**
+     * Test the property 'mobilePhone'
+     */
+    @Test
+    void mobilePhoneTest() {
+        // TODO: test mobilePhone
     }
 
     /**

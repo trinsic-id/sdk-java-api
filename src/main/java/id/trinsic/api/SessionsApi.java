@@ -25,12 +25,16 @@ import id.trinsic.api.models.CreateHostedProviderSessionRequest;
 import id.trinsic.api.models.CreateHostedProviderSessionResponse;
 import id.trinsic.api.models.CreateWidgetSessionRequest;
 import id.trinsic.api.models.CreateWidgetSessionResponse;
+import id.trinsic.api.models.GetAttachmentRequest;
+import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.GetSessionResponse;
 import id.trinsic.api.models.GetSessionResultRequest;
 import id.trinsic.api.models.GetSessionResultResponse;
 import id.trinsic.api.models.ListSessionsResponse;
 import id.trinsic.api.models.OrderDirection;
 import id.trinsic.api.models.ProblemDetails;
+import id.trinsic.api.models.RecommendProvidersRequest;
+import id.trinsic.api.models.RecommendProvidersResponse;
 import id.trinsic.api.models.RefreshStepContentRequest;
 import id.trinsic.api.models.RefreshStepContentResponse;
 import id.trinsic.api.models.SessionOrdering;
@@ -63,7 +67,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SessionsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -440,6 +444,105 @@ public class SessionsApi {
   }
 
   /**
+   * Get Attachment
+   * Fetch an Attachment&#39;s contents.
+   * @param sessionId The ID of the Session to fetch the Attachment from (required)
+   * @param attachmentId The ID of the Attachment to fetch (required)
+   * @param getAttachmentRequest  (optional)
+   * @return GetAttachmentResponse
+   * @throws ApiException if fails to make API call
+   */
+  public GetAttachmentResponse getAttachment(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
+    ApiResponse<GetAttachmentResponse> localVarResponse = getAttachmentWithHttpInfo(sessionId, attachmentId, getAttachmentRequest);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Get Attachment
+   * Fetch an Attachment&#39;s contents.
+   * @param sessionId The ID of the Session to fetch the Attachment from (required)
+   * @param attachmentId The ID of the Attachment to fetch (required)
+   * @param getAttachmentRequest  (optional)
+   * @return ApiResponse&lt;GetAttachmentResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetAttachmentResponse> getAttachmentWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAttachmentRequestBuilder(sessionId, attachmentId, getAttachmentRequest);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("getAttachment", localVarResponse);
+        }
+        if (localVarResponse.body() == null) {
+          return new ApiResponse<GetAttachmentResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        String responseBody = new String(localVarResponse.body().readAllBytes());
+        localVarResponse.body().close();
+
+        return new ApiResponse<GetAttachmentResponse>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAttachmentResponse>() {})
+        );
+      } finally {
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder getAttachmentRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
+    // verify the required parameter 'sessionId' is set
+    if (sessionId == null) {
+      throw new ApiException(400, "Missing the required parameter 'sessionId' when calling getAttachment");
+    }
+    // verify the required parameter 'attachmentId' is set
+    if (attachmentId == null) {
+      throw new ApiException(400, "Missing the required parameter 'attachmentId' when calling getAttachment");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/api/v1/sessions/{sessionId}/attachments/{attachmentId}/get"
+        .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()))
+        .replace("{attachmentId}", ApiClient.urlEncode(attachmentId.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getAttachmentRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
    * Get Session
    * Get a Session by its ID
    * @param sessionId  (required)
@@ -729,8 +832,93 @@ public class SessionsApi {
   }
 
   /**
+   * Recommend Providers
+   * Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+   * @param recommendProvidersRequest  (optional)
+   * @return RecommendProvidersResponse
+   * @throws ApiException if fails to make API call
+   */
+  public RecommendProvidersResponse recommendProviders(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest) throws ApiException {
+    ApiResponse<RecommendProvidersResponse> localVarResponse = recommendProvidersWithHttpInfo(recommendProvidersRequest);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Recommend Providers
+   * Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+   * @param recommendProvidersRequest  (optional)
+   * @return ApiResponse&lt;RecommendProvidersResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<RecommendProvidersResponse> recommendProvidersWithHttpInfo(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = recommendProvidersRequestBuilder(recommendProvidersRequest);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("recommendProviders", localVarResponse);
+        }
+        if (localVarResponse.body() == null) {
+          return new ApiResponse<RecommendProvidersResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        String responseBody = new String(localVarResponse.body().readAllBytes());
+        localVarResponse.body().close();
+
+        return new ApiResponse<RecommendProvidersResponse>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RecommendProvidersResponse>() {})
+        );
+      } finally {
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder recommendProvidersRequestBuilder(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/api/v1/sessions/providers/recommend";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(recommendProvidersRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
    * Redact Session
-   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
    * @param sessionId  (required)
    * @throws ApiException if fails to make API call
    */
@@ -740,7 +928,7 @@ public class SessionsApi {
 
   /**
    * Redact Session
-   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every application has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
    * @param sessionId  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call

@@ -41,9 +41,10 @@ import id.trinsic.ApiClient;
   VerificationProfileResponse.JSON_PROPERTY_BRAND_NAME,
   VerificationProfileResponse.JSON_PROPERTY_LOGO_URL,
   VerificationProfileResponse.JSON_PROPERTY_PRIMARY_COLOR,
-  VerificationProfileResponse.JSON_PROPERTY_ENABLED_PROVIDERS
+  VerificationProfileResponse.JSON_PROPERTY_ENABLED_PROVIDERS,
+  VerificationProfileResponse.JSON_PROPERTY_IS_PRODUCTION_USAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-19T23:40:27.630088627Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -68,6 +69,10 @@ public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ENABLED_PROVIDERS = "enabledProviders";
   @javax.annotation.Nonnull
   private List<String> enabledProviders = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_IS_PRODUCTION_USAGE = "isProductionUsage";
+  @javax.annotation.Nonnull
+  private Boolean isProductionUsage;
 
   public VerificationProfileResponse() { 
   }
@@ -224,6 +229,30 @@ public class VerificationProfileResponse {
   }
 
 
+  public VerificationProfileResponse isProductionUsage(@javax.annotation.Nonnull Boolean isProductionUsage) {
+    this.isProductionUsage = isProductionUsage;
+    return this;
+  }
+
+  /**
+   * Whether this profile is for production usage. Only applicable for Live environment profiles.
+   * @return isProductionUsage
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_IS_PRODUCTION_USAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public Boolean getIsProductionUsage() {
+    return isProductionUsage;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IS_PRODUCTION_USAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setIsProductionUsage(@javax.annotation.Nonnull Boolean isProductionUsage) {
+    this.isProductionUsage = isProductionUsage;
+  }
+
+
   /**
    * Return true if this VerificationProfileResponse object is equal to o.
    */
@@ -241,12 +270,13 @@ public class VerificationProfileResponse {
         Objects.equals(this.brandName, verificationProfileResponse.brandName) &&
         Objects.equals(this.logoUrl, verificationProfileResponse.logoUrl) &&
         Objects.equals(this.primaryColor, verificationProfileResponse.primaryColor) &&
-        Objects.equals(this.enabledProviders, verificationProfileResponse.enabledProviders);
+        Objects.equals(this.enabledProviders, verificationProfileResponse.enabledProviders) &&
+        Objects.equals(this.isProductionUsage, verificationProfileResponse.isProductionUsage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, alias, brandName, logoUrl, primaryColor, enabledProviders);
+    return Objects.hash(id, alias, brandName, logoUrl, primaryColor, enabledProviders, isProductionUsage);
   }
 
   @Override
@@ -259,6 +289,7 @@ public class VerificationProfileResponse {
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    enabledProviders: ").append(toIndentedString(enabledProviders)).append("\n");
+    sb.append("    isProductionUsage: ").append(toIndentedString(isProductionUsage)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,6 +369,11 @@ public class VerificationProfileResponse {
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getEnabledProviders().get(i)))));
       }
+    }
+
+    // add `isProductionUsage` to the URL query string
+    if (getIsProductionUsage() != null) {
+      joiner.add(String.format("%sisProductionUsage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsProductionUsage()))));
     }
 
     return joiner.toString();
