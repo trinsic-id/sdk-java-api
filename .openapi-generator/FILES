@@ -58,7 +58,9 @@ docs/IntegrationStep.md
 docs/ItsmeProviderOutput.md
 docs/KenyaNidBiometric2Input.md
 docs/KenyaNidInput.md
+docs/KenyaNidLookup2Address.md
 docs/KenyaNidLookup2Input.md
+docs/KenyaNidLookup2ProviderOutput.md
 docs/KenyaNidMatch2Input.md
 docs/KenyaNidMatch2InputSex.md
 docs/LaWalletProviderOutput.md
@@ -226,7 +228,9 @@ src/main/java/id/trinsic/api/models/IntegrationStep.java
 src/main/java/id/trinsic/api/models/ItsmeProviderOutput.java
 src/main/java/id/trinsic/api/models/KenyaNidBiometric2Input.java
 src/main/java/id/trinsic/api/models/KenyaNidInput.java
+src/main/java/id/trinsic/api/models/KenyaNidLookup2Address.java
 src/main/java/id/trinsic/api/models/KenyaNidLookup2Input.java
+src/main/java/id/trinsic/api/models/KenyaNidLookup2ProviderOutput.java
 src/main/java/id/trinsic/api/models/KenyaNidMatch2Input.java
 src/main/java/id/trinsic/api/models/KenyaNidMatch2InputSex.java
 src/main/java/id/trinsic/api/models/LaWalletProviderOutput.java
@@ -369,7 +373,9 @@ src/test/java/id/trinsic/api/models/IntegrationStepTest.java
 src/test/java/id/trinsic/api/models/ItsmeProviderOutputTest.java
 src/test/java/id/trinsic/api/models/KenyaNidBiometric2InputTest.java
 src/test/java/id/trinsic/api/models/KenyaNidInputTest.java
+src/test/java/id/trinsic/api/models/KenyaNidLookup2AddressTest.java
 src/test/java/id/trinsic/api/models/KenyaNidLookup2InputTest.java
+src/test/java/id/trinsic/api/models/KenyaNidLookup2ProviderOutputTest.java
 src/test/java/id/trinsic/api/models/KenyaNidMatch2InputSexTest.java
 src/test/java/id/trinsic/api/models/KenyaNidMatch2InputTest.java
 src/test/java/id/trinsic/api/models/LaWalletProviderOutputTest.java

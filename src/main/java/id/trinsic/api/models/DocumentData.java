@@ -47,7 +47,7 @@ import id.trinsic.ApiClient;
   DocumentData.JSON_PROPERTY_ISSUING_SUBDIVISION,
   DocumentData.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DocumentData {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<DocumentType> type = JsonNullable.<DocumentType>undefined();

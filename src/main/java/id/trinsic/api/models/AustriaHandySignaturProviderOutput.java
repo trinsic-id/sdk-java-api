@@ -36,7 +36,7 @@ import id.trinsic.ApiClient;
   AustriaHandySignaturProviderOutput.JSON_PROPERTY_FIRST_NAME,
   AustriaHandySignaturProviderOutput.JSON_PROPERTY_LAST_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AustriaHandySignaturProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull

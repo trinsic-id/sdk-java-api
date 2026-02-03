@@ -29,6 +29,7 @@ import id.trinsic.api.models.FrejaProviderOutput;
 import id.trinsic.api.models.FrenchNumeriqueProviderOutput;
 import id.trinsic.api.models.GoogleWalletProviderOutput;
 import id.trinsic.api.models.ItsmeProviderOutput;
+import id.trinsic.api.models.KenyaNidLookup2ProviderOutput;
 import id.trinsic.api.models.LaWalletProviderOutput;
 import id.trinsic.api.models.LatviaEparakstsMobileProviderOutput;
 import id.trinsic.api.models.LatviaEparakstsProviderOutput;
@@ -231,6 +232,14 @@ class ProviderOutputTest {
     @Test
     void italySpidTest() {
         // TODO: test italySpid
+    }
+
+    /**
+     * Test the property 'kenyaNidLookup2'
+     */
+    @Test
+    void kenyaNidLookup2Test() {
+        // TODO: test kenyaNidLookup2
     }
 
     /**

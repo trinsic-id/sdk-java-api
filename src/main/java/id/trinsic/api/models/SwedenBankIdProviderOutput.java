@@ -53,7 +53,7 @@ import id.trinsic.ApiClient;
   SwedenBankIdProviderOutput.JSON_PROPERTY_NOT_BEFORE,
   SwedenBankIdProviderOutput.JSON_PROPERTY_NOT_AFTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SwedenBankIdProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();

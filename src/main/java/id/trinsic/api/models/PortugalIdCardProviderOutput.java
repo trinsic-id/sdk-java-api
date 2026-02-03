@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   PortugalIdCardProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   PortugalIdCardProviderOutput.JSON_PROPERTY_CIVIL_IDENTIFICATION_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PortugalIdCardProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull

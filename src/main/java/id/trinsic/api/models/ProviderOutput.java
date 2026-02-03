@@ -35,6 +35,7 @@ import id.trinsic.api.models.FrejaProviderOutput;
 import id.trinsic.api.models.FrenchNumeriqueProviderOutput;
 import id.trinsic.api.models.GoogleWalletProviderOutput;
 import id.trinsic.api.models.ItsmeProviderOutput;
+import id.trinsic.api.models.KenyaNidLookup2ProviderOutput;
 import id.trinsic.api.models.LaWalletProviderOutput;
 import id.trinsic.api.models.LatviaEparakstsMobileProviderOutput;
 import id.trinsic.api.models.LatviaEparakstsProviderOutput;
@@ -89,6 +90,7 @@ import id.trinsic.ApiClient;
   ProviderOutput.JSON_PROPERTY_FRANCE_IDENTITE_NUMERIQUE,
   ProviderOutput.JSON_PROPERTY_GOOGLE_WALLET,
   ProviderOutput.JSON_PROPERTY_ITALY_SPID,
+  ProviderOutput.JSON_PROPERTY_KENYA_NID_LOOKUP2,
   ProviderOutput.JSON_PROPERTY_LLOYDS_SMART_ID,
   ProviderOutput.JSON_PROPERTY_MEXICO_CURP_LOOKUP,
   ProviderOutput.JSON_PROPERTY_MOBILE_ID,
@@ -102,7 +104,7 @@ import id.trinsic.ApiClient;
   ProviderOutput.JSON_PROPERTY_USA_LOUISIANA_WALLET,
   ProviderOutput.JSON_PROPERTY_YOTI
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T21:52:08.212657203Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProviderOutput {
   public static final String JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN = "a-at-handy-signatur-login";
   private JsonNullable<AustriaHandySignaturProviderOutput> aAtHandySignaturLogin = JsonNullable.<AustriaHandySignaturProviderOutput>undefined();
@@ -163,6 +165,9 @@ public class ProviderOutput {
 
   public static final String JSON_PROPERTY_ITALY_SPID = "italy-spid";
   private JsonNullable<SpidProviderOutput> italySpid = JsonNullable.<SpidProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_KENYA_NID_LOOKUP2 = "kenya-nid-lookup-2";
+  private JsonNullable<KenyaNidLookup2ProviderOutput> kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2ProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_LLOYDS_SMART_ID = "lloyds-smart-id";
   private JsonNullable<LloydsSmartIdProviderOutput> lloydsSmartId = JsonNullable.<LloydsSmartIdProviderOutput>undefined();
@@ -843,6 +848,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput kenyaNidLookup2(@javax.annotation.Nullable KenyaNidLookup2ProviderOutput kenyaNidLookup2) {
+    this.kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2ProviderOutput>of(kenyaNidLookup2);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;kenya-nid-lookup-2&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return kenyaNidLookup2
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public KenyaNidLookup2ProviderOutput getKenyaNidLookup2() {
+        return kenyaNidLookup2.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<KenyaNidLookup2ProviderOutput> getKenyaNidLookup2_JsonNullable() {
+    return kenyaNidLookup2;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP2)
+  public void setKenyaNidLookup2_JsonNullable(JsonNullable<KenyaNidLookup2ProviderOutput> kenyaNidLookup2) {
+    this.kenyaNidLookup2 = kenyaNidLookup2;
+  }
+
+  public void setKenyaNidLookup2(@javax.annotation.Nullable KenyaNidLookup2ProviderOutput kenyaNidLookup2) {
+    this.kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2ProviderOutput>of(kenyaNidLookup2);
+  }
+
+
   public ProviderOutput lloydsSmartId(@javax.annotation.Nullable LloydsSmartIdProviderOutput lloydsSmartId) {
     this.lloydsSmartId = JsonNullable.<LloydsSmartIdProviderOutput>of(lloydsSmartId);
     return this;
@@ -1259,6 +1296,7 @@ public class ProviderOutput {
         equalsNullable(this.franceIdentiteNumerique, providerOutput.franceIdentiteNumerique) &&
         equalsNullable(this.googleWallet, providerOutput.googleWallet) &&
         equalsNullable(this.italySpid, providerOutput.italySpid) &&
+        equalsNullable(this.kenyaNidLookup2, providerOutput.kenyaNidLookup2) &&
         equalsNullable(this.lloydsSmartId, providerOutput.lloydsSmartId) &&
         equalsNullable(this.mexicoCurpLookup, providerOutput.mexicoCurpLookup) &&
         equalsNullable(this.mobileId, providerOutput.mobileId) &&
@@ -1279,7 +1317,7 @@ public class ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(aAtHandySignaturLogin), hashCodeNullable(aBeIdLogin), hashCodeNullable(aEdoappEidLogin), hashCodeNullable(aEeWebEidLogin), hashCodeNullable(aFiIdLogin), hashCodeNullable(aFrejaEidLogin), hashCodeNullable(aItsmeLogin), hashCodeNullable(aLtIdLogin), hashCodeNullable(aLvEparakstsIdLogin), hashCodeNullable(aLvEparakstsMobileLogin), hashCodeNullable(aMojeid), hashCodeNullable(aPlMojeidLogin), hashCodeNullable(aPtIdLogin), hashCodeNullable(aRsIdLogin), hashCodeNullable(appleWallet), hashCodeNullable(denmarkMitid), hashCodeNullable(ethiopiaFayda), hashCodeNullable(franceIdentiteNumerique), hashCodeNullable(googleWallet), hashCodeNullable(italySpid), hashCodeNullable(lloydsSmartId), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(mobileId), hashCodeNullable(peruDniLookup), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(postOfficeEasyid), hashCodeNullable(samsungWallet), hashCodeNullable(smartId), hashCodeNullable(swedenBankid), hashCodeNullable(usaLouisianaWallet), hashCodeNullable(yoti));
+    return Objects.hash(hashCodeNullable(aAtHandySignaturLogin), hashCodeNullable(aBeIdLogin), hashCodeNullable(aEdoappEidLogin), hashCodeNullable(aEeWebEidLogin), hashCodeNullable(aFiIdLogin), hashCodeNullable(aFrejaEidLogin), hashCodeNullable(aItsmeLogin), hashCodeNullable(aLtIdLogin), hashCodeNullable(aLvEparakstsIdLogin), hashCodeNullable(aLvEparakstsMobileLogin), hashCodeNullable(aMojeid), hashCodeNullable(aPlMojeidLogin), hashCodeNullable(aPtIdLogin), hashCodeNullable(aRsIdLogin), hashCodeNullable(appleWallet), hashCodeNullable(denmarkMitid), hashCodeNullable(ethiopiaFayda), hashCodeNullable(franceIdentiteNumerique), hashCodeNullable(googleWallet), hashCodeNullable(italySpid), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(lloydsSmartId), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(mobileId), hashCodeNullable(peruDniLookup), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(postOfficeEasyid), hashCodeNullable(samsungWallet), hashCodeNullable(smartId), hashCodeNullable(swedenBankid), hashCodeNullable(usaLouisianaWallet), hashCodeNullable(yoti));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1313,6 +1351,7 @@ public class ProviderOutput {
     sb.append("    franceIdentiteNumerique: ").append(toIndentedString(franceIdentiteNumerique)).append("\n");
     sb.append("    googleWallet: ").append(toIndentedString(googleWallet)).append("\n");
     sb.append("    italySpid: ").append(toIndentedString(italySpid)).append("\n");
+    sb.append("    kenyaNidLookup2: ").append(toIndentedString(kenyaNidLookup2)).append("\n");
     sb.append("    lloydsSmartId: ").append(toIndentedString(lloydsSmartId)).append("\n");
     sb.append("    mexicoCurpLookup: ").append(toIndentedString(mexicoCurpLookup)).append("\n");
     sb.append("    mobileId: ").append(toIndentedString(mobileId)).append("\n");
@@ -1470,6 +1509,11 @@ public class ProviderOutput {
     // add `italy-spid` to the URL query string
     if (getItalySpid() != null) {
       joiner.add(getItalySpid().toUrlQueryString(prefix + "italy-spid" + suffix));
+    }
+
+    // add `kenya-nid-lookup-2` to the URL query string
+    if (getKenyaNidLookup2() != null) {
+      joiner.add(getKenyaNidLookup2().toUrlQueryString(prefix + "kenya-nid-lookup-2" + suffix));
     }
 
     // add `lloyds-smart-id` to the URL query string
