@@ -36,13 +36,18 @@ import id.trinsic.ApiClient;
  * RecommendProvidersResponse
  */
 @JsonPropertyOrder({
-  RecommendProvidersResponse.JSON_PROPERTY_RECOMMENDED_PROVIDERS
+  RecommendProvidersResponse.JSON_PROPERTY_RECOMMENDED_PROVIDERS,
+  RecommendProvidersResponse.JSON_PROPERTY_REMAINDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RecommendProvidersResponse {
   public static final String JSON_PROPERTY_RECOMMENDED_PROVIDERS = "recommendedProviders";
   @javax.annotation.Nonnull
   private List<RecommendProviderInformation> recommendedProviders = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_REMAINDER = "remainder";
+  @javax.annotation.Nonnull
+  private List<RecommendProviderInformation> remainder = new ArrayList<>();
 
   public RecommendProvidersResponse() { 
   }
@@ -79,6 +84,38 @@ public class RecommendProvidersResponse {
   }
 
 
+  public RecommendProvidersResponse remainder(@javax.annotation.Nonnull List<RecommendProviderInformation> remainder) {
+    this.remainder = remainder;
+    return this;
+  }
+
+  public RecommendProvidersResponse addRemainderItem(RecommendProviderInformation remainderItem) {
+    if (this.remainder == null) {
+      this.remainder = new ArrayList<>();
+    }
+    this.remainder.add(remainderItem);
+    return this;
+  }
+
+  /**
+   * All Providers available to your Verification Profile which are not in &#x60;recommendedProviders&#x60;
+   * @return remainder
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_REMAINDER)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public List<RecommendProviderInformation> getRemainder() {
+    return remainder;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_REMAINDER)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setRemainder(@javax.annotation.Nonnull List<RecommendProviderInformation> remainder) {
+    this.remainder = remainder;
+  }
+
+
   /**
    * Return true if this RecommendProvidersResponse object is equal to o.
    */
@@ -91,12 +128,13 @@ public class RecommendProvidersResponse {
       return false;
     }
     RecommendProvidersResponse recommendProvidersResponse = (RecommendProvidersResponse) o;
-    return Objects.equals(this.recommendedProviders, recommendProvidersResponse.recommendedProviders);
+    return Objects.equals(this.recommendedProviders, recommendProvidersResponse.recommendedProviders) &&
+        Objects.equals(this.remainder, recommendProvidersResponse.remainder);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recommendedProviders);
+    return Objects.hash(recommendedProviders, remainder);
   }
 
   @Override
@@ -104,6 +142,7 @@ public class RecommendProvidersResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecommendProvidersResponse {\n");
     sb.append("    recommendedProviders: ").append(toIndentedString(recommendedProviders)).append("\n");
+    sb.append("    remainder: ").append(toIndentedString(remainder)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -156,6 +195,16 @@ public class RecommendProvidersResponse {
       for (int i = 0; i < getRecommendedProviders().size(); i++) {
         if (getRecommendedProviders().get(i) != null) {
           joiner.add(getRecommendedProviders().get(i).toUrlQueryString(String.format("%srecommendedProviders%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `remainder` to the URL query string
+    if (getRemainder() != null) {
+      for (int i = 0; i < getRemainder().size(); i++) {
+        if (getRemainder().get(i) != null) {
+          joiner.add(getRemainder().get(i).toUrlQueryString(String.format("%sremainder%s%s", prefix, suffix,
           "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }

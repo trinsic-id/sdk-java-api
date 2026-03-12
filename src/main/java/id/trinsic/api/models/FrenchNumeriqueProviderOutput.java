@@ -67,7 +67,7 @@ import id.trinsic.ApiClient;
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_COUNTRY,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_MRZ
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FrenchNumeriqueProviderOutput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<FrenchNumeriqueGivenName> givenName = JsonNullable.<FrenchNumeriqueGivenName>undefined();

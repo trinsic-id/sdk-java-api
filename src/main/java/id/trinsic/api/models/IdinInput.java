@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   IdinInput.JSON_PROPERTY_SUB_PROVIDER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IdinInput {
   public static final String JSON_PROPERTY_SUB_PROVIDER_ID = "subProviderId";
   private JsonNullable<String> subProviderId = JsonNullable.<String>undefined();

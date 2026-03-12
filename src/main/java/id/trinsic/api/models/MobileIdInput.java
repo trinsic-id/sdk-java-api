@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_NATIONAL_IDENTITY_NUMBER,
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_LANGUAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MobileIdInput {
   public static final String JSON_PROPERTY_MOBILE_ID_PHONE_NUMBER = "mobileIdPhoneNumber";
   private JsonNullable<String> mobileIdPhoneNumber = JsonNullable.<String>undefined();

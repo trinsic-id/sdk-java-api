@@ -14,6 +14,7 @@
 package id.trinsic.api;
 
 import id.trinsic.ApiException;
+import id.trinsic.api.models.GetProviderResponse;
 import id.trinsic.api.models.ListProvidersResponse;
 import id.trinsic.api.models.ProblemDetails;
 import org.junit.jupiter.api.Disabled;
@@ -34,6 +35,23 @@ public class ProvidersApiTest {
 
     private final ProvidersApi api = new ProvidersApi();
 
+    
+    /**
+     * Get Provider
+     *
+     * Get a single identity provider by ID, including its license status.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getProviderTest() throws ApiException {
+        String providerId = null;
+        GetProviderResponse response = 
+        api.getProvider(providerId);
+        
+        // TODO: test validations
+    }
     
     /**
      * List Providers

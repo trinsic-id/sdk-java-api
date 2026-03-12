@@ -54,7 +54,7 @@ import id.trinsic.ApiClient;
   YotiProviderOutput.JSON_PROPERTY_POSTAL_ADDRESS,
   YotiProviderOutput.JSON_PROPERTY_DOCUMENT_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class YotiProviderOutput {
   public static final String JSON_PROPERTY_REMEMBER_ME_ID = "rememberMeId";
   private JsonNullable<UUID> rememberMeId = JsonNullable.<UUID>undefined();

@@ -37,7 +37,10 @@
 |**italySpid** | [**SpidInput**](SpidInput.md) | Input for the &#x60;italy-spid&#x60; provider |  [optional] |
 |**googleWallet** | [**GoogleWalletInput**](GoogleWalletInput.md) | Input for the &#x60;google-wallet&#x60; provider |  [optional] |
 |**appleWallet** | [**AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider |  [optional] |
+|**samsungWallet** | [**SamsungWalletInput**](SamsungWalletInput.md) | Input for the &#x60;samsung-wallet&#x60; provider |  [optional] |
+|**franceIdentite** | [**FranceIdentiteInput**](FranceIdentiteInput.md) | Input for the &#x60;france-identite&#x60; provider |  [optional] |
 |**peruDniLookup** | [**PeruDniLookupInput**](PeruDniLookupInput.md) | Input for the &#x60;peru-dni-lookup&#x60; provider |  [optional] |
+|**ukEvisaLookup** | [**UkEvisaLookupInput**](UkEvisaLookupInput.md) | Input for the &#x60;uk-evisa-lookup&#x60; provider |  [optional] |
 |**trinsicTestDatabaseLookup** | [**TrinsicTestDatabaseLookupInput**](TrinsicTestDatabaseLookupInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider |  [optional] |
 |**trinsicTestSubProviders** | [**TrinsicTestSubProvidersInput**](TrinsicTestSubProvidersInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider |  [optional] |
 

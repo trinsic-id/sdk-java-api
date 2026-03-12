@@ -18,7 +18,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -43,6 +48,70 @@ class PhilippinesPhysicalNidProviderOutputTest {
     @Test
     void philsysCardNumberTest() {
         // TODO: test philsysCardNumber
+    }
+
+    /**
+     * Test the property 'givenName'
+     */
+    @Test
+    void givenNameTest() {
+        // TODO: test givenName
+    }
+
+    /**
+     * Test the property 'middleName'
+     */
+    @Test
+    void middleNameTest() {
+        // TODO: test middleName
+    }
+
+    /**
+     * Test the property 'familyName'
+     */
+    @Test
+    void familyNameTest() {
+        // TODO: test familyName
+    }
+
+    /**
+     * Test the property 'dateOfBirth'
+     */
+    @Test
+    void dateOfBirthTest() {
+        // TODO: test dateOfBirth
+    }
+
+    /**
+     * Test the property 'suffix'
+     */
+    @Test
+    void suffixTest() {
+        // TODO: test suffix
+    }
+
+    /**
+     * Test the property 'sex'
+     */
+    @Test
+    void sexTest() {
+        // TODO: test sex
+    }
+
+    /**
+     * Test the property 'placeOfBirth'
+     */
+    @Test
+    void placeOfBirthTest() {
+        // TODO: test placeOfBirth
+    }
+
+    /**
+     * Test the property 'documentIssueDate'
+     */
+    @Test
+    void documentIssueDateTest() {
+        // TODO: test documentIssueDate
     }
 
 }

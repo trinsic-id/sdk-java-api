@@ -15,7 +15,7 @@ All URIs are relative to *https://api.trinsic.id*
 
 ## createVerificationProfile
 
-> CreateVerificationProfileResponse createVerificationProfile(alias, brandName, primaryColor, providers, logo, isProductionUsage)
+> CreateVerificationProfileResponse createVerificationProfile(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage)
 
 Create Verification Profile
 
@@ -47,9 +47,11 @@ public class Example {
         String primaryColor = "primaryColor_example"; // String | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
         List<String> providers = Arrays.asList(); // List<String> | The list of providers you'd like to select for this profile. We will not currently enable any providers.
         File logo = new File("/path/to/file"); // File | The logo of the verification profile.
+        String redactionPeriod = "redactionPeriod_example"; // String | The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days.
+        String sessionExpiration = "sessionExpiration_example"; // String | The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified.
         Boolean isProductionUsage = true; // Boolean | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
         try {
-            CreateVerificationProfileResponse result = apiInstance.createVerificationProfile(alias, brandName, primaryColor, providers, logo, isProductionUsage);
+            CreateVerificationProfileResponse result = apiInstance.createVerificationProfile(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling VerificationProfilesApi#createVerificationProfile");
@@ -72,6 +74,8 @@ public class Example {
 | **primaryColor** | **String**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
 | **providers** | [**List&lt;String&gt;**](String.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **File**| The logo of the verification profile. | [optional] |
+| **redactionPeriod** | **String**| The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. | [optional] |
+| **sessionExpiration** | **String**| The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. | [optional] |
 | **isProductionUsage** | **Boolean**| Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). | [optional] |
 
 ### Return type
@@ -99,7 +103,7 @@ public class Example {
 
 ## createVerificationProfileWithHttpInfo
 
-> ApiResponse<CreateVerificationProfileResponse> createVerificationProfile createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, isProductionUsage)
+> ApiResponse<CreateVerificationProfileResponse> createVerificationProfile createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage)
 
 Create Verification Profile
 
@@ -132,9 +136,11 @@ public class Example {
         String primaryColor = "primaryColor_example"; // String | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
         List<String> providers = Arrays.asList(); // List<String> | The list of providers you'd like to select for this profile. We will not currently enable any providers.
         File logo = new File("/path/to/file"); // File | The logo of the verification profile.
+        String redactionPeriod = "redactionPeriod_example"; // String | The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days.
+        String sessionExpiration = "sessionExpiration_example"; // String | The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified.
         Boolean isProductionUsage = true; // Boolean | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
         try {
-            ApiResponse<CreateVerificationProfileResponse> response = apiInstance.createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, isProductionUsage);
+            ApiResponse<CreateVerificationProfileResponse> response = apiInstance.createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -159,6 +165,8 @@ public class Example {
 | **primaryColor** | **String**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
 | **providers** | [**List&lt;String&gt;**](String.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **File**| The logo of the verification profile. | [optional] |
+| **redactionPeriod** | **String**| The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. | [optional] |
+| **sessionExpiration** | **String**| The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. | [optional] |
 | **isProductionUsage** | **Boolean**| Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). | [optional] |
 
 ### Return type

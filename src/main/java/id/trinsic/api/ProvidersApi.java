@@ -18,6 +18,7 @@ import id.trinsic.ApiResponse;
 import id.trinsic.Configuration;
 import id.trinsic.Pair;
 
+import id.trinsic.api.models.GetProviderResponse;
 import id.trinsic.api.models.ListProvidersResponse;
 import id.trinsic.api.models.ProblemDetails;
 
@@ -46,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ProvidersApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -81,6 +82,90 @@ public class ProvidersApi {
       body = "[no body]";
     }
     return operationId + " call failed with: " + statusCode + " - " + body;
+  }
+
+  /**
+   * Get Provider
+   * Get a single identity provider by ID, including its license status.
+   * @param providerId The ID of the provider to retrieve (required)
+   * @return GetProviderResponse
+   * @throws ApiException if fails to make API call
+   */
+  public GetProviderResponse getProvider(@javax.annotation.Nonnull String providerId) throws ApiException {
+    ApiResponse<GetProviderResponse> localVarResponse = getProviderWithHttpInfo(providerId);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Get Provider
+   * Get a single identity provider by ID, including its license status.
+   * @param providerId The ID of the provider to retrieve (required)
+   * @return ApiResponse&lt;GetProviderResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetProviderResponse> getProviderWithHttpInfo(@javax.annotation.Nonnull String providerId) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getProviderRequestBuilder(providerId);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("getProvider", localVarResponse);
+        }
+        if (localVarResponse.body() == null) {
+          return new ApiResponse<GetProviderResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        String responseBody = new String(localVarResponse.body().readAllBytes());
+        localVarResponse.body().close();
+
+        return new ApiResponse<GetProviderResponse>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetProviderResponse>() {})
+        );
+      } finally {
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder getProviderRequestBuilder(@javax.annotation.Nonnull String providerId) throws ApiException {
+    // verify the required parameter 'providerId' is set
+    if (providerId == null) {
+      throw new ApiException(400, "Missing the required parameter 'providerId' when calling getProvider");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/api/v1/providers/{providerId}"
+        .replace("{providerId}", ApiClient.urlEncode(providerId.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
   }
 
   /**

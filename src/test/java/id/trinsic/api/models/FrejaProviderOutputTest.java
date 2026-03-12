@@ -18,7 +18,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.OutputFrejaAddress;
+import id.trinsic.api.models.OutputFrejaDocument;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -38,35 +47,147 @@ class FrejaProviderOutputTest {
     }
 
     /**
-     * Test the property 'firstName'
+     * Test the property 'name'
      */
     @Test
-    void firstNameTest() {
-        // TODO: test firstName
+    void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'lastName'
+     * Test the property 'givenName'
      */
     @Test
-    void lastNameTest() {
-        // TODO: test lastName
+    void givenNameTest() {
+        // TODO: test givenName
     }
 
     /**
-     * Test the property 'personalNumber'
+     * Test the property 'familyName'
      */
     @Test
-    void personalNumberTest() {
-        // TODO: test personalNumber
+    void familyNameTest() {
+        // TODO: test familyName
     }
 
     /**
-     * Test the property 'personalNumberCountry'
+     * Test the property 'dateOfBirth'
      */
     @Test
-    void personalNumberCountryTest() {
-        // TODO: test personalNumberCountry
+    void dateOfBirthTest() {
+        // TODO: test dateOfBirth
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    void emailTest() {
+        // TODO: test email
+    }
+
+    /**
+     * Test the property 'emailVerified'
+     */
+    @Test
+    void emailVerifiedTest() {
+        // TODO: test emailVerified
+    }
+
+    /**
+     * Test the property 'allEmailAddresses'
+     */
+    @Test
+    void allEmailAddressesTest() {
+        // TODO: test allEmailAddresses
+    }
+
+    /**
+     * Test the property 'primaryPhysicalAddress'
+     */
+    @Test
+    void primaryPhysicalAddressTest() {
+        // TODO: test primaryPhysicalAddress
+    }
+
+    /**
+     * Test the property 'allPhysicalAddresses'
+     */
+    @Test
+    void allPhysicalAddressesTest() {
+        // TODO: test allPhysicalAddresses
+    }
+
+    /**
+     * Test the property 'age'
+     */
+    @Test
+    void ageTest() {
+        // TODO: test age
+    }
+
+    /**
+     * Test the property 'phoneNumber'
+     */
+    @Test
+    void phoneNumberTest() {
+        // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'phoneNumberVerified'
+     */
+    @Test
+    void phoneNumberVerifiedTest() {
+        // TODO: test phoneNumberVerified
+    }
+
+    /**
+     * Test the property 'personalIdentityNumber'
+     */
+    @Test
+    void personalIdentityNumberTest() {
+        // TODO: test personalIdentityNumber
+    }
+
+    /**
+     * Test the property 'country'
+     */
+    @Test
+    void countryTest() {
+        // TODO: test country
+    }
+
+    /**
+     * Test the property 'document'
+     */
+    @Test
+    void documentTest() {
+        // TODO: test document
+    }
+
+    /**
+     * Test the property 'registrationLevel'
+     */
+    @Test
+    void registrationLevelTest() {
+        // TODO: test registrationLevel
+    }
+
+    /**
+     * Test the property 'relyingPartyUserId'
+     */
+    @Test
+    void relyingPartyUserIdTest() {
+        // TODO: test relyingPartyUserId
+    }
+
+    /**
+     * Test the property 'transactionReference'
+     */
+    @Test
+    void transactionReferenceTest() {
+        // TODO: test transactionReference
     }
 
 }

@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.MdlExchangeMechanism;
+import id.trinsic.api.models.Raw18013RequestInput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -48,6 +49,14 @@ class GoogleWalletInputTest {
     @Test
     void exchangeMechanismTest() {
         // TODO: test exchangeMechanism
+    }
+
+    /**
+     * Test the property 'previewRaw18013Request'
+     */
+    @Test
+    void previewRaw18013RequestTest() {
+        // TODO: test previewRaw18013Request
     }
 
 }

@@ -23,6 +23,7 @@ import id.trinsic.api.models.AppleWalletInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
+import id.trinsic.api.models.FranceIdentiteInput;
 import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
@@ -40,6 +41,7 @@ import id.trinsic.api.models.NigeriaNinMatch2Input;
 import id.trinsic.api.models.PeruDniLookupInput;
 import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
+import id.trinsic.api.models.SamsungWalletInput;
 import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidBiometric2Input;
 import id.trinsic.api.models.SouthAfricaNidInput;
@@ -49,6 +51,7 @@ import id.trinsic.api.models.SpidInput;
 import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import id.trinsic.api.models.UgandaNidMatch2Input;
+import id.trinsic.api.models.UkEvisaLookupInput;
 import id.trinsic.api.models.ZimbabweNidLookup2Input;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -314,11 +317,35 @@ class ProviderInputTest {
     }
 
     /**
+     * Test the property 'samsungWallet'
+     */
+    @Test
+    void samsungWalletTest() {
+        // TODO: test samsungWallet
+    }
+
+    /**
+     * Test the property 'franceIdentite'
+     */
+    @Test
+    void franceIdentiteTest() {
+        // TODO: test franceIdentite
+    }
+
+    /**
      * Test the property 'peruDniLookup'
      */
     @Test
     void peruDniLookupTest() {
         // TODO: test peruDniLookup
+    }
+
+    /**
+     * Test the property 'ukEvisaLookup'
+     */
+    @Test
+    void ukEvisaLookupTest() {
+        // TODO: test ukEvisaLookup
     }
 
     /**

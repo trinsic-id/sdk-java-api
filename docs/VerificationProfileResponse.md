@@ -13,6 +13,7 @@
 |**logoUrl** | **String** | The URL of the verification profile&#39;s logo. |  |
 |**primaryColor** | **String** | The primary color of the verification profile. |  |
 |**enabledProviders** | **List&lt;String&gt;** | The providers that are currently enabled for the verification profile. |  |
+|**sessionExpiration** | **String** | The session expiration for verification sessions created with this profile. |  |
 |**isProductionUsage** | **Boolean** | Whether this profile is for production usage. Only applicable for Live environment profiles. |  |
 
 

@@ -89,6 +89,14 @@ class VerificationProfileResponseTest {
     }
 
     /**
+     * Test the property 'sessionExpiration'
+     */
+    @Test
+    void sessionExpirationTest() {
+        // TODO: test sessionExpiration
+    }
+
+    /**
      * Test the property 'isProductionUsage'
      */
     @Test

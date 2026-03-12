@@ -57,7 +57,7 @@ import id.trinsic.ApiClient;
   LaWalletProviderOutput.JSON_PROPERTY_COUNTY,
   LaWalletProviderOutput.JSON_PROPERTY_COARSE_AGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class LaWalletProviderOutput {
   public static final String JSON_PROPERTY_DRIVERS_LICENSE_NUMBER = "driversLicenseNumber";
   @javax.annotation.Nonnull

@@ -24,134 +24,699 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.OutputFrejaAddress;
+import id.trinsic.api.models.OutputFrejaDocument;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import id.trinsic.ApiClient;
 /**
- * Exposed properties for the &#x60;a-freja-eid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+ * Exposed properties for the &#x60;freja&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
-  FrejaProviderOutput.JSON_PROPERTY_FIRST_NAME,
-  FrejaProviderOutput.JSON_PROPERTY_LAST_NAME,
-  FrejaProviderOutput.JSON_PROPERTY_PERSONAL_NUMBER,
-  FrejaProviderOutput.JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY
+  FrejaProviderOutput.JSON_PROPERTY_NAME,
+  FrejaProviderOutput.JSON_PROPERTY_GIVEN_NAME,
+  FrejaProviderOutput.JSON_PROPERTY_FAMILY_NAME,
+  FrejaProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
+  FrejaProviderOutput.JSON_PROPERTY_EMAIL,
+  FrejaProviderOutput.JSON_PROPERTY_EMAIL_VERIFIED,
+  FrejaProviderOutput.JSON_PROPERTY_ALL_EMAIL_ADDRESSES,
+  FrejaProviderOutput.JSON_PROPERTY_PRIMARY_PHYSICAL_ADDRESS,
+  FrejaProviderOutput.JSON_PROPERTY_ALL_PHYSICAL_ADDRESSES,
+  FrejaProviderOutput.JSON_PROPERTY_AGE,
+  FrejaProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
+  FrejaProviderOutput.JSON_PROPERTY_PHONE_NUMBER_VERIFIED,
+  FrejaProviderOutput.JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER,
+  FrejaProviderOutput.JSON_PROPERTY_COUNTRY,
+  FrejaProviderOutput.JSON_PROPERTY_DOCUMENT,
+  FrejaProviderOutput.JSON_PROPERTY_REGISTRATION_LEVEL,
+  FrejaProviderOutput.JSON_PROPERTY_RELYING_PARTY_USER_ID,
+  FrejaProviderOutput.JSON_PROPERTY_TRANSACTION_REFERENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FrejaProviderOutput {
-  public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  public static final String JSON_PROPERTY_NAME = "name";
+  private JsonNullable<String> name = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_PERSONAL_NUMBER = "personalNumber";
-  @javax.annotation.Nonnull
-  private String personalNumber;
+  public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY = "personalNumberCountry";
-  @javax.annotation.Nonnull
-  private String personalNumberCountry;
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_EMAIL = "email";
+  private JsonNullable<String> email = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_EMAIL_VERIFIED = "emailVerified";
+  private JsonNullable<Boolean> emailVerified = JsonNullable.<Boolean>undefined();
+
+  public static final String JSON_PROPERTY_ALL_EMAIL_ADDRESSES = "allEmailAddresses";
+  private JsonNullable<List<String>> allEmailAddresses = JsonNullable.<List<String>>undefined();
+
+  public static final String JSON_PROPERTY_PRIMARY_PHYSICAL_ADDRESS = "primaryPhysicalAddress";
+  private JsonNullable<OutputFrejaAddress> primaryPhysicalAddress = JsonNullable.<OutputFrejaAddress>undefined();
+
+  public static final String JSON_PROPERTY_ALL_PHYSICAL_ADDRESSES = "allPhysicalAddresses";
+  private JsonNullable<List<OutputFrejaAddress>> allPhysicalAddresses = JsonNullable.<List<OutputFrejaAddress>>undefined();
+
+  public static final String JSON_PROPERTY_AGE = "age";
+  private JsonNullable<Integer> age = JsonNullable.<Integer>undefined();
+
+  public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
+  private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_PHONE_NUMBER_VERIFIED = "phoneNumberVerified";
+  private JsonNullable<Boolean> phoneNumberVerified = JsonNullable.<Boolean>undefined();
+
+  public static final String JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER = "personalIdentityNumber";
+  private JsonNullable<String> personalIdentityNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_COUNTRY = "country";
+  private JsonNullable<String> country = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOCUMENT = "document";
+  private JsonNullable<OutputFrejaDocument> document = JsonNullable.<OutputFrejaDocument>undefined();
+
+  public static final String JSON_PROPERTY_REGISTRATION_LEVEL = "registrationLevel";
+  private JsonNullable<String> registrationLevel = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_RELYING_PARTY_USER_ID = "relyingPartyUserId";
+  private JsonNullable<String> relyingPartyUserId = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_TRANSACTION_REFERENCE = "transactionReference";
+  private JsonNullable<String> transactionReference = JsonNullable.<String>undefined();
 
   public FrejaProviderOutput() { 
   }
 
-  public FrejaProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public FrejaProviderOutput name(@javax.annotation.Nullable String name) {
+    this.name = JsonNullable.<String>of(name);
     return this;
   }
 
   /**
-   * The first name of the verified individual
-   * @return firstName
+   * The individual&#39;s full name.
+   * @return name
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getFirstName() {
-    return firstName;
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getName() {
+        return name.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getName_JsonNullable() {
+    return name;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NAME)
+  public void setName_JsonNullable(JsonNullable<String> name) {
+    this.name = name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = JsonNullable.<String>of(name);
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
-  }
-
-
-  public FrejaProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+  public FrejaProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
 
   /**
-   * The last name of the verified individual
-   * @return lastName
+   * The individual&#39;s first name.
+   * @return givenName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getLastName() {
-    return lastName;
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGivenName() {
+        return givenName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
+    this.givenName = givenName;
+  }
+
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
-  }
-
-
-  public FrejaProviderOutput personalNumber(@javax.annotation.Nonnull String personalNumber) {
-    this.personalNumber = personalNumber;
+  public FrejaProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
   /**
-   * The value returned by Freja in the \&quot;ssn\&quot; field.              The actual value of this field depends on the country of origin used to create the Freja credential. It is typically a Social Security Number, National Identification Number, or equivalent personal identifier.
-   * @return personalNumber
+   * The individual&#39;s last name.
+   * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getPersonalNumber() {
-    return personalNumber;
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFamilyName() {
+        return familyName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
+    this.familyName = familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPersonalNumber(@javax.annotation.Nonnull String personalNumber) {
-    this.personalNumber = personalNumber;
-  }
-
-
-  public FrejaProviderOutput personalNumberCountry(@javax.annotation.Nonnull String personalNumberCountry) {
-    this.personalNumberCountry = personalNumberCountry;
+  public FrejaProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
   /**
-   * The 2-digit ISO country code of the country which issued the personal number.
-   * @return personalNumberCountry
+   * The date of birth of the individual.              Formatted as an ISO 8601 Date.
+   * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getPersonalNumberCountry() {
-    return personalNumberCountry;
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDateOfBirth() {
+        return dateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPersonalNumberCountry(@javax.annotation.Nonnull String personalNumberCountry) {
-    this.personalNumberCountry = personalNumberCountry;
+  public FrejaProviderOutput email(@javax.annotation.Nullable String email) {
+    this.email = JsonNullable.<String>of(email);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s primary email address within Freja.
+   * @return email
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getEmail() {
+        return email.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getEmail_JsonNullable() {
+    return email;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  public void setEmail_JsonNullable(JsonNullable<String> email) {
+    this.email = email;
+  }
+
+  public void setEmail(@javax.annotation.Nullable String email) {
+    this.email = JsonNullable.<String>of(email);
+  }
+
+
+  public FrejaProviderOutput emailVerified(@javax.annotation.Nullable Boolean emailVerified) {
+    this.emailVerified = JsonNullable.<Boolean>of(emailVerified);
+    return this;
+  }
+
+  /**
+   * A boolean which indicates whether the individual&#39;s primary email address has been verified by Freja.
+   * @return emailVerified
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getEmailVerified() {
+        return emailVerified.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getEmailVerified_JsonNullable() {
+    return emailVerified;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
+  public void setEmailVerified_JsonNullable(JsonNullable<Boolean> emailVerified) {
+    this.emailVerified = emailVerified;
+  }
+
+  public void setEmailVerified(@javax.annotation.Nullable Boolean emailVerified) {
+    this.emailVerified = JsonNullable.<Boolean>of(emailVerified);
+  }
+
+
+  public FrejaProviderOutput allEmailAddresses(@javax.annotation.Nullable List<String> allEmailAddresses) {
+    this.allEmailAddresses = JsonNullable.<List<String>>of(allEmailAddresses);
+    return this;
+  }
+
+  public FrejaProviderOutput addAllEmailAddressesItem(String allEmailAddressesItem) {
+    if (this.allEmailAddresses == null || !this.allEmailAddresses.isPresent()) {
+      this.allEmailAddresses = JsonNullable.<List<String>>of(new ArrayList<>());
+    }
+    try {
+      this.allEmailAddresses.get().add(allEmailAddressesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * An array of all associated email addresses of the individual.
+   * @return allEmailAddresses
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<String> getAllEmailAddresses() {
+        return allEmailAddresses.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ALL_EMAIL_ADDRESSES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<String>> getAllEmailAddresses_JsonNullable() {
+    return allEmailAddresses;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ALL_EMAIL_ADDRESSES)
+  public void setAllEmailAddresses_JsonNullable(JsonNullable<List<String>> allEmailAddresses) {
+    this.allEmailAddresses = allEmailAddresses;
+  }
+
+  public void setAllEmailAddresses(@javax.annotation.Nullable List<String> allEmailAddresses) {
+    this.allEmailAddresses = JsonNullable.<List<String>>of(allEmailAddresses);
+  }
+
+
+  public FrejaProviderOutput primaryPhysicalAddress(@javax.annotation.Nullable OutputFrejaAddress primaryPhysicalAddress) {
+    this.primaryPhysicalAddress = JsonNullable.<OutputFrejaAddress>of(primaryPhysicalAddress);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s primary address on file.
+   * @return primaryPhysicalAddress
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public OutputFrejaAddress getPrimaryPhysicalAddress() {
+        return primaryPhysicalAddress.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PRIMARY_PHYSICAL_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<OutputFrejaAddress> getPrimaryPhysicalAddress_JsonNullable() {
+    return primaryPhysicalAddress;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PRIMARY_PHYSICAL_ADDRESS)
+  public void setPrimaryPhysicalAddress_JsonNullable(JsonNullable<OutputFrejaAddress> primaryPhysicalAddress) {
+    this.primaryPhysicalAddress = primaryPhysicalAddress;
+  }
+
+  public void setPrimaryPhysicalAddress(@javax.annotation.Nullable OutputFrejaAddress primaryPhysicalAddress) {
+    this.primaryPhysicalAddress = JsonNullable.<OutputFrejaAddress>of(primaryPhysicalAddress);
+  }
+
+
+  public FrejaProviderOutput allPhysicalAddresses(@javax.annotation.Nullable List<OutputFrejaAddress> allPhysicalAddresses) {
+    this.allPhysicalAddresses = JsonNullable.<List<OutputFrejaAddress>>of(allPhysicalAddresses);
+    return this;
+  }
+
+  public FrejaProviderOutput addAllPhysicalAddressesItem(OutputFrejaAddress allPhysicalAddressesItem) {
+    if (this.allPhysicalAddresses == null || !this.allPhysicalAddresses.isPresent()) {
+      this.allPhysicalAddresses = JsonNullable.<List<OutputFrejaAddress>>of(new ArrayList<>());
+    }
+    try {
+      this.allPhysicalAddresses.get().add(allPhysicalAddressesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * A list of all associated addresses of the individual.
+   * @return allPhysicalAddresses
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<OutputFrejaAddress> getAllPhysicalAddresses() {
+        return allPhysicalAddresses.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ALL_PHYSICAL_ADDRESSES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<OutputFrejaAddress>> getAllPhysicalAddresses_JsonNullable() {
+    return allPhysicalAddresses;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ALL_PHYSICAL_ADDRESSES)
+  public void setAllPhysicalAddresses_JsonNullable(JsonNullable<List<OutputFrejaAddress>> allPhysicalAddresses) {
+    this.allPhysicalAddresses = allPhysicalAddresses;
+  }
+
+  public void setAllPhysicalAddresses(@javax.annotation.Nullable List<OutputFrejaAddress> allPhysicalAddresses) {
+    this.allPhysicalAddresses = JsonNullable.<List<OutputFrejaAddress>>of(allPhysicalAddresses);
+  }
+
+
+  public FrejaProviderOutput age(@javax.annotation.Nullable Integer age) {
+    this.age = JsonNullable.<Integer>of(age);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s age in years.
+   * @return age
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Integer getAge() {
+        return age.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_AGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Integer> getAge_JsonNullable() {
+    return age;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AGE)
+  public void setAge_JsonNullable(JsonNullable<Integer> age) {
+    this.age = age;
+  }
+
+  public void setAge(@javax.annotation.Nullable Integer age) {
+    this.age = JsonNullable.<Integer>of(age);
+  }
+
+
+  public FrejaProviderOutput phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s phone number in the E.164 format.
+   * @return phoneNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getPhoneNumber() {
+        return phoneNumber.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getPhoneNumber_JsonNullable() {
+    return phoneNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  public void setPhoneNumber_JsonNullable(JsonNullable<String> phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+  }
+
+
+  public FrejaProviderOutput phoneNumberVerified(@javax.annotation.Nullable Boolean phoneNumberVerified) {
+    this.phoneNumberVerified = JsonNullable.<Boolean>of(phoneNumberVerified);
+    return this;
+  }
+
+  /**
+   * Whether the individual&#39;s phone number has been verified by Freja.
+   * @return phoneNumberVerified
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getPhoneNumberVerified() {
+        return phoneNumberVerified.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER_VERIFIED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getPhoneNumberVerified_JsonNullable() {
+    return phoneNumberVerified;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER_VERIFIED)
+  public void setPhoneNumberVerified_JsonNullable(JsonNullable<Boolean> phoneNumberVerified) {
+    this.phoneNumberVerified = phoneNumberVerified;
+  }
+
+  public void setPhoneNumberVerified(@javax.annotation.Nullable Boolean phoneNumberVerified) {
+    this.phoneNumberVerified = JsonNullable.<Boolean>of(phoneNumberVerified);
+  }
+
+
+  public FrejaProviderOutput personalIdentityNumber(@javax.annotation.Nullable String personalIdentityNumber) {
+    this.personalIdentityNumber = JsonNullable.<String>of(personalIdentityNumber);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s personal identity number. The actual value of this field depends on the country of origin used to create the Freja credential. It is typically a Social Security Number, National Identification Number, or equivalent personal identifier.
+   * @return personalIdentityNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getPersonalIdentityNumber() {
+        return personalIdentityNumber.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getPersonalIdentityNumber_JsonNullable() {
+    return personalIdentityNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER)
+  public void setPersonalIdentityNumber_JsonNullable(JsonNullable<String> personalIdentityNumber) {
+    this.personalIdentityNumber = personalIdentityNumber;
+  }
+
+  public void setPersonalIdentityNumber(@javax.annotation.Nullable String personalIdentityNumber) {
+    this.personalIdentityNumber = JsonNullable.<String>of(personalIdentityNumber);
+  }
+
+
+  public FrejaProviderOutput country(@javax.annotation.Nullable String country) {
+    this.country = JsonNullable.<String>of(country);
+    return this;
+  }
+
+  /**
+   * The ISO 3166-1 alpha-2 country code associated with the individual&#39;s country of origin.
+   * @return country
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCountry() {
+        return country.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCountry_JsonNullable() {
+    return country;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  public void setCountry_JsonNullable(JsonNullable<String> country) {
+    this.country = country;
+  }
+
+  public void setCountry(@javax.annotation.Nullable String country) {
+    this.country = JsonNullable.<String>of(country);
+  }
+
+
+  public FrejaProviderOutput document(@javax.annotation.Nullable OutputFrejaDocument document) {
+    this.document = JsonNullable.<OutputFrejaDocument>of(document);
+    return this;
+  }
+
+  /**
+   * The underlying document, such as a passport, used to create the Freja credential.
+   * @return document
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public OutputFrejaDocument getDocument() {
+        return document.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOCUMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<OutputFrejaDocument> getDocument_JsonNullable() {
+    return document;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT)
+  public void setDocument_JsonNullable(JsonNullable<OutputFrejaDocument> document) {
+    this.document = document;
+  }
+
+  public void setDocument(@javax.annotation.Nullable OutputFrejaDocument document) {
+    this.document = JsonNullable.<OutputFrejaDocument>of(document);
+  }
+
+
+  public FrejaProviderOutput registrationLevel(@javax.annotation.Nullable String registrationLevel) {
+    this.registrationLevel = JsonNullable.<String>of(registrationLevel);
+    return this;
+  }
+
+  /**
+   * The Freja registration level associated with this individual. This can be BASIC, EXTENDED, or PLUS. * BASIC: Individual has a registered account with Freja. * EXTENDED: Individual has an official identity document verified by Freja. * PLUS: Individual has undergone in-person verification with Freja.
+   * @return registrationLevel
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRegistrationLevel() {
+        return registrationLevel.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_REGISTRATION_LEVEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRegistrationLevel_JsonNullable() {
+    return registrationLevel;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REGISTRATION_LEVEL)
+  public void setRegistrationLevel_JsonNullable(JsonNullable<String> registrationLevel) {
+    this.registrationLevel = registrationLevel;
+  }
+
+  public void setRegistrationLevel(@javax.annotation.Nullable String registrationLevel) {
+    this.registrationLevel = JsonNullable.<String>of(registrationLevel);
+  }
+
+
+  public FrejaProviderOutput relyingPartyUserId(@javax.annotation.Nullable String relyingPartyUserId) {
+    this.relyingPartyUserId = JsonNullable.<String>of(relyingPartyUserId);
+    return this;
+  }
+
+  /**
+   * The relying party user identifier for this individual. This is an identifier specific to the individual and the relying party (your service).
+   * @return relyingPartyUserId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRelyingPartyUserId() {
+        return relyingPartyUserId.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_RELYING_PARTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRelyingPartyUserId_JsonNullable() {
+    return relyingPartyUserId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RELYING_PARTY_USER_ID)
+  public void setRelyingPartyUserId_JsonNullable(JsonNullable<String> relyingPartyUserId) {
+    this.relyingPartyUserId = relyingPartyUserId;
+  }
+
+  public void setRelyingPartyUserId(@javax.annotation.Nullable String relyingPartyUserId) {
+    this.relyingPartyUserId = JsonNullable.<String>of(relyingPartyUserId);
+  }
+
+
+  public FrejaProviderOutput transactionReference(@javax.annotation.Nullable String transactionReference) {
+    this.transactionReference = JsonNullable.<String>of(transactionReference);
+    return this;
+  }
+
+  /**
+   * The Freja transaction reference for this verification. This is an identifier specific to the verification transaction.
+   * @return transactionReference
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getTransactionReference() {
+        return transactionReference.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_TRANSACTION_REFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getTransactionReference_JsonNullable() {
+    return transactionReference;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TRANSACTION_REFERENCE)
+  public void setTransactionReference_JsonNullable(JsonNullable<String> transactionReference) {
+    this.transactionReference = transactionReference;
+  }
+
+  public void setTransactionReference(@javax.annotation.Nullable String transactionReference) {
+    this.transactionReference = JsonNullable.<String>of(transactionReference);
   }
 
 
@@ -167,25 +732,64 @@ public class FrejaProviderOutput {
       return false;
     }
     FrejaProviderOutput frejaProviderOutput = (FrejaProviderOutput) o;
-    return Objects.equals(this.firstName, frejaProviderOutput.firstName) &&
-        Objects.equals(this.lastName, frejaProviderOutput.lastName) &&
-        Objects.equals(this.personalNumber, frejaProviderOutput.personalNumber) &&
-        Objects.equals(this.personalNumberCountry, frejaProviderOutput.personalNumberCountry);
+    return equalsNullable(this.name, frejaProviderOutput.name) &&
+        equalsNullable(this.givenName, frejaProviderOutput.givenName) &&
+        equalsNullable(this.familyName, frejaProviderOutput.familyName) &&
+        equalsNullable(this.dateOfBirth, frejaProviderOutput.dateOfBirth) &&
+        equalsNullable(this.email, frejaProviderOutput.email) &&
+        equalsNullable(this.emailVerified, frejaProviderOutput.emailVerified) &&
+        equalsNullable(this.allEmailAddresses, frejaProviderOutput.allEmailAddresses) &&
+        equalsNullable(this.primaryPhysicalAddress, frejaProviderOutput.primaryPhysicalAddress) &&
+        equalsNullable(this.allPhysicalAddresses, frejaProviderOutput.allPhysicalAddresses) &&
+        equalsNullable(this.age, frejaProviderOutput.age) &&
+        equalsNullable(this.phoneNumber, frejaProviderOutput.phoneNumber) &&
+        equalsNullable(this.phoneNumberVerified, frejaProviderOutput.phoneNumberVerified) &&
+        equalsNullable(this.personalIdentityNumber, frejaProviderOutput.personalIdentityNumber) &&
+        equalsNullable(this.country, frejaProviderOutput.country) &&
+        equalsNullable(this.document, frejaProviderOutput.document) &&
+        equalsNullable(this.registrationLevel, frejaProviderOutput.registrationLevel) &&
+        equalsNullable(this.relyingPartyUserId, frejaProviderOutput.relyingPartyUserId) &&
+        equalsNullable(this.transactionReference, frejaProviderOutput.transactionReference);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, personalNumber, personalNumberCountry);
+    return Objects.hash(hashCodeNullable(name), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(allEmailAddresses), hashCodeNullable(primaryPhysicalAddress), hashCodeNullable(allPhysicalAddresses), hashCodeNullable(age), hashCodeNullable(phoneNumber), hashCodeNullable(phoneNumberVerified), hashCodeNullable(personalIdentityNumber), hashCodeNullable(country), hashCodeNullable(document), hashCodeNullable(registrationLevel), hashCodeNullable(relyingPartyUserId), hashCodeNullable(transactionReference));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FrejaProviderOutput {\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    personalNumber: ").append(toIndentedString(personalNumber)).append("\n");
-    sb.append("    personalNumberCountry: ").append(toIndentedString(personalNumberCountry)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
+    sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    emailVerified: ").append(toIndentedString(emailVerified)).append("\n");
+    sb.append("    allEmailAddresses: ").append(toIndentedString(allEmailAddresses)).append("\n");
+    sb.append("    primaryPhysicalAddress: ").append(toIndentedString(primaryPhysicalAddress)).append("\n");
+    sb.append("    allPhysicalAddresses: ").append(toIndentedString(allPhysicalAddresses)).append("\n");
+    sb.append("    age: ").append(toIndentedString(age)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    phoneNumberVerified: ").append(toIndentedString(phoneNumberVerified)).append("\n");
+    sb.append("    personalIdentityNumber: ").append(toIndentedString(personalIdentityNumber)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    registrationLevel: ").append(toIndentedString(registrationLevel)).append("\n");
+    sb.append("    relyingPartyUserId: ").append(toIndentedString(relyingPartyUserId)).append("\n");
+    sb.append("    transactionReference: ").append(toIndentedString(transactionReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -233,24 +837,103 @@ public class FrejaProviderOutput {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `firstName` to the URL query string
-    if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
-    // add `lastName` to the URL query string
-    if (getLastName() != null) {
-      joiner.add(String.format("%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
+    // add `givenName` to the URL query string
+    if (getGivenName() != null) {
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
-    // add `personalNumber` to the URL query string
-    if (getPersonalNumber() != null) {
-      joiner.add(String.format("%spersonalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalNumber()))));
+    // add `familyName` to the URL query string
+    if (getFamilyName() != null) {
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
-    // add `personalNumberCountry` to the URL query string
-    if (getPersonalNumberCountry() != null) {
-      joiner.add(String.format("%spersonalNumberCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalNumberCountry()))));
+    // add `dateOfBirth` to the URL query string
+    if (getDateOfBirth() != null) {
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+    }
+
+    // add `email` to the URL query string
+    if (getEmail() != null) {
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+    }
+
+    // add `emailVerified` to the URL query string
+    if (getEmailVerified() != null) {
+      joiner.add(String.format("%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
+    }
+
+    // add `allEmailAddresses` to the URL query string
+    if (getAllEmailAddresses() != null) {
+      for (int i = 0; i < getAllEmailAddresses().size(); i++) {
+        joiner.add(String.format("%sallEmailAddresses%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            ApiClient.urlEncode(ApiClient.valueToString(getAllEmailAddresses().get(i)))));
+      }
+    }
+
+    // add `primaryPhysicalAddress` to the URL query string
+    if (getPrimaryPhysicalAddress() != null) {
+      joiner.add(getPrimaryPhysicalAddress().toUrlQueryString(prefix + "primaryPhysicalAddress" + suffix));
+    }
+
+    // add `allPhysicalAddresses` to the URL query string
+    if (getAllPhysicalAddresses() != null) {
+      for (int i = 0; i < getAllPhysicalAddresses().size(); i++) {
+        if (getAllPhysicalAddresses().get(i) != null) {
+          joiner.add(getAllPhysicalAddresses().get(i).toUrlQueryString(String.format("%sallPhysicalAddresses%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `age` to the URL query string
+    if (getAge() != null) {
+      joiner.add(String.format("%sage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAge()))));
+    }
+
+    // add `phoneNumber` to the URL query string
+    if (getPhoneNumber() != null) {
+      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+    }
+
+    // add `phoneNumberVerified` to the URL query string
+    if (getPhoneNumberVerified() != null) {
+      joiner.add(String.format("%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
+    }
+
+    // add `personalIdentityNumber` to the URL query string
+    if (getPersonalIdentityNumber() != null) {
+      joiner.add(String.format("%spersonalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumber()))));
+    }
+
+    // add `country` to the URL query string
+    if (getCountry() != null) {
+      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+    }
+
+    // add `document` to the URL query string
+    if (getDocument() != null) {
+      joiner.add(getDocument().toUrlQueryString(prefix + "document" + suffix));
+    }
+
+    // add `registrationLevel` to the URL query string
+    if (getRegistrationLevel() != null) {
+      joiner.add(String.format("%sregistrationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegistrationLevel()))));
+    }
+
+    // add `relyingPartyUserId` to the URL query string
+    if (getRelyingPartyUserId() != null) {
+      joiner.add(String.format("%srelyingPartyUserId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRelyingPartyUserId()))));
+    }
+
+    // add `transactionReference` to the URL query string
+    if (getTransactionReference() != null) {
+      joiner.add(String.format("%stransactionReference%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransactionReference()))));
     }
 
     return joiner.toString();

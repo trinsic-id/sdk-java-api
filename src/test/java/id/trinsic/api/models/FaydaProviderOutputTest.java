@@ -49,4 +49,28 @@ class FaydaProviderOutputTest {
         // TODO: test sub
     }
 
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    void nameTest() {
+        // TODO: test name
+    }
+
+    /**
+     * Test the property 'englishName'
+     */
+    @Test
+    void englishNameTest() {
+        // TODO: test englishName
+    }
+
+    /**
+     * Test the property 'arabicName'
+     */
+    @Test
+    void arabicNameTest() {
+        // TODO: test arabicName
+    }
+
 }

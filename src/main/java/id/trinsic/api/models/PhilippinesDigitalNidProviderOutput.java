@@ -24,7 +24,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -33,13 +38,53 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;philippines-digital-national-id-qr&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
-  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_PHILSYS_CARD_NUMBER
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_PHILSYS_CARD_NUMBER,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_GIVEN_NAME,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_MIDDLE_NAME,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_FAMILY_NAME,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_SUFFIX,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_SEX,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_DOCUMENT_ISSUE_DATE,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_DOCUMENT_NUMBER,
+  PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PhilippinesDigitalNidProviderOutput {
   public static final String JSON_PROPERTY_PHILSYS_CARD_NUMBER = "philsysCardNumber";
   @javax.annotation.Nonnull
   private String philsysCardNumber;
+
+  public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_MIDDLE_NAME = "middleName";
+  private JsonNullable<String> middleName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_SUFFIX = "suffix";
+  private JsonNullable<String> suffix = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_SEX = "sex";
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "placeOfBirth";
+  private JsonNullable<String> placeOfBirth = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DOCUMENT_ISSUE_DATE = "documentIssueDate";
+  private JsonNullable<LocalDate> documentIssueDate = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
+  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ISSUING_AUTHORITY = "issuingAuthority";
+  private JsonNullable<String> issuingAuthority = JsonNullable.<String>undefined();
 
   public PhilippinesDigitalNidProviderOutput() { 
   }
@@ -68,6 +113,326 @@ public class PhilippinesDigitalNidProviderOutput {
   }
 
 
+  public PhilippinesDigitalNidProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+    return this;
+  }
+
+  /**
+   * The given (first) name of the individual.
+   * @return givenName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGivenName() {
+        return givenName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
+    this.givenName = givenName;
+  }
+
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput middleName(@javax.annotation.Nullable String middleName) {
+    this.middleName = JsonNullable.<String>of(middleName);
+    return this;
+  }
+
+  /**
+   * The middle name of the individual.
+   * @return middleName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getMiddleName() {
+        return middleName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getMiddleName_JsonNullable() {
+    return middleName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  public void setMiddleName_JsonNullable(JsonNullable<String> middleName) {
+    this.middleName = middleName;
+  }
+
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
+    this.middleName = JsonNullable.<String>of(middleName);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+    return this;
+  }
+
+  /**
+   * The family (last) name of the individual.
+   * @return familyName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFamilyName() {
+        return familyName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
+    this.familyName = familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+    return this;
+  }
+
+  /**
+   * The date of birth of the individual.
+   * @return dateOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDateOfBirth() {
+        return dateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput suffix(@javax.annotation.Nullable String suffix) {
+    this.suffix = JsonNullable.<String>of(suffix);
+    return this;
+  }
+
+  /**
+   * The name suffix of the individual (e.g. Jr., III).
+   * @return suffix
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSuffix() {
+        return suffix.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SUFFIX)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSuffix_JsonNullable() {
+    return suffix;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUFFIX)
+  public void setSuffix_JsonNullable(JsonNullable<String> suffix) {
+    this.suffix = suffix;
+  }
+
+  public void setSuffix(@javax.annotation.Nullable String suffix) {
+    this.suffix = JsonNullable.<String>of(suffix);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+    return this;
+  }
+
+  /**
+   * The sex of the individual.              Possible values: - Male - Female
+   * @return sex
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSex() {
+        return sex.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
+    this.sex = sex;
+  }
+
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
+    this.placeOfBirth = JsonNullable.<String>of(placeOfBirth);
+    return this;
+  }
+
+  /**
+   * The place of birth of the individual as recorded on the PhilSys credential.
+   * @return placeOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getPlaceOfBirth() {
+        return placeOfBirth.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getPlaceOfBirth_JsonNullable() {
+    return placeOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  public void setPlaceOfBirth_JsonNullable(JsonNullable<String> placeOfBirth) {
+    this.placeOfBirth = placeOfBirth;
+  }
+
+  public void setPlaceOfBirth(@javax.annotation.Nullable String placeOfBirth) {
+    this.placeOfBirth = JsonNullable.<String>of(placeOfBirth);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput documentIssueDate(@javax.annotation.Nullable LocalDate documentIssueDate) {
+    this.documentIssueDate = JsonNullable.<LocalDate>of(documentIssueDate);
+    return this;
+  }
+
+  /**
+   * The date the document was issued.
+   * @return documentIssueDate
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDocumentIssueDate() {
+        return documentIssueDate.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_ISSUE_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDocumentIssueDate_JsonNullable() {
+    return documentIssueDate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_ISSUE_DATE)
+  public void setDocumentIssueDate_JsonNullable(JsonNullable<LocalDate> documentIssueDate) {
+    this.documentIssueDate = documentIssueDate;
+  }
+
+  public void setDocumentIssueDate(@javax.annotation.Nullable LocalDate documentIssueDate) {
+    this.documentIssueDate = JsonNullable.<LocalDate>of(documentIssueDate);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
+    return this;
+  }
+
+  /**
+   * The document number of the digital National ID.
+   * @return documentNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDocumentNumber() {
+        return documentNumber.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDocumentNumber_JsonNullable() {
+    return documentNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
+    this.documentNumber = documentNumber;
+  }
+
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  }
+
+
+  public PhilippinesDigitalNidProviderOutput issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
+    this.issuingAuthority = JsonNullable.<String>of(issuingAuthority);
+    return this;
+  }
+
+  /**
+   * The issuing authority of the document.
+   * @return issuingAuthority
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getIssuingAuthority() {
+        return issuingAuthority.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getIssuingAuthority_JsonNullable() {
+    return issuingAuthority;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
+  public void setIssuingAuthority_JsonNullable(JsonNullable<String> issuingAuthority) {
+    this.issuingAuthority = issuingAuthority;
+  }
+
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
+    this.issuingAuthority = JsonNullable.<String>of(issuingAuthority);
+  }
+
+
   /**
    * Return true if this PhilippinesDigitalNidProviderOutput object is equal to o.
    */
@@ -80,12 +445,33 @@ public class PhilippinesDigitalNidProviderOutput {
       return false;
     }
     PhilippinesDigitalNidProviderOutput philippinesDigitalNidProviderOutput = (PhilippinesDigitalNidProviderOutput) o;
-    return Objects.equals(this.philsysCardNumber, philippinesDigitalNidProviderOutput.philsysCardNumber);
+    return Objects.equals(this.philsysCardNumber, philippinesDigitalNidProviderOutput.philsysCardNumber) &&
+        equalsNullable(this.givenName, philippinesDigitalNidProviderOutput.givenName) &&
+        equalsNullable(this.middleName, philippinesDigitalNidProviderOutput.middleName) &&
+        equalsNullable(this.familyName, philippinesDigitalNidProviderOutput.familyName) &&
+        equalsNullable(this.dateOfBirth, philippinesDigitalNidProviderOutput.dateOfBirth) &&
+        equalsNullable(this.suffix, philippinesDigitalNidProviderOutput.suffix) &&
+        equalsNullable(this.sex, philippinesDigitalNidProviderOutput.sex) &&
+        equalsNullable(this.placeOfBirth, philippinesDigitalNidProviderOutput.placeOfBirth) &&
+        equalsNullable(this.documentIssueDate, philippinesDigitalNidProviderOutput.documentIssueDate) &&
+        equalsNullable(this.documentNumber, philippinesDigitalNidProviderOutput.documentNumber) &&
+        equalsNullable(this.issuingAuthority, philippinesDigitalNidProviderOutput.issuingAuthority);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(philsysCardNumber);
+    return Objects.hash(philsysCardNumber, hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(suffix), hashCodeNullable(sex), hashCodeNullable(placeOfBirth), hashCodeNullable(documentIssueDate), hashCodeNullable(documentNumber), hashCodeNullable(issuingAuthority));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -93,6 +479,16 @@ public class PhilippinesDigitalNidProviderOutput {
     StringBuilder sb = new StringBuilder();
     sb.append("class PhilippinesDigitalNidProviderOutput {\n");
     sb.append("    philsysCardNumber: ").append(toIndentedString(philsysCardNumber)).append("\n");
+    sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
+    sb.append("    placeOfBirth: ").append(toIndentedString(placeOfBirth)).append("\n");
+    sb.append("    documentIssueDate: ").append(toIndentedString(documentIssueDate)).append("\n");
+    sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
+    sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -143,6 +539,56 @@ public class PhilippinesDigitalNidProviderOutput {
     // add `philsysCardNumber` to the URL query string
     if (getPhilsysCardNumber() != null) {
       joiner.add(String.format("%sphilsysCardNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhilsysCardNumber()))));
+    }
+
+    // add `givenName` to the URL query string
+    if (getGivenName() != null) {
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+    }
+
+    // add `middleName` to the URL query string
+    if (getMiddleName() != null) {
+      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+    }
+
+    // add `familyName` to the URL query string
+    if (getFamilyName() != null) {
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+    }
+
+    // add `dateOfBirth` to the URL query string
+    if (getDateOfBirth() != null) {
+      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+    }
+
+    // add `suffix` to the URL query string
+    if (getSuffix() != null) {
+      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
+    }
+
+    // add `sex` to the URL query string
+    if (getSex() != null) {
+      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+    }
+
+    // add `placeOfBirth` to the URL query string
+    if (getPlaceOfBirth() != null) {
+      joiner.add(String.format("%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
+    }
+
+    // add `documentIssueDate` to the URL query string
+    if (getDocumentIssueDate() != null) {
+      joiner.add(String.format("%sdocumentIssueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentIssueDate()))));
+    }
+
+    // add `documentNumber` to the URL query string
+    if (getDocumentNumber() != null) {
+      joiner.add(String.format("%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+    }
+
+    // add `issuingAuthority` to the URL query string
+    if (getIssuingAuthority() != null) {
+      joiner.add(String.format("%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
     }
 
     return joiner.toString();

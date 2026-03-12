@@ -42,9 +42,10 @@ import id.trinsic.ApiClient;
   VerificationProfileResponse.JSON_PROPERTY_LOGO_URL,
   VerificationProfileResponse.JSON_PROPERTY_PRIMARY_COLOR,
   VerificationProfileResponse.JSON_PROPERTY_ENABLED_PROVIDERS,
+  VerificationProfileResponse.JSON_PROPERTY_SESSION_EXPIRATION,
   VerificationProfileResponse.JSON_PROPERTY_IS_PRODUCTION_USAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -69,6 +70,10 @@ public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ENABLED_PROVIDERS = "enabledProviders";
   @javax.annotation.Nonnull
   private List<String> enabledProviders = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_SESSION_EXPIRATION = "sessionExpiration";
+  @javax.annotation.Nonnull
+  private String sessionExpiration;
 
   public static final String JSON_PROPERTY_IS_PRODUCTION_USAGE = "isProductionUsage";
   @javax.annotation.Nonnull
@@ -229,6 +234,30 @@ public class VerificationProfileResponse {
   }
 
 
+  public VerificationProfileResponse sessionExpiration(@javax.annotation.Nonnull String sessionExpiration) {
+    this.sessionExpiration = sessionExpiration;
+    return this;
+  }
+
+  /**
+   * The session expiration for verification sessions created with this profile.
+   * @return sessionExpiration
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SESSION_EXPIRATION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getSessionExpiration() {
+    return sessionExpiration;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SESSION_EXPIRATION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSessionExpiration(@javax.annotation.Nonnull String sessionExpiration) {
+    this.sessionExpiration = sessionExpiration;
+  }
+
+
   public VerificationProfileResponse isProductionUsage(@javax.annotation.Nonnull Boolean isProductionUsage) {
     this.isProductionUsage = isProductionUsage;
     return this;
@@ -271,12 +300,13 @@ public class VerificationProfileResponse {
         Objects.equals(this.logoUrl, verificationProfileResponse.logoUrl) &&
         Objects.equals(this.primaryColor, verificationProfileResponse.primaryColor) &&
         Objects.equals(this.enabledProviders, verificationProfileResponse.enabledProviders) &&
+        Objects.equals(this.sessionExpiration, verificationProfileResponse.sessionExpiration) &&
         Objects.equals(this.isProductionUsage, verificationProfileResponse.isProductionUsage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, alias, brandName, logoUrl, primaryColor, enabledProviders, isProductionUsage);
+    return Objects.hash(id, alias, brandName, logoUrl, primaryColor, enabledProviders, sessionExpiration, isProductionUsage);
   }
 
   @Override
@@ -289,6 +319,7 @@ public class VerificationProfileResponse {
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    enabledProviders: ").append(toIndentedString(enabledProviders)).append("\n");
+    sb.append("    sessionExpiration: ").append(toIndentedString(sessionExpiration)).append("\n");
     sb.append("    isProductionUsage: ").append(toIndentedString(isProductionUsage)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -369,6 +400,11 @@ public class VerificationProfileResponse {
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getEnabledProviders().get(i)))));
       }
+    }
+
+    // add `sessionExpiration` to the URL query string
+    if (getSessionExpiration() != null) {
+      joiner.add(String.format("%ssessionExpiration%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionExpiration()))));
     }
 
     // add `isProductionUsage` to the URL query string

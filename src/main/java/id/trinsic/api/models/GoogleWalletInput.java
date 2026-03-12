@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.MdlExchangeMechanism;
+import id.trinsic.api.models.Raw18013RequestInput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,12 +39,16 @@ import id.trinsic.ApiClient;
  * GoogleWalletInput
  */
 @JsonPropertyOrder({
-  GoogleWalletInput.JSON_PROPERTY_EXCHANGE_MECHANISM
+  GoogleWalletInput.JSON_PROPERTY_EXCHANGE_MECHANISM,
+  GoogleWalletInput.JSON_PROPERTY_PREVIEW_RAW18013_REQUEST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GoogleWalletInput {
   public static final String JSON_PROPERTY_EXCHANGE_MECHANISM = "exchangeMechanism";
   private JsonNullable<MdlExchangeMechanism> exchangeMechanism = JsonNullable.<MdlExchangeMechanism>undefined();
+
+  public static final String JSON_PROPERTY_PREVIEW_RAW18013_REQUEST = "preview_raw18013Request";
+  private JsonNullable<Raw18013RequestInput> previewRaw18013Request = JsonNullable.<Raw18013RequestInput>undefined();
 
   public GoogleWalletInput() { 
   }
@@ -80,6 +85,38 @@ public class GoogleWalletInput {
   }
 
 
+  public GoogleWalletInput previewRaw18013Request(@javax.annotation.Nullable Raw18013RequestInput previewRaw18013Request) {
+    this.previewRaw18013Request = JsonNullable.<Raw18013RequestInput>of(previewRaw18013Request);
+    return this;
+  }
+
+  /**
+   * **Preview feature: not suitable for production use cases**              The raw 18013-7 exchange request to use for this verification.              If set, this overrides any default configuration on your Verification Profile.
+   * @return previewRaw18013Request
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Raw18013RequestInput getPreviewRaw18013Request() {
+        return previewRaw18013Request.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_PREVIEW_RAW18013_REQUEST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Raw18013RequestInput> getPreviewRaw18013Request_JsonNullable() {
+    return previewRaw18013Request;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PREVIEW_RAW18013_REQUEST)
+  public void setPreviewRaw18013Request_JsonNullable(JsonNullable<Raw18013RequestInput> previewRaw18013Request) {
+    this.previewRaw18013Request = previewRaw18013Request;
+  }
+
+  public void setPreviewRaw18013Request(@javax.annotation.Nullable Raw18013RequestInput previewRaw18013Request) {
+    this.previewRaw18013Request = JsonNullable.<Raw18013RequestInput>of(previewRaw18013Request);
+  }
+
+
   /**
    * Return true if this GoogleWalletInput object is equal to o.
    */
@@ -92,7 +129,8 @@ public class GoogleWalletInput {
       return false;
     }
     GoogleWalletInput googleWalletInput = (GoogleWalletInput) o;
-    return equalsNullable(this.exchangeMechanism, googleWalletInput.exchangeMechanism);
+    return equalsNullable(this.exchangeMechanism, googleWalletInput.exchangeMechanism) &&
+        equalsNullable(this.previewRaw18013Request, googleWalletInput.previewRaw18013Request);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -101,7 +139,7 @@ public class GoogleWalletInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(exchangeMechanism));
+    return Objects.hash(hashCodeNullable(exchangeMechanism), hashCodeNullable(previewRaw18013Request));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -116,6 +154,7 @@ public class GoogleWalletInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class GoogleWalletInput {\n");
     sb.append("    exchangeMechanism: ").append(toIndentedString(exchangeMechanism)).append("\n");
+    sb.append("    previewRaw18013Request: ").append(toIndentedString(previewRaw18013Request)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,6 +205,11 @@ public class GoogleWalletInput {
     // add `exchangeMechanism` to the URL query string
     if (getExchangeMechanism() != null) {
       joiner.add(String.format("%sexchangeMechanism%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExchangeMechanism()))));
+    }
+
+    // add `preview_raw18013Request` to the URL query string
+    if (getPreviewRaw18013Request() != null) {
+      joiner.add(getPreviewRaw18013Request().toUrlQueryString(prefix + "preview_raw18013Request" + suffix));
     }
 
     return joiner.toString();

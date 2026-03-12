@@ -48,4 +48,12 @@ class RecommendProvidersResponseTest {
         // TODO: test recommendedProviders
     }
 
+    /**
+     * Test the property 'remainder'
+     */
+    @Test
+    void remainderTest() {
+        // TODO: test remainder
+    }
+
 }

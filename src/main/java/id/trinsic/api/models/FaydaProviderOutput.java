@@ -37,12 +37,24 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;ethiopia-fayda&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
-  FaydaProviderOutput.JSON_PROPERTY_SUB
+  FaydaProviderOutput.JSON_PROPERTY_SUB,
+  FaydaProviderOutput.JSON_PROPERTY_NAME,
+  FaydaProviderOutput.JSON_PROPERTY_ENGLISH_NAME,
+  FaydaProviderOutput.JSON_PROPERTY_ARABIC_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:06:55.724463363Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FaydaProviderOutput {
   public static final String JSON_PROPERTY_SUB = "sub";
   private JsonNullable<String> sub = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_NAME = "name";
+  private JsonNullable<String> name = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ENGLISH_NAME = "englishName";
+  private JsonNullable<String> englishName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ARABIC_NAME = "arabicName";
+  private JsonNullable<String> arabicName = JsonNullable.<String>undefined();
 
   public FaydaProviderOutput() { 
   }
@@ -79,6 +91,102 @@ public class FaydaProviderOutput {
   }
 
 
+  public FaydaProviderOutput name(@javax.annotation.Nullable String name) {
+    this.name = JsonNullable.<String>of(name);
+    return this;
+  }
+
+  /**
+   * The full name of the verified individual.              This may be an English or Arabic name if the individual only has it one language, otherwise this will be null and the other names will be populated.
+   * @return name
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getName() {
+        return name.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getName_JsonNullable() {
+    return name;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NAME)
+  public void setName_JsonNullable(JsonNullable<String> name) {
+    this.name = name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = JsonNullable.<String>of(name);
+  }
+
+
+  public FaydaProviderOutput englishName(@javax.annotation.Nullable String englishName) {
+    this.englishName = JsonNullable.<String>of(englishName);
+    return this;
+  }
+
+  /**
+   * The full English name of the verified individual.
+   * @return englishName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getEnglishName() {
+        return englishName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ENGLISH_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getEnglishName_JsonNullable() {
+    return englishName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ENGLISH_NAME)
+  public void setEnglishName_JsonNullable(JsonNullable<String> englishName) {
+    this.englishName = englishName;
+  }
+
+  public void setEnglishName(@javax.annotation.Nullable String englishName) {
+    this.englishName = JsonNullable.<String>of(englishName);
+  }
+
+
+  public FaydaProviderOutput arabicName(@javax.annotation.Nullable String arabicName) {
+    this.arabicName = JsonNullable.<String>of(arabicName);
+    return this;
+  }
+
+  /**
+   * The full Arabic name of the verified individual.
+   * @return arabicName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getArabicName() {
+        return arabicName.orElse(null);
+  }
+
+  @JsonProperty(JSON_PROPERTY_ARABIC_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getArabicName_JsonNullable() {
+    return arabicName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ARABIC_NAME)
+  public void setArabicName_JsonNullable(JsonNullable<String> arabicName) {
+    this.arabicName = arabicName;
+  }
+
+  public void setArabicName(@javax.annotation.Nullable String arabicName) {
+    this.arabicName = JsonNullable.<String>of(arabicName);
+  }
+
+
   /**
    * Return true if this FaydaProviderOutput object is equal to o.
    */
@@ -91,7 +199,10 @@ public class FaydaProviderOutput {
       return false;
     }
     FaydaProviderOutput faydaProviderOutput = (FaydaProviderOutput) o;
-    return equalsNullable(this.sub, faydaProviderOutput.sub);
+    return equalsNullable(this.sub, faydaProviderOutput.sub) &&
+        equalsNullable(this.name, faydaProviderOutput.name) &&
+        equalsNullable(this.englishName, faydaProviderOutput.englishName) &&
+        equalsNullable(this.arabicName, faydaProviderOutput.arabicName);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -100,7 +211,7 @@ public class FaydaProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(sub));
+    return Objects.hash(hashCodeNullable(sub), hashCodeNullable(name), hashCodeNullable(englishName), hashCodeNullable(arabicName));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -115,6 +226,9 @@ public class FaydaProviderOutput {
     StringBuilder sb = new StringBuilder();
     sb.append("class FaydaProviderOutput {\n");
     sb.append("    sub: ").append(toIndentedString(sub)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    englishName: ").append(toIndentedString(englishName)).append("\n");
+    sb.append("    arabicName: ").append(toIndentedString(arabicName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -165,6 +279,21 @@ public class FaydaProviderOutput {
     // add `sub` to the URL query string
     if (getSub() != null) {
       joiner.add(String.format("%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `englishName` to the URL query string
+    if (getEnglishName() != null) {
+      joiner.add(String.format("%senglishName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEnglishName()))));
+    }
+
+    // add `arabicName` to the URL query string
+    if (getArabicName() != null) {
+      joiner.add(String.format("%sarabicName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getArabicName()))));
     }
 
     return joiner.toString();
