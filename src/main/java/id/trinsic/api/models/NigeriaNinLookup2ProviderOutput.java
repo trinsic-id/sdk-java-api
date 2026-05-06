@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   NigeriaNinLookup2ProviderOutput.JSON_PROPERTY_LOCAL_GOVERNMENT_AREA,
   NigeriaNinLookup2ProviderOutput.JSON_PROPERTY_STATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NigeriaNinLookup2ProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull
@@ -105,14 +105,14 @@ public class NigeriaNinLookup2ProviderOutput {
    * @return firstName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFirstName() {
     return firstName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -134,7 +134,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return middleName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMiddleName_JsonNullable() {
@@ -161,14 +161,14 @@ public class NigeriaNinLookup2ProviderOutput {
    * @return surname
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SURNAME)
+  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSurname() {
     return surname;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SURNAME)
+  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSurname(@javax.annotation.Nonnull String surname) {
     this.surname = surname;
@@ -190,7 +190,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSex_JsonNullable() {
@@ -222,7 +222,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -254,7 +254,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return birthCountry.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTH_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_BIRTH_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthCountry_JsonNullable() {
@@ -281,14 +281,14 @@ public class NigeriaNinLookup2ProviderOutput {
    * @return nationalIdentityNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getNationalIdentityNumber() {
     return nationalIdentityNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNationalIdentityNumber(@javax.annotation.Nonnull String nationalIdentityNumber) {
     this.nationalIdentityNumber = nationalIdentityNumber;
@@ -310,7 +310,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -342,7 +342,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -374,7 +374,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return address.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAddress_JsonNullable() {
@@ -406,7 +406,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return localGovernmentArea.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LOCAL_GOVERNMENT_AREA)
+  @JsonProperty(value = JSON_PROPERTY_LOCAL_GOVERNMENT_AREA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLocalGovernmentArea_JsonNullable() {
@@ -438,7 +438,7 @@ public class NigeriaNinLookup2ProviderOutput {
         return state.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getState_JsonNullable() {
@@ -522,10 +522,7 @@ public class NigeriaNinLookup2ProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -562,62 +559,62 @@ public class NigeriaNinLookup2ProviderOutput {
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `surname` to the URL query string
     if (getSurname() != null) {
-      joiner.add(String.format("%ssurname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSurname()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssurname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSurname()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `birthCountry` to the URL query string
     if (getBirthCountry() != null) {
-      joiner.add(String.format("%sbirthCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountry()))));
     }
 
     // add `nationalIdentityNumber` to the URL query string
     if (getNationalIdentityNumber() != null) {
-      joiner.add(String.format("%snationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalIdentityNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalIdentityNumber()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `address` to the URL query string
     if (getAddress() != null) {
-      joiner.add(String.format("%saddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddress()))));
     }
 
     // add `localGovernmentArea` to the URL query string
     if (getLocalGovernmentArea() != null) {
-      joiner.add(String.format("%slocalGovernmentArea%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocalGovernmentArea()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slocalGovernmentArea%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocalGovernmentArea()))));
     }
 
     // add `state` to the URL query string
     if (getState() != null) {
-      joiner.add(String.format("%sstate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getState()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getState()))));
     }
 
     return joiner.toString();

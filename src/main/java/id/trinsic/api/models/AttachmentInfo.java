@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   AttachmentInfo.JSON_PROPERTY_CONTENT_TYPE,
   AttachmentInfo.JSON_PROPERTY_SIZE_BYTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AttachmentInfo {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -70,14 +70,14 @@ public class AttachmentInfo {
    * @return id
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public UUID getId() {
     return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
@@ -94,14 +94,14 @@ public class AttachmentInfo {
    * @return type
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getType() {
     return type;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
@@ -118,14 +118,14 @@ public class AttachmentInfo {
    * @return contentType
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_CONTENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getContentType() {
     return contentType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_CONTENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setContentType(@javax.annotation.Nonnull String contentType) {
     this.contentType = contentType;
@@ -142,14 +142,14 @@ public class AttachmentInfo {
    * @return sizeBytes
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SIZE_BYTES)
+  @JsonProperty(value = JSON_PROPERTY_SIZE_BYTES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Integer getSizeBytes() {
     return sizeBytes;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SIZE_BYTES)
+  @JsonProperty(value = JSON_PROPERTY_SIZE_BYTES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSizeBytes(@javax.annotation.Nonnull Integer sizeBytes) {
     this.sizeBytes = sizeBytes;
@@ -196,10 +196,7 @@ public class AttachmentInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -236,22 +233,22 @@ public class AttachmentInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `contentType` to the URL query string
     if (getContentType() != null) {
-      joiner.add(String.format("%scontentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContentType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scontentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContentType()))));
     }
 
     // add `sizeBytes` to the URL query string
     if (getSizeBytes() != null) {
-      joiner.add(String.format("%ssizeBytes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSizeBytes()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssizeBytes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSizeBytes()))));
     }
 
     return joiner.toString();

@@ -24,7 +24,7 @@ Exposed properties for the `freja` Provider which do not directly map to the nor
 |**country** | **String** | The ISO 3166-1 alpha-2 country code associated with the individual&#39;s country of origin. |  [optional] |
 |**document** | [**OutputFrejaDocument**](OutputFrejaDocument.md) | The underlying document, such as a passport, used to create the Freja credential. |  [optional] |
 |**registrationLevel** | **String** | The Freja registration level associated with this individual. This can be BASIC, EXTENDED, or PLUS. * BASIC: Individual has a registered account with Freja. * EXTENDED: Individual has an official identity document verified by Freja. * PLUS: Individual has undergone in-person verification with Freja. |  [optional] |
-|**relyingPartyUserId** | **String** | The relying party user identifier for this individual. This is an identifier specific to the individual and the relying party (your service). |  [optional] |
+|**relyingPartyUserId** | **String** | The relying party identifier for this individual. This is an identifier specific to the individual and the relying party (your service). |  [optional] |
 |**transactionReference** | **String** | The Freja transaction reference for this verification. This is an identifier specific to the verification transaction. |  [optional] |
 
 

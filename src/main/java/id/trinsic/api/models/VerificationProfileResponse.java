@@ -28,6 +28,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -39,13 +43,14 @@ import id.trinsic.ApiClient;
   VerificationProfileResponse.JSON_PROPERTY_ID,
   VerificationProfileResponse.JSON_PROPERTY_ALIAS,
   VerificationProfileResponse.JSON_PROPERTY_BRAND_NAME,
+  VerificationProfileResponse.JSON_PROPERTY_EXTERNAL_ID,
   VerificationProfileResponse.JSON_PROPERTY_LOGO_URL,
   VerificationProfileResponse.JSON_PROPERTY_PRIMARY_COLOR,
   VerificationProfileResponse.JSON_PROPERTY_ENABLED_PROVIDERS,
   VerificationProfileResponse.JSON_PROPERTY_SESSION_EXPIRATION,
   VerificationProfileResponse.JSON_PROPERTY_IS_PRODUCTION_USAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -58,6 +63,9 @@ public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_BRAND_NAME = "brandName";
   @javax.annotation.Nonnull
   private String brandName;
+
+  public static final String JSON_PROPERTY_EXTERNAL_ID = "externalId";
+  private JsonNullable<String> externalId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
@@ -92,14 +100,14 @@ public class VerificationProfileResponse {
    * @return id
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public UUID getId() {
     return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
@@ -116,14 +124,14 @@ public class VerificationProfileResponse {
    * @return alias
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ALIAS)
+  @JsonProperty(value = JSON_PROPERTY_ALIAS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getAlias() {
     return alias;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ALIAS)
+  @JsonProperty(value = JSON_PROPERTY_ALIAS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAlias(@javax.annotation.Nonnull String alias) {
     this.alias = alias;
@@ -140,17 +148,49 @@ public class VerificationProfileResponse {
    * @return brandName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_BRAND_NAME)
+  @JsonProperty(value = JSON_PROPERTY_BRAND_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getBrandName() {
     return brandName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BRAND_NAME)
+  @JsonProperty(value = JSON_PROPERTY_BRAND_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setBrandName(@javax.annotation.Nonnull String brandName) {
     this.brandName = brandName;
+  }
+
+
+  public VerificationProfileResponse externalId(@javax.annotation.Nullable String externalId) {
+    this.externalId = JsonNullable.<String>of(externalId);
+    return this;
+  }
+
+  /**
+   * A customer-defined external ID for this verification profile, unique within your organization.
+   * @return externalId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getExternalId() {
+        return externalId.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_EXTERNAL_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getExternalId_JsonNullable() {
+    return externalId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EXTERNAL_ID)
+  public void setExternalId_JsonNullable(JsonNullable<String> externalId) {
+    this.externalId = externalId;
+  }
+
+  public void setExternalId(@javax.annotation.Nullable String externalId) {
+    this.externalId = JsonNullable.<String>of(externalId);
   }
 
 
@@ -164,14 +204,14 @@ public class VerificationProfileResponse {
    * @return logoUrl
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LOGO_URL)
+  @JsonProperty(value = JSON_PROPERTY_LOGO_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLogoUrl() {
     return logoUrl;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LOGO_URL)
+  @JsonProperty(value = JSON_PROPERTY_LOGO_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLogoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
@@ -188,14 +228,14 @@ public class VerificationProfileResponse {
    * @return primaryColor
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PRIMARY_COLOR)
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_COLOR, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getPrimaryColor() {
     return primaryColor;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRIMARY_COLOR)
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_COLOR, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPrimaryColor(@javax.annotation.Nonnull String primaryColor) {
     this.primaryColor = primaryColor;
@@ -220,14 +260,14 @@ public class VerificationProfileResponse {
    * @return enabledProviders
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ENABLED_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_ENABLED_PROVIDERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getEnabledProviders() {
     return enabledProviders;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ENABLED_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_ENABLED_PROVIDERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEnabledProviders(@javax.annotation.Nonnull List<String> enabledProviders) {
     this.enabledProviders = enabledProviders;
@@ -244,14 +284,14 @@ public class VerificationProfileResponse {
    * @return sessionExpiration
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSION_EXPIRATION)
+  @JsonProperty(value = JSON_PROPERTY_SESSION_EXPIRATION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSessionExpiration() {
     return sessionExpiration;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSION_EXPIRATION)
+  @JsonProperty(value = JSON_PROPERTY_SESSION_EXPIRATION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSessionExpiration(@javax.annotation.Nonnull String sessionExpiration) {
     this.sessionExpiration = sessionExpiration;
@@ -268,14 +308,14 @@ public class VerificationProfileResponse {
    * @return isProductionUsage
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IS_PRODUCTION_USAGE)
+  @JsonProperty(value = JSON_PROPERTY_IS_PRODUCTION_USAGE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getIsProductionUsage() {
     return isProductionUsage;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_PRODUCTION_USAGE)
+  @JsonProperty(value = JSON_PROPERTY_IS_PRODUCTION_USAGE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIsProductionUsage(@javax.annotation.Nonnull Boolean isProductionUsage) {
     this.isProductionUsage = isProductionUsage;
@@ -297,6 +337,7 @@ public class VerificationProfileResponse {
     return Objects.equals(this.id, verificationProfileResponse.id) &&
         Objects.equals(this.alias, verificationProfileResponse.alias) &&
         Objects.equals(this.brandName, verificationProfileResponse.brandName) &&
+        equalsNullable(this.externalId, verificationProfileResponse.externalId) &&
         Objects.equals(this.logoUrl, verificationProfileResponse.logoUrl) &&
         Objects.equals(this.primaryColor, verificationProfileResponse.primaryColor) &&
         Objects.equals(this.enabledProviders, verificationProfileResponse.enabledProviders) &&
@@ -304,9 +345,20 @@ public class VerificationProfileResponse {
         Objects.equals(this.isProductionUsage, verificationProfileResponse.isProductionUsage);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, alias, brandName, logoUrl, primaryColor, enabledProviders, sessionExpiration, isProductionUsage);
+    return Objects.hash(id, alias, brandName, hashCodeNullable(externalId), logoUrl, primaryColor, enabledProviders, sessionExpiration, isProductionUsage);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -316,6 +368,7 @@ public class VerificationProfileResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
     sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    enabledProviders: ").append(toIndentedString(enabledProviders)).append("\n");
@@ -330,10 +383,7 @@ public class VerificationProfileResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -370,46 +420,51 @@ public class VerificationProfileResponse {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `alias` to the URL query string
     if (getAlias() != null) {
-      joiner.add(String.format("%salias%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAlias()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%salias%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAlias()))));
     }
 
     // add `brandName` to the URL query string
     if (getBrandName() != null) {
-      joiner.add(String.format("%sbrandName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBrandName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbrandName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBrandName()))));
+    }
+
+    // add `externalId` to the URL query string
+    if (getExternalId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexternalId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExternalId()))));
     }
 
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
-      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
     }
 
     // add `primaryColor` to the URL query string
     if (getPrimaryColor() != null) {
-      joiner.add(String.format("%sprimaryColor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrimaryColor()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprimaryColor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrimaryColor()))));
     }
 
     // add `enabledProviders` to the URL query string
     if (getEnabledProviders() != null) {
       for (int i = 0; i < getEnabledProviders().size(); i++) {
-        joiner.add(String.format("%senabledProviders%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%senabledProviders%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getEnabledProviders().get(i)))));
       }
     }
 
     // add `sessionExpiration` to the URL query string
     if (getSessionExpiration() != null) {
-      joiner.add(String.format("%ssessionExpiration%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionExpiration()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssessionExpiration%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSessionExpiration()))));
     }
 
     // add `isProductionUsage` to the URL query string
     if (getIsProductionUsage() != null) {
-      joiner.add(String.format("%sisProductionUsage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsProductionUsage()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sisProductionUsage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsProductionUsage()))));
     }
 
     return joiner.toString();

@@ -45,7 +45,7 @@ import id.trinsic.ApiClient;
   KenyaNidLookup2Address.JSON_PROPERTY_ADDITIONAL_LINES,
   KenyaNidLookup2Address.JSON_PROPERTY_RAW
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class KenyaNidLookup2Address {
   public static final String JSON_PROPERTY_DISTRICT = "district";
   private JsonNullable<String> district = JsonNullable.<String>undefined();
@@ -80,7 +80,7 @@ public class KenyaNidLookup2Address {
         return district.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DISTRICT)
+  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDistrict_JsonNullable() {
@@ -112,7 +112,7 @@ public class KenyaNidLookup2Address {
         return division.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DIVISION)
+  @JsonProperty(value = JSON_PROPERTY_DIVISION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDivision_JsonNullable() {
@@ -144,7 +144,7 @@ public class KenyaNidLookup2Address {
         return location.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LOCATION)
+  @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLocation_JsonNullable() {
@@ -188,7 +188,7 @@ public class KenyaNidLookup2Address {
         return additionalLines.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_LINES)
+  @JsonProperty(value = JSON_PROPERTY_ADDITIONAL_LINES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<String>> getAdditionalLines_JsonNullable() {
@@ -220,7 +220,7 @@ public class KenyaNidLookup2Address {
         return raw.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_RAW)
+  @JsonProperty(value = JSON_PROPERTY_RAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRaw_JsonNullable() {
@@ -290,10 +290,7 @@ public class KenyaNidLookup2Address {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -330,31 +327,31 @@ public class KenyaNidLookup2Address {
 
     // add `district` to the URL query string
     if (getDistrict() != null) {
-      joiner.add(String.format("%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
     }
 
     // add `division` to the URL query string
     if (getDivision() != null) {
-      joiner.add(String.format("%sdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDivision()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDivision()))));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocation()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocation()))));
     }
 
     // add `additionalLines` to the URL query string
     if (getAdditionalLines() != null) {
       for (int i = 0; i < getAdditionalLines().size(); i++) {
-        joiner.add(String.format("%sadditionalLines%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sadditionalLines%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getAdditionalLines().get(i)))));
       }
     }
 
     // add `raw` to the URL query string
     if (getRaw() != null) {
-      joiner.add(String.format("%sraw%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRaw()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sraw%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRaw()))));
     }
 
     return joiner.toString();

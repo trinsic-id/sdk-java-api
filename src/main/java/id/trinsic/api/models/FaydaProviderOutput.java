@@ -24,6 +24,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.FaydaProviderAddress;
+import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -40,9 +42,15 @@ import id.trinsic.ApiClient;
   FaydaProviderOutput.JSON_PROPERTY_SUB,
   FaydaProviderOutput.JSON_PROPERTY_NAME,
   FaydaProviderOutput.JSON_PROPERTY_ENGLISH_NAME,
-  FaydaProviderOutput.JSON_PROPERTY_ARABIC_NAME
+  FaydaProviderOutput.JSON_PROPERTY_ARABIC_NAME,
+  FaydaProviderOutput.JSON_PROPERTY_BIRTHDATE,
+  FaydaProviderOutput.JSON_PROPERTY_GENDER,
+  FaydaProviderOutput.JSON_PROPERTY_NATIONALITY,
+  FaydaProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
+  FaydaProviderOutput.JSON_PROPERTY_EMAIL,
+  FaydaProviderOutput.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FaydaProviderOutput {
   public static final String JSON_PROPERTY_SUB = "sub";
   private JsonNullable<String> sub = JsonNullable.<String>undefined();
@@ -56,6 +64,24 @@ public class FaydaProviderOutput {
   public static final String JSON_PROPERTY_ARABIC_NAME = "arabicName";
   private JsonNullable<String> arabicName = JsonNullable.<String>undefined();
 
+  public static final String JSON_PROPERTY_BIRTHDATE = "birthdate";
+  private JsonNullable<LocalDate> birthdate = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_GENDER = "gender";
+  private JsonNullable<String> gender = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_NATIONALITY = "nationality";
+  private JsonNullable<String> nationality = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
+  private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_EMAIL = "email";
+  private JsonNullable<String> email = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ADDRESS = "address";
+  private JsonNullable<FaydaProviderAddress> address = JsonNullable.<FaydaProviderAddress>undefined();
+
   public FaydaProviderOutput() { 
   }
 
@@ -65,7 +91,7 @@ public class FaydaProviderOutput {
   }
 
   /**
-   * A unique eKYC identifying token used to match the original eKYC token received from the provider when the user was initially registered.              Since Fayda does not return identifying data, it is the responsibility of the relying party to keep the unique user token received from Fayda when the user was initially registered to do a comparison of the subs to verify that it is the same person.
+   * A unique eKYC identifying token used to match the original eKYC token received from the provider when the individual was initially registered.              Since Fayda does not return identifying data, it is the responsibility of the relying party to keep the unique individual token received from Fayda when the individual was initially registered to do a comparison of the subs to verify that it is the same person.
    * @return sub
    */
   @javax.annotation.Nullable
@@ -74,7 +100,7 @@ public class FaydaProviderOutput {
         return sub.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB)
+  @JsonProperty(value = JSON_PROPERTY_SUB, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSub_JsonNullable() {
@@ -106,7 +132,7 @@ public class FaydaProviderOutput {
         return name.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getName_JsonNullable() {
@@ -138,7 +164,7 @@ public class FaydaProviderOutput {
         return englishName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ENGLISH_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ENGLISH_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEnglishName_JsonNullable() {
@@ -170,7 +196,7 @@ public class FaydaProviderOutput {
         return arabicName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ARABIC_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ARABIC_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getArabicName_JsonNullable() {
@@ -184,6 +210,198 @@ public class FaydaProviderOutput {
 
   public void setArabicName(@javax.annotation.Nullable String arabicName) {
     this.arabicName = JsonNullable.<String>of(arabicName);
+  }
+
+
+  public FaydaProviderOutput birthdate(@javax.annotation.Nullable LocalDate birthdate) {
+    this.birthdate = JsonNullable.<LocalDate>of(birthdate);
+    return this;
+  }
+
+  /**
+   * The date of birth of the verified individual.              This attribute is only available if registered directly.
+   * @return birthdate
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getBirthdate() {
+        return birthdate.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BIRTHDATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getBirthdate_JsonNullable() {
+    return birthdate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BIRTHDATE)
+  public void setBirthdate_JsonNullable(JsonNullable<LocalDate> birthdate) {
+    this.birthdate = birthdate;
+  }
+
+  public void setBirthdate(@javax.annotation.Nullable LocalDate birthdate) {
+    this.birthdate = JsonNullable.<LocalDate>of(birthdate);
+  }
+
+
+  public FaydaProviderOutput gender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
+    return this;
+  }
+
+  /**
+   * The sex of the verified individual.              Possible values: - Unknown - NotApplicable - Male - Female              This attribute is only available if registered directly.
+   * @return gender
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGender() {
+        return gender.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGender_JsonNullable() {
+    return gender;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GENDER)
+  public void setGender_JsonNullable(JsonNullable<String> gender) {
+    this.gender = gender;
+  }
+
+  public void setGender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
+  }
+
+
+  public FaydaProviderOutput nationality(@javax.annotation.Nullable String nationality) {
+    this.nationality = JsonNullable.<String>of(nationality);
+    return this;
+  }
+
+  /**
+   * The nationality of the verified individual as an ISO 3166-1 alpha-2 country code.              This attribute is only available if registered directly.
+   * @return nationality
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getNationality() {
+        return nationality.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_NATIONALITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getNationality_JsonNullable() {
+    return nationality;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONALITY)
+  public void setNationality_JsonNullable(JsonNullable<String> nationality) {
+    this.nationality = nationality;
+  }
+
+  public void setNationality(@javax.annotation.Nullable String nationality) {
+    this.nationality = JsonNullable.<String>of(nationality);
+  }
+
+
+  public FaydaProviderOutput phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+    return this;
+  }
+
+  /**
+   * The phone number of the verified individual.              This attribute is only available if registered directly.
+   * @return phoneNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getPhoneNumber() {
+        return phoneNumber.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getPhoneNumber_JsonNullable() {
+    return phoneNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  public void setPhoneNumber_JsonNullable(JsonNullable<String> phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+  }
+
+
+  public FaydaProviderOutput email(@javax.annotation.Nullable String email) {
+    this.email = JsonNullable.<String>of(email);
+    return this;
+  }
+
+  /**
+   * The email address of the verified individual.              This attribute is only available if registered directly.
+   * @return email
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getEmail() {
+        return email.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getEmail_JsonNullable() {
+    return email;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  public void setEmail_JsonNullable(JsonNullable<String> email) {
+    this.email = email;
+  }
+
+  public void setEmail(@javax.annotation.Nullable String email) {
+    this.email = JsonNullable.<String>of(email);
+  }
+
+
+  public FaydaProviderOutput address(@javax.annotation.Nullable FaydaProviderAddress address) {
+    this.address = JsonNullable.<FaydaProviderAddress>of(address);
+    return this;
+  }
+
+  /**
+   * The address of the verified individual.              This attribute is only available if registered directly.
+   * @return address
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FaydaProviderAddress getAddress() {
+        return address.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FaydaProviderAddress> getAddress_JsonNullable() {
+    return address;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  public void setAddress_JsonNullable(JsonNullable<FaydaProviderAddress> address) {
+    this.address = address;
+  }
+
+  public void setAddress(@javax.annotation.Nullable FaydaProviderAddress address) {
+    this.address = JsonNullable.<FaydaProviderAddress>of(address);
   }
 
 
@@ -202,7 +420,13 @@ public class FaydaProviderOutput {
     return equalsNullable(this.sub, faydaProviderOutput.sub) &&
         equalsNullable(this.name, faydaProviderOutput.name) &&
         equalsNullable(this.englishName, faydaProviderOutput.englishName) &&
-        equalsNullable(this.arabicName, faydaProviderOutput.arabicName);
+        equalsNullable(this.arabicName, faydaProviderOutput.arabicName) &&
+        equalsNullable(this.birthdate, faydaProviderOutput.birthdate) &&
+        equalsNullable(this.gender, faydaProviderOutput.gender) &&
+        equalsNullable(this.nationality, faydaProviderOutput.nationality) &&
+        equalsNullable(this.phoneNumber, faydaProviderOutput.phoneNumber) &&
+        equalsNullable(this.email, faydaProviderOutput.email) &&
+        equalsNullable(this.address, faydaProviderOutput.address);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -211,7 +435,7 @@ public class FaydaProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(sub), hashCodeNullable(name), hashCodeNullable(englishName), hashCodeNullable(arabicName));
+    return Objects.hash(hashCodeNullable(sub), hashCodeNullable(name), hashCodeNullable(englishName), hashCodeNullable(arabicName), hashCodeNullable(birthdate), hashCodeNullable(gender), hashCodeNullable(nationality), hashCodeNullable(phoneNumber), hashCodeNullable(email), hashCodeNullable(address));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -229,6 +453,12 @@ public class FaydaProviderOutput {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    englishName: ").append(toIndentedString(englishName)).append("\n");
     sb.append("    arabicName: ").append(toIndentedString(arabicName)).append("\n");
+    sb.append("    birthdate: ").append(toIndentedString(birthdate)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -238,10 +468,7 @@ public class FaydaProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -278,22 +505,52 @@ public class FaydaProviderOutput {
 
     // add `sub` to the URL query string
     if (getSub() != null) {
-      joiner.add(String.format("%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `englishName` to the URL query string
     if (getEnglishName() != null) {
-      joiner.add(String.format("%senglishName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEnglishName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%senglishName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEnglishName()))));
     }
 
     // add `arabicName` to the URL query string
     if (getArabicName() != null) {
-      joiner.add(String.format("%sarabicName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getArabicName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sarabicName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getArabicName()))));
+    }
+
+    // add `birthdate` to the URL query string
+    if (getBirthdate() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
+    }
+
+    // add `gender` to the URL query string
+    if (getGender() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+    }
+
+    // add `nationality` to the URL query string
+    if (getNationality() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
+    }
+
+    // add `phoneNumber` to the URL query string
+    if (getPhoneNumber() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+    }
+
+    // add `email` to the URL query string
+    if (getEmail() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+    }
+
+    // add `address` to the URL query string
+    if (getAddress() != null) {
+      joiner.add(getAddress().toUrlQueryString(prefix + "address" + suffix));
     }
 
     return joiner.toString();

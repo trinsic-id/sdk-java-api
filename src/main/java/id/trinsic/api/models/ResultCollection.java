@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   ResultCollection.JSON_PROPERTY_METHOD,
   ResultCollection.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ResultCollection {
   public static final String JSON_PROPERTY_METHOD = "method";
   @javax.annotation.Nonnull
@@ -60,14 +60,14 @@ public class ResultCollection {
    * @return method
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ResultCollectionMethod getMethod() {
     return method;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMethod(@javax.annotation.Nonnull ResultCollectionMethod method) {
     this.method = method;
@@ -84,14 +84,14 @@ public class ResultCollection {
    * @return resultsAccessKey
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
+  @JsonProperty(value = JSON_PROPERTY_RESULTS_ACCESS_KEY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getResultsAccessKey() {
     return resultsAccessKey;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RESULTS_ACCESS_KEY)
+  @JsonProperty(value = JSON_PROPERTY_RESULTS_ACCESS_KEY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setResultsAccessKey(@javax.annotation.Nonnull String resultsAccessKey) {
     this.resultsAccessKey = resultsAccessKey;
@@ -134,10 +134,7 @@ public class ResultCollection {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -174,12 +171,12 @@ public class ResultCollection {
 
     // add `method` to the URL query string
     if (getMethod() != null) {
-      joiner.add(String.format("%smethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMethod()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMethod()))));
     }
 
     // add `resultsAccessKey` to the URL query string
     if (getResultsAccessKey() != null) {
-      joiner.add(String.format("%sresultsAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsAccessKey()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sresultsAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsAccessKey()))));
     }
 
     return joiner.toString();

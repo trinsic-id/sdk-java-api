@@ -17,7 +17,7 @@ Exposed properties for the `uk-evisa-lookup` Provider which do not directly map 
 |**validFrom** | **LocalDate** | The start date from which the eVisa is valid. Only returned for immigration_status and right_to_rent verifications — not returned for right_to_work. |  [optional] |
 |**nationality** | **String** | The nationality of the individual as recorded on the eVisa. Only present for immigration_status verifications. |  [optional] |
 |**immigrationStatus** | **String** | The immigration status of the individual. Only present for immigration_status verifications. This is a personalized record for each individual, and there is no single definitive list. Some common values: - Settled - Pre-settled - Student - Graduate - Youth Mobility - Global Talent - Skilled Worker - Limited leave |  [optional] |
-|**outcome** | **String** | Overall verification outcome: \&quot;pass\&quot; or \&quot;fail\&quot;. |  [optional] |
+|**outcome** | **String** | Overall verification outcome: \&quot;pass\&quot;, \&quot;fail\&quot;, or \&quot;inconclusive\&quot;. \&quot;inconclusive\&quot; is returned for indefinite immigration statuses not yet on the provider&#39;s official list — identity details are still returned, but date validations cannot be performed. |  [optional] |
 |**evidenceType** | **String** | Type of verification. List of possible values: - immigration_status - right_to_work - right_to_rent |  [optional] |
 
 

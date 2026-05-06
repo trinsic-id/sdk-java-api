@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   AadhaarLanguage.JSON_PROPERTY_LANGUAGE_CODE,
   AadhaarLanguage.JSON_PROPERTY_LANGUAGE_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AadhaarLanguage {
   public static final String JSON_PROPERTY_LANGUAGE_CODE = "languageCode";
   private JsonNullable<String> languageCode = JsonNullable.<String>undefined();
@@ -75,7 +75,7 @@ public class AadhaarLanguage {
         return languageCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LANGUAGE_CODE)
+  @JsonProperty(value = JSON_PROPERTY_LANGUAGE_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLanguageCode_JsonNullable() {
@@ -93,11 +93,11 @@ public class AadhaarLanguage {
 
 
   /**
-   * The language name for the localized claims.              This is Trinsic attempting to map the language from the code. This is based on the spec, however, the language code may be inaccurate with the actual language used. Use this as a reference. Possible values: - Assamese (01) - Bengali (02) - Gujarati (05) - Hindi (06) - Kannada (07) - Malayalam (11) - Manipuri (12) - Marathi (13) - Oriya (15) - Punjabi (16) - Tamil (20) - Telugu (21) - Urdu (22)
+   * The language name for the localized claims.              This is Trinsic mapping the language from the code. The mapping comes from the spec, however, the code may not always reflect with the actual language used in the localized claims. Use this as a reference. Possible values: - Assamese (01) - Bengali (02) - Gujarati (05) - Hindi (06) - Kannada (07) - Malayalam (11) - Manipuri (12) - Marathi (13) - Oriya (15) - Punjabi (16) - Tamil (20) - Telugu (21) - Urdu (22)
    * @return languageName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LANGUAGE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LANGUAGE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLanguageName() {
     return languageName;
@@ -153,10 +153,7 @@ public class AadhaarLanguage {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -193,12 +190,12 @@ public class AadhaarLanguage {
 
     // add `languageCode` to the URL query string
     if (getLanguageCode() != null) {
-      joiner.add(String.format("%slanguageCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLanguageCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slanguageCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLanguageCode()))));
     }
 
     // add `languageName` to the URL query string
     if (getLanguageName() != null) {
-      joiner.add(String.format("%slanguageName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLanguageName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slanguageName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLanguageName()))));
     }
 
     return joiner.toString();

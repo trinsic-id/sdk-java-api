@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   Match.JSON_PROPERTY_PROBABILITY_VALUE,
   Match.JSON_PROPERTY_BOOLEAN_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Match {
   public static final String JSON_PROPERTY_PROBABILITY_VALUE = "probabilityValue";
   private JsonNullable<Double> probabilityValue = JsonNullable.<Double>undefined();
@@ -66,7 +66,7 @@ public class Match {
         return probabilityValue.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PROBABILITY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_PROBABILITY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Double> getProbabilityValue_JsonNullable() {
@@ -98,7 +98,7 @@ public class Match {
         return booleanValue.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BOOLEAN_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_BOOLEAN_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getBooleanValue_JsonNullable() {
@@ -162,10 +162,7 @@ public class Match {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -202,12 +199,12 @@ public class Match {
 
     // add `probabilityValue` to the URL query string
     if (getProbabilityValue() != null) {
-      joiner.add(String.format("%sprobabilityValue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProbabilityValue()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprobabilityValue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProbabilityValue()))));
     }
 
     // add `booleanValue` to the URL query string
     if (getBooleanValue() != null) {
-      joiner.add(String.format("%sbooleanValue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBooleanValue()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbooleanValue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBooleanValue()))));
     }
 
     return joiner.toString();

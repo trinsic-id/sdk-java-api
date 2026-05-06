@@ -36,7 +36,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   SubmitNativeChallengeResponseResponse.JSON_PROPERTY_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SubmitNativeChallengeResponseResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
   @javax.annotation.Nonnull
@@ -55,14 +55,14 @@ public class SubmitNativeChallengeResponseResponse {
    * @return session
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonProperty(value = JSON_PROPERTY_SESSION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Session getSession() {
     return session;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonProperty(value = JSON_PROPERTY_SESSION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSession(@javax.annotation.Nonnull Session session) {
     this.session = session;
@@ -103,10 +103,7 @@ public class SubmitNativeChallengeResponseResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**

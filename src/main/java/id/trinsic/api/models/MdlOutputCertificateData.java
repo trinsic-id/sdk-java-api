@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   MdlOutputCertificateData.JSON_PROPERTY_NOT_BEFORE,
   MdlOutputCertificateData.JSON_PROPERTY_NOT_AFTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MdlOutputCertificateData {
   public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
   @javax.annotation.Nonnull
@@ -75,14 +75,14 @@ public class MdlOutputCertificateData {
    * @return serialNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSerialNumber() {
     return serialNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSerialNumber(@javax.annotation.Nonnull String serialNumber) {
     this.serialNumber = serialNumber;
@@ -99,14 +99,14 @@ public class MdlOutputCertificateData {
    * @return commonName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_COMMON_NAME)
+  @JsonProperty(value = JSON_PROPERTY_COMMON_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCommonName() {
     return commonName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COMMON_NAME)
+  @JsonProperty(value = JSON_PROPERTY_COMMON_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCommonName(@javax.annotation.Nonnull String commonName) {
     this.commonName = commonName;
@@ -123,14 +123,14 @@ public class MdlOutputCertificateData {
    * @return stateOrProvinceName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STATE_OR_PROVINCE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_STATE_OR_PROVINCE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getStateOrProvinceName() {
     return stateOrProvinceName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATE_OR_PROVINCE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_STATE_OR_PROVINCE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStateOrProvinceName(@javax.annotation.Nonnull String stateOrProvinceName) {
     this.stateOrProvinceName = stateOrProvinceName;
@@ -147,14 +147,14 @@ public class MdlOutputCertificateData {
    * @return notBefore
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NOT_BEFORE)
+  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public OffsetDateTime getNotBefore() {
     return notBefore;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NOT_BEFORE)
+  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNotBefore(@javax.annotation.Nonnull OffsetDateTime notBefore) {
     this.notBefore = notBefore;
@@ -171,14 +171,14 @@ public class MdlOutputCertificateData {
    * @return notAfter
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NOT_AFTER)
+  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public OffsetDateTime getNotAfter() {
     return notAfter;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NOT_AFTER)
+  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNotAfter(@javax.annotation.Nonnull OffsetDateTime notAfter) {
     this.notAfter = notAfter;
@@ -227,10 +227,7 @@ public class MdlOutputCertificateData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -267,27 +264,27 @@ public class MdlOutputCertificateData {
 
     // add `serialNumber` to the URL query string
     if (getSerialNumber() != null) {
-      joiner.add(String.format("%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
     }
 
     // add `commonName` to the URL query string
     if (getCommonName() != null) {
-      joiner.add(String.format("%scommonName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCommonName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scommonName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCommonName()))));
     }
 
     // add `stateOrProvinceName` to the URL query string
     if (getStateOrProvinceName() != null) {
-      joiner.add(String.format("%sstateOrProvinceName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStateOrProvinceName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstateOrProvinceName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStateOrProvinceName()))));
     }
 
     // add `notBefore` to the URL query string
     if (getNotBefore() != null) {
-      joiner.add(String.format("%snotBefore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotBefore()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snotBefore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotBefore()))));
     }
 
     // add `notAfter` to the URL query string
     if (getNotAfter() != null) {
-      joiner.add(String.format("%snotAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotAfter()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snotAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotAfter()))));
     }
 
     return joiner.toString();

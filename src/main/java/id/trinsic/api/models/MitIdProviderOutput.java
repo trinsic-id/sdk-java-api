@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   MitIdProviderOutput.JSON_PROPERTY_ORGANIZATION_NUMBER,
   MitIdProviderOutput.JSON_PROPERTY_AUTHORIZED_REPRESENTATIVE_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MitIdProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -104,7 +104,7 @@ public class MitIdProviderOutput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -136,7 +136,7 @@ public class MitIdProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -159,7 +159,7 @@ public class MitIdProviderOutput {
   }
 
   /**
-   * A stable unique identifier representing the user in MitID&#39;s system. It is recommended to use this identifier instead of using the civil registration number (CPR number) directly.
+   * A stable unique identifier representing the individual in MitID&#39;s system. It is recommended to use this identifier instead of using the civil registration number (CPR number) directly.
    * @return uniqueIdentifier
    */
   @javax.annotation.Nullable
@@ -168,7 +168,7 @@ public class MitIdProviderOutput {
         return uniqueIdentifier.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_UNIQUE_IDENTIFIER)
+  @JsonProperty(value = JSON_PROPERTY_UNIQUE_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<UUID> getUniqueIdentifier_JsonNullable() {
@@ -200,7 +200,7 @@ public class MitIdProviderOutput {
         return authenticationAssuranceLevel.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_ASSURANCE_LEVEL)
+  @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_ASSURANCE_LEVEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAuthenticationAssuranceLevel_JsonNullable() {
@@ -223,7 +223,7 @@ public class MitIdProviderOutput {
   }
 
   /**
-   * The identity assurance level (IAL) for the verification. The National Institute of Standards and Technology (NIST) measures the confidence of the digital identity&#39;s verification set by a set of requirements for different levels. More information can be found here: https://pages.nist.gov/800-63-4/sp800-63b/aal/#AAL_SEC4 Possible values:              -  https://data.gov.dk/concept/core/nsis/Low - (Level 1) The user has self asserted their identity and is neither verified nor validated. - https://data.gov.dk/concept/core/nsis/Substantial - (Level 2) The user has performed either a remote or in-person identity proofing. - https://data.gov.dk/concept/core/nsis/High - (Level 3) The user has performed an in person identity proofing with an authorized representative.              **Note**: These urls are not valid anymore, but they still contain the level of assurance name.
+   * The identity assurance level (IAL) for the verification. The National Institute of Standards and Technology (NIST) measures the confidence of the digital identity&#39;s verification set by a set of requirements for different levels. More information can be found here: https://pages.nist.gov/800-63-4/sp800-63b/aal/#AAL_SEC4 Possible values:              -  https://data.gov.dk/concept/core/nsis/Low - (Level 1) The individual has self asserted their identity and is neither verified nor validated. - https://data.gov.dk/concept/core/nsis/Substantial - (Level 2) The individual has performed either a remote or in-person identity proofing. - https://data.gov.dk/concept/core/nsis/High - (Level 3) The individual has performed an in person identity proofing with an authorized representative.              **Note**: These urls are not valid anymore, but they still contain the level of assurance name.
    * @return identityAuthenticationLevel
    */
   @javax.annotation.Nullable
@@ -232,7 +232,7 @@ public class MitIdProviderOutput {
         return identityAuthenticationLevel.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_AUTHENTICATION_LEVEL)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_AUTHENTICATION_LEVEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityAuthenticationLevel_JsonNullable() {
@@ -255,7 +255,7 @@ public class MitIdProviderOutput {
   }
 
   /**
-   * The level of assurance (LOA) for the verification. This is an older retired model that is a combination of Identity Assurance Level and Authentication Assurance Level. The National Institute of Standards and Technology (NIST) measures the confidence of the digital identity&#39;s verification and authentication strength by a set of requirements for different levels.              Possible values: -  https://data.gov.dk/concept/core/nsis/Low - (Level 1) The user has self asserted their identity and multifactor authentication is not required. - https://data.gov.dk/concept/core/nsis/Substantial - (Level 3) The user has performed either a remote or in-person identity proofing and multifactor authentication is required. - https://data.gov.dk/concept/core/nsis/High - (Level 4) The user has performed an in person identity proofing with an authorized representative and has strong cryptographic authentication requirements.              **Note**: These urls are not valid anymore, but they still contain the level of assurance name. MitID only returns three of the four potential levels and does not include level 2.              More information can be found here: - https://pages.nist.gov/800-63-3/sp800-63-3.html - https://pages.nist.gov/800-63-3/
+   * The level of assurance (LOA) for the verification. This is an older retired model that is a combination of Identity Assurance Level and Authentication Assurance Level. The National Institute of Standards and Technology (NIST) measures the confidence of the digital identity&#39;s verification and authentication strength by a set of requirements for different levels.              Possible values: -  https://data.gov.dk/concept/core/nsis/Low - (Level 1) The individual has self asserted their identity and multifactor authentication is not required. - https://data.gov.dk/concept/core/nsis/Substantial - (Level 3) The individual has performed either a remote or in-person identity proofing and multifactor authentication is required. - https://data.gov.dk/concept/core/nsis/High - (Level 4) The individual has performed an in person identity proofing with an authorized representative and has strong cryptographic authentication requirements.              **Note**: These urls are not valid anymore, but they still contain the level of assurance name. MitID only returns three of the four potential levels and does not include level 2.              More information can be found here: - https://pages.nist.gov/800-63-3/sp800-63-3.html - https://pages.nist.gov/800-63-3/
    * @return levelOfAssurance
    */
   @javax.annotation.Nullable
@@ -264,7 +264,7 @@ public class MitIdProviderOutput {
         return levelOfAssurance.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LEVEL_OF_ASSURANCE)
+  @JsonProperty(value = JSON_PROPERTY_LEVEL_OF_ASSURANCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLevelOfAssurance_JsonNullable() {
@@ -287,7 +287,7 @@ public class MitIdProviderOutput {
   }
 
   /**
-   * The source of the identification for the verification              Possible values: - private - The verification is from a private individual. - professional - The verification is a user in behalf of a organization.
+   * The source of the identification for the verification              Possible values: - private - The verification is from a private individual. - professional - The verification is an individual on behalf of an organization.
    * @return identificationSource
    */
   @javax.annotation.Nullable
@@ -296,7 +296,7 @@ public class MitIdProviderOutput {
         return identificationSource.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTIFICATION_SOURCE)
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFICATION_SOURCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentificationSource_JsonNullable() {
@@ -328,7 +328,7 @@ public class MitIdProviderOutput {
         return civilRegistrationNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CIVIL_REGISTRATION_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_CIVIL_REGISTRATION_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCivilRegistrationNumber_JsonNullable() {
@@ -360,7 +360,7 @@ public class MitIdProviderOutput {
         return organizationName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOrganizationName_JsonNullable() {
@@ -392,7 +392,7 @@ public class MitIdProviderOutput {
         return organizationNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOrganizationNumber_JsonNullable() {
@@ -415,7 +415,7 @@ public class MitIdProviderOutput {
   }
 
   /**
-   * The organization number (CVR number) of the organization the user is authorized to represent. This is only returned if the requested scope is for an organization verification and the user provides a private source in behalf of a company.
+   * The organization number (CVR number) of the organization the individual is authorized to represent. This is only returned if the requested scope is for an organization verification and the individual provides a private source on behalf of a company.
    * @return authorizedRepresentativeNumber
    */
   @javax.annotation.Nullable
@@ -424,7 +424,7 @@ public class MitIdProviderOutput {
         return authorizedRepresentativeNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AUTHORIZED_REPRESENTATIVE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_AUTHORIZED_REPRESENTATIVE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAuthorizedRepresentativeNumber_JsonNullable() {
@@ -506,10 +506,7 @@ public class MitIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -546,57 +543,57 @@ public class MitIdProviderOutput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `uniqueIdentifier` to the URL query string
     if (getUniqueIdentifier() != null) {
-      joiner.add(String.format("%suniqueIdentifier%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUniqueIdentifier()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%suniqueIdentifier%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUniqueIdentifier()))));
     }
 
     // add `authenticationAssuranceLevel` to the URL query string
     if (getAuthenticationAssuranceLevel() != null) {
-      joiner.add(String.format("%sauthenticationAssuranceLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthenticationAssuranceLevel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sauthenticationAssuranceLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthenticationAssuranceLevel()))));
     }
 
     // add `identityAuthenticationLevel` to the URL query string
     if (getIdentityAuthenticationLevel() != null) {
-      joiner.add(String.format("%sidentityAuthenticationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityAuthenticationLevel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityAuthenticationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityAuthenticationLevel()))));
     }
 
     // add `levelOfAssurance` to the URL query string
     if (getLevelOfAssurance() != null) {
-      joiner.add(String.format("%slevelOfAssurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLevelOfAssurance()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slevelOfAssurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLevelOfAssurance()))));
     }
 
     // add `identificationSource` to the URL query string
     if (getIdentificationSource() != null) {
-      joiner.add(String.format("%sidentificationSource%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentificationSource()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentificationSource%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentificationSource()))));
     }
 
     // add `civilRegistrationNumber` to the URL query string
     if (getCivilRegistrationNumber() != null) {
-      joiner.add(String.format("%scivilRegistrationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCivilRegistrationNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scivilRegistrationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCivilRegistrationNumber()))));
     }
 
     // add `organizationName` to the URL query string
     if (getOrganizationName() != null) {
-      joiner.add(String.format("%sorganizationName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOrganizationName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sorganizationName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOrganizationName()))));
     }
 
     // add `organizationNumber` to the URL query string
     if (getOrganizationNumber() != null) {
-      joiner.add(String.format("%sorganizationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOrganizationNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sorganizationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOrganizationNumber()))));
     }
 
     // add `authorizedRepresentativeNumber` to the URL query string
     if (getAuthorizedRepresentativeNumber() != null) {
-      joiner.add(String.format("%sauthorizedRepresentativeNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthorizedRepresentativeNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sauthorizedRepresentativeNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthorizedRepresentativeNumber()))));
     }
 
     return joiner.toString();

@@ -53,14 +53,6 @@ class DigilockerAadhaarProviderOutputTest {
     }
 
     /**
-     * Test the property 'documentSignatureValidated'
-     */
-    @Test
-    void documentSignatureValidatedTest() {
-        // TODO: test documentSignatureValidated
-    }
-
-    /**
      * Test the property 'timestamp'
      */
     @Test
@@ -98,6 +90,14 @@ class DigilockerAadhaarProviderOutputTest {
     @Test
     void localizedClaimsTest() {
         // TODO: test localizedClaims
+    }
+
+    /**
+     * Test the property 'documentSignatureValidated'
+     */
+    @Test
+    void documentSignatureValidatedTest() {
+        // TODO: test documentSignatureValidated
     }
 
 }

@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   ListSessionsResponse.JSON_PROPERTY_TOTAL,
   ListSessionsResponse.JSON_PROPERTY_MORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ListSessionsResponse {
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
   @javax.annotation.Nonnull
@@ -75,14 +75,14 @@ public class ListSessionsResponse {
    * @return sessions
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<Session> getSessions() {
     return sessions;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSessions(@javax.annotation.Nonnull List<Session> sessions) {
     this.sessions = sessions;
@@ -99,14 +99,14 @@ public class ListSessionsResponse {
    * @return total
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TOTAL)
+  @JsonProperty(value = JSON_PROPERTY_TOTAL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Integer getTotal() {
     return total;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TOTAL)
+  @JsonProperty(value = JSON_PROPERTY_TOTAL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTotal(@javax.annotation.Nonnull Integer total) {
     this.total = total;
@@ -123,14 +123,14 @@ public class ListSessionsResponse {
    * @return more
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MORE)
+  @JsonProperty(value = JSON_PROPERTY_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getMore() {
     return more;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MORE)
+  @JsonProperty(value = JSON_PROPERTY_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMore(@javax.annotation.Nonnull Boolean more) {
     this.more = more;
@@ -175,10 +175,7 @@ public class ListSessionsResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -217,20 +214,20 @@ public class ListSessionsResponse {
     if (getSessions() != null) {
       for (int i = 0; i < getSessions().size(); i++) {
         if (getSessions().get(i) != null) {
-          joiner.add(getSessions().get(i).toUrlQueryString(String.format("%ssessions%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSessions().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssessions%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
 
     // add `total` to the URL query string
     if (getTotal() != null) {
-      joiner.add(String.format("%stotal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotal()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stotal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotal()))));
     }
 
     // add `more` to the URL query string
     if (getMore() != null) {
-      joiner.add(String.format("%smore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMore()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMore()))));
     }
 
     return joiner.toString();

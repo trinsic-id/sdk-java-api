@@ -19,7 +19,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ProviderInput;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -65,6 +67,14 @@ class CreateHostedProviderSessionRequestTest {
     @Test
     void redirectUrlTest() {
         // TODO: test redirectUrl
+    }
+
+    /**
+     * Test the property 'browserLanguages'
+     */
+    @Test
+    void browserLanguagesTest() {
+        // TODO: test browserLanguages
     }
 
     /**

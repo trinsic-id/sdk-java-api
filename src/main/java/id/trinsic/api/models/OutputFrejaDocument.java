@@ -43,7 +43,7 @@ import id.trinsic.ApiClient;
   OutputFrejaDocument.JSON_PROPERTY_EXPIRATION_DATE,
   OutputFrejaDocument.JSON_PROPERTY_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class OutputFrejaDocument {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
@@ -75,7 +75,7 @@ public class OutputFrejaDocument {
         return type.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getType_JsonNullable() {
@@ -107,7 +107,7 @@ public class OutputFrejaDocument {
         return serialNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSerialNumber_JsonNullable() {
@@ -139,7 +139,7 @@ public class OutputFrejaDocument {
         return expirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getExpirationDate_JsonNullable() {
@@ -171,7 +171,7 @@ public class OutputFrejaDocument {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -239,10 +239,7 @@ public class OutputFrejaDocument {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -279,22 +276,22 @@ public class OutputFrejaDocument {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `serialNumber` to the URL query string
     if (getSerialNumber() != null) {
-      joiner.add(String.format("%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     return joiner.toString();

@@ -47,9 +47,10 @@ import id.trinsic.ApiClient;
   CreateDirectProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_CAPABILITIES,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_BROWSER_LANGUAGES,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CreateDirectProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -69,6 +70,9 @@ public class CreateDirectProviderSessionRequest {
   public static final String JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I = "fallbackToHostedUI";
   private JsonNullable<Boolean> fallbackToHostedUI = JsonNullable.<Boolean>undefined();
 
+  public static final String JSON_PROPERTY_BROWSER_LANGUAGES = "browserLanguages";
+  private JsonNullable<List<String>> browserLanguages = JsonNullable.<List<String>>undefined();
+
   public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
   private JsonNullable<ProviderInput> providerInput = JsonNullable.<ProviderInput>undefined();
 
@@ -85,14 +89,14 @@ public class CreateDirectProviderSessionRequest {
    * @return provider
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getProvider() {
     return provider;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProvider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
@@ -109,14 +113,14 @@ public class CreateDirectProviderSessionRequest {
    * @return verificationProfileId
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROFILE_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public UUID getVerificationProfileId() {
     return verificationProfileId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROFILE_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
     this.verificationProfileId = verificationProfileId;
@@ -138,7 +142,7 @@ public class CreateDirectProviderSessionRequest {
         return redirectUrl.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REDIRECT_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRedirectUrl_JsonNullable() {
@@ -173,14 +177,14 @@ public class CreateDirectProviderSessionRequest {
    * @return capabilities
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CAPABILITIES)
+  @JsonProperty(value = JSON_PROPERTY_CAPABILITIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<IntegrationCapability> getCapabilities() {
     return capabilities;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CAPABILITIES)
+  @JsonProperty(value = JSON_PROPERTY_CAPABILITIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCapabilities(@javax.annotation.Nonnull List<IntegrationCapability> capabilities) {
     this.capabilities = capabilities;
@@ -202,7 +206,7 @@ public class CreateDirectProviderSessionRequest {
         return fallbackToHostedUI.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I)
+  @JsonProperty(value = JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getFallbackToHostedUI_JsonNullable() {
@@ -216,6 +220,50 @@ public class CreateDirectProviderSessionRequest {
 
   public void setFallbackToHostedUI(@javax.annotation.Nullable Boolean fallbackToHostedUI) {
     this.fallbackToHostedUI = JsonNullable.<Boolean>of(fallbackToHostedUI);
+  }
+
+
+  public CreateDirectProviderSessionRequest browserLanguages(@javax.annotation.Nullable List<String> browserLanguages) {
+    this.browserLanguages = JsonNullable.<List<String>>of(browserLanguages);
+    return this;
+  }
+
+  public CreateDirectProviderSessionRequest addBrowserLanguagesItem(String browserLanguagesItem) {
+    if (this.browserLanguages == null || !this.browserLanguages.isPresent()) {
+      this.browserLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
+    }
+    try {
+      this.browserLanguages.get().add(browserLanguagesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Preferences for languages to show first if the session falls back to the Trinsic-hosted UI. If left empty, the Hosted UI defaults to the user&#39;s navigator languages. If no preferred language is available, the Hosted UI falls back to English. This only will be used if the session falls back to the Trinsic-hosted UI.
+   * @return browserLanguages
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<String> getBrowserLanguages() {
+        return browserLanguages.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BROWSER_LANGUAGES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<String>> getBrowserLanguages_JsonNullable() {
+    return browserLanguages;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BROWSER_LANGUAGES)
+  public void setBrowserLanguages_JsonNullable(JsonNullable<List<String>> browserLanguages) {
+    this.browserLanguages = browserLanguages;
+  }
+
+  public void setBrowserLanguages(@javax.annotation.Nullable List<String> browserLanguages) {
+    this.browserLanguages = JsonNullable.<List<String>>of(browserLanguages);
   }
 
 
@@ -234,7 +282,7 @@ public class CreateDirectProviderSessionRequest {
         return providerInput.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER_INPUT)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER_INPUT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<ProviderInput> getProviderInput_JsonNullable() {
@@ -268,6 +316,7 @@ public class CreateDirectProviderSessionRequest {
         equalsNullable(this.redirectUrl, createDirectProviderSessionRequest.redirectUrl) &&
         Objects.equals(this.capabilities, createDirectProviderSessionRequest.capabilities) &&
         equalsNullable(this.fallbackToHostedUI, createDirectProviderSessionRequest.fallbackToHostedUI) &&
+        equalsNullable(this.browserLanguages, createDirectProviderSessionRequest.browserLanguages) &&
         equalsNullable(this.providerInput, createDirectProviderSessionRequest.providerInput);
   }
 
@@ -277,7 +326,7 @@ public class CreateDirectProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, verificationProfileId, hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(providerInput));
+    return Objects.hash(provider, verificationProfileId, hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(browserLanguages), hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -296,6 +345,7 @@ public class CreateDirectProviderSessionRequest {
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
     sb.append("    fallbackToHostedUI: ").append(toIndentedString(fallbackToHostedUI)).append("\n");
+    sb.append("    browserLanguages: ").append(toIndentedString(browserLanguages)).append("\n");
     sb.append("    providerInput: ").append(toIndentedString(providerInput)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -306,10 +356,7 @@ public class CreateDirectProviderSessionRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -346,25 +393,25 @@ public class CreateDirectProviderSessionRequest {
 
     // add `provider` to the URL query string
     if (getProvider() != null) {
-      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
     }
 
     // add `verificationProfileId` to the URL query string
     if (getVerificationProfileId() != null) {
-      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
     }
 
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
-      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
     }
 
     // add `capabilities` to the URL query string
     if (getCapabilities() != null) {
       for (int i = 0; i < getCapabilities().size(); i++) {
         if (getCapabilities().get(i) != null) {
-          joiner.add(String.format("%scapabilities%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%scapabilities%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
               ApiClient.urlEncode(ApiClient.valueToString(getCapabilities().get(i)))));
         }
       }
@@ -372,7 +419,16 @@ public class CreateDirectProviderSessionRequest {
 
     // add `fallbackToHostedUI` to the URL query string
     if (getFallbackToHostedUI() != null) {
-      joiner.add(String.format("%sfallbackToHostedUI%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFallbackToHostedUI()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfallbackToHostedUI%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFallbackToHostedUI()))));
+    }
+
+    // add `browserLanguages` to the URL query string
+    if (getBrowserLanguages() != null) {
+      for (int i = 0; i < getBrowserLanguages().size(); i++) {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sbrowserLanguages%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+            ApiClient.urlEncode(ApiClient.valueToString(getBrowserLanguages().get(i)))));
+      }
     }
 
     // add `providerInput` to the URL query string

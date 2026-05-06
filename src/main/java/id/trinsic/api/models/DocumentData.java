@@ -47,7 +47,7 @@ import id.trinsic.ApiClient;
   DocumentData.JSON_PROPERTY_ISSUING_SUBDIVISION,
   DocumentData.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class DocumentData {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<DocumentType> type = JsonNullable.<DocumentType>undefined();
@@ -88,7 +88,7 @@ public class DocumentData {
         return type.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<DocumentType> getType_JsonNullable() {
@@ -120,7 +120,7 @@ public class DocumentData {
         return number.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNumber_JsonNullable() {
@@ -152,7 +152,7 @@ public class DocumentData {
         return issueDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUE_DATE)
+  @JsonProperty(value = JSON_PROPERTY_ISSUE_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getIssueDate_JsonNullable() {
@@ -184,7 +184,7 @@ public class DocumentData {
         return expirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getExpirationDate_JsonNullable() {
@@ -216,7 +216,7 @@ public class DocumentData {
         return issuingCountry.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIssuingCountry_JsonNullable() {
@@ -248,7 +248,7 @@ public class DocumentData {
         return issuingSubdivision.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_SUBDIVISION)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_SUBDIVISION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIssuingSubdivision_JsonNullable() {
@@ -280,7 +280,7 @@ public class DocumentData {
         return issuingAuthority.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_AUTHORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIssuingAuthority_JsonNullable() {
@@ -354,10 +354,7 @@ public class DocumentData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -394,37 +391,37 @@ public class DocumentData {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `number` to the URL query string
     if (getNumber() != null) {
-      joiner.add(String.format("%snumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNumber()))));
     }
 
     // add `issueDate` to the URL query string
     if (getIssueDate() != null) {
-      joiner.add(String.format("%sissueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssueDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssueDate()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `issuingCountry` to the URL query string
     if (getIssuingCountry() != null) {
-      joiner.add(String.format("%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
     }
 
     // add `issuingSubdivision` to the URL query string
     if (getIssuingSubdivision() != null) {
-      joiner.add(String.format("%sissuingSubdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingSubdivision()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingSubdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingSubdivision()))));
     }
 
     // add `issuingAuthority` to the URL query string
     if (getIssuingAuthority() != null) {
-      joiner.add(String.format("%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
     }
 
     return joiner.toString();

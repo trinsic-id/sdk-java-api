@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   PersonData.JSON_PROPERTY_ADDRESS,
   PersonData.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PersonData {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -101,7 +101,7 @@ public class PersonData {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -133,7 +133,7 @@ public class PersonData {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -165,7 +165,7 @@ public class PersonData {
         return middleName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMiddleName_JsonNullable() {
@@ -197,7 +197,7 @@ public class PersonData {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -229,7 +229,7 @@ public class PersonData {
         return suffix.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUFFIX)
+  @JsonProperty(value = JSON_PROPERTY_SUFFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSuffix_JsonNullable() {
@@ -261,7 +261,7 @@ public class PersonData {
         return nationality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
+  @JsonProperty(value = JSON_PROPERTY_NATIONALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNationality_JsonNullable() {
@@ -293,7 +293,7 @@ public class PersonData {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Sex> getSex_JsonNullable() {
@@ -325,7 +325,7 @@ public class PersonData {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -357,7 +357,7 @@ public class PersonData {
         return address.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Address> getAddress_JsonNullable() {
@@ -389,7 +389,7 @@ public class PersonData {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -469,10 +469,7 @@ public class PersonData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -509,42 +506,42 @@ public class PersonData {
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `suffix` to the URL query string
     if (getSuffix() != null) {
-      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
     }
 
     // add `nationality` to the URL query string
     if (getNationality() != null) {
-      joiner.add(String.format("%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `address` to the URL query string
@@ -554,7 +551,7 @@ public class PersonData {
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

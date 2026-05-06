@@ -22,6 +22,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -62,6 +66,14 @@ class VerificationProfileResponseTest {
     @Test
     void brandNameTest() {
         // TODO: test brandName
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    void externalIdTest() {
+        // TODO: test externalId
     }
 
     /**

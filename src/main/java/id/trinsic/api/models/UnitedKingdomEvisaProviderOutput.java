@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   UnitedKingdomEvisaProviderOutput.JSON_PROPERTY_OUTCOME,
   UnitedKingdomEvisaProviderOutput.JSON_PROPERTY_EVIDENCE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class UnitedKingdomEvisaProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   private JsonNullable<String> firstName = JsonNullable.<String>undefined();
@@ -103,7 +103,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return firstName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFirstName_JsonNullable() {
@@ -135,7 +135,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return lastName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLastName_JsonNullable() {
@@ -167,7 +167,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -199,7 +199,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return shareCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SHARE_CODE)
+  @JsonProperty(value = JSON_PROPERTY_SHARE_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getShareCode_JsonNullable() {
@@ -231,7 +231,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return referenceNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REFERENCE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getReferenceNumber_JsonNullable() {
@@ -263,7 +263,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return expirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getExpirationDate_JsonNullable() {
@@ -295,7 +295,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return validFrom.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_VALID_FROM)
+  @JsonProperty(value = JSON_PROPERTY_VALID_FROM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getValidFrom_JsonNullable() {
@@ -327,7 +327,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return nationality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
+  @JsonProperty(value = JSON_PROPERTY_NATIONALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNationality_JsonNullable() {
@@ -359,7 +359,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return immigrationStatus.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IMMIGRATION_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_IMMIGRATION_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getImmigrationStatus_JsonNullable() {
@@ -382,7 +382,7 @@ public class UnitedKingdomEvisaProviderOutput {
   }
 
   /**
-   * Overall verification outcome: \&quot;pass\&quot; or \&quot;fail\&quot;.
+   * Overall verification outcome: \&quot;pass\&quot;, \&quot;fail\&quot;, or \&quot;inconclusive\&quot;. \&quot;inconclusive\&quot; is returned for indefinite immigration statuses not yet on the provider&#39;s official list — identity details are still returned, but date validations cannot be performed.
    * @return outcome
    */
   @javax.annotation.Nullable
@@ -391,7 +391,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return outcome.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_OUTCOME)
+  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOutcome_JsonNullable() {
@@ -423,7 +423,7 @@ public class UnitedKingdomEvisaProviderOutput {
         return evidenceType.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EVIDENCE_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_EVIDENCE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEvidenceType_JsonNullable() {
@@ -505,10 +505,7 @@ public class UnitedKingdomEvisaProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -545,57 +542,57 @@ public class UnitedKingdomEvisaProviderOutput {
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `lastName` to the URL query string
     if (getLastName() != null) {
-      joiner.add(String.format("%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `shareCode` to the URL query string
     if (getShareCode() != null) {
-      joiner.add(String.format("%sshareCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getShareCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sshareCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getShareCode()))));
     }
 
     // add `referenceNumber` to the URL query string
     if (getReferenceNumber() != null) {
-      joiner.add(String.format("%sreferenceNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReferenceNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sreferenceNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReferenceNumber()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `validFrom` to the URL query string
     if (getValidFrom() != null) {
-      joiner.add(String.format("%svalidFrom%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getValidFrom()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%svalidFrom%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getValidFrom()))));
     }
 
     // add `nationality` to the URL query string
     if (getNationality() != null) {
-      joiner.add(String.format("%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
     }
 
     // add `immigrationStatus` to the URL query string
     if (getImmigrationStatus() != null) {
-      joiner.add(String.format("%simmigrationStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getImmigrationStatus()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%simmigrationStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getImmigrationStatus()))));
     }
 
     // add `outcome` to the URL query string
     if (getOutcome() != null) {
-      joiner.add(String.format("%soutcome%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOutcome()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%soutcome%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOutcome()))));
     }
 
     // add `evidenceType` to the URL query string
     if (getEvidenceType() != null) {
-      joiner.add(String.format("%sevidenceType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEvidenceType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sevidenceType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEvidenceType()))));
     }
 
     return joiner.toString();

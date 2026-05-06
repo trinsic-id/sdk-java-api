@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   KenyaNidLookup2ProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
   KenyaNidLookup2ProviderOutput.JSON_PROPERTY_PLACE_OF_RESIDENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class KenyaNidLookup2ProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull
@@ -105,14 +105,14 @@ public class KenyaNidLookup2ProviderOutput {
    * @return firstName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFirstName() {
     return firstName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -129,14 +129,14 @@ public class KenyaNidLookup2ProviderOutput {
    * @return surname
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SURNAME)
+  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSurname() {
     return surname;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SURNAME)
+  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSurname(@javax.annotation.Nonnull String surname) {
     this.surname = surname;
@@ -158,7 +158,7 @@ public class KenyaNidLookup2ProviderOutput {
         return otherName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_OTHER_NAME)
+  @JsonProperty(value = JSON_PROPERTY_OTHER_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOtherName_JsonNullable() {
@@ -185,14 +185,14 @@ public class KenyaNidLookup2ProviderOutput {
    * @return sex
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSex() {
     return sex;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSex(@javax.annotation.Nonnull String sex) {
     this.sex = sex;
@@ -214,7 +214,7 @@ public class KenyaNidLookup2ProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -241,14 +241,14 @@ public class KenyaNidLookup2ProviderOutput {
    * @return citizenship
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CITIZENSHIP)
+  @JsonProperty(value = JSON_PROPERTY_CITIZENSHIP, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCitizenship() {
     return citizenship;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CITIZENSHIP)
+  @JsonProperty(value = JSON_PROPERTY_CITIZENSHIP, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCitizenship(@javax.annotation.Nonnull String citizenship) {
     this.citizenship = citizenship;
@@ -261,18 +261,18 @@ public class KenyaNidLookup2ProviderOutput {
   }
 
   /**
-   * The Kenya National ID Number (Nambari ya Kitambulisho).              This is the primary unique identifier for Kenyan citizens in all government systems, issued by the National Registration Bureau (NRB). The format is 1 to 9 numeric digits (regex: /^[0-9]{1,9}$/). This number is assigned upon first registration at age 18 (or upon naturalization for new citizens) and remains constant for life.
+   * The Kenya National ID Number (Nambari ya Kitambulisho) or Unique Personal Identifier (Maisha Namba).              This is the primary unique identifier for Kenyan citizens in all government systems, issued by the National Registration Bureau (NRB). The format is either 8 digits for National ID or 9 digits for Maisha Namba UPI (the new format since 2023).
    * @return idNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_ID_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getIdNumber() {
     return idNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_ID_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIdNumber(@javax.annotation.Nonnull String idNumber) {
     this.idNumber = idNumber;
@@ -289,14 +289,14 @@ public class KenyaNidLookup2ProviderOutput {
    * @return serialNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSerialNumber() {
     return serialNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSerialNumber(@javax.annotation.Nonnull String serialNumber) {
     this.serialNumber = serialNumber;
@@ -318,7 +318,7 @@ public class KenyaNidLookup2ProviderOutput {
         return dateOfIssue.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_ISSUE)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_ISSUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfIssue_JsonNullable() {
@@ -350,7 +350,7 @@ public class KenyaNidLookup2ProviderOutput {
         return placeOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_PLACE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<KenyaNidLookup2Address> getPlaceOfBirth_JsonNullable() {
@@ -382,7 +382,7 @@ public class KenyaNidLookup2ProviderOutput {
         return placeOfResidence.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_RESIDENCE)
+  @JsonProperty(value = JSON_PROPERTY_PLACE_OF_RESIDENCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<KenyaNidLookup2Address> getPlaceOfResidence_JsonNullable() {
@@ -464,10 +464,7 @@ public class KenyaNidLookup2ProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -504,47 +501,47 @@ public class KenyaNidLookup2ProviderOutput {
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `surname` to the URL query string
     if (getSurname() != null) {
-      joiner.add(String.format("%ssurname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSurname()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssurname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSurname()))));
     }
 
     // add `otherName` to the URL query string
     if (getOtherName() != null) {
-      joiner.add(String.format("%sotherName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOtherName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sotherName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOtherName()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `citizenship` to the URL query string
     if (getCitizenship() != null) {
-      joiner.add(String.format("%scitizenship%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCitizenship()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scitizenship%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCitizenship()))));
     }
 
     // add `idNumber` to the URL query string
     if (getIdNumber() != null) {
-      joiner.add(String.format("%sidNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdNumber()))));
     }
 
     // add `serialNumber` to the URL query string
     if (getSerialNumber() != null) {
-      joiner.add(String.format("%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
     }
 
     // add `dateOfIssue` to the URL query string
     if (getDateOfIssue() != null) {
-      joiner.add(String.format("%sdateOfIssue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfIssue()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfIssue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfIssue()))));
     }
 
     // add `placeOfBirth` to the URL query string

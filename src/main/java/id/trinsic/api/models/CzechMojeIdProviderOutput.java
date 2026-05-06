@@ -55,6 +55,8 @@ import id.trinsic.ApiClient;
   CzechMojeIdProviderOutput.JSON_PROPERTY_SOCIAL_SECURITY_NUMBER,
   CzechMojeIdProviderOutput.JSON_PROPERTY_IS_ADULT,
   CzechMojeIdProviderOutput.JSON_PROPERTY_ACCOUNT_VALIDATED,
+  CzechMojeIdProviderOutput.JSON_PROPERTY_ISDS_ID,
+  CzechMojeIdProviderOutput.JSON_PROPERTY_IS_STUDENT,
   CzechMojeIdProviderOutput.JSON_PROPERTY_COMPANY_REGISTRATION_NUMBER,
   CzechMojeIdProviderOutput.JSON_PROPERTY_TAX_IDENTIFICATION_NUMBER,
   CzechMojeIdProviderOutput.JSON_PROPERTY_NIA_VERIFIED,
@@ -63,7 +65,7 @@ import id.trinsic.ApiClient;
   CzechMojeIdProviderOutput.JSON_PROPERTY_BILLING_ADDRESS,
   CzechMojeIdProviderOutput.JSON_PROPERTY_SHIPPING_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CzechMojeIdProviderOutput {
   public static final String JSON_PROPERTY_SUBJECT_IDENTIFIER = "subjectIdentifier";
   private JsonNullable<String> subjectIdentifier = JsonNullable.<String>undefined();
@@ -113,6 +115,12 @@ public class CzechMojeIdProviderOutput {
   public static final String JSON_PROPERTY_ACCOUNT_VALIDATED = "accountValidated";
   private JsonNullable<Boolean> accountValidated = JsonNullable.<Boolean>undefined();
 
+  public static final String JSON_PROPERTY_ISDS_ID = "isdsId";
+  private JsonNullable<String> isdsId = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_IS_STUDENT = "isStudent";
+  private JsonNullable<Boolean> isStudent = JsonNullable.<Boolean>undefined();
+
   public static final String JSON_PROPERTY_COMPANY_REGISTRATION_NUMBER = "companyRegistrationNumber";
   private JsonNullable<String> companyRegistrationNumber = JsonNullable.<String>undefined();
 
@@ -143,7 +151,7 @@ public class CzechMojeIdProviderOutput {
   }
 
   /**
-   * The subject identifier (sub) of the verified individual&#39;s MojeID account.              This is a unique identifier that represents the user within the MojeID system.
+   * The subject identifier (sub) of the verified individual&#39;s MojeID account.              This is a unique identifier that represents the individual within the MojeID system.
    * @return subjectIdentifier
    */
   @javax.annotation.Nullable
@@ -152,7 +160,7 @@ public class CzechMojeIdProviderOutput {
         return subjectIdentifier.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUBJECT_IDENTIFIER)
+  @JsonProperty(value = JSON_PROPERTY_SUBJECT_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSubjectIdentifier_JsonNullable() {
@@ -184,7 +192,7 @@ public class CzechMojeIdProviderOutput {
         return name.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getName_JsonNullable() {
@@ -216,7 +224,7 @@ public class CzechMojeIdProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -248,7 +256,7 @@ public class CzechMojeIdProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -280,7 +288,7 @@ public class CzechMojeIdProviderOutput {
         return nickname.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonProperty(value = JSON_PROPERTY_NICKNAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNickname_JsonNullable() {
@@ -312,7 +320,7 @@ public class CzechMojeIdProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -344,7 +352,7 @@ public class CzechMojeIdProviderOutput {
         return emailVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getEmailVerified_JsonNullable() {
@@ -376,7 +384,7 @@ public class CzechMojeIdProviderOutput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -408,7 +416,7 @@ public class CzechMojeIdProviderOutput {
         return phoneNumberVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getPhoneNumberVerified_JsonNullable() {
@@ -440,7 +448,7 @@ public class CzechMojeIdProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -472,7 +480,7 @@ public class CzechMojeIdProviderOutput {
         return gender.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GENDER)
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGender_JsonNullable() {
@@ -504,7 +512,7 @@ public class CzechMojeIdProviderOutput {
         return idCardNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ID_CARD_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_ID_CARD_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdCardNumber_JsonNullable() {
@@ -536,7 +544,7 @@ public class CzechMojeIdProviderOutput {
         return passportNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PASSPORT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PASSPORT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPassportNumber_JsonNullable() {
@@ -568,7 +576,7 @@ public class CzechMojeIdProviderOutput {
         return socialSecurityNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SOCIAL_SECURITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SOCIAL_SECURITY_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSocialSecurityNumber_JsonNullable() {
@@ -600,7 +608,7 @@ public class CzechMojeIdProviderOutput {
         return isAdult.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IS_ADULT)
+  @JsonProperty(value = JSON_PROPERTY_IS_ADULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getIsAdult_JsonNullable() {
@@ -632,7 +640,7 @@ public class CzechMojeIdProviderOutput {
         return accountValidated.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_VALIDATED)
+  @JsonProperty(value = JSON_PROPERTY_ACCOUNT_VALIDATED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getAccountValidated_JsonNullable() {
@@ -646,6 +654,70 @@ public class CzechMojeIdProviderOutput {
 
   public void setAccountValidated(@javax.annotation.Nullable Boolean accountValidated) {
     this.accountValidated = JsonNullable.<Boolean>of(accountValidated);
+  }
+
+
+  public CzechMojeIdProviderOutput isdsId(@javax.annotation.Nullable String isdsId) {
+    this.isdsId = JsonNullable.<String>of(isdsId);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s ISDS identifier (Informační systém datových schránek — Czech data box system), used for official electronic communication with Czech government authorities.
+   * @return isdsId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getIsdsId() {
+        return isdsId.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ISDS_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getIsdsId_JsonNullable() {
+    return isdsId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ISDS_ID)
+  public void setIsdsId_JsonNullable(JsonNullable<String> isdsId) {
+    this.isdsId = isdsId;
+  }
+
+  public void setIsdsId(@javax.annotation.Nullable String isdsId) {
+    this.isdsId = JsonNullable.<String>of(isdsId);
+  }
+
+
+  public CzechMojeIdProviderOutput isStudent(@javax.annotation.Nullable Boolean isStudent) {
+    this.isStudent = JsonNullable.<Boolean>of(isStudent);
+    return this;
+  }
+
+  /**
+   * Whether the individual is a student.
+   * @return isStudent
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getIsStudent() {
+        return isStudent.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_IS_STUDENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getIsStudent_JsonNullable() {
+    return isStudent;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IS_STUDENT)
+  public void setIsStudent_JsonNullable(JsonNullable<Boolean> isStudent) {
+    this.isStudent = isStudent;
+  }
+
+  public void setIsStudent(@javax.annotation.Nullable Boolean isStudent) {
+    this.isStudent = JsonNullable.<Boolean>of(isStudent);
   }
 
 
@@ -664,7 +736,7 @@ public class CzechMojeIdProviderOutput {
         return companyRegistrationNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COMPANY_REGISTRATION_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_REGISTRATION_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCompanyRegistrationNumber_JsonNullable() {
@@ -696,7 +768,7 @@ public class CzechMojeIdProviderOutput {
         return taxIdentificationNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TAX_IDENTIFICATION_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_TAX_IDENTIFICATION_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTaxIdentificationNumber_JsonNullable() {
@@ -728,7 +800,7 @@ public class CzechMojeIdProviderOutput {
         return niaVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NIA_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_NIA_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getNiaVerified_JsonNullable() {
@@ -760,7 +832,7 @@ public class CzechMojeIdProviderOutput {
         return transactionId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TRANSACTION_ID)
+  @JsonProperty(value = JSON_PROPERTY_TRANSACTION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTransactionId_JsonNullable() {
@@ -792,7 +864,7 @@ public class CzechMojeIdProviderOutput {
         return homeAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_HOME_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_HOME_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<CzechMojeIdAddressOutput> getHomeAddress_JsonNullable() {
@@ -824,7 +896,7 @@ public class CzechMojeIdProviderOutput {
         return billingAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BILLING_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_BILLING_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<CzechMojeIdAddressOutput> getBillingAddress_JsonNullable() {
@@ -856,7 +928,7 @@ public class CzechMojeIdProviderOutput {
         return shippingAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SHIPPING_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_SHIPPING_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<CzechMojeIdAddressOutput> getShippingAddress_JsonNullable() {
@@ -901,6 +973,8 @@ public class CzechMojeIdProviderOutput {
         equalsNullable(this.socialSecurityNumber, czechMojeIdProviderOutput.socialSecurityNumber) &&
         equalsNullable(this.isAdult, czechMojeIdProviderOutput.isAdult) &&
         equalsNullable(this.accountValidated, czechMojeIdProviderOutput.accountValidated) &&
+        equalsNullable(this.isdsId, czechMojeIdProviderOutput.isdsId) &&
+        equalsNullable(this.isStudent, czechMojeIdProviderOutput.isStudent) &&
         equalsNullable(this.companyRegistrationNumber, czechMojeIdProviderOutput.companyRegistrationNumber) &&
         equalsNullable(this.taxIdentificationNumber, czechMojeIdProviderOutput.taxIdentificationNumber) &&
         equalsNullable(this.niaVerified, czechMojeIdProviderOutput.niaVerified) &&
@@ -916,7 +990,7 @@ public class CzechMojeIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(subjectIdentifier), hashCodeNullable(name), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(nickname), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(phoneNumber), hashCodeNullable(phoneNumberVerified), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(idCardNumber), hashCodeNullable(passportNumber), hashCodeNullable(socialSecurityNumber), hashCodeNullable(isAdult), hashCodeNullable(accountValidated), hashCodeNullable(companyRegistrationNumber), hashCodeNullable(taxIdentificationNumber), hashCodeNullable(niaVerified), hashCodeNullable(transactionId), hashCodeNullable(homeAddress), hashCodeNullable(billingAddress), hashCodeNullable(shippingAddress));
+    return Objects.hash(hashCodeNullable(subjectIdentifier), hashCodeNullable(name), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(nickname), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(phoneNumber), hashCodeNullable(phoneNumberVerified), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(idCardNumber), hashCodeNullable(passportNumber), hashCodeNullable(socialSecurityNumber), hashCodeNullable(isAdult), hashCodeNullable(accountValidated), hashCodeNullable(isdsId), hashCodeNullable(isStudent), hashCodeNullable(companyRegistrationNumber), hashCodeNullable(taxIdentificationNumber), hashCodeNullable(niaVerified), hashCodeNullable(transactionId), hashCodeNullable(homeAddress), hashCodeNullable(billingAddress), hashCodeNullable(shippingAddress));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -946,6 +1020,8 @@ public class CzechMojeIdProviderOutput {
     sb.append("    socialSecurityNumber: ").append(toIndentedString(socialSecurityNumber)).append("\n");
     sb.append("    isAdult: ").append(toIndentedString(isAdult)).append("\n");
     sb.append("    accountValidated: ").append(toIndentedString(accountValidated)).append("\n");
+    sb.append("    isdsId: ").append(toIndentedString(isdsId)).append("\n");
+    sb.append("    isStudent: ").append(toIndentedString(isStudent)).append("\n");
     sb.append("    companyRegistrationNumber: ").append(toIndentedString(companyRegistrationNumber)).append("\n");
     sb.append("    taxIdentificationNumber: ").append(toIndentedString(taxIdentificationNumber)).append("\n");
     sb.append("    niaVerified: ").append(toIndentedString(niaVerified)).append("\n");
@@ -962,10 +1038,7 @@ public class CzechMojeIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -1002,102 +1075,112 @@ public class CzechMojeIdProviderOutput {
 
     // add `subjectIdentifier` to the URL query string
     if (getSubjectIdentifier() != null) {
-      joiner.add(String.format("%ssubjectIdentifier%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubjectIdentifier()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssubjectIdentifier%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubjectIdentifier()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `nickname` to the URL query string
     if (getNickname() != null) {
-      joiner.add(String.format("%snickname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNickname()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snickname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNickname()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `emailVerified` to the URL query string
     if (getEmailVerified() != null) {
-      joiner.add(String.format("%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `phoneNumberVerified` to the URL query string
     if (getPhoneNumberVerified() != null) {
-      joiner.add(String.format("%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `gender` to the URL query string
     if (getGender() != null) {
-      joiner.add(String.format("%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
     }
 
     // add `idCardNumber` to the URL query string
     if (getIdCardNumber() != null) {
-      joiner.add(String.format("%sidCardNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdCardNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidCardNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdCardNumber()))));
     }
 
     // add `passportNumber` to the URL query string
     if (getPassportNumber() != null) {
-      joiner.add(String.format("%spassportNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPassportNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spassportNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPassportNumber()))));
     }
 
     // add `socialSecurityNumber` to the URL query string
     if (getSocialSecurityNumber() != null) {
-      joiner.add(String.format("%ssocialSecurityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSocialSecurityNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssocialSecurityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSocialSecurityNumber()))));
     }
 
     // add `isAdult` to the URL query string
     if (getIsAdult() != null) {
-      joiner.add(String.format("%sisAdult%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsAdult()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sisAdult%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsAdult()))));
     }
 
     // add `accountValidated` to the URL query string
     if (getAccountValidated() != null) {
-      joiner.add(String.format("%saccountValidated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAccountValidated()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saccountValidated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAccountValidated()))));
+    }
+
+    // add `isdsId` to the URL query string
+    if (getIsdsId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sisdsId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsdsId()))));
+    }
+
+    // add `isStudent` to the URL query string
+    if (getIsStudent() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sisStudent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsStudent()))));
     }
 
     // add `companyRegistrationNumber` to the URL query string
     if (getCompanyRegistrationNumber() != null) {
-      joiner.add(String.format("%scompanyRegistrationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyRegistrationNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scompanyRegistrationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyRegistrationNumber()))));
     }
 
     // add `taxIdentificationNumber` to the URL query string
     if (getTaxIdentificationNumber() != null) {
-      joiner.add(String.format("%staxIdentificationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTaxIdentificationNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%staxIdentificationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTaxIdentificationNumber()))));
     }
 
     // add `niaVerified` to the URL query string
     if (getNiaVerified() != null) {
-      joiner.add(String.format("%sniaVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNiaVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sniaVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNiaVerified()))));
     }
 
     // add `transactionId` to the URL query string
     if (getTransactionId() != null) {
-      joiner.add(String.format("%stransactionId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransactionId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stransactionId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransactionId()))));
     }
 
     // add `homeAddress` to the URL query string

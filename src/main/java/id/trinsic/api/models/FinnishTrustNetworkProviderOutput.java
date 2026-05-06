@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_ORGANIZATION_NAME,
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_VAT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FinnishTrustNetworkProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -103,7 +103,7 @@ public class FinnishTrustNetworkProviderOutput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -135,7 +135,7 @@ public class FinnishTrustNetworkProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -167,7 +167,7 @@ public class FinnishTrustNetworkProviderOutput {
         return personalIdentificationCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE)
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPersonalIdentificationCode_JsonNullable() {
@@ -199,7 +199,7 @@ public class FinnishTrustNetworkProviderOutput {
         return uniqueIdentificationNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_UNIQUE_IDENTIFICATION_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_UNIQUE_IDENTIFICATION_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getUniqueIdentificationNumber_JsonNullable() {
@@ -231,7 +231,7 @@ public class FinnishTrustNetworkProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -263,7 +263,7 @@ public class FinnishTrustNetworkProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -286,7 +286,7 @@ public class FinnishTrustNetworkProviderOutput {
   }
 
   /**
-   * The level of assurance (LOA) for the verification.              The LOA refers to the degree of confidence in the claimed identity of a person. The European Digital Identity Framework (EUDI) measures the confidence of the digital identity&#39;s verification and authentication strength by a set of requirements for different levels. To learn more, see: https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110081/eIDAS+Levels+of+Assurance              Possible values: - Low: The user has self asserted their identity and multifactor authentication is not required. - Substantial: The user has performed either a remote or in-person identity verification and multifactor authentication is required. - High: The user has performed an in-person identity proofing with an authorized representative and has strong cryptographic authentication requirements such as using a smart card.
+   * The level of assurance (LOA) for the verification.              The LOA refers to the degree of confidence in the claimed identity of a person. The European Digital Identity Framework (EUDI) measures the confidence of the digital identity&#39;s verification and authentication strength by a set of requirements for different levels. To learn more, see: https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110081/eIDAS+Levels+of+Assurance              Possible values: - Low: The individual has self asserted their identity and multifactor authentication is not required. - Substantial: The individual has performed either a remote or in-person identity verification and multifactor authentication is required. - High: The individual has performed an in-person identity proofing with an authorized representative and has strong cryptographic authentication requirements such as using a smart card.
    * @return levelOfAssurance
    */
   @javax.annotation.Nullable
@@ -295,7 +295,7 @@ public class FinnishTrustNetworkProviderOutput {
         return levelOfAssurance.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LEVEL_OF_ASSURANCE)
+  @JsonProperty(value = JSON_PROPERTY_LEVEL_OF_ASSURANCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLevelOfAssurance_JsonNullable() {
@@ -327,7 +327,7 @@ public class FinnishTrustNetworkProviderOutput {
         return bank.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BANK)
+  @JsonProperty(value = JSON_PROPERTY_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBank_JsonNullable() {
@@ -350,7 +350,7 @@ public class FinnishTrustNetworkProviderOutput {
   }
 
   /**
-   * The phone number of the verified individual.              This is only returned if the user authenticated with MobileID (Mobiilivarmenne).
+   * The phone number of the verified individual.              This is only returned if the individual authenticated with MobileID (Mobiilivarmenne).
    * @return phoneNumber
    */
   @javax.annotation.Nullable
@@ -359,7 +359,7 @@ public class FinnishTrustNetworkProviderOutput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -391,7 +391,7 @@ public class FinnishTrustNetworkProviderOutput {
         return organizationName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOrganizationName_JsonNullable() {
@@ -423,7 +423,7 @@ public class FinnishTrustNetworkProviderOutput {
         return vatNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_VAT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_VAT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getVatNumber_JsonNullable() {
@@ -505,10 +505,7 @@ public class FinnishTrustNetworkProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -545,57 +542,57 @@ public class FinnishTrustNetworkProviderOutput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `personalIdentificationCode` to the URL query string
     if (getPersonalIdentificationCode() != null) {
-      joiner.add(String.format("%spersonalIdentificationCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentificationCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spersonalIdentificationCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentificationCode()))));
     }
 
     // add `uniqueIdentificationNumber` to the URL query string
     if (getUniqueIdentificationNumber() != null) {
-      joiner.add(String.format("%suniqueIdentificationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUniqueIdentificationNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%suniqueIdentificationNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUniqueIdentificationNumber()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `levelOfAssurance` to the URL query string
     if (getLevelOfAssurance() != null) {
-      joiner.add(String.format("%slevelOfAssurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLevelOfAssurance()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slevelOfAssurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLevelOfAssurance()))));
     }
 
     // add `bank` to the URL query string
     if (getBank() != null) {
-      joiner.add(String.format("%sbank%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBank()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbank%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBank()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `organizationName` to the URL query string
     if (getOrganizationName() != null) {
-      joiner.add(String.format("%sorganizationName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOrganizationName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sorganizationName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOrganizationName()))));
     }
 
     // add `vatNumber` to the URL query string
     if (getVatNumber() != null) {
-      joiner.add(String.format("%svatNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVatNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%svatNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVatNumber()))));
     }
 
     return joiner.toString();

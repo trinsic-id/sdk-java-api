@@ -43,7 +43,7 @@ import id.trinsic.ApiClient;
   IntegrationStep.JSON_PROPERTY_CONTENT,
   IntegrationStep.JSON_PROPERTY_REFRESH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IntegrationStep {
   public static final String JSON_PROPERTY_METHOD = "method";
   @javax.annotation.Nonnull
@@ -69,14 +69,14 @@ public class IntegrationStep {
    * @return method
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public IntegrationLaunchMethod getMethod() {
     return method;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMethod(@javax.annotation.Nonnull IntegrationLaunchMethod method) {
     this.method = method;
@@ -93,14 +93,14 @@ public class IntegrationStep {
    * @return content
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonProperty(value = JSON_PROPERTY_CONTENT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getContent() {
     return content;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonProperty(value = JSON_PROPERTY_CONTENT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setContent(@javax.annotation.Nonnull String content) {
     this.content = content;
@@ -122,7 +122,7 @@ public class IntegrationStep {
         return refresh.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REFRESH)
+  @JsonProperty(value = JSON_PROPERTY_REFRESH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<StepRefreshInfo> getRefresh_JsonNullable() {
@@ -188,10 +188,7 @@ public class IntegrationStep {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -228,12 +225,12 @@ public class IntegrationStep {
 
     // add `method` to the URL query string
     if (getMethod() != null) {
-      joiner.add(String.format("%smethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMethod()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMethod()))));
     }
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
     }
 
     // add `refresh` to the URL query string

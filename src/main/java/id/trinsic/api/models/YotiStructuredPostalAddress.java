@@ -58,7 +58,7 @@ import id.trinsic.ApiClient;
   YotiStructuredPostalAddress.JSON_PROPERTY_POST_OFFICE,
   YotiStructuredPostalAddress.JSON_PROPERTY_CARE_OF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class YotiStructuredPostalAddress {
   public static final String JSON_PROPERTY_COUNTRY = "country";
   private JsonNullable<String> country = JsonNullable.<String>undefined();
@@ -138,7 +138,7 @@ public class YotiStructuredPostalAddress {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -170,7 +170,7 @@ public class YotiStructuredPostalAddress {
         return countryIso.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY_ISO)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY_ISO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountryIso_JsonNullable() {
@@ -202,7 +202,7 @@ public class YotiStructuredPostalAddress {
         return formattedAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FORMATTED_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_FORMATTED_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFormattedAddress_JsonNullable() {
@@ -234,7 +234,7 @@ public class YotiStructuredPostalAddress {
         return line1.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE1)
+  @JsonProperty(value = JSON_PROPERTY_LINE1, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine1_JsonNullable() {
@@ -266,7 +266,7 @@ public class YotiStructuredPostalAddress {
         return line2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE2)
+  @JsonProperty(value = JSON_PROPERTY_LINE2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine2_JsonNullable() {
@@ -298,7 +298,7 @@ public class YotiStructuredPostalAddress {
         return line3.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE3)
+  @JsonProperty(value = JSON_PROPERTY_LINE3, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine3_JsonNullable() {
@@ -330,7 +330,7 @@ public class YotiStructuredPostalAddress {
         return line4.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE4)
+  @JsonProperty(value = JSON_PROPERTY_LINE4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine4_JsonNullable() {
@@ -362,7 +362,7 @@ public class YotiStructuredPostalAddress {
         return townCity.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TOWN_CITY)
+  @JsonProperty(value = JSON_PROPERTY_TOWN_CITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTownCity_JsonNullable() {
@@ -394,7 +394,7 @@ public class YotiStructuredPostalAddress {
         return state.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getState_JsonNullable() {
@@ -426,7 +426,7 @@ public class YotiStructuredPostalAddress {
         return postalCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPostalCode_JsonNullable() {
@@ -458,7 +458,7 @@ public class YotiStructuredPostalAddress {
         return buildingNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BUILDING_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_BUILDING_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBuildingNumber_JsonNullable() {
@@ -490,7 +490,7 @@ public class YotiStructuredPostalAddress {
         return building.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BUILDING)
+  @JsonProperty(value = JSON_PROPERTY_BUILDING, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBuilding_JsonNullable() {
@@ -522,7 +522,7 @@ public class YotiStructuredPostalAddress {
         return subBuilding.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB_BUILDING)
+  @JsonProperty(value = JSON_PROPERTY_SUB_BUILDING, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSubBuilding_JsonNullable() {
@@ -554,7 +554,7 @@ public class YotiStructuredPostalAddress {
         return locality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LOCALITY)
+  @JsonProperty(value = JSON_PROPERTY_LOCALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLocality_JsonNullable() {
@@ -586,7 +586,7 @@ public class YotiStructuredPostalAddress {
         return deliveryPointReferenceNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DELIVERY_POINT_REFERENCE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DELIVERY_POINT_REFERENCE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDeliveryPointReferenceNumber_JsonNullable() {
@@ -618,7 +618,7 @@ public class YotiStructuredPostalAddress {
         return landmark.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LANDMARK)
+  @JsonProperty(value = JSON_PROPERTY_LANDMARK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLandmark_JsonNullable() {
@@ -650,7 +650,7 @@ public class YotiStructuredPostalAddress {
         return subdistrict.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUBDISTRICT)
+  @JsonProperty(value = JSON_PROPERTY_SUBDISTRICT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSubdistrict_JsonNullable() {
@@ -682,7 +682,7 @@ public class YotiStructuredPostalAddress {
         return district.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DISTRICT)
+  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDistrict_JsonNullable() {
@@ -714,7 +714,7 @@ public class YotiStructuredPostalAddress {
         return postOffice.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_POST_OFFICE)
+  @JsonProperty(value = JSON_PROPERTY_POST_OFFICE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPostOffice_JsonNullable() {
@@ -746,7 +746,7 @@ public class YotiStructuredPostalAddress {
         return careOf.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CARE_OF)
+  @JsonProperty(value = JSON_PROPERTY_CARE_OF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCareOf_JsonNullable() {
@@ -846,10 +846,7 @@ public class YotiStructuredPostalAddress {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -886,102 +883,102 @@ public class YotiStructuredPostalAddress {
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `countryIso` to the URL query string
     if (getCountryIso() != null) {
-      joiner.add(String.format("%scountryIso%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryIso()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountryIso%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryIso()))));
     }
 
     // add `formattedAddress` to the URL query string
     if (getFormattedAddress() != null) {
-      joiner.add(String.format("%sformattedAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFormattedAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sformattedAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFormattedAddress()))));
     }
 
     // add `line1` to the URL query string
     if (getLine1() != null) {
-      joiner.add(String.format("%sline1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine1()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine1()))));
     }
 
     // add `line2` to the URL query string
     if (getLine2() != null) {
-      joiner.add(String.format("%sline2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine2()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine2()))));
     }
 
     // add `line3` to the URL query string
     if (getLine3() != null) {
-      joiner.add(String.format("%sline3%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine3()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline3%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine3()))));
     }
 
     // add `line4` to the URL query string
     if (getLine4() != null) {
-      joiner.add(String.format("%sline4%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine4()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline4%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine4()))));
     }
 
     // add `townCity` to the URL query string
     if (getTownCity() != null) {
-      joiner.add(String.format("%stownCity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTownCity()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stownCity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTownCity()))));
     }
 
     // add `state` to the URL query string
     if (getState() != null) {
-      joiner.add(String.format("%sstate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getState()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getState()))));
     }
 
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
     }
 
     // add `buildingNumber` to the URL query string
     if (getBuildingNumber() != null) {
-      joiner.add(String.format("%sbuildingNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBuildingNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbuildingNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBuildingNumber()))));
     }
 
     // add `building` to the URL query string
     if (getBuilding() != null) {
-      joiner.add(String.format("%sbuilding%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBuilding()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbuilding%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBuilding()))));
     }
 
     // add `subBuilding` to the URL query string
     if (getSubBuilding() != null) {
-      joiner.add(String.format("%ssubBuilding%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubBuilding()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssubBuilding%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubBuilding()))));
     }
 
     // add `locality` to the URL query string
     if (getLocality() != null) {
-      joiner.add(String.format("%slocality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocality()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slocality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocality()))));
     }
 
     // add `deliveryPointReferenceNumber` to the URL query string
     if (getDeliveryPointReferenceNumber() != null) {
-      joiner.add(String.format("%sdeliveryPointReferenceNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDeliveryPointReferenceNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdeliveryPointReferenceNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDeliveryPointReferenceNumber()))));
     }
 
     // add `landmark` to the URL query string
     if (getLandmark() != null) {
-      joiner.add(String.format("%slandmark%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLandmark()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slandmark%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLandmark()))));
     }
 
     // add `subdistrict` to the URL query string
     if (getSubdistrict() != null) {
-      joiner.add(String.format("%ssubdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubdistrict()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssubdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubdistrict()))));
     }
 
     // add `district` to the URL query string
     if (getDistrict() != null) {
-      joiner.add(String.format("%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
     }
 
     // add `postOffice` to the URL query string
     if (getPostOffice() != null) {
-      joiner.add(String.format("%spostOffice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostOffice()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spostOffice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostOffice()))));
     }
 
     // add `careOf` to the URL query string
     if (getCareOf() != null) {
-      joiner.add(String.format("%scareOf%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCareOf()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scareOf%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCareOf()))));
     }
 
     return joiner.toString();

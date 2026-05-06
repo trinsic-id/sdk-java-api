@@ -61,7 +61,7 @@ import id.trinsic.ApiClient;
   FrejaProviderOutput.JSON_PROPERTY_RELYING_PARTY_USER_ID,
   FrejaProviderOutput.JSON_PROPERTY_TRANSACTION_REFERENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrejaProviderOutput {
   public static final String JSON_PROPERTY_NAME = "name";
   private JsonNullable<String> name = JsonNullable.<String>undefined();
@@ -135,7 +135,7 @@ public class FrejaProviderOutput {
         return name.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getName_JsonNullable() {
@@ -167,7 +167,7 @@ public class FrejaProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -199,7 +199,7 @@ public class FrejaProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -231,7 +231,7 @@ public class FrejaProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -263,7 +263,7 @@ public class FrejaProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -295,7 +295,7 @@ public class FrejaProviderOutput {
         return emailVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getEmailVerified_JsonNullable() {
@@ -339,7 +339,7 @@ public class FrejaProviderOutput {
         return allEmailAddresses.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ALL_EMAIL_ADDRESSES)
+  @JsonProperty(value = JSON_PROPERTY_ALL_EMAIL_ADDRESSES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<String>> getAllEmailAddresses_JsonNullable() {
@@ -371,7 +371,7 @@ public class FrejaProviderOutput {
         return primaryPhysicalAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PRIMARY_PHYSICAL_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_PHYSICAL_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OutputFrejaAddress> getPrimaryPhysicalAddress_JsonNullable() {
@@ -415,7 +415,7 @@ public class FrejaProviderOutput {
         return allPhysicalAddresses.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ALL_PHYSICAL_ADDRESSES)
+  @JsonProperty(value = JSON_PROPERTY_ALL_PHYSICAL_ADDRESSES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<OutputFrejaAddress>> getAllPhysicalAddresses_JsonNullable() {
@@ -447,7 +447,7 @@ public class FrejaProviderOutput {
         return age.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AGE)
+  @JsonProperty(value = JSON_PROPERTY_AGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Integer> getAge_JsonNullable() {
@@ -479,7 +479,7 @@ public class FrejaProviderOutput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -511,7 +511,7 @@ public class FrejaProviderOutput {
         return phoneNumberVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getPhoneNumberVerified_JsonNullable() {
@@ -543,7 +543,7 @@ public class FrejaProviderOutput {
         return personalIdentityNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPersonalIdentityNumber_JsonNullable() {
@@ -575,7 +575,7 @@ public class FrejaProviderOutput {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -607,7 +607,7 @@ public class FrejaProviderOutput {
         return document.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OutputFrejaDocument> getDocument_JsonNullable() {
@@ -639,7 +639,7 @@ public class FrejaProviderOutput {
         return registrationLevel.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REGISTRATION_LEVEL)
+  @JsonProperty(value = JSON_PROPERTY_REGISTRATION_LEVEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRegistrationLevel_JsonNullable() {
@@ -662,7 +662,7 @@ public class FrejaProviderOutput {
   }
 
   /**
-   * The relying party user identifier for this individual. This is an identifier specific to the individual and the relying party (your service).
+   * The relying party identifier for this individual. This is an identifier specific to the individual and the relying party (your service).
    * @return relyingPartyUserId
    */
   @javax.annotation.Nullable
@@ -671,7 +671,7 @@ public class FrejaProviderOutput {
         return relyingPartyUserId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_RELYING_PARTY_USER_ID)
+  @JsonProperty(value = JSON_PROPERTY_RELYING_PARTY_USER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRelyingPartyUserId_JsonNullable() {
@@ -703,7 +703,7 @@ public class FrejaProviderOutput {
         return transactionReference.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TRANSACTION_REFERENCE)
+  @JsonProperty(value = JSON_PROPERTY_TRANSACTION_REFERENCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTransactionReference_JsonNullable() {
@@ -799,10 +799,7 @@ public class FrejaProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -839,39 +836,39 @@ public class FrejaProviderOutput {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `emailVerified` to the URL query string
     if (getEmailVerified() != null) {
-      joiner.add(String.format("%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
     }
 
     // add `allEmailAddresses` to the URL query string
     if (getAllEmailAddresses() != null) {
       for (int i = 0; i < getAllEmailAddresses().size(); i++) {
-        joiner.add(String.format("%sallEmailAddresses%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sallEmailAddresses%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getAllEmailAddresses().get(i)))));
       }
     }
@@ -885,35 +882,35 @@ public class FrejaProviderOutput {
     if (getAllPhysicalAddresses() != null) {
       for (int i = 0; i < getAllPhysicalAddresses().size(); i++) {
         if (getAllPhysicalAddresses().get(i) != null) {
-          joiner.add(getAllPhysicalAddresses().get(i).toUrlQueryString(String.format("%sallPhysicalAddresses%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getAllPhysicalAddresses().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sallPhysicalAddresses%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
 
     // add `age` to the URL query string
     if (getAge() != null) {
-      joiner.add(String.format("%sage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAge()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAge()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `phoneNumberVerified` to the URL query string
     if (getPhoneNumberVerified() != null) {
-      joiner.add(String.format("%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
     }
 
     // add `personalIdentityNumber` to the URL query string
     if (getPersonalIdentityNumber() != null) {
-      joiner.add(String.format("%spersonalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spersonalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumber()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `document` to the URL query string
@@ -923,17 +920,17 @@ public class FrejaProviderOutput {
 
     // add `registrationLevel` to the URL query string
     if (getRegistrationLevel() != null) {
-      joiner.add(String.format("%sregistrationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegistrationLevel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregistrationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegistrationLevel()))));
     }
 
     // add `relyingPartyUserId` to the URL query string
     if (getRelyingPartyUserId() != null) {
-      joiner.add(String.format("%srelyingPartyUserId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRelyingPartyUserId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%srelyingPartyUserId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRelyingPartyUserId()))));
     }
 
     // add `transactionReference` to the URL query string
     if (getTransactionReference() != null) {
-      joiner.add(String.format("%stransactionReference%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransactionReference()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stransactionReference%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransactionReference()))));
     }
 
     return joiner.toString();

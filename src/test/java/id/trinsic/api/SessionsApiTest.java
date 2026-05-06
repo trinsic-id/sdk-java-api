@@ -19,8 +19,6 @@ import id.trinsic.api.models.CreateDirectProviderSessionRequest;
 import id.trinsic.api.models.CreateDirectProviderSessionResponse;
 import id.trinsic.api.models.CreateHostedProviderSessionRequest;
 import id.trinsic.api.models.CreateHostedProviderSessionResponse;
-import id.trinsic.api.models.CreateWidgetSessionRequest;
-import id.trinsic.api.models.CreateWidgetSessionResponse;
 import id.trinsic.api.models.GetAttachmentRequest;
 import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.GetSessionResponse;
@@ -103,23 +101,6 @@ public class SessionsApiTest {
         CreateHostedProviderSessionRequest createHostedProviderSessionRequest = null;
         CreateHostedProviderSessionResponse response = 
         api.createHostedProviderSession(createHostedProviderSessionRequest);
-        
-        // TODO: test validations
-    }
-    
-    /**
-     * Create Widget Session
-     *
-     * Verify a user&#39;s identity using Trinsic&#39;s hosted Widget flow.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createWidgetSessionTest() throws ApiException {
-        CreateWidgetSessionRequest createWidgetSessionRequest = null;
-        CreateWidgetSessionResponse response = 
-        api.createWidgetSession(createWidgetSessionRequest);
         
         // TODO: test validations
     }

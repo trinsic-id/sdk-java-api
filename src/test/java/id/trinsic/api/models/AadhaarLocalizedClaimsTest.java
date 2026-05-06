@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.AadhaarAddress;
 import id.trinsic.api.models.AadhaarLanguage;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -59,83 +60,11 @@ class AadhaarLocalizedClaimsTest {
     }
 
     /**
-     * Test the property 'careOf'
+     * Test the property 'address'
      */
     @Test
-    void careOfTest() {
-        // TODO: test careOf
-    }
-
-    /**
-     * Test the property 'country'
-     */
-    @Test
-    void countryTest() {
-        // TODO: test country
-    }
-
-    /**
-     * Test the property 'district'
-     */
-    @Test
-    void districtTest() {
-        // TODO: test district
-    }
-
-    /**
-     * Test the property 'house'
-     */
-    @Test
-    void houseTest() {
-        // TODO: test house
-    }
-
-    /**
-     * Test the property 'location'
-     */
-    @Test
-    void locationTest() {
-        // TODO: test location
-    }
-
-    /**
-     * Test the property 'landmark'
-     */
-    @Test
-    void landmarkTest() {
-        // TODO: test landmark
-    }
-
-    /**
-     * Test the property 'postalCode'
-     */
-    @Test
-    void postalCodeTest() {
-        // TODO: test postalCode
-    }
-
-    /**
-     * Test the property 'state'
-     */
-    @Test
-    void stateTest() {
-        // TODO: test state
-    }
-
-    /**
-     * Test the property 'street'
-     */
-    @Test
-    void streetTest() {
-        // TODO: test street
-    }
-
-    /**
-     * Test the property 'villageTownCity'
-     */
-    @Test
-    void villageTownCityTest() {
-        // TODO: test villageTownCity
+    void addressTest() {
+        // TODO: test address
     }
 
 }

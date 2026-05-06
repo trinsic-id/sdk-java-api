@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -33,13 +37,21 @@ import id.trinsic.ApiClient;
  * BrazilCpfCheckInput
  */
 @JsonPropertyOrder({
-  BrazilCpfCheckInput.JSON_PROPERTY_CPF_NUMBER
+  BrazilCpfCheckInput.JSON_PROPERTY_CPF_NUMBER,
+  BrazilCpfCheckInput.JSON_PROPERTY_SELFIE_IMAGE,
+  BrazilCpfCheckInput.JSON_PROPERTY_SELFIE_IMAGE_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BrazilCpfCheckInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
   @javax.annotation.Nonnull
   private String cpfNumber;
+
+  public static final String JSON_PROPERTY_SELFIE_IMAGE = "selfieImage";
+  private JsonNullable<byte[]> selfieImage = JsonNullable.<byte[]>undefined();
+
+  public static final String JSON_PROPERTY_SELFIE_IMAGE_CONTENT_TYPE = "selfieImageContentType";
+  private JsonNullable<String> selfieImageContentType = JsonNullable.<String>undefined();
 
   public BrazilCpfCheckInput() { 
   }
@@ -54,17 +66,81 @@ public class BrazilCpfCheckInput {
    * @return cpfNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCpfNumber() {
     return cpfNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
+  }
+
+
+  public BrazilCpfCheckInput selfieImage(@javax.annotation.Nullable byte[] selfieImage) {
+    this.selfieImage = JsonNullable.<byte[]>of(selfieImage);
+    return this;
+  }
+
+  /**
+   * The raw bytes of the selfie image collected from the user.
+   * @return selfieImage
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public byte[] getSelfieImage() {
+        return selfieImage.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SELFIE_IMAGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<byte[]> getSelfieImage_JsonNullable() {
+    return selfieImage;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SELFIE_IMAGE)
+  public void setSelfieImage_JsonNullable(JsonNullable<byte[]> selfieImage) {
+    this.selfieImage = selfieImage;
+  }
+
+  public void setSelfieImage(@javax.annotation.Nullable byte[] selfieImage) {
+    this.selfieImage = JsonNullable.<byte[]>of(selfieImage);
+  }
+
+
+  public BrazilCpfCheckInput selfieImageContentType(@javax.annotation.Nullable String selfieImageContentType) {
+    this.selfieImageContentType = JsonNullable.<String>of(selfieImageContentType);
+    return this;
+  }
+
+  /**
+   * The MIME Type of the file contained in &#x60;SelfieImage&#x60;.              Must be one of &#x60;image/jpeg&#x60; or &#x60;image/png&#x60;.
+   * @return selfieImageContentType
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSelfieImageContentType() {
+        return selfieImageContentType.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SELFIE_IMAGE_CONTENT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSelfieImageContentType_JsonNullable() {
+    return selfieImageContentType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SELFIE_IMAGE_CONTENT_TYPE)
+  public void setSelfieImageContentType_JsonNullable(JsonNullable<String> selfieImageContentType) {
+    this.selfieImageContentType = selfieImageContentType;
+  }
+
+  public void setSelfieImageContentType(@javax.annotation.Nullable String selfieImageContentType) {
+    this.selfieImageContentType = JsonNullable.<String>of(selfieImageContentType);
   }
 
 
@@ -80,12 +156,25 @@ public class BrazilCpfCheckInput {
       return false;
     }
     BrazilCpfCheckInput brazilCpfCheckInput = (BrazilCpfCheckInput) o;
-    return Objects.equals(this.cpfNumber, brazilCpfCheckInput.cpfNumber);
+    return Objects.equals(this.cpfNumber, brazilCpfCheckInput.cpfNumber) &&
+        equalsNullable(this.selfieImage, brazilCpfCheckInput.selfieImage) &&
+        equalsNullable(this.selfieImageContentType, brazilCpfCheckInput.selfieImageContentType);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpfNumber);
+    return Objects.hash(cpfNumber, hashCodeNullable(selfieImage), hashCodeNullable(selfieImageContentType));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -93,6 +182,8 @@ public class BrazilCpfCheckInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrazilCpfCheckInput {\n");
     sb.append("    cpfNumber: ").append(toIndentedString(cpfNumber)).append("\n");
+    sb.append("    selfieImage: ").append(toIndentedString(selfieImage)).append("\n");
+    sb.append("    selfieImageContentType: ").append(toIndentedString(selfieImageContentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -102,10 +193,7 @@ public class BrazilCpfCheckInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -142,7 +230,17 @@ public class BrazilCpfCheckInput {
 
     // add `cpfNumber` to the URL query string
     if (getCpfNumber() != null) {
-      joiner.add(String.format("%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
+    }
+
+    // add `selfieImage` to the URL query string
+    if (getSelfieImage() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sselfieImage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieImage()))));
+    }
+
+    // add `selfieImageContentType` to the URL query string
+    if (getSelfieImageContentType() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sselfieImageContentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieImageContentType()))));
     }
 
     return joiner.toString();

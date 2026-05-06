@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   TrinsicTestDatabaseLookupInput.JSON_PROPERTY_IDENTITY_CODE,
   TrinsicTestDatabaseLookupInput.JSON_PROPERTY_SELFIE_BASE64
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class TrinsicTestDatabaseLookupInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -74,7 +74,7 @@ public class TrinsicTestDatabaseLookupInput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -106,7 +106,7 @@ public class TrinsicTestDatabaseLookupInput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -138,7 +138,7 @@ public class TrinsicTestDatabaseLookupInput {
         return identityCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_CODE)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityCode_JsonNullable() {
@@ -170,7 +170,7 @@ public class TrinsicTestDatabaseLookupInput {
         return selfieBase64.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SELFIE_BASE64)
+  @JsonProperty(value = JSON_PROPERTY_SELFIE_BASE64, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSelfieBase64_JsonNullable() {
@@ -238,10 +238,7 @@ public class TrinsicTestDatabaseLookupInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -278,22 +275,22 @@ public class TrinsicTestDatabaseLookupInput {
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `identityCode` to the URL query string
     if (getIdentityCode() != null) {
-      joiner.add(String.format("%sidentityCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityCode()))));
     }
 
     // add `selfieBase64` to the URL query string
     if (getSelfieBase64() != null) {
-      joiner.add(String.format("%sselfieBase64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieBase64()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sselfieBase64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieBase64()))));
     }
 
     return joiner.toString();

@@ -20,27 +20,36 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
 import id.trinsic.api.models.AppleWalletInput;
+import id.trinsic.api.models.BoliviaCiLookupInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.ChinaResidentIdMatchInput;
+import id.trinsic.api.models.ColombiaCcLookupInput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
+import id.trinsic.api.models.ElSalvadorDuiLookupInput;
 import id.trinsic.api.models.FranceIdentiteInput;
 import id.trinsic.api.models.GoogleWalletInput;
+import id.trinsic.api.models.GuatemalaCuiLookupInput;
 import id.trinsic.api.models.IdinInput;
+import id.trinsic.api.models.IndiaPanLookupInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidBiometric2Input;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.KenyaNidLookup2Input;
 import id.trinsic.api.models.KenyaNidMatch2Input;
+import id.trinsic.api.models.KoreaTelcoMatchInput;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
 import id.trinsic.api.models.NigeriaNinBiometric2Input;
 import id.trinsic.api.models.NigeriaNinInput;
 import id.trinsic.api.models.NigeriaNinLookup2Input;
 import id.trinsic.api.models.NigeriaNinMatch2Input;
+import id.trinsic.api.models.PanamaCedulaLookupInput;
 import id.trinsic.api.models.PeruDniLookupInput;
 import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
+import id.trinsic.api.models.PolandMobywatelMatchInput;
 import id.trinsic.api.models.SamsungWalletInput;
 import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidBiometric2Input;
@@ -52,6 +61,7 @@ import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import id.trinsic.api.models.UgandaNidMatch2Input;
 import id.trinsic.api.models.UkEvisaLookupInput;
+import id.trinsic.api.models.UsaCaliforniaDmvInput;
 import id.trinsic.api.models.ZimbabweNidLookup2Input;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -90,6 +100,14 @@ class ProviderInputTest {
     @Test
     void indonesiaNikLookupTest() {
         // TODO: test indonesiaNikLookup
+    }
+
+    /**
+     * Test the property 'chinaResidentIdMatch'
+     */
+    @Test
+    void chinaResidentIdMatchTest() {
+        // TODO: test chinaResidentIdMatch
     }
 
     /**
@@ -229,6 +247,22 @@ class ProviderInputTest {
     }
 
     /**
+     * Test the property 'indiaPanLookup'
+     */
+    @Test
+    void indiaPanLookupTest() {
+        // TODO: test indiaPanLookup
+    }
+
+    /**
+     * Test the property 'koreaTelcoMatch'
+     */
+    @Test
+    void koreaTelcoMatchTest() {
+        // TODO: test koreaTelcoMatch
+    }
+
+    /**
      * Test the property 'brazilCpfLookup'
      */
     @Test
@@ -333,6 +367,54 @@ class ProviderInputTest {
     }
 
     /**
+     * Test the property 'polandMobywatelMatch'
+     */
+    @Test
+    void polandMobywatelMatchTest() {
+        // TODO: test polandMobywatelMatch
+    }
+
+    /**
+     * Test the property 'boliviaCiLookup'
+     */
+    @Test
+    void boliviaCiLookupTest() {
+        // TODO: test boliviaCiLookup
+    }
+
+    /**
+     * Test the property 'colombiaCcLookup'
+     */
+    @Test
+    void colombiaCcLookupTest() {
+        // TODO: test colombiaCcLookup
+    }
+
+    /**
+     * Test the property 'elSalvadorDuiLookup'
+     */
+    @Test
+    void elSalvadorDuiLookupTest() {
+        // TODO: test elSalvadorDuiLookup
+    }
+
+    /**
+     * Test the property 'guatemalaCuiLookup'
+     */
+    @Test
+    void guatemalaCuiLookupTest() {
+        // TODO: test guatemalaCuiLookup
+    }
+
+    /**
+     * Test the property 'panamaCedulaLookup'
+     */
+    @Test
+    void panamaCedulaLookupTest() {
+        // TODO: test panamaCedulaLookup
+    }
+
+    /**
      * Test the property 'peruDniLookup'
      */
     @Test
@@ -346,6 +428,14 @@ class ProviderInputTest {
     @Test
     void ukEvisaLookupTest() {
         // TODO: test ukEvisaLookup
+    }
+
+    /**
+     * Test the property 'usaCaliforniaDmv'
+     */
+    @Test
+    void usaCaliforniaDmvTest() {
+        // TODO: test usaCaliforniaDmv
     }
 
     /**

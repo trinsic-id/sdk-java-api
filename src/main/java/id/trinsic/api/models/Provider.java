@@ -28,6 +28,7 @@ import id.trinsic.api.models.ContractAttachment;
 import id.trinsic.api.models.ContractAttribute;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.ProviderHealth;
+import id.trinsic.api.models.ProviderSupportedLanguage;
 import id.trinsic.api.models.ResultCollectionMethod;
 import id.trinsic.api.models.SubProviderMetadata;
 import java.util.ArrayList;
@@ -62,13 +63,14 @@ import id.trinsic.ApiClient;
   Provider.JSON_PROPERTY_REQUIRES_INPUT,
   Provider.JSON_PROPERTY_HAS_TRINSIC_INTERFACE,
   Provider.JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS,
+  Provider.JSON_PROPERTY_SUPPORTED_LANGUAGES,
   Provider.JSON_PROPERTY_AVAILABLE_ATTRIBUTES,
   Provider.JSON_PROPERTY_AVAILABLE_ATTACHMENTS,
   Provider.JSON_PROPERTY_SUB_PROVIDERS,
   Provider.JSON_PROPERTY_LIVE_HEALTH,
   Provider.JSON_PROPERTY_TEST_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Provider {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -138,6 +140,9 @@ public class Provider {
   @javax.annotation.Nonnull
   private Boolean supportsDirectProviderSessions;
 
+  public static final String JSON_PROPERTY_SUPPORTED_LANGUAGES = "supportedLanguages";
+  private JsonNullable<List<ProviderSupportedLanguage>> supportedLanguages = JsonNullable.<List<ProviderSupportedLanguage>>undefined();
+
   public static final String JSON_PROPERTY_AVAILABLE_ATTRIBUTES = "availableAttributes";
   private JsonNullable<List<ContractAttribute>> availableAttributes = JsonNullable.<List<ContractAttribute>>undefined();
 
@@ -176,14 +181,14 @@ public class Provider {
    * @return id
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
@@ -200,14 +205,14 @@ public class Provider {
    * @return name
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getName() {
     return name;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
@@ -224,14 +229,14 @@ public class Provider {
    * @return logoUrl
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LOGO_URL)
+  @JsonProperty(value = JSON_PROPERTY_LOGO_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLogoUrl() {
     return logoUrl;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LOGO_URL)
+  @JsonProperty(value = JSON_PROPERTY_LOGO_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLogoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
@@ -248,14 +253,14 @@ public class Provider {
    * @return subtext
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonProperty(value = JSON_PROPERTY_SUBTEXT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSubtext() {
     return subtext;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonProperty(value = JSON_PROPERTY_SUBTEXT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSubtext(@javax.annotation.Nonnull String subtext) {
     this.subtext = subtext;
@@ -269,7 +274,7 @@ public class Provider {
    */
   @Deprecated
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getDescription() {
     return description;
@@ -298,14 +303,14 @@ public class Provider {
    */
   @Deprecated
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_GEOGRAPHY)
+  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getGeography() {
     return geography;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_GEOGRAPHY)
+  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setGeography(@javax.annotation.Nonnull List<String> geography) {
     this.geography = geography;
@@ -330,14 +335,14 @@ public class Provider {
    * @return regions
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REGIONS)
+  @JsonProperty(value = JSON_PROPERTY_REGIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getRegions() {
     return regions;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REGIONS)
+  @JsonProperty(value = JSON_PROPERTY_REGIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRegions(@javax.annotation.Nonnull List<String> regions) {
     this.regions = regions;
@@ -362,14 +367,14 @@ public class Provider {
    * @return countries
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_COUNTRIES)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getCountries() {
     return countries;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COUNTRIES)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCountries(@javax.annotation.Nonnull List<String> countries) {
     this.countries = countries;
@@ -394,14 +399,14 @@ public class Provider {
    * @return subdivisions
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUBDIVISIONS)
+  @JsonProperty(value = JSON_PROPERTY_SUBDIVISIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getSubdivisions() {
     return subdivisions;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBDIVISIONS)
+  @JsonProperty(value = JSON_PROPERTY_SUBDIVISIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSubdivisions(@javax.annotation.Nonnull List<String> subdivisions) {
     this.subdivisions = subdivisions;
@@ -418,14 +423,14 @@ public class Provider {
    * @return licensed
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LICENSED)
+  @JsonProperty(value = JSON_PROPERTY_LICENSED, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getLicensed() {
     return licensed;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LICENSED)
+  @JsonProperty(value = JSON_PROPERTY_LICENSED, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLicensed(@javax.annotation.Nonnull Boolean licensed) {
     this.licensed = licensed;
@@ -442,14 +447,14 @@ public class Provider {
    * @return launchMethod
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAUNCH_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_LAUNCH_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public IntegrationLaunchMethod getLaunchMethod() {
     return launchMethod;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAUNCH_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_LAUNCH_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLaunchMethod(@javax.annotation.Nonnull IntegrationLaunchMethod launchMethod) {
     this.launchMethod = launchMethod;
@@ -466,14 +471,14 @@ public class Provider {
    * @return collectionMethod
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_COLLECTION_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_COLLECTION_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ResultCollectionMethod getCollectionMethod() {
     return collectionMethod;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COLLECTION_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_COLLECTION_METHOD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCollectionMethod(@javax.annotation.Nonnull ResultCollectionMethod collectionMethod) {
     this.collectionMethod = collectionMethod;
@@ -490,14 +495,14 @@ public class Provider {
    * @return resultsMayBeDelayedAfterRedirect
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_RESULTS_MAY_BE_DELAYED_AFTER_REDIRECT)
+  @JsonProperty(value = JSON_PROPERTY_RESULTS_MAY_BE_DELAYED_AFTER_REDIRECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getResultsMayBeDelayedAfterRedirect() {
     return resultsMayBeDelayedAfterRedirect;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RESULTS_MAY_BE_DELAYED_AFTER_REDIRECT)
+  @JsonProperty(value = JSON_PROPERTY_RESULTS_MAY_BE_DELAYED_AFTER_REDIRECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setResultsMayBeDelayedAfterRedirect(@javax.annotation.Nonnull Boolean resultsMayBeDelayedAfterRedirect) {
     this.resultsMayBeDelayedAfterRedirect = resultsMayBeDelayedAfterRedirect;
@@ -514,14 +519,14 @@ public class Provider {
    * @return hasRefreshableContent
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_HAS_REFRESHABLE_CONTENT)
+  @JsonProperty(value = JSON_PROPERTY_HAS_REFRESHABLE_CONTENT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getHasRefreshableContent() {
     return hasRefreshableContent;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HAS_REFRESHABLE_CONTENT)
+  @JsonProperty(value = JSON_PROPERTY_HAS_REFRESHABLE_CONTENT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHasRefreshableContent(@javax.annotation.Nonnull Boolean hasRefreshableContent) {
     this.hasRefreshableContent = hasRefreshableContent;
@@ -538,14 +543,14 @@ public class Provider {
    * @return requiresInput
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REQUIRES_INPUT)
+  @JsonProperty(value = JSON_PROPERTY_REQUIRES_INPUT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getRequiresInput() {
     return requiresInput;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REQUIRES_INPUT)
+  @JsonProperty(value = JSON_PROPERTY_REQUIRES_INPUT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRequiresInput(@javax.annotation.Nonnull Boolean requiresInput) {
     this.requiresInput = requiresInput;
@@ -562,14 +567,14 @@ public class Provider {
    * @return hasTrinsicInterface
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_HAS_TRINSIC_INTERFACE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_TRINSIC_INTERFACE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getHasTrinsicInterface() {
     return hasTrinsicInterface;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HAS_TRINSIC_INTERFACE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_TRINSIC_INTERFACE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHasTrinsicInterface(@javax.annotation.Nonnull Boolean hasTrinsicInterface) {
     this.hasTrinsicInterface = hasTrinsicInterface;
@@ -586,17 +591,61 @@ public class Provider {
    * @return supportsDirectProviderSessions
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getSupportsDirectProviderSessions() {
     return supportsDirectProviderSessions;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SUPPORTS_DIRECT_PROVIDER_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSupportsDirectProviderSessions(@javax.annotation.Nonnull Boolean supportsDirectProviderSessions) {
     this.supportsDirectProviderSessions = supportsDirectProviderSessions;
+  }
+
+
+  public Provider supportedLanguages(@javax.annotation.Nullable List<ProviderSupportedLanguage> supportedLanguages) {
+    this.supportedLanguages = JsonNullable.<List<ProviderSupportedLanguage>>of(supportedLanguages);
+    return this;
+  }
+
+  public Provider addSupportedLanguagesItem(ProviderSupportedLanguage supportedLanguagesItem) {
+    if (this.supportedLanguages == null || !this.supportedLanguages.isPresent()) {
+      this.supportedLanguages = JsonNullable.<List<ProviderSupportedLanguage>>of(new ArrayList<>());
+    }
+    try {
+      this.supportedLanguages.get().add(supportedLanguagesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Languages supported by this Provider&#39;s Trinsic-hosted UI, as BCP 47 language codes.
+   * @return supportedLanguages
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<ProviderSupportedLanguage> getSupportedLanguages() {
+        return supportedLanguages.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SUPPORTED_LANGUAGES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<ProviderSupportedLanguage>> getSupportedLanguages_JsonNullable() {
+    return supportedLanguages;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUPPORTED_LANGUAGES)
+  public void setSupportedLanguages_JsonNullable(JsonNullable<List<ProviderSupportedLanguage>> supportedLanguages) {
+    this.supportedLanguages = supportedLanguages;
+  }
+
+  public void setSupportedLanguages(@javax.annotation.Nullable List<ProviderSupportedLanguage> supportedLanguages) {
+    this.supportedLanguages = JsonNullable.<List<ProviderSupportedLanguage>>of(supportedLanguages);
   }
 
 
@@ -627,7 +676,7 @@ public class Provider {
         return availableAttributes.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AVAILABLE_ATTRIBUTES)
+  @JsonProperty(value = JSON_PROPERTY_AVAILABLE_ATTRIBUTES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<ContractAttribute>> getAvailableAttributes_JsonNullable() {
@@ -671,7 +720,7 @@ public class Provider {
         return availableAttachments.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AVAILABLE_ATTACHMENTS)
+  @JsonProperty(value = JSON_PROPERTY_AVAILABLE_ATTACHMENTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<ContractAttachment>> getAvailableAttachments_JsonNullable() {
@@ -715,7 +764,7 @@ public class Provider {
         return subProviders.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_SUB_PROVIDERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<SubProviderMetadata>> getSubProviders_JsonNullable() {
@@ -742,14 +791,14 @@ public class Provider {
    * @return liveHealth
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LIVE_HEALTH)
+  @JsonProperty(value = JSON_PROPERTY_LIVE_HEALTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ProviderHealth getLiveHealth() {
     return liveHealth;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVE_HEALTH)
+  @JsonProperty(value = JSON_PROPERTY_LIVE_HEALTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLiveHealth(@javax.annotation.Nonnull ProviderHealth liveHealth) {
     this.liveHealth = liveHealth;
@@ -766,14 +815,14 @@ public class Provider {
    * @return testHealth
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TEST_HEALTH)
+  @JsonProperty(value = JSON_PROPERTY_TEST_HEALTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ProviderHealth getTestHealth() {
     return testHealth;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TEST_HEALTH)
+  @JsonProperty(value = JSON_PROPERTY_TEST_HEALTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTestHealth(@javax.annotation.Nonnull ProviderHealth testHealth) {
     this.testHealth = testHealth;
@@ -809,6 +858,7 @@ public class Provider {
         Objects.equals(this.requiresInput, provider.requiresInput) &&
         Objects.equals(this.hasTrinsicInterface, provider.hasTrinsicInterface) &&
         Objects.equals(this.supportsDirectProviderSessions, provider.supportsDirectProviderSessions) &&
+        equalsNullable(this.supportedLanguages, provider.supportedLanguages) &&
         equalsNullable(this.availableAttributes, provider.availableAttributes) &&
         equalsNullable(this.availableAttachments, provider.availableAttachments) &&
         equalsNullable(this.subProviders, provider.subProviders) &&
@@ -822,7 +872,7 @@ public class Provider {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoUrl, subtext, description, geography, regions, countries, subdivisions, licensed, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsDirectProviderSessions, hashCodeNullable(availableAttributes), hashCodeNullable(availableAttachments), hashCodeNullable(subProviders), liveHealth, testHealth);
+    return Objects.hash(id, name, logoUrl, subtext, description, geography, regions, countries, subdivisions, licensed, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsDirectProviderSessions, hashCodeNullable(supportedLanguages), hashCodeNullable(availableAttributes), hashCodeNullable(availableAttachments), hashCodeNullable(subProviders), liveHealth, testHealth);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -853,6 +903,7 @@ public class Provider {
     sb.append("    requiresInput: ").append(toIndentedString(requiresInput)).append("\n");
     sb.append("    hasTrinsicInterface: ").append(toIndentedString(hasTrinsicInterface)).append("\n");
     sb.append("    supportsDirectProviderSessions: ").append(toIndentedString(supportsDirectProviderSessions)).append("\n");
+    sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
     sb.append("    availableAttributes: ").append(toIndentedString(availableAttributes)).append("\n");
     sb.append("    availableAttachments: ").append(toIndentedString(availableAttachments)).append("\n");
     sb.append("    subProviders: ").append(toIndentedString(subProviders)).append("\n");
@@ -867,10 +918,7 @@ public class Provider {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -907,34 +955,34 @@ public class Provider {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
-      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
     }
 
     // add `subtext` to the URL query string
     if (getSubtext() != null) {
-      joiner.add(String.format("%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `geography` to the URL query string
     if (getGeography() != null) {
       for (int i = 0; i < getGeography().size(); i++) {
-        joiner.add(String.format("%sgeography%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sgeography%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getGeography().get(i)))));
       }
     }
@@ -942,8 +990,8 @@ public class Provider {
     // add `regions` to the URL query string
     if (getRegions() != null) {
       for (int i = 0; i < getRegions().size(); i++) {
-        joiner.add(String.format("%sregions%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sregions%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getRegions().get(i)))));
       }
     }
@@ -951,8 +999,8 @@ public class Provider {
     // add `countries` to the URL query string
     if (getCountries() != null) {
       for (int i = 0; i < getCountries().size(); i++) {
-        joiner.add(String.format("%scountries%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%scountries%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getCountries().get(i)))));
       }
     }
@@ -960,58 +1008,68 @@ public class Provider {
     // add `subdivisions` to the URL query string
     if (getSubdivisions() != null) {
       for (int i = 0; i < getSubdivisions().size(); i++) {
-        joiner.add(String.format("%ssubdivisions%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssubdivisions%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getSubdivisions().get(i)))));
       }
     }
 
     // add `licensed` to the URL query string
     if (getLicensed() != null) {
-      joiner.add(String.format("%slicensed%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLicensed()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slicensed%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLicensed()))));
     }
 
     // add `launchMethod` to the URL query string
     if (getLaunchMethod() != null) {
-      joiner.add(String.format("%slaunchMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLaunchMethod()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slaunchMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLaunchMethod()))));
     }
 
     // add `collectionMethod` to the URL query string
     if (getCollectionMethod() != null) {
-      joiner.add(String.format("%scollectionMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCollectionMethod()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scollectionMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCollectionMethod()))));
     }
 
     // add `resultsMayBeDelayedAfterRedirect` to the URL query string
     if (getResultsMayBeDelayedAfterRedirect() != null) {
-      joiner.add(String.format("%sresultsMayBeDelayedAfterRedirect%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsMayBeDelayedAfterRedirect()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sresultsMayBeDelayedAfterRedirect%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsMayBeDelayedAfterRedirect()))));
     }
 
     // add `hasRefreshableContent` to the URL query string
     if (getHasRefreshableContent() != null) {
-      joiner.add(String.format("%shasRefreshableContent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasRefreshableContent()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%shasRefreshableContent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasRefreshableContent()))));
     }
 
     // add `requiresInput` to the URL query string
     if (getRequiresInput() != null) {
-      joiner.add(String.format("%srequiresInput%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRequiresInput()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%srequiresInput%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRequiresInput()))));
     }
 
     // add `hasTrinsicInterface` to the URL query string
     if (getHasTrinsicInterface() != null) {
-      joiner.add(String.format("%shasTrinsicInterface%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasTrinsicInterface()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%shasTrinsicInterface%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasTrinsicInterface()))));
     }
 
     // add `supportsDirectProviderSessions` to the URL query string
     if (getSupportsDirectProviderSessions() != null) {
-      joiner.add(String.format("%ssupportsDirectProviderSessions%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSupportsDirectProviderSessions()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssupportsDirectProviderSessions%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSupportsDirectProviderSessions()))));
+    }
+
+    // add `supportedLanguages` to the URL query string
+    if (getSupportedLanguages() != null) {
+      for (int i = 0; i < getSupportedLanguages().size(); i++) {
+        if (getSupportedLanguages().get(i) != null) {
+          joiner.add(getSupportedLanguages().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssupportedLanguages%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     // add `availableAttributes` to the URL query string
     if (getAvailableAttributes() != null) {
       for (int i = 0; i < getAvailableAttributes().size(); i++) {
         if (getAvailableAttributes().get(i) != null) {
-          joiner.add(getAvailableAttributes().get(i).toUrlQueryString(String.format("%savailableAttributes%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getAvailableAttributes().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%savailableAttributes%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -1020,8 +1078,8 @@ public class Provider {
     if (getAvailableAttachments() != null) {
       for (int i = 0; i < getAvailableAttachments().size(); i++) {
         if (getAvailableAttachments().get(i) != null) {
-          joiner.add(getAvailableAttachments().get(i).toUrlQueryString(String.format("%savailableAttachments%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getAvailableAttachments().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%savailableAttachments%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -1030,20 +1088,20 @@ public class Provider {
     if (getSubProviders() != null) {
       for (int i = 0; i < getSubProviders().size(); i++) {
         if (getSubProviders().get(i) != null) {
-          joiner.add(getSubProviders().get(i).toUrlQueryString(String.format("%ssubProviders%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSubProviders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssubProviders%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
 
     // add `liveHealth` to the URL query string
     if (getLiveHealth() != null) {
-      joiner.add(String.format("%sliveHealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLiveHealth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sliveHealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLiveHealth()))));
     }
 
     // add `testHealth` to the URL query string
     if (getTestHealth() != null) {
-      joiner.add(String.format("%stestHealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTestHealth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stestHealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTestHealth()))));
     }
 
     return joiner.toString();

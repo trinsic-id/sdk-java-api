@@ -52,7 +52,7 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_ATTACHMENTS,
   IdentityData.JSON_PROPERTY_PROVIDER_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
   private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
@@ -94,7 +94,7 @@ public class IdentityData {
         return originatingProviderId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ORIGINATING_PROVIDER_ID)
+  @JsonProperty(value = JSON_PROPERTY_ORIGINATING_PROVIDER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOriginatingProviderId_JsonNullable() {
@@ -126,7 +126,7 @@ public class IdentityData {
         return originatingSubProviderId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID)
+  @JsonProperty(value = JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getOriginatingSubProviderId_JsonNullable() {
@@ -158,7 +158,7 @@ public class IdentityData {
         return person.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSON)
+  @JsonProperty(value = JSON_PROPERTY_PERSON, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<PersonData> getPerson_JsonNullable() {
@@ -190,7 +190,7 @@ public class IdentityData {
         return document.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<DocumentData> getDocument_JsonNullable() {
@@ -222,7 +222,7 @@ public class IdentityData {
         return match.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MATCH)
+  @JsonProperty(value = JSON_PROPERTY_MATCH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<MatchData> getMatch_JsonNullable() {
@@ -257,14 +257,14 @@ public class IdentityData {
    * @return attachments
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
+  @JsonProperty(value = JSON_PROPERTY_ATTACHMENTS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<AttachmentInfo> getAttachments() {
     return attachments;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
+  @JsonProperty(value = JSON_PROPERTY_ATTACHMENTS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAttachments(@javax.annotation.Nonnull List<AttachmentInfo> attachments) {
     this.attachments = attachments;
@@ -286,7 +286,7 @@ public class IdentityData {
         return providerOutput.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER_OUTPUT)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER_OUTPUT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<ProviderOutput> getProviderOutput_JsonNullable() {
@@ -360,10 +360,7 @@ public class IdentityData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -400,12 +397,12 @@ public class IdentityData {
 
     // add `originatingProviderId` to the URL query string
     if (getOriginatingProviderId() != null) {
-      joiner.add(String.format("%soriginatingProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginatingProviderId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%soriginatingProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginatingProviderId()))));
     }
 
     // add `originatingSubProviderId` to the URL query string
     if (getOriginatingSubProviderId() != null) {
-      joiner.add(String.format("%soriginatingSubProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginatingSubProviderId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%soriginatingSubProviderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginatingSubProviderId()))));
     }
 
     // add `person` to the URL query string
@@ -427,8 +424,8 @@ public class IdentityData {
     if (getAttachments() != null) {
       for (int i = 0; i < getAttachments().size(); i++) {
         if (getAttachments().get(i) != null) {
-          joiner.add(getAttachments().get(i).toUrlQueryString(String.format("%sattachments%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getAttachments().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sattachments%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

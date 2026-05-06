@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   IndonesiaNikInput.JSON_PROPERTY_DATE_OF_BIRTH,
   IndonesiaNikInput.JSON_PROPERTY_NIK_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndonesiaNikInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   @javax.annotation.Nonnull
@@ -65,14 +65,14 @@ public class IndonesiaNikInput {
    * @return fullName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFullName() {
     return fullName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFullName(@javax.annotation.Nonnull String fullName) {
     this.fullName = fullName;
@@ -89,14 +89,14 @@ public class IndonesiaNikInput {
    * @return dateOfBirth
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
@@ -113,14 +113,14 @@ public class IndonesiaNikInput {
    * @return nikIdNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NIK_ID_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NIK_ID_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getNikIdNumber() {
     return nikIdNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NIK_ID_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NIK_ID_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNikIdNumber(@javax.annotation.Nonnull String nikIdNumber) {
     this.nikIdNumber = nikIdNumber;
@@ -165,10 +165,7 @@ public class IndonesiaNikInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -205,17 +202,17 @@ public class IndonesiaNikInput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `nikIdNumber` to the URL query string
     if (getNikIdNumber() != null) {
-      joiner.add(String.format("%snikIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNikIdNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snikIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNikIdNumber()))));
     }
 
     return joiner.toString();

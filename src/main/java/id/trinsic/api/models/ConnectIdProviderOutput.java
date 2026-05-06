@@ -26,7 +26,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ConnectIdAddress;
 import id.trinsic.api.models.ConnectIdAgeVerification;
-import id.trinsic.api.models.ConnectIdBeneficiaryAccount;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -50,10 +49,9 @@ import id.trinsic.ApiClient;
   ConnectIdProviderOutput.JSON_PROPERTY_SUB,
   ConnectIdProviderOutput.JSON_PROPERTY_AGE_VERIFICATION,
   ConnectIdProviderOutput.JSON_PROPERTY_TRANSACTION,
-  ConnectIdProviderOutput.JSON_PROPERTY_BENEFICIARY_ACCOUNT,
   ConnectIdProviderOutput.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ConnectIdProviderOutput {
   public static final String JSON_PROPERTY_BIRTHDATE = "birthdate";
   private JsonNullable<LocalDate> birthdate = JsonNullable.<LocalDate>undefined();
@@ -82,9 +80,6 @@ public class ConnectIdProviderOutput {
   public static final String JSON_PROPERTY_TRANSACTION = "transaction";
   private JsonNullable<String> transaction = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_BENEFICIARY_ACCOUNT = "beneficiaryAccount";
-  private JsonNullable<ConnectIdBeneficiaryAccount> beneficiaryAccount = JsonNullable.<ConnectIdBeneficiaryAccount>undefined();
-
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private JsonNullable<ConnectIdAddress> address = JsonNullable.<ConnectIdAddress>undefined();
 
@@ -106,7 +101,7 @@ public class ConnectIdProviderOutput {
         return birthdate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTHDATE)
+  @JsonProperty(value = JSON_PROPERTY_BIRTHDATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getBirthdate_JsonNullable() {
@@ -138,7 +133,7 @@ public class ConnectIdProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -170,7 +165,7 @@ public class ConnectIdProviderOutput {
         return middleName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMiddleName_JsonNullable() {
@@ -202,7 +197,7 @@ public class ConnectIdProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -234,7 +229,7 @@ public class ConnectIdProviderOutput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -266,7 +261,7 @@ public class ConnectIdProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -298,7 +293,7 @@ public class ConnectIdProviderOutput {
         return sub.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB)
+  @JsonProperty(value = JSON_PROPERTY_SUB, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSub_JsonNullable() {
@@ -330,7 +325,7 @@ public class ConnectIdProviderOutput {
         return ageVerification.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AGE_VERIFICATION)
+  @JsonProperty(value = JSON_PROPERTY_AGE_VERIFICATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<ConnectIdAgeVerification> getAgeVerification_JsonNullable() {
@@ -362,7 +357,7 @@ public class ConnectIdProviderOutput {
         return transaction.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TRANSACTION)
+  @JsonProperty(value = JSON_PROPERTY_TRANSACTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTransaction_JsonNullable() {
@@ -376,38 +371,6 @@ public class ConnectIdProviderOutput {
 
   public void setTransaction(@javax.annotation.Nullable String transaction) {
     this.transaction = JsonNullable.<String>of(transaction);
-  }
-
-
-  public ConnectIdProviderOutput beneficiaryAccount(@javax.annotation.Nullable ConnectIdBeneficiaryAccount beneficiaryAccount) {
-    this.beneficiaryAccount = JsonNullable.<ConnectIdBeneficiaryAccount>of(beneficiaryAccount);
-    return this;
-  }
-
-  /**
-   * The beneficiary account that has been designated by the individual.
-   * @return beneficiaryAccount
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public ConnectIdBeneficiaryAccount getBeneficiaryAccount() {
-        return beneficiaryAccount.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_BENEFICIARY_ACCOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<ConnectIdBeneficiaryAccount> getBeneficiaryAccount_JsonNullable() {
-    return beneficiaryAccount;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_BENEFICIARY_ACCOUNT)
-  public void setBeneficiaryAccount_JsonNullable(JsonNullable<ConnectIdBeneficiaryAccount> beneficiaryAccount) {
-    this.beneficiaryAccount = beneficiaryAccount;
-  }
-
-  public void setBeneficiaryAccount(@javax.annotation.Nullable ConnectIdBeneficiaryAccount beneficiaryAccount) {
-    this.beneficiaryAccount = JsonNullable.<ConnectIdBeneficiaryAccount>of(beneficiaryAccount);
   }
 
 
@@ -426,7 +389,7 @@ public class ConnectIdProviderOutput {
         return address.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<ConnectIdAddress> getAddress_JsonNullable() {
@@ -464,7 +427,6 @@ public class ConnectIdProviderOutput {
         equalsNullable(this.sub, connectIdProviderOutput.sub) &&
         equalsNullable(this.ageVerification, connectIdProviderOutput.ageVerification) &&
         equalsNullable(this.transaction, connectIdProviderOutput.transaction) &&
-        equalsNullable(this.beneficiaryAccount, connectIdProviderOutput.beneficiaryAccount) &&
         equalsNullable(this.address, connectIdProviderOutput.address);
   }
 
@@ -474,7 +436,7 @@ public class ConnectIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(birthdate), hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(phoneNumber), hashCodeNullable(email), hashCodeNullable(sub), hashCodeNullable(ageVerification), hashCodeNullable(transaction), hashCodeNullable(beneficiaryAccount), hashCodeNullable(address));
+    return Objects.hash(hashCodeNullable(birthdate), hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(phoneNumber), hashCodeNullable(email), hashCodeNullable(sub), hashCodeNullable(ageVerification), hashCodeNullable(transaction), hashCodeNullable(address));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -497,7 +459,6 @@ public class ConnectIdProviderOutput {
     sb.append("    sub: ").append(toIndentedString(sub)).append("\n");
     sb.append("    ageVerification: ").append(toIndentedString(ageVerification)).append("\n");
     sb.append("    transaction: ").append(toIndentedString(transaction)).append("\n");
-    sb.append("    beneficiaryAccount: ").append(toIndentedString(beneficiaryAccount)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -508,10 +469,7 @@ public class ConnectIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -548,37 +506,37 @@ public class ConnectIdProviderOutput {
 
     // add `birthdate` to the URL query string
     if (getBirthdate() != null) {
-      joiner.add(String.format("%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `sub` to the URL query string
     if (getSub() != null) {
-      joiner.add(String.format("%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
     }
 
     // add `ageVerification` to the URL query string
@@ -588,12 +546,7 @@ public class ConnectIdProviderOutput {
 
     // add `transaction` to the URL query string
     if (getTransaction() != null) {
-      joiner.add(String.format("%stransaction%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransaction()))));
-    }
-
-    // add `beneficiaryAccount` to the URL query string
-    if (getBeneficiaryAccount() != null) {
-      joiner.add(getBeneficiaryAccount().toUrlQueryString(prefix + "beneficiaryAccount" + suffix));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stransaction%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTransaction()))));
     }
 
     // add `address` to the URL query string

@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   RecommendProvidersResponse.JSON_PROPERTY_RECOMMENDED_PROVIDERS,
   RecommendProvidersResponse.JSON_PROPERTY_REMAINDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RecommendProvidersResponse {
   public static final String JSON_PROPERTY_RECOMMENDED_PROVIDERS = "recommendedProviders";
   @javax.annotation.Nonnull
@@ -70,14 +70,14 @@ public class RecommendProvidersResponse {
    * @return recommendedProviders
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_RECOMMENDED_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_RECOMMENDED_PROVIDERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<RecommendProviderInformation> getRecommendedProviders() {
     return recommendedProviders;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECOMMENDED_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_RECOMMENDED_PROVIDERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRecommendedProviders(@javax.annotation.Nonnull List<RecommendProviderInformation> recommendedProviders) {
     this.recommendedProviders = recommendedProviders;
@@ -102,14 +102,14 @@ public class RecommendProvidersResponse {
    * @return remainder
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REMAINDER)
+  @JsonProperty(value = JSON_PROPERTY_REMAINDER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<RecommendProviderInformation> getRemainder() {
     return remainder;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REMAINDER)
+  @JsonProperty(value = JSON_PROPERTY_REMAINDER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRemainder(@javax.annotation.Nonnull List<RecommendProviderInformation> remainder) {
     this.remainder = remainder;
@@ -152,10 +152,7 @@ public class RecommendProvidersResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -194,8 +191,8 @@ public class RecommendProvidersResponse {
     if (getRecommendedProviders() != null) {
       for (int i = 0; i < getRecommendedProviders().size(); i++) {
         if (getRecommendedProviders().get(i) != null) {
-          joiner.add(getRecommendedProviders().get(i).toUrlQueryString(String.format("%srecommendedProviders%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getRecommendedProviders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%srecommendedProviders%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -204,8 +201,8 @@ public class RecommendProvidersResponse {
     if (getRemainder() != null) {
       for (int i = 0; i < getRemainder().size(); i++) {
         if (getRemainder().get(i) != null) {
-          joiner.add(getRemainder().get(i).toUrlQueryString(String.format("%sremainder%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getRemainder().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sremainder%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

@@ -52,7 +52,7 @@ import id.trinsic.ApiClient;
   SmartIdProviderOutput.JSON_PROPERTY_INTERACTION_FLOW_USED,
   SmartIdProviderOutput.JSON_PROPERTY_DEVICE_IP_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SmartIdProviderOutput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -111,7 +111,7 @@ public class SmartIdProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -143,7 +143,7 @@ public class SmartIdProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -175,7 +175,7 @@ public class SmartIdProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -207,7 +207,7 @@ public class SmartIdProviderOutput {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSex_JsonNullable() {
@@ -239,7 +239,7 @@ public class SmartIdProviderOutput {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -271,7 +271,7 @@ public class SmartIdProviderOutput {
         return identityType.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityType_JsonNullable() {
@@ -303,7 +303,7 @@ public class SmartIdProviderOutput {
         return personalCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPersonalCode_JsonNullable() {
@@ -335,7 +335,7 @@ public class SmartIdProviderOutput {
         return serialNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSerialNumber_JsonNullable() {
@@ -367,7 +367,7 @@ public class SmartIdProviderOutput {
         return certificateSubject.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE_SUBJECT)
+  @JsonProperty(value = JSON_PROPERTY_CERTIFICATE_SUBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCertificateSubject_JsonNullable() {
@@ -399,7 +399,7 @@ public class SmartIdProviderOutput {
         return certificateLevel.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE_LEVEL)
+  @JsonProperty(value = JSON_PROPERTY_CERTIFICATE_LEVEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCertificateLevel_JsonNullable() {
@@ -422,7 +422,7 @@ public class SmartIdProviderOutput {
   }
 
   /**
-   * A unique identifier for the Smart ID account/document used for this authentication. Format: PNO{CC}-{personal-code}-{device-id}-{qualification}              Components: - PNO &#x3D; Personal Number (identity type) - CC &#x3D; Country code (EE, LT, LV) - personal-code &#x3D; The individual&#39;s personal code - device-id &#x3D; Random 4-character device identifier - qualification &#x3D; NQ (non-qualified) or Q (qualified certificate)              This is a stable identifier that can be used to recognize returning users across sessions.
+   * A unique identifier for the Smart ID account/document used for this authentication. Format: PNO{CC}-{personal-code}-{device-id}-{qualification}              Components: - PNO &#x3D; Personal Number (identity type) - CC &#x3D; Country code (EE, LT, LV) - personal-code &#x3D; The individual&#39;s personal code - device-id &#x3D; Random 4-character device identifier - qualification &#x3D; NQ (non-qualified) or Q (qualified certificate)              This is a stable identifier that can be used to recognize returning individuals across sessions.
    * @return documentNumber
    */
   @javax.annotation.Nullable
@@ -431,7 +431,7 @@ public class SmartIdProviderOutput {
         return documentNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDocumentNumber_JsonNullable() {
@@ -463,7 +463,7 @@ public class SmartIdProviderOutput {
         return interactionFlowUsed.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_INTERACTION_FLOW_USED)
+  @JsonProperty(value = JSON_PROPERTY_INTERACTION_FLOW_USED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getInteractionFlowUsed_JsonNullable() {
@@ -495,7 +495,7 @@ public class SmartIdProviderOutput {
         return deviceIpAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DEVICE_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDeviceIpAddress_JsonNullable() {
@@ -581,10 +581,7 @@ public class SmartIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -621,67 +618,67 @@ public class SmartIdProviderOutput {
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `identityType` to the URL query string
     if (getIdentityType() != null) {
-      joiner.add(String.format("%sidentityType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityType()))));
     }
 
     // add `personalCode` to the URL query string
     if (getPersonalCode() != null) {
-      joiner.add(String.format("%spersonalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spersonalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalCode()))));
     }
 
     // add `serialNumber` to the URL query string
     if (getSerialNumber() != null) {
-      joiner.add(String.format("%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
     }
 
     // add `certificateSubject` to the URL query string
     if (getCertificateSubject() != null) {
-      joiner.add(String.format("%scertificateSubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificateSubject()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scertificateSubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificateSubject()))));
     }
 
     // add `certificateLevel` to the URL query string
     if (getCertificateLevel() != null) {
-      joiner.add(String.format("%scertificateLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificateLevel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scertificateLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificateLevel()))));
     }
 
     // add `documentNumber` to the URL query string
     if (getDocumentNumber() != null) {
-      joiner.add(String.format("%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
     }
 
     // add `interactionFlowUsed` to the URL query string
     if (getInteractionFlowUsed() != null) {
-      joiner.add(String.format("%sinteractionFlowUsed%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInteractionFlowUsed()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sinteractionFlowUsed%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInteractionFlowUsed()))));
     }
 
     // add `deviceIpAddress` to the URL query string
     if (getDeviceIpAddress() != null) {
-      joiner.add(String.format("%sdeviceIpAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDeviceIpAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdeviceIpAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDeviceIpAddress()))));
     }
 
     return joiner.toString();

@@ -87,7 +87,7 @@ public class Example {
 
 ## getProviderWithHttpInfo
 
-> ApiResponse<GetProviderResponse> getProvider getProviderWithHttpInfo(providerId)
+> ApiResponse<GetProviderResponse> getProviderWithHttpInfo(providerId)
 
 Get Provider
 
@@ -239,7 +239,7 @@ public class Example {
 
 ## listProvidersWithHttpInfo
 
-> ApiResponse<ListProvidersResponse> listProviders listProvidersWithHttpInfo(licensed)
+> ApiResponse<ListProvidersResponse> listProvidersWithHttpInfo(licensed)
 
 List Providers
 

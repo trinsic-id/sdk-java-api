@@ -64,7 +64,7 @@ import id.trinsic.ApiClient;
   SpidProviderOutput.JSON_PROPERTY_COMPANY_FISCAL_NUMBER,
   SpidProviderOutput.JSON_PROPERTY_REGISTERED_OFFICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SpidProviderOutput {
   public static final String JSON_PROPERTY_BILLING_INFORMATION = "billingInformation";
   private JsonNullable<SpidBillingInformation> billingInformation = JsonNullable.<SpidBillingInformation>undefined();
@@ -158,7 +158,7 @@ public class SpidProviderOutput {
         return billingInformation.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BILLING_INFORMATION)
+  @JsonProperty(value = JSON_PROPERTY_BILLING_INFORMATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SpidBillingInformation> getBillingInformation_JsonNullable() {
@@ -185,14 +185,14 @@ public class SpidProviderOutput {
    * @return identityProviderEntityId
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getIdentityProviderEntityId() {
     return identityProviderEntityId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIdentityProviderEntityId(@javax.annotation.Nonnull String identityProviderEntityId) {
     this.identityProviderEntityId = identityProviderEntityId;
@@ -209,14 +209,14 @@ public class SpidProviderOutput {
    * @return spidCode
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SPID_CODE)
+  @JsonProperty(value = JSON_PROPERTY_SPID_CODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSpidCode() {
     return spidCode;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SPID_CODE)
+  @JsonProperty(value = JSON_PROPERTY_SPID_CODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSpidCode(@javax.annotation.Nonnull String spidCode) {
     this.spidCode = spidCode;
@@ -238,7 +238,7 @@ public class SpidProviderOutput {
         return spidCredentialExpirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getSpidCredentialExpirationDate_JsonNullable() {
@@ -270,7 +270,7 @@ public class SpidProviderOutput {
         return rawIdCard.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_RAW_ID_CARD)
+  @JsonProperty(value = JSON_PROPERTY_RAW_ID_CARD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRawIdCard_JsonNullable() {
@@ -302,7 +302,7 @@ public class SpidProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -334,7 +334,7 @@ public class SpidProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -366,7 +366,7 @@ public class SpidProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -398,7 +398,7 @@ public class SpidProviderOutput {
         return gender.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GENDER)
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGender_JsonNullable() {
@@ -430,7 +430,7 @@ public class SpidProviderOutput {
         return placeOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_PLACE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPlaceOfBirth_JsonNullable() {
@@ -462,7 +462,7 @@ public class SpidProviderOutput {
         return countyOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTY_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_COUNTY_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountyOfBirth_JsonNullable() {
@@ -494,7 +494,7 @@ public class SpidProviderOutput {
         return domicileStreetAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOMICILE_STREET_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_DOMICILE_STREET_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDomicileStreetAddress_JsonNullable() {
@@ -526,7 +526,7 @@ public class SpidProviderOutput {
         return domicilePostalCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOMICILE_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_DOMICILE_POSTAL_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDomicilePostalCode_JsonNullable() {
@@ -558,7 +558,7 @@ public class SpidProviderOutput {
         return domicileMunicipality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOMICILE_MUNICIPALITY)
+  @JsonProperty(value = JSON_PROPERTY_DOMICILE_MUNICIPALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDomicileMunicipality_JsonNullable() {
@@ -590,7 +590,7 @@ public class SpidProviderOutput {
         return domicileProvince.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOMICILE_PROVINCE)
+  @JsonProperty(value = JSON_PROPERTY_DOMICILE_PROVINCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDomicileProvince_JsonNullable() {
@@ -622,7 +622,7 @@ public class SpidProviderOutput {
         return domicileNation.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOMICILE_NATION)
+  @JsonProperty(value = JSON_PROPERTY_DOMICILE_NATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDomicileNation_JsonNullable() {
@@ -654,7 +654,7 @@ public class SpidProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -686,7 +686,7 @@ public class SpidProviderOutput {
         return mobilePhone.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MOBILE_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMobilePhone_JsonNullable() {
@@ -718,7 +718,7 @@ public class SpidProviderOutput {
         return digitalAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DIGITAL_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_DIGITAL_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDigitalAddress_JsonNullable() {
@@ -750,7 +750,7 @@ public class SpidProviderOutput {
         return fiscalNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FISCAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_FISCAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFiscalNumber_JsonNullable() {
@@ -782,7 +782,7 @@ public class SpidProviderOutput {
         return ivaCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IVA_CODE)
+  @JsonProperty(value = JSON_PROPERTY_IVA_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIvaCode_JsonNullable() {
@@ -814,7 +814,7 @@ public class SpidProviderOutput {
         return companyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COMPANY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCompanyName_JsonNullable() {
@@ -846,7 +846,7 @@ public class SpidProviderOutput {
         return companyFiscalNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COMPANY_FISCAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_FISCAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCompanyFiscalNumber_JsonNullable() {
@@ -878,7 +878,7 @@ public class SpidProviderOutput {
         return registeredOffice.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REGISTERED_OFFICE)
+  @JsonProperty(value = JSON_PROPERTY_REGISTERED_OFFICE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRegisteredOffice_JsonNullable() {
@@ -986,10 +986,7 @@ public class SpidProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -1031,117 +1028,117 @@ public class SpidProviderOutput {
 
     // add `identityProviderEntityId` to the URL query string
     if (getIdentityProviderEntityId() != null) {
-      joiner.add(String.format("%sidentityProviderEntityId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityProviderEntityId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityProviderEntityId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityProviderEntityId()))));
     }
 
     // add `spidCode` to the URL query string
     if (getSpidCode() != null) {
-      joiner.add(String.format("%sspidCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sspidCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCode()))));
     }
 
     // add `spidCredentialExpirationDate` to the URL query string
     if (getSpidCredentialExpirationDate() != null) {
-      joiner.add(String.format("%sspidCredentialExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCredentialExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sspidCredentialExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSpidCredentialExpirationDate()))));
     }
 
     // add `rawIdCard` to the URL query string
     if (getRawIdCard() != null) {
-      joiner.add(String.format("%srawIdCard%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRawIdCard()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%srawIdCard%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRawIdCard()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `gender` to the URL query string
     if (getGender() != null) {
-      joiner.add(String.format("%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
     }
 
     // add `placeOfBirth` to the URL query string
     if (getPlaceOfBirth() != null) {
-      joiner.add(String.format("%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
     }
 
     // add `countyOfBirth` to the URL query string
     if (getCountyOfBirth() != null) {
-      joiner.add(String.format("%scountyOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountyOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountyOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountyOfBirth()))));
     }
 
     // add `domicileStreetAddress` to the URL query string
     if (getDomicileStreetAddress() != null) {
-      joiner.add(String.format("%sdomicileStreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileStreetAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdomicileStreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileStreetAddress()))));
     }
 
     // add `domicilePostalCode` to the URL query string
     if (getDomicilePostalCode() != null) {
-      joiner.add(String.format("%sdomicilePostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicilePostalCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdomicilePostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicilePostalCode()))));
     }
 
     // add `domicileMunicipality` to the URL query string
     if (getDomicileMunicipality() != null) {
-      joiner.add(String.format("%sdomicileMunicipality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileMunicipality()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdomicileMunicipality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileMunicipality()))));
     }
 
     // add `domicileProvince` to the URL query string
     if (getDomicileProvince() != null) {
-      joiner.add(String.format("%sdomicileProvince%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileProvince()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdomicileProvince%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileProvince()))));
     }
 
     // add `domicileNation` to the URL query string
     if (getDomicileNation() != null) {
-      joiner.add(String.format("%sdomicileNation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileNation()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdomicileNation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomicileNation()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `mobilePhone` to the URL query string
     if (getMobilePhone() != null) {
-      joiner.add(String.format("%smobilePhone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobilePhone()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smobilePhone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobilePhone()))));
     }
 
     // add `digitalAddress` to the URL query string
     if (getDigitalAddress() != null) {
-      joiner.add(String.format("%sdigitalAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdigitalAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalAddress()))));
     }
 
     // add `fiscalNumber` to the URL query string
     if (getFiscalNumber() != null) {
-      joiner.add(String.format("%sfiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFiscalNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFiscalNumber()))));
     }
 
     // add `ivaCode` to the URL query string
     if (getIvaCode() != null) {
-      joiner.add(String.format("%sivaCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIvaCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sivaCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIvaCode()))));
     }
 
     // add `companyName` to the URL query string
     if (getCompanyName() != null) {
-      joiner.add(String.format("%scompanyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scompanyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyName()))));
     }
 
     // add `companyFiscalNumber` to the URL query string
     if (getCompanyFiscalNumber() != null) {
-      joiner.add(String.format("%scompanyFiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyFiscalNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scompanyFiscalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompanyFiscalNumber()))));
     }
 
     // add `registeredOffice` to the URL query string
     if (getRegisteredOffice() != null) {
-      joiner.add(String.format("%sregisteredOffice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegisteredOffice()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregisteredOffice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegisteredOffice()))));
     }
 
     return joiner.toString();

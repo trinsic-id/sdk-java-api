@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.FaydaProviderAddress;
+import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -71,6 +73,54 @@ class FaydaProviderOutputTest {
     @Test
     void arabicNameTest() {
         // TODO: test arabicName
+    }
+
+    /**
+     * Test the property 'birthdate'
+     */
+    @Test
+    void birthdateTest() {
+        // TODO: test birthdate
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
+     * Test the property 'nationality'
+     */
+    @Test
+    void nationalityTest() {
+        // TODO: test nationality
+    }
+
+    /**
+     * Test the property 'phoneNumber'
+     */
+    @Test
+    void phoneNumberTest() {
+        // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    void emailTest() {
+        // TODO: test email
+    }
+
+    /**
+     * Test the property 'address'
+     */
+    @Test
+    void addressTest() {
+        // TODO: test address
     }
 
 }

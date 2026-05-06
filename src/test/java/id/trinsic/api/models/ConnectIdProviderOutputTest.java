@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ConnectIdAddress;
 import id.trinsic.api.models.ConnectIdAgeVerification;
-import id.trinsic.api.models.ConnectIdBeneficiaryAccount;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -115,14 +114,6 @@ class ConnectIdProviderOutputTest {
     @Test
     void transactionTest() {
         // TODO: test transaction
-    }
-
-    /**
-     * Test the property 'beneficiaryAccount'
-     */
-    @Test
-    void beneficiaryAccountTest() {
-        // TODO: test beneficiaryAccount
     }
 
     /**

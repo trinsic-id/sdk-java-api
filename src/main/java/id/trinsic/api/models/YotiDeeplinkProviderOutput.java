@@ -54,7 +54,7 @@ import id.trinsic.ApiClient;
   YotiDeeplinkProviderOutput.JSON_PROPERTY_POSTAL_ADDRESS,
   YotiDeeplinkProviderOutput.JSON_PROPERTY_DOCUMENT_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class YotiDeeplinkProviderOutput {
   public static final String JSON_PROPERTY_REMEMBER_ME_ID = "rememberMeId";
   private JsonNullable<UUID> rememberMeId = JsonNullable.<UUID>undefined();
@@ -101,7 +101,7 @@ public class YotiDeeplinkProviderOutput {
   }
 
   /**
-   * The unique id for your service of the individual. This is not shared between different services so if the user logs into a different service, the user will have a new id for the other service.
+   * A Yoti-generated unique ID for this individual, consistent across repeat shares and different for each Relying Party.
    * @return rememberMeId
    */
   @javax.annotation.Nullable
@@ -110,7 +110,7 @@ public class YotiDeeplinkProviderOutput {
         return rememberMeId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REMEMBER_ME_ID)
+  @JsonProperty(value = JSON_PROPERTY_REMEMBER_ME_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<UUID> getRememberMeId_JsonNullable() {
@@ -142,7 +142,7 @@ public class YotiDeeplinkProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -174,7 +174,7 @@ public class YotiDeeplinkProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -206,7 +206,7 @@ public class YotiDeeplinkProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -238,7 +238,7 @@ public class YotiDeeplinkProviderOutput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -270,7 +270,7 @@ public class YotiDeeplinkProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -302,7 +302,7 @@ public class YotiDeeplinkProviderOutput {
         return gender.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GENDER)
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGender_JsonNullable() {
@@ -334,7 +334,7 @@ public class YotiDeeplinkProviderOutput {
         return nationality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
+  @JsonProperty(value = JSON_PROPERTY_NATIONALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNationality_JsonNullable() {
@@ -357,7 +357,7 @@ public class YotiDeeplinkProviderOutput {
   }
 
   /**
-   * The mobile phone number of the individual. This number was verified with a one time password (OTP) during the user&#39;s registration with Yoti. In some cases, Yoti may do additional checks against its sources to confirm the user&#39;s identity.
+   * The mobile phone number of the individual. This number was verified with a one time password (OTP) during the individual&#39;s registration with Yoti. In some cases, Yoti may do additional checks against its sources to confirm the individual&#39;s identity.
    * @return mobileNumber
    */
   @javax.annotation.Nullable
@@ -366,7 +366,7 @@ public class YotiDeeplinkProviderOutput {
         return mobileNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MOBILE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMobileNumber_JsonNullable() {
@@ -398,7 +398,7 @@ public class YotiDeeplinkProviderOutput {
         return structuredPostalAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_STRUCTURED_POSTAL_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_STRUCTURED_POSTAL_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<YotiStructuredPostalAddress> getStructuredPostalAddress_JsonNullable() {
@@ -430,7 +430,7 @@ public class YotiDeeplinkProviderOutput {
         return postalAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_POSTAL_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPostalAddress_JsonNullable() {
@@ -462,7 +462,7 @@ public class YotiDeeplinkProviderOutput {
         return documentDetails.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_DETAILS)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_DETAILS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<YotiDocumentDetails> getDocumentDetails_JsonNullable() {
@@ -546,10 +546,7 @@ public class YotiDeeplinkProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -586,47 +583,47 @@ public class YotiDeeplinkProviderOutput {
 
     // add `rememberMeId` to the URL query string
     if (getRememberMeId() != null) {
-      joiner.add(String.format("%srememberMeId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRememberMeId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%srememberMeId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRememberMeId()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `gender` to the URL query string
     if (getGender() != null) {
-      joiner.add(String.format("%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
     }
 
     // add `nationality` to the URL query string
     if (getNationality() != null) {
-      joiner.add(String.format("%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
     }
 
     // add `mobileNumber` to the URL query string
     if (getMobileNumber() != null) {
-      joiner.add(String.format("%smobileNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smobileNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileNumber()))));
     }
 
     // add `structuredPostalAddress` to the URL query string
@@ -636,7 +633,7 @@ public class YotiDeeplinkProviderOutput {
 
     // add `postalAddress` to the URL query string
     if (getPostalAddress() != null) {
-      joiner.add(String.format("%spostalAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spostalAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalAddress()))));
     }
 
     // add `documentDetails` to the URL query string

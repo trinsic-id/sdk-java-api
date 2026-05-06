@@ -22,6 +22,7 @@ import id.trinsic.api.models.ContractAttachment;
 import id.trinsic.api.models.ContractAttribute;
 import id.trinsic.api.models.IntegrationLaunchMethod;
 import id.trinsic.api.models.ProviderHealth;
+import id.trinsic.api.models.ProviderSupportedLanguage;
 import id.trinsic.api.models.ResultCollectionMethod;
 import id.trinsic.api.models.SubProviderMetadata;
 import java.util.ArrayList;
@@ -183,6 +184,14 @@ class ProviderTest {
     @Test
     void supportsDirectProviderSessionsTest() {
         // TODO: test supportsDirectProviderSessions
+    }
+
+    /**
+     * Test the property 'supportedLanguages'
+     */
+    @Test
+    void supportedLanguagesTest() {
+        // TODO: test supportedLanguages
     }
 
     /**

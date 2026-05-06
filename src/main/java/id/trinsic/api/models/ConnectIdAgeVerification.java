@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   ConnectIdAgeVerification.JSON_PROPERTY_OVER18,
   ConnectIdAgeVerification.JSON_PROPERTY_TRUST_FRAMEWORK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ConnectIdAgeVerification {
   public static final String JSON_PROPERTY_OVER18 = "over18";
   private JsonNullable<Boolean> over18 = JsonNullable.<Boolean>undefined();
@@ -66,7 +66,7 @@ public class ConnectIdAgeVerification {
         return over18.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_OVER18)
+  @JsonProperty(value = JSON_PROPERTY_OVER18, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getOver18_JsonNullable() {
@@ -98,7 +98,7 @@ public class ConnectIdAgeVerification {
         return trustFramework.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TRUST_FRAMEWORK)
+  @JsonProperty(value = JSON_PROPERTY_TRUST_FRAMEWORK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTrustFramework_JsonNullable() {
@@ -162,10 +162,7 @@ public class ConnectIdAgeVerification {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -202,12 +199,12 @@ public class ConnectIdAgeVerification {
 
     // add `over18` to the URL query string
     if (getOver18() != null) {
-      joiner.add(String.format("%sover18%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver18()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sover18%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver18()))));
     }
 
     // add `trustFramework` to the URL query string
     if (getTrustFramework() != null) {
-      joiner.add(String.format("%strustFramework%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrustFramework()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%strustFramework%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrustFramework()))));
     }
 
     return joiner.toString();

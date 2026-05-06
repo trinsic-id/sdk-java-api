@@ -89,7 +89,7 @@ public class Example {
 
 ## addWithHttpInfo
 
-> ApiResponse<AddRedirectUriResponse> add addWithHttpInfo(addRedirectUriRequest)
+> ApiResponse<AddRedirectUriResponse> addWithHttpInfo(addRedirectUriRequest)
 
 Add Redirect URI
 
@@ -243,7 +243,7 @@ public class Example {
 
 ## callListWithHttpInfo
 
-> ApiResponse<ListRedirectUrisResponse> callList callListWithHttpInfo(page, pageSize)
+> ApiResponse<ListRedirectUrisResponse> callListWithHttpInfo(page, pageSize)
 
 List Redirect URIs
 
@@ -396,7 +396,7 @@ null (empty response body)
 
 ## deleteWithHttpInfo
 
-> ApiResponse<Void> delete deleteWithHttpInfo(id)
+> ApiResponse<Void> deleteWithHttpInfo(id)
 
 Delete Redirect URI
 

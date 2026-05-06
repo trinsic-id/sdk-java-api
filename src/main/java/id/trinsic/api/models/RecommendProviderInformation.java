@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   RecommendProviderInformation.JSON_PROPERTY_COUNTRIES,
   RecommendProviderInformation.JSON_PROPERTY_SUBDIVISIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RecommendProviderInformation {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -117,7 +117,7 @@ public class RecommendProviderInformation {
    * @return id
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
@@ -131,7 +131,7 @@ public class RecommendProviderInformation {
    * @return name
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getName() {
     return name;
@@ -145,7 +145,7 @@ public class RecommendProviderInformation {
    * @return logoUrl
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LOGO_URL)
+  @JsonProperty(value = JSON_PROPERTY_LOGO_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLogoUrl() {
     return logoUrl;
@@ -159,7 +159,7 @@ public class RecommendProviderInformation {
    * @return subtext
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUBTEXT)
+  @JsonProperty(value = JSON_PROPERTY_SUBTEXT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSubtext() {
     return subtext;
@@ -173,7 +173,7 @@ public class RecommendProviderInformation {
    * @return health
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_HEALTH)
+  @JsonProperty(value = JSON_PROPERTY_HEALTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getHealth() {
     return health;
@@ -209,7 +209,7 @@ public class RecommendProviderInformation {
         return subProviders.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_SUB_PROVIDERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<SubProviderMetadata>> getSubProviders_JsonNullable() {
@@ -231,7 +231,7 @@ public class RecommendProviderInformation {
    * @return regions
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REGIONS)
+  @JsonProperty(value = JSON_PROPERTY_REGIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getRegions() {
     return regions;
@@ -245,7 +245,7 @@ public class RecommendProviderInformation {
    * @return countries
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_COUNTRIES)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getCountries() {
     return countries;
@@ -259,7 +259,7 @@ public class RecommendProviderInformation {
    * @return subdivisions
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUBDIVISIONS)
+  @JsonProperty(value = JSON_PROPERTY_SUBDIVISIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getSubdivisions() {
     return subdivisions;
@@ -329,10 +329,7 @@ public class RecommendProviderInformation {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -369,35 +366,35 @@ public class RecommendProviderInformation {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
-      joiner.add(String.format("%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
     }
 
     // add `subtext` to the URL query string
     if (getSubtext() != null) {
-      joiner.add(String.format("%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
     }
 
     // add `health` to the URL query string
     if (getHealth() != null) {
-      joiner.add(String.format("%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
     }
 
     // add `subProviders` to the URL query string
     if (getSubProviders() != null) {
       for (int i = 0; i < getSubProviders().size(); i++) {
         if (getSubProviders().get(i) != null) {
-          joiner.add(getSubProviders().get(i).toUrlQueryString(String.format("%ssubProviders%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSubProviders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssubProviders%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -405,8 +402,8 @@ public class RecommendProviderInformation {
     // add `regions` to the URL query string
     if (getRegions() != null) {
       for (int i = 0; i < getRegions().size(); i++) {
-        joiner.add(String.format("%sregions%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sregions%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getRegions().get(i)))));
       }
     }
@@ -414,8 +411,8 @@ public class RecommendProviderInformation {
     // add `countries` to the URL query string
     if (getCountries() != null) {
       for (int i = 0; i < getCountries().size(); i++) {
-        joiner.add(String.format("%scountries%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%scountries%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getCountries().get(i)))));
       }
     }
@@ -423,8 +420,8 @@ public class RecommendProviderInformation {
     // add `subdivisions` to the URL query string
     if (getSubdivisions() != null) {
       for (int i = 0; i < getSubdivisions().size(); i++) {
-        joiner.add(String.format("%ssubdivisions%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssubdivisions%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getSubdivisions().get(i)))));
       }
     }

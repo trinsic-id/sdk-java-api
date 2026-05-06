@@ -41,21 +41,17 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_DOCUMENT_TYPE,
-  DigilockerAadhaarProviderOutput.JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED,
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_TIMESTAMP,
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_TIME_TO_LIVE,
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_AADHAAR_NUMBER_LAST_FOUR,
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_CLAIMS,
-  DigilockerAadhaarProviderOutput.JSON_PROPERTY_LOCALIZED_CLAIMS
+  DigilockerAadhaarProviderOutput.JSON_PROPERTY_LOCALIZED_CLAIMS,
+  DigilockerAadhaarProviderOutput.JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class DigilockerAadhaarProviderOutput {
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
   private JsonNullable<String> documentType = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED = "documentSignatureValidated";
-  @javax.annotation.Nonnull
-  private Boolean documentSignatureValidated;
 
   public static final String JSON_PROPERTY_TIMESTAMP = "timestamp";
   private JsonNullable<OffsetDateTime> timestamp = JsonNullable.<OffsetDateTime>undefined();
@@ -72,6 +68,10 @@ public class DigilockerAadhaarProviderOutput {
   public static final String JSON_PROPERTY_LOCALIZED_CLAIMS = "localizedClaims";
   private JsonNullable<AadhaarLocalizedClaims> localizedClaims = JsonNullable.<AadhaarLocalizedClaims>undefined();
 
+  public static final String JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED = "documentSignatureValidated";
+  @javax.annotation.Nonnull
+  private Boolean documentSignatureValidated;
+
   public DigilockerAadhaarProviderOutput() { 
   }
 
@@ -81,7 +81,7 @@ public class DigilockerAadhaarProviderOutput {
   }
 
   /**
-   * The document type from which the identity data was retrieved from.              Possible values: - ADHAR - PANCR
+   * The document type from which the identity data was retrieved.
    * @return documentType
    */
   @javax.annotation.Nullable
@@ -90,7 +90,7 @@ public class DigilockerAadhaarProviderOutput {
         return documentType.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDocumentType_JsonNullable() {
@@ -107,37 +107,13 @@ public class DigilockerAadhaarProviderOutput {
   }
 
 
-  public DigilockerAadhaarProviderOutput documentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
-    this.documentSignatureValidated = documentSignatureValidated;
-    return this;
-  }
-
-  /**
-   * Whether the downloaded Aadhaar document signature and certificate chain validation succeeded.              In some cases, the document may not be returned, but the data is. When the document is received, a certificate validation is performed. When it is not, the signature can not be validated.
-   * @return documentSignatureValidated
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public Boolean getDocumentSignatureValidated() {
-    return documentSignatureValidated;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
-    this.documentSignatureValidated = documentSignatureValidated;
-  }
-
-
   public DigilockerAadhaarProviderOutput timestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = JsonNullable.<OffsetDateTime>of(timestamp);
     return this;
   }
 
   /**
-   * The timestamp when the signed document was generated and verified.              This is parsed as a date-time value. Aadhaar may omit timezone information.
+   * The timestamp when the signed document was generated and verified.
    * @return timestamp
    */
   @javax.annotation.Nullable
@@ -146,7 +122,7 @@ public class DigilockerAadhaarProviderOutput {
         return timestamp.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TIMESTAMP)
+  @JsonProperty(value = JSON_PROPERTY_TIMESTAMP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OffsetDateTime> getTimestamp_JsonNullable() {
@@ -169,7 +145,7 @@ public class DigilockerAadhaarProviderOutput {
   }
 
   /**
-   * The validity expiration timestamp for the verification document.              This is parsed as a date-time value. Aadhaar may omit timezone information.
+   * The validity expiration timestamp for the verification document.
    * @return timeToLive
    */
   @javax.annotation.Nullable
@@ -178,7 +154,7 @@ public class DigilockerAadhaarProviderOutput {
         return timeToLive.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TIME_TO_LIVE)
+  @JsonProperty(value = JSON_PROPERTY_TIME_TO_LIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OffsetDateTime> getTimeToLive_JsonNullable() {
@@ -210,7 +186,7 @@ public class DigilockerAadhaarProviderOutput {
         return aadhaarNumberLastFour.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AADHAAR_NUMBER_LAST_FOUR)
+  @JsonProperty(value = JSON_PROPERTY_AADHAAR_NUMBER_LAST_FOUR, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAadhaarNumberLastFour_JsonNullable() {
@@ -233,7 +209,7 @@ public class DigilockerAadhaarProviderOutput {
   }
 
   /**
-   * The claims extracted from the signed Aadhaar document.
+   * The claims extracted from the Aadhaar document.
    * @return claims
    */
   @javax.annotation.Nullable
@@ -242,7 +218,7 @@ public class DigilockerAadhaarProviderOutput {
         return claims.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CLAIMS)
+  @JsonProperty(value = JSON_PROPERTY_CLAIMS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<AadhaarClaims> getClaims_JsonNullable() {
@@ -265,7 +241,7 @@ public class DigilockerAadhaarProviderOutput {
   }
 
   /**
-   * The localized claims extracted from the signed Aadhaar document.
+   * The localized claims extracted from the Aadhaar document.
    * @return localizedClaims
    */
   @javax.annotation.Nullable
@@ -274,7 +250,7 @@ public class DigilockerAadhaarProviderOutput {
         return localizedClaims.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LOCALIZED_CLAIMS)
+  @JsonProperty(value = JSON_PROPERTY_LOCALIZED_CLAIMS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<AadhaarLocalizedClaims> getLocalizedClaims_JsonNullable() {
@@ -291,6 +267,30 @@ public class DigilockerAadhaarProviderOutput {
   }
 
 
+  public DigilockerAadhaarProviderOutput documentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
+    this.documentSignatureValidated = documentSignatureValidated;
+    return this;
+  }
+
+  /**
+   * Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers (e.g. Signzy) also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation.
+   * @return documentSignatureValidated
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public Boolean getDocumentSignatureValidated() {
+    return documentSignatureValidated;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDocumentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
+    this.documentSignatureValidated = documentSignatureValidated;
+  }
+
+
   /**
    * Return true if this DigilockerAadhaarProviderOutput object is equal to o.
    */
@@ -304,12 +304,12 @@ public class DigilockerAadhaarProviderOutput {
     }
     DigilockerAadhaarProviderOutput digilockerAadhaarProviderOutput = (DigilockerAadhaarProviderOutput) o;
     return equalsNullable(this.documentType, digilockerAadhaarProviderOutput.documentType) &&
-        Objects.equals(this.documentSignatureValidated, digilockerAadhaarProviderOutput.documentSignatureValidated) &&
         equalsNullable(this.timestamp, digilockerAadhaarProviderOutput.timestamp) &&
         equalsNullable(this.timeToLive, digilockerAadhaarProviderOutput.timeToLive) &&
         equalsNullable(this.aadhaarNumberLastFour, digilockerAadhaarProviderOutput.aadhaarNumberLastFour) &&
         equalsNullable(this.claims, digilockerAadhaarProviderOutput.claims) &&
-        equalsNullable(this.localizedClaims, digilockerAadhaarProviderOutput.localizedClaims);
+        equalsNullable(this.localizedClaims, digilockerAadhaarProviderOutput.localizedClaims) &&
+        Objects.equals(this.documentSignatureValidated, digilockerAadhaarProviderOutput.documentSignatureValidated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -318,7 +318,7 @@ public class DigilockerAadhaarProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(documentType), documentSignatureValidated, hashCodeNullable(timestamp), hashCodeNullable(timeToLive), hashCodeNullable(aadhaarNumberLastFour), hashCodeNullable(claims), hashCodeNullable(localizedClaims));
+    return Objects.hash(hashCodeNullable(documentType), hashCodeNullable(timestamp), hashCodeNullable(timeToLive), hashCodeNullable(aadhaarNumberLastFour), hashCodeNullable(claims), hashCodeNullable(localizedClaims), documentSignatureValidated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -333,12 +333,12 @@ public class DigilockerAadhaarProviderOutput {
     StringBuilder sb = new StringBuilder();
     sb.append("class DigilockerAadhaarProviderOutput {\n");
     sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
-    sb.append("    documentSignatureValidated: ").append(toIndentedString(documentSignatureValidated)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    timeToLive: ").append(toIndentedString(timeToLive)).append("\n");
     sb.append("    aadhaarNumberLastFour: ").append(toIndentedString(aadhaarNumberLastFour)).append("\n");
     sb.append("    claims: ").append(toIndentedString(claims)).append("\n");
     sb.append("    localizedClaims: ").append(toIndentedString(localizedClaims)).append("\n");
+    sb.append("    documentSignatureValidated: ").append(toIndentedString(documentSignatureValidated)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -348,10 +348,7 @@ public class DigilockerAadhaarProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -388,27 +385,22 @@ public class DigilockerAadhaarProviderOutput {
 
     // add `documentType` to the URL query string
     if (getDocumentType() != null) {
-      joiner.add(String.format("%sdocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentType()))));
-    }
-
-    // add `documentSignatureValidated` to the URL query string
-    if (getDocumentSignatureValidated() != null) {
-      joiner.add(String.format("%sdocumentSignatureValidated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentSignatureValidated()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentType()))));
     }
 
     // add `timestamp` to the URL query string
     if (getTimestamp() != null) {
-      joiner.add(String.format("%stimestamp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimestamp()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stimestamp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimestamp()))));
     }
 
     // add `timeToLive` to the URL query string
     if (getTimeToLive() != null) {
-      joiner.add(String.format("%stimeToLive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeToLive()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stimeToLive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeToLive()))));
     }
 
     // add `aadhaarNumberLastFour` to the URL query string
     if (getAadhaarNumberLastFour() != null) {
-      joiner.add(String.format("%saadhaarNumberLastFour%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAadhaarNumberLastFour()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saadhaarNumberLastFour%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAadhaarNumberLastFour()))));
     }
 
     // add `claims` to the URL query string
@@ -419,6 +411,11 @@ public class DigilockerAadhaarProviderOutput {
     // add `localizedClaims` to the URL query string
     if (getLocalizedClaims() != null) {
       joiner.add(getLocalizedClaims().toUrlQueryString(prefix + "localizedClaims" + suffix));
+    }
+
+    // add `documentSignatureValidated` to the URL query string
+    if (getDocumentSignatureValidated() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentSignatureValidated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentSignatureValidated()))));
     }
 
     return joiner.toString();

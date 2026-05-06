@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   MatchData.JSON_PROPERTY_LIVENESS,
   MatchData.JSON_PROPERTY_IMAGE_AUTHENTICITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MatchData {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
   private JsonNullable<Match> nationalIdNumber = JsonNullable.<Match>undefined();
@@ -103,7 +103,7 @@ public class MatchData {
         return nationalIdNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getNationalIdNumber_JsonNullable() {
@@ -135,7 +135,7 @@ public class MatchData {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getFullName_JsonNullable() {
@@ -167,7 +167,7 @@ public class MatchData {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getGivenName_JsonNullable() {
@@ -199,7 +199,7 @@ public class MatchData {
         return middleName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getMiddleName_JsonNullable() {
@@ -231,7 +231,7 @@ public class MatchData {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getFamilyName_JsonNullable() {
@@ -263,7 +263,7 @@ public class MatchData {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getSex_JsonNullable() {
@@ -295,7 +295,7 @@ public class MatchData {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getDateOfBirth_JsonNullable() {
@@ -327,7 +327,7 @@ public class MatchData {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getPhoneNumber_JsonNullable() {
@@ -359,7 +359,7 @@ public class MatchData {
         return faceMatch.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FACE_MATCH)
+  @JsonProperty(value = JSON_PROPERTY_FACE_MATCH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getFaceMatch_JsonNullable() {
@@ -391,7 +391,7 @@ public class MatchData {
         return liveness.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LIVENESS)
+  @JsonProperty(value = JSON_PROPERTY_LIVENESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getLiveness_JsonNullable() {
@@ -423,7 +423,7 @@ public class MatchData {
         return imageAuthenticity.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IMAGE_AUTHENTICITY)
+  @JsonProperty(value = JSON_PROPERTY_IMAGE_AUTHENTICITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Match> getImageAuthenticity_JsonNullable() {
@@ -505,10 +505,7 @@ public class MatchData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**

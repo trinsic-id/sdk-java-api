@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   FrenchNumeriqueGivenName.JSON_PROPERTY_FIRST_NAME,
   FrenchNumeriqueGivenName.JSON_PROPERTY_MIDDLE_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrenchNumeriqueGivenName {
   public static final String JSON_PROPERTY_FULL_GIVEN_NAME = "fullGivenName";
   private JsonNullable<String> fullGivenName = JsonNullable.<String>undefined();
@@ -61,7 +61,7 @@ public class FrenchNumeriqueGivenName {
   }
 
   /**
-   * Full given name(s) as recorded on the user&#39;s French identity document. If the user has multiple given names, they are separated by a single space.
+   * Full given name(s) as recorded on the individual&#39;s French identity document. If the individual has multiple given names, they are separated by a single space.
    * @return fullGivenName
    */
   @javax.annotation.Nullable
@@ -70,7 +70,7 @@ public class FrenchNumeriqueGivenName {
         return fullGivenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullGivenName_JsonNullable() {
@@ -102,7 +102,7 @@ public class FrenchNumeriqueGivenName {
         return firstName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFirstName_JsonNullable() {
@@ -134,7 +134,7 @@ public class FrenchNumeriqueGivenName {
         return middleName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMiddleName_JsonNullable() {
@@ -200,10 +200,7 @@ public class FrenchNumeriqueGivenName {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -240,17 +237,17 @@ public class FrenchNumeriqueGivenName {
 
     // add `fullGivenName` to the URL query string
     if (getFullGivenName() != null) {
-      joiner.add(String.format("%sfullGivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullGivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullGivenName()))));
     }
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     return joiner.toString();

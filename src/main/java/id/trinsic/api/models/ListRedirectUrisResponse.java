@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   ListRedirectUrisResponse.JSON_PROPERTY_URIS,
   ListRedirectUrisResponse.JSON_PROPERTY_MORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ListRedirectUrisResponse {
   public static final String JSON_PROPERTY_URIS = "uris";
   @javax.annotation.Nonnull
@@ -70,14 +70,14 @@ public class ListRedirectUrisResponse {
    * @return uris
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_URIS)
+  @JsonProperty(value = JSON_PROPERTY_URIS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<RedirectUriResponse> getUris() {
     return uris;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URIS)
+  @JsonProperty(value = JSON_PROPERTY_URIS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUris(@javax.annotation.Nonnull List<RedirectUriResponse> uris) {
     this.uris = uris;
@@ -94,14 +94,14 @@ public class ListRedirectUrisResponse {
    * @return more
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MORE)
+  @JsonProperty(value = JSON_PROPERTY_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getMore() {
     return more;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MORE)
+  @JsonProperty(value = JSON_PROPERTY_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMore(@javax.annotation.Nonnull Boolean more) {
     this.more = more;
@@ -144,10 +144,7 @@ public class ListRedirectUrisResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -186,15 +183,15 @@ public class ListRedirectUrisResponse {
     if (getUris() != null) {
       for (int i = 0; i < getUris().size(); i++) {
         if (getUris().get(i) != null) {
-          joiner.add(getUris().get(i).toUrlQueryString(String.format("%suris%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getUris().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%suris%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
 
     // add `more` to the URL query string
     if (getMore() != null) {
-      joiner.add(String.format("%smore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMore()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMore()))));
     }
 
     return joiner.toString();

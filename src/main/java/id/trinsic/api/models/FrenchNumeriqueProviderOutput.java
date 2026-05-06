@@ -67,7 +67,7 @@ import id.trinsic.ApiClient;
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_COUNTRY,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_MRZ
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrenchNumeriqueProviderOutput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<FrenchNumeriqueGivenName> givenName = JsonNullable.<FrenchNumeriqueGivenName>undefined();
@@ -162,7 +162,7 @@ public class FrenchNumeriqueProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<FrenchNumeriqueGivenName> getGivenName_JsonNullable() {
@@ -185,7 +185,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * Birth name (nom de naissance) as recorded on the user&#39;s French identity document. In France, this is the family name given at birth and may differ from the usage name.
+   * Birth name (nom de naissance) as recorded on the individual&#39;s French identity document. In France, this is the family name given at birth and may differ from the usage name.
    * @return familyName
    */
   @javax.annotation.Nullable
@@ -194,7 +194,7 @@ public class FrenchNumeriqueProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -226,7 +226,7 @@ public class FrenchNumeriqueProviderOutput {
         return preferredSurname.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PREFERRED_SURNAME)
+  @JsonProperty(value = JSON_PROPERTY_PREFERRED_SURNAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPreferredSurname_JsonNullable() {
@@ -249,7 +249,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * Date of birth in YYYY-MM-DD format, as recorded on the user&#39;s French identity document.
+   * Date of birth in YYYY-MM-DD format, as recorded on the individual&#39;s French identity document.
    * @return birthdate
    */
   @javax.annotation.Nullable
@@ -258,7 +258,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthdate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTHDATE)
+  @JsonProperty(value = JSON_PROPERTY_BIRTHDATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthdate_JsonNullable() {
@@ -290,7 +290,7 @@ public class FrenchNumeriqueProviderOutput {
         return nationality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
+  @JsonProperty(value = JSON_PROPERTY_NATIONALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<FrenchNumeriqueNationality> getNationality_JsonNullable() {
@@ -322,7 +322,7 @@ public class FrenchNumeriqueProviderOutput {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSex_JsonNullable() {
@@ -345,7 +345,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * Majority status (majorité) indicating whether the user has reached the French age of legal majority (18 years old). This value is computed by the provider from the user&#39;s birthdate.
+   * Majority status (majorité) indicating whether the individual has reached the French age of legal majority (18 years old). This value is computed by the provider from the individual&#39;s birthdate.
    * @return majority
    */
   @javax.annotation.Nullable
@@ -354,7 +354,7 @@ public class FrenchNumeriqueProviderOutput {
         return majority.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MAJORITY)
+  @JsonProperty(value = JSON_PROPERTY_MAJORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getMajority_JsonNullable() {
@@ -386,7 +386,7 @@ public class FrenchNumeriqueProviderOutput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<FrenchNumeriquePhone> getPhoneNumber_JsonNullable() {
@@ -418,7 +418,7 @@ public class FrenchNumeriqueProviderOutput {
         return phoneNumberVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getPhoneNumberVerified_JsonNullable() {
@@ -441,7 +441,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * Email address registered in the user&#39;s digital identity account.
+   * Email address registered in the individual&#39;s digital identity account.
    * @return email
    */
   @javax.annotation.Nullable
@@ -450,7 +450,7 @@ public class FrenchNumeriqueProviderOutput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -482,7 +482,7 @@ public class FrenchNumeriqueProviderOutput {
         return emailVerified.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Boolean> getEmailVerified_JsonNullable() {
@@ -514,7 +514,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthplace.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTHPLACE)
+  @JsonProperty(value = JSON_PROPERTY_BIRTHPLACE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthplace_JsonNullable() {
@@ -546,7 +546,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthplaceLabel.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTHPLACE_LABEL)
+  @JsonProperty(value = JSON_PROPERTY_BIRTHPLACE_LABEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthplaceLabel_JsonNullable() {
@@ -569,7 +569,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * National Institute of Statistics and Economic Studies (INSEE) official geographic code (COG) for the user&#39;s country of birth.              LaPoste returns this as a 5-character numeric string. This is a country/territory COG, so it always starts with \&quot;99\&quot; (99xxx). France is coded as 99100.              See full list here: https://www.insee.fr/fr/information/2560452
+   * National Institute of Statistics and Economic Studies (INSEE) official geographic code (COG) for the individual&#39;s country of birth.              LaPoste returns this as a 5-character numeric string. This is a country/territory COG, so it always starts with \&quot;99\&quot; (99xxx). France is coded as 99100.              See full list here: https://www.insee.fr/fr/information/2560452
    * @return birthCountry
    */
   @javax.annotation.Nullable
@@ -578,7 +578,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthCountry.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTH_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_BIRTH_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthCountry_JsonNullable() {
@@ -610,7 +610,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthCountryIso.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTH_COUNTRY_ISO)
+  @JsonProperty(value = JSON_PROPERTY_BIRTH_COUNTRY_ISO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthCountryIso_JsonNullable() {
@@ -642,7 +642,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthCountryLabel.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTH_COUNTRY_LABEL)
+  @JsonProperty(value = JSON_PROPERTY_BIRTH_COUNTRY_LABEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthCountryLabel_JsonNullable() {
@@ -674,7 +674,7 @@ public class FrenchNumeriqueProviderOutput {
         return birthDepartment.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTH_DEPARTMENT)
+  @JsonProperty(value = JSON_PROPERTY_BIRTH_DEPARTMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBirthDepartment_JsonNullable() {
@@ -697,7 +697,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * Date when the user&#39;s digital identity was created.
+   * Date when the individual&#39;s digital identity was created.
    * @return digitalIdentityCreationDate
    */
   @javax.annotation.Nullable
@@ -706,7 +706,7 @@ public class FrenchNumeriqueProviderOutput {
         return digitalIdentityCreationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DIGITAL_IDENTITY_CREATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_DIGITAL_IDENTITY_CREATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDigitalIdentityCreationDate_JsonNullable() {
@@ -729,7 +729,7 @@ public class FrenchNumeriqueProviderOutput {
   }
 
   /**
-   * Date when the digital identity expires. It is valid for 5 years from the date of identity verification. Users are notified ~1 month before and must re-verify identity via the app or in-person at La Poste. After expiration, the identity is deactivated but can be renewed within 1 year; otherwise deleted.
+   * Date when the digital identity expires. It is valid for 5 years from the date of identity verification. Individuals are notified ~1 month before and must re-verify identity via the app or in-person at La Poste. After expiration, the identity is deactivated but can be renewed within 1 year; otherwise deleted.
    * @return digitalIdentityExpirationDate
    */
   @javax.annotation.Nullable
@@ -738,7 +738,7 @@ public class FrenchNumeriqueProviderOutput {
         return digitalIdentityExpirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DIGITAL_IDENTITY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_DIGITAL_IDENTITY_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDigitalIdentityExpirationDate_JsonNullable() {
@@ -770,7 +770,7 @@ public class FrenchNumeriqueProviderOutput {
         return identityDocumentType.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityDocumentType_JsonNullable() {
@@ -802,7 +802,7 @@ public class FrenchNumeriqueProviderOutput {
         return identityDocumentNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityDocumentNumber_JsonNullable() {
@@ -834,7 +834,7 @@ public class FrenchNumeriqueProviderOutput {
         return identityDocumentEmittingDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_DATE)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getIdentityDocumentEmittingDate_JsonNullable() {
@@ -866,7 +866,7 @@ public class FrenchNumeriqueProviderOutput {
         return identityDocumentExpirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getIdentityDocumentExpirationDate_JsonNullable() {
@@ -898,7 +898,7 @@ public class FrenchNumeriqueProviderOutput {
         return identityDocumentEmittingCountry.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityDocumentEmittingCountry_JsonNullable() {
@@ -930,7 +930,7 @@ public class FrenchNumeriqueProviderOutput {
         return identityDocumentMrz.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_MRZ)
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_MRZ, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIdentityDocumentMrz_JsonNullable() {
@@ -1040,10 +1040,7 @@ public class FrenchNumeriqueProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -1085,17 +1082,17 @@ public class FrenchNumeriqueProviderOutput {
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `preferredSurname` to the URL query string
     if (getPreferredSurname() != null) {
-      joiner.add(String.format("%spreferredSurname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPreferredSurname()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spreferredSurname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPreferredSurname()))));
     }
 
     // add `birthdate` to the URL query string
     if (getBirthdate() != null) {
-      joiner.add(String.format("%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
     }
 
     // add `nationality` to the URL query string
@@ -1105,12 +1102,12 @@ public class FrenchNumeriqueProviderOutput {
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `majority` to the URL query string
     if (getMajority() != null) {
-      joiner.add(String.format("%smajority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMajority()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smajority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMajority()))));
     }
 
     // add `phoneNumber` to the URL query string
@@ -1120,87 +1117,87 @@ public class FrenchNumeriqueProviderOutput {
 
     // add `phoneNumberVerified` to the URL query string
     if (getPhoneNumberVerified() != null) {
-      joiner.add(String.format("%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `emailVerified` to the URL query string
     if (getEmailVerified() != null) {
-      joiner.add(String.format("%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
     }
 
     // add `birthplace` to the URL query string
     if (getBirthplace() != null) {
-      joiner.add(String.format("%sbirthplace%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthplace()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthplace%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthplace()))));
     }
 
     // add `birthplaceLabel` to the URL query string
     if (getBirthplaceLabel() != null) {
-      joiner.add(String.format("%sbirthplaceLabel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthplaceLabel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthplaceLabel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthplaceLabel()))));
     }
 
     // add `birthCountry` to the URL query string
     if (getBirthCountry() != null) {
-      joiner.add(String.format("%sbirthCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountry()))));
     }
 
     // add `birthCountryIso` to the URL query string
     if (getBirthCountryIso() != null) {
-      joiner.add(String.format("%sbirthCountryIso%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountryIso()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthCountryIso%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountryIso()))));
     }
 
     // add `birthCountryLabel` to the URL query string
     if (getBirthCountryLabel() != null) {
-      joiner.add(String.format("%sbirthCountryLabel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountryLabel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthCountryLabel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthCountryLabel()))));
     }
 
     // add `birthDepartment` to the URL query string
     if (getBirthDepartment() != null) {
-      joiner.add(String.format("%sbirthDepartment%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthDepartment()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthDepartment%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthDepartment()))));
     }
 
     // add `digitalIdentityCreationDate` to the URL query string
     if (getDigitalIdentityCreationDate() != null) {
-      joiner.add(String.format("%sdigitalIdentityCreationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalIdentityCreationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdigitalIdentityCreationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalIdentityCreationDate()))));
     }
 
     // add `digitalIdentityExpirationDate` to the URL query string
     if (getDigitalIdentityExpirationDate() != null) {
-      joiner.add(String.format("%sdigitalIdentityExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalIdentityExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdigitalIdentityExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalIdentityExpirationDate()))));
     }
 
     // add `identityDocumentType` to the URL query string
     if (getIdentityDocumentType() != null) {
-      joiner.add(String.format("%sidentityDocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentType()))));
     }
 
     // add `identityDocumentNumber` to the URL query string
     if (getIdentityDocumentNumber() != null) {
-      joiner.add(String.format("%sidentityDocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentNumber()))));
     }
 
     // add `identityDocumentEmittingDate` to the URL query string
     if (getIdentityDocumentEmittingDate() != null) {
-      joiner.add(String.format("%sidentityDocumentEmittingDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentEmittingDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentEmittingDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentEmittingDate()))));
     }
 
     // add `identityDocumentExpirationDate` to the URL query string
     if (getIdentityDocumentExpirationDate() != null) {
-      joiner.add(String.format("%sidentityDocumentExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentExpirationDate()))));
     }
 
     // add `identityDocumentEmittingCountry` to the URL query string
     if (getIdentityDocumentEmittingCountry() != null) {
-      joiner.add(String.format("%sidentityDocumentEmittingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentEmittingCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentEmittingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentEmittingCountry()))));
     }
 
     // add `identityDocumentMrz` to the URL query string
     if (getIdentityDocumentMrz() != null) {
-      joiner.add(String.format("%sidentityDocumentMrz%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentMrz()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentMrz%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentMrz()))));
     }
 
     return joiner.toString();

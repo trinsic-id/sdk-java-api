@@ -87,6 +87,14 @@ class CreateDirectProviderSessionRequestTest {
     }
 
     /**
+     * Test the property 'browserLanguages'
+     */
+    @Test
+    void browserLanguagesTest() {
+        // TODO: test browserLanguages
+    }
+
+    /**
      * Test the property 'providerInput'
      */
     @Test

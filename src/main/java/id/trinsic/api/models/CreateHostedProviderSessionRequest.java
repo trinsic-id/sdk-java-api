@@ -25,7 +25,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.ProviderInput;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -42,9 +44,10 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
+  CreateHostedProviderSessionRequest.JSON_PROPERTY_BROWSER_LANGUAGES,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -57,6 +60,9 @@ public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   @javax.annotation.Nonnull
   private String redirectUrl;
+
+  public static final String JSON_PROPERTY_BROWSER_LANGUAGES = "browserLanguages";
+  private JsonNullable<List<String>> browserLanguages = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_PROVIDER_INPUT = "providerInput";
   private JsonNullable<ProviderInput> providerInput = JsonNullable.<ProviderInput>undefined();
@@ -74,14 +80,14 @@ public class CreateHostedProviderSessionRequest {
    * @return provider
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getProvider() {
     return provider;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProvider(@javax.annotation.Nonnull String provider) {
     this.provider = provider;
@@ -98,14 +104,14 @@ public class CreateHostedProviderSessionRequest {
    * @return verificationProfileId
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROFILE_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public UUID getVerificationProfileId() {
     return verificationProfileId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROFILE_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
     this.verificationProfileId = verificationProfileId;
@@ -122,17 +128,61 @@ public class CreateHostedProviderSessionRequest {
    * @return redirectUrl
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REDIRECT_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getRedirectUrl() {
     return redirectUrl;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REDIRECT_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRedirectUrl(@javax.annotation.Nonnull String redirectUrl) {
     this.redirectUrl = redirectUrl;
+  }
+
+
+  public CreateHostedProviderSessionRequest browserLanguages(@javax.annotation.Nullable List<String> browserLanguages) {
+    this.browserLanguages = JsonNullable.<List<String>>of(browserLanguages);
+    return this;
+  }
+
+  public CreateHostedProviderSessionRequest addBrowserLanguagesItem(String browserLanguagesItem) {
+    if (this.browserLanguages == null || !this.browserLanguages.isPresent()) {
+      this.browserLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
+    }
+    try {
+      this.browserLanguages.get().add(browserLanguagesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Preferences for languages to show first in the Hosted UI. If left empty, the Hosted UI defaults to the user&#39;s navigator languages. If no preferred language is available, the Hosted UI falls back to English.
+   * @return browserLanguages
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public List<String> getBrowserLanguages() {
+        return browserLanguages.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BROWSER_LANGUAGES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<List<String>> getBrowserLanguages_JsonNullable() {
+    return browserLanguages;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BROWSER_LANGUAGES)
+  public void setBrowserLanguages_JsonNullable(JsonNullable<List<String>> browserLanguages) {
+    this.browserLanguages = browserLanguages;
+  }
+
+  public void setBrowserLanguages(@javax.annotation.Nullable List<String> browserLanguages) {
+    this.browserLanguages = JsonNullable.<List<String>>of(browserLanguages);
   }
 
 
@@ -153,7 +203,7 @@ public class CreateHostedProviderSessionRequest {
         return providerInput.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER_INPUT)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER_INPUT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<ProviderInput> getProviderInput_JsonNullable() {
@@ -185,6 +235,7 @@ public class CreateHostedProviderSessionRequest {
     return Objects.equals(this.provider, createHostedProviderSessionRequest.provider) &&
         Objects.equals(this.verificationProfileId, createHostedProviderSessionRequest.verificationProfileId) &&
         Objects.equals(this.redirectUrl, createHostedProviderSessionRequest.redirectUrl) &&
+        equalsNullable(this.browserLanguages, createHostedProviderSessionRequest.browserLanguages) &&
         equalsNullable(this.providerInput, createHostedProviderSessionRequest.providerInput);
   }
 
@@ -194,7 +245,7 @@ public class CreateHostedProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, verificationProfileId, redirectUrl, hashCodeNullable(providerInput));
+    return Objects.hash(provider, verificationProfileId, redirectUrl, hashCodeNullable(browserLanguages), hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -211,6 +262,7 @@ public class CreateHostedProviderSessionRequest {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    browserLanguages: ").append(toIndentedString(browserLanguages)).append("\n");
     sb.append("    providerInput: ").append(toIndentedString(providerInput)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -221,10 +273,7 @@ public class CreateHostedProviderSessionRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -261,17 +310,26 @@ public class CreateHostedProviderSessionRequest {
 
     // add `provider` to the URL query string
     if (getProvider() != null) {
-      joiner.add(String.format("%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprovider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvider()))));
     }
 
     // add `verificationProfileId` to the URL query string
     if (getVerificationProfileId() != null) {
-      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
     }
 
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
-      joiner.add(String.format("%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+    }
+
+    // add `browserLanguages` to the URL query string
+    if (getBrowserLanguages() != null) {
+      for (int i = 0; i < getBrowserLanguages().size(); i++) {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sbrowserLanguages%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+            ApiClient.urlEncode(ApiClient.valueToString(getBrowserLanguages().get(i)))));
+      }
     }
 
     // add `providerInput` to the URL query string

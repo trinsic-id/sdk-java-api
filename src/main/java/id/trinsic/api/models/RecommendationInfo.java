@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   RecommendationInfo.JSON_PROPERTY_SUBDIVISIONS,
   RecommendationInfo.JSON_PROPERTY_IP_ADDRESSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RecommendationInfo {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
@@ -76,7 +76,7 @@ public class RecommendationInfo {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -120,7 +120,7 @@ public class RecommendationInfo {
         return countries.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRIES)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRIES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<String>> getCountries_JsonNullable() {
@@ -164,7 +164,7 @@ public class RecommendationInfo {
         return subdivisions.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUBDIVISIONS)
+  @JsonProperty(value = JSON_PROPERTY_SUBDIVISIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<String>> getSubdivisions_JsonNullable() {
@@ -208,7 +208,7 @@ public class RecommendationInfo {
         return ipAddresses.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_IP_ADDRESSES)
+  @JsonProperty(value = JSON_PROPERTY_IP_ADDRESSES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<List<String>> getIpAddresses_JsonNullable() {
@@ -276,10 +276,7 @@ public class RecommendationInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -316,14 +313,14 @@ public class RecommendationInfo {
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `countries` to the URL query string
     if (getCountries() != null) {
       for (int i = 0; i < getCountries().size(); i++) {
-        joiner.add(String.format("%scountries%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%scountries%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getCountries().get(i)))));
       }
     }
@@ -331,8 +328,8 @@ public class RecommendationInfo {
     // add `subdivisions` to the URL query string
     if (getSubdivisions() != null) {
       for (int i = 0; i < getSubdivisions().size(); i++) {
-        joiner.add(String.format("%ssubdivisions%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssubdivisions%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getSubdivisions().get(i)))));
       }
     }
@@ -340,8 +337,8 @@ public class RecommendationInfo {
     // add `ipAddresses` to the URL query string
     if (getIpAddresses() != null) {
       for (int i = 0; i < getIpAddresses().size(); i++) {
-        joiner.add(String.format("%sipAddresses%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sipAddresses%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getIpAddresses().get(i)))));
       }
     }

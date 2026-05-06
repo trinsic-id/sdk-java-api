@@ -47,7 +47,7 @@ import id.trinsic.ApiClient;
   NorwegianBankIdProviderOutput.JSON_PROPERTY_LEVEL_OF_ASSURANCE,
   NorwegianBankIdProviderOutput.JSON_PROPERTY_AUTHENTICATION_METHOD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NorwegianBankIdProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -91,7 +91,7 @@ public class NorwegianBankIdProviderOutput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -123,7 +123,7 @@ public class NorwegianBankIdProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -146,7 +146,7 @@ public class NorwegianBankIdProviderOutput {
   }
 
   /**
-   * The personal identifier for Norwegian BankID.              This uniquely identifies the user in the Norwegian BankID system and is considered a stable identifier to use.
+   * The personal identifier for Norwegian BankID.              This uniquely identifies the individual in the Norwegian BankID system and is considered a stable identifier to use.
    * @return personalIdentifier
    */
   @javax.annotation.Nullable
@@ -155,7 +155,7 @@ public class NorwegianBankIdProviderOutput {
         return personalIdentifier.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTIFIER)
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPersonalIdentifier_JsonNullable() {
@@ -187,7 +187,7 @@ public class NorwegianBankIdProviderOutput {
         return nationalIdentityNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNationalIdentityNumber_JsonNullable() {
@@ -219,7 +219,7 @@ public class NorwegianBankIdProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -251,7 +251,7 @@ public class NorwegianBankIdProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -274,7 +274,7 @@ public class NorwegianBankIdProviderOutput {
   }
 
   /**
-   * The level of assurance (LOA) for the verification.              The LOA refers to the degree of confidence in the claimed identity of a person. The European Digital Identity Framework (EUDI) measures the confidence of the digital identity&#39;s verification and authentication strength by a set of requirements for different levels. To learn more, see: https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110081/eIDAS+Levels+of+Assurance              Possible values: - Low: The user has self asserted their identity and multifactor authentication is not required. - Substantial: The user has performed either a remote or in-person identity verification and multifactor authentication is required. - High: The user has performed an in-person identity proofing with an authorized representative and has strong cryptographic authentication requirements such as using a smart card.
+   * The level of assurance (LOA) for the verification.              The LOA refers to the degree of confidence in the claimed identity of a person. The European Digital Identity Framework (EUDI) measures the confidence of the digital identity&#39;s verification and authentication strength by a set of requirements for different levels. To learn more, see: https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110081/eIDAS+Levels+of+Assurance              Possible values: - Low: The individual has self asserted their identity and multifactor authentication is not required. - Substantial: The individual has performed either a remote or in-person identity verification and multifactor authentication is required. - High: The individual has performed an in-person identity proofing with an authorized representative and has strong cryptographic authentication requirements such as using a smart card.
    * @return levelOfAssurance
    */
   @javax.annotation.Nullable
@@ -283,7 +283,7 @@ public class NorwegianBankIdProviderOutput {
         return levelOfAssurance.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LEVEL_OF_ASSURANCE)
+  @JsonProperty(value = JSON_PROPERTY_LEVEL_OF_ASSURANCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLevelOfAssurance_JsonNullable() {
@@ -315,7 +315,7 @@ public class NorwegianBankIdProviderOutput {
         return authenticationMethod.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_METHOD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAuthenticationMethod_JsonNullable() {
@@ -391,10 +391,7 @@ public class NorwegianBankIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -431,42 +428,42 @@ public class NorwegianBankIdProviderOutput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `personalIdentifier` to the URL query string
     if (getPersonalIdentifier() != null) {
-      joiner.add(String.format("%spersonalIdentifier%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentifier()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spersonalIdentifier%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentifier()))));
     }
 
     // add `nationalIdentityNumber` to the URL query string
     if (getNationalIdentityNumber() != null) {
-      joiner.add(String.format("%snationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalIdentityNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalIdentityNumber()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `levelOfAssurance` to the URL query string
     if (getLevelOfAssurance() != null) {
-      joiner.add(String.format("%slevelOfAssurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLevelOfAssurance()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slevelOfAssurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLevelOfAssurance()))));
     }
 
     // add `authenticationMethod` to the URL query string
     if (getAuthenticationMethod() != null) {
-      joiner.add(String.format("%sauthenticationMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthenticationMethod()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sauthenticationMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthenticationMethod()))));
     }
 
     return joiner.toString();

@@ -6,6 +6,8 @@ All URIs are relative to *https://api.trinsic.id*
 |------------- | ------------- | -------------|
 | [**createVerificationProfile**](VerificationProfilesApi.md#createVerificationProfile) | **POST** /api/valpha/verification-profiles | Create Verification Profile |
 | [**createVerificationProfileWithHttpInfo**](VerificationProfilesApi.md#createVerificationProfileWithHttpInfo) | **POST** /api/valpha/verification-profiles | Create Verification Profile |
+| [**getVerificationProfileByExternalId**](VerificationProfilesApi.md#getVerificationProfileByExternalId) | **GET** /api/valpha/verification-profiles/external-ids/{externalId} | Get Verification Profile by External ID |
+| [**getVerificationProfileByExternalIdWithHttpInfo**](VerificationProfilesApi.md#getVerificationProfileByExternalIdWithHttpInfo) | **GET** /api/valpha/verification-profiles/external-ids/{externalId} | Get Verification Profile by External ID |
 | [**getVerificationProfileById**](VerificationProfilesApi.md#getVerificationProfileById) | **GET** /api/valpha/verification-profiles/{id} | Get Verification Profile |
 | [**getVerificationProfileByIdWithHttpInfo**](VerificationProfilesApi.md#getVerificationProfileByIdWithHttpInfo) | **GET** /api/valpha/verification-profiles/{id} | Get Verification Profile |
 | [**listVerificationProfiles**](VerificationProfilesApi.md#listVerificationProfiles) | **GET** /api/valpha/verification-profiles | List Verification Profiles |
@@ -15,7 +17,7 @@ All URIs are relative to *https://api.trinsic.id*
 
 ## createVerificationProfile
 
-> CreateVerificationProfileResponse createVerificationProfile(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage)
+> CreateVerificationProfileResponse createVerificationProfile(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage)
 
 Create Verification Profile
 
@@ -45,13 +47,14 @@ public class Example {
         String alias = "alias_example"; // String | An alias of the verification profile shown to developers and administrators.
         String brandName = "brandName_example"; // String | The brand name of the verification profile shown to end-users.
         String primaryColor = "primaryColor_example"; // String | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
+        String externalId = "externalId_example"; // String | A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long.
         List<String> providers = Arrays.asList(); // List<String> | The list of providers you'd like to select for this profile. We will not currently enable any providers.
         File logo = new File("/path/to/file"); // File | The logo of the verification profile.
         String redactionPeriod = "redactionPeriod_example"; // String | The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days.
         String sessionExpiration = "sessionExpiration_example"; // String | The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified.
         Boolean isProductionUsage = true; // Boolean | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
         try {
-            CreateVerificationProfileResponse result = apiInstance.createVerificationProfile(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
+            CreateVerificationProfileResponse result = apiInstance.createVerificationProfile(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling VerificationProfilesApi#createVerificationProfile");
@@ -72,6 +75,7 @@ public class Example {
 | **alias** | **String**| An alias of the verification profile shown to developers and administrators. | |
 | **brandName** | **String**| The brand name of the verification profile shown to end-users. | |
 | **primaryColor** | **String**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
+| **externalId** | **String**| A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. | [optional] |
 | **providers** | [**List&lt;String&gt;**](String.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **File**| The logo of the verification profile. | [optional] |
 | **redactionPeriod** | **String**| The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. | [optional] |
@@ -103,7 +107,7 @@ public class Example {
 
 ## createVerificationProfileWithHttpInfo
 
-> ApiResponse<CreateVerificationProfileResponse> createVerificationProfile createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage)
+> ApiResponse<CreateVerificationProfileResponse> createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage)
 
 Create Verification Profile
 
@@ -134,13 +138,14 @@ public class Example {
         String alias = "alias_example"; // String | An alias of the verification profile shown to developers and administrators.
         String brandName = "brandName_example"; // String | The brand name of the verification profile shown to end-users.
         String primaryColor = "primaryColor_example"; // String | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
+        String externalId = "externalId_example"; // String | A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long.
         List<String> providers = Arrays.asList(); // List<String> | The list of providers you'd like to select for this profile. We will not currently enable any providers.
         File logo = new File("/path/to/file"); // File | The logo of the verification profile.
         String redactionPeriod = "redactionPeriod_example"; // String | The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days.
         String sessionExpiration = "sessionExpiration_example"; // String | The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified.
         Boolean isProductionUsage = true; // Boolean | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
         try {
-            ApiResponse<CreateVerificationProfileResponse> response = apiInstance.createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
+            ApiResponse<CreateVerificationProfileResponse> response = apiInstance.createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -163,6 +168,7 @@ public class Example {
 | **alias** | **String**| An alias of the verification profile shown to developers and administrators. | |
 | **brandName** | **String**| The brand name of the verification profile shown to end-users. | |
 | **primaryColor** | **String**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
+| **externalId** | **String**| A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. | [optional] |
 | **providers** | [**List&lt;String&gt;**](String.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **File**| The logo of the verification profile. | [optional] |
 | **redactionPeriod** | **String**| The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. | [optional] |
@@ -187,6 +193,158 @@ ApiResponse<[**CreateVerificationProfileResponse**](CreateVerificationProfileRes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+
+## getVerificationProfileByExternalId
+
+> VerificationProfileResponse getVerificationProfileByExternalId(externalId)
+
+Get Verification Profile by External ID
+
+Gets a specific verification profile by its customer-defined external ID.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.VerificationProfilesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        VerificationProfilesApi apiInstance = new VerificationProfilesApi(defaultClient);
+        String externalId = "externalId_example"; // String | Customer-defined external ID
+        try {
+            VerificationProfileResponse result = apiInstance.getVerificationProfileByExternalId(externalId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling VerificationProfilesApi#getVerificationProfileByExternalId");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **externalId** | **String**| Customer-defined external ID | |
+
+### Return type
+
+[**VerificationProfileResponse**](VerificationProfileResponse.md)
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+## getVerificationProfileByExternalIdWithHttpInfo
+
+> ApiResponse<VerificationProfileResponse> getVerificationProfileByExternalIdWithHttpInfo(externalId)
+
+Get Verification Profile by External ID
+
+Gets a specific verification profile by its customer-defined external ID.
+
+### Example
+
+```java
+// Import classes:
+import id.trinsic.ApiClient;
+import id.trinsic.ApiException;
+import id.trinsic.ApiResponse;
+import id.trinsic.Configuration;
+import id.trinsic.auth.*;
+import id.trinsic.models.*;
+import id.trinsic.api.VerificationProfilesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.trinsic.id");
+        
+        // Configure HTTP bearer authorization: Bearer
+        HttpBearerAuth Bearer = (HttpBearerAuth) defaultClient.getAuthentication("Bearer");
+        Bearer.setBearerToken("BEARER TOKEN");
+
+        VerificationProfilesApi apiInstance = new VerificationProfilesApi(defaultClient);
+        String externalId = "externalId_example"; // String | Customer-defined external ID
+        try {
+            ApiResponse<VerificationProfileResponse> response = apiInstance.getVerificationProfileByExternalIdWithHttpInfo(externalId);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling VerificationProfilesApi#getVerificationProfileByExternalId");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **externalId** | **String**| Customer-defined external ID | |
+
+### Return type
+
+ApiResponse<[**VerificationProfileResponse**](VerificationProfileResponse.md)>
+
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -269,7 +427,7 @@ public class Example {
 
 ## getVerificationProfileByIdWithHttpInfo
 
-> ApiResponse<VerificationProfileResponse> getVerificationProfileById getVerificationProfileByIdWithHttpInfo(id)
+> ApiResponse<VerificationProfileResponse> getVerificationProfileByIdWithHttpInfo(id)
 
 Get Verification Profile
 
@@ -423,7 +581,7 @@ public class Example {
 
 ## listVerificationProfilesWithHttpInfo
 
-> ApiResponse<ListVerificationProfilesResponse> listVerificationProfiles listVerificationProfilesWithHttpInfo(page, pageSize)
+> ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(page, pageSize)
 
 List Verification Profiles
 

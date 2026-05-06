@@ -26,27 +26,36 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
 import id.trinsic.api.models.AppleWalletInput;
+import id.trinsic.api.models.BoliviaCiLookupInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
+import id.trinsic.api.models.ChinaResidentIdMatchInput;
+import id.trinsic.api.models.ColombiaCcLookupInput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
+import id.trinsic.api.models.ElSalvadorDuiLookupInput;
 import id.trinsic.api.models.FranceIdentiteInput;
 import id.trinsic.api.models.GoogleWalletInput;
+import id.trinsic.api.models.GuatemalaCuiLookupInput;
 import id.trinsic.api.models.IdinInput;
+import id.trinsic.api.models.IndiaPanLookupInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidBiometric2Input;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.KenyaNidLookup2Input;
 import id.trinsic.api.models.KenyaNidMatch2Input;
+import id.trinsic.api.models.KoreaTelcoMatchInput;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
 import id.trinsic.api.models.NigeriaNinBiometric2Input;
 import id.trinsic.api.models.NigeriaNinInput;
 import id.trinsic.api.models.NigeriaNinLookup2Input;
 import id.trinsic.api.models.NigeriaNinMatch2Input;
+import id.trinsic.api.models.PanamaCedulaLookupInput;
 import id.trinsic.api.models.PeruDniLookupInput;
 import id.trinsic.api.models.PhilippineMatchInput;
 import id.trinsic.api.models.PhilippineQRInput;
+import id.trinsic.api.models.PolandMobywatelMatchInput;
 import id.trinsic.api.models.SamsungWalletInput;
 import id.trinsic.api.models.SmartIdInput;
 import id.trinsic.api.models.SouthAfricaNidBiometric2Input;
@@ -58,6 +67,7 @@ import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import id.trinsic.api.models.UgandaNidMatch2Input;
 import id.trinsic.api.models.UkEvisaLookupInput;
+import id.trinsic.api.models.UsaCaliforniaDmvInput;
 import id.trinsic.api.models.ZimbabweNidLookup2Input;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -74,6 +84,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   ProviderInput.JSON_PROPERTY_KENYA_NID_MATCH_BIOMETRIC2,
   ProviderInput.JSON_PROPERTY_INDONESIA_NIK_LOOKUP,
+  ProviderInput.JSON_PROPERTY_CHINA_RESIDENT_ID_MATCH,
   ProviderInput.JSON_PROPERTY_INDONESIA_DUKCAPIL_MATCH,
   ProviderInput.JSON_PROPERTY_MEXICO_CURP_LOOKUP,
   ProviderInput.JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP,
@@ -91,6 +102,8 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_NIGERIA_NIN_MATCH_BIOMETRIC2,
   ProviderInput.JSON_PROPERTY_NIGERIA_NIN_LOOKUP,
   ProviderInput.JSON_PROPERTY_INDIA_DIGILOCKER_AADHAAR_MATCH,
+  ProviderInput.JSON_PROPERTY_INDIA_PAN_LOOKUP,
+  ProviderInput.JSON_PROPERTY_KOREA_TELCO_MATCH,
   ProviderInput.JSON_PROPERTY_BRAZIL_CPF_LOOKUP,
   ProviderInput.JSON_PROPERTY_BRAZIL_DIGITAL_CNH,
   ProviderInput.JSON_PROPERTY_PHILIPPINES_PHILSYS_MATCH,
@@ -104,18 +117,28 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_APPLE_WALLET,
   ProviderInput.JSON_PROPERTY_SAMSUNG_WALLET,
   ProviderInput.JSON_PROPERTY_FRANCE_IDENTITE,
+  ProviderInput.JSON_PROPERTY_POLAND_MOBYWATEL_MATCH,
+  ProviderInput.JSON_PROPERTY_BOLIVIA_CI_LOOKUP,
+  ProviderInput.JSON_PROPERTY_COLOMBIA_CC_LOOKUP,
+  ProviderInput.JSON_PROPERTY_EL_SALVADOR_DUI_LOOKUP,
+  ProviderInput.JSON_PROPERTY_GUATEMALA_CUI_LOOKUP,
+  ProviderInput.JSON_PROPERTY_PANAMA_CEDULA_LOOKUP,
   ProviderInput.JSON_PROPERTY_PERU_DNI_LOOKUP,
   ProviderInput.JSON_PROPERTY_UK_EVISA_LOOKUP,
+  ProviderInput.JSON_PROPERTY_USA_CALIFORNIA_DMV,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_KENYA_NID_MATCH_BIOMETRIC2 = "kenya-nid-match-biometric-2";
   private JsonNullable<KenyaNidBiometric2Input> kenyaNidMatchBiometric2 = JsonNullable.<KenyaNidBiometric2Input>undefined();
 
   public static final String JSON_PROPERTY_INDONESIA_NIK_LOOKUP = "indonesia-nik-lookup";
   private JsonNullable<IndonesiaNikInput> indonesiaNikLookup = JsonNullable.<IndonesiaNikInput>undefined();
+
+  public static final String JSON_PROPERTY_CHINA_RESIDENT_ID_MATCH = "china-resident-id-match";
+  private JsonNullable<ChinaResidentIdMatchInput> chinaResidentIdMatch = JsonNullable.<ChinaResidentIdMatchInput>undefined();
 
   public static final String JSON_PROPERTY_INDONESIA_DUKCAPIL_MATCH = "indonesia-dukcapil-match";
   private JsonNullable<IndonesiaDukcapilMatchInput> indonesiaDukcapilMatch = JsonNullable.<IndonesiaDukcapilMatchInput>undefined();
@@ -168,6 +191,12 @@ public class ProviderInput {
   public static final String JSON_PROPERTY_INDIA_DIGILOCKER_AADHAAR_MATCH = "india-digilocker-aadhaar-match";
   private JsonNullable<AadhaarInput> indiaDigilockerAadhaarMatch = JsonNullable.<AadhaarInput>undefined();
 
+  public static final String JSON_PROPERTY_INDIA_PAN_LOOKUP = "india-pan-lookup";
+  private JsonNullable<IndiaPanLookupInput> indiaPanLookup = JsonNullable.<IndiaPanLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_KOREA_TELCO_MATCH = "korea-telco-match";
+  private JsonNullable<KoreaTelcoMatchInput> koreaTelcoMatch = JsonNullable.<KoreaTelcoMatchInput>undefined();
+
   public static final String JSON_PROPERTY_BRAZIL_CPF_LOOKUP = "brazil-cpf-lookup";
   private JsonNullable<BrazilCpfCheckInput> brazilCpfLookup = JsonNullable.<BrazilCpfCheckInput>undefined();
 
@@ -207,11 +236,32 @@ public class ProviderInput {
   public static final String JSON_PROPERTY_FRANCE_IDENTITE = "france-identite";
   private JsonNullable<FranceIdentiteInput> franceIdentite = JsonNullable.<FranceIdentiteInput>undefined();
 
+  public static final String JSON_PROPERTY_POLAND_MOBYWATEL_MATCH = "poland-mobywatel-match";
+  private JsonNullable<PolandMobywatelMatchInput> polandMobywatelMatch = JsonNullable.<PolandMobywatelMatchInput>undefined();
+
+  public static final String JSON_PROPERTY_BOLIVIA_CI_LOOKUP = "bolivia-ci-lookup";
+  private JsonNullable<BoliviaCiLookupInput> boliviaCiLookup = JsonNullable.<BoliviaCiLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_COLOMBIA_CC_LOOKUP = "colombia-cc-lookup";
+  private JsonNullable<ColombiaCcLookupInput> colombiaCcLookup = JsonNullable.<ColombiaCcLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_EL_SALVADOR_DUI_LOOKUP = "el-salvador-dui-lookup";
+  private JsonNullable<ElSalvadorDuiLookupInput> elSalvadorDuiLookup = JsonNullable.<ElSalvadorDuiLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_GUATEMALA_CUI_LOOKUP = "guatemala-cui-lookup";
+  private JsonNullable<GuatemalaCuiLookupInput> guatemalaCuiLookup = JsonNullable.<GuatemalaCuiLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_PANAMA_CEDULA_LOOKUP = "panama-cedula-lookup";
+  private JsonNullable<PanamaCedulaLookupInput> panamaCedulaLookup = JsonNullable.<PanamaCedulaLookupInput>undefined();
+
   public static final String JSON_PROPERTY_PERU_DNI_LOOKUP = "peru-dni-lookup";
   private JsonNullable<PeruDniLookupInput> peruDniLookup = JsonNullable.<PeruDniLookupInput>undefined();
 
   public static final String JSON_PROPERTY_UK_EVISA_LOOKUP = "uk-evisa-lookup";
   private JsonNullable<UkEvisaLookupInput> ukEvisaLookup = JsonNullable.<UkEvisaLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_USA_CALIFORNIA_DMV = "usa-california-dmv";
+  private JsonNullable<UsaCaliforniaDmvInput> usaCaliforniaDmv = JsonNullable.<UsaCaliforniaDmvInput>undefined();
 
   public static final String JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP = "trinsic-test-database-lookup";
   private JsonNullable<TrinsicTestDatabaseLookupInput> trinsicTestDatabaseLookup = JsonNullable.<TrinsicTestDatabaseLookupInput>undefined();
@@ -237,7 +287,7 @@ public class ProviderInput {
         return kenyaNidMatchBiometric2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_KENYA_NID_MATCH_BIOMETRIC2)
+  @JsonProperty(value = JSON_PROPERTY_KENYA_NID_MATCH_BIOMETRIC2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<KenyaNidBiometric2Input> getKenyaNidMatchBiometric2_JsonNullable() {
@@ -269,7 +319,7 @@ public class ProviderInput {
         return indonesiaNikLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_INDONESIA_NIK_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_INDONESIA_NIK_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<IndonesiaNikInput> getIndonesiaNikLookup_JsonNullable() {
@@ -283,6 +333,38 @@ public class ProviderInput {
 
   public void setIndonesiaNikLookup(@javax.annotation.Nullable IndonesiaNikInput indonesiaNikLookup) {
     this.indonesiaNikLookup = JsonNullable.<IndonesiaNikInput>of(indonesiaNikLookup);
+  }
+
+
+  public ProviderInput chinaResidentIdMatch(@javax.annotation.Nullable ChinaResidentIdMatchInput chinaResidentIdMatch) {
+    this.chinaResidentIdMatch = JsonNullable.<ChinaResidentIdMatchInput>of(chinaResidentIdMatch);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;china-resident-id-match&#x60; provider
+   * @return chinaResidentIdMatch
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ChinaResidentIdMatchInput getChinaResidentIdMatch() {
+        return chinaResidentIdMatch.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_CHINA_RESIDENT_ID_MATCH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ChinaResidentIdMatchInput> getChinaResidentIdMatch_JsonNullable() {
+    return chinaResidentIdMatch;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CHINA_RESIDENT_ID_MATCH)
+  public void setChinaResidentIdMatch_JsonNullable(JsonNullable<ChinaResidentIdMatchInput> chinaResidentIdMatch) {
+    this.chinaResidentIdMatch = chinaResidentIdMatch;
+  }
+
+  public void setChinaResidentIdMatch(@javax.annotation.Nullable ChinaResidentIdMatchInput chinaResidentIdMatch) {
+    this.chinaResidentIdMatch = JsonNullable.<ChinaResidentIdMatchInput>of(chinaResidentIdMatch);
   }
 
 
@@ -301,7 +383,7 @@ public class ProviderInput {
         return indonesiaDukcapilMatch.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_INDONESIA_DUKCAPIL_MATCH)
+  @JsonProperty(value = JSON_PROPERTY_INDONESIA_DUKCAPIL_MATCH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<IndonesiaDukcapilMatchInput> getIndonesiaDukcapilMatch_JsonNullable() {
@@ -333,7 +415,7 @@ public class ProviderInput {
         return mexicoCurpLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MEXICO_CURP_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_MEXICO_CURP_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<MexicoCurpInput> getMexicoCurpLookup_JsonNullable() {
@@ -365,7 +447,7 @@ public class ProviderInput {
         return southAfricaNidLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SouthAfricaNidInput> getSouthAfricaNidLookup_JsonNullable() {
@@ -397,7 +479,7 @@ public class ProviderInput {
         return kenyaNidLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_KENYA_NID_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<KenyaNidInput> getKenyaNidLookup_JsonNullable() {
@@ -429,7 +511,7 @@ public class ProviderInput {
         return kenyaNidMatch2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_KENYA_NID_MATCH2)
+  @JsonProperty(value = JSON_PROPERTY_KENYA_NID_MATCH2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<KenyaNidMatch2Input> getKenyaNidMatch2_JsonNullable() {
@@ -461,7 +543,7 @@ public class ProviderInput {
         return kenyaNidLookup2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP2)
+  @JsonProperty(value = JSON_PROPERTY_KENYA_NID_LOOKUP2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<KenyaNidLookup2Input> getKenyaNidLookup2_JsonNullable() {
@@ -493,7 +575,7 @@ public class ProviderInput {
         return southAfricaNidLookup2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP2)
+  @JsonProperty(value = JSON_PROPERTY_SOUTH_AFRICA_NID_LOOKUP2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SouthAfricaNidLookup2Input> getSouthAfricaNidLookup2_JsonNullable() {
@@ -525,7 +607,7 @@ public class ProviderInput {
         return southAfricaNidMatch2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SOUTH_AFRICA_NID_MATCH2)
+  @JsonProperty(value = JSON_PROPERTY_SOUTH_AFRICA_NID_MATCH2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SouthAfricaNidMatch2Input> getSouthAfricaNidMatch2_JsonNullable() {
@@ -557,7 +639,7 @@ public class ProviderInput {
         return southAfricaNidMatchBiometric2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SOUTH_AFRICA_NID_MATCH_BIOMETRIC2)
+  @JsonProperty(value = JSON_PROPERTY_SOUTH_AFRICA_NID_MATCH_BIOMETRIC2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SouthAfricaNidBiometric2Input> getSouthAfricaNidMatchBiometric2_JsonNullable() {
@@ -589,7 +671,7 @@ public class ProviderInput {
         return nigeriaNinLookup2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NIGERIA_NIN_LOOKUP2)
+  @JsonProperty(value = JSON_PROPERTY_NIGERIA_NIN_LOOKUP2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<NigeriaNinLookup2Input> getNigeriaNinLookup2_JsonNullable() {
@@ -621,7 +703,7 @@ public class ProviderInput {
         return coteDivoireNidLookup2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COTE_DIVOIRE_NID_LOOKUP2)
+  @JsonProperty(value = JSON_PROPERTY_COTE_DIVOIRE_NID_LOOKUP2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<CoteDIvoireNidLookup2Input> getCoteDivoireNidLookup2_JsonNullable() {
@@ -653,7 +735,7 @@ public class ProviderInput {
         return zimbabweNidLookup2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ZIMBABWE_NID_LOOKUP2)
+  @JsonProperty(value = JSON_PROPERTY_ZIMBABWE_NID_LOOKUP2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<ZimbabweNidLookup2Input> getZimbabweNidLookup2_JsonNullable() {
@@ -685,7 +767,7 @@ public class ProviderInput {
         return nigeriaNinMatch2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NIGERIA_NIN_MATCH2)
+  @JsonProperty(value = JSON_PROPERTY_NIGERIA_NIN_MATCH2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<NigeriaNinMatch2Input> getNigeriaNinMatch2_JsonNullable() {
@@ -717,7 +799,7 @@ public class ProviderInput {
         return ugandaNidMatch2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_UGANDA_NID_MATCH2)
+  @JsonProperty(value = JSON_PROPERTY_UGANDA_NID_MATCH2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<UgandaNidMatch2Input> getUgandaNidMatch2_JsonNullable() {
@@ -749,7 +831,7 @@ public class ProviderInput {
         return nigeriaNinMatchBiometric2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NIGERIA_NIN_MATCH_BIOMETRIC2)
+  @JsonProperty(value = JSON_PROPERTY_NIGERIA_NIN_MATCH_BIOMETRIC2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<NigeriaNinBiometric2Input> getNigeriaNinMatchBiometric2_JsonNullable() {
@@ -781,7 +863,7 @@ public class ProviderInput {
         return nigeriaNinLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NIGERIA_NIN_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_NIGERIA_NIN_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<NigeriaNinInput> getNigeriaNinLookup_JsonNullable() {
@@ -813,7 +895,7 @@ public class ProviderInput {
         return indiaDigilockerAadhaarMatch.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_INDIA_DIGILOCKER_AADHAAR_MATCH)
+  @JsonProperty(value = JSON_PROPERTY_INDIA_DIGILOCKER_AADHAAR_MATCH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<AadhaarInput> getIndiaDigilockerAadhaarMatch_JsonNullable() {
@@ -827,6 +909,70 @@ public class ProviderInput {
 
   public void setIndiaDigilockerAadhaarMatch(@javax.annotation.Nullable AadhaarInput indiaDigilockerAadhaarMatch) {
     this.indiaDigilockerAadhaarMatch = JsonNullable.<AadhaarInput>of(indiaDigilockerAadhaarMatch);
+  }
+
+
+  public ProviderInput indiaPanLookup(@javax.annotation.Nullable IndiaPanLookupInput indiaPanLookup) {
+    this.indiaPanLookup = JsonNullable.<IndiaPanLookupInput>of(indiaPanLookup);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;india-pan-lookup&#x60; provider
+   * @return indiaPanLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public IndiaPanLookupInput getIndiaPanLookup() {
+        return indiaPanLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_INDIA_PAN_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<IndiaPanLookupInput> getIndiaPanLookup_JsonNullable() {
+    return indiaPanLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INDIA_PAN_LOOKUP)
+  public void setIndiaPanLookup_JsonNullable(JsonNullable<IndiaPanLookupInput> indiaPanLookup) {
+    this.indiaPanLookup = indiaPanLookup;
+  }
+
+  public void setIndiaPanLookup(@javax.annotation.Nullable IndiaPanLookupInput indiaPanLookup) {
+    this.indiaPanLookup = JsonNullable.<IndiaPanLookupInput>of(indiaPanLookup);
+  }
+
+
+  public ProviderInput koreaTelcoMatch(@javax.annotation.Nullable KoreaTelcoMatchInput koreaTelcoMatch) {
+    this.koreaTelcoMatch = JsonNullable.<KoreaTelcoMatchInput>of(koreaTelcoMatch);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;korea-telco-match&#x60; provider
+   * @return koreaTelcoMatch
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public KoreaTelcoMatchInput getKoreaTelcoMatch() {
+        return koreaTelcoMatch.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_KOREA_TELCO_MATCH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<KoreaTelcoMatchInput> getKoreaTelcoMatch_JsonNullable() {
+    return koreaTelcoMatch;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_KOREA_TELCO_MATCH)
+  public void setKoreaTelcoMatch_JsonNullable(JsonNullable<KoreaTelcoMatchInput> koreaTelcoMatch) {
+    this.koreaTelcoMatch = koreaTelcoMatch;
+  }
+
+  public void setKoreaTelcoMatch(@javax.annotation.Nullable KoreaTelcoMatchInput koreaTelcoMatch) {
+    this.koreaTelcoMatch = JsonNullable.<KoreaTelcoMatchInput>of(koreaTelcoMatch);
   }
 
 
@@ -845,7 +991,7 @@ public class ProviderInput {
         return brazilCpfLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BRAZIL_CPF_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_BRAZIL_CPF_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<BrazilCpfCheckInput> getBrazilCpfLookup_JsonNullable() {
@@ -877,7 +1023,7 @@ public class ProviderInput {
         return brazilDigitalCnh.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BRAZIL_DIGITAL_CNH)
+  @JsonProperty(value = JSON_PROPERTY_BRAZIL_DIGITAL_CNH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<BrazilDigitalCnhInput> getBrazilDigitalCnh_JsonNullable() {
@@ -909,7 +1055,7 @@ public class ProviderInput {
         return philippinesPhilsysMatch.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHILSYS_MATCH)
+  @JsonProperty(value = JSON_PROPERTY_PHILIPPINES_PHILSYS_MATCH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<PhilippineMatchInput> getPhilippinesPhilsysMatch_JsonNullable() {
@@ -941,7 +1087,7 @@ public class ProviderInput {
         return philippinesPhysicalNationalIdQr.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR)
+  @JsonProperty(value = JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<PhilippineQRInput> getPhilippinesPhysicalNationalIdQr_JsonNullable() {
@@ -973,7 +1119,7 @@ public class ProviderInput {
         return philippinesDigitalNationalIdQr.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR)
+  @JsonProperty(value = JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<PhilippineQRInput> getPhilippinesDigitalNationalIdQr_JsonNullable() {
@@ -1005,7 +1151,7 @@ public class ProviderInput {
         return smartId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SMART_ID)
+  @JsonProperty(value = JSON_PROPERTY_SMART_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SmartIdInput> getSmartId_JsonNullable() {
@@ -1037,7 +1183,7 @@ public class ProviderInput {
         return mobileId.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MOBILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<MobileIdInput> getMobileId_JsonNullable() {
@@ -1069,7 +1215,7 @@ public class ProviderInput {
         return netherlandsIdin.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NETHERLANDS_IDIN)
+  @JsonProperty(value = JSON_PROPERTY_NETHERLANDS_IDIN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<IdinInput> getNetherlandsIdin_JsonNullable() {
@@ -1101,7 +1247,7 @@ public class ProviderInput {
         return italySpid.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ITALY_SPID)
+  @JsonProperty(value = JSON_PROPERTY_ITALY_SPID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SpidInput> getItalySpid_JsonNullable() {
@@ -1133,7 +1279,7 @@ public class ProviderInput {
         return googleWallet.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GOOGLE_WALLET)
+  @JsonProperty(value = JSON_PROPERTY_GOOGLE_WALLET, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<GoogleWalletInput> getGoogleWallet_JsonNullable() {
@@ -1165,7 +1311,7 @@ public class ProviderInput {
         return appleWallet.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_APPLE_WALLET)
+  @JsonProperty(value = JSON_PROPERTY_APPLE_WALLET, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<AppleWalletInput> getAppleWallet_JsonNullable() {
@@ -1197,7 +1343,7 @@ public class ProviderInput {
         return samsungWallet.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SAMSUNG_WALLET)
+  @JsonProperty(value = JSON_PROPERTY_SAMSUNG_WALLET, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<SamsungWalletInput> getSamsungWallet_JsonNullable() {
@@ -1229,7 +1375,7 @@ public class ProviderInput {
         return franceIdentite.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FRANCE_IDENTITE)
+  @JsonProperty(value = JSON_PROPERTY_FRANCE_IDENTITE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<FranceIdentiteInput> getFranceIdentite_JsonNullable() {
@@ -1243,6 +1389,198 @@ public class ProviderInput {
 
   public void setFranceIdentite(@javax.annotation.Nullable FranceIdentiteInput franceIdentite) {
     this.franceIdentite = JsonNullable.<FranceIdentiteInput>of(franceIdentite);
+  }
+
+
+  public ProviderInput polandMobywatelMatch(@javax.annotation.Nullable PolandMobywatelMatchInput polandMobywatelMatch) {
+    this.polandMobywatelMatch = JsonNullable.<PolandMobywatelMatchInput>of(polandMobywatelMatch);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;poland-mobywatel-match&#x60; provider
+   * @return polandMobywatelMatch
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PolandMobywatelMatchInput getPolandMobywatelMatch() {
+        return polandMobywatelMatch.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_POLAND_MOBYWATEL_MATCH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PolandMobywatelMatchInput> getPolandMobywatelMatch_JsonNullable() {
+    return polandMobywatelMatch;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_POLAND_MOBYWATEL_MATCH)
+  public void setPolandMobywatelMatch_JsonNullable(JsonNullable<PolandMobywatelMatchInput> polandMobywatelMatch) {
+    this.polandMobywatelMatch = polandMobywatelMatch;
+  }
+
+  public void setPolandMobywatelMatch(@javax.annotation.Nullable PolandMobywatelMatchInput polandMobywatelMatch) {
+    this.polandMobywatelMatch = JsonNullable.<PolandMobywatelMatchInput>of(polandMobywatelMatch);
+  }
+
+
+  public ProviderInput boliviaCiLookup(@javax.annotation.Nullable BoliviaCiLookupInput boliviaCiLookup) {
+    this.boliviaCiLookup = JsonNullable.<BoliviaCiLookupInput>of(boliviaCiLookup);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;bolivia-ci-lookup&#x60; provider
+   * @return boliviaCiLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public BoliviaCiLookupInput getBoliviaCiLookup() {
+        return boliviaCiLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BOLIVIA_CI_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<BoliviaCiLookupInput> getBoliviaCiLookup_JsonNullable() {
+    return boliviaCiLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BOLIVIA_CI_LOOKUP)
+  public void setBoliviaCiLookup_JsonNullable(JsonNullable<BoliviaCiLookupInput> boliviaCiLookup) {
+    this.boliviaCiLookup = boliviaCiLookup;
+  }
+
+  public void setBoliviaCiLookup(@javax.annotation.Nullable BoliviaCiLookupInput boliviaCiLookup) {
+    this.boliviaCiLookup = JsonNullable.<BoliviaCiLookupInput>of(boliviaCiLookup);
+  }
+
+
+  public ProviderInput colombiaCcLookup(@javax.annotation.Nullable ColombiaCcLookupInput colombiaCcLookup) {
+    this.colombiaCcLookup = JsonNullable.<ColombiaCcLookupInput>of(colombiaCcLookup);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;colombia-cc-lookup&#x60; provider
+   * @return colombiaCcLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ColombiaCcLookupInput getColombiaCcLookup() {
+        return colombiaCcLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_COLOMBIA_CC_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ColombiaCcLookupInput> getColombiaCcLookup_JsonNullable() {
+    return colombiaCcLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COLOMBIA_CC_LOOKUP)
+  public void setColombiaCcLookup_JsonNullable(JsonNullable<ColombiaCcLookupInput> colombiaCcLookup) {
+    this.colombiaCcLookup = colombiaCcLookup;
+  }
+
+  public void setColombiaCcLookup(@javax.annotation.Nullable ColombiaCcLookupInput colombiaCcLookup) {
+    this.colombiaCcLookup = JsonNullable.<ColombiaCcLookupInput>of(colombiaCcLookup);
+  }
+
+
+  public ProviderInput elSalvadorDuiLookup(@javax.annotation.Nullable ElSalvadorDuiLookupInput elSalvadorDuiLookup) {
+    this.elSalvadorDuiLookup = JsonNullable.<ElSalvadorDuiLookupInput>of(elSalvadorDuiLookup);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;el-salvador-dui-lookup&#x60; provider
+   * @return elSalvadorDuiLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ElSalvadorDuiLookupInput getElSalvadorDuiLookup() {
+        return elSalvadorDuiLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_EL_SALVADOR_DUI_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ElSalvadorDuiLookupInput> getElSalvadorDuiLookup_JsonNullable() {
+    return elSalvadorDuiLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EL_SALVADOR_DUI_LOOKUP)
+  public void setElSalvadorDuiLookup_JsonNullable(JsonNullable<ElSalvadorDuiLookupInput> elSalvadorDuiLookup) {
+    this.elSalvadorDuiLookup = elSalvadorDuiLookup;
+  }
+
+  public void setElSalvadorDuiLookup(@javax.annotation.Nullable ElSalvadorDuiLookupInput elSalvadorDuiLookup) {
+    this.elSalvadorDuiLookup = JsonNullable.<ElSalvadorDuiLookupInput>of(elSalvadorDuiLookup);
+  }
+
+
+  public ProviderInput guatemalaCuiLookup(@javax.annotation.Nullable GuatemalaCuiLookupInput guatemalaCuiLookup) {
+    this.guatemalaCuiLookup = JsonNullable.<GuatemalaCuiLookupInput>of(guatemalaCuiLookup);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;guatemala-cui-lookup&#x60; provider
+   * @return guatemalaCuiLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public GuatemalaCuiLookupInput getGuatemalaCuiLookup() {
+        return guatemalaCuiLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_GUATEMALA_CUI_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<GuatemalaCuiLookupInput> getGuatemalaCuiLookup_JsonNullable() {
+    return guatemalaCuiLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GUATEMALA_CUI_LOOKUP)
+  public void setGuatemalaCuiLookup_JsonNullable(JsonNullable<GuatemalaCuiLookupInput> guatemalaCuiLookup) {
+    this.guatemalaCuiLookup = guatemalaCuiLookup;
+  }
+
+  public void setGuatemalaCuiLookup(@javax.annotation.Nullable GuatemalaCuiLookupInput guatemalaCuiLookup) {
+    this.guatemalaCuiLookup = JsonNullable.<GuatemalaCuiLookupInput>of(guatemalaCuiLookup);
+  }
+
+
+  public ProviderInput panamaCedulaLookup(@javax.annotation.Nullable PanamaCedulaLookupInput panamaCedulaLookup) {
+    this.panamaCedulaLookup = JsonNullable.<PanamaCedulaLookupInput>of(panamaCedulaLookup);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;panama-cedula-lookup&#x60; provider
+   * @return panamaCedulaLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public PanamaCedulaLookupInput getPanamaCedulaLookup() {
+        return panamaCedulaLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_PANAMA_CEDULA_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<PanamaCedulaLookupInput> getPanamaCedulaLookup_JsonNullable() {
+    return panamaCedulaLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PANAMA_CEDULA_LOOKUP)
+  public void setPanamaCedulaLookup_JsonNullable(JsonNullable<PanamaCedulaLookupInput> panamaCedulaLookup) {
+    this.panamaCedulaLookup = panamaCedulaLookup;
+  }
+
+  public void setPanamaCedulaLookup(@javax.annotation.Nullable PanamaCedulaLookupInput panamaCedulaLookup) {
+    this.panamaCedulaLookup = JsonNullable.<PanamaCedulaLookupInput>of(panamaCedulaLookup);
   }
 
 
@@ -1261,7 +1599,7 @@ public class ProviderInput {
         return peruDniLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERU_DNI_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_PERU_DNI_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<PeruDniLookupInput> getPeruDniLookup_JsonNullable() {
@@ -1293,7 +1631,7 @@ public class ProviderInput {
         return ukEvisaLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_UK_EVISA_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_UK_EVISA_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<UkEvisaLookupInput> getUkEvisaLookup_JsonNullable() {
@@ -1307,6 +1645,38 @@ public class ProviderInput {
 
   public void setUkEvisaLookup(@javax.annotation.Nullable UkEvisaLookupInput ukEvisaLookup) {
     this.ukEvisaLookup = JsonNullable.<UkEvisaLookupInput>of(ukEvisaLookup);
+  }
+
+
+  public ProviderInput usaCaliforniaDmv(@javax.annotation.Nullable UsaCaliforniaDmvInput usaCaliforniaDmv) {
+    this.usaCaliforniaDmv = JsonNullable.<UsaCaliforniaDmvInput>of(usaCaliforniaDmv);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;usa-california-dmv&#x60; provider
+   * @return usaCaliforniaDmv
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public UsaCaliforniaDmvInput getUsaCaliforniaDmv() {
+        return usaCaliforniaDmv.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_USA_CALIFORNIA_DMV, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<UsaCaliforniaDmvInput> getUsaCaliforniaDmv_JsonNullable() {
+    return usaCaliforniaDmv;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USA_CALIFORNIA_DMV)
+  public void setUsaCaliforniaDmv_JsonNullable(JsonNullable<UsaCaliforniaDmvInput> usaCaliforniaDmv) {
+    this.usaCaliforniaDmv = usaCaliforniaDmv;
+  }
+
+  public void setUsaCaliforniaDmv(@javax.annotation.Nullable UsaCaliforniaDmvInput usaCaliforniaDmv) {
+    this.usaCaliforniaDmv = JsonNullable.<UsaCaliforniaDmvInput>of(usaCaliforniaDmv);
   }
 
 
@@ -1325,7 +1695,7 @@ public class ProviderInput {
         return trinsicTestDatabaseLookup.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP)
+  @JsonProperty(value = JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<TrinsicTestDatabaseLookupInput> getTrinsicTestDatabaseLookup_JsonNullable() {
@@ -1357,7 +1727,7 @@ public class ProviderInput {
         return trinsicTestSubProviders.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS)
+  @JsonProperty(value = JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<TrinsicTestSubProvidersInput> getTrinsicTestSubProviders_JsonNullable() {
@@ -1388,6 +1758,7 @@ public class ProviderInput {
     ProviderInput providerInput = (ProviderInput) o;
     return equalsNullable(this.kenyaNidMatchBiometric2, providerInput.kenyaNidMatchBiometric2) &&
         equalsNullable(this.indonesiaNikLookup, providerInput.indonesiaNikLookup) &&
+        equalsNullable(this.chinaResidentIdMatch, providerInput.chinaResidentIdMatch) &&
         equalsNullable(this.indonesiaDukcapilMatch, providerInput.indonesiaDukcapilMatch) &&
         equalsNullable(this.mexicoCurpLookup, providerInput.mexicoCurpLookup) &&
         equalsNullable(this.southAfricaNidLookup, providerInput.southAfricaNidLookup) &&
@@ -1405,6 +1776,8 @@ public class ProviderInput {
         equalsNullable(this.nigeriaNinMatchBiometric2, providerInput.nigeriaNinMatchBiometric2) &&
         equalsNullable(this.nigeriaNinLookup, providerInput.nigeriaNinLookup) &&
         equalsNullable(this.indiaDigilockerAadhaarMatch, providerInput.indiaDigilockerAadhaarMatch) &&
+        equalsNullable(this.indiaPanLookup, providerInput.indiaPanLookup) &&
+        equalsNullable(this.koreaTelcoMatch, providerInput.koreaTelcoMatch) &&
         equalsNullable(this.brazilCpfLookup, providerInput.brazilCpfLookup) &&
         equalsNullable(this.brazilDigitalCnh, providerInput.brazilDigitalCnh) &&
         equalsNullable(this.philippinesPhilsysMatch, providerInput.philippinesPhilsysMatch) &&
@@ -1418,8 +1791,15 @@ public class ProviderInput {
         equalsNullable(this.appleWallet, providerInput.appleWallet) &&
         equalsNullable(this.samsungWallet, providerInput.samsungWallet) &&
         equalsNullable(this.franceIdentite, providerInput.franceIdentite) &&
+        equalsNullable(this.polandMobywatelMatch, providerInput.polandMobywatelMatch) &&
+        equalsNullable(this.boliviaCiLookup, providerInput.boliviaCiLookup) &&
+        equalsNullable(this.colombiaCcLookup, providerInput.colombiaCcLookup) &&
+        equalsNullable(this.elSalvadorDuiLookup, providerInput.elSalvadorDuiLookup) &&
+        equalsNullable(this.guatemalaCuiLookup, providerInput.guatemalaCuiLookup) &&
+        equalsNullable(this.panamaCedulaLookup, providerInput.panamaCedulaLookup) &&
         equalsNullable(this.peruDniLookup, providerInput.peruDniLookup) &&
         equalsNullable(this.ukEvisaLookup, providerInput.ukEvisaLookup) &&
+        equalsNullable(this.usaCaliforniaDmv, providerInput.usaCaliforniaDmv) &&
         equalsNullable(this.trinsicTestDatabaseLookup, providerInput.trinsicTestDatabaseLookup) &&
         equalsNullable(this.trinsicTestSubProviders, providerInput.trinsicTestSubProviders);
   }
@@ -1430,7 +1810,7 @@ public class ProviderInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(kenyaNidMatchBiometric2), hashCodeNullable(indonesiaNikLookup), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(southAfricaNidLookup), hashCodeNullable(kenyaNidLookup), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(southAfricaNidMatch2), hashCodeNullable(southAfricaNidMatchBiometric2), hashCodeNullable(nigeriaNinLookup2), hashCodeNullable(coteDivoireNidLookup2), hashCodeNullable(zimbabweNidLookup2), hashCodeNullable(nigeriaNinMatch2), hashCodeNullable(ugandaNidMatch2), hashCodeNullable(nigeriaNinMatchBiometric2), hashCodeNullable(nigeriaNinLookup), hashCodeNullable(indiaDigilockerAadhaarMatch), hashCodeNullable(brazilCpfLookup), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippinesPhilsysMatch), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(netherlandsIdin), hashCodeNullable(italySpid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(samsungWallet), hashCodeNullable(franceIdentite), hashCodeNullable(peruDniLookup), hashCodeNullable(ukEvisaLookup), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
+    return Objects.hash(hashCodeNullable(kenyaNidMatchBiometric2), hashCodeNullable(indonesiaNikLookup), hashCodeNullable(chinaResidentIdMatch), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(southAfricaNidLookup), hashCodeNullable(kenyaNidLookup), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(southAfricaNidMatch2), hashCodeNullable(southAfricaNidMatchBiometric2), hashCodeNullable(nigeriaNinLookup2), hashCodeNullable(coteDivoireNidLookup2), hashCodeNullable(zimbabweNidLookup2), hashCodeNullable(nigeriaNinMatch2), hashCodeNullable(ugandaNidMatch2), hashCodeNullable(nigeriaNinMatchBiometric2), hashCodeNullable(nigeriaNinLookup), hashCodeNullable(indiaDigilockerAadhaarMatch), hashCodeNullable(indiaPanLookup), hashCodeNullable(koreaTelcoMatch), hashCodeNullable(brazilCpfLookup), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippinesPhilsysMatch), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(netherlandsIdin), hashCodeNullable(italySpid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(samsungWallet), hashCodeNullable(franceIdentite), hashCodeNullable(polandMobywatelMatch), hashCodeNullable(boliviaCiLookup), hashCodeNullable(colombiaCcLookup), hashCodeNullable(elSalvadorDuiLookup), hashCodeNullable(guatemalaCuiLookup), hashCodeNullable(panamaCedulaLookup), hashCodeNullable(peruDniLookup), hashCodeNullable(ukEvisaLookup), hashCodeNullable(usaCaliforniaDmv), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1446,6 +1826,7 @@ public class ProviderInput {
     sb.append("class ProviderInput {\n");
     sb.append("    kenyaNidMatchBiometric2: ").append(toIndentedString(kenyaNidMatchBiometric2)).append("\n");
     sb.append("    indonesiaNikLookup: ").append(toIndentedString(indonesiaNikLookup)).append("\n");
+    sb.append("    chinaResidentIdMatch: ").append(toIndentedString(chinaResidentIdMatch)).append("\n");
     sb.append("    indonesiaDukcapilMatch: ").append(toIndentedString(indonesiaDukcapilMatch)).append("\n");
     sb.append("    mexicoCurpLookup: ").append(toIndentedString(mexicoCurpLookup)).append("\n");
     sb.append("    southAfricaNidLookup: ").append(toIndentedString(southAfricaNidLookup)).append("\n");
@@ -1463,6 +1844,8 @@ public class ProviderInput {
     sb.append("    nigeriaNinMatchBiometric2: ").append(toIndentedString(nigeriaNinMatchBiometric2)).append("\n");
     sb.append("    nigeriaNinLookup: ").append(toIndentedString(nigeriaNinLookup)).append("\n");
     sb.append("    indiaDigilockerAadhaarMatch: ").append(toIndentedString(indiaDigilockerAadhaarMatch)).append("\n");
+    sb.append("    indiaPanLookup: ").append(toIndentedString(indiaPanLookup)).append("\n");
+    sb.append("    koreaTelcoMatch: ").append(toIndentedString(koreaTelcoMatch)).append("\n");
     sb.append("    brazilCpfLookup: ").append(toIndentedString(brazilCpfLookup)).append("\n");
     sb.append("    brazilDigitalCnh: ").append(toIndentedString(brazilDigitalCnh)).append("\n");
     sb.append("    philippinesPhilsysMatch: ").append(toIndentedString(philippinesPhilsysMatch)).append("\n");
@@ -1476,8 +1859,15 @@ public class ProviderInput {
     sb.append("    appleWallet: ").append(toIndentedString(appleWallet)).append("\n");
     sb.append("    samsungWallet: ").append(toIndentedString(samsungWallet)).append("\n");
     sb.append("    franceIdentite: ").append(toIndentedString(franceIdentite)).append("\n");
+    sb.append("    polandMobywatelMatch: ").append(toIndentedString(polandMobywatelMatch)).append("\n");
+    sb.append("    boliviaCiLookup: ").append(toIndentedString(boliviaCiLookup)).append("\n");
+    sb.append("    colombiaCcLookup: ").append(toIndentedString(colombiaCcLookup)).append("\n");
+    sb.append("    elSalvadorDuiLookup: ").append(toIndentedString(elSalvadorDuiLookup)).append("\n");
+    sb.append("    guatemalaCuiLookup: ").append(toIndentedString(guatemalaCuiLookup)).append("\n");
+    sb.append("    panamaCedulaLookup: ").append(toIndentedString(panamaCedulaLookup)).append("\n");
     sb.append("    peruDniLookup: ").append(toIndentedString(peruDniLookup)).append("\n");
     sb.append("    ukEvisaLookup: ").append(toIndentedString(ukEvisaLookup)).append("\n");
+    sb.append("    usaCaliforniaDmv: ").append(toIndentedString(usaCaliforniaDmv)).append("\n");
     sb.append("    trinsicTestDatabaseLookup: ").append(toIndentedString(trinsicTestDatabaseLookup)).append("\n");
     sb.append("    trinsicTestSubProviders: ").append(toIndentedString(trinsicTestSubProviders)).append("\n");
     sb.append("}");
@@ -1489,10 +1879,7 @@ public class ProviderInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -1535,6 +1922,11 @@ public class ProviderInput {
     // add `indonesia-nik-lookup` to the URL query string
     if (getIndonesiaNikLookup() != null) {
       joiner.add(getIndonesiaNikLookup().toUrlQueryString(prefix + "indonesia-nik-lookup" + suffix));
+    }
+
+    // add `china-resident-id-match` to the URL query string
+    if (getChinaResidentIdMatch() != null) {
+      joiner.add(getChinaResidentIdMatch().toUrlQueryString(prefix + "china-resident-id-match" + suffix));
     }
 
     // add `indonesia-dukcapil-match` to the URL query string
@@ -1622,6 +2014,16 @@ public class ProviderInput {
       joiner.add(getIndiaDigilockerAadhaarMatch().toUrlQueryString(prefix + "india-digilocker-aadhaar-match" + suffix));
     }
 
+    // add `india-pan-lookup` to the URL query string
+    if (getIndiaPanLookup() != null) {
+      joiner.add(getIndiaPanLookup().toUrlQueryString(prefix + "india-pan-lookup" + suffix));
+    }
+
+    // add `korea-telco-match` to the URL query string
+    if (getKoreaTelcoMatch() != null) {
+      joiner.add(getKoreaTelcoMatch().toUrlQueryString(prefix + "korea-telco-match" + suffix));
+    }
+
     // add `brazil-cpf-lookup` to the URL query string
     if (getBrazilCpfLookup() != null) {
       joiner.add(getBrazilCpfLookup().toUrlQueryString(prefix + "brazil-cpf-lookup" + suffix));
@@ -1687,6 +2089,36 @@ public class ProviderInput {
       joiner.add(getFranceIdentite().toUrlQueryString(prefix + "france-identite" + suffix));
     }
 
+    // add `poland-mobywatel-match` to the URL query string
+    if (getPolandMobywatelMatch() != null) {
+      joiner.add(getPolandMobywatelMatch().toUrlQueryString(prefix + "poland-mobywatel-match" + suffix));
+    }
+
+    // add `bolivia-ci-lookup` to the URL query string
+    if (getBoliviaCiLookup() != null) {
+      joiner.add(getBoliviaCiLookup().toUrlQueryString(prefix + "bolivia-ci-lookup" + suffix));
+    }
+
+    // add `colombia-cc-lookup` to the URL query string
+    if (getColombiaCcLookup() != null) {
+      joiner.add(getColombiaCcLookup().toUrlQueryString(prefix + "colombia-cc-lookup" + suffix));
+    }
+
+    // add `el-salvador-dui-lookup` to the URL query string
+    if (getElSalvadorDuiLookup() != null) {
+      joiner.add(getElSalvadorDuiLookup().toUrlQueryString(prefix + "el-salvador-dui-lookup" + suffix));
+    }
+
+    // add `guatemala-cui-lookup` to the URL query string
+    if (getGuatemalaCuiLookup() != null) {
+      joiner.add(getGuatemalaCuiLookup().toUrlQueryString(prefix + "guatemala-cui-lookup" + suffix));
+    }
+
+    // add `panama-cedula-lookup` to the URL query string
+    if (getPanamaCedulaLookup() != null) {
+      joiner.add(getPanamaCedulaLookup().toUrlQueryString(prefix + "panama-cedula-lookup" + suffix));
+    }
+
     // add `peru-dni-lookup` to the URL query string
     if (getPeruDniLookup() != null) {
       joiner.add(getPeruDniLookup().toUrlQueryString(prefix + "peru-dni-lookup" + suffix));
@@ -1695,6 +2127,11 @@ public class ProviderInput {
     // add `uk-evisa-lookup` to the URL query string
     if (getUkEvisaLookup() != null) {
       joiner.add(getUkEvisaLookup().toUrlQueryString(prefix + "uk-evisa-lookup" + suffix));
+    }
+
+    // add `usa-california-dmv` to the URL query string
+    if (getUsaCaliforniaDmv() != null) {
+      joiner.add(getUsaCaliforniaDmv().toUrlQueryString(prefix + "usa-california-dmv" + suffix));
     }
 
     // add `trinsic-test-database-lookup` to the URL query string

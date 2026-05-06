@@ -57,7 +57,7 @@ import id.trinsic.ApiClient;
   LaWalletProviderOutput.JSON_PROPERTY_COUNTY,
   LaWalletProviderOutput.JSON_PROPERTY_COARSE_AGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class LaWalletProviderOutput {
   public static final String JSON_PROPERTY_DRIVERS_LICENSE_NUMBER = "driversLicenseNumber";
   @javax.annotation.Nonnull
@@ -143,14 +143,14 @@ public class LaWalletProviderOutput {
    * @return driversLicenseNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DRIVERS_LICENSE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DRIVERS_LICENSE_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getDriversLicenseNumber() {
     return driversLicenseNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DRIVERS_LICENSE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DRIVERS_LICENSE_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDriversLicenseNumber(@javax.annotation.Nonnull String driversLicenseNumber) {
     this.driversLicenseNumber = driversLicenseNumber;
@@ -167,14 +167,14 @@ public class LaWalletProviderOutput {
    * @return issueDate
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ISSUE_DATE)
+  @JsonProperty(value = JSON_PROPERTY_ISSUE_DATE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public LocalDate getIssueDate() {
     return issueDate;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ISSUE_DATE)
+  @JsonProperty(value = JSON_PROPERTY_ISSUE_DATE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIssueDate(@javax.annotation.Nonnull LocalDate issueDate) {
     this.issueDate = issueDate;
@@ -191,14 +191,14 @@ public class LaWalletProviderOutput {
    * @return expirationDate
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public LocalDate getExpirationDate() {
     return expirationDate;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExpirationDate(@javax.annotation.Nonnull LocalDate expirationDate) {
     this.expirationDate = expirationDate;
@@ -215,14 +215,14 @@ public class LaWalletProviderOutput {
    * @return auditNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_AUDIT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_AUDIT_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getAuditNumber() {
     return auditNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AUDIT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_AUDIT_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAuditNumber(@javax.annotation.Nonnull String auditNumber) {
     this.auditNumber = auditNumber;
@@ -239,14 +239,14 @@ public class LaWalletProviderOutput {
    * @return licenseStatus
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LICENSE_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_LICENSE_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLicenseStatus() {
     return licenseStatus;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LICENSE_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_LICENSE_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLicenseStatus(@javax.annotation.Nonnull String licenseStatus) {
     this.licenseStatus = licenseStatus;
@@ -263,14 +263,14 @@ public class LaWalletProviderOutput {
    * @return licenseClass
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LICENSE_CLASS)
+  @JsonProperty(value = JSON_PROPERTY_LICENSE_CLASS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLicenseClass() {
     return licenseClass;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LICENSE_CLASS)
+  @JsonProperty(value = JSON_PROPERTY_LICENSE_CLASS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLicenseClass(@javax.annotation.Nonnull String licenseClass) {
     this.licenseClass = licenseClass;
@@ -287,14 +287,14 @@ public class LaWalletProviderOutput {
    * @return firstName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFirstName() {
     return firstName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -311,14 +311,14 @@ public class LaWalletProviderOutput {
    * @return middleName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getMiddleName() {
     return middleName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMiddleName(@javax.annotation.Nonnull String middleName) {
     this.middleName = middleName;
@@ -335,14 +335,14 @@ public class LaWalletProviderOutput {
    * @return lastName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLastName() {
     return lastName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastName(@javax.annotation.Nonnull String lastName) {
     this.lastName = lastName;
@@ -359,14 +359,14 @@ public class LaWalletProviderOutput {
    * @return dateOfBirth
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
@@ -383,14 +383,14 @@ public class LaWalletProviderOutput {
    * @return sex
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSex() {
     return sex;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSex(@javax.annotation.Nonnull String sex) {
     this.sex = sex;
@@ -407,14 +407,14 @@ public class LaWalletProviderOutput {
    * @return addressLine1
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE1)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_LINE1, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getAddressLine1() {
     return addressLine1;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE1)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_LINE1, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAddressLine1(@javax.annotation.Nonnull String addressLine1) {
     this.addressLine1 = addressLine1;
@@ -436,7 +436,7 @@ public class LaWalletProviderOutput {
         return addressLine2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE2)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_LINE2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAddressLine2_JsonNullable() {
@@ -463,14 +463,14 @@ public class LaWalletProviderOutput {
    * @return addressCity
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ADDRESS_CITY)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_CITY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getAddressCity() {
     return addressCity;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS_CITY)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_CITY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAddressCity(@javax.annotation.Nonnull String addressCity) {
     this.addressCity = addressCity;
@@ -487,14 +487,14 @@ public class LaWalletProviderOutput {
    * @return addressState
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ADDRESS_STATE)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_STATE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getAddressState() {
     return addressState;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS_STATE)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_STATE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAddressState(@javax.annotation.Nonnull String addressState) {
     this.addressState = addressState;
@@ -511,14 +511,14 @@ public class LaWalletProviderOutput {
    * @return addressZip
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ADDRESS_ZIP)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_ZIP, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getAddressZip() {
     return addressZip;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS_ZIP)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_ZIP, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAddressZip(@javax.annotation.Nonnull String addressZip) {
     this.addressZip = addressZip;
@@ -535,14 +535,14 @@ public class LaWalletProviderOutput {
    * @return county
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_COUNTY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCounty() {
     return county;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COUNTY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCounty(@javax.annotation.Nonnull String county) {
     this.county = county;
@@ -559,14 +559,14 @@ public class LaWalletProviderOutput {
    * @return coarseAge
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_COARSE_AGE)
+  @JsonProperty(value = JSON_PROPERTY_COARSE_AGE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCoarseAge() {
     return coarseAge;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COARSE_AGE)
+  @JsonProperty(value = JSON_PROPERTY_COARSE_AGE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCoarseAge(@javax.annotation.Nonnull String coarseAge) {
     this.coarseAge = coarseAge;
@@ -652,10 +652,7 @@ public class LaWalletProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -692,92 +689,92 @@ public class LaWalletProviderOutput {
 
     // add `driversLicenseNumber` to the URL query string
     if (getDriversLicenseNumber() != null) {
-      joiner.add(String.format("%sdriversLicenseNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDriversLicenseNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdriversLicenseNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDriversLicenseNumber()))));
     }
 
     // add `issueDate` to the URL query string
     if (getIssueDate() != null) {
-      joiner.add(String.format("%sissueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssueDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssueDate()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `auditNumber` to the URL query string
     if (getAuditNumber() != null) {
-      joiner.add(String.format("%sauditNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuditNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sauditNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuditNumber()))));
     }
 
     // add `licenseStatus` to the URL query string
     if (getLicenseStatus() != null) {
-      joiner.add(String.format("%slicenseStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLicenseStatus()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slicenseStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLicenseStatus()))));
     }
 
     // add `licenseClass` to the URL query string
     if (getLicenseClass() != null) {
-      joiner.add(String.format("%slicenseClass%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLicenseClass()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slicenseClass%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLicenseClass()))));
     }
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `lastName` to the URL query string
     if (getLastName() != null) {
-      joiner.add(String.format("%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `addressLine1` to the URL query string
     if (getAddressLine1() != null) {
-      joiner.add(String.format("%saddressLine1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressLine1()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddressLine1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressLine1()))));
     }
 
     // add `addressLine2` to the URL query string
     if (getAddressLine2() != null) {
-      joiner.add(String.format("%saddressLine2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressLine2()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddressLine2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressLine2()))));
     }
 
     // add `addressCity` to the URL query string
     if (getAddressCity() != null) {
-      joiner.add(String.format("%saddressCity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressCity()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddressCity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressCity()))));
     }
 
     // add `addressState` to the URL query string
     if (getAddressState() != null) {
-      joiner.add(String.format("%saddressState%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressState()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddressState%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressState()))));
     }
 
     // add `addressZip` to the URL query string
     if (getAddressZip() != null) {
-      joiner.add(String.format("%saddressZip%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressZip()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddressZip%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressZip()))));
     }
 
     // add `county` to the URL query string
     if (getCounty() != null) {
-      joiner.add(String.format("%scounty%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCounty()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scounty%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCounty()))));
     }
 
     // add `coarseAge` to the URL query string
     if (getCoarseAge() != null) {
-      joiner.add(String.format("%scoarseAge%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCoarseAge()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scoarseAge%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCoarseAge()))));
     }
 
     return joiner.toString();

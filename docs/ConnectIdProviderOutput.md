@@ -17,7 +17,6 @@ Exposed properties for the `australia-connect-id` Provider which do not directly
 |**sub** | **String** | The OpenID Connect (OIDC) subject identifier (sub). |  [optional] |
 |**ageVerification** | [**ConnectIdAgeVerification**](ConnectIdAgeVerification.md) | The age verification claim and whether the individual meets the age requirement. |  [optional] |
 |**transaction** | **String** | The verification session&#39;s transaction number.              This is a unique identifier assigned to a single ConnectID transaction flow. It can be used for audit purposes or to flag fraudulent activity. |  [optional] |
-|**beneficiaryAccount** | [**ConnectIdBeneficiaryAccount**](ConnectIdBeneficiaryAccount.md) | The beneficiary account that has been designated by the individual. |  [optional] |
 |**address** | [**ConnectIdAddress**](ConnectIdAddress.md) | The address. |  [optional] |
 
 

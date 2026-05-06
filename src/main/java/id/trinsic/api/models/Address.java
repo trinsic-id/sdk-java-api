@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   Address.JSON_PROPERTY_COUNTRY,
   Address.JSON_PROPERTY_FULL_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Address {
   public static final String JSON_PROPERTY_LINE1 = "line1";
   private JsonNullable<String> line1 = JsonNullable.<String>undefined();
@@ -90,7 +90,7 @@ public class Address {
         return line1.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE1)
+  @JsonProperty(value = JSON_PROPERTY_LINE1, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine1_JsonNullable() {
@@ -122,7 +122,7 @@ public class Address {
         return line2.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE2)
+  @JsonProperty(value = JSON_PROPERTY_LINE2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine2_JsonNullable() {
@@ -154,7 +154,7 @@ public class Address {
         return line3.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LINE3)
+  @JsonProperty(value = JSON_PROPERTY_LINE3, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLine3_JsonNullable() {
@@ -186,7 +186,7 @@ public class Address {
         return city.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CITY)
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCity_JsonNullable() {
@@ -218,7 +218,7 @@ public class Address {
         return subdivision.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUBDIVISION)
+  @JsonProperty(value = JSON_PROPERTY_SUBDIVISION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSubdivision_JsonNullable() {
@@ -250,7 +250,7 @@ public class Address {
         return postalCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPostalCode_JsonNullable() {
@@ -282,7 +282,7 @@ public class Address {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -314,7 +314,7 @@ public class Address {
         return fullAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_FULL_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullAddress_JsonNullable() {
@@ -390,10 +390,7 @@ public class Address {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -430,42 +427,42 @@ public class Address {
 
     // add `line1` to the URL query string
     if (getLine1() != null) {
-      joiner.add(String.format("%sline1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine1()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine1()))));
     }
 
     // add `line2` to the URL query string
     if (getLine2() != null) {
-      joiner.add(String.format("%sline2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine2()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine2()))));
     }
 
     // add `line3` to the URL query string
     if (getLine3() != null) {
-      joiner.add(String.format("%sline3%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine3()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sline3%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLine3()))));
     }
 
     // add `city` to the URL query string
     if (getCity() != null) {
-      joiner.add(String.format("%scity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCity()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCity()))));
     }
 
     // add `subdivision` to the URL query string
     if (getSubdivision() != null) {
-      joiner.add(String.format("%ssubdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubdivision()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssubdivision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubdivision()))));
     }
 
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `fullAddress` to the URL query string
     if (getFullAddress() != null) {
-      joiner.add(String.format("%sfullAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullAddress()))));
     }
 
     return joiner.toString();

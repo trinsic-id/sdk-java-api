@@ -56,15 +56,35 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class VerificationProfilesApi {
+  /**
+   * Utility class for extending HttpRequest.Builder functionality.
+   */
+  private static class HttpRequestBuilderExtensions {
+    /**
+     * Adds additional headers to the provided HttpRequest.Builder. Useful for adding method/endpoint specific headers.
+     *
+     * @param builder the HttpRequest.Builder to which headers will be added
+     * @param headers a map of header names and values to add; may be null
+     * @return the same HttpRequest.Builder instance with the additional headers set
+     */
+    static HttpRequest.Builder withAdditionalHeaders(HttpRequest.Builder builder, Map<String, String> headers) {
+        if (headers != null) {
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                builder.header(entry.getKey(), entry.getValue());
+            }
+        }
+        return builder;
+    }
+  }
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
   private final String memberVarBaseUri;
   private final Consumer<HttpRequest.Builder> memberVarInterceptor;
   private final Duration memberVarReadTimeout;
   private final Consumer<HttpResponse<InputStream>> memberVarResponseInterceptor;
-  private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
+  private final Consumer<HttpResponse<InputStream>> memberVarAsyncResponseInterceptor;
 
   public VerificationProfilesApi() {
     this(Configuration.getDefaultApiClient());
@@ -80,8 +100,17 @@ public class VerificationProfilesApi {
     memberVarAsyncResponseInterceptor = apiClient.getAsyncResponseInterceptor();
   }
 
+
   protected ApiException getApiException(String operationId, HttpResponse<InputStream> response) throws IOException {
-    String body = response.body() == null ? null : new String(response.body().readAllBytes());
+    InputStream responseBody = ApiClient.getResponseBody(response);
+    String body = null;
+    try {
+      body = responseBody == null ? null : new String(responseBody.readAllBytes());
+    } finally {
+      if (responseBody != null) {
+        responseBody.close();
+      }
+    }
     String message = formatExceptionMessage(operationId, response.statusCode(), body);
     return new ApiException(response.statusCode(), message, response.headers(), body);
   }
@@ -94,11 +123,63 @@ public class VerificationProfilesApi {
   }
 
   /**
+   * Download file from the given response.
+   *
+   * @param response Response
+   * @return File
+   * @throws ApiException If fail to read file content from response and write to disk
+   */
+  public File downloadFileFromResponse(HttpResponse<InputStream> response, InputStream responseBody) throws ApiException {
+    if (responseBody == null) {
+      throw new ApiException(new IOException("Response body is empty"));
+    }
+    try {
+      File file = prepareDownloadFile(response);
+      java.nio.file.Files.copy(responseBody, file.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+      return file;
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  /**
+   * <p>Prepare the file for download from the response.</p>
+   *
+   * @param response a {@link java.net.http.HttpResponse} object.
+   * @return a {@link java.io.File} object.
+   * @throws java.io.IOException if any.
+   */
+  private File prepareDownloadFile(HttpResponse<InputStream> response) throws IOException {
+    String filename = null;
+    java.util.Optional<String> contentDisposition = response.headers().firstValue("Content-Disposition");
+    if (contentDisposition.isPresent() && !"".equals(contentDisposition.get())) {
+      // Get filename from the Content-Disposition header.
+      java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("filename=['\"]?([^'\"\\s]+)['\"]?");
+      java.util.regex.Matcher matcher = pattern.matcher(contentDisposition.get());
+      if (matcher.find())
+        filename = matcher.group(1);
+    }
+    File file = null;
+    if (filename != null) {
+      java.nio.file.Path tempDir = java.nio.file.Files.createTempDirectory("swagger-gen-native");
+      java.nio.file.Path filePath = java.nio.file.Files.createFile(tempDir.resolve(filename));
+      file = filePath.toFile();
+      tempDir.toFile().deleteOnExit();   // best effort cleanup
+      file.deleteOnExit(); // best effort cleanup
+    } else {
+      file = java.nio.file.Files.createTempFile("download-", "").toFile();
+      file.deleteOnExit(); // best effort cleanup
+    }
+    return file;
+  }
+
+  /**
    * Create Verification Profile
    * Creates a new verification profile within your organization.
    * @param alias An alias of the verification profile shown to developers and administrators. (required)
    * @param brandName The brand name of the verification profile shown to end-users. (required)
    * @param primaryColor The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
+   * @param externalId A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. (optional)
    * @param providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
    * @param logo The logo of the verification profile. (optional)
    * @param redactionPeriod The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
@@ -107,8 +188,28 @@ public class VerificationProfilesApi {
    * @return CreateVerificationProfileResponse
    * @throws ApiException if fails to make API call
    */
-  public CreateVerificationProfileResponse createVerificationProfile(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
-    ApiResponse<CreateVerificationProfileResponse> localVarResponse = createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
+  public CreateVerificationProfileResponse createVerificationProfile(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
+    return createVerificationProfile(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage, null);
+  }
+
+  /**
+   * Create Verification Profile
+   * Creates a new verification profile within your organization.
+   * @param alias An alias of the verification profile shown to developers and administrators. (required)
+   * @param brandName The brand name of the verification profile shown to end-users. (required)
+   * @param primaryColor The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
+   * @param externalId A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. (optional)
+   * @param providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
+   * @param logo The logo of the verification profile. (optional)
+   * @param redactionPeriod The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+   * @param sessionExpiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
+   * @param isProductionUsage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
+   * @param headers Optional headers to include in the request
+   * @return CreateVerificationProfileResponse
+   * @throws ApiException if fails to make API call
+   */
+  public CreateVerificationProfileResponse createVerificationProfile(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateVerificationProfileResponse> localVarResponse = createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage, headers);
     return localVarResponse.getData();
   }
 
@@ -118,6 +219,7 @@ public class VerificationProfilesApi {
    * @param alias An alias of the verification profile shown to developers and administrators. (required)
    * @param brandName The brand name of the verification profile shown to end-users. (required)
    * @param primaryColor The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
+   * @param externalId A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. (optional)
    * @param providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
    * @param logo The logo of the verification profile. (optional)
    * @param redactionPeriod The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
@@ -126,8 +228,28 @@ public class VerificationProfilesApi {
    * @return ApiResponse&lt;CreateVerificationProfileResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateVerificationProfileResponse> createVerificationProfileWithHttpInfo(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = createVerificationProfileRequestBuilder(alias, brandName, primaryColor, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage);
+  public ApiResponse<CreateVerificationProfileResponse> createVerificationProfileWithHttpInfo(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
+    return createVerificationProfileWithHttpInfo(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage, null);
+  }
+
+  /**
+   * Create Verification Profile
+   * Creates a new verification profile within your organization.
+   * @param alias An alias of the verification profile shown to developers and administrators. (required)
+   * @param brandName The brand name of the verification profile shown to end-users. (required)
+   * @param primaryColor The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
+   * @param externalId A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. (optional)
+   * @param providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
+   * @param logo The logo of the verification profile. (optional)
+   * @param redactionPeriod The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+   * @param sessionExpiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
+   * @param isProductionUsage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateVerificationProfileResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateVerificationProfileResponse> createVerificationProfileWithHttpInfo(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createVerificationProfileRequestBuilder(alias, brandName, primaryColor, externalId, providers, logo, redactionPeriod, sessionExpiration, isProductionUsage, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -135,11 +257,13 @@ public class VerificationProfilesApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("createVerificationProfile", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<CreateVerificationProfileResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -147,15 +271,21 @@ public class VerificationProfilesApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateVerificationProfileResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateVerificationProfileResponse>() {});
+        
 
         return new ApiResponse<CreateVerificationProfileResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateVerificationProfileResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -166,7 +296,7 @@ public class VerificationProfilesApi {
     }
   }
 
-  private HttpRequest.Builder createVerificationProfileRequestBuilder(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage) throws ApiException {
+  private HttpRequest.Builder createVerificationProfileRequestBuilder(@javax.annotation.Nonnull String alias, @javax.annotation.Nonnull String brandName, @javax.annotation.Nullable String primaryColor, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable List<String> providers, @javax.annotation.Nullable File logo, @javax.annotation.Nullable String redactionPeriod, @javax.annotation.Nullable String sessionExpiration, @javax.annotation.Nullable Boolean isProductionUsage, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'alias' is set
     if (alias == null) {
       throw new ApiException(400, "Missing the required parameter 'alias' when calling createVerificationProfile");
@@ -186,17 +316,34 @@ public class VerificationProfilesApi {
 
     MultipartEntityBuilder multiPartBuilder = MultipartEntityBuilder.create();
     boolean hasFiles = false;
-    multiPartBuilder.addTextBody("Alias", alias.toString());
-    multiPartBuilder.addTextBody("BrandName", brandName.toString());
-    multiPartBuilder.addTextBody("PrimaryColor", primaryColor.toString());
+    if (alias != null) {
+        multiPartBuilder.addTextBody("Alias", alias.toString());
+    }
+    if (brandName != null) {
+        multiPartBuilder.addTextBody("BrandName", brandName.toString());
+    }
+    if (primaryColor != null) {
+        multiPartBuilder.addTextBody("PrimaryColor", primaryColor.toString());
+    }
+    if (externalId != null) {
+        multiPartBuilder.addTextBody("ExternalId", externalId.toString());
+    }
     for (int i=0; i < providers.size(); i++) {
-        multiPartBuilder.addTextBody("Providers", providers.get(i).toString());
+        if (providers.get(i) != null) {
+            multiPartBuilder.addTextBody("Providers", providers.get(i).toString());
+        }
     }
     multiPartBuilder.addBinaryBody("Logo", logo);
     hasFiles = true;
-    multiPartBuilder.addTextBody("RedactionPeriod", redactionPeriod.toString());
-    multiPartBuilder.addTextBody("SessionExpiration", sessionExpiration.toString());
-    multiPartBuilder.addTextBody("IsProductionUsage", isProductionUsage.toString());
+    if (redactionPeriod != null) {
+        multiPartBuilder.addTextBody("RedactionPeriod", redactionPeriod.toString());
+    }
+    if (sessionExpiration != null) {
+        multiPartBuilder.addTextBody("SessionExpiration", sessionExpiration.toString());
+    }
+    if (isProductionUsage != null) {
+        multiPartBuilder.addTextBody("IsProductionUsage", isProductionUsage.toString());
+    }
     HttpEntity entity = multiPartBuilder.build();
     HttpRequest.BodyPublisher formDataPublisher;
     if (hasFiles) {
@@ -221,8 +368,9 @@ public class VerificationProfilesApi {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        byte[] formBytes = formOutputStream.toByteArray();
         formDataPublisher = HttpRequest.BodyPublishers
-            .ofInputStream(() -> new ByteArrayInputStream(formOutputStream.toByteArray()));
+            .ofInputStream(() -> new ByteArrayInputStream(formBytes));
     }
     localVarRequestBuilder
         .header("Content-Type", entity.getContentType().getValue())
@@ -230,6 +378,126 @@ public class VerificationProfilesApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Get Verification Profile by External ID
+   * Gets a specific verification profile by its customer-defined external ID.
+   * @param externalId Customer-defined external ID (required)
+   * @return VerificationProfileResponse
+   * @throws ApiException if fails to make API call
+   */
+  public VerificationProfileResponse getVerificationProfileByExternalId(@javax.annotation.Nonnull String externalId) throws ApiException {
+    return getVerificationProfileByExternalId(externalId, null);
+  }
+
+  /**
+   * Get Verification Profile by External ID
+   * Gets a specific verification profile by its customer-defined external ID.
+   * @param externalId Customer-defined external ID (required)
+   * @param headers Optional headers to include in the request
+   * @return VerificationProfileResponse
+   * @throws ApiException if fails to make API call
+   */
+  public VerificationProfileResponse getVerificationProfileByExternalId(@javax.annotation.Nonnull String externalId, Map<String, String> headers) throws ApiException {
+    ApiResponse<VerificationProfileResponse> localVarResponse = getVerificationProfileByExternalIdWithHttpInfo(externalId, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Get Verification Profile by External ID
+   * Gets a specific verification profile by its customer-defined external ID.
+   * @param externalId Customer-defined external ID (required)
+   * @return ApiResponse&lt;VerificationProfileResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<VerificationProfileResponse> getVerificationProfileByExternalIdWithHttpInfo(@javax.annotation.Nonnull String externalId) throws ApiException {
+    return getVerificationProfileByExternalIdWithHttpInfo(externalId, null);
+  }
+
+  /**
+   * Get Verification Profile by External ID
+   * Gets a specific verification profile by its customer-defined external ID.
+   * @param externalId Customer-defined external ID (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;VerificationProfileResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<VerificationProfileResponse> getVerificationProfileByExternalIdWithHttpInfo(@javax.annotation.Nonnull String externalId, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getVerificationProfileByExternalIdRequestBuilder(externalId, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("getVerificationProfileByExternalId", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<VerificationProfileResponse>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        VerificationProfileResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<VerificationProfileResponse>() {});
+        
+
+        return new ApiResponse<VerificationProfileResponse>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder getVerificationProfileByExternalIdRequestBuilder(@javax.annotation.Nonnull String externalId, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'externalId' is set
+    if (externalId == null) {
+      throw new ApiException(400, "Missing the required parameter 'externalId' when calling getVerificationProfileByExternalId");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/api/valpha/verification-profiles/external-ids/{externalId}"
+        .replace("{externalId}", ApiClient.urlEncode(externalId.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -244,7 +512,19 @@ public class VerificationProfilesApi {
    * @throws ApiException if fails to make API call
    */
   public VerificationProfileResponse getVerificationProfileById(@javax.annotation.Nonnull UUID id) throws ApiException {
-    ApiResponse<VerificationProfileResponse> localVarResponse = getVerificationProfileByIdWithHttpInfo(id);
+    return getVerificationProfileById(id, null);
+  }
+
+  /**
+   * Get Verification Profile
+   * Gets a specific verification profile by ID.
+   * @param id  (required)
+   * @param headers Optional headers to include in the request
+   * @return VerificationProfileResponse
+   * @throws ApiException if fails to make API call
+   */
+  public VerificationProfileResponse getVerificationProfileById(@javax.annotation.Nonnull UUID id, Map<String, String> headers) throws ApiException {
+    ApiResponse<VerificationProfileResponse> localVarResponse = getVerificationProfileByIdWithHttpInfo(id, headers);
     return localVarResponse.getData();
   }
 
@@ -256,7 +536,19 @@ public class VerificationProfilesApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<VerificationProfileResponse> getVerificationProfileByIdWithHttpInfo(@javax.annotation.Nonnull UUID id) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = getVerificationProfileByIdRequestBuilder(id);
+    return getVerificationProfileByIdWithHttpInfo(id, null);
+  }
+
+  /**
+   * Get Verification Profile
+   * Gets a specific verification profile by ID.
+   * @param id  (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;VerificationProfileResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<VerificationProfileResponse> getVerificationProfileByIdWithHttpInfo(@javax.annotation.Nonnull UUID id, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getVerificationProfileByIdRequestBuilder(id, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -264,11 +556,13 @@ public class VerificationProfilesApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("getVerificationProfileById", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<VerificationProfileResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -276,15 +570,21 @@ public class VerificationProfilesApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        VerificationProfileResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<VerificationProfileResponse>() {});
+        
 
         return new ApiResponse<VerificationProfileResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<VerificationProfileResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -295,7 +595,7 @@ public class VerificationProfilesApi {
     }
   }
 
-  private HttpRequest.Builder getVerificationProfileByIdRequestBuilder(@javax.annotation.Nonnull UUID id) throws ApiException {
+  private HttpRequest.Builder getVerificationProfileByIdRequestBuilder(@javax.annotation.Nonnull UUID id, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getVerificationProfileById");
@@ -314,6 +614,8 @@ public class VerificationProfilesApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -329,7 +631,20 @@ public class VerificationProfilesApi {
    * @throws ApiException if fails to make API call
    */
   public ListVerificationProfilesResponse listVerificationProfiles(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-    ApiResponse<ListVerificationProfilesResponse> localVarResponse = listVerificationProfilesWithHttpInfo(page, pageSize);
+    return listVerificationProfiles(page, pageSize, null);
+  }
+
+  /**
+   * List Verification Profiles
+   * List the verification profiles for the current organization and environment.
+   * @param page  (optional, default to 1)
+   * @param pageSize Size of the list to be returned. Accepted range from 1 to 100 (optional, default to 20)
+   * @param headers Optional headers to include in the request
+   * @return ListVerificationProfilesResponse
+   * @throws ApiException if fails to make API call
+   */
+  public ListVerificationProfilesResponse listVerificationProfiles(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
+    ApiResponse<ListVerificationProfilesResponse> localVarResponse = listVerificationProfilesWithHttpInfo(page, pageSize, headers);
     return localVarResponse.getData();
   }
 
@@ -342,7 +657,20 @@ public class VerificationProfilesApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = listVerificationProfilesRequestBuilder(page, pageSize);
+    return listVerificationProfilesWithHttpInfo(page, pageSize, null);
+  }
+
+  /**
+   * List Verification Profiles
+   * List the verification profiles for the current organization and environment.
+   * @param page  (optional, default to 1)
+   * @param pageSize Size of the list to be returned. Accepted range from 1 to 100 (optional, default to 20)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;ListVerificationProfilesResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listVerificationProfilesRequestBuilder(page, pageSize, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -350,11 +678,13 @@ public class VerificationProfilesApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("listVerificationProfiles", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<ListVerificationProfilesResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -362,15 +692,21 @@ public class VerificationProfilesApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        ListVerificationProfilesResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ListVerificationProfilesResponse>() {});
+        
 
         return new ApiResponse<ListVerificationProfilesResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ListVerificationProfilesResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -381,7 +717,7 @@ public class VerificationProfilesApi {
     }
   }
 
-  private HttpRequest.Builder listVerificationProfilesRequestBuilder(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+  private HttpRequest.Builder listVerificationProfilesRequestBuilder(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -412,6 +748,8 @@ public class VerificationProfilesApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }

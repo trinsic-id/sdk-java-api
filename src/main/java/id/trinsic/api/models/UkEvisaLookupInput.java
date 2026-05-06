@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   UkEvisaLookupInput.JSON_PROPERTY_SHARE_CODE,
   UkEvisaLookupInput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class UkEvisaLookupInput {
   public static final String JSON_PROPERTY_SHARE_CODE = "shareCode";
   @javax.annotation.Nonnull
@@ -60,14 +60,14 @@ public class UkEvisaLookupInput {
    * @return shareCode
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SHARE_CODE)
+  @JsonProperty(value = JSON_PROPERTY_SHARE_CODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getShareCode() {
     return shareCode;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SHARE_CODE)
+  @JsonProperty(value = JSON_PROPERTY_SHARE_CODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setShareCode(@javax.annotation.Nonnull String shareCode) {
     this.shareCode = shareCode;
@@ -84,14 +84,14 @@ public class UkEvisaLookupInput {
    * @return dateOfBirth
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
@@ -134,10 +134,7 @@ public class UkEvisaLookupInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -174,12 +171,12 @@ public class UkEvisaLookupInput {
 
     // add `shareCode` to the URL query string
     if (getShareCode() != null) {
-      joiner.add(String.format("%sshareCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getShareCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sshareCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getShareCode()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

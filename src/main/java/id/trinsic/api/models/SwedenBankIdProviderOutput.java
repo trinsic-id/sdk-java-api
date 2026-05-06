@@ -53,7 +53,7 @@ import id.trinsic.ApiClient;
   SwedenBankIdProviderOutput.JSON_PROPERTY_NOT_BEFORE,
   SwedenBankIdProviderOutput.JSON_PROPERTY_NOT_AFTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SwedenBankIdProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -112,7 +112,7 @@ public class SwedenBankIdProviderOutput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -144,7 +144,7 @@ public class SwedenBankIdProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -176,7 +176,7 @@ public class SwedenBankIdProviderOutput {
         return personalIdentityNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPersonalIdentityNumber_JsonNullable() {
@@ -208,7 +208,7 @@ public class SwedenBankIdProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -240,7 +240,7 @@ public class SwedenBankIdProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -263,7 +263,7 @@ public class SwedenBankIdProviderOutput {
   }
 
   /**
-   * The end user&#39;s country on the verified certificate. This is ISO 2-character code of the country.
+   * The individual&#39;s country on the verified certificate. This is ISO 2-character code of the country.
    * @return country
    */
   @javax.annotation.Nullable
@@ -272,7 +272,7 @@ public class SwedenBankIdProviderOutput {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -304,7 +304,7 @@ public class SwedenBankIdProviderOutput {
         return certificatePolicy.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE_POLICY)
+  @JsonProperty(value = JSON_PROPERTY_CERTIFICATE_POLICY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCertificatePolicy_JsonNullable() {
@@ -327,7 +327,7 @@ public class SwedenBankIdProviderOutput {
   }
 
   /**
-   * The common name of the end user&#39;s verified certificate
+   * The common name of the individual&#39;s verified certificate
    * @return commonName
    */
   @javax.annotation.Nullable
@@ -336,7 +336,7 @@ public class SwedenBankIdProviderOutput {
         return commonName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COMMON_NAME)
+  @JsonProperty(value = JSON_PROPERTY_COMMON_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCommonName_JsonNullable() {
@@ -359,7 +359,7 @@ public class SwedenBankIdProviderOutput {
   }
 
   /**
-   * The distinguished name of the end user&#39;s verified certificate
+   * The distinguished name of the individual&#39;s verified certificate
    * @return distinguishedName
    */
   @javax.annotation.Nullable
@@ -368,7 +368,7 @@ public class SwedenBankIdProviderOutput {
         return distinguishedName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DISTINGUISHED_NAME)
+  @JsonProperty(value = JSON_PROPERTY_DISTINGUISHED_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDistinguishedName_JsonNullable() {
@@ -400,7 +400,7 @@ public class SwedenBankIdProviderOutput {
         return personalIdentityNumberIssuingCountry.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER_ISSUING_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER_ISSUING_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPersonalIdentityNumberIssuingCountry_JsonNullable() {
@@ -432,7 +432,7 @@ public class SwedenBankIdProviderOutput {
         return authenticationDeviceIp.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_DEVICE_IP)
+  @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_DEVICE_IP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getAuthenticationDeviceIp_JsonNullable() {
@@ -464,7 +464,7 @@ public class SwedenBankIdProviderOutput {
         return notBefore.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NOT_BEFORE)
+  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OffsetDateTime> getNotBefore_JsonNullable() {
@@ -496,7 +496,7 @@ public class SwedenBankIdProviderOutput {
         return notAfter.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NOT_AFTER)
+  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OffsetDateTime> getNotAfter_JsonNullable() {
@@ -582,10 +582,7 @@ public class SwedenBankIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -622,67 +619,67 @@ public class SwedenBankIdProviderOutput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `personalIdentityNumber` to the URL query string
     if (getPersonalIdentityNumber() != null) {
-      joiner.add(String.format("%spersonalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spersonalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumber()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `certificatePolicy` to the URL query string
     if (getCertificatePolicy() != null) {
-      joiner.add(String.format("%scertificatePolicy%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificatePolicy()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scertificatePolicy%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificatePolicy()))));
     }
 
     // add `commonName` to the URL query string
     if (getCommonName() != null) {
-      joiner.add(String.format("%scommonName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCommonName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scommonName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCommonName()))));
     }
 
     // add `distinguishedName` to the URL query string
     if (getDistinguishedName() != null) {
-      joiner.add(String.format("%sdistinguishedName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistinguishedName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdistinguishedName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistinguishedName()))));
     }
 
     // add `personalIdentityNumberIssuingCountry` to the URL query string
     if (getPersonalIdentityNumberIssuingCountry() != null) {
-      joiner.add(String.format("%spersonalIdentityNumberIssuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumberIssuingCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spersonalIdentityNumberIssuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPersonalIdentityNumberIssuingCountry()))));
     }
 
     // add `authenticationDeviceIp` to the URL query string
     if (getAuthenticationDeviceIp() != null) {
-      joiner.add(String.format("%sauthenticationDeviceIp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthenticationDeviceIp()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sauthenticationDeviceIp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthenticationDeviceIp()))));
     }
 
     // add `notBefore` to the URL query string
     if (getNotBefore() != null) {
-      joiner.add(String.format("%snotBefore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotBefore()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snotBefore%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotBefore()))));
     }
 
     // add `notAfter` to the URL query string
     if (getNotAfter() != null) {
-      joiner.add(String.format("%snotAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotAfter()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snotAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotAfter()))));
     }
 
     return joiner.toString();

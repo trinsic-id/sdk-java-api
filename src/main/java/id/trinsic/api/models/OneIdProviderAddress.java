@@ -43,7 +43,7 @@ import id.trinsic.ApiClient;
   OneIdProviderAddress.JSON_PROPERTY_POSTAL_CODE,
   OneIdProviderAddress.JSON_PROPERTY_COUNTRY_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class OneIdProviderAddress {
   public static final String JSON_PROPERTY_STREET_ADDRESS = "streetAddress";
   private JsonNullable<String> streetAddress = JsonNullable.<String>undefined();
@@ -78,7 +78,7 @@ public class OneIdProviderAddress {
         return streetAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_STREET_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_STREET_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getStreetAddress_JsonNullable() {
@@ -110,7 +110,7 @@ public class OneIdProviderAddress {
         return locality.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LOCALITY)
+  @JsonProperty(value = JSON_PROPERTY_LOCALITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getLocality_JsonNullable() {
@@ -142,7 +142,7 @@ public class OneIdProviderAddress {
         return region.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REGION)
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRegion_JsonNullable() {
@@ -174,7 +174,7 @@ public class OneIdProviderAddress {
         return postalCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPostalCode_JsonNullable() {
@@ -206,7 +206,7 @@ public class OneIdProviderAddress {
         return countryCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountryCode_JsonNullable() {
@@ -276,10 +276,7 @@ public class OneIdProviderAddress {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -316,27 +313,27 @@ public class OneIdProviderAddress {
 
     // add `streetAddress` to the URL query string
     if (getStreetAddress() != null) {
-      joiner.add(String.format("%sstreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreetAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreetAddress()))));
     }
 
     // add `locality` to the URL query string
     if (getLocality() != null) {
-      joiner.add(String.format("%slocality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocality()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slocality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocality()))));
     }
 
     // add `region` to the URL query string
     if (getRegion() != null) {
-      joiner.add(String.format("%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
     }
 
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
     }
 
     // add `countryCode` to the URL query string
     if (getCountryCode() != null) {
-      joiner.add(String.format("%scountryCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountryCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryCode()))));
     }
 
     return joiner.toString();

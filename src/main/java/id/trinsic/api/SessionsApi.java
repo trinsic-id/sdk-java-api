@@ -23,8 +23,6 @@ import id.trinsic.api.models.CreateDirectProviderSessionRequest;
 import id.trinsic.api.models.CreateDirectProviderSessionResponse;
 import id.trinsic.api.models.CreateHostedProviderSessionRequest;
 import id.trinsic.api.models.CreateHostedProviderSessionResponse;
-import id.trinsic.api.models.CreateWidgetSessionRequest;
-import id.trinsic.api.models.CreateWidgetSessionResponse;
 import id.trinsic.api.models.GetAttachmentRequest;
 import id.trinsic.api.models.GetAttachmentResponse;
 import id.trinsic.api.models.GetSessionResponse;
@@ -67,15 +65,35 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SessionsApi {
+  /**
+   * Utility class for extending HttpRequest.Builder functionality.
+   */
+  private static class HttpRequestBuilderExtensions {
+    /**
+     * Adds additional headers to the provided HttpRequest.Builder. Useful for adding method/endpoint specific headers.
+     *
+     * @param builder the HttpRequest.Builder to which headers will be added
+     * @param headers a map of header names and values to add; may be null
+     * @return the same HttpRequest.Builder instance with the additional headers set
+     */
+    static HttpRequest.Builder withAdditionalHeaders(HttpRequest.Builder builder, Map<String, String> headers) {
+        if (headers != null) {
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                builder.header(entry.getKey(), entry.getValue());
+            }
+        }
+        return builder;
+    }
+  }
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
   private final String memberVarBaseUri;
   private final Consumer<HttpRequest.Builder> memberVarInterceptor;
   private final Duration memberVarReadTimeout;
   private final Consumer<HttpResponse<InputStream>> memberVarResponseInterceptor;
-  private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
+  private final Consumer<HttpResponse<InputStream>> memberVarAsyncResponseInterceptor;
 
   public SessionsApi() {
     this(Configuration.getDefaultApiClient());
@@ -91,8 +109,17 @@ public class SessionsApi {
     memberVarAsyncResponseInterceptor = apiClient.getAsyncResponseInterceptor();
   }
 
+
   protected ApiException getApiException(String operationId, HttpResponse<InputStream> response) throws IOException {
-    String body = response.body() == null ? null : new String(response.body().readAllBytes());
+    InputStream responseBody = ApiClient.getResponseBody(response);
+    String body = null;
+    try {
+      body = responseBody == null ? null : new String(responseBody.readAllBytes());
+    } finally {
+      if (responseBody != null) {
+        responseBody.close();
+      }
+    }
     String message = formatExceptionMessage(operationId, response.statusCode(), body);
     return new ApiException(response.statusCode(), message, response.headers(), body);
   }
@@ -105,6 +132,57 @@ public class SessionsApi {
   }
 
   /**
+   * Download file from the given response.
+   *
+   * @param response Response
+   * @return File
+   * @throws ApiException If fail to read file content from response and write to disk
+   */
+  public File downloadFileFromResponse(HttpResponse<InputStream> response, InputStream responseBody) throws ApiException {
+    if (responseBody == null) {
+      throw new ApiException(new IOException("Response body is empty"));
+    }
+    try {
+      File file = prepareDownloadFile(response);
+      java.nio.file.Files.copy(responseBody, file.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+      return file;
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  /**
+   * <p>Prepare the file for download from the response.</p>
+   *
+   * @param response a {@link java.net.http.HttpResponse} object.
+   * @return a {@link java.io.File} object.
+   * @throws java.io.IOException if any.
+   */
+  private File prepareDownloadFile(HttpResponse<InputStream> response) throws IOException {
+    String filename = null;
+    java.util.Optional<String> contentDisposition = response.headers().firstValue("Content-Disposition");
+    if (contentDisposition.isPresent() && !"".equals(contentDisposition.get())) {
+      // Get filename from the Content-Disposition header.
+      java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("filename=['\"]?([^'\"\\s]+)['\"]?");
+      java.util.regex.Matcher matcher = pattern.matcher(contentDisposition.get());
+      if (matcher.find())
+        filename = matcher.group(1);
+    }
+    File file = null;
+    if (filename != null) {
+      java.nio.file.Path tempDir = java.nio.file.Files.createTempDirectory("swagger-gen-native");
+      java.nio.file.Path filePath = java.nio.file.Files.createFile(tempDir.resolve(filename));
+      file = filePath.toFile();
+      tempDir.toFile().deleteOnExit();   // best effort cleanup
+      file.deleteOnExit(); // best effort cleanup
+    } else {
+      file = java.nio.file.Files.createTempFile("download-", "").toFile();
+      file.deleteOnExit(); // best effort cleanup
+    }
+    return file;
+  }
+
+  /**
    * Cancel Session
    * Cancel a Session by its ID
    * @param sessionId  (required)
@@ -112,7 +190,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public CancelSessionResponse cancelSession(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
-    ApiResponse<CancelSessionResponse> localVarResponse = cancelSessionWithHttpInfo(sessionId);
+    return cancelSession(sessionId, null);
+  }
+
+  /**
+   * Cancel Session
+   * Cancel a Session by its ID
+   * @param sessionId  (required)
+   * @param headers Optional headers to include in the request
+   * @return CancelSessionResponse
+   * @throws ApiException if fails to make API call
+   */
+  public CancelSessionResponse cancelSession(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
+    ApiResponse<CancelSessionResponse> localVarResponse = cancelSessionWithHttpInfo(sessionId, headers);
     return localVarResponse.getData();
   }
 
@@ -124,7 +214,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<CancelSessionResponse> cancelSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = cancelSessionRequestBuilder(sessionId);
+    return cancelSessionWithHttpInfo(sessionId, null);
+  }
+
+  /**
+   * Cancel Session
+   * Cancel a Session by its ID
+   * @param sessionId  (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CancelSessionResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CancelSessionResponse> cancelSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = cancelSessionRequestBuilder(sessionId, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -132,11 +234,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("cancelSession", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<CancelSessionResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -144,15 +248,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CancelSessionResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CancelSessionResponse>() {});
+        
 
         return new ApiResponse<CancelSessionResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CancelSessionResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -163,7 +273,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder cancelSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
+  private HttpRequest.Builder cancelSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling cancelSession");
@@ -182,6 +292,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -196,7 +308,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public CreateDirectProviderSessionResponse createDirectProviderSession(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest) throws ApiException {
-    ApiResponse<CreateDirectProviderSessionResponse> localVarResponse = createDirectProviderSessionWithHttpInfo(createDirectProviderSessionRequest);
+    return createDirectProviderSession(createDirectProviderSessionRequest, null);
+  }
+
+  /**
+   * Create Direct Provider Session
+   * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
+   * @param createDirectProviderSessionRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return CreateDirectProviderSessionResponse
+   * @throws ApiException if fails to make API call
+   */
+  public CreateDirectProviderSessionResponse createDirectProviderSession(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateDirectProviderSessionResponse> localVarResponse = createDirectProviderSessionWithHttpInfo(createDirectProviderSessionRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -208,7 +332,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<CreateDirectProviderSessionResponse> createDirectProviderSessionWithHttpInfo(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = createDirectProviderSessionRequestBuilder(createDirectProviderSessionRequest);
+    return createDirectProviderSessionWithHttpInfo(createDirectProviderSessionRequest, null);
+  }
+
+  /**
+   * Create Direct Provider Session
+   * Verify a user&#39;s identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the &#x60;Capabilities&#x60; field.   If &#x60;FallbackToHostedUi&#x60; is &#x60;true&#x60;, Trinsic&#39;s hosted UI will automatically be invoked to handle any capabilities you do not support.
+   * @param createDirectProviderSessionRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateDirectProviderSessionResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateDirectProviderSessionResponse> createDirectProviderSessionWithHttpInfo(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createDirectProviderSessionRequestBuilder(createDirectProviderSessionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -216,11 +352,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("createDirectProviderSession", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<CreateDirectProviderSessionResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -228,15 +366,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateDirectProviderSessionResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateDirectProviderSessionResponse>() {});
+        
 
         return new ApiResponse<CreateDirectProviderSessionResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateDirectProviderSessionResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -247,7 +391,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder createDirectProviderSessionRequestBuilder(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest) throws ApiException {
+  private HttpRequest.Builder createDirectProviderSessionRequestBuilder(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -267,6 +411,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -281,7 +427,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public CreateHostedProviderSessionResponse createHostedProviderSession(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest) throws ApiException {
-    ApiResponse<CreateHostedProviderSessionResponse> localVarResponse = createHostedProviderSessionWithHttpInfo(createHostedProviderSessionRequest);
+    return createHostedProviderSession(createHostedProviderSessionRequest, null);
+  }
+
+  /**
+   * Create Hosted Provider Session
+   * Verify a user&#39;s identity with a specific provider, using Trinsic-hosted UI for providers which require additional user interaction.
+   * @param createHostedProviderSessionRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return CreateHostedProviderSessionResponse
+   * @throws ApiException if fails to make API call
+   */
+  public CreateHostedProviderSessionResponse createHostedProviderSession(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateHostedProviderSessionResponse> localVarResponse = createHostedProviderSessionWithHttpInfo(createHostedProviderSessionRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -293,7 +451,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<CreateHostedProviderSessionResponse> createHostedProviderSessionWithHttpInfo(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = createHostedProviderSessionRequestBuilder(createHostedProviderSessionRequest);
+    return createHostedProviderSessionWithHttpInfo(createHostedProviderSessionRequest, null);
+  }
+
+  /**
+   * Create Hosted Provider Session
+   * Verify a user&#39;s identity with a specific provider, using Trinsic-hosted UI for providers which require additional user interaction.
+   * @param createHostedProviderSessionRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateHostedProviderSessionResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateHostedProviderSessionResponse> createHostedProviderSessionWithHttpInfo(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createHostedProviderSessionRequestBuilder(createHostedProviderSessionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -301,11 +471,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("createHostedProviderSession", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<CreateHostedProviderSessionResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -313,15 +485,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateHostedProviderSessionResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateHostedProviderSessionResponse>() {});
+        
 
         return new ApiResponse<CreateHostedProviderSessionResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateHostedProviderSessionResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -332,7 +510,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder createHostedProviderSessionRequestBuilder(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest) throws ApiException {
+  private HttpRequest.Builder createHostedProviderSessionRequestBuilder(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -352,91 +530,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Create Widget Session
-   * Verify a user&#39;s identity using Trinsic&#39;s hosted Widget flow.
-   * @param createWidgetSessionRequest  (optional)
-   * @return CreateWidgetSessionResponse
-   * @throws ApiException if fails to make API call
-   */
-  public CreateWidgetSessionResponse createWidgetSession(@javax.annotation.Nullable CreateWidgetSessionRequest createWidgetSessionRequest) throws ApiException {
-    ApiResponse<CreateWidgetSessionResponse> localVarResponse = createWidgetSessionWithHttpInfo(createWidgetSessionRequest);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Create Widget Session
-   * Verify a user&#39;s identity using Trinsic&#39;s hosted Widget flow.
-   * @param createWidgetSessionRequest  (optional)
-   * @return ApiResponse&lt;CreateWidgetSessionResponse&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<CreateWidgetSessionResponse> createWidgetSessionWithHttpInfo(@javax.annotation.Nullable CreateWidgetSessionRequest createWidgetSessionRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = createWidgetSessionRequestBuilder(createWidgetSessionRequest);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("createWidgetSession", localVarResponse);
-        }
-        if (localVarResponse.body() == null) {
-          return new ApiResponse<CreateWidgetSessionResponse>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
-
-        return new ApiResponse<CreateWidgetSessionResponse>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateWidgetSessionResponse>() {})
-        );
-      } finally {
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder createWidgetSessionRequestBuilder(@javax.annotation.Nullable CreateWidgetSessionRequest createWidgetSessionRequest) throws ApiException {
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/api/v1/sessions/widget";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "text/plain, application/json, text/json, application/problem+json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createWidgetSessionRequest);
-      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -453,7 +548,21 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public GetAttachmentResponse getAttachment(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
-    ApiResponse<GetAttachmentResponse> localVarResponse = getAttachmentWithHttpInfo(sessionId, attachmentId, getAttachmentRequest);
+    return getAttachment(sessionId, attachmentId, getAttachmentRequest, null);
+  }
+
+  /**
+   * Get Attachment
+   * Fetch an Attachment&#39;s contents.
+   * @param sessionId The ID of the Session to fetch the Attachment from (required)
+   * @param attachmentId The ID of the Attachment to fetch (required)
+   * @param getAttachmentRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return GetAttachmentResponse
+   * @throws ApiException if fails to make API call
+   */
+  public GetAttachmentResponse getAttachment(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAttachmentResponse> localVarResponse = getAttachmentWithHttpInfo(sessionId, attachmentId, getAttachmentRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -467,7 +576,21 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<GetAttachmentResponse> getAttachmentWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = getAttachmentRequestBuilder(sessionId, attachmentId, getAttachmentRequest);
+    return getAttachmentWithHttpInfo(sessionId, attachmentId, getAttachmentRequest, null);
+  }
+
+  /**
+   * Get Attachment
+   * Fetch an Attachment&#39;s contents.
+   * @param sessionId The ID of the Session to fetch the Attachment from (required)
+   * @param attachmentId The ID of the Attachment to fetch (required)
+   * @param getAttachmentRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetAttachmentResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetAttachmentResponse> getAttachmentWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAttachmentRequestBuilder(sessionId, attachmentId, getAttachmentRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -475,11 +598,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("getAttachment", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<GetAttachmentResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -487,15 +612,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetAttachmentResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAttachmentResponse>() {});
+        
 
         return new ApiResponse<GetAttachmentResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAttachmentResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -506,7 +637,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder getAttachmentRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest) throws ApiException {
+  private HttpRequest.Builder getAttachmentRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nonnull UUID attachmentId, @javax.annotation.Nullable GetAttachmentRequest getAttachmentRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling getAttachment");
@@ -536,6 +667,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -550,7 +683,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public GetSessionResponse getSession(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
-    ApiResponse<GetSessionResponse> localVarResponse = getSessionWithHttpInfo(sessionId);
+    return getSession(sessionId, null);
+  }
+
+  /**
+   * Get Session
+   * Get a Session by its ID
+   * @param sessionId  (required)
+   * @param headers Optional headers to include in the request
+   * @return GetSessionResponse
+   * @throws ApiException if fails to make API call
+   */
+  public GetSessionResponse getSession(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSessionResponse> localVarResponse = getSessionWithHttpInfo(sessionId, headers);
     return localVarResponse.getData();
   }
 
@@ -562,7 +707,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<GetSessionResponse> getSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = getSessionRequestBuilder(sessionId);
+    return getSessionWithHttpInfo(sessionId, null);
+  }
+
+  /**
+   * Get Session
+   * Get a Session by its ID
+   * @param sessionId  (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetSessionResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetSessionResponse> getSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSessionRequestBuilder(sessionId, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -570,11 +727,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("getSession", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<GetSessionResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -582,15 +741,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetSessionResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSessionResponse>() {});
+        
 
         return new ApiResponse<GetSessionResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSessionResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -601,7 +766,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder getSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
+  private HttpRequest.Builder getSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling getSession");
@@ -620,6 +785,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -635,7 +802,20 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public GetSessionResultResponse getSessionResult(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable GetSessionResultRequest getSessionResultRequest) throws ApiException {
-    ApiResponse<GetSessionResultResponse> localVarResponse = getSessionResultWithHttpInfo(sessionId, getSessionResultRequest);
+    return getSessionResult(sessionId, getSessionResultRequest, null);
+  }
+
+  /**
+   * Get Session Results
+   * 
+   * @param sessionId  (required)
+   * @param getSessionResultRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return GetSessionResultResponse
+   * @throws ApiException if fails to make API call
+   */
+  public GetSessionResultResponse getSessionResult(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable GetSessionResultRequest getSessionResultRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSessionResultResponse> localVarResponse = getSessionResultWithHttpInfo(sessionId, getSessionResultRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -648,7 +828,20 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<GetSessionResultResponse> getSessionResultWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable GetSessionResultRequest getSessionResultRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = getSessionResultRequestBuilder(sessionId, getSessionResultRequest);
+    return getSessionResultWithHttpInfo(sessionId, getSessionResultRequest, null);
+  }
+
+  /**
+   * Get Session Results
+   * 
+   * @param sessionId  (required)
+   * @param getSessionResultRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetSessionResultResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetSessionResultResponse> getSessionResultWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable GetSessionResultRequest getSessionResultRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSessionResultRequestBuilder(sessionId, getSessionResultRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -656,11 +849,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("getSessionResult", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<GetSessionResultResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -668,15 +863,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetSessionResultResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSessionResultResponse>() {});
+        
 
         return new ApiResponse<GetSessionResultResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSessionResultResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -687,7 +888,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder getSessionResultRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable GetSessionResultRequest getSessionResultRequest) throws ApiException {
+  private HttpRequest.Builder getSessionResultRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable GetSessionResultRequest getSessionResultRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling getSessionResult");
@@ -712,6 +913,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -730,7 +933,23 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ListSessionsResponse listSessions(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable SessionOrdering orderBy, @javax.annotation.Nullable OrderDirection orderDirection, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable Integer page) throws ApiException {
-    ApiResponse<ListSessionsResponse> localVarResponse = listSessionsWithHttpInfo(verificationProfileId, orderBy, orderDirection, pageSize, page);
+    return listSessions(verificationProfileId, orderBy, orderDirection, pageSize, page, null);
+  }
+
+  /**
+   * List Sessions
+   * List Sessions created for a specific Verification Profile
+   * @param verificationProfileId  (required)
+   * @param orderBy The field by which sessions should be ordered (optional)
+   * @param orderDirection  (optional)
+   * @param pageSize The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
+   * @param page The page number to return -- starts at &#x60;1&#x60; (optional)
+   * @param headers Optional headers to include in the request
+   * @return ListSessionsResponse
+   * @throws ApiException if fails to make API call
+   */
+  public ListSessionsResponse listSessions(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable SessionOrdering orderBy, @javax.annotation.Nullable OrderDirection orderDirection, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable Integer page, Map<String, String> headers) throws ApiException {
+    ApiResponse<ListSessionsResponse> localVarResponse = listSessionsWithHttpInfo(verificationProfileId, orderBy, orderDirection, pageSize, page, headers);
     return localVarResponse.getData();
   }
 
@@ -746,7 +965,23 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<ListSessionsResponse> listSessionsWithHttpInfo(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable SessionOrdering orderBy, @javax.annotation.Nullable OrderDirection orderDirection, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable Integer page) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = listSessionsRequestBuilder(verificationProfileId, orderBy, orderDirection, pageSize, page);
+    return listSessionsWithHttpInfo(verificationProfileId, orderBy, orderDirection, pageSize, page, null);
+  }
+
+  /**
+   * List Sessions
+   * List Sessions created for a specific Verification Profile
+   * @param verificationProfileId  (required)
+   * @param orderBy The field by which sessions should be ordered (optional)
+   * @param orderDirection  (optional)
+   * @param pageSize The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
+   * @param page The page number to return -- starts at &#x60;1&#x60; (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;ListSessionsResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ListSessionsResponse> listSessionsWithHttpInfo(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable SessionOrdering orderBy, @javax.annotation.Nullable OrderDirection orderDirection, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable Integer page, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listSessionsRequestBuilder(verificationProfileId, orderBy, orderDirection, pageSize, page, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -754,11 +989,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("listSessions", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<ListSessionsResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -766,15 +1003,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        ListSessionsResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ListSessionsResponse>() {});
+        
 
         return new ApiResponse<ListSessionsResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ListSessionsResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -785,7 +1028,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder listSessionsRequestBuilder(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable SessionOrdering orderBy, @javax.annotation.Nullable OrderDirection orderDirection, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable Integer page) throws ApiException {
+  private HttpRequest.Builder listSessionsRequestBuilder(@javax.annotation.Nonnull UUID verificationProfileId, @javax.annotation.Nullable SessionOrdering orderBy, @javax.annotation.Nullable OrderDirection orderDirection, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable Integer page, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'verificationProfileId' is set
     if (verificationProfileId == null) {
       throw new ApiException(400, "Missing the required parameter 'verificationProfileId' when calling listSessions");
@@ -825,6 +1068,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -839,7 +1084,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public RecommendProvidersResponse recommendProviders(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest) throws ApiException {
-    ApiResponse<RecommendProvidersResponse> localVarResponse = recommendProvidersWithHttpInfo(recommendProvidersRequest);
+    return recommendProviders(recommendProvidersRequest, null);
+  }
+
+  /**
+   * Recommend Providers
+   * Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+   * @param recommendProvidersRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return RecommendProvidersResponse
+   * @throws ApiException if fails to make API call
+   */
+  public RecommendProvidersResponse recommendProviders(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<RecommendProvidersResponse> localVarResponse = recommendProvidersWithHttpInfo(recommendProvidersRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -851,7 +1108,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<RecommendProvidersResponse> recommendProvidersWithHttpInfo(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = recommendProvidersRequestBuilder(recommendProvidersRequest);
+    return recommendProvidersWithHttpInfo(recommendProvidersRequest, null);
+  }
+
+  /**
+   * Recommend Providers
+   * Recommend providers for a specific user session. You can filter based on health (default&#x3D;online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+   * @param recommendProvidersRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;RecommendProvidersResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<RecommendProvidersResponse> recommendProvidersWithHttpInfo(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = recommendProvidersRequestBuilder(recommendProvidersRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -859,11 +1128,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("recommendProviders", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<RecommendProvidersResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -871,15 +1142,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        RecommendProvidersResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RecommendProvidersResponse>() {});
+        
 
         return new ApiResponse<RecommendProvidersResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RecommendProvidersResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -890,7 +1167,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder recommendProvidersRequestBuilder(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest) throws ApiException {
+  private HttpRequest.Builder recommendProvidersRequestBuilder(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -910,6 +1187,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -923,7 +1202,18 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public void redactSession(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
-    redactSessionWithHttpInfo(sessionId);
+    redactSession(sessionId, null);
+  }
+
+  /**
+   * Redact Session
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+   * @param sessionId  (required)
+   * @param headers Optional headers to include in the request
+   * @throws ApiException if fails to make API call
+   */
+  public void redactSession(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
+    redactSessionWithHttpInfo(sessionId, headers);
   }
 
   /**
@@ -934,7 +1224,19 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<Void> redactSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = redactSessionRequestBuilder(sessionId);
+    return redactSessionWithHttpInfo(sessionId, null);
+  }
+
+  /**
+   * Redact Session
+   * Redact a Session, removing all identity data from Trinsic&#39;s servers. Every verification profile has a redaction period that dictates how long we will hold on to your users&#39; PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+   * @param sessionId  (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<Void> redactSessionWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = redactSessionRequestBuilder(sessionId, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -942,9 +1244,14 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("redactSession", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody != null) {
+          localVarResponseBody.readAllBytes();
         }
         return new ApiResponse<>(
             localVarResponse.statusCode(),
@@ -952,11 +1259,9 @@ public class SessionsApi {
             null
         );
       } finally {
-        // Drain the InputStream
-        while (localVarResponse.body().read() != -1) {
-          // Ignore
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
         }
-        localVarResponse.body().close();
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -967,7 +1272,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder redactSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId) throws ApiException {
+  private HttpRequest.Builder redactSessionRequestBuilder(@javax.annotation.Nonnull UUID sessionId, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling redactSession");
@@ -986,6 +1291,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -1001,7 +1308,20 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public RefreshStepContentResponse refreshStepContent(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
-    ApiResponse<RefreshStepContentResponse> localVarResponse = refreshStepContentWithHttpInfo(sessionId, refreshStepContentRequest);
+    return refreshStepContent(sessionId, refreshStepContentRequest, null);
+  }
+
+  /**
+   * Refresh Step Content
+   * Refreshes the content of a Step for a Direct Provider Session.
+   * @param sessionId  (required)
+   * @param refreshStepContentRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return RefreshStepContentResponse
+   * @throws ApiException if fails to make API call
+   */
+  public RefreshStepContentResponse refreshStepContent(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<RefreshStepContentResponse> localVarResponse = refreshStepContentWithHttpInfo(sessionId, refreshStepContentRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1014,7 +1334,20 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<RefreshStepContentResponse> refreshStepContentWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = refreshStepContentRequestBuilder(sessionId, refreshStepContentRequest);
+    return refreshStepContentWithHttpInfo(sessionId, refreshStepContentRequest, null);
+  }
+
+  /**
+   * Refresh Step Content
+   * Refreshes the content of a Step for a Direct Provider Session.
+   * @param sessionId  (required)
+   * @param refreshStepContentRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;RefreshStepContentResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<RefreshStepContentResponse> refreshStepContentWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = refreshStepContentRequestBuilder(sessionId, refreshStepContentRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1022,11 +1355,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("refreshStepContent", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<RefreshStepContentResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -1034,15 +1369,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        RefreshStepContentResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RefreshStepContentResponse>() {});
+        
 
         return new ApiResponse<RefreshStepContentResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<RefreshStepContentResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1053,7 +1394,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder refreshStepContentRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest) throws ApiException {
+  private HttpRequest.Builder refreshStepContentRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable RefreshStepContentRequest refreshStepContentRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling refreshStepContent");
@@ -1078,6 +1419,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
@@ -1093,7 +1436,20 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
-    ApiResponse<SubmitNativeChallengeResponseResponse> localVarResponse = submitNativeChallengeResponseWithHttpInfo(sessionId, submitNativeChallengeResponseRequest);
+    return submitNativeChallengeResponse(sessionId, submitNativeChallengeResponseRequest, null);
+  }
+
+  /**
+   * Submit Native Challenge Response
+   * Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
+   * @param sessionId  (required)
+   * @param submitNativeChallengeResponseRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return SubmitNativeChallengeResponseResponse
+   * @throws ApiException if fails to make API call
+   */
+  public SubmitNativeChallengeResponseResponse submitNativeChallengeResponse(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<SubmitNativeChallengeResponseResponse> localVarResponse = submitNativeChallengeResponseWithHttpInfo(sessionId, submitNativeChallengeResponseRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1106,7 +1462,20 @@ public class SessionsApi {
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponseWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = submitNativeChallengeResponseRequestBuilder(sessionId, submitNativeChallengeResponseRequest);
+    return submitNativeChallengeResponseWithHttpInfo(sessionId, submitNativeChallengeResponseRequest, null);
+  }
+
+  /**
+   * Submit Native Challenge Response
+   * Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
+   * @param sessionId  (required)
+   * @param submitNativeChallengeResponseRequest  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;SubmitNativeChallengeResponseResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<SubmitNativeChallengeResponseResponse> submitNativeChallengeResponseWithHttpInfo(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = submitNativeChallengeResponseRequestBuilder(sessionId, submitNativeChallengeResponseRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1114,11 +1483,13 @@ public class SessionsApi {
       if (memberVarResponseInterceptor != null) {
         memberVarResponseInterceptor.accept(localVarResponse);
       }
+      InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("submitNativeChallengeResponse", localVarResponse);
         }
-        if (localVarResponse.body() == null) {
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
           return new ApiResponse<SubmitNativeChallengeResponseResponse>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
@@ -1126,15 +1497,21 @@ public class SessionsApi {
           );
         }
 
-        String responseBody = new String(localVarResponse.body().readAllBytes());
-        localVarResponse.body().close();
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        SubmitNativeChallengeResponseResponse responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<SubmitNativeChallengeResponseResponse>() {});
+        
 
         return new ApiResponse<SubmitNativeChallengeResponseResponse>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
-            responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<SubmitNativeChallengeResponseResponse>() {})
+            responseValue
         );
       } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
       }
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1145,7 +1522,7 @@ public class SessionsApi {
     }
   }
 
-  private HttpRequest.Builder submitNativeChallengeResponseRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest) throws ApiException {
+  private HttpRequest.Builder submitNativeChallengeResponseRequestBuilder(@javax.annotation.Nonnull UUID sessionId, @javax.annotation.Nullable SubmitNativeChallengeResponseRequest submitNativeChallengeResponseRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'sessionId' is set
     if (sessionId == null) {
       throw new ApiException(400, "Missing the required parameter 'sessionId' when calling submitNativeChallengeResponse");
@@ -1170,6 +1547,8 @@ public class SessionsApi {
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
     if (memberVarInterceptor != null) {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }

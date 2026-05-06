@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   OneIdProviderOutput.JSON_PROPERTY_BIRTHDATE,
   OneIdProviderOutput.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class OneIdProviderOutput {
   public static final String JSON_PROPERTY_SUB = "sub";
   private JsonNullable<String> sub = JsonNullable.<String>undefined();
@@ -84,7 +84,7 @@ public class OneIdProviderOutput {
         return sub.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUB)
+  @JsonProperty(value = JSON_PROPERTY_SUB, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSub_JsonNullable() {
@@ -116,7 +116,7 @@ public class OneIdProviderOutput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -148,7 +148,7 @@ public class OneIdProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -180,7 +180,7 @@ public class OneIdProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -212,7 +212,7 @@ public class OneIdProviderOutput {
         return birthdate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIRTHDATE)
+  @JsonProperty(value = JSON_PROPERTY_BIRTHDATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getBirthdate_JsonNullable() {
@@ -244,7 +244,7 @@ public class OneIdProviderOutput {
         return address.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OneIdProviderAddress> getAddress_JsonNullable() {
@@ -316,10 +316,7 @@ public class OneIdProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -356,27 +353,27 @@ public class OneIdProviderOutput {
 
     // add `sub` to the URL query string
     if (getSub() != null) {
-      joiner.add(String.format("%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `birthdate` to the URL query string
     if (getBirthdate() != null) {
-      joiner.add(String.format("%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthdate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthdate()))));
     }
 
     // add `address` to the URL query string

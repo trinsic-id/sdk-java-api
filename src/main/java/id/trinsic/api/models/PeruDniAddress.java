@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   PeruDniAddress.JSON_PROPERTY_PROVINCE,
   PeruDniAddress.JSON_PROPERTY_DISTRICT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PeruDniAddress {
   public static final String JSON_PROPERTY_REGION = "region";
   @javax.annotation.Nonnull
@@ -64,14 +64,14 @@ public class PeruDniAddress {
    * @return region
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REGION)
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getRegion() {
     return region;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REGION)
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRegion(@javax.annotation.Nonnull String region) {
     this.region = region;
@@ -88,14 +88,14 @@ public class PeruDniAddress {
    * @return province
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PROVINCE)
+  @JsonProperty(value = JSON_PROPERTY_PROVINCE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getProvince() {
     return province;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVINCE)
+  @JsonProperty(value = JSON_PROPERTY_PROVINCE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProvince(@javax.annotation.Nonnull String province) {
     this.province = province;
@@ -112,14 +112,14 @@ public class PeruDniAddress {
    * @return district
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DISTRICT)
+  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getDistrict() {
     return district;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DISTRICT)
+  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDistrict(@javax.annotation.Nonnull String district) {
     this.district = district;
@@ -164,10 +164,7 @@ public class PeruDniAddress {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -204,17 +201,17 @@ public class PeruDniAddress {
 
     // add `region` to the URL query string
     if (getRegion() != null) {
-      joiner.add(String.format("%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
     }
 
     // add `province` to the URL query string
     if (getProvince() != null) {
-      joiner.add(String.format("%sprovince%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvince()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sprovince%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProvince()))));
     }
 
     // add `district` to the URL query string
     if (getDistrict() != null) {
-      joiner.add(String.format("%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
     }
 
     return joiner.toString();

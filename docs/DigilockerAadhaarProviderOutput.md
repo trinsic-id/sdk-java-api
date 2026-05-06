@@ -8,13 +8,13 @@ Exposed properties for the `india-digilocker-aadhaar` Provider which do not dire
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**documentType** | **String** | The document type from which the identity data was retrieved from.              Possible values: - ADHAR - PANCR |  [optional] |
-|**documentSignatureValidated** | **Boolean** | Whether the downloaded Aadhaar document signature and certificate chain validation succeeded.              In some cases, the document may not be returned, but the data is. When the document is received, a certificate validation is performed. When it is not, the signature can not be validated. |  |
-|**timestamp** | **OffsetDateTime** | The timestamp when the signed document was generated and verified.              This is parsed as a date-time value. Aadhaar may omit timezone information. |  [optional] |
-|**timeToLive** | **OffsetDateTime** | The validity expiration timestamp for the verification document.              This is parsed as a date-time value. Aadhaar may omit timezone information. |  [optional] |
+|**documentType** | **String** | The document type from which the identity data was retrieved. |  [optional] |
+|**timestamp** | **OffsetDateTime** | The timestamp when the signed document was generated and verified. |  [optional] |
+|**timeToLive** | **OffsetDateTime** | The validity expiration timestamp for the verification document. |  [optional] |
 |**aadhaarNumberLastFour** | **String** | The Aadhaar number (UID) value for the individual.              This is only the last four digits of the Aadhaar number. |  [optional] |
-|**claims** | [**AadhaarClaims**](AadhaarClaims.md) | The claims extracted from the signed Aadhaar document. |  [optional] |
-|**localizedClaims** | [**AadhaarLocalizedClaims**](AadhaarLocalizedClaims.md) | The localized claims extracted from the signed Aadhaar document. |  [optional] |
+|**claims** | [**AadhaarClaims**](AadhaarClaims.md) | The claims extracted from the Aadhaar document. |  [optional] |
+|**localizedClaims** | [**AadhaarLocalizedClaims**](AadhaarLocalizedClaims.md) | The localized claims extracted from the Aadhaar document. |  [optional] |
+|**documentSignatureValidated** | **Boolean** | Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers (e.g. Signzy) also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation. |  |
 
 
 

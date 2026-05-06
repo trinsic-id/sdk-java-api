@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.AadhaarAddress;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -41,20 +42,9 @@ import id.trinsic.ApiClient;
   AadhaarClaims.JSON_PROPERTY_NAME,
   AadhaarClaims.JSON_PROPERTY_DATE_OF_BIRTH,
   AadhaarClaims.JSON_PROPERTY_GENDER,
-  AadhaarClaims.JSON_PROPERTY_CARE_OF,
-  AadhaarClaims.JSON_PROPERTY_COUNTRY,
-  AadhaarClaims.JSON_PROPERTY_DISTRICT,
-  AadhaarClaims.JSON_PROPERTY_HOUSE,
-  AadhaarClaims.JSON_PROPERTY_LOCATION,
-  AadhaarClaims.JSON_PROPERTY_LANDMARK,
-  AadhaarClaims.JSON_PROPERTY_POSTAL_CODE,
-  AadhaarClaims.JSON_PROPERTY_POST_OFFICE,
-  AadhaarClaims.JSON_PROPERTY_STATE,
-  AadhaarClaims.JSON_PROPERTY_STREET,
-  AadhaarClaims.JSON_PROPERTY_SUBDISTRICT,
-  AadhaarClaims.JSON_PROPERTY_VILLAGE_TOWN_CITY
+  AadhaarClaims.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AadhaarClaims {
   public static final String JSON_PROPERTY_NAME = "name";
   private JsonNullable<String> name = JsonNullable.<String>undefined();
@@ -65,41 +55,8 @@ public class AadhaarClaims {
   public static final String JSON_PROPERTY_GENDER = "gender";
   private JsonNullable<String> gender = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_CARE_OF = "careOf";
-  private JsonNullable<String> careOf = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_COUNTRY = "country";
-  private JsonNullable<String> country = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_DISTRICT = "district";
-  private JsonNullable<String> district = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_HOUSE = "house";
-  private JsonNullable<String> house = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_LOCATION = "location";
-  private JsonNullable<String> location = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_LANDMARK = "landmark";
-  private JsonNullable<String> landmark = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_POSTAL_CODE = "postalCode";
-  private JsonNullable<String> postalCode = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_POST_OFFICE = "postOffice";
-  private JsonNullable<String> postOffice = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_STATE = "state";
-  private JsonNullable<String> state = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_STREET = "street";
-  private JsonNullable<String> street = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_SUBDISTRICT = "subdistrict";
-  private JsonNullable<String> subdistrict = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_VILLAGE_TOWN_CITY = "villageTownCity";
-  private JsonNullable<String> villageTownCity = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_ADDRESS = "address";
+  private JsonNullable<AadhaarAddress> address = JsonNullable.<AadhaarAddress>undefined();
 
   public AadhaarClaims() { 
   }
@@ -119,7 +76,7 @@ public class AadhaarClaims {
         return name.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getName_JsonNullable() {
@@ -151,7 +108,7 @@ public class AadhaarClaims {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -183,7 +140,7 @@ public class AadhaarClaims {
         return gender.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GENDER)
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGender_JsonNullable() {
@@ -200,387 +157,35 @@ public class AadhaarClaims {
   }
 
 
-  public AadhaarClaims careOf(@javax.annotation.Nullable String careOf) {
-    this.careOf = JsonNullable.<String>of(careOf);
+  public AadhaarClaims address(@javax.annotation.Nullable AadhaarAddress address) {
+    this.address = JsonNullable.<AadhaarAddress>of(address);
     return this;
   }
 
   /**
-   * The address&#39;s care-of field. This indicates that mail should be delivered to an individual through another person or entity who is a known resident at the address.
-   * @return careOf
+   * The structured Indian address.
+   * @return address
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getCareOf() {
-        return careOf.orElse(null);
+  public AadhaarAddress getAddress() {
+        return address.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CARE_OF)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getCareOf_JsonNullable() {
-    return careOf;
+  public JsonNullable<AadhaarAddress> getAddress_JsonNullable() {
+    return address;
   }
   
-  @JsonProperty(JSON_PROPERTY_CARE_OF)
-  public void setCareOf_JsonNullable(JsonNullable<String> careOf) {
-    this.careOf = careOf;
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  public void setAddress_JsonNullable(JsonNullable<AadhaarAddress> address) {
+    this.address = address;
   }
 
-  public void setCareOf(@javax.annotation.Nullable String careOf) {
-    this.careOf = JsonNullable.<String>of(careOf);
-  }
-
-
-  public AadhaarClaims country(@javax.annotation.Nullable String country) {
-    this.country = JsonNullable.<String>of(country);
-    return this;
-  }
-
-  /**
-   * The address&#39;s country.              This is formatted as an alpha-2 country code.
-   * @return country
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getCountry() {
-        return country.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getCountry_JsonNullable() {
-    return country;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
-  public void setCountry_JsonNullable(JsonNullable<String> country) {
-    this.country = country;
-  }
-
-  public void setCountry(@javax.annotation.Nullable String country) {
-    this.country = JsonNullable.<String>of(country);
-  }
-
-
-  public AadhaarClaims district(@javax.annotation.Nullable String district) {
-    this.district = JsonNullable.<String>of(district);
-    return this;
-  }
-
-  /**
-   * The address&#39;s district.
-   * @return district
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getDistrict() {
-        return district.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_DISTRICT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getDistrict_JsonNullable() {
-    return district;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_DISTRICT)
-  public void setDistrict_JsonNullable(JsonNullable<String> district) {
-    this.district = district;
-  }
-
-  public void setDistrict(@javax.annotation.Nullable String district) {
-    this.district = JsonNullable.<String>of(district);
-  }
-
-
-  public AadhaarClaims house(@javax.annotation.Nullable String house) {
-    this.house = JsonNullable.<String>of(house);
-    return this;
-  }
-
-  /**
-   * The identifier for the house address.
-   * @return house
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getHouse() {
-        return house.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_HOUSE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getHouse_JsonNullable() {
-    return house;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_HOUSE)
-  public void setHouse_JsonNullable(JsonNullable<String> house) {
-    this.house = house;
-  }
-
-  public void setHouse(@javax.annotation.Nullable String house) {
-    this.house = JsonNullable.<String>of(house);
-  }
-
-
-  public AadhaarClaims location(@javax.annotation.Nullable String location) {
-    this.location = JsonNullable.<String>of(location);
-    return this;
-  }
-
-  /**
-   * The location or locality that helps identify where the address is within a city.
-   * @return location
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getLocation() {
-        return location.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getLocation_JsonNullable() {
-    return location;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  public void setLocation_JsonNullable(JsonNullable<String> location) {
-    this.location = location;
-  }
-
-  public void setLocation(@javax.annotation.Nullable String location) {
-    this.location = JsonNullable.<String>of(location);
-  }
-
-
-  public AadhaarClaims landmark(@javax.annotation.Nullable String landmark) {
-    this.landmark = JsonNullable.<String>of(landmark);
-    return this;
-  }
-
-  /**
-   * A landmark near the address.
-   * @return landmark
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getLandmark() {
-        return landmark.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_LANDMARK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getLandmark_JsonNullable() {
-    return landmark;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_LANDMARK)
-  public void setLandmark_JsonNullable(JsonNullable<String> landmark) {
-    this.landmark = landmark;
-  }
-
-  public void setLandmark(@javax.annotation.Nullable String landmark) {
-    this.landmark = JsonNullable.<String>of(landmark);
-  }
-
-
-  public AadhaarClaims postalCode(@javax.annotation.Nullable String postalCode) {
-    this.postalCode = JsonNullable.<String>of(postalCode);
-    return this;
-  }
-
-  /**
-   * The address&#39;s postal code.
-   * @return postalCode
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getPostalCode() {
-        return postalCode.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getPostalCode_JsonNullable() {
-    return postalCode;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
-  public void setPostalCode_JsonNullable(JsonNullable<String> postalCode) {
-    this.postalCode = postalCode;
-  }
-
-  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
-    this.postalCode = JsonNullable.<String>of(postalCode);
-  }
-
-
-  public AadhaarClaims postOffice(@javax.annotation.Nullable String postOffice) {
-    this.postOffice = JsonNullable.<String>of(postOffice);
-    return this;
-  }
-
-  /**
-   * The address&#39;s post office.
-   * @return postOffice
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getPostOffice() {
-        return postOffice.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_POST_OFFICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getPostOffice_JsonNullable() {
-    return postOffice;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_POST_OFFICE)
-  public void setPostOffice_JsonNullable(JsonNullable<String> postOffice) {
-    this.postOffice = postOffice;
-  }
-
-  public void setPostOffice(@javax.annotation.Nullable String postOffice) {
-    this.postOffice = JsonNullable.<String>of(postOffice);
-  }
-
-
-  public AadhaarClaims state(@javax.annotation.Nullable String state) {
-    this.state = JsonNullable.<String>of(state);
-    return this;
-  }
-
-  /**
-   * The address&#39;s state or union territory.
-   * @return state
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getState() {
-        return state.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getState_JsonNullable() {
-    return state;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_STATE)
-  public void setState_JsonNullable(JsonNullable<String> state) {
-    this.state = state;
-  }
-
-  public void setState(@javax.annotation.Nullable String state) {
-    this.state = JsonNullable.<String>of(state);
-  }
-
-
-  public AadhaarClaims street(@javax.annotation.Nullable String street) {
-    this.street = JsonNullable.<String>of(street);
-    return this;
-  }
-
-  /**
-   * The address&#39;s street name.
-   * @return street
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getStreet() {
-        return street.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_STREET)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getStreet_JsonNullable() {
-    return street;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_STREET)
-  public void setStreet_JsonNullable(JsonNullable<String> street) {
-    this.street = street;
-  }
-
-  public void setStreet(@javax.annotation.Nullable String street) {
-    this.street = JsonNullable.<String>of(street);
-  }
-
-
-  public AadhaarClaims subdistrict(@javax.annotation.Nullable String subdistrict) {
-    this.subdistrict = JsonNullable.<String>of(subdistrict);
-    return this;
-  }
-
-  /**
-   * The address&#39;s subdistrict.
-   * @return subdistrict
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getSubdistrict() {
-        return subdistrict.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_SUBDISTRICT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getSubdistrict_JsonNullable() {
-    return subdistrict;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_SUBDISTRICT)
-  public void setSubdistrict_JsonNullable(JsonNullable<String> subdistrict) {
-    this.subdistrict = subdistrict;
-  }
-
-  public void setSubdistrict(@javax.annotation.Nullable String subdistrict) {
-    this.subdistrict = JsonNullable.<String>of(subdistrict);
-  }
-
-
-  public AadhaarClaims villageTownCity(@javax.annotation.Nullable String villageTownCity) {
-    this.villageTownCity = JsonNullable.<String>of(villageTownCity);
-    return this;
-  }
-
-  /**
-   * The address&#39;s village/town/city.
-   * @return villageTownCity
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getVillageTownCity() {
-        return villageTownCity.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_VILLAGE_TOWN_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getVillageTownCity_JsonNullable() {
-    return villageTownCity;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_VILLAGE_TOWN_CITY)
-  public void setVillageTownCity_JsonNullable(JsonNullable<String> villageTownCity) {
-    this.villageTownCity = villageTownCity;
-  }
-
-  public void setVillageTownCity(@javax.annotation.Nullable String villageTownCity) {
-    this.villageTownCity = JsonNullable.<String>of(villageTownCity);
+  public void setAddress(@javax.annotation.Nullable AadhaarAddress address) {
+    this.address = JsonNullable.<AadhaarAddress>of(address);
   }
 
 
@@ -599,18 +204,7 @@ public class AadhaarClaims {
     return equalsNullable(this.name, aadhaarClaims.name) &&
         equalsNullable(this.dateOfBirth, aadhaarClaims.dateOfBirth) &&
         equalsNullable(this.gender, aadhaarClaims.gender) &&
-        equalsNullable(this.careOf, aadhaarClaims.careOf) &&
-        equalsNullable(this.country, aadhaarClaims.country) &&
-        equalsNullable(this.district, aadhaarClaims.district) &&
-        equalsNullable(this.house, aadhaarClaims.house) &&
-        equalsNullable(this.location, aadhaarClaims.location) &&
-        equalsNullable(this.landmark, aadhaarClaims.landmark) &&
-        equalsNullable(this.postalCode, aadhaarClaims.postalCode) &&
-        equalsNullable(this.postOffice, aadhaarClaims.postOffice) &&
-        equalsNullable(this.state, aadhaarClaims.state) &&
-        equalsNullable(this.street, aadhaarClaims.street) &&
-        equalsNullable(this.subdistrict, aadhaarClaims.subdistrict) &&
-        equalsNullable(this.villageTownCity, aadhaarClaims.villageTownCity);
+        equalsNullable(this.address, aadhaarClaims.address);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -619,7 +213,7 @@ public class AadhaarClaims {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(name), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(careOf), hashCodeNullable(country), hashCodeNullable(district), hashCodeNullable(house), hashCodeNullable(location), hashCodeNullable(landmark), hashCodeNullable(postalCode), hashCodeNullable(postOffice), hashCodeNullable(state), hashCodeNullable(street), hashCodeNullable(subdistrict), hashCodeNullable(villageTownCity));
+    return Objects.hash(hashCodeNullable(name), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(address));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -636,18 +230,7 @@ public class AadhaarClaims {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    sb.append("    careOf: ").append(toIndentedString(careOf)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    district: ").append(toIndentedString(district)).append("\n");
-    sb.append("    house: ").append(toIndentedString(house)).append("\n");
-    sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    landmark: ").append(toIndentedString(landmark)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    postOffice: ").append(toIndentedString(postOffice)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    street: ").append(toIndentedString(street)).append("\n");
-    sb.append("    subdistrict: ").append(toIndentedString(subdistrict)).append("\n");
-    sb.append("    villageTownCity: ").append(toIndentedString(villageTownCity)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -657,10 +240,7 @@ public class AadhaarClaims {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -697,77 +277,22 @@ public class AadhaarClaims {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `gender` to the URL query string
     if (getGender() != null) {
-      joiner.add(String.format("%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
     }
 
-    // add `careOf` to the URL query string
-    if (getCareOf() != null) {
-      joiner.add(String.format("%scareOf%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCareOf()))));
-    }
-
-    // add `country` to the URL query string
-    if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
-    }
-
-    // add `district` to the URL query string
-    if (getDistrict() != null) {
-      joiner.add(String.format("%sdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDistrict()))));
-    }
-
-    // add `house` to the URL query string
-    if (getHouse() != null) {
-      joiner.add(String.format("%shouse%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHouse()))));
-    }
-
-    // add `location` to the URL query string
-    if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocation()))));
-    }
-
-    // add `landmark` to the URL query string
-    if (getLandmark() != null) {
-      joiner.add(String.format("%slandmark%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLandmark()))));
-    }
-
-    // add `postalCode` to the URL query string
-    if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
-    }
-
-    // add `postOffice` to the URL query string
-    if (getPostOffice() != null) {
-      joiner.add(String.format("%spostOffice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostOffice()))));
-    }
-
-    // add `state` to the URL query string
-    if (getState() != null) {
-      joiner.add(String.format("%sstate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getState()))));
-    }
-
-    // add `street` to the URL query string
-    if (getStreet() != null) {
-      joiner.add(String.format("%sstreet%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreet()))));
-    }
-
-    // add `subdistrict` to the URL query string
-    if (getSubdistrict() != null) {
-      joiner.add(String.format("%ssubdistrict%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubdistrict()))));
-    }
-
-    // add `villageTownCity` to the URL query string
-    if (getVillageTownCity() != null) {
-      joiner.add(String.format("%svillageTownCity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVillageTownCity()))));
+    // add `address` to the URL query string
+    if (getAddress() != null) {
+      joiner.add(getAddress().toUrlQueryString(prefix + "address" + suffix));
     }
 
     return joiner.toString();

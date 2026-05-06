@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   RecommendProvidersRequest.JSON_PROPERTY_RECOMMENDATION_INFO,
   RecommendProvidersRequest.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RecommendProvidersRequest {
   public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
   @javax.annotation.Nonnull
@@ -69,14 +69,14 @@ public class RecommendProvidersRequest {
    * @return verificationProfileId
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROFILE_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public UUID getVerificationProfileId() {
     return verificationProfileId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROFILE_ID)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROFILE_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVerificationProfileId(@javax.annotation.Nonnull UUID verificationProfileId) {
     this.verificationProfileId = verificationProfileId;
@@ -98,7 +98,7 @@ public class RecommendProvidersRequest {
         return recommendationInfo.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_RECOMMENDATION_INFO)
+  @JsonProperty(value = JSON_PROPERTY_RECOMMENDATION_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<RecommendationInfo> getRecommendationInfo_JsonNullable() {
@@ -130,7 +130,7 @@ public class RecommendProvidersRequest {
         return health.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_HEALTH)
+  @JsonProperty(value = JSON_PROPERTY_HEALTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<RecommendProviderHealthOption> getHealth_JsonNullable() {
@@ -196,10 +196,7 @@ public class RecommendProvidersRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -236,7 +233,7 @@ public class RecommendProvidersRequest {
 
     // add `verificationProfileId` to the URL query string
     if (getVerificationProfileId() != null) {
-      joiner.add(String.format("%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sverificationProfileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationProfileId()))));
     }
 
     // add `recommendationInfo` to the URL query string
@@ -246,7 +243,7 @@ public class RecommendProvidersRequest {
 
     // add `health` to the URL query string
     if (getHealth() != null) {
-      joiner.add(String.format("%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%shealth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHealth()))));
     }
 
     return joiner.toString();

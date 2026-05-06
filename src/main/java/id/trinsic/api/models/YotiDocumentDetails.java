@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   YotiDocumentDetails.JSON_PROPERTY_EXPIRATION_DATE,
   YotiDocumentDetails.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class YotiDocumentDetails {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
@@ -79,7 +79,7 @@ public class YotiDocumentDetails {
         return type.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getType_JsonNullable() {
@@ -111,7 +111,7 @@ public class YotiDocumentDetails {
         return issuingCountry.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIssuingCountry_JsonNullable() {
@@ -143,7 +143,7 @@ public class YotiDocumentDetails {
         return documentNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDocumentNumber_JsonNullable() {
@@ -175,7 +175,7 @@ public class YotiDocumentDetails {
         return expirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getExpirationDate_JsonNullable() {
@@ -207,7 +207,7 @@ public class YotiDocumentDetails {
         return issuingAuthority.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_AUTHORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIssuingAuthority_JsonNullable() {
@@ -277,10 +277,7 @@ public class YotiDocumentDetails {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -317,27 +314,27 @@ public class YotiDocumentDetails {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `issuingCountry` to the URL query string
     if (getIssuingCountry() != null) {
-      joiner.add(String.format("%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
     }
 
     // add `documentNumber` to the URL query string
     if (getDocumentNumber() != null) {
-      joiner.add(String.format("%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `issuingAuthority` to the URL query string
     if (getIssuingAuthority() != null) {
-      joiner.add(String.format("%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
     }
 
     return joiner.toString();

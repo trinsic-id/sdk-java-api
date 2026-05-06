@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
   SerbiaIdCardProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   SerbiaIdCardProviderOutput.JSON_PROPERTY_UNIQUE_MASTER_CITIZEN_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SerbiaIdCardProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull
@@ -70,14 +70,14 @@ public class SerbiaIdCardProviderOutput {
    * @return firstName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFirstName() {
     return firstName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -94,14 +94,14 @@ public class SerbiaIdCardProviderOutput {
    * @return lastName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLastName() {
     return lastName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastName(@javax.annotation.Nonnull String lastName) {
     this.lastName = lastName;
@@ -118,14 +118,14 @@ public class SerbiaIdCardProviderOutput {
    * @return dateOfBirth
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
@@ -142,14 +142,14 @@ public class SerbiaIdCardProviderOutput {
    * @return uniqueMasterCitizenNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_UNIQUE_MASTER_CITIZEN_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_UNIQUE_MASTER_CITIZEN_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getUniqueMasterCitizenNumber() {
     return uniqueMasterCitizenNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UNIQUE_MASTER_CITIZEN_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_UNIQUE_MASTER_CITIZEN_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUniqueMasterCitizenNumber(@javax.annotation.Nonnull String uniqueMasterCitizenNumber) {
     this.uniqueMasterCitizenNumber = uniqueMasterCitizenNumber;
@@ -196,10 +196,7 @@ public class SerbiaIdCardProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -236,22 +233,22 @@ public class SerbiaIdCardProviderOutput {
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `lastName` to the URL query string
     if (getLastName() != null) {
-      joiner.add(String.format("%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `uniqueMasterCitizenNumber` to the URL query string
     if (getUniqueMasterCitizenNumber() != null) {
-      joiner.add(String.format("%suniqueMasterCitizenNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUniqueMasterCitizenNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%suniqueMasterCitizenNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUniqueMasterCitizenNumber()))));
     }
 
     return joiner.toString();

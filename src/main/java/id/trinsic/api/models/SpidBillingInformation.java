@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   SpidBillingInformation.JSON_PROPERTY_VERIFICATION_TYPE,
   SpidBillingInformation.JSON_PROPERTY_VERIFICATION_LEVEL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SpidBillingInformation {
   public static final String JSON_PROPERTY_IS_BILLABLE = "isBillable";
   @javax.annotation.Nonnull
@@ -64,14 +64,14 @@ public class SpidBillingInformation {
    * @return isBillable
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IS_BILLABLE)
+  @JsonProperty(value = JSON_PROPERTY_IS_BILLABLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Boolean getIsBillable() {
     return isBillable;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_BILLABLE)
+  @JsonProperty(value = JSON_PROPERTY_IS_BILLABLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIsBillable(@javax.annotation.Nonnull Boolean isBillable) {
     this.isBillable = isBillable;
@@ -88,14 +88,14 @@ public class SpidBillingInformation {
    * @return verificationType
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getVerificationType() {
     return verificationType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVerificationType(@javax.annotation.Nonnull String verificationType) {
     this.verificationType = verificationType;
@@ -112,14 +112,14 @@ public class SpidBillingInformation {
    * @return verificationLevel
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_LEVEL)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_LEVEL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Integer getVerificationLevel() {
     return verificationLevel;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_LEVEL)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_LEVEL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVerificationLevel(@javax.annotation.Nonnull Integer verificationLevel) {
     this.verificationLevel = verificationLevel;
@@ -164,10 +164,7 @@ public class SpidBillingInformation {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -204,17 +201,17 @@ public class SpidBillingInformation {
 
     // add `isBillable` to the URL query string
     if (getIsBillable() != null) {
-      joiner.add(String.format("%sisBillable%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsBillable()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sisBillable%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsBillable()))));
     }
 
     // add `verificationType` to the URL query string
     if (getVerificationType() != null) {
-      joiner.add(String.format("%sverificationType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sverificationType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationType()))));
     }
 
     // add `verificationLevel` to the URL query string
     if (getVerificationLevel() != null) {
-      joiner.add(String.format("%sverificationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationLevel()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sverificationLevel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationLevel()))));
     }
 
     return joiner.toString();

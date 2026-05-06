@@ -58,7 +58,7 @@ import id.trinsic.ApiClient;
   PeruDniProviderOutput.JSON_PROPERTY_UBIGEO_RENIEC,
   PeruDniProviderOutput.JSON_PROPERTY_VERIFICATION_DIGIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PeruDniProviderOutput {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private JsonNullable<PeruDniAddress> address = JsonNullable.<PeruDniAddress>undefined();
@@ -134,7 +134,7 @@ public class PeruDniProviderOutput {
         return address.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<PeruDniAddress> getAddress_JsonNullable() {
@@ -169,14 +169,14 @@ public class PeruDniProviderOutput {
    * @return arrayName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ARRAY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<String> getArrayName() {
     return arrayName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ARRAY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setArrayName(@javax.annotation.Nonnull List<String> arrayName) {
     this.arrayName = arrayName;
@@ -198,7 +198,7 @@ public class PeruDniProviderOutput {
         return civilStatus.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CIVIL_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_CIVIL_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCivilStatus_JsonNullable() {
@@ -230,7 +230,7 @@ public class PeruDniProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -253,18 +253,18 @@ public class PeruDniProviderOutput {
   }
 
   /**
-   * The user&#39;s National Identity Document number (Documento Nacional de Identidad or DNI).              Format: - 8 digits - Does NOT include verification digit. On the DNI card, a ninth digit appears next to the first eight. It is   0-9 or A-K. This is NOT included in the DNI number when returned from Peru&#39;s database. - Does NOT include dots or hyphens
+   * The individual&#39;s National Identity Document number (Documento Nacional de Identidad or DNI).              Format: - 8 digits - Does NOT include verification digit. On the DNI card, a ninth digit appears next to the first eight. It is   0-9 or A-K. This is NOT included in the DNI number when returned from Peru&#39;s database. - Does NOT include dots or hyphens
    * @return documentNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getDocumentNumber() {
     return documentNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDocumentNumber(@javax.annotation.Nonnull String documentNumber) {
     this.documentNumber = documentNumber;
@@ -281,14 +281,14 @@ public class PeruDniProviderOutput {
    * @return documentType
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getDocumentType() {
     return documentType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDocumentType(@javax.annotation.Nonnull String documentType) {
     this.documentType = documentType;
@@ -310,7 +310,7 @@ public class PeruDniProviderOutput {
         return expeditionDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXPEDITION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getExpeditionDate_JsonNullable() {
@@ -342,7 +342,7 @@ public class PeruDniProviderOutput {
         return expirationDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getExpirationDate_JsonNullable() {
@@ -369,14 +369,14 @@ public class PeruDniProviderOutput {
    * @return firstName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFirstName() {
     return firstName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -393,14 +393,14 @@ public class PeruDniProviderOutput {
    * @return fullName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFullName() {
     return fullName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFullName(@javax.annotation.Nonnull String fullName) {
     this.fullName = fullName;
@@ -417,14 +417,14 @@ public class PeruDniProviderOutput {
    * @return lastName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getLastName() {
     return lastName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastName(@javax.annotation.Nonnull String lastName) {
     this.lastName = lastName;
@@ -441,14 +441,14 @@ public class PeruDniProviderOutput {
    * @return maternalLastName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MATERNAL_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MATERNAL_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getMaternalLastName() {
     return maternalLastName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MATERNAL_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MATERNAL_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMaternalLastName(@javax.annotation.Nonnull String maternalLastName) {
     this.maternalLastName = maternalLastName;
@@ -465,14 +465,14 @@ public class PeruDniProviderOutput {
    * @return paternalLastName
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PATERNAL_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_PATERNAL_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getPaternalLastName() {
     return paternalLastName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PATERNAL_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_PATERNAL_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPaternalLastName(@javax.annotation.Nonnull String paternalLastName) {
     this.paternalLastName = paternalLastName;
@@ -494,7 +494,7 @@ public class PeruDniProviderOutput {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSex_JsonNullable() {
@@ -526,7 +526,7 @@ public class PeruDniProviderOutput {
         return ubigeoReniec.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_UBIGEO_RENIEC)
+  @JsonProperty(value = JSON_PROPERTY_UBIGEO_RENIEC, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getUbigeoReniec_JsonNullable() {
@@ -558,7 +558,7 @@ public class PeruDniProviderOutput {
         return verificationDigit.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_VERIFICATION_DIGIT)
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_DIGIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getVerificationDigit_JsonNullable() {
@@ -650,10 +650,7 @@ public class PeruDniProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -696,80 +693,80 @@ public class PeruDniProviderOutput {
     // add `arrayName` to the URL query string
     if (getArrayName() != null) {
       for (int i = 0; i < getArrayName().size(); i++) {
-        joiner.add(String.format("%sarrayName%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%sarrayName%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
             ApiClient.urlEncode(ApiClient.valueToString(getArrayName().get(i)))));
       }
     }
 
     // add `civilStatus` to the URL query string
     if (getCivilStatus() != null) {
-      joiner.add(String.format("%scivilStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCivilStatus()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scivilStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCivilStatus()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `documentNumber` to the URL query string
     if (getDocumentNumber() != null) {
-      joiner.add(String.format("%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
     }
 
     // add `documentType` to the URL query string
     if (getDocumentType() != null) {
-      joiner.add(String.format("%sdocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentType()))));
     }
 
     // add `expeditionDate` to the URL query string
     if (getExpeditionDate() != null) {
-      joiner.add(String.format("%sexpeditionDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpeditionDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpeditionDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpeditionDate()))));
     }
 
     // add `expirationDate` to the URL query string
     if (getExpirationDate() != null) {
-      joiner.add(String.format("%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpirationDate()))));
     }
 
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
-      joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `lastName` to the URL query string
     if (getLastName() != null) {
-      joiner.add(String.format("%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
     }
 
     // add `maternalLastName` to the URL query string
     if (getMaternalLastName() != null) {
-      joiner.add(String.format("%smaternalLastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMaternalLastName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smaternalLastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMaternalLastName()))));
     }
 
     // add `paternalLastName` to the URL query string
     if (getPaternalLastName() != null) {
-      joiner.add(String.format("%spaternalLastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPaternalLastName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spaternalLastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPaternalLastName()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `ubigeoReniec` to the URL query string
     if (getUbigeoReniec() != null) {
-      joiner.add(String.format("%subigeoReniec%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUbigeoReniec()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%subigeoReniec%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUbigeoReniec()))));
     }
 
     // add `verificationDigit` to the URL query string
     if (getVerificationDigit() != null) {
-      joiner.add(String.format("%sverificationDigit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationDigit()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sverificationDigit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVerificationDigit()))));
     }
 
     return joiner.toString();

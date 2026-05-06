@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   BrazilDigitalCnhInput.JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE,
   BrazilDigitalCnhInput.JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BrazilDigitalCnhInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
   @javax.annotation.Nonnull
@@ -70,14 +70,14 @@ public class BrazilDigitalCnhInput {
    * @return cpfNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCpfNumber() {
     return cpfNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
@@ -99,7 +99,7 @@ public class BrazilDigitalCnhInput {
         return digitalCnhFile.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DIGITAL_CNH_FILE)
+  @JsonProperty(value = JSON_PROPERTY_DIGITAL_CNH_FILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<byte[]> getDigitalCnhFile_JsonNullable() {
@@ -131,7 +131,7 @@ public class BrazilDigitalCnhInput {
         return digitalCnhFileContentType.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDigitalCnhFileContentType_JsonNullable() {
@@ -163,7 +163,7 @@ public class BrazilDigitalCnhInput {
         return facialBiometryPhoto.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO)
+  @JsonProperty(value = JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<byte[]> getFacialBiometryPhoto_JsonNullable() {
@@ -231,10 +231,7 @@ public class BrazilDigitalCnhInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -271,22 +268,22 @@ public class BrazilDigitalCnhInput {
 
     // add `cpfNumber` to the URL query string
     if (getCpfNumber() != null) {
-      joiner.add(String.format("%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
     }
 
     // add `digitalCnhFile` to the URL query string
     if (getDigitalCnhFile() != null) {
-      joiner.add(String.format("%sdigitalCnhFile%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalCnhFile()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdigitalCnhFile%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalCnhFile()))));
     }
 
     // add `digitalCnhFileContentType` to the URL query string
     if (getDigitalCnhFileContentType() != null) {
-      joiner.add(String.format("%sdigitalCnhFileContentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalCnhFileContentType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdigitalCnhFileContentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDigitalCnhFileContentType()))));
     }
 
     // add `facialBiometryPhoto` to the URL query string
     if (getFacialBiometryPhoto() != null) {
-      joiner.add(String.format("%sfacialBiometryPhoto%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFacialBiometryPhoto()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfacialBiometryPhoto%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFacialBiometryPhoto()))));
     }
 
     return joiner.toString();

@@ -48,7 +48,7 @@ import id.trinsic.ApiClient;
   IndonesiaDukcapilMatchInput.JSON_PROPERTY_DOCUMENT_IMAGE,
   IndonesiaDukcapilMatchInput.JSON_PROPERTY_CONSENT_GIVEN_AT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndonesiaDukcapilMatchInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -92,7 +92,7 @@ public class IndonesiaDukcapilMatchInput {
         return fullName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullName_JsonNullable() {
@@ -124,7 +124,7 @@ public class IndonesiaDukcapilMatchInput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -156,7 +156,7 @@ public class IndonesiaDukcapilMatchInput {
         return nikIdNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NIK_ID_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NIK_ID_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNikIdNumber_JsonNullable() {
@@ -188,7 +188,7 @@ public class IndonesiaDukcapilMatchInput {
         return email.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getEmail_JsonNullable() {
@@ -220,7 +220,7 @@ public class IndonesiaDukcapilMatchInput {
         return phoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPhoneNumber_JsonNullable() {
@@ -252,7 +252,7 @@ public class IndonesiaDukcapilMatchInput {
         return selfieImage.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SELFIE_IMAGE)
+  @JsonProperty(value = JSON_PROPERTY_SELFIE_IMAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<byte[]> getSelfieImage_JsonNullable() {
@@ -284,7 +284,7 @@ public class IndonesiaDukcapilMatchInput {
         return documentImage.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_IMAGE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_IMAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<byte[]> getDocumentImage_JsonNullable() {
@@ -316,7 +316,7 @@ public class IndonesiaDukcapilMatchInput {
         return consentGivenAt.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CONSENT_GIVEN_AT)
+  @JsonProperty(value = JSON_PROPERTY_CONSENT_GIVEN_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<OffsetDateTime> getConsentGivenAt_JsonNullable() {
@@ -392,10 +392,7 @@ public class IndonesiaDukcapilMatchInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -432,42 +429,42 @@ public class IndonesiaDukcapilMatchInput {
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `nikIdNumber` to the URL query string
     if (getNikIdNumber() != null) {
-      joiner.add(String.format("%snikIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNikIdNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snikIdNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNikIdNumber()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(String.format("%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     // add `selfieImage` to the URL query string
     if (getSelfieImage() != null) {
-      joiner.add(String.format("%sselfieImage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieImage()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sselfieImage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSelfieImage()))));
     }
 
     // add `documentImage` to the URL query string
     if (getDocumentImage() != null) {
-      joiner.add(String.format("%sdocumentImage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentImage()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentImage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentImage()))));
     }
 
     // add `consentGivenAt` to the URL query string
     if (getConsentGivenAt() != null) {
-      joiner.add(String.format("%sconsentGivenAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getConsentGivenAt()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sconsentGivenAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getConsentGivenAt()))));
     }
 
     return joiner.toString();

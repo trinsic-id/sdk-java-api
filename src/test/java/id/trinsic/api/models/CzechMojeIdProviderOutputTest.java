@@ -172,6 +172,22 @@ class CzechMojeIdProviderOutputTest {
     }
 
     /**
+     * Test the property 'isdsId'
+     */
+    @Test
+    void isdsIdTest() {
+        // TODO: test isdsId
+    }
+
+    /**
+     * Test the property 'isStudent'
+     */
+    @Test
+    void isStudentTest() {
+        // TODO: test isStudent
+    }
+
+    /**
      * Test the property 'companyRegistrationNumber'
      */
     @Test

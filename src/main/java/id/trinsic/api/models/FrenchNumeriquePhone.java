@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   FrenchNumeriquePhone.JSON_PROPERTY_COUNTRY_PREFIX,
   FrenchNumeriquePhone.JSON_PROPERTY_NATIONAL_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrenchNumeriquePhone {
   public static final String JSON_PROPERTY_FULL_PHONE_NUMBER = "fullPhoneNumber";
   private JsonNullable<String> fullPhoneNumber = JsonNullable.<String>undefined();
@@ -70,7 +70,7 @@ public class FrenchNumeriquePhone {
         return fullPhoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FULL_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_FULL_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFullPhoneNumber_JsonNullable() {
@@ -102,7 +102,7 @@ public class FrenchNumeriquePhone {
         return countryPrefix.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY_PREFIX)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY_PREFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountryPrefix_JsonNullable() {
@@ -134,7 +134,7 @@ public class FrenchNumeriquePhone {
         return nationalNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_NATIONAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getNationalNumber_JsonNullable() {
@@ -200,10 +200,7 @@ public class FrenchNumeriquePhone {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -240,17 +237,17 @@ public class FrenchNumeriquePhone {
 
     // add `fullPhoneNumber` to the URL query string
     if (getFullPhoneNumber() != null) {
-      joiner.add(String.format("%sfullPhoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullPhoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullPhoneNumber()))));
     }
 
     // add `countryPrefix` to the URL query string
     if (getCountryPrefix() != null) {
-      joiner.add(String.format("%scountryPrefix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryPrefix()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountryPrefix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryPrefix()))));
     }
 
     // add `nationalNumber` to the URL query string
     if (getNationalNumber() != null) {
-      joiner.add(String.format("%snationalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%snationalNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalNumber()))));
     }
 
     return joiner.toString();

@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   MexicoCurpProviderOutput.JSON_PROPERTY_CURP_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MexicoCurpProviderOutput {
   public static final String JSON_PROPERTY_CURP_STATUS = "curpStatus";
   private JsonNullable<String> curpStatus = JsonNullable.<String>undefined();
@@ -62,7 +62,7 @@ public class MexicoCurpProviderOutput {
         return curpStatus.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CURP_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_CURP_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCurpStatus_JsonNullable() {
@@ -124,10 +124,7 @@ public class MexicoCurpProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -164,7 +161,7 @@ public class MexicoCurpProviderOutput {
 
     // add `curpStatus` to the URL query string
     if (getCurpStatus() != null) {
-      joiner.add(String.format("%scurpStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCurpStatus()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scurpStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCurpStatus()))));
     }
 
     return joiner.toString();

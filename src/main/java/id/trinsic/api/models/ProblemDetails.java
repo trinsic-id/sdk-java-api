@@ -29,8 +29,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -49,8 +47,8 @@ import id.trinsic.ApiClient;
   ProblemDetails.JSON_PROPERTY_DETAIL,
   ProblemDetails.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class ProblemDetails extends HashMap<String, Object> {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+public class ProblemDetails {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
 
@@ -84,7 +82,7 @@ public class ProblemDetails extends HashMap<String, Object> {
         return type.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getType_JsonNullable() {
@@ -116,7 +114,7 @@ public class ProblemDetails extends HashMap<String, Object> {
         return title.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getTitle_JsonNullable() {
@@ -148,7 +146,7 @@ public class ProblemDetails extends HashMap<String, Object> {
         return status.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Integer> getStatus_JsonNullable() {
@@ -180,7 +178,7 @@ public class ProblemDetails extends HashMap<String, Object> {
         return detail.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DETAIL)
+  @JsonProperty(value = JSON_PROPERTY_DETAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDetail_JsonNullable() {
@@ -212,7 +210,7 @@ public class ProblemDetails extends HashMap<String, Object> {
         return instance.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_INSTANCE)
+  @JsonProperty(value = JSON_PROPERTY_INSTANCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getInstance_JsonNullable() {
@@ -289,8 +287,7 @@ public class ProblemDetails extends HashMap<String, Object> {
         equalsNullable(this.status, problemDetails.status) &&
         equalsNullable(this.detail, problemDetails.detail) &&
         equalsNullable(this.instance, problemDetails.instance)&&
-        Objects.equals(this.additionalProperties, problemDetails.additionalProperties) &&
-        super.equals(o);
+        Objects.equals(this.additionalProperties, problemDetails.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -299,7 +296,7 @@ public class ProblemDetails extends HashMap<String, Object> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(type), hashCodeNullable(title), hashCodeNullable(status), hashCodeNullable(detail), hashCodeNullable(instance), super.hashCode(), additionalProperties);
+    return Objects.hash(hashCodeNullable(type), hashCodeNullable(title), hashCodeNullable(status), hashCodeNullable(detail), hashCodeNullable(instance), additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -313,7 +310,6 @@ public class ProblemDetails extends HashMap<String, Object> {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProblemDetails {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -329,10 +325,7 @@ public class ProblemDetails extends HashMap<String, Object> {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -369,27 +362,27 @@ public class ProblemDetails extends HashMap<String, Object> {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `detail` to the URL query string
     if (getDetail() != null) {
-      joiner.add(String.format("%sdetail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDetail()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdetail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDetail()))));
     }
 
     // add `instance` to the URL query string
     if (getInstance() != null) {
-      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInstance()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sinstance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInstance()))));
     }
 
     return joiner.toString();

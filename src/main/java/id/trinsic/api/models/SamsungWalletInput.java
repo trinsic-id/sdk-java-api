@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   SamsungWalletInput.JSON_PROPERTY_PREVIEW_RAW18013_REQUEST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SamsungWalletInput {
   public static final String JSON_PROPERTY_PREVIEW_RAW18013_REQUEST = "preview_raw18013Request";
   private JsonNullable<Raw18013RequestInput> previewRaw18013Request = JsonNullable.<Raw18013RequestInput>undefined();
@@ -63,7 +63,7 @@ public class SamsungWalletInput {
         return previewRaw18013Request.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PREVIEW_RAW18013_REQUEST)
+  @JsonProperty(value = JSON_PROPERTY_PREVIEW_RAW18013_REQUEST, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Raw18013RequestInput> getPreviewRaw18013Request_JsonNullable() {
@@ -125,10 +125,7 @@ public class SamsungWalletInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**

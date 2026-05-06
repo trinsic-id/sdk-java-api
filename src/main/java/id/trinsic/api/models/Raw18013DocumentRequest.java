@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   Raw18013DocumentRequest.JSON_PROPERTY_DOCUMENT_TYPE,
   Raw18013DocumentRequest.JSON_PROPERTY_NAME_SPACES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Raw18013DocumentRequest {
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
   @javax.annotation.Nonnull
@@ -61,14 +61,14 @@ public class Raw18013DocumentRequest {
    * @return documentType
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getDocumentType() {
     return documentType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDocumentType(@javax.annotation.Nonnull String documentType) {
     this.documentType = documentType;
@@ -93,14 +93,14 @@ public class Raw18013DocumentRequest {
    * @return nameSpaces
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME_SPACES)
+  @JsonProperty(value = JSON_PROPERTY_NAME_SPACES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Map<String, Map<String, Boolean>> getNameSpaces() {
     return nameSpaces;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME_SPACES)
+  @JsonProperty(value = JSON_PROPERTY_NAME_SPACES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNameSpaces(@javax.annotation.Nonnull Map<String, Map<String, Boolean>> nameSpaces) {
     this.nameSpaces = nameSpaces;
@@ -143,10 +143,7 @@ public class Raw18013DocumentRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -183,14 +180,14 @@ public class Raw18013DocumentRequest {
 
     // add `documentType` to the URL query string
     if (getDocumentType() != null) {
-      joiner.add(String.format("%sdocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentType()))));
     }
 
     // add `nameSpaces` to the URL query string
     if (getNameSpaces() != null) {
       for (String _key : getNameSpaces().keySet()) {
-        joiner.add(String.format("%snameSpaces%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+        joiner.add(String.format(java.util.Locale.ROOT, "%snameSpaces%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
             getNameSpaces().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getNameSpaces().get(_key)))));
       }
     }

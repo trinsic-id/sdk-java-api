@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   ContractAttachment.JSON_PROPERTY_TYPE,
   ContractAttachment.JSON_PROPERTY_OUTPUTTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ContractAttachment {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull
@@ -60,14 +60,14 @@ public class ContractAttachment {
    * @return type
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getType() {
     return type;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
@@ -84,14 +84,14 @@ public class ContractAttachment {
    * @return outputted
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OUTPUTTED)
+  @JsonProperty(value = JSON_PROPERTY_OUTPUTTED, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public AttributeAvailability getOutputted() {
     return outputted;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OUTPUTTED)
+  @JsonProperty(value = JSON_PROPERTY_OUTPUTTED, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setOutputted(@javax.annotation.Nonnull AttributeAvailability outputted) {
     this.outputted = outputted;
@@ -134,10 +134,7 @@ public class ContractAttachment {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -174,12 +171,12 @@ public class ContractAttachment {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `outputted` to the URL query string
     if (getOutputted() != null) {
-      joiner.add(String.format("%soutputted%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOutputted()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%soutputted%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOutputted()))));
     }
 
     return joiner.toString();

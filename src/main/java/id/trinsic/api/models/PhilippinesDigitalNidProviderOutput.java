@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_DOCUMENT_NUMBER,
   PhilippinesDigitalNidProviderOutput.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PhilippinesDigitalNidProviderOutput {
   public static final String JSON_PROPERTY_PHILSYS_CARD_NUMBER = "philsysCardNumber";
   @javax.annotation.Nonnull
@@ -99,14 +99,14 @@ public class PhilippinesDigitalNidProviderOutput {
    * @return philsysCardNumber
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PHILSYS_CARD_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHILSYS_CARD_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getPhilsysCardNumber() {
     return philsysCardNumber;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PHILSYS_CARD_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHILSYS_CARD_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPhilsysCardNumber(@javax.annotation.Nonnull String philsysCardNumber) {
     this.philsysCardNumber = philsysCardNumber;
@@ -128,7 +128,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return givenName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getGivenName_JsonNullable() {
@@ -160,7 +160,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return middleName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMiddleName_JsonNullable() {
@@ -192,7 +192,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return familyName.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFamilyName_JsonNullable() {
@@ -224,7 +224,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return dateOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
@@ -256,7 +256,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return suffix.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SUFFIX)
+  @JsonProperty(value = JSON_PROPERTY_SUFFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSuffix_JsonNullable() {
@@ -288,7 +288,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return sex.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_SEX)
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getSex_JsonNullable() {
@@ -320,7 +320,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return placeOfBirth.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  @JsonProperty(value = JSON_PROPERTY_PLACE_OF_BIRTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPlaceOfBirth_JsonNullable() {
@@ -352,7 +352,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return documentIssueDate.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_ISSUE_DATE)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_ISSUE_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<LocalDate> getDocumentIssueDate_JsonNullable() {
@@ -384,7 +384,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return documentNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDocumentNumber_JsonNullable() {
@@ -416,7 +416,7 @@ public class PhilippinesDigitalNidProviderOutput {
         return issuingAuthority.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_AUTHORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getIssuingAuthority_JsonNullable() {
@@ -498,10 +498,7 @@ public class PhilippinesDigitalNidProviderOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -538,57 +535,57 @@ public class PhilippinesDigitalNidProviderOutput {
 
     // add `philsysCardNumber` to the URL query string
     if (getPhilsysCardNumber() != null) {
-      joiner.add(String.format("%sphilsysCardNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhilsysCardNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphilsysCardNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhilsysCardNumber()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
-      joiner.add(String.format("%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `suffix` to the URL query string
     if (getSuffix() != null) {
-      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
     }
 
     // add `sex` to the URL query string
     if (getSex() != null) {
-      joiner.add(String.format("%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `placeOfBirth` to the URL query string
     if (getPlaceOfBirth() != null) {
-      joiner.add(String.format("%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%splaceOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPlaceOfBirth()))));
     }
 
     // add `documentIssueDate` to the URL query string
     if (getDocumentIssueDate() != null) {
-      joiner.add(String.format("%sdocumentIssueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentIssueDate()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentIssueDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentIssueDate()))));
     }
 
     // add `documentNumber` to the URL query string
     if (getDocumentNumber() != null) {
-      joiner.add(String.format("%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
     }
 
     // add `issuingAuthority` to the URL query string
     if (getIssuingAuthority() != null) {
-      joiner.add(String.format("%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingAuthority%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingAuthority()))));
     }
 
     return joiner.toString();

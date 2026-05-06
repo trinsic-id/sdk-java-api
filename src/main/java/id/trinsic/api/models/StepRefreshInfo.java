@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   StepRefreshInfo.JSON_PROPERTY_REFRESH_AFTER,
   StepRefreshInfo.JSON_PROPERTY_TIME_TO_LIVE_SECONDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class StepRefreshInfo {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expiresAt";
   @javax.annotation.Nonnull
@@ -65,14 +65,14 @@ public class StepRefreshInfo {
    * @return expiresAt
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExpiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
@@ -89,14 +89,14 @@ public class StepRefreshInfo {
    * @return refreshAfter
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REFRESH_AFTER)
+  @JsonProperty(value = JSON_PROPERTY_REFRESH_AFTER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public OffsetDateTime getRefreshAfter() {
     return refreshAfter;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REFRESH_AFTER)
+  @JsonProperty(value = JSON_PROPERTY_REFRESH_AFTER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRefreshAfter(@javax.annotation.Nonnull OffsetDateTime refreshAfter) {
     this.refreshAfter = refreshAfter;
@@ -113,14 +113,14 @@ public class StepRefreshInfo {
    * @return timeToLiveSeconds
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TIME_TO_LIVE_SECONDS)
+  @JsonProperty(value = JSON_PROPERTY_TIME_TO_LIVE_SECONDS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Integer getTimeToLiveSeconds() {
     return timeToLiveSeconds;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TIME_TO_LIVE_SECONDS)
+  @JsonProperty(value = JSON_PROPERTY_TIME_TO_LIVE_SECONDS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTimeToLiveSeconds(@javax.annotation.Nonnull Integer timeToLiveSeconds) {
     this.timeToLiveSeconds = timeToLiveSeconds;
@@ -165,10 +165,7 @@ public class StepRefreshInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -205,17 +202,17 @@ public class StepRefreshInfo {
 
     // add `expiresAt` to the URL query string
     if (getExpiresAt() != null) {
-      joiner.add(String.format("%sexpiresAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpiresAt()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexpiresAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpiresAt()))));
     }
 
     // add `refreshAfter` to the URL query string
     if (getRefreshAfter() != null) {
-      joiner.add(String.format("%srefreshAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefreshAfter()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%srefreshAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefreshAfter()))));
     }
 
     // add `timeToLiveSeconds` to the URL query string
     if (getTimeToLiveSeconds() != null) {
-      joiner.add(String.format("%stimeToLiveSeconds%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeToLiveSeconds()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stimeToLiveSeconds%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeToLiveSeconds()))));
     }
 
     return joiner.toString();

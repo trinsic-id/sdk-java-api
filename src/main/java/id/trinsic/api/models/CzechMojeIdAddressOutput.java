@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   CzechMojeIdAddressOutput.JSON_PROPERTY_COUNTRY,
   CzechMojeIdAddressOutput.JSON_PROPERTY_FORMATTED_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CzechMojeIdAddressOutput {
   public static final String JSON_PROPERTY_STREET_ADDRESS = "streetAddress";
   private JsonNullable<String> streetAddress = JsonNullable.<String>undefined();
@@ -82,7 +82,7 @@ public class CzechMojeIdAddressOutput {
         return streetAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_STREET_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_STREET_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getStreetAddress_JsonNullable() {
@@ -114,7 +114,7 @@ public class CzechMojeIdAddressOutput {
         return city.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_CITY)
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCity_JsonNullable() {
@@ -146,7 +146,7 @@ public class CzechMojeIdAddressOutput {
         return region.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_REGION)
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRegion_JsonNullable() {
@@ -178,7 +178,7 @@ public class CzechMojeIdAddressOutput {
         return postalCode.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getPostalCode_JsonNullable() {
@@ -210,7 +210,7 @@ public class CzechMojeIdAddressOutput {
         return country.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getCountry_JsonNullable() {
@@ -242,7 +242,7 @@ public class CzechMojeIdAddressOutput {
         return formattedAddress.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_FORMATTED_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_FORMATTED_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getFormattedAddress_JsonNullable() {
@@ -314,10 +314,7 @@ public class CzechMojeIdAddressOutput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -354,32 +351,32 @@ public class CzechMojeIdAddressOutput {
 
     // add `streetAddress` to the URL query string
     if (getStreetAddress() != null) {
-      joiner.add(String.format("%sstreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreetAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstreetAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreetAddress()))));
     }
 
     // add `city` to the URL query string
     if (getCity() != null) {
-      joiner.add(String.format("%scity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCity()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCity()))));
     }
 
     // add `region` to the URL query string
     if (getRegion() != null) {
-      joiner.add(String.format("%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
     }
 
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `formattedAddress` to the URL query string
     if (getFormattedAddress() != null) {
-      joiner.add(String.format("%sformattedAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFormattedAddress()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sformattedAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFormattedAddress()))));
     }
 
     return joiner.toString();

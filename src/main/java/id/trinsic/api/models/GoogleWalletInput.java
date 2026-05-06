@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   GoogleWalletInput.JSON_PROPERTY_EXCHANGE_MECHANISM,
   GoogleWalletInput.JSON_PROPERTY_PREVIEW_RAW18013_REQUEST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GoogleWalletInput {
   public static final String JSON_PROPERTY_EXCHANGE_MECHANISM = "exchangeMechanism";
   private JsonNullable<MdlExchangeMechanism> exchangeMechanism = JsonNullable.<MdlExchangeMechanism>undefined();
@@ -68,7 +68,7 @@ public class GoogleWalletInput {
         return exchangeMechanism.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_EXCHANGE_MECHANISM)
+  @JsonProperty(value = JSON_PROPERTY_EXCHANGE_MECHANISM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<MdlExchangeMechanism> getExchangeMechanism_JsonNullable() {
@@ -91,7 +91,7 @@ public class GoogleWalletInput {
   }
 
   /**
-   * **Preview feature: not suitable for production use cases**              The raw 18013-7 exchange request to use for this verification.              If set, this overrides any default configuration on your Verification Profile.
+   * **Preview feature: not suitable for production use cases**              The raw 18013-7 exchange request to use for this verification.              If set, this overrides any default configuration on your Verification Profile.              NOTE: This parameter has no effect in live mode for Google Wallet verifications. Dynamic requests are currently only supported in test mode for Google Wallet.
    * @return previewRaw18013Request
    */
   @javax.annotation.Nullable
@@ -100,7 +100,7 @@ public class GoogleWalletInput {
         return previewRaw18013Request.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PREVIEW_RAW18013_REQUEST)
+  @JsonProperty(value = JSON_PROPERTY_PREVIEW_RAW18013_REQUEST, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<Raw18013RequestInput> getPreviewRaw18013Request_JsonNullable() {
@@ -164,10 +164,7 @@ public class GoogleWalletInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -204,7 +201,7 @@ public class GoogleWalletInput {
 
     // add `exchangeMechanism` to the URL query string
     if (getExchangeMechanism() != null) {
-      joiner.add(String.format("%sexchangeMechanism%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExchangeMechanism()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sexchangeMechanism%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExchangeMechanism()))));
     }
 
     // add `preview_raw18013Request` to the URL query string

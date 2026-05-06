@@ -8,7 +8,7 @@ Exposed properties for the `czech-moje-id` Provider which do not directly map to
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**subjectIdentifier** | **String** | The subject identifier (sub) of the verified individual&#39;s MojeID account.              This is a unique identifier that represents the user within the MojeID system. |  [optional] |
+|**subjectIdentifier** | **String** | The subject identifier (sub) of the verified individual&#39;s MojeID account.              This is a unique identifier that represents the individual within the MojeID system. |  [optional] |
 |**name** | **String** | The individual&#39;s full name. |  [optional] |
 |**givenName** | **String** | The individual&#39;s given (first) name. |  [optional] |
 |**familyName** | **String** | The individual&#39;s family (last) name. |  [optional] |
@@ -24,6 +24,8 @@ Exposed properties for the `czech-moje-id` Provider which do not directly map to
 |**socialSecurityNumber** | **String** | The individual&#39;s Ministry of Labour and Social Affairs identifier (Czech social security equivalent). |  [optional] |
 |**isAdult** | **Boolean** | The individual is an adult (18 years or older). |  [optional] |
 |**accountValidated** | **Boolean** | The MojeID account has been validated.              A validated account indicates the individual&#39;s identity has been verified to a higher level of assurance within the MojeID system. |  [optional] |
+|**isdsId** | **String** | The individual&#39;s ISDS identifier (Informační systém datových schránek — Czech data box system), used for official electronic communication with Czech government authorities. |  [optional] |
+|**isStudent** | **Boolean** | Whether the individual is a student. |  [optional] |
 |**companyRegistrationNumber** | **String** | The individual&#39;s or organization&#39;s Czech Registration ID (ICO), the Czech company registration number. |  [optional] |
 |**taxIdentificationNumber** | **String** | The individual&#39;s or organization&#39;s Danove Identifikacni Cislo (DIC), the Czech tax identification number. |  [optional] |
 |**niaVerified** | **Boolean** | The individual&#39;s identity has been verified through the Czech National Identity Authority (NIA).              NIA verification indicates a higher level of identity assurance, typically involving government-issued credentials verified through the Czech eGovernment infrastructure. |  [optional] |

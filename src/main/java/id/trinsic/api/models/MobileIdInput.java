@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_NATIONAL_IDENTITY_NUMBER,
   MobileIdInput.JSON_PROPERTY_MOBILE_ID_LANGUAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T16:16:44.206360395Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MobileIdInput {
   public static final String JSON_PROPERTY_MOBILE_ID_PHONE_NUMBER = "mobileIdPhoneNumber";
   private JsonNullable<String> mobileIdPhoneNumber = JsonNullable.<String>undefined();
@@ -71,7 +71,7 @@ public class MobileIdInput {
         return mobileIdPhoneNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MOBILE_ID_PHONE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_ID_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMobileIdPhoneNumber_JsonNullable() {
@@ -103,7 +103,7 @@ public class MobileIdInput {
         return mobileIdNationalIdentityNumber.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MOBILE_ID_NATIONAL_IDENTITY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_ID_NATIONAL_IDENTITY_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getMobileIdNationalIdentityNumber_JsonNullable() {
@@ -135,7 +135,7 @@ public class MobileIdInput {
         return mobileIdLanguage.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_MOBILE_ID_LANGUAGE)
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_ID_LANGUAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<MobileIdLanguage> getMobileIdLanguage_JsonNullable() {
@@ -201,10 +201,7 @@ public class MobileIdInput {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -241,17 +238,17 @@ public class MobileIdInput {
 
     // add `mobileIdPhoneNumber` to the URL query string
     if (getMobileIdPhoneNumber() != null) {
-      joiner.add(String.format("%smobileIdPhoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdPhoneNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smobileIdPhoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdPhoneNumber()))));
     }
 
     // add `mobileIdNationalIdentityNumber` to the URL query string
     if (getMobileIdNationalIdentityNumber() != null) {
-      joiner.add(String.format("%smobileIdNationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdNationalIdentityNumber()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smobileIdNationalIdentityNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdNationalIdentityNumber()))));
     }
 
     // add `mobileIdLanguage` to the URL query string
     if (getMobileIdLanguage() != null) {
-      joiner.add(String.format("%smobileIdLanguage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdLanguage()))));
+      joiner.add(String.format(java.util.Locale.ROOT, "%smobileIdLanguage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileIdLanguage()))));
     }
 
     return joiner.toString();
