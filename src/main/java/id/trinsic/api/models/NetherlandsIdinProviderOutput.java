@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   NetherlandsIdinProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
   NetherlandsIdinProviderOutput.JSON_PROPERTY_EMAIL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NetherlandsIdinProviderOutput {
   public static final String JSON_PROPERTY_AUTHORITY_ID = "authorityId";
   @javax.annotation.Nonnull

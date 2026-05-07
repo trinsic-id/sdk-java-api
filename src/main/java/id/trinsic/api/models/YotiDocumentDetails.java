@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   YotiDocumentDetails.JSON_PROPERTY_EXPIRATION_DATE,
   YotiDocumentDetails.JSON_PROPERTY_ISSUING_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class YotiDocumentDetails {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();

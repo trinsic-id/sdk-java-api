@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   AadhaarAddress.JSON_PROPERTY_SUBDISTRICT,
   AadhaarAddress.JSON_PROPERTY_VILLAGE_TOWN_CITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AadhaarAddress {
   public static final String JSON_PROPERTY_CARE_OF = "careOf";
   private JsonNullable<String> careOf = JsonNullable.<String>undefined();

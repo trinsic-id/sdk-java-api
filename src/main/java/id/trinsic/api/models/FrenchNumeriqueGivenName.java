@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   FrenchNumeriqueGivenName.JSON_PROPERTY_FIRST_NAME,
   FrenchNumeriqueGivenName.JSON_PROPERTY_MIDDLE_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrenchNumeriqueGivenName {
   public static final String JSON_PROPERTY_FULL_GIVEN_NAME = "fullGivenName";
   private JsonNullable<String> fullGivenName = JsonNullable.<String>undefined();

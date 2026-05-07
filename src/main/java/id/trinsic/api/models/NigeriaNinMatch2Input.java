@@ -47,7 +47,7 @@ import id.trinsic.ApiClient;
   NigeriaNinMatch2Input.JSON_PROPERTY_SEX,
   NigeriaNinMatch2Input.JSON_PROPERTY_PHONE_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-06T02:42:31.705521520Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NigeriaNinMatch2Input {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private JsonNullable<String> idNumber = JsonNullable.<String>undefined();
