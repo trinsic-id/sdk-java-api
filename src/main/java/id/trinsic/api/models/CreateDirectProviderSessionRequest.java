@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   CreateDirectProviderSessionRequest.JSON_PROPERTY_BROWSER_LANGUAGES,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CreateDirectProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -241,7 +241,7 @@ public class CreateDirectProviderSessionRequest {
   }
 
   /**
-   * Preferences for languages to show first if the session falls back to the Trinsic-hosted UI. If left empty, the Hosted UI defaults to the user&#39;s navigator languages. If no preferred language is available, the Hosted UI falls back to English. This only will be used if the session falls back to the Trinsic-hosted UI.
+   * Preferences for languages to show first in supported provider launch flows and, if the session falls back, in the Trinsic-hosted UI. If left empty, the Hosted UI defaults to the user&#39;s navigator languages. If no preferred language is available, the Hosted UI falls back to English.
    * @return browserLanguages
    */
   @javax.annotation.Nullable

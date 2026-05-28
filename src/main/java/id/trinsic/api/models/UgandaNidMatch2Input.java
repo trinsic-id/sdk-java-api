@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   UgandaNidMatch2Input.JSON_PROPERTY_SECONDARY_ID_NUMBER,
   UgandaNidMatch2Input.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class UgandaNidMatch2Input {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private JsonNullable<String> idNumber = JsonNullable.<String>undefined();
@@ -62,7 +62,7 @@ public class UgandaNidMatch2Input {
   }
 
   /**
-   * The user&#39;s Uganda National ID number (NIN) - 14 alphanumeric characters
+   * Uganda National ID number (NID) assigned by the National Identification and Registration Authority (NIRA).              Format: - 14 alphanumeric characters (A-Z, 0-9) - There is no publicly documented encoding scheme for encoding personal information in the NID - No check digit or algorithm has been publicly documented by NIRA
    * @return idNumber
    */
   @javax.annotation.Nullable

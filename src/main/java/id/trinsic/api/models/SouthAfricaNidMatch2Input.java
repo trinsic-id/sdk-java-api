@@ -44,10 +44,9 @@ import id.trinsic.ApiClient;
   SouthAfricaNidMatch2Input.JSON_PROPERTY_FAMILY_NAME,
   SouthAfricaNidMatch2Input.JSON_PROPERTY_MIDDLE_NAME,
   SouthAfricaNidMatch2Input.JSON_PROPERTY_DATE_OF_BIRTH,
-  SouthAfricaNidMatch2Input.JSON_PROPERTY_SEX,
-  SouthAfricaNidMatch2Input.JSON_PROPERTY_PHONE_NUMBER
+  SouthAfricaNidMatch2Input.JSON_PROPERTY_SEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SouthAfricaNidMatch2Input {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private JsonNullable<String> idNumber = JsonNullable.<String>undefined();
@@ -67,9 +66,6 @@ public class SouthAfricaNidMatch2Input {
   public static final String JSON_PROPERTY_SEX = "sex";
   private JsonNullable<SouthAfricaNidMatch2InputSex> sex = JsonNullable.<SouthAfricaNidMatch2InputSex>undefined();
 
-  public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
-  private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
-
   public SouthAfricaNidMatch2Input() { 
   }
 
@@ -79,7 +75,7 @@ public class SouthAfricaNidMatch2Input {
   }
 
   /**
-   * The user&#39;s South African National ID number
+   * The South African National Identity Number (13 digits).              Issued for life by the Department of Home Affairs (DHA) and stored in the HANIS (Home Affairs National Identification System) database. The same number is mandatory for banking, employment, taxation, and voting, and is printed on both the legacy green ID book and the Smart ID Card (rolled out from 2013 onward).              Format: - YYMMDD G(4) C A Z - YYMMDD is the date of birth - G(4) is the gender code (below 5000 female, 5000 or above male) - C is the citizenship indicator (0 citizen, 1 permanent resident) - A is reserved (it had a politically sensitive meaning in the past, but is currently   semantically meaningless) - Z is a Luhn check digit
    * @return idNumber
    */
   @javax.annotation.Nullable
@@ -265,38 +261,6 @@ public class SouthAfricaNidMatch2Input {
   }
 
 
-  public SouthAfricaNidMatch2Input phoneNumber(@javax.annotation.Nullable String phoneNumber) {
-    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
-    return this;
-  }
-
-  /**
-   * The user&#39;s phone number as it appears in their National ID (optional). Must be in E.164 international format: \&quot;+27XXXXXXXXX\&quot;
-   * @return phoneNumber
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getPhoneNumber() {
-        return phoneNumber.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getPhoneNumber_JsonNullable() {
-    return phoneNumber;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
-  public void setPhoneNumber_JsonNullable(JsonNullable<String> phoneNumber) {
-    this.phoneNumber = phoneNumber;
-  }
-
-  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
-    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
-  }
-
-
   /**
    * Return true if this SouthAfricaNidMatch2Input object is equal to o.
    */
@@ -314,8 +278,7 @@ public class SouthAfricaNidMatch2Input {
         equalsNullable(this.familyName, southAfricaNidMatch2Input.familyName) &&
         equalsNullable(this.middleName, southAfricaNidMatch2Input.middleName) &&
         equalsNullable(this.dateOfBirth, southAfricaNidMatch2Input.dateOfBirth) &&
-        equalsNullable(this.sex, southAfricaNidMatch2Input.sex) &&
-        equalsNullable(this.phoneNumber, southAfricaNidMatch2Input.phoneNumber);
+        equalsNullable(this.sex, southAfricaNidMatch2Input.sex);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -324,7 +287,7 @@ public class SouthAfricaNidMatch2Input {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(idNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(middleName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(phoneNumber));
+    return Objects.hash(hashCodeNullable(idNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(middleName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -344,7 +307,6 @@ public class SouthAfricaNidMatch2Input {
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -417,11 +379,6 @@ public class SouthAfricaNidMatch2Input {
     // add `sex` to the URL query string
     if (getSex() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
-    }
-
-    // add `phoneNumber` to the URL query string
-    if (getPhoneNumber() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
     return joiner.toString();

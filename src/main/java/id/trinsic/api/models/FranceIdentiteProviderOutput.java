@@ -24,8 +24,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.EudiAgeVerificationCredential;
+import id.trinsic.api.models.EudiPidCredential;
 import id.trinsic.api.models.MdlOutput;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -34,16 +40,88 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;france-identite&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
+  FranceIdentiteProviderOutput.JSON_PROPERTY_PID,
+  FranceIdentiteProviderOutput.JSON_PROPERTY_AGE_VERIFICATION,
   FranceIdentiteProviderOutput.JSON_PROPERTY_RAW18013_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FranceIdentiteProviderOutput {
+  public static final String JSON_PROPERTY_PID = "pid";
+  private JsonNullable<EudiPidCredential> pid = JsonNullable.<EudiPidCredential>undefined();
+
+  public static final String JSON_PROPERTY_AGE_VERIFICATION = "ageVerification";
+  private JsonNullable<EudiAgeVerificationCredential> ageVerification = JsonNullable.<EudiAgeVerificationCredential>undefined();
+
   public static final String JSON_PROPERTY_RAW18013_OUTPUT = "raw18013Output";
   @javax.annotation.Nonnull
   private MdlOutput raw18013Output;
 
   public FranceIdentiteProviderOutput() { 
   }
+
+  public FranceIdentiteProviderOutput pid(@javax.annotation.Nullable EudiPidCredential pid) {
+    this.pid = JsonNullable.<EudiPidCredential>of(pid);
+    return this;
+  }
+
+  /**
+   * An EUDI Person Identification Data (PID) credential, retrieved from the individual&#39;s wallet.
+   * @return pid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public EudiPidCredential getPid() {
+        return pid.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_PID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<EudiPidCredential> getPid_JsonNullable() {
+    return pid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PID)
+  public void setPid_JsonNullable(JsonNullable<EudiPidCredential> pid) {
+    this.pid = pid;
+  }
+
+  public void setPid(@javax.annotation.Nullable EudiPidCredential pid) {
+    this.pid = JsonNullable.<EudiPidCredential>of(pid);
+  }
+
+
+  public FranceIdentiteProviderOutput ageVerification(@javax.annotation.Nullable EudiAgeVerificationCredential ageVerification) {
+    this.ageVerification = JsonNullable.<EudiAgeVerificationCredential>of(ageVerification);
+    return this;
+  }
+
+  /**
+   * An EUDI Age Verification credential, retrieved from the individual&#39;s wallet.
+   * @return ageVerification
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public EudiAgeVerificationCredential getAgeVerification() {
+        return ageVerification.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_AGE_VERIFICATION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<EudiAgeVerificationCredential> getAgeVerification_JsonNullable() {
+    return ageVerification;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AGE_VERIFICATION)
+  public void setAgeVerification_JsonNullable(JsonNullable<EudiAgeVerificationCredential> ageVerification) {
+    this.ageVerification = ageVerification;
+  }
+
+  public void setAgeVerification(@javax.annotation.Nullable EudiAgeVerificationCredential ageVerification) {
+    this.ageVerification = JsonNullable.<EudiAgeVerificationCredential>of(ageVerification);
+  }
+
 
   public FranceIdentiteProviderOutput raw18013Output(@javax.annotation.Nonnull MdlOutput raw18013Output) {
     this.raw18013Output = raw18013Output;
@@ -81,18 +159,33 @@ public class FranceIdentiteProviderOutput {
       return false;
     }
     FranceIdentiteProviderOutput franceIdentiteProviderOutput = (FranceIdentiteProviderOutput) o;
-    return Objects.equals(this.raw18013Output, franceIdentiteProviderOutput.raw18013Output);
+    return equalsNullable(this.pid, franceIdentiteProviderOutput.pid) &&
+        equalsNullable(this.ageVerification, franceIdentiteProviderOutput.ageVerification) &&
+        Objects.equals(this.raw18013Output, franceIdentiteProviderOutput.raw18013Output);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(raw18013Output);
+    return Objects.hash(hashCodeNullable(pid), hashCodeNullable(ageVerification), raw18013Output);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FranceIdentiteProviderOutput {\n");
+    sb.append("    pid: ").append(toIndentedString(pid)).append("\n");
+    sb.append("    ageVerification: ").append(toIndentedString(ageVerification)).append("\n");
     sb.append("    raw18013Output: ").append(toIndentedString(raw18013Output)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -137,6 +230,16 @@ public class FranceIdentiteProviderOutput {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `pid` to the URL query string
+    if (getPid() != null) {
+      joiner.add(getPid().toUrlQueryString(prefix + "pid" + suffix));
+    }
+
+    // add `ageVerification` to the URL query string
+    if (getAgeVerification() != null) {
+      joiner.add(getAgeVerification().toUrlQueryString(prefix + "ageVerification" + suffix));
+    }
 
     // add `raw18013Output` to the URL query string
     if (getRaw18013Output() != null) {

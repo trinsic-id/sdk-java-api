@@ -91,12 +91,4 @@ class SouthAfricaNidMatch2InputTest {
         // TODO: test sex
     }
 
-    /**
-     * Test the property 'phoneNumber'
-     */
-    @Test
-    void phoneNumberTest() {
-        // TODO: test phoneNumber
-    }
-
 }

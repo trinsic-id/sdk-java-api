@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -37,15 +38,315 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;mexico-curp-lookup&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
-  MexicoCurpProviderOutput.JSON_PROPERTY_CURP_STATUS
+  MexicoCurpProviderOutput.JSON_PROPERTY_FIRST_NAME,
+  MexicoCurpProviderOutput.JSON_PROPERTY_FATHER_LAST_NAME,
+  MexicoCurpProviderOutput.JSON_PROPERTY_MOTHER_LAST_NAME,
+  MexicoCurpProviderOutput.JSON_PROPERTY_GENDER,
+  MexicoCurpProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
+  MexicoCurpProviderOutput.JSON_PROPERTY_COUNTRY_OF_BIRTH,
+  MexicoCurpProviderOutput.JSON_PROPERTY_STATE_OF_BIRTH,
+  MexicoCurpProviderOutput.JSON_PROPERTY_CURP,
+  MexicoCurpProviderOutput.JSON_PROPERTY_CURP_STATUS,
+  MexicoCurpProviderOutput.JSON_PROPERTY_REGISTRATION_YEAR,
+  MexicoCurpProviderOutput.JSON_PROPERTY_REGISTRATION_STATE,
+  MexicoCurpProviderOutput.JSON_PROPERTY_ACT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MexicoCurpProviderOutput {
+  public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_FATHER_LAST_NAME = "fatherLastName";
+  private JsonNullable<String> fatherLastName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_MOTHER_LAST_NAME = "motherLastName";
+  private JsonNullable<String> motherLastName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_GENDER = "gender";
+  private JsonNullable<String> gender = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_COUNTRY_OF_BIRTH = "countryOfBirth";
+  private JsonNullable<String> countryOfBirth = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_STATE_OF_BIRTH = "stateOfBirth";
+  private JsonNullable<String> stateOfBirth = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_CURP = "curp";
+  private JsonNullable<String> curp = JsonNullable.<String>undefined();
+
   public static final String JSON_PROPERTY_CURP_STATUS = "curpStatus";
   private JsonNullable<String> curpStatus = JsonNullable.<String>undefined();
 
+  public static final String JSON_PROPERTY_REGISTRATION_YEAR = "registrationYear";
+  private JsonNullable<Integer> registrationYear = JsonNullable.<Integer>undefined();
+
+  public static final String JSON_PROPERTY_REGISTRATION_STATE = "registrationState";
+  private JsonNullable<String> registrationState = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ACT_NUMBER = "actNumber";
+  private JsonNullable<String> actNumber = JsonNullable.<String>undefined();
+
   public MexicoCurpProviderOutput() { 
   }
+
+  public MexicoCurpProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+    return this;
+  }
+
+  /**
+   * First name of the individual.
+   * @return firstName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFirstName() {
+        return firstName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
+    this.firstName = firstName;
+  }
+
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
+
+
+  public MexicoCurpProviderOutput fatherLastName(@javax.annotation.Nullable String fatherLastName) {
+    this.fatherLastName = JsonNullable.<String>of(fatherLastName);
+    return this;
+  }
+
+  /**
+   * The last name of the father of the individual.
+   * @return fatherLastName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFatherLastName() {
+        return fatherLastName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_FATHER_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFatherLastName_JsonNullable() {
+    return fatherLastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FATHER_LAST_NAME)
+  public void setFatherLastName_JsonNullable(JsonNullable<String> fatherLastName) {
+    this.fatherLastName = fatherLastName;
+  }
+
+  public void setFatherLastName(@javax.annotation.Nullable String fatherLastName) {
+    this.fatherLastName = JsonNullable.<String>of(fatherLastName);
+  }
+
+
+  public MexicoCurpProviderOutput motherLastName(@javax.annotation.Nullable String motherLastName) {
+    this.motherLastName = JsonNullable.<String>of(motherLastName);
+    return this;
+  }
+
+  /**
+   * The last name of the mother of the individual.
+   * @return motherLastName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getMotherLastName() {
+        return motherLastName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_MOTHER_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getMotherLastName_JsonNullable() {
+    return motherLastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOTHER_LAST_NAME)
+  public void setMotherLastName_JsonNullable(JsonNullable<String> motherLastName) {
+    this.motherLastName = motherLastName;
+  }
+
+  public void setMotherLastName(@javax.annotation.Nullable String motherLastName) {
+    this.motherLastName = JsonNullable.<String>of(motherLastName);
+  }
+
+
+  public MexicoCurpProviderOutput gender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
+    return this;
+  }
+
+  /**
+   * The gender of the individual.   List of possible values:   - Male  - Female
+   * @return gender
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGender() {
+        return gender.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGender_JsonNullable() {
+    return gender;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GENDER)
+  public void setGender_JsonNullable(JsonNullable<String> gender) {
+    this.gender = gender;
+  }
+
+  public void setGender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
+  }
+
+
+  public MexicoCurpProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+    return this;
+  }
+
+  /**
+   * The date of birth of the individual.
+   * @return dateOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDateOfBirth() {
+        return dateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
+
+
+  public MexicoCurpProviderOutput countryOfBirth(@javax.annotation.Nullable String countryOfBirth) {
+    this.countryOfBirth = JsonNullable.<String>of(countryOfBirth);
+    return this;
+  }
+
+  /**
+   * The country of birth of the individual.
+   * @return countryOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCountryOfBirth() {
+        return countryOfBirth.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCountryOfBirth_JsonNullable() {
+    return countryOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTRY_OF_BIRTH)
+  public void setCountryOfBirth_JsonNullable(JsonNullable<String> countryOfBirth) {
+    this.countryOfBirth = countryOfBirth;
+  }
+
+  public void setCountryOfBirth(@javax.annotation.Nullable String countryOfBirth) {
+    this.countryOfBirth = JsonNullable.<String>of(countryOfBirth);
+  }
+
+
+  public MexicoCurpProviderOutput stateOfBirth(@javax.annotation.Nullable String stateOfBirth) {
+    this.stateOfBirth = JsonNullable.<String>of(stateOfBirth);
+    return this;
+  }
+
+  /**
+   * The state of birth of the individual.
+   * @return stateOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getStateOfBirth() {
+        return stateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_STATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getStateOfBirth_JsonNullable() {
+    return stateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_STATE_OF_BIRTH)
+  public void setStateOfBirth_JsonNullable(JsonNullable<String> stateOfBirth) {
+    this.stateOfBirth = stateOfBirth;
+  }
+
+  public void setStateOfBirth(@javax.annotation.Nullable String stateOfBirth) {
+    this.stateOfBirth = JsonNullable.<String>of(stateOfBirth);
+  }
+
+
+  public MexicoCurpProviderOutput curp(@javax.annotation.Nullable String curp) {
+    this.curp = JsonNullable.<String>of(curp);
+    return this;
+  }
+
+  /**
+   * The CURP (Clave Única de Registro de Población) that was verified.              A CURP code is a unique identifier assigned to individuals in Mexico. It is 18 alphanumeric characters, with a structured meaning:              ABCD YYMMDD G SS XYZ M C The first 4 letters (ABCD): A: The first letter of the paternal last name. B: First internal vowel of paternal last name. C: First letter of maternal last name. D: First letter of first name.              YYMMDD: 2-digit year, month, day.              G: Gender, H for Hombre (male) and M for Mujer (female).              SS: State code (2 letters), e.g. NL for Nuevo León.              X: First internal consonant of paternal last name. Y: First internal consonant of maternal last name. Z: First internal consonant of given name.              M: Millennium indicator (0-9 for pre-2000 birth date, A-Z for post-2000&#39;s birth dates.              C: Checksum character
+   * @return curp
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCurp() {
+        return curp.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_CURP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCurp_JsonNullable() {
+    return curp;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CURP)
+  public void setCurp_JsonNullable(JsonNullable<String> curp) {
+    this.curp = curp;
+  }
+
+  public void setCurp(@javax.annotation.Nullable String curp) {
+    this.curp = JsonNullable.<String>of(curp);
+  }
+
 
   public MexicoCurpProviderOutput curpStatus(@javax.annotation.Nullable String curpStatus) {
     this.curpStatus = JsonNullable.<String>of(curpStatus);
@@ -79,6 +380,102 @@ public class MexicoCurpProviderOutput {
   }
 
 
+  public MexicoCurpProviderOutput registrationYear(@javax.annotation.Nullable Integer registrationYear) {
+    this.registrationYear = JsonNullable.<Integer>of(registrationYear);
+    return this;
+  }
+
+  /**
+   * The year the CURP number was registered in.
+   * @return registrationYear
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Integer getRegistrationYear() {
+        return registrationYear.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_REGISTRATION_YEAR, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Integer> getRegistrationYear_JsonNullable() {
+    return registrationYear;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REGISTRATION_YEAR)
+  public void setRegistrationYear_JsonNullable(JsonNullable<Integer> registrationYear) {
+    this.registrationYear = registrationYear;
+  }
+
+  public void setRegistrationYear(@javax.annotation.Nullable Integer registrationYear) {
+    this.registrationYear = JsonNullable.<Integer>of(registrationYear);
+  }
+
+
+  public MexicoCurpProviderOutput registrationState(@javax.annotation.Nullable String registrationState) {
+    this.registrationState = JsonNullable.<String>of(registrationState);
+    return this;
+  }
+
+  /**
+   * The state the CURP number was registered in.
+   * @return registrationState
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRegistrationState() {
+        return registrationState.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_REGISTRATION_STATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRegistrationState_JsonNullable() {
+    return registrationState;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REGISTRATION_STATE)
+  public void setRegistrationState_JsonNullable(JsonNullable<String> registrationState) {
+    this.registrationState = registrationState;
+  }
+
+  public void setRegistrationState(@javax.annotation.Nullable String registrationState) {
+    this.registrationState = JsonNullable.<String>of(registrationState);
+  }
+
+
+  public MexicoCurpProviderOutput actNumber(@javax.annotation.Nullable String actNumber) {
+    this.actNumber = JsonNullable.<String>of(actNumber);
+    return this;
+  }
+
+  /**
+   * The ACT (Número de Acta) number of the individual.              The Act number is a civil registry index number. Various state have various formats of specifying these.
+   * @return actNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getActNumber() {
+        return actNumber.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ACT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getActNumber_JsonNullable() {
+    return actNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ACT_NUMBER)
+  public void setActNumber_JsonNullable(JsonNullable<String> actNumber) {
+    this.actNumber = actNumber;
+  }
+
+  public void setActNumber(@javax.annotation.Nullable String actNumber) {
+    this.actNumber = JsonNullable.<String>of(actNumber);
+  }
+
+
   /**
    * Return true if this MexicoCurpProviderOutput object is equal to o.
    */
@@ -91,7 +488,18 @@ public class MexicoCurpProviderOutput {
       return false;
     }
     MexicoCurpProviderOutput mexicoCurpProviderOutput = (MexicoCurpProviderOutput) o;
-    return equalsNullable(this.curpStatus, mexicoCurpProviderOutput.curpStatus);
+    return equalsNullable(this.firstName, mexicoCurpProviderOutput.firstName) &&
+        equalsNullable(this.fatherLastName, mexicoCurpProviderOutput.fatherLastName) &&
+        equalsNullable(this.motherLastName, mexicoCurpProviderOutput.motherLastName) &&
+        equalsNullable(this.gender, mexicoCurpProviderOutput.gender) &&
+        equalsNullable(this.dateOfBirth, mexicoCurpProviderOutput.dateOfBirth) &&
+        equalsNullable(this.countryOfBirth, mexicoCurpProviderOutput.countryOfBirth) &&
+        equalsNullable(this.stateOfBirth, mexicoCurpProviderOutput.stateOfBirth) &&
+        equalsNullable(this.curp, mexicoCurpProviderOutput.curp) &&
+        equalsNullable(this.curpStatus, mexicoCurpProviderOutput.curpStatus) &&
+        equalsNullable(this.registrationYear, mexicoCurpProviderOutput.registrationYear) &&
+        equalsNullable(this.registrationState, mexicoCurpProviderOutput.registrationState) &&
+        equalsNullable(this.actNumber, mexicoCurpProviderOutput.actNumber);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -100,7 +508,7 @@ public class MexicoCurpProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(curpStatus));
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(fatherLastName), hashCodeNullable(motherLastName), hashCodeNullable(gender), hashCodeNullable(dateOfBirth), hashCodeNullable(countryOfBirth), hashCodeNullable(stateOfBirth), hashCodeNullable(curp), hashCodeNullable(curpStatus), hashCodeNullable(registrationYear), hashCodeNullable(registrationState), hashCodeNullable(actNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -114,7 +522,18 @@ public class MexicoCurpProviderOutput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MexicoCurpProviderOutput {\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    fatherLastName: ").append(toIndentedString(fatherLastName)).append("\n");
+    sb.append("    motherLastName: ").append(toIndentedString(motherLastName)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    countryOfBirth: ").append(toIndentedString(countryOfBirth)).append("\n");
+    sb.append("    stateOfBirth: ").append(toIndentedString(stateOfBirth)).append("\n");
+    sb.append("    curp: ").append(toIndentedString(curp)).append("\n");
     sb.append("    curpStatus: ").append(toIndentedString(curpStatus)).append("\n");
+    sb.append("    registrationYear: ").append(toIndentedString(registrationYear)).append("\n");
+    sb.append("    registrationState: ").append(toIndentedString(registrationState)).append("\n");
+    sb.append("    actNumber: ").append(toIndentedString(actNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,9 +578,64 @@ public class MexicoCurpProviderOutput {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `firstName` to the URL query string
+    if (getFirstName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
+    }
+
+    // add `fatherLastName` to the URL query string
+    if (getFatherLastName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfatherLastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFatherLastName()))));
+    }
+
+    // add `motherLastName` to the URL query string
+    if (getMotherLastName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%smotherLastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMotherLastName()))));
+    }
+
+    // add `gender` to the URL query string
+    if (getGender() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
+    }
+
+    // add `dateOfBirth` to the URL query string
+    if (getDateOfBirth() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+    }
+
+    // add `countryOfBirth` to the URL query string
+    if (getCountryOfBirth() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountryOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryOfBirth()))));
+    }
+
+    // add `stateOfBirth` to the URL query string
+    if (getStateOfBirth() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sstateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStateOfBirth()))));
+    }
+
+    // add `curp` to the URL query string
+    if (getCurp() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%scurp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCurp()))));
+    }
+
     // add `curpStatus` to the URL query string
     if (getCurpStatus() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scurpStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCurpStatus()))));
+    }
+
+    // add `registrationYear` to the URL query string
+    if (getRegistrationYear() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregistrationYear%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegistrationYear()))));
+    }
+
+    // add `registrationState` to the URL query string
+    if (getRegistrationState() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sregistrationState%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegistrationState()))));
+    }
+
+    // add `actNumber` to the URL query string
+    if (getActNumber() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sactNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getActNumber()))));
     }
 
     return joiner.toString();

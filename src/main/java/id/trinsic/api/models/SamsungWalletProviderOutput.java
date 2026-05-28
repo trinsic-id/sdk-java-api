@@ -24,8 +24,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.Iso180135MobileDriversLicenseCredential;
 import id.trinsic.api.models.MdlOutput;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -34,16 +39,52 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;samsung-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
+  SamsungWalletProviderOutput.JSON_PROPERTY_MOBILE_DRIVERS_LICENSE,
   SamsungWalletProviderOutput.JSON_PROPERTY_RAW_MDL_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SamsungWalletProviderOutput {
+  public static final String JSON_PROPERTY_MOBILE_DRIVERS_LICENSE = "mobileDriversLicense";
+  private JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>undefined();
+
   public static final String JSON_PROPERTY_RAW_MDL_OUTPUT = "rawMdlOutput";
   @javax.annotation.Nonnull
   private MdlOutput rawMdlOutput;
 
   public SamsungWalletProviderOutput() { 
   }
+
+  public SamsungWalletProviderOutput mobileDriversLicense(@javax.annotation.Nullable Iso180135MobileDriversLicenseCredential mobileDriversLicense) {
+    this.mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>of(mobileDriversLicense);
+    return this;
+  }
+
+  /**
+   * A standard 18013-5 Mobile Driver&#39;s License credential, retrieved from the individual&#39;s wallet.
+   * @return mobileDriversLicense
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Iso180135MobileDriversLicenseCredential getMobileDriversLicense() {
+        return mobileDriversLicense.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_DRIVERS_LICENSE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Iso180135MobileDriversLicenseCredential> getMobileDriversLicense_JsonNullable() {
+    return mobileDriversLicense;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOBILE_DRIVERS_LICENSE)
+  public void setMobileDriversLicense_JsonNullable(JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense) {
+    this.mobileDriversLicense = mobileDriversLicense;
+  }
+
+  public void setMobileDriversLicense(@javax.annotation.Nullable Iso180135MobileDriversLicenseCredential mobileDriversLicense) {
+    this.mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>of(mobileDriversLicense);
+  }
+
 
   public SamsungWalletProviderOutput rawMdlOutput(@javax.annotation.Nonnull MdlOutput rawMdlOutput) {
     this.rawMdlOutput = rawMdlOutput;
@@ -81,18 +122,31 @@ public class SamsungWalletProviderOutput {
       return false;
     }
     SamsungWalletProviderOutput samsungWalletProviderOutput = (SamsungWalletProviderOutput) o;
-    return Objects.equals(this.rawMdlOutput, samsungWalletProviderOutput.rawMdlOutput);
+    return equalsNullable(this.mobileDriversLicense, samsungWalletProviderOutput.mobileDriversLicense) &&
+        Objects.equals(this.rawMdlOutput, samsungWalletProviderOutput.rawMdlOutput);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rawMdlOutput);
+    return Objects.hash(hashCodeNullable(mobileDriversLicense), rawMdlOutput);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SamsungWalletProviderOutput {\n");
+    sb.append("    mobileDriversLicense: ").append(toIndentedString(mobileDriversLicense)).append("\n");
     sb.append("    rawMdlOutput: ").append(toIndentedString(rawMdlOutput)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -137,6 +191,11 @@ public class SamsungWalletProviderOutput {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `mobileDriversLicense` to the URL query string
+    if (getMobileDriversLicense() != null) {
+      joiner.add(getMobileDriversLicense().toUrlQueryString(prefix + "mobileDriversLicense" + suffix));
+    }
 
     // add `rawMdlOutput` to the URL query string
     if (getRawMdlOutput() != null) {

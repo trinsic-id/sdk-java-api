@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**idNumber** | **String** | The user&#39;s Nigerian National ID number (NIN) |  [optional] |
+|**idNumber** | **String** | National Identification Number (NIN).              This is a unique, permanent identifier assigned by the National Identity Management Commission (NIMC) upon enrollment.              Format: - 11 numeric digits - No publicly known encoding scheme is used to encode personal information in the NIN - Last digit is a checksum using the Verhoeff algorithm |  [optional] |
 |**givenName** | **String** | The user&#39;s first name as it appears in their National ID |  [optional] |
 |**familyName** | **String** | The user&#39;s last name as it appears in their National ID |  [optional] |
 |**middleName** | **String** | The user&#39;s middle name as it appears in their National ID (optional) |  [optional] |

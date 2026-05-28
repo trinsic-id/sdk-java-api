@@ -18,8 +18,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.AppleWalletDigitalIdCredential;
+import id.trinsic.api.models.Iso180135MobileDriversLicenseCredential;
 import id.trinsic.api.models.MdlOutput;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -36,6 +42,22 @@ class AppleWalletProviderOutputTest {
     @Test
     void testAppleWalletProviderOutput() {
         // TODO: test AppleWalletProviderOutput
+    }
+
+    /**
+     * Test the property 'mobileDriversLicense'
+     */
+    @Test
+    void mobileDriversLicenseTest() {
+        // TODO: test mobileDriversLicense
+    }
+
+    /**
+     * Test the property 'digitalId'
+     */
+    @Test
+    void digitalIdTest() {
+        // TODO: test digitalId
     }
 
     /**

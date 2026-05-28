@@ -39,7 +39,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   NigeriaNinLookup2Input.JSON_PROPERTY_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NigeriaNinLookup2Input {
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
   private JsonNullable<String> idNumber = JsonNullable.<String>undefined();
@@ -53,7 +53,7 @@ public class NigeriaNinLookup2Input {
   }
 
   /**
-   * The user&#39;s National ID number (NIN)
+   * National Identification Number (NIN).              This is a unique, permanent identifier assigned by the National Identity Management Commission (NIMC) upon enrollment.              Format: - 11 numeric digits - No publicly known encoding scheme is used to encode personal information in the NIN - Last digit is a checksum using the Verhoeff algorithm
    * @return idNumber
    */
   @javax.annotation.Nullable

@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -42,11 +43,99 @@ class MexicoCurpProviderOutputTest {
     }
 
     /**
+     * Test the property 'firstName'
+     */
+    @Test
+    void firstNameTest() {
+        // TODO: test firstName
+    }
+
+    /**
+     * Test the property 'fatherLastName'
+     */
+    @Test
+    void fatherLastNameTest() {
+        // TODO: test fatherLastName
+    }
+
+    /**
+     * Test the property 'motherLastName'
+     */
+    @Test
+    void motherLastNameTest() {
+        // TODO: test motherLastName
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
+     * Test the property 'dateOfBirth'
+     */
+    @Test
+    void dateOfBirthTest() {
+        // TODO: test dateOfBirth
+    }
+
+    /**
+     * Test the property 'countryOfBirth'
+     */
+    @Test
+    void countryOfBirthTest() {
+        // TODO: test countryOfBirth
+    }
+
+    /**
+     * Test the property 'stateOfBirth'
+     */
+    @Test
+    void stateOfBirthTest() {
+        // TODO: test stateOfBirth
+    }
+
+    /**
+     * Test the property 'curp'
+     */
+    @Test
+    void curpTest() {
+        // TODO: test curp
+    }
+
+    /**
      * Test the property 'curpStatus'
      */
     @Test
     void curpStatusTest() {
         // TODO: test curpStatus
+    }
+
+    /**
+     * Test the property 'registrationYear'
+     */
+    @Test
+    void registrationYearTest() {
+        // TODO: test registrationYear
+    }
+
+    /**
+     * Test the property 'registrationState'
+     */
+    @Test
+    void registrationStateTest() {
+        // TODO: test registrationState
+    }
+
+    /**
+     * Test the property 'actNumber'
+     */
+    @Test
+    void actNumberTest() {
+        // TODO: test actNumber
     }
 
 }

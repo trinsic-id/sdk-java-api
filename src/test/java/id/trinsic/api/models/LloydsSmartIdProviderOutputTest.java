@@ -22,7 +22,6 @@ import id.trinsic.api.models.YotiDocumentDetails;
 import id.trinsic.api.models.YotiStructuredPostalAddress;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -46,11 +45,11 @@ class LloydsSmartIdProviderOutputTest {
     }
 
     /**
-     * Test the property 'rememberMeId'
+     * Test the property 'yotiRememberMeId'
      */
     @Test
-    void rememberMeIdTest() {
-        // TODO: test rememberMeId
+    void yotiRememberMeIdTest() {
+        // TODO: test yotiRememberMeId
     }
 
     /**

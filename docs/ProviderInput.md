@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**kenyaNidMatchBiometric2** | [**KenyaNidBiometric2Input**](KenyaNidBiometric2Input.md) | Input for the &#x60;kenya-nid-match-biometric-2&#x60; provider |  [optional] |
 |**indonesiaNikLookup** | [**IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider |  [optional] |
 |**chinaResidentIdMatch** | [**ChinaResidentIdMatchInput**](ChinaResidentIdMatchInput.md) | Input for the &#x60;china-resident-id-match&#x60; provider |  [optional] |
 |**indonesiaDukcapilMatch** | [**IndonesiaDukcapilMatchInput**](IndonesiaDukcapilMatchInput.md) | Input for the &#x60;indonesia-dukcapil-match&#x60; provider |  [optional] |
@@ -18,13 +17,11 @@
 |**kenyaNidLookup2** | [**KenyaNidLookup2Input**](KenyaNidLookup2Input.md) | Input for the &#x60;kenya-nid-lookup-2&#x60; provider |  [optional] |
 |**southAfricaNidLookup2** | [**SouthAfricaNidLookup2Input**](SouthAfricaNidLookup2Input.md) | Input for the &#x60;south-africa-nid-lookup-2&#x60; provider |  [optional] |
 |**southAfricaNidMatch2** | [**SouthAfricaNidMatch2Input**](SouthAfricaNidMatch2Input.md) | Input for the &#x60;south-africa-nid-match-2&#x60; provider |  [optional] |
-|**southAfricaNidMatchBiometric2** | [**SouthAfricaNidBiometric2Input**](SouthAfricaNidBiometric2Input.md) | Input for the &#x60;south-africa-nid-match-biometric-2&#x60; provider |  [optional] |
 |**nigeriaNinLookup2** | [**NigeriaNinLookup2Input**](NigeriaNinLookup2Input.md) | Input for the &#x60;nigeria-nin-lookup-2&#x60; provider |  [optional] |
 |**coteDivoireNidLookup2** | [**CoteDIvoireNidLookup2Input**](CoteDIvoireNidLookup2Input.md) | Input for the &#x60;cote-divoire-nid-lookup-2&#x60; provider |  [optional] |
 |**zimbabweNidLookup2** | [**ZimbabweNidLookup2Input**](ZimbabweNidLookup2Input.md) | Input for the &#x60;zimbabwe-nid-lookup-2&#x60; provider |  [optional] |
 |**nigeriaNinMatch2** | [**NigeriaNinMatch2Input**](NigeriaNinMatch2Input.md) | Input for the &#x60;nigeria-nin-match-2&#x60; provider |  [optional] |
 |**ugandaNidMatch2** | [**UgandaNidMatch2Input**](UgandaNidMatch2Input.md) | Input for the &#x60;uganda-nid-match-2&#x60; provider |  [optional] |
-|**nigeriaNinMatchBiometric2** | [**NigeriaNinBiometric2Input**](NigeriaNinBiometric2Input.md) | Input for the &#x60;nigeria-nin-match-biometric-2&#x60; provider |  [optional] |
 |**nigeriaNinLookup** | [**NigeriaNinInput**](NigeriaNinInput.md) | Input for the &#x60;nigeria-nin-lookup&#x60; provider |  [optional] |
 |**indiaDigilockerAadhaarMatch** | [**AadhaarInput**](AadhaarInput.md) | Input for the &#x60;india-digilocker-aadhaar-match&#x60; provider |  [optional] |
 |**indiaPanLookup** | [**IndiaPanLookupInput**](IndiaPanLookupInput.md) | Input for the &#x60;india-pan-lookup&#x60; provider |  [optional] |

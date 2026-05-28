@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.ItsmeAddress;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -80,6 +81,78 @@ class ItsmeProviderOutputTest {
     @Test
     void nationalRegisterNumberTest() {
         // TODO: test nationalRegisterNumber
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    void emailTest() {
+        // TODO: test email
+    }
+
+    /**
+     * Test the property 'phoneNumber'
+     */
+    @Test
+    void phoneNumberTest() {
+        // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
+     * Test the property 'nationality'
+     */
+    @Test
+    void nationalityTest() {
+        // TODO: test nationality
+    }
+
+    /**
+     * Test the property 'birthPlace'
+     */
+    @Test
+    void birthPlaceTest() {
+        // TODO: test birthPlace
+    }
+
+    /**
+     * Test the property 'documentNumber'
+     */
+    @Test
+    void documentNumberTest() {
+        // TODO: test documentNumber
+    }
+
+    /**
+     * Test the property 'identityDocumentExpirationDate'
+     */
+    @Test
+    void identityDocumentExpirationDateTest() {
+        // TODO: test identityDocumentExpirationDate
+    }
+
+    /**
+     * Test the property 'language'
+     */
+    @Test
+    void languageTest() {
+        // TODO: test language
+    }
+
+    /**
+     * Test the property 'address'
+     */
+    @Test
+    void addressTest() {
+        // TODO: test address
     }
 
 }

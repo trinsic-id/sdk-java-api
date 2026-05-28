@@ -34,14 +34,12 @@ import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndiaPanLookupInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
-import id.trinsic.api.models.KenyaNidBiometric2Input;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.KenyaNidLookup2Input;
 import id.trinsic.api.models.KenyaNidMatch2Input;
 import id.trinsic.api.models.KoreaTelcoMatchInput;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
-import id.trinsic.api.models.NigeriaNinBiometric2Input;
 import id.trinsic.api.models.NigeriaNinInput;
 import id.trinsic.api.models.NigeriaNinLookup2Input;
 import id.trinsic.api.models.NigeriaNinMatch2Input;
@@ -52,7 +50,6 @@ import id.trinsic.api.models.PhilippineQRInput;
 import id.trinsic.api.models.PolandMobywatelMatchInput;
 import id.trinsic.api.models.SamsungWalletInput;
 import id.trinsic.api.models.SmartIdInput;
-import id.trinsic.api.models.SouthAfricaNidBiometric2Input;
 import id.trinsic.api.models.SouthAfricaNidInput;
 import id.trinsic.api.models.SouthAfricaNidLookup2Input;
 import id.trinsic.api.models.SouthAfricaNidMatch2Input;
@@ -84,14 +81,6 @@ class ProviderInputTest {
     @Test
     void testProviderInput() {
         // TODO: test ProviderInput
-    }
-
-    /**
-     * Test the property 'kenyaNidMatchBiometric2'
-     */
-    @Test
-    void kenyaNidMatchBiometric2Test() {
-        // TODO: test kenyaNidMatchBiometric2
     }
 
     /**
@@ -175,14 +164,6 @@ class ProviderInputTest {
     }
 
     /**
-     * Test the property 'southAfricaNidMatchBiometric2'
-     */
-    @Test
-    void southAfricaNidMatchBiometric2Test() {
-        // TODO: test southAfricaNidMatchBiometric2
-    }
-
-    /**
      * Test the property 'nigeriaNinLookup2'
      */
     @Test
@@ -220,14 +201,6 @@ class ProviderInputTest {
     @Test
     void ugandaNidMatch2Test() {
         // TODO: test ugandaNidMatch2
-    }
-
-    /**
-     * Test the property 'nigeriaNinMatchBiometric2'
-     */
-    @Test
-    void nigeriaNinMatchBiometric2Test() {
-        // TODO: test nigeriaNinMatchBiometric2
     }
 
     /**

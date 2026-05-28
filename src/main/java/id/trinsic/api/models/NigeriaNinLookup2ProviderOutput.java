@@ -51,7 +51,7 @@ import id.trinsic.ApiClient;
   NigeriaNinLookup2ProviderOutput.JSON_PROPERTY_LOCAL_GOVERNMENT_AREA,
   NigeriaNinLookup2ProviderOutput.JSON_PROPERTY_STATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NigeriaNinLookup2ProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
   @javax.annotation.Nonnull
@@ -277,7 +277,7 @@ public class NigeriaNinLookup2ProviderOutput {
   }
 
   /**
-   * National Identification Number (NIN).              This is a unique, permanent identifier assigned by the National Identity Management Commission upon enrollment.              Format: 11 numeric digits (regex: /^[0-9]{11}$/). The digits are validated using the Verhoeff algorithm, meaning the last digit serves as a check digit.
+   * National Identification Number (NIN).              This is a unique, permanent identifier assigned by the National Identity Management Commission (NIMC) upon enrollment.              Format: - 11 numeric digits - No publicly known encoding scheme is used to encode personal information in the NIN - Last digit is a checksum using the Verhoeff algorithm
    * @return nationalIdentityNumber
    */
   @javax.annotation.Nonnull

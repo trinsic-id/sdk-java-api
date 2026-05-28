@@ -24,8 +24,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.GoogleWalletIdPassCredential;
+import id.trinsic.api.models.Iso180135MobileDriversLicenseCredential;
 import id.trinsic.api.models.MdlOutput;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -34,16 +40,88 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;google-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
+  GoogleWalletProviderOutput.JSON_PROPERTY_MOBILE_DRIVERS_LICENSE,
+  GoogleWalletProviderOutput.JSON_PROPERTY_ID_PASS,
   GoogleWalletProviderOutput.JSON_PROPERTY_RAW_MDL_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GoogleWalletProviderOutput {
+  public static final String JSON_PROPERTY_MOBILE_DRIVERS_LICENSE = "mobileDriversLicense";
+  private JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>undefined();
+
+  public static final String JSON_PROPERTY_ID_PASS = "idPass";
+  private JsonNullable<GoogleWalletIdPassCredential> idPass = JsonNullable.<GoogleWalletIdPassCredential>undefined();
+
   public static final String JSON_PROPERTY_RAW_MDL_OUTPUT = "rawMdlOutput";
   @javax.annotation.Nonnull
   private MdlOutput rawMdlOutput;
 
   public GoogleWalletProviderOutput() { 
   }
+
+  public GoogleWalletProviderOutput mobileDriversLicense(@javax.annotation.Nullable Iso180135MobileDriversLicenseCredential mobileDriversLicense) {
+    this.mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>of(mobileDriversLicense);
+    return this;
+  }
+
+  /**
+   * A standard 18013-5 Mobile Driver&#39;s License credential, retrieved from the individual&#39;s wallet.
+   * @return mobileDriversLicense
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Iso180135MobileDriversLicenseCredential getMobileDriversLicense() {
+        return mobileDriversLicense.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_MOBILE_DRIVERS_LICENSE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Iso180135MobileDriversLicenseCredential> getMobileDriversLicense_JsonNullable() {
+    return mobileDriversLicense;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOBILE_DRIVERS_LICENSE)
+  public void setMobileDriversLicense_JsonNullable(JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense) {
+    this.mobileDriversLicense = mobileDriversLicense;
+  }
+
+  public void setMobileDriversLicense(@javax.annotation.Nullable Iso180135MobileDriversLicenseCredential mobileDriversLicense) {
+    this.mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>of(mobileDriversLicense);
+  }
+
+
+  public GoogleWalletProviderOutput idPass(@javax.annotation.Nullable GoogleWalletIdPassCredential idPass) {
+    this.idPass = JsonNullable.<GoogleWalletIdPassCredential>of(idPass);
+    return this;
+  }
+
+  /**
+   * A Google Wallet ID Pass credential (&#x60;com.google.wallet.idcard.1&#x60;), retrieved from the individual&#39;s wallet.
+   * @return idPass
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public GoogleWalletIdPassCredential getIdPass() {
+        return idPass.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ID_PASS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<GoogleWalletIdPassCredential> getIdPass_JsonNullable() {
+    return idPass;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ID_PASS)
+  public void setIdPass_JsonNullable(JsonNullable<GoogleWalletIdPassCredential> idPass) {
+    this.idPass = idPass;
+  }
+
+  public void setIdPass(@javax.annotation.Nullable GoogleWalletIdPassCredential idPass) {
+    this.idPass = JsonNullable.<GoogleWalletIdPassCredential>of(idPass);
+  }
+
 
   public GoogleWalletProviderOutput rawMdlOutput(@javax.annotation.Nonnull MdlOutput rawMdlOutput) {
     this.rawMdlOutput = rawMdlOutput;
@@ -81,18 +159,33 @@ public class GoogleWalletProviderOutput {
       return false;
     }
     GoogleWalletProviderOutput googleWalletProviderOutput = (GoogleWalletProviderOutput) o;
-    return Objects.equals(this.rawMdlOutput, googleWalletProviderOutput.rawMdlOutput);
+    return equalsNullable(this.mobileDriversLicense, googleWalletProviderOutput.mobileDriversLicense) &&
+        equalsNullable(this.idPass, googleWalletProviderOutput.idPass) &&
+        Objects.equals(this.rawMdlOutput, googleWalletProviderOutput.rawMdlOutput);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rawMdlOutput);
+    return Objects.hash(hashCodeNullable(mobileDriversLicense), hashCodeNullable(idPass), rawMdlOutput);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GoogleWalletProviderOutput {\n");
+    sb.append("    mobileDriversLicense: ").append(toIndentedString(mobileDriversLicense)).append("\n");
+    sb.append("    idPass: ").append(toIndentedString(idPass)).append("\n");
     sb.append("    rawMdlOutput: ").append(toIndentedString(rawMdlOutput)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -137,6 +230,16 @@ public class GoogleWalletProviderOutput {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `mobileDriversLicense` to the URL query string
+    if (getMobileDriversLicense() != null) {
+      joiner.add(getMobileDriversLicense().toUrlQueryString(prefix + "mobileDriversLicense" + suffix));
+    }
+
+    // add `idPass` to the URL query string
+    if (getIdPass() != null) {
+      joiner.add(getIdPass().toUrlQueryString(prefix + "idPass" + suffix));
+    }
 
     // add `rawMdlOutput` to the URL query string
     if (getRawMdlOutput() != null) {

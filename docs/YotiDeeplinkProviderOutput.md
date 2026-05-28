@@ -8,7 +8,7 @@ Exposed properties for the `yoti-deeplink` Provider which do not directly map to
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**rememberMeId** | **UUID** | A Yoti-generated unique ID for this individual, consistent across repeat shares and different for each Relying Party. |  [optional] |
+|**yotiRememberMeId** | **String** | A Yoti-generated unique ID for this individual, consistent across repeat shares and different for each Relying Party. |  [optional] |
 |**email** | **String** | The email address of the individual |  [optional] |
 |**givenName** | **String** | The given name of the individual. This can correspond to first and middle names in English. |  [optional] |
 |**familyName** | **String** | The family name of the individual |  [optional] |

@@ -28,7 +28,6 @@ import id.trinsic.api.models.YotiDocumentDetails;
 import id.trinsic.api.models.YotiStructuredPostalAddress;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -41,7 +40,7 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;post-office-easyid&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
-  PostOfficeEasyIdProviderOutput.JSON_PROPERTY_REMEMBER_ME_ID,
+  PostOfficeEasyIdProviderOutput.JSON_PROPERTY_YOTI_REMEMBER_ME_ID,
   PostOfficeEasyIdProviderOutput.JSON_PROPERTY_EMAIL,
   PostOfficeEasyIdProviderOutput.JSON_PROPERTY_GIVEN_NAME,
   PostOfficeEasyIdProviderOutput.JSON_PROPERTY_FAMILY_NAME,
@@ -54,10 +53,10 @@ import id.trinsic.ApiClient;
   PostOfficeEasyIdProviderOutput.JSON_PROPERTY_POSTAL_ADDRESS,
   PostOfficeEasyIdProviderOutput.JSON_PROPERTY_DOCUMENT_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T17:32:15.661174490Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PostOfficeEasyIdProviderOutput {
-  public static final String JSON_PROPERTY_REMEMBER_ME_ID = "rememberMeId";
-  private JsonNullable<UUID> rememberMeId = JsonNullable.<UUID>undefined();
+  public static final String JSON_PROPERTY_YOTI_REMEMBER_ME_ID = "yotiRememberMeId";
+  private JsonNullable<String> yotiRememberMeId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   private JsonNullable<String> email = JsonNullable.<String>undefined();
@@ -95,35 +94,35 @@ public class PostOfficeEasyIdProviderOutput {
   public PostOfficeEasyIdProviderOutput() { 
   }
 
-  public PostOfficeEasyIdProviderOutput rememberMeId(@javax.annotation.Nullable UUID rememberMeId) {
-    this.rememberMeId = JsonNullable.<UUID>of(rememberMeId);
+  public PostOfficeEasyIdProviderOutput yotiRememberMeId(@javax.annotation.Nullable String yotiRememberMeId) {
+    this.yotiRememberMeId = JsonNullable.<String>of(yotiRememberMeId);
     return this;
   }
 
   /**
    * A Yoti-generated unique ID for this individual, consistent across repeat shares and different for each Relying Party.
-   * @return rememberMeId
+   * @return yotiRememberMeId
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public UUID getRememberMeId() {
-        return rememberMeId.orElse(null);
+  public String getYotiRememberMeId() {
+        return yotiRememberMeId.orElse(null);
   }
 
-  @JsonProperty(value = JSON_PROPERTY_REMEMBER_ME_ID, required = false)
+  @JsonProperty(value = JSON_PROPERTY_YOTI_REMEMBER_ME_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<UUID> getRememberMeId_JsonNullable() {
-    return rememberMeId;
+  public JsonNullable<String> getYotiRememberMeId_JsonNullable() {
+    return yotiRememberMeId;
   }
   
-  @JsonProperty(JSON_PROPERTY_REMEMBER_ME_ID)
-  public void setRememberMeId_JsonNullable(JsonNullable<UUID> rememberMeId) {
-    this.rememberMeId = rememberMeId;
+  @JsonProperty(JSON_PROPERTY_YOTI_REMEMBER_ME_ID)
+  public void setYotiRememberMeId_JsonNullable(JsonNullable<String> yotiRememberMeId) {
+    this.yotiRememberMeId = yotiRememberMeId;
   }
 
-  public void setRememberMeId(@javax.annotation.Nullable UUID rememberMeId) {
-    this.rememberMeId = JsonNullable.<UUID>of(rememberMeId);
+  public void setYotiRememberMeId(@javax.annotation.Nullable String yotiRememberMeId) {
+    this.yotiRememberMeId = JsonNullable.<String>of(yotiRememberMeId);
   }
 
 
@@ -491,7 +490,7 @@ public class PostOfficeEasyIdProviderOutput {
       return false;
     }
     PostOfficeEasyIdProviderOutput postOfficeEasyIdProviderOutput = (PostOfficeEasyIdProviderOutput) o;
-    return equalsNullable(this.rememberMeId, postOfficeEasyIdProviderOutput.rememberMeId) &&
+    return equalsNullable(this.yotiRememberMeId, postOfficeEasyIdProviderOutput.yotiRememberMeId) &&
         equalsNullable(this.email, postOfficeEasyIdProviderOutput.email) &&
         equalsNullable(this.givenName, postOfficeEasyIdProviderOutput.givenName) &&
         equalsNullable(this.familyName, postOfficeEasyIdProviderOutput.familyName) &&
@@ -511,7 +510,7 @@ public class PostOfficeEasyIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(rememberMeId), hashCodeNullable(email), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(nationality), hashCodeNullable(mobileNumber), hashCodeNullable(structuredPostalAddress), hashCodeNullable(postalAddress), hashCodeNullable(documentDetails));
+    return Objects.hash(hashCodeNullable(yotiRememberMeId), hashCodeNullable(email), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(nationality), hashCodeNullable(mobileNumber), hashCodeNullable(structuredPostalAddress), hashCodeNullable(postalAddress), hashCodeNullable(documentDetails));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -525,7 +524,7 @@ public class PostOfficeEasyIdProviderOutput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostOfficeEasyIdProviderOutput {\n");
-    sb.append("    rememberMeId: ").append(toIndentedString(rememberMeId)).append("\n");
+    sb.append("    yotiRememberMeId: ").append(toIndentedString(yotiRememberMeId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
@@ -581,9 +580,9 @@ public class PostOfficeEasyIdProviderOutput {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `rememberMeId` to the URL query string
-    if (getRememberMeId() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%srememberMeId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRememberMeId()))));
+    // add `yotiRememberMeId` to the URL query string
+    if (getYotiRememberMeId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%syotiRememberMeId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getYotiRememberMeId()))));
     }
 
     // add `email` to the URL query string

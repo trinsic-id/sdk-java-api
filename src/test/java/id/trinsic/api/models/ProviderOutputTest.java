@@ -23,13 +23,16 @@ import id.trinsic.api.models.AudkenniProviderOutput;
 import id.trinsic.api.models.AustriaHandySignaturProviderOutput;
 import id.trinsic.api.models.BelgiumIdCardProviderOutput;
 import id.trinsic.api.models.BoliviaCiProviderOutput;
+import id.trinsic.api.models.BrazilCnhProviderOutput;
 import id.trinsic.api.models.ChinaResidentIdMatchOutput;
 import id.trinsic.api.models.ColombiaCcProviderOutput;
 import id.trinsic.api.models.ConnectIdProviderOutput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2ProviderOutput;
+import id.trinsic.api.models.CzechBankIdProviderOutput;
 import id.trinsic.api.models.CzechMojeIdProviderOutput;
 import id.trinsic.api.models.CzechiaMojeIdProviderOutput;
 import id.trinsic.api.models.DigilockerAadhaarProviderOutput;
+import id.trinsic.api.models.DiiaProviderOutput;
 import id.trinsic.api.models.ElSalvadorDuiProviderOutput;
 import id.trinsic.api.models.EstoniaIdCardProviderOutput;
 import id.trinsic.api.models.FaydaProviderOutput;
@@ -41,9 +44,15 @@ import id.trinsic.api.models.FrejaProviderOutput;
 import id.trinsic.api.models.FrenchNumeriqueProviderOutput;
 import id.trinsic.api.models.GoogleWalletProviderOutput;
 import id.trinsic.api.models.GuatemalaCuiProviderOutput;
+import id.trinsic.api.models.IdemiaPreviewProviderOutput;
+import id.trinsic.api.models.IndiaDigilockerAadhaarMatchProviderOutput;
 import id.trinsic.api.models.IndiaPanLookupProviderOutput;
+import id.trinsic.api.models.IndonesiaDukcapilMatchProviderOutput;
+import id.trinsic.api.models.IndonesiaNikMatch;
+import id.trinsic.api.models.InteracProviderOutput;
 import id.trinsic.api.models.ItsmeProviderOutput;
 import id.trinsic.api.models.KenyaNidLookup2ProviderOutput;
+import id.trinsic.api.models.KenyaNidMatch2ProviderOutput;
 import id.trinsic.api.models.KoreaTelcoMatchProviderOutput;
 import id.trinsic.api.models.LaWalletProviderOutput;
 import id.trinsic.api.models.LatviaEparakstsMobileProviderOutput;
@@ -55,11 +64,13 @@ import id.trinsic.api.models.MitIdProviderOutput;
 import id.trinsic.api.models.MobileIdProviderOutput;
 import id.trinsic.api.models.NetherlandsIdinProviderOutput;
 import id.trinsic.api.models.NigeriaNinLookup2ProviderOutput;
+import id.trinsic.api.models.NigeriaNinMatch2ProviderOutput;
 import id.trinsic.api.models.NorwegianBankIdProviderOutput;
 import id.trinsic.api.models.OneIdProviderOutput;
 import id.trinsic.api.models.PanamaCedulaProviderOutput;
 import id.trinsic.api.models.PeruDniProviderOutput;
 import id.trinsic.api.models.PhilippinesDigitalNidProviderOutput;
+import id.trinsic.api.models.PhilippinesPhilsysMatchProviderOutput;
 import id.trinsic.api.models.PhilippinesPhysicalNidProviderOutput;
 import id.trinsic.api.models.PolandEdoAppProviderOutput;
 import id.trinsic.api.models.PolandMobywatelMatchProviderOutput;
@@ -72,11 +83,17 @@ import id.trinsic.api.models.SignzyIndiaAadhaarFetchProviderOutput;
 import id.trinsic.api.models.SingpassLoginProviderOutput;
 import id.trinsic.api.models.SingpassMyInfoProviderOutput;
 import id.trinsic.api.models.SmartIdProviderOutput;
+import id.trinsic.api.models.SouthAfricaNidLookup2ProviderOutput;
+import id.trinsic.api.models.SouthAfricaNidMatch2ProviderOutput;
 import id.trinsic.api.models.SpidProviderOutput;
 import id.trinsic.api.models.SwedenBankIdProviderOutput;
+import id.trinsic.api.models.UAEPassProviderOutput;
+import id.trinsic.api.models.UgandaNidMatch2ProviderOutput;
 import id.trinsic.api.models.UnitedKingdomEvisaProviderOutput;
+import id.trinsic.api.models.VerimiProviderOutput;
 import id.trinsic.api.models.YotiDeeplinkProviderOutput;
 import id.trinsic.api.models.YotiProviderOutput;
+import id.trinsic.api.models.ZimbabweNidLookup2ProviderOutput;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -98,14 +115,6 @@ class ProviderOutputTest {
     @Test
     void testProviderOutput() {
         // TODO: test ProviderOutput
-    }
-
-    /**
-     * Test the property 'audkenni'
-     */
-    @Test
-    void audkenniTest() {
-        // TODO: test audkenni
     }
 
     /**
@@ -229,6 +238,14 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'audkenni'
+     */
+    @Test
+    void audkenniTest() {
+        // TODO: test audkenni
+    }
+
+    /**
      * Test the property 'australiaConnectId'
      */
     @Test
@@ -242,6 +259,22 @@ class ProviderOutputTest {
     @Test
     void boliviaCiLookupTest() {
         // TODO: test boliviaCiLookup
+    }
+
+    /**
+     * Test the property 'brazilDigitalCnh'
+     */
+    @Test
+    void brazilDigitalCnhTest() {
+        // TODO: test brazilDigitalCnh
+    }
+
+    /**
+     * Test the property 'canadaInterac'
+     */
+    @Test
+    void canadaInteracTest() {
+        // TODO: test canadaInterac
     }
 
     /**
@@ -266,6 +299,14 @@ class ProviderOutputTest {
     @Test
     void elSalvadorDuiLookupTest() {
         // TODO: test elSalvadorDuiLookup
+    }
+
+    /**
+     * Test the property 'czechBankId'
+     */
+    @Test
+    void czechBankIdTest() {
+        // TODO: test czechBankId
     }
 
     /**
@@ -341,6 +382,14 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'idemiaPreview'
+     */
+    @Test
+    void idemiaPreviewTest() {
+        // TODO: test idemiaPreview
+    }
+
+    /**
      * Test the property 'panamaCedulaLookup'
      */
     @Test
@@ -365,11 +414,35 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'indiaDigilockerAadhaarMatch'
+     */
+    @Test
+    void indiaDigilockerAadhaarMatchTest() {
+        // TODO: test indiaDigilockerAadhaarMatch
+    }
+
+    /**
      * Test the property 'indiaPanLookup'
      */
     @Test
     void indiaPanLookupTest() {
         // TODO: test indiaPanLookup
+    }
+
+    /**
+     * Test the property 'indonesiaDukcapilMatch'
+     */
+    @Test
+    void indonesiaDukcapilMatchTest() {
+        // TODO: test indonesiaDukcapilMatch
+    }
+
+    /**
+     * Test the property 'indonesiaNikLookup'
+     */
+    @Test
+    void indonesiaNikLookupTest() {
+        // TODO: test indonesiaNikLookup
     }
 
     /**
@@ -394,6 +467,14 @@ class ProviderOutputTest {
     @Test
     void kenyaNidLookup2Test() {
         // TODO: test kenyaNidLookup2
+    }
+
+    /**
+     * Test the property 'kenyaNidMatch2'
+     */
+    @Test
+    void kenyaNidMatch2Test() {
+        // TODO: test kenyaNidMatch2
     }
 
     /**
@@ -437,6 +518,14 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'nigeriaNinMatch2'
+     */
+    @Test
+    void nigeriaNinMatch2Test() {
+        // TODO: test nigeriaNinMatch2
+    }
+
+    /**
      * Test the property 'oneid'
      */
     @Test
@@ -466,6 +555,14 @@ class ProviderOutputTest {
     @Test
     void philippinesDigitalNationalIdQrTest() {
         // TODO: test philippinesDigitalNationalIdQr
+    }
+
+    /**
+     * Test the property 'philippinesPhilsysMatch'
+     */
+    @Test
+    void philippinesPhilsysMatchTest() {
+        // TODO: test philippinesPhilsysMatch
     }
 
     /**
@@ -525,6 +622,38 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'southAfricaNidLookup2'
+     */
+    @Test
+    void southAfricaNidLookup2Test() {
+        // TODO: test southAfricaNidLookup2
+    }
+
+    /**
+     * Test the property 'southAfricaNidMatch2'
+     */
+    @Test
+    void southAfricaNidMatch2Test() {
+        // TODO: test southAfricaNidMatch2
+    }
+
+    /**
+     * Test the property 'uaePass'
+     */
+    @Test
+    void uaePassTest() {
+        // TODO: test uaePass
+    }
+
+    /**
+     * Test the property 'ugandaNidMatch2'
+     */
+    @Test
+    void ugandaNidMatch2Test() {
+        // TODO: test ugandaNidMatch2
+    }
+
+    /**
      * Test the property 'ukEvisaLookup'
      */
     @Test
@@ -533,11 +662,27 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'verimi'
+     */
+    @Test
+    void verimiTest() {
+        // TODO: test verimi
+    }
+
+    /**
      * Test the property 'swedenBankid'
      */
     @Test
     void swedenBankidTest() {
         // TODO: test swedenBankid
+    }
+
+    /**
+     * Test the property 'ukraineDiia'
+     */
+    @Test
+    void ukraineDiiaTest() {
+        // TODO: test ukraineDiia
     }
 
     /**
@@ -570,6 +715,14 @@ class ProviderOutputTest {
     @Test
     void yotiDeeplinkTest() {
         // TODO: test yotiDeeplink
+    }
+
+    /**
+     * Test the property 'zimbabweNidLookup2'
+     */
+    @Test
+    void zimbabweNidLookup2Test() {
+        // TODO: test zimbabweNidLookup2
     }
 
 }
