@@ -20,14 +20,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AadhaarInput;
 import id.trinsic.api.models.AppleWalletInput;
+import id.trinsic.api.models.AustriaValeraEudiSandboxInput;
 import id.trinsic.api.models.BoliviaCiLookupInput;
 import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.ChinaResidentIdMatchInput;
 import id.trinsic.api.models.ColombiaCcLookupInput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
+import id.trinsic.api.models.DenmarkAltIdInput;
 import id.trinsic.api.models.ElSalvadorDuiLookupInput;
+import id.trinsic.api.models.EvrotrustInput;
 import id.trinsic.api.models.FranceIdentiteInput;
+import id.trinsic.api.models.GermanyEudiSandboxInput;
 import id.trinsic.api.models.GoogleWalletInput;
 import id.trinsic.api.models.GuatemalaCuiLookupInput;
 import id.trinsic.api.models.IdinInput;
@@ -36,12 +40,17 @@ import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.KenyaNidLookup2Input;
+import id.trinsic.api.models.KenyaNidLookup3Input;
 import id.trinsic.api.models.KenyaNidMatch2Input;
 import id.trinsic.api.models.KoreaTelcoMatchInput;
 import id.trinsic.api.models.MexicoCurpInput;
 import id.trinsic.api.models.MobileIdInput;
+import id.trinsic.api.models.MockOutputProviderInput;
+import id.trinsic.api.models.MoldovaEvoWalletInput;
+import id.trinsic.api.models.NetherlandsEudiSandboxInput;
 import id.trinsic.api.models.NigeriaNinInput;
 import id.trinsic.api.models.NigeriaNinLookup2Input;
+import id.trinsic.api.models.NigeriaNinLookup3Input;
 import id.trinsic.api.models.NigeriaNinMatch2Input;
 import id.trinsic.api.models.PanamaCedulaLookupInput;
 import id.trinsic.api.models.PeruDniLookupInput;
@@ -84,6 +93,14 @@ class ProviderInputTest {
     }
 
     /**
+     * Test the property 'trinsicMockOutput'
+     */
+    @Test
+    void trinsicMockOutputTest() {
+        // TODO: test trinsicMockOutput
+    }
+
+    /**
      * Test the property 'indonesiaNikLookup'
      */
     @Test
@@ -97,6 +114,14 @@ class ProviderInputTest {
     @Test
     void chinaResidentIdMatchTest() {
         // TODO: test chinaResidentIdMatch
+    }
+
+    /**
+     * Test the property 'evrotrust'
+     */
+    @Test
+    void evrotrustTest() {
+        // TODO: test evrotrust
     }
 
     /**
@@ -169,6 +194,22 @@ class ProviderInputTest {
     @Test
     void nigeriaNinLookup2Test() {
         // TODO: test nigeriaNinLookup2
+    }
+
+    /**
+     * Test the property 'nigeriaNinLookup3'
+     */
+    @Test
+    void nigeriaNinLookup3Test() {
+        // TODO: test nigeriaNinLookup3
+    }
+
+    /**
+     * Test the property 'kenyaNidLookup3'
+     */
+    @Test
+    void kenyaNidLookup3Test() {
+        // TODO: test kenyaNidLookup3
     }
 
     /**
@@ -337,6 +378,46 @@ class ProviderInputTest {
     @Test
     void franceIdentiteTest() {
         // TODO: test franceIdentite
+    }
+
+    /**
+     * Test the property 'moldovaEvoWallet'
+     */
+    @Test
+    void moldovaEvoWalletTest() {
+        // TODO: test moldovaEvoWallet
+    }
+
+    /**
+     * Test the property 'germanyEudiSandbox'
+     */
+    @Test
+    void germanyEudiSandboxTest() {
+        // TODO: test germanyEudiSandbox
+    }
+
+    /**
+     * Test the property 'denmarkAltid'
+     */
+    @Test
+    void denmarkAltidTest() {
+        // TODO: test denmarkAltid
+    }
+
+    /**
+     * Test the property 'austriaValeraEudiSandbox'
+     */
+    @Test
+    void austriaValeraEudiSandboxTest() {
+        // TODO: test austriaValeraEudiSandbox
+    }
+
+    /**
+     * Test the property 'netherlandsEudiSandbox'
+     */
+    @Test
+    void netherlandsEudiSandboxTest() {
+        // TODO: test netherlandsEudiSandbox
     }
 
     /**

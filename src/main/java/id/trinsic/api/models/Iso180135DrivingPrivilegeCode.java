@@ -41,11 +41,10 @@ import id.trinsic.ApiClient;
   Iso180135DrivingPrivilegeCode.JSON_PROPERTY_SIGN,
   Iso180135DrivingPrivilegeCode.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135DrivingPrivilegeCode {
   public static final String JSON_PROPERTY_CODE = "code";
-  @javax.annotation.Nonnull
-  private String code;
+  private JsonNullable<String> code = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SIGN = "sign";
   private JsonNullable<String> sign = JsonNullable.<String>undefined();
@@ -56,8 +55,8 @@ public class Iso180135DrivingPrivilegeCode {
   public Iso180135DrivingPrivilegeCode() { 
   }
 
-  public Iso180135DrivingPrivilegeCode code(@javax.annotation.Nonnull String code) {
-    this.code = code;
+  public Iso180135DrivingPrivilegeCode code(@javax.annotation.Nullable String code) {
+    this.code = JsonNullable.<String>of(code);
     return this;
   }
 
@@ -65,18 +64,26 @@ public class Iso180135DrivingPrivilegeCode {
    * The code identifier.
    * @return code
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCode() {
-    return code;
+        return code.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(@javax.annotation.Nonnull String code) {
+  public JsonNullable<String> getCode_JsonNullable() {
+    return code;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CODE)
+  public void setCode_JsonNullable(JsonNullable<String> code) {
     this.code = code;
+  }
+
+  public void setCode(@javax.annotation.Nullable String code) {
+    this.code = JsonNullable.<String>of(code);
   }
 
 
@@ -156,7 +163,7 @@ public class Iso180135DrivingPrivilegeCode {
       return false;
     }
     Iso180135DrivingPrivilegeCode iso180135DrivingPrivilegeCode = (Iso180135DrivingPrivilegeCode) o;
-    return Objects.equals(this.code, iso180135DrivingPrivilegeCode.code) &&
+    return equalsNullable(this.code, iso180135DrivingPrivilegeCode.code) &&
         equalsNullable(this.sign, iso180135DrivingPrivilegeCode.sign) &&
         equalsNullable(this.value, iso180135DrivingPrivilegeCode.value);
   }
@@ -167,7 +174,7 @@ public class Iso180135DrivingPrivilegeCode {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, hashCodeNullable(sign), hashCodeNullable(value));
+    return Objects.hash(hashCodeNullable(code), hashCodeNullable(sign), hashCodeNullable(value));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

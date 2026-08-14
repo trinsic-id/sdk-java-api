@@ -18,9 +18,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.FrenchNumeriqueGivenName;
 import id.trinsic.api.models.FrenchNumeriqueNationality;
-import id.trinsic.api.models.FrenchNumeriquePhone;
+import id.trinsic.api.models.FrenchNumeriqueSplittedGivenName;
+import id.trinsic.api.models.FrenchNumeriqueSplittedPhone;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -46,11 +46,27 @@ class FrenchNumeriqueProviderOutputTest {
     }
 
     /**
+     * Test the property 'sub'
+     */
+    @Test
+    void subTest() {
+        // TODO: test sub
+    }
+
+    /**
      * Test the property 'givenName'
      */
     @Test
     void givenNameTest() {
         // TODO: test givenName
+    }
+
+    /**
+     * Test the property 'splittedGivenName'
+     */
+    @Test
+    void splittedGivenNameTest() {
+        // TODO: test splittedGivenName
     }
 
     /**
@@ -107,6 +123,14 @@ class FrenchNumeriqueProviderOutputTest {
     @Test
     void phoneNumberTest() {
         // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'splittedPhone'
+     */
+    @Test
+    void splittedPhoneTest() {
+        // TODO: test splittedPhone
     }
 
     /**

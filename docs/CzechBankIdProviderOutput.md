@@ -8,7 +8,7 @@ Exposed properties for the `czech-bank-id` Provider which do not directly map to
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**subjectIdentifier** | **String** | The subject identifier for the verified individual. |  |
+|**subjectIdentifier** | **String** | The subject identifier for the verified individual. |  [optional] |
 |**fullName** | **String** | The individual&#39;s full name. |  [optional] |
 |**givenName** | **String** | The individual&#39;s given or first name. |  [optional] |
 |**familyName** | **String** | The individual&#39;s family or last name. |  [optional] |

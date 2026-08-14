@@ -50,8 +50,6 @@ import id.trinsic.ApiClient;
   Provider.JSON_PROPERTY_NAME,
   Provider.JSON_PROPERTY_LOGO_URL,
   Provider.JSON_PROPERTY_SUBTEXT,
-  Provider.JSON_PROPERTY_DESCRIPTION,
-  Provider.JSON_PROPERTY_GEOGRAPHY,
   Provider.JSON_PROPERTY_REGIONS,
   Provider.JSON_PROPERTY_COUNTRIES,
   Provider.JSON_PROPERTY_SUBDIVISIONS,
@@ -70,7 +68,7 @@ import id.trinsic.ApiClient;
   Provider.JSON_PROPERTY_LIVE_HEALTH,
   Provider.JSON_PROPERTY_TEST_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Provider {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -87,14 +85,6 @@ public class Provider {
   public static final String JSON_PROPERTY_SUBTEXT = "subtext";
   @javax.annotation.Nonnull
   private String subtext;
-
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  @javax.annotation.Nonnull
-  private String description;
-
-  public static final String JSON_PROPERTY_GEOGRAPHY = "geography";
-  @javax.annotation.Nonnull
-  private List<String> geography = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REGIONS = "regions";
   @javax.annotation.Nonnull
@@ -161,14 +151,6 @@ public class Provider {
   private ProviderHealth testHealth;
 
   public Provider() { 
-  }
-
-  @JsonCreator
-  public Provider(
-    @JsonProperty(JSON_PROPERTY_DESCRIPTION) String description
-  ) {
-  this();
-    this.description = description;
   }
 
   public Provider id(@javax.annotation.Nonnull String id) {
@@ -264,56 +246,6 @@ public class Provider {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSubtext(@javax.annotation.Nonnull String subtext) {
     this.subtext = subtext;
-  }
-
-
-  /**
-   * A description of the provider&#39;s capabilities
-   * @return description
-   * @deprecated
-   */
-  @Deprecated
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getDescription() {
-    return description;
-  }
-
-
-
-
-  public Provider geography(@javax.annotation.Nonnull List<String> geography) {
-    this.geography = geography;
-    return this;
-  }
-
-  public Provider addGeographyItem(String geographyItem) {
-    if (this.geography == null) {
-      this.geography = new ArrayList<>();
-    }
-    this.geography.add(geographyItem);
-    return this;
-  }
-
-  /**
-   * Geographic regions where this provider operates
-   * @return geography
-   * @deprecated
-   */
-  @Deprecated
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public List<String> getGeography() {
-    return geography;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGeography(@javax.annotation.Nonnull List<String> geography) {
-    this.geography = geography;
   }
 
 
@@ -845,8 +777,6 @@ public class Provider {
         Objects.equals(this.name, provider.name) &&
         Objects.equals(this.logoUrl, provider.logoUrl) &&
         Objects.equals(this.subtext, provider.subtext) &&
-        Objects.equals(this.description, provider.description) &&
-        Objects.equals(this.geography, provider.geography) &&
         Objects.equals(this.regions, provider.regions) &&
         Objects.equals(this.countries, provider.countries) &&
         Objects.equals(this.subdivisions, provider.subdivisions) &&
@@ -872,7 +802,7 @@ public class Provider {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoUrl, subtext, description, geography, regions, countries, subdivisions, licensed, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsDirectProviderSessions, hashCodeNullable(supportedLanguages), hashCodeNullable(availableAttributes), hashCodeNullable(availableAttachments), hashCodeNullable(subProviders), liveHealth, testHealth);
+    return Objects.hash(id, name, logoUrl, subtext, regions, countries, subdivisions, licensed, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsDirectProviderSessions, hashCodeNullable(supportedLanguages), hashCodeNullable(availableAttributes), hashCodeNullable(availableAttachments), hashCodeNullable(subProviders), liveHealth, testHealth);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -890,8 +820,6 @@ public class Provider {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    geography: ").append(toIndentedString(geography)).append("\n");
     sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    subdivisions: ").append(toIndentedString(subdivisions)).append("\n");
@@ -971,20 +899,6 @@ public class Provider {
     // add `subtext` to the URL query string
     if (getSubtext() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%ssubtext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubtext()))));
-    }
-
-    // add `description` to the URL query string
-    if (getDescription() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
-    }
-
-    // add `geography` to the URL query string
-    if (getGeography() != null) {
-      for (int i = 0; i < getGeography().size(); i++) {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sgeography%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
-            ApiClient.urlEncode(ApiClient.valueToString(getGeography().get(i)))));
-      }
     }
 
     // add `regions` to the URL query string

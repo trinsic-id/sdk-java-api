@@ -46,26 +46,22 @@ import id.trinsic.ApiClient;
   CzechBankIdCard.JSON_PROPERTY_ISSUER,
   CzechBankIdCard.JSON_PROPERTY_ISSUE_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CzechBankIdCard {
   public static final String JSON_PROPERTY_TYPE = "type";
-  @javax.annotation.Nonnull
-  private String type;
+  private JsonNullable<String> type = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private JsonNullable<String> description = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
-  @javax.annotation.Nonnull
-  private String country;
+  private JsonNullable<String> country = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NUMBER = "number";
-  @javax.annotation.Nonnull
-  private String number;
+  private JsonNullable<String> number = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_VALID_TO = "validTo";
-  @javax.annotation.Nonnull
-  private LocalDate validTo;
+  private JsonNullable<LocalDate> validTo = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_ISSUER = "issuer";
   private JsonNullable<String> issuer = JsonNullable.<String>undefined();
@@ -76,8 +72,8 @@ public class CzechBankIdCard {
   public CzechBankIdCard() { 
   }
 
-  public CzechBankIdCard type(@javax.annotation.Nonnull String type) {
-    this.type = type;
+  public CzechBankIdCard type(@javax.annotation.Nullable String type) {
+    this.type = JsonNullable.<String>of(type);
     return this;
   }
 
@@ -85,18 +81,26 @@ public class CzechBankIdCard {
    * The identity document type code.              Possible values are:              - ID - Identity card - P - Passport - DL - Driving license - IR - Residence permit - VS - Visa permit label - PS - Residential label - IX - Book with residence permit - IE - Form with temporary residence - OP - Identity card – without machine readable zone - CA - Passport of the Czech Republic resident – without machine readable zone - UNKNOWN - Unknown id card type
    * @return type
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getType() {
-    return type;
+        return type.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(@javax.annotation.Nonnull String type) {
+  public JsonNullable<String> getType_JsonNullable() {
+    return type;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  public void setType_JsonNullable(JsonNullable<String> type) {
     this.type = type;
+  }
+
+  public void setType(@javax.annotation.Nullable String type) {
+    this.type = JsonNullable.<String>of(type);
   }
 
 
@@ -132,8 +136,8 @@ public class CzechBankIdCard {
   }
 
 
-  public CzechBankIdCard country(@javax.annotation.Nonnull String country) {
-    this.country = country;
+  public CzechBankIdCard country(@javax.annotation.Nullable String country) {
+    this.country = JsonNullable.<String>of(country);
     return this;
   }
 
@@ -141,23 +145,31 @@ public class CzechBankIdCard {
    * The country for which the identity document is valid.
    * @return country
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCountry() {
-    return country;
+        return country.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCountry(@javax.annotation.Nonnull String country) {
+  public JsonNullable<String> getCountry_JsonNullable() {
+    return country;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  public void setCountry_JsonNullable(JsonNullable<String> country) {
     this.country = country;
   }
 
+  public void setCountry(@javax.annotation.Nullable String country) {
+    this.country = JsonNullable.<String>of(country);
+  }
 
-  public CzechBankIdCard number(@javax.annotation.Nonnull String number) {
-    this.number = number;
+
+  public CzechBankIdCard number(@javax.annotation.Nullable String number) {
+    this.number = JsonNullable.<String>of(number);
     return this;
   }
 
@@ -165,23 +177,31 @@ public class CzechBankIdCard {
    * The identity document number.
    * @return number
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNumber() {
-    return number;
+        return number.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNumber(@javax.annotation.Nonnull String number) {
+  public JsonNullable<String> getNumber_JsonNullable() {
+    return number;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NUMBER)
+  public void setNumber_JsonNullable(JsonNullable<String> number) {
     this.number = number;
   }
 
+  public void setNumber(@javax.annotation.Nullable String number) {
+    this.number = JsonNullable.<String>of(number);
+  }
 
-  public CzechBankIdCard validTo(@javax.annotation.Nonnull LocalDate validTo) {
-    this.validTo = validTo;
+
+  public CzechBankIdCard validTo(@javax.annotation.Nullable LocalDate validTo) {
+    this.validTo = JsonNullable.<LocalDate>of(validTo);
     return this;
   }
 
@@ -189,18 +209,26 @@ public class CzechBankIdCard {
    * The identity document expiration date.
    * @return validTo
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VALID_TO, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getValidTo() {
-    return validTo;
+        return validTo.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VALID_TO, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VALID_TO, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setValidTo(@javax.annotation.Nonnull LocalDate validTo) {
+  public JsonNullable<LocalDate> getValidTo_JsonNullable() {
+    return validTo;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VALID_TO)
+  public void setValidTo_JsonNullable(JsonNullable<LocalDate> validTo) {
     this.validTo = validTo;
+  }
+
+  public void setValidTo(@javax.annotation.Nullable LocalDate validTo) {
+    this.validTo = JsonNullable.<LocalDate>of(validTo);
   }
 
 
@@ -280,11 +308,11 @@ public class CzechBankIdCard {
       return false;
     }
     CzechBankIdCard czechBankIdCard = (CzechBankIdCard) o;
-    return Objects.equals(this.type, czechBankIdCard.type) &&
+    return equalsNullable(this.type, czechBankIdCard.type) &&
         equalsNullable(this.description, czechBankIdCard.description) &&
-        Objects.equals(this.country, czechBankIdCard.country) &&
-        Objects.equals(this.number, czechBankIdCard.number) &&
-        Objects.equals(this.validTo, czechBankIdCard.validTo) &&
+        equalsNullable(this.country, czechBankIdCard.country) &&
+        equalsNullable(this.number, czechBankIdCard.number) &&
+        equalsNullable(this.validTo, czechBankIdCard.validTo) &&
         equalsNullable(this.issuer, czechBankIdCard.issuer) &&
         equalsNullable(this.issueDate, czechBankIdCard.issueDate);
   }
@@ -295,7 +323,7 @@ public class CzechBankIdCard {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, hashCodeNullable(description), country, number, validTo, hashCodeNullable(issuer), hashCodeNullable(issueDate));
+    return Objects.hash(hashCodeNullable(type), hashCodeNullable(description), hashCodeNullable(country), hashCodeNullable(number), hashCodeNullable(validTo), hashCodeNullable(issuer), hashCodeNullable(issueDate));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -8,7 +8,7 @@ A single restriction, condition, or special privilege code attached to a driving
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**code** | **String** | The code identifier. |  |
+|**code** | **String** | The code identifier. |  [optional] |
 |**sign** | **String** | Optional comparison sign applied to the code&#39;s value. |  [optional] |
 |**value** | **String** | Optional value applied to the code. |  [optional] |
 

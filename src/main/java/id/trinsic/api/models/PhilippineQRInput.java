@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   PhilippineQRInput.JSON_PROPERTY_QR_CODE_TEXT,
   PhilippineQRInput.JSON_PROPERTY_QR_CODE_IMAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PhilippineQRInput {
   public static final String JSON_PROPERTY_QR_CODE_TEXT = "qrCodeText";
   private JsonNullable<String> qrCodeText = JsonNullable.<String>undefined();

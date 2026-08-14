@@ -19,6 +19,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -54,6 +58,22 @@ class NetherlandsIdinAddressTest {
     }
 
     /**
+     * Test the property 'houseNumberSuffix'
+     */
+    @Test
+    void houseNumberSuffixTest() {
+        // TODO: test houseNumberSuffix
+    }
+
+    /**
+     * Test the property 'addressExtra'
+     */
+    @Test
+    void addressExtraTest() {
+        // TODO: test addressExtra
+    }
+
+    /**
      * Test the property 'postalCode'
      */
     @Test
@@ -75,6 +95,30 @@ class NetherlandsIdinAddressTest {
     @Test
     void countryCodeTest() {
         // TODO: test countryCode
+    }
+
+    /**
+     * Test the property 'internationalAddressLine1'
+     */
+    @Test
+    void internationalAddressLine1Test() {
+        // TODO: test internationalAddressLine1
+    }
+
+    /**
+     * Test the property 'internationalAddressLine2'
+     */
+    @Test
+    void internationalAddressLine2Test() {
+        // TODO: test internationalAddressLine2
+    }
+
+    /**
+     * Test the property 'internationalAddressLine3'
+     */
+    @Test
+    void internationalAddressLine3Test() {
+        // TODO: test internationalAddressLine3
     }
 
 }

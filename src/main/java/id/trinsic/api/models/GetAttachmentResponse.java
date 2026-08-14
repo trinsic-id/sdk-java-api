@@ -36,7 +36,7 @@ import id.trinsic.ApiClient;
   GetAttachmentResponse.JSON_PROPERTY_CONTENT,
   GetAttachmentResponse.JSON_PROPERTY_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GetAttachmentResponse {
   public static final String JSON_PROPERTY_CONTENT = "content";
   @javax.annotation.Nonnull
@@ -55,7 +55,7 @@ public class GetAttachmentResponse {
   }
 
   /**
-   * The raw file contents of the Attachment
+   * The file contents of the Attachment. When using an SDK, this can be a raw byte array. In raw JSON form this is Base64. Combine this with the Content type to reconstruct the file.              This is empty when &#x60;encryptedContent&#x60; is present.
    * @return content
    */
   @javax.annotation.Nonnull

@@ -70,7 +70,7 @@ import id.trinsic.ApiClient;
   Iso180135AamvaNamespaceOutput.JSON_PROPERTY_DHS_COMPLIANCE_TEXT,
   Iso180135AamvaNamespaceOutput.JSON_PROPERTY_DHS_TEMPORARY_LAWFUL_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135AamvaNamespaceOutput {
   public static final String JSON_PROPERTY_DOMESTIC_DRIVING_PRIVILEGES = "domesticDrivingPrivileges";
   private JsonNullable<List<Iso180135AamvaDomesticDrivingPrivilege>> domesticDrivingPrivileges = JsonNullable.<List<Iso180135AamvaDomesticDrivingPrivilege>>undefined();

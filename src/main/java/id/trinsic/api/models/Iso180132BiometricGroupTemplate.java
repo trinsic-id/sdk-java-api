@@ -28,6 +28,10 @@ import id.trinsic.api.models.Iso180132BiometricTemplate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -38,25 +42,28 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   Iso180132BiometricGroupTemplate.JSON_PROPERTY_TEMPLATES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180132BiometricGroupTemplate {
   public static final String JSON_PROPERTY_TEMPLATES = "templates";
-  @javax.annotation.Nonnull
-  private List<Iso180132BiometricTemplate> templates = new ArrayList<>();
+  private JsonNullable<List<Iso180132BiometricTemplate>> templates = JsonNullable.<List<Iso180132BiometricTemplate>>undefined();
 
   public Iso180132BiometricGroupTemplate() { 
   }
 
-  public Iso180132BiometricGroupTemplate templates(@javax.annotation.Nonnull List<Iso180132BiometricTemplate> templates) {
-    this.templates = templates;
+  public Iso180132BiometricGroupTemplate templates(@javax.annotation.Nullable List<Iso180132BiometricTemplate> templates) {
+    this.templates = JsonNullable.<List<Iso180132BiometricTemplate>>of(templates);
     return this;
   }
 
   public Iso180132BiometricGroupTemplate addTemplatesItem(Iso180132BiometricTemplate templatesItem) {
-    if (this.templates == null) {
-      this.templates = new ArrayList<>();
+    if (this.templates == null || !this.templates.isPresent()) {
+      this.templates = JsonNullable.<List<Iso180132BiometricTemplate>>of(new ArrayList<>());
     }
-    this.templates.add(templatesItem);
+    try {
+      this.templates.get().add(templatesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -64,18 +71,26 @@ public class Iso180132BiometricGroupTemplate {
    * Individual biometric templates contained in this group.
    * @return templates
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_TEMPLATES, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public List<Iso180132BiometricTemplate> getTemplates() {
-    return templates;
+        return templates.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_TEMPLATES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_TEMPLATES, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTemplates(@javax.annotation.Nonnull List<Iso180132BiometricTemplate> templates) {
+  public JsonNullable<List<Iso180132BiometricTemplate>> getTemplates_JsonNullable() {
+    return templates;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TEMPLATES)
+  public void setTemplates_JsonNullable(JsonNullable<List<Iso180132BiometricTemplate>> templates) {
     this.templates = templates;
+  }
+
+  public void setTemplates(@javax.annotation.Nullable List<Iso180132BiometricTemplate> templates) {
+    this.templates = JsonNullable.<List<Iso180132BiometricTemplate>>of(templates);
   }
 
 
@@ -91,12 +106,23 @@ public class Iso180132BiometricGroupTemplate {
       return false;
     }
     Iso180132BiometricGroupTemplate iso180132BiometricGroupTemplate = (Iso180132BiometricGroupTemplate) o;
-    return Objects.equals(this.templates, iso180132BiometricGroupTemplate.templates);
+    return equalsNullable(this.templates, iso180132BiometricGroupTemplate.templates);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(templates);
+    return Objects.hash(hashCodeNullable(templates));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

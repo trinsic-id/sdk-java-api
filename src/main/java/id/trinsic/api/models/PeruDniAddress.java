@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,25 +41,22 @@ import id.trinsic.ApiClient;
   PeruDniAddress.JSON_PROPERTY_PROVINCE,
   PeruDniAddress.JSON_PROPERTY_DISTRICT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PeruDniAddress {
   public static final String JSON_PROPERTY_REGION = "region";
-  @javax.annotation.Nonnull
-  private String region;
+  private JsonNullable<String> region = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PROVINCE = "province";
-  @javax.annotation.Nonnull
-  private String province;
+  private JsonNullable<String> province = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DISTRICT = "district";
-  @javax.annotation.Nonnull
-  private String district;
+  private JsonNullable<String> district = JsonNullable.<String>undefined();
 
   public PeruDniAddress() { 
   }
 
-  public PeruDniAddress region(@javax.annotation.Nonnull String region) {
-    this.region = region;
+  public PeruDniAddress region(@javax.annotation.Nullable String region) {
+    this.region = JsonNullable.<String>of(region);
     return this;
   }
 
@@ -63,23 +64,31 @@ public class PeruDniAddress {
    * Region in Peru (also known as department). This is the first level subdivision in the country.              Format: - All uppercase.
    * @return region
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_REGION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getRegion() {
-    return region;
+        return region.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_REGION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRegion(@javax.annotation.Nonnull String region) {
+  public JsonNullable<String> getRegion_JsonNullable() {
+    return region;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REGION)
+  public void setRegion_JsonNullable(JsonNullable<String> region) {
     this.region = region;
   }
 
+  public void setRegion(@javax.annotation.Nullable String region) {
+    this.region = JsonNullable.<String>of(region);
+  }
 
-  public PeruDniAddress province(@javax.annotation.Nonnull String province) {
-    this.province = province;
+
+  public PeruDniAddress province(@javax.annotation.Nullable String province) {
+    this.province = JsonNullable.<String>of(province);
     return this;
   }
 
@@ -87,23 +96,31 @@ public class PeruDniAddress {
    * Province within the region. This is the second level subdivision in the country.              Format: - All uppercase.
    * @return province
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PROVINCE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getProvince() {
-    return province;
+        return province.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PROVINCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PROVINCE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProvince(@javax.annotation.Nonnull String province) {
+  public JsonNullable<String> getProvince_JsonNullable() {
+    return province;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROVINCE)
+  public void setProvince_JsonNullable(JsonNullable<String> province) {
     this.province = province;
   }
 
+  public void setProvince(@javax.annotation.Nullable String province) {
+    this.province = JsonNullable.<String>of(province);
+  }
 
-  public PeruDniAddress district(@javax.annotation.Nonnull String district) {
-    this.district = district;
+
+  public PeruDniAddress district(@javax.annotation.Nullable String district) {
+    this.district = JsonNullable.<String>of(district);
     return this;
   }
 
@@ -111,18 +128,26 @@ public class PeruDniAddress {
    * District within the province. This is the third level subdivision in the country.              Format: - All uppercase.
    * @return district
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDistrict() {
-    return district;
+        return district.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DISTRICT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDistrict(@javax.annotation.Nonnull String district) {
+  public JsonNullable<String> getDistrict_JsonNullable() {
+    return district;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DISTRICT)
+  public void setDistrict_JsonNullable(JsonNullable<String> district) {
     this.district = district;
+  }
+
+  public void setDistrict(@javax.annotation.Nullable String district) {
+    this.district = JsonNullable.<String>of(district);
   }
 
 
@@ -138,14 +163,25 @@ public class PeruDniAddress {
       return false;
     }
     PeruDniAddress peruDniAddress = (PeruDniAddress) o;
-    return Objects.equals(this.region, peruDniAddress.region) &&
-        Objects.equals(this.province, peruDniAddress.province) &&
-        Objects.equals(this.district, peruDniAddress.district);
+    return equalsNullable(this.region, peruDniAddress.region) &&
+        equalsNullable(this.province, peruDniAddress.province) &&
+        equalsNullable(this.district, peruDniAddress.district);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(region, province, district);
+    return Objects.hash(hashCodeNullable(region), hashCodeNullable(province), hashCodeNullable(district));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

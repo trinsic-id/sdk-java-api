@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,16 +37,12 @@ import id.trinsic.ApiClient;
  * PanamaCedulaLookupInput
  */
 @JsonPropertyOrder({
-  PanamaCedulaLookupInput.JSON_PROPERTY_DOCUMENT_NUMBER,
-  PanamaCedulaLookupInput.JSON_PROPERTY_DATE_OF_BIRTH
+  PanamaCedulaLookupInput.JSON_PROPERTY_DOCUMENT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PanamaCedulaLookupInput {
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
   private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public PanamaCedulaLookupInput() { 
   }
@@ -84,38 +79,6 @@ public class PanamaCedulaLookupInput {
   }
 
 
-  public PanamaCedulaLookupInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
-    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
-    return this;
-  }
-
-  /**
-   * The user&#39;s date of birth, in &#x60;YYYY-MM-DD&#x60; format.
-   * @return dateOfBirth
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public LocalDate getDateOfBirth() {
-        return dateOfBirth.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
-    return dateOfBirth;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-  }
-
-  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
-    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
-  }
-
-
   /**
    * Return true if this PanamaCedulaLookupInput object is equal to o.
    */
@@ -128,8 +91,7 @@ public class PanamaCedulaLookupInput {
       return false;
     }
     PanamaCedulaLookupInput panamaCedulaLookupInput = (PanamaCedulaLookupInput) o;
-    return equalsNullable(this.documentNumber, panamaCedulaLookupInput.documentNumber) &&
-        equalsNullable(this.dateOfBirth, panamaCedulaLookupInput.dateOfBirth);
+    return equalsNullable(this.documentNumber, panamaCedulaLookupInput.documentNumber);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -138,7 +100,7 @@ public class PanamaCedulaLookupInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(documentNumber), hashCodeNullable(dateOfBirth));
+    return Objects.hash(hashCodeNullable(documentNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -153,7 +115,6 @@ public class PanamaCedulaLookupInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class PanamaCedulaLookupInput {\n");
     sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,11 +162,6 @@ public class PanamaCedulaLookupInput {
     // add `documentNumber` to the URL query string
     if (getDocumentNumber() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
-    }
-
-    // add `dateOfBirth` to the URL query string
-    if (getDateOfBirth() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

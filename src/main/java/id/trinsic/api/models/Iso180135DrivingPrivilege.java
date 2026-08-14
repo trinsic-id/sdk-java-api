@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * A single driving privilege entry from the mDL &#x60;driving_privileges&#x60; field, per ISO 18013-5.
+ * A single driving privilege entry, per ISO 18013-5.
  */
 @JsonPropertyOrder({
   Iso180135DrivingPrivilege.JSON_PROPERTY_VEHICLE_CATEGORY_CODE,
@@ -46,11 +46,10 @@ import id.trinsic.ApiClient;
   Iso180135DrivingPrivilege.JSON_PROPERTY_EXPIRY_DATE,
   Iso180135DrivingPrivilege.JSON_PROPERTY_CODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135DrivingPrivilege {
   public static final String JSON_PROPERTY_VEHICLE_CATEGORY_CODE = "vehicleCategoryCode";
-  @javax.annotation.Nonnull
-  private String vehicleCategoryCode;
+  private JsonNullable<String> vehicleCategoryCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ISSUE_DATE = "issueDate";
   private JsonNullable<LocalDate> issueDate = JsonNullable.<LocalDate>undefined();
@@ -64,8 +63,8 @@ public class Iso180135DrivingPrivilege {
   public Iso180135DrivingPrivilege() { 
   }
 
-  public Iso180135DrivingPrivilege vehicleCategoryCode(@javax.annotation.Nonnull String vehicleCategoryCode) {
-    this.vehicleCategoryCode = vehicleCategoryCode;
+  public Iso180135DrivingPrivilege vehicleCategoryCode(@javax.annotation.Nullable String vehicleCategoryCode) {
+    this.vehicleCategoryCode = JsonNullable.<String>of(vehicleCategoryCode);
     return this;
   }
 
@@ -73,18 +72,26 @@ public class Iso180135DrivingPrivilege {
    * Vehicle category code that the holder is authorized to operate.
    * @return vehicleCategoryCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VEHICLE_CATEGORY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getVehicleCategoryCode() {
-    return vehicleCategoryCode;
+        return vehicleCategoryCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VEHICLE_CATEGORY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VEHICLE_CATEGORY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setVehicleCategoryCode(@javax.annotation.Nonnull String vehicleCategoryCode) {
+  public JsonNullable<String> getVehicleCategoryCode_JsonNullable() {
+    return vehicleCategoryCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VEHICLE_CATEGORY_CODE)
+  public void setVehicleCategoryCode_JsonNullable(JsonNullable<String> vehicleCategoryCode) {
     this.vehicleCategoryCode = vehicleCategoryCode;
+  }
+
+  public void setVehicleCategoryCode(@javax.annotation.Nullable String vehicleCategoryCode) {
+    this.vehicleCategoryCode = JsonNullable.<String>of(vehicleCategoryCode);
   }
 
 
@@ -208,7 +215,7 @@ public class Iso180135DrivingPrivilege {
       return false;
     }
     Iso180135DrivingPrivilege iso180135DrivingPrivilege = (Iso180135DrivingPrivilege) o;
-    return Objects.equals(this.vehicleCategoryCode, iso180135DrivingPrivilege.vehicleCategoryCode) &&
+    return equalsNullable(this.vehicleCategoryCode, iso180135DrivingPrivilege.vehicleCategoryCode) &&
         equalsNullable(this.issueDate, iso180135DrivingPrivilege.issueDate) &&
         equalsNullable(this.expiryDate, iso180135DrivingPrivilege.expiryDate) &&
         equalsNullable(this.codes, iso180135DrivingPrivilege.codes);
@@ -220,7 +227,7 @@ public class Iso180135DrivingPrivilege {
 
   @Override
   public int hashCode() {
-    return Objects.hash(vehicleCategoryCode, hashCodeNullable(issueDate), hashCodeNullable(expiryDate), hashCodeNullable(codes));
+    return Objects.hash(hashCodeNullable(vehicleCategoryCode), hashCodeNullable(issueDate), hashCodeNullable(expiryDate), hashCodeNullable(codes));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

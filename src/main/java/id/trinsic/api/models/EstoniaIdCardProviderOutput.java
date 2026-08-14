@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -39,29 +43,25 @@ import id.trinsic.ApiClient;
   EstoniaIdCardProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   EstoniaIdCardProviderOutput.JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class EstoniaIdCardProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE = "personalIdentificationCode";
-  @javax.annotation.Nonnull
-  private String personalIdentificationCode;
+  private JsonNullable<String> personalIdentificationCode = JsonNullable.<String>undefined();
 
   public EstoniaIdCardProviderOutput() { 
   }
 
-  public EstoniaIdCardProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public EstoniaIdCardProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -69,23 +69,31 @@ public class EstoniaIdCardProviderOutput {
    * The first name of the verified individual
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public EstoniaIdCardProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public EstoniaIdCardProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -93,23 +101,31 @@ public class EstoniaIdCardProviderOutput {
    * The last name of the verified individual
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
   }
 
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
+  }
 
-  public EstoniaIdCardProviderOutput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public EstoniaIdCardProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
@@ -117,23 +133,31 @@ public class EstoniaIdCardProviderOutput {
    * The date of birth of the verified individual
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
 
-  public EstoniaIdCardProviderOutput personalIdentificationCode(@javax.annotation.Nonnull String personalIdentificationCode) {
-    this.personalIdentificationCode = personalIdentificationCode;
+
+  public EstoniaIdCardProviderOutput personalIdentificationCode(@javax.annotation.Nullable String personalIdentificationCode) {
+    this.personalIdentificationCode = JsonNullable.<String>of(personalIdentificationCode);
     return this;
   }
 
@@ -141,18 +165,26 @@ public class EstoniaIdCardProviderOutput {
    * The 11-digit Estonian personal identification code (\&quot;isikukood\&quot;) of the verified individual.              This is in the format GYYMMDDSSSC, where: - G combines the century and sex of birth - YYMMDD is the date of birth within the given century - SSS is a serial number distinguishing people born on the same date - C is a checksum digit              If G is odd, the individual is male. If G is even, the individual is female.              If G is 1 or 2, the individual was born in the 19th century (1800-1899). If G is 3 or 4, the individual was born in the 20th century (1900-1999). If G is 5 or 6, the individual was born in the 21st century (2000-2099). If G is 7 or 8, the individual was born in the 22nd century (2100-2199).
    * @return personalIdentificationCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPersonalIdentificationCode() {
-    return personalIdentificationCode;
+        return personalIdentificationCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPersonalIdentificationCode(@javax.annotation.Nonnull String personalIdentificationCode) {
+  public JsonNullable<String> getPersonalIdentificationCode_JsonNullable() {
+    return personalIdentificationCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PERSONAL_IDENTIFICATION_CODE)
+  public void setPersonalIdentificationCode_JsonNullable(JsonNullable<String> personalIdentificationCode) {
     this.personalIdentificationCode = personalIdentificationCode;
+  }
+
+  public void setPersonalIdentificationCode(@javax.annotation.Nullable String personalIdentificationCode) {
+    this.personalIdentificationCode = JsonNullable.<String>of(personalIdentificationCode);
   }
 
 
@@ -168,15 +200,26 @@ public class EstoniaIdCardProviderOutput {
       return false;
     }
     EstoniaIdCardProviderOutput estoniaIdCardProviderOutput = (EstoniaIdCardProviderOutput) o;
-    return Objects.equals(this.firstName, estoniaIdCardProviderOutput.firstName) &&
-        Objects.equals(this.lastName, estoniaIdCardProviderOutput.lastName) &&
-        Objects.equals(this.dateOfBirth, estoniaIdCardProviderOutput.dateOfBirth) &&
-        Objects.equals(this.personalIdentificationCode, estoniaIdCardProviderOutput.personalIdentificationCode);
+    return equalsNullable(this.firstName, estoniaIdCardProviderOutput.firstName) &&
+        equalsNullable(this.lastName, estoniaIdCardProviderOutput.lastName) &&
+        equalsNullable(this.dateOfBirth, estoniaIdCardProviderOutput.dateOfBirth) &&
+        equalsNullable(this.personalIdentificationCode, estoniaIdCardProviderOutput.personalIdentificationCode);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, dateOfBirth, personalIdentificationCode);
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(lastName), hashCodeNullable(dateOfBirth), hashCodeNullable(personalIdentificationCode));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

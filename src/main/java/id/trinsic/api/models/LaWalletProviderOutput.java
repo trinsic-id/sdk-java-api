@@ -57,84 +57,67 @@ import id.trinsic.ApiClient;
   LaWalletProviderOutput.JSON_PROPERTY_COUNTY,
   LaWalletProviderOutput.JSON_PROPERTY_COARSE_AGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class LaWalletProviderOutput {
   public static final String JSON_PROPERTY_DRIVERS_LICENSE_NUMBER = "driversLicenseNumber";
-  @javax.annotation.Nonnull
-  private String driversLicenseNumber;
+  private JsonNullable<String> driversLicenseNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ISSUE_DATE = "issueDate";
-  @javax.annotation.Nonnull
-  private LocalDate issueDate;
+  private JsonNullable<LocalDate> issueDate = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_EXPIRATION_DATE = "expirationDate";
-  @javax.annotation.Nonnull
-  private LocalDate expirationDate;
+  private JsonNullable<LocalDate> expirationDate = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_AUDIT_NUMBER = "auditNumber";
-  @javax.annotation.Nonnull
-  private String auditNumber;
+  private JsonNullable<String> auditNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LICENSE_STATUS = "licenseStatus";
-  @javax.annotation.Nonnull
-  private String licenseStatus;
+  private JsonNullable<String> licenseStatus = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LICENSE_CLASS = "licenseClass";
-  @javax.annotation.Nonnull
-  private String licenseClass;
+  private JsonNullable<String> licenseClass = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_MIDDLE_NAME = "middleName";
-  @javax.annotation.Nonnull
-  private String middleName;
+  private JsonNullable<String> middleName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
-  @javax.annotation.Nonnull
-  private String sex;
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS_LINE1 = "addressLine1";
-  @javax.annotation.Nonnull
-  private String addressLine1;
+  private JsonNullable<String> addressLine1 = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS_LINE2 = "addressLine2";
   private JsonNullable<String> addressLine2 = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS_CITY = "addressCity";
-  @javax.annotation.Nonnull
-  private String addressCity;
+  private JsonNullable<String> addressCity = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS_STATE = "addressState";
-  @javax.annotation.Nonnull
-  private String addressState;
+  private JsonNullable<String> addressState = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS_ZIP = "addressZip";
-  @javax.annotation.Nonnull
-  private String addressZip;
+  private JsonNullable<String> addressZip = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COUNTY = "county";
-  @javax.annotation.Nonnull
-  private String county;
+  private JsonNullable<String> county = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COARSE_AGE = "coarseAge";
-  @javax.annotation.Nonnull
-  private String coarseAge;
+  private JsonNullable<String> coarseAge = JsonNullable.<String>undefined();
 
   public LaWalletProviderOutput() { 
   }
 
-  public LaWalletProviderOutput driversLicenseNumber(@javax.annotation.Nonnull String driversLicenseNumber) {
-    this.driversLicenseNumber = driversLicenseNumber;
+  public LaWalletProviderOutput driversLicenseNumber(@javax.annotation.Nullable String driversLicenseNumber) {
+    this.driversLicenseNumber = JsonNullable.<String>of(driversLicenseNumber);
     return this;
   }
 
@@ -142,23 +125,31 @@ public class LaWalletProviderOutput {
    * The number of the driver&#39;s license used to create the LA Wallet credential
    * @return driversLicenseNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DRIVERS_LICENSE_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDriversLicenseNumber() {
-    return driversLicenseNumber;
+        return driversLicenseNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DRIVERS_LICENSE_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DRIVERS_LICENSE_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDriversLicenseNumber(@javax.annotation.Nonnull String driversLicenseNumber) {
+  public JsonNullable<String> getDriversLicenseNumber_JsonNullable() {
+    return driversLicenseNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DRIVERS_LICENSE_NUMBER)
+  public void setDriversLicenseNumber_JsonNullable(JsonNullable<String> driversLicenseNumber) {
     this.driversLicenseNumber = driversLicenseNumber;
   }
 
+  public void setDriversLicenseNumber(@javax.annotation.Nullable String driversLicenseNumber) {
+    this.driversLicenseNumber = JsonNullable.<String>of(driversLicenseNumber);
+  }
 
-  public LaWalletProviderOutput issueDate(@javax.annotation.Nonnull LocalDate issueDate) {
-    this.issueDate = issueDate;
+
+  public LaWalletProviderOutput issueDate(@javax.annotation.Nullable LocalDate issueDate) {
+    this.issueDate = JsonNullable.<LocalDate>of(issueDate);
     return this;
   }
 
@@ -166,23 +157,31 @@ public class LaWalletProviderOutput {
    * The issue date of the driver&#39;s license used to create the LA Wallet credential
    * @return issueDate
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ISSUE_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getIssueDate() {
-    return issueDate;
+        return issueDate.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ISSUE_DATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ISSUE_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIssueDate(@javax.annotation.Nonnull LocalDate issueDate) {
+  public JsonNullable<LocalDate> getIssueDate_JsonNullable() {
+    return issueDate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ISSUE_DATE)
+  public void setIssueDate_JsonNullable(JsonNullable<LocalDate> issueDate) {
     this.issueDate = issueDate;
   }
 
+  public void setIssueDate(@javax.annotation.Nullable LocalDate issueDate) {
+    this.issueDate = JsonNullable.<LocalDate>of(issueDate);
+  }
 
-  public LaWalletProviderOutput expirationDate(@javax.annotation.Nonnull LocalDate expirationDate) {
-    this.expirationDate = expirationDate;
+
+  public LaWalletProviderOutput expirationDate(@javax.annotation.Nullable LocalDate expirationDate) {
+    this.expirationDate = JsonNullable.<LocalDate>of(expirationDate);
     return this;
   }
 
@@ -190,23 +189,31 @@ public class LaWalletProviderOutput {
    * The expiration date of the driver&#39;s license used to create the LA Wallet credential
    * @return expirationDate
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getExpirationDate() {
-    return expirationDate;
+        return expirationDate.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_EXPIRATION_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpirationDate(@javax.annotation.Nonnull LocalDate expirationDate) {
+  public JsonNullable<LocalDate> getExpirationDate_JsonNullable() {
+    return expirationDate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
+  public void setExpirationDate_JsonNullable(JsonNullable<LocalDate> expirationDate) {
     this.expirationDate = expirationDate;
   }
 
+  public void setExpirationDate(@javax.annotation.Nullable LocalDate expirationDate) {
+    this.expirationDate = JsonNullable.<LocalDate>of(expirationDate);
+  }
 
-  public LaWalletProviderOutput auditNumber(@javax.annotation.Nonnull String auditNumber) {
-    this.auditNumber = auditNumber;
+
+  public LaWalletProviderOutput auditNumber(@javax.annotation.Nullable String auditNumber) {
+    this.auditNumber = JsonNullable.<String>of(auditNumber);
     return this;
   }
 
@@ -214,23 +221,31 @@ public class LaWalletProviderOutput {
    * The 4-digit audit number of the driver&#39;s license used to create the LA Wallet credential
    * @return auditNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_AUDIT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAuditNumber() {
-    return auditNumber;
+        return auditNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_AUDIT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_AUDIT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAuditNumber(@javax.annotation.Nonnull String auditNumber) {
+  public JsonNullable<String> getAuditNumber_JsonNullable() {
+    return auditNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AUDIT_NUMBER)
+  public void setAuditNumber_JsonNullable(JsonNullable<String> auditNumber) {
     this.auditNumber = auditNumber;
   }
 
+  public void setAuditNumber(@javax.annotation.Nullable String auditNumber) {
+    this.auditNumber = JsonNullable.<String>of(auditNumber);
+  }
 
-  public LaWalletProviderOutput licenseStatus(@javax.annotation.Nonnull String licenseStatus) {
-    this.licenseStatus = licenseStatus;
+
+  public LaWalletProviderOutput licenseStatus(@javax.annotation.Nullable String licenseStatus) {
+    this.licenseStatus = JsonNullable.<String>of(licenseStatus);
     return this;
   }
 
@@ -238,23 +253,31 @@ public class LaWalletProviderOutput {
    * The license status from the LA Wallet credential
    * @return licenseStatus
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LICENSE_STATUS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLicenseStatus() {
-    return licenseStatus;
+        return licenseStatus.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LICENSE_STATUS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LICENSE_STATUS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLicenseStatus(@javax.annotation.Nonnull String licenseStatus) {
+  public JsonNullable<String> getLicenseStatus_JsonNullable() {
+    return licenseStatus;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LICENSE_STATUS)
+  public void setLicenseStatus_JsonNullable(JsonNullable<String> licenseStatus) {
     this.licenseStatus = licenseStatus;
   }
 
+  public void setLicenseStatus(@javax.annotation.Nullable String licenseStatus) {
+    this.licenseStatus = JsonNullable.<String>of(licenseStatus);
+  }
 
-  public LaWalletProviderOutput licenseClass(@javax.annotation.Nonnull String licenseClass) {
-    this.licenseClass = licenseClass;
+
+  public LaWalletProviderOutput licenseClass(@javax.annotation.Nullable String licenseClass) {
+    this.licenseClass = JsonNullable.<String>of(licenseClass);
     return this;
   }
 
@@ -262,23 +285,31 @@ public class LaWalletProviderOutput {
    * The license class from the LA Wallet credential              Possible values: - \&quot;A\&quot;: Commercial Driver&#39;s License, Combination Vehicles - \&quot;B\&quot;: Commercial Driver&#39;s License, Heavy Straight Vehicle - \&quot;C\&quot;: Commercial Driver&#39;s License, Light Straight Vehicle - \&quot;D\&quot;: Chauffeur&#39;s Driver&#39;s License - \&quot;E\&quot;: Driver&#39;s License for Personal Vehicle
    * @return licenseClass
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LICENSE_CLASS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLicenseClass() {
-    return licenseClass;
+        return licenseClass.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LICENSE_CLASS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LICENSE_CLASS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLicenseClass(@javax.annotation.Nonnull String licenseClass) {
+  public JsonNullable<String> getLicenseClass_JsonNullable() {
+    return licenseClass;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LICENSE_CLASS)
+  public void setLicenseClass_JsonNullable(JsonNullable<String> licenseClass) {
     this.licenseClass = licenseClass;
   }
 
+  public void setLicenseClass(@javax.annotation.Nullable String licenseClass) {
+    this.licenseClass = JsonNullable.<String>of(licenseClass);
+  }
 
-  public LaWalletProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+
+  public LaWalletProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -286,23 +317,31 @@ public class LaWalletProviderOutput {
    * The first name from the LA Wallet credential
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public LaWalletProviderOutput middleName(@javax.annotation.Nonnull String middleName) {
-    this.middleName = middleName;
+
+  public LaWalletProviderOutput middleName(@javax.annotation.Nullable String middleName) {
+    this.middleName = JsonNullable.<String>of(middleName);
     return this;
   }
 
@@ -310,23 +349,31 @@ public class LaWalletProviderOutput {
    * The middle name from the LA Wallet credential
    * @return middleName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getMiddleName() {
-    return middleName;
+        return middleName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_MIDDLE_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMiddleName(@javax.annotation.Nonnull String middleName) {
+  public JsonNullable<String> getMiddleName_JsonNullable() {
+    return middleName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
+  public void setMiddleName_JsonNullable(JsonNullable<String> middleName) {
     this.middleName = middleName;
   }
 
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
+    this.middleName = JsonNullable.<String>of(middleName);
+  }
 
-  public LaWalletProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public LaWalletProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -334,23 +381,31 @@ public class LaWalletProviderOutput {
    * The last name from the LA Wallet credential
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
   }
 
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
+  }
 
-  public LaWalletProviderOutput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public LaWalletProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
@@ -358,23 +413,31 @@ public class LaWalletProviderOutput {
    * The date of birth from the LA Wallet credential
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
 
-  public LaWalletProviderOutput sex(@javax.annotation.Nonnull String sex) {
-    this.sex = sex;
+
+  public LaWalletProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
     return this;
   }
 
@@ -382,23 +445,31 @@ public class LaWalletProviderOutput {
    * The sex from the LA Wallet credential
    * @return sex
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSex() {
-    return sex;
+        return sex.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSex(@javax.annotation.Nonnull String sex) {
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
     this.sex = sex;
   }
 
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+  }
 
-  public LaWalletProviderOutput addressLine1(@javax.annotation.Nonnull String addressLine1) {
-    this.addressLine1 = addressLine1;
+
+  public LaWalletProviderOutput addressLine1(@javax.annotation.Nullable String addressLine1) {
+    this.addressLine1 = JsonNullable.<String>of(addressLine1);
     return this;
   }
 
@@ -406,18 +477,26 @@ public class LaWalletProviderOutput {
    * The address&#39; line 1 from the LA Wallet credential
    * @return addressLine1
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_LINE1, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAddressLine1() {
-    return addressLine1;
+        return addressLine1.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_LINE1, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_LINE1, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddressLine1(@javax.annotation.Nonnull String addressLine1) {
+  public JsonNullable<String> getAddressLine1_JsonNullable() {
+    return addressLine1;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE1)
+  public void setAddressLine1_JsonNullable(JsonNullable<String> addressLine1) {
     this.addressLine1 = addressLine1;
+  }
+
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
+    this.addressLine1 = JsonNullable.<String>of(addressLine1);
   }
 
 
@@ -453,8 +532,8 @@ public class LaWalletProviderOutput {
   }
 
 
-  public LaWalletProviderOutput addressCity(@javax.annotation.Nonnull String addressCity) {
-    this.addressCity = addressCity;
+  public LaWalletProviderOutput addressCity(@javax.annotation.Nullable String addressCity) {
+    this.addressCity = JsonNullable.<String>of(addressCity);
     return this;
   }
 
@@ -462,23 +541,31 @@ public class LaWalletProviderOutput {
    * The address&#39; city from the LA Wallet credential
    * @return addressCity
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_CITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAddressCity() {
-    return addressCity;
+        return addressCity.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_CITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_CITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddressCity(@javax.annotation.Nonnull String addressCity) {
+  public JsonNullable<String> getAddressCity_JsonNullable() {
+    return addressCity;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS_CITY)
+  public void setAddressCity_JsonNullable(JsonNullable<String> addressCity) {
     this.addressCity = addressCity;
   }
 
+  public void setAddressCity(@javax.annotation.Nullable String addressCity) {
+    this.addressCity = JsonNullable.<String>of(addressCity);
+  }
 
-  public LaWalletProviderOutput addressState(@javax.annotation.Nonnull String addressState) {
-    this.addressState = addressState;
+
+  public LaWalletProviderOutput addressState(@javax.annotation.Nullable String addressState) {
+    this.addressState = JsonNullable.<String>of(addressState);
     return this;
   }
 
@@ -486,23 +573,31 @@ public class LaWalletProviderOutput {
    * The address&#39; state from the LA Wallet credential
    * @return addressState
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_STATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAddressState() {
-    return addressState;
+        return addressState.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_STATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_STATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddressState(@javax.annotation.Nonnull String addressState) {
+  public JsonNullable<String> getAddressState_JsonNullable() {
+    return addressState;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS_STATE)
+  public void setAddressState_JsonNullable(JsonNullable<String> addressState) {
     this.addressState = addressState;
   }
 
+  public void setAddressState(@javax.annotation.Nullable String addressState) {
+    this.addressState = JsonNullable.<String>of(addressState);
+  }
 
-  public LaWalletProviderOutput addressZip(@javax.annotation.Nonnull String addressZip) {
-    this.addressZip = addressZip;
+
+  public LaWalletProviderOutput addressZip(@javax.annotation.Nullable String addressZip) {
+    this.addressZip = JsonNullable.<String>of(addressZip);
     return this;
   }
 
@@ -510,23 +605,31 @@ public class LaWalletProviderOutput {
    * The address&#39; ZIP from the LA Wallet credential
    * @return addressZip
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_ZIP, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAddressZip() {
-    return addressZip;
+        return addressZip.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_ZIP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS_ZIP, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddressZip(@javax.annotation.Nonnull String addressZip) {
+  public JsonNullable<String> getAddressZip_JsonNullable() {
+    return addressZip;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS_ZIP)
+  public void setAddressZip_JsonNullable(JsonNullable<String> addressZip) {
     this.addressZip = addressZip;
   }
 
+  public void setAddressZip(@javax.annotation.Nullable String addressZip) {
+    this.addressZip = JsonNullable.<String>of(addressZip);
+  }
 
-  public LaWalletProviderOutput county(@javax.annotation.Nonnull String county) {
-    this.county = county;
+
+  public LaWalletProviderOutput county(@javax.annotation.Nullable String county) {
+    this.county = JsonNullable.<String>of(county);
     return this;
   }
 
@@ -534,23 +637,31 @@ public class LaWalletProviderOutput {
    * The county (\&quot;parish\&quot;) code from the LA Wallet credential.              This is a number from 1 to 64, representing one of Louisiana&#39;s 64 parishes.
    * @return county
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COUNTY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCounty() {
-    return county;
+        return county.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_COUNTY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCounty(@javax.annotation.Nonnull String county) {
+  public JsonNullable<String> getCounty_JsonNullable() {
+    return county;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTY)
+  public void setCounty_JsonNullable(JsonNullable<String> county) {
     this.county = county;
   }
 
+  public void setCounty(@javax.annotation.Nullable String county) {
+    this.county = JsonNullable.<String>of(county);
+  }
 
-  public LaWalletProviderOutput coarseAge(@javax.annotation.Nonnull String coarseAge) {
-    this.coarseAge = coarseAge;
+
+  public LaWalletProviderOutput coarseAge(@javax.annotation.Nullable String coarseAge) {
+    this.coarseAge = JsonNullable.<String>of(coarseAge);
     return this;
   }
 
@@ -558,18 +669,26 @@ public class LaWalletProviderOutput {
    * The coarse age returned by LA Wallet for this credential              Possible values: - \&quot;Under 18\&quot; - \&quot;Under 21\&quot; - \&quot;Over 21\&quot;
    * @return coarseAge
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COARSE_AGE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCoarseAge() {
-    return coarseAge;
+        return coarseAge.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_COARSE_AGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_COARSE_AGE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCoarseAge(@javax.annotation.Nonnull String coarseAge) {
+  public JsonNullable<String> getCoarseAge_JsonNullable() {
+    return coarseAge;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COARSE_AGE)
+  public void setCoarseAge_JsonNullable(JsonNullable<String> coarseAge) {
     this.coarseAge = coarseAge;
+  }
+
+  public void setCoarseAge(@javax.annotation.Nullable String coarseAge) {
+    this.coarseAge = JsonNullable.<String>of(coarseAge);
   }
 
 
@@ -585,24 +704,24 @@ public class LaWalletProviderOutput {
       return false;
     }
     LaWalletProviderOutput laWalletProviderOutput = (LaWalletProviderOutput) o;
-    return Objects.equals(this.driversLicenseNumber, laWalletProviderOutput.driversLicenseNumber) &&
-        Objects.equals(this.issueDate, laWalletProviderOutput.issueDate) &&
-        Objects.equals(this.expirationDate, laWalletProviderOutput.expirationDate) &&
-        Objects.equals(this.auditNumber, laWalletProviderOutput.auditNumber) &&
-        Objects.equals(this.licenseStatus, laWalletProviderOutput.licenseStatus) &&
-        Objects.equals(this.licenseClass, laWalletProviderOutput.licenseClass) &&
-        Objects.equals(this.firstName, laWalletProviderOutput.firstName) &&
-        Objects.equals(this.middleName, laWalletProviderOutput.middleName) &&
-        Objects.equals(this.lastName, laWalletProviderOutput.lastName) &&
-        Objects.equals(this.dateOfBirth, laWalletProviderOutput.dateOfBirth) &&
-        Objects.equals(this.sex, laWalletProviderOutput.sex) &&
-        Objects.equals(this.addressLine1, laWalletProviderOutput.addressLine1) &&
+    return equalsNullable(this.driversLicenseNumber, laWalletProviderOutput.driversLicenseNumber) &&
+        equalsNullable(this.issueDate, laWalletProviderOutput.issueDate) &&
+        equalsNullable(this.expirationDate, laWalletProviderOutput.expirationDate) &&
+        equalsNullable(this.auditNumber, laWalletProviderOutput.auditNumber) &&
+        equalsNullable(this.licenseStatus, laWalletProviderOutput.licenseStatus) &&
+        equalsNullable(this.licenseClass, laWalletProviderOutput.licenseClass) &&
+        equalsNullable(this.firstName, laWalletProviderOutput.firstName) &&
+        equalsNullable(this.middleName, laWalletProviderOutput.middleName) &&
+        equalsNullable(this.lastName, laWalletProviderOutput.lastName) &&
+        equalsNullable(this.dateOfBirth, laWalletProviderOutput.dateOfBirth) &&
+        equalsNullable(this.sex, laWalletProviderOutput.sex) &&
+        equalsNullable(this.addressLine1, laWalletProviderOutput.addressLine1) &&
         equalsNullable(this.addressLine2, laWalletProviderOutput.addressLine2) &&
-        Objects.equals(this.addressCity, laWalletProviderOutput.addressCity) &&
-        Objects.equals(this.addressState, laWalletProviderOutput.addressState) &&
-        Objects.equals(this.addressZip, laWalletProviderOutput.addressZip) &&
-        Objects.equals(this.county, laWalletProviderOutput.county) &&
-        Objects.equals(this.coarseAge, laWalletProviderOutput.coarseAge);
+        equalsNullable(this.addressCity, laWalletProviderOutput.addressCity) &&
+        equalsNullable(this.addressState, laWalletProviderOutput.addressState) &&
+        equalsNullable(this.addressZip, laWalletProviderOutput.addressZip) &&
+        equalsNullable(this.county, laWalletProviderOutput.county) &&
+        equalsNullable(this.coarseAge, laWalletProviderOutput.coarseAge);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -611,7 +730,7 @@ public class LaWalletProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(driversLicenseNumber, issueDate, expirationDate, auditNumber, licenseStatus, licenseClass, firstName, middleName, lastName, dateOfBirth, sex, addressLine1, hashCodeNullable(addressLine2), addressCity, addressState, addressZip, county, coarseAge);
+    return Objects.hash(hashCodeNullable(driversLicenseNumber), hashCodeNullable(issueDate), hashCodeNullable(expirationDate), hashCodeNullable(auditNumber), hashCodeNullable(licenseStatus), hashCodeNullable(licenseClass), hashCodeNullable(firstName), hashCodeNullable(middleName), hashCodeNullable(lastName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(addressLine1), hashCodeNullable(addressLine2), hashCodeNullable(addressCity), hashCodeNullable(addressState), hashCodeNullable(addressZip), hashCodeNullable(county), hashCodeNullable(coarseAge));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

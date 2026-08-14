@@ -43,19 +43,16 @@ import id.trinsic.ApiClient;
   AudkenniProviderOutput.JSON_PROPERTY_NAME,
   AudkenniProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AudkenniProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_REGISTER_ID = "nationalRegisterId";
-  @javax.annotation.Nonnull
-  private String nationalRegisterId;
+  private JsonNullable<String> nationalRegisterId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SUBJECT_ID = "subjectId";
-  @javax.annotation.Nonnull
-  private String subjectId;
+  private JsonNullable<String> subjectId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NAME = "name";
-  @javax.annotation.Nonnull
-  private String name;
+  private JsonNullable<String> name = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
@@ -63,8 +60,8 @@ public class AudkenniProviderOutput {
   public AudkenniProviderOutput() { 
   }
 
-  public AudkenniProviderOutput nationalRegisterId(@javax.annotation.Nonnull String nationalRegisterId) {
-    this.nationalRegisterId = nationalRegisterId;
+  public AudkenniProviderOutput nationalRegisterId(@javax.annotation.Nullable String nationalRegisterId) {
+    this.nationalRegisterId = JsonNullable.<String>of(nationalRegisterId);
     return this;
   }
 
@@ -72,23 +69,31 @@ public class AudkenniProviderOutput {
    * National Register ID number (kennitala) of the individual.              Often written with a hyphen following the 6th digit (123456-1234). ID numbers are composed of ten digits. The first six of these are the individual’s date of birth in the format DDMMYY. The seventh and eighth digits are randomly chosen when the ID number is allocated, the ninth digit used to be a check digit (modulus (11) but this has been removed. The tenth indicates the century of the individual’s birth: ‘9’ for 1900–1999, ‘0’ for 2000 and beyond.
    * @return nationalRegisterId
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNationalRegisterId() {
-    return nationalRegisterId;
+        return nationalRegisterId.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalRegisterId(@javax.annotation.Nonnull String nationalRegisterId) {
+  public JsonNullable<String> getNationalRegisterId_JsonNullable() {
+    return nationalRegisterId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_REGISTER_ID)
+  public void setNationalRegisterId_JsonNullable(JsonNullable<String> nationalRegisterId) {
     this.nationalRegisterId = nationalRegisterId;
   }
 
+  public void setNationalRegisterId(@javax.annotation.Nullable String nationalRegisterId) {
+    this.nationalRegisterId = JsonNullable.<String>of(nationalRegisterId);
+  }
 
-  public AudkenniProviderOutput subjectId(@javax.annotation.Nonnull String subjectId) {
-    this.subjectId = subjectId;
+
+  public AudkenniProviderOutput subjectId(@javax.annotation.Nullable String subjectId) {
+    this.subjectId = JsonNullable.<String>of(subjectId);
     return this;
   }
 
@@ -96,23 +101,31 @@ public class AudkenniProviderOutput {
    * Unique identifier for the individual across Audkenni.              It is recommended to use this identifier instead of using the national register ID directly.
    * @return subjectId
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSubjectId() {
-    return subjectId;
+        return subjectId.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SUBJECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSubjectId(@javax.annotation.Nonnull String subjectId) {
+  public JsonNullable<String> getSubjectId_JsonNullable() {
+    return subjectId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUBJECT_ID)
+  public void setSubjectId_JsonNullable(JsonNullable<String> subjectId) {
     this.subjectId = subjectId;
   }
 
+  public void setSubjectId(@javax.annotation.Nullable String subjectId) {
+    this.subjectId = JsonNullable.<String>of(subjectId);
+  }
 
-  public AudkenniProviderOutput name(@javax.annotation.Nonnull String name) {
-    this.name = name;
+
+  public AudkenniProviderOutput name(@javax.annotation.Nullable String name) {
+    this.name = JsonNullable.<String>of(name);
     return this;
   }
 
@@ -120,18 +133,26 @@ public class AudkenniProviderOutput {
    * The full name of the individual.
    * @return name
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getName() {
-    return name;
+        return name.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(@javax.annotation.Nonnull String name) {
+  public JsonNullable<String> getName_JsonNullable() {
+    return name;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NAME)
+  public void setName_JsonNullable(JsonNullable<String> name) {
     this.name = name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = JsonNullable.<String>of(name);
   }
 
 
@@ -179,9 +200,9 @@ public class AudkenniProviderOutput {
       return false;
     }
     AudkenniProviderOutput audkenniProviderOutput = (AudkenniProviderOutput) o;
-    return Objects.equals(this.nationalRegisterId, audkenniProviderOutput.nationalRegisterId) &&
-        Objects.equals(this.subjectId, audkenniProviderOutput.subjectId) &&
-        Objects.equals(this.name, audkenniProviderOutput.name) &&
+    return equalsNullable(this.nationalRegisterId, audkenniProviderOutput.nationalRegisterId) &&
+        equalsNullable(this.subjectId, audkenniProviderOutput.subjectId) &&
+        equalsNullable(this.name, audkenniProviderOutput.name) &&
         equalsNullable(this.dateOfBirth, audkenniProviderOutput.dateOfBirth);
   }
 
@@ -191,7 +212,7 @@ public class AudkenniProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nationalRegisterId, subjectId, name, hashCodeNullable(dateOfBirth));
+    return Objects.hash(hashCodeNullable(nationalRegisterId), hashCodeNullable(subjectId), hashCodeNullable(name), hashCodeNullable(dateOfBirth));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

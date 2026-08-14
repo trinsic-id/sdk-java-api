@@ -52,10 +52,11 @@ import id.trinsic.ApiClient;
   IdentityData.JSON_PROPERTY_ATTACHMENTS,
   IdentityData.JSON_PROPERTY_PROVIDER_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IdentityData {
   public static final String JSON_PROPERTY_ORIGINATING_PROVIDER_ID = "originatingProviderId";
-  private JsonNullable<String> originatingProviderId = JsonNullable.<String>undefined();
+  @javax.annotation.Nonnull
+  private String originatingProviderId;
 
   public static final String JSON_PROPERTY_ORIGINATING_SUB_PROVIDER_ID = "originatingSubProviderId";
   private JsonNullable<String> originatingSubProviderId = JsonNullable.<String>undefined();
@@ -79,8 +80,8 @@ public class IdentityData {
   public IdentityData() { 
   }
 
-  public IdentityData originatingProviderId(@javax.annotation.Nullable String originatingProviderId) {
-    this.originatingProviderId = JsonNullable.<String>of(originatingProviderId);
+  public IdentityData originatingProviderId(@javax.annotation.Nonnull String originatingProviderId) {
+    this.originatingProviderId = originatingProviderId;
     return this;
   }
 
@@ -88,26 +89,18 @@ public class IdentityData {
    * The ID of the provider from which this data originated (eg \&quot;yoti\&quot;, \&quot;clear\&quot;)
    * @return originatingProviderId
    */
-  @javax.annotation.Nullable
-  @JsonIgnore
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_ORIGINATING_PROVIDER_ID, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getOriginatingProviderId() {
-        return originatingProviderId.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_ORIGINATING_PROVIDER_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getOriginatingProviderId_JsonNullable() {
     return originatingProviderId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ORIGINATING_PROVIDER_ID)
-  public void setOriginatingProviderId_JsonNullable(JsonNullable<String> originatingProviderId) {
-    this.originatingProviderId = originatingProviderId;
-  }
 
-  public void setOriginatingProviderId(@javax.annotation.Nullable String originatingProviderId) {
-    this.originatingProviderId = JsonNullable.<String>of(originatingProviderId);
+
+  @JsonProperty(value = JSON_PROPERTY_ORIGINATING_PROVIDER_ID, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setOriginatingProviderId(@javax.annotation.Nonnull String originatingProviderId) {
+    this.originatingProviderId = originatingProviderId;
   }
 
 
@@ -315,7 +308,7 @@ public class IdentityData {
       return false;
     }
     IdentityData identityData = (IdentityData) o;
-    return equalsNullable(this.originatingProviderId, identityData.originatingProviderId) &&
+    return Objects.equals(this.originatingProviderId, identityData.originatingProviderId) &&
         equalsNullable(this.originatingSubProviderId, identityData.originatingSubProviderId) &&
         equalsNullable(this.person, identityData.person) &&
         equalsNullable(this.document, identityData.document) &&
@@ -330,7 +323,7 @@ public class IdentityData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(originatingProviderId), hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), attachments, hashCodeNullable(providerOutput));
+    return Objects.hash(originatingProviderId, hashCodeNullable(originatingSubProviderId), hashCodeNullable(person), hashCodeNullable(document), hashCodeNullable(match), attachments, hashCodeNullable(providerOutput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

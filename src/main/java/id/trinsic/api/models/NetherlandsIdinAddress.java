@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -35,133 +39,244 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   NetherlandsIdinAddress.JSON_PROPERTY_STREET,
   NetherlandsIdinAddress.JSON_PROPERTY_HOUSE_NUMBER,
+  NetherlandsIdinAddress.JSON_PROPERTY_HOUSE_NUMBER_SUFFIX,
+  NetherlandsIdinAddress.JSON_PROPERTY_ADDRESS_EXTRA,
   NetherlandsIdinAddress.JSON_PROPERTY_POSTAL_CODE,
   NetherlandsIdinAddress.JSON_PROPERTY_CITY,
-  NetherlandsIdinAddress.JSON_PROPERTY_COUNTRY_CODE
+  NetherlandsIdinAddress.JSON_PROPERTY_COUNTRY_CODE,
+  NetherlandsIdinAddress.JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE1,
+  NetherlandsIdinAddress.JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE2,
+  NetherlandsIdinAddress.JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE3
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NetherlandsIdinAddress {
   public static final String JSON_PROPERTY_STREET = "street";
-  @javax.annotation.Nonnull
-  private String street;
+  private JsonNullable<String> street = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_HOUSE_NUMBER = "houseNumber";
-  @javax.annotation.Nonnull
-  private String houseNumber;
+  private JsonNullable<String> houseNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_HOUSE_NUMBER_SUFFIX = "houseNumberSuffix";
+  private JsonNullable<String> houseNumberSuffix = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ADDRESS_EXTRA = "addressExtra";
+  private JsonNullable<String> addressExtra = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postalCode";
-  @javax.annotation.Nonnull
-  private String postalCode;
+  private JsonNullable<String> postalCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CITY = "city";
-  @javax.annotation.Nonnull
-  private String city;
+  private JsonNullable<String> city = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COUNTRY_CODE = "countryCode";
-  @javax.annotation.Nonnull
-  private String countryCode;
+  private JsonNullable<String> countryCode = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE1 = "internationalAddressLine1";
+  private JsonNullable<String> internationalAddressLine1 = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE2 = "internationalAddressLine2";
+  private JsonNullable<String> internationalAddressLine2 = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE3 = "internationalAddressLine3";
+  private JsonNullable<String> internationalAddressLine3 = JsonNullable.<String>undefined();
 
   public NetherlandsIdinAddress() { 
   }
 
-  public NetherlandsIdinAddress street(@javax.annotation.Nonnull String street) {
-    this.street = street;
+  public NetherlandsIdinAddress street(@javax.annotation.Nullable String street) {
+    this.street = JsonNullable.<String>of(street);
     return this;
   }
 
   /**
-   * Street name of the individual&#39;s address.
+   * Street name of the individual&#39;s domestic address.
    * @return street
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_STREET, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getStreet() {
-    return street;
+        return street.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_STREET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_STREET, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStreet(@javax.annotation.Nonnull String street) {
+  public JsonNullable<String> getStreet_JsonNullable() {
+    return street;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_STREET)
+  public void setStreet_JsonNullable(JsonNullable<String> street) {
     this.street = street;
   }
 
+  public void setStreet(@javax.annotation.Nullable String street) {
+    this.street = JsonNullable.<String>of(street);
+  }
 
-  public NetherlandsIdinAddress houseNumber(@javax.annotation.Nonnull String houseNumber) {
-    this.houseNumber = houseNumber;
+
+  public NetherlandsIdinAddress houseNumber(@javax.annotation.Nullable String houseNumber) {
+    this.houseNumber = JsonNullable.<String>of(houseNumber);
     return this;
   }
 
   /**
-   * House number of the individual&#39;s address.
+   * House number of the individual&#39;s domestic address.
    * @return houseNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_HOUSE_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getHouseNumber() {
-    return houseNumber;
+        return houseNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_HOUSE_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_HOUSE_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHouseNumber(@javax.annotation.Nonnull String houseNumber) {
+  public JsonNullable<String> getHouseNumber_JsonNullable() {
+    return houseNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_HOUSE_NUMBER)
+  public void setHouseNumber_JsonNullable(JsonNullable<String> houseNumber) {
     this.houseNumber = houseNumber;
   }
 
+  public void setHouseNumber(@javax.annotation.Nullable String houseNumber) {
+    this.houseNumber = JsonNullable.<String>of(houseNumber);
+  }
 
-  public NetherlandsIdinAddress postalCode(@javax.annotation.Nonnull String postalCode) {
-    this.postalCode = postalCode;
+
+  public NetherlandsIdinAddress houseNumberSuffix(@javax.annotation.Nullable String houseNumberSuffix) {
+    this.houseNumberSuffix = JsonNullable.<String>of(houseNumberSuffix);
     return this;
   }
 
   /**
-   * Postal code of the individual&#39;s address.              A postal code in The Netherlands is a 4-digit number and two letters.
+   * House number suffix of the individual&#39;s domestic address.
+   * @return houseNumberSuffix
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getHouseNumberSuffix() {
+        return houseNumberSuffix.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_HOUSE_NUMBER_SUFFIX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getHouseNumberSuffix_JsonNullable() {
+    return houseNumberSuffix;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_HOUSE_NUMBER_SUFFIX)
+  public void setHouseNumberSuffix_JsonNullable(JsonNullable<String> houseNumberSuffix) {
+    this.houseNumberSuffix = houseNumberSuffix;
+  }
+
+  public void setHouseNumberSuffix(@javax.annotation.Nullable String houseNumberSuffix) {
+    this.houseNumberSuffix = JsonNullable.<String>of(houseNumberSuffix);
+  }
+
+
+  public NetherlandsIdinAddress addressExtra(@javax.annotation.Nullable String addressExtra) {
+    this.addressExtra = JsonNullable.<String>of(addressExtra);
+    return this;
+  }
+
+  /**
+   * Additional domestic address information returned by iDIN.
+   * @return addressExtra
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getAddressExtra() {
+        return addressExtra.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS_EXTRA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getAddressExtra_JsonNullable() {
+    return addressExtra;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS_EXTRA)
+  public void setAddressExtra_JsonNullable(JsonNullable<String> addressExtra) {
+    this.addressExtra = addressExtra;
+  }
+
+  public void setAddressExtra(@javax.annotation.Nullable String addressExtra) {
+    this.addressExtra = JsonNullable.<String>of(addressExtra);
+  }
+
+
+  public NetherlandsIdinAddress postalCode(@javax.annotation.Nullable String postalCode) {
+    this.postalCode = JsonNullable.<String>of(postalCode);
+    return this;
+  }
+
+  /**
+   * Postal code of the individual&#39;s domestic address.              A postal code in The Netherlands is a 4-digit number and two letters.
    * @return postalCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPostalCode() {
-    return postalCode;
+        return postalCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPostalCode(@javax.annotation.Nonnull String postalCode) {
+  public JsonNullable<String> getPostalCode_JsonNullable() {
+    return postalCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  public void setPostalCode_JsonNullable(JsonNullable<String> postalCode) {
     this.postalCode = postalCode;
   }
 
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
+    this.postalCode = JsonNullable.<String>of(postalCode);
+  }
 
-  public NetherlandsIdinAddress city(@javax.annotation.Nonnull String city) {
-    this.city = city;
+
+  public NetherlandsIdinAddress city(@javax.annotation.Nullable String city) {
+    this.city = JsonNullable.<String>of(city);
     return this;
   }
 
   /**
-   * City of the individual&#39;s address.
+   * City of the individual&#39;s domestic address.
    * @return city
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCity() {
-    return city;
+        return city.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCity(@javax.annotation.Nonnull String city) {
+  public JsonNullable<String> getCity_JsonNullable() {
+    return city;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CITY)
+  public void setCity_JsonNullable(JsonNullable<String> city) {
     this.city = city;
   }
 
+  public void setCity(@javax.annotation.Nullable String city) {
+    this.city = JsonNullable.<String>of(city);
+  }
 
-  public NetherlandsIdinAddress countryCode(@javax.annotation.Nonnull String countryCode) {
-    this.countryCode = countryCode;
+
+  public NetherlandsIdinAddress countryCode(@javax.annotation.Nullable String countryCode) {
+    this.countryCode = JsonNullable.<String>of(countryCode);
     return this;
   }
 
@@ -169,18 +284,122 @@ public class NetherlandsIdinAddress {
    * Country code of the individual&#39;s address in ISO 3166-1 alpha-2 format.
    * @return countryCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCountryCode() {
+        return countryCode.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCountryCode_JsonNullable() {
     return countryCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+  public void setCountryCode_JsonNullable(JsonNullable<String> countryCode) {
+    this.countryCode = countryCode;
+  }
+
+  public void setCountryCode(@javax.annotation.Nullable String countryCode) {
+    this.countryCode = JsonNullable.<String>of(countryCode);
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCountryCode(@javax.annotation.Nonnull String countryCode) {
-    this.countryCode = countryCode;
+  public NetherlandsIdinAddress internationalAddressLine1(@javax.annotation.Nullable String internationalAddressLine1) {
+    this.internationalAddressLine1 = JsonNullable.<String>of(internationalAddressLine1);
+    return this;
+  }
+
+  /**
+   * First line of the individual&#39;s international address.
+   * @return internationalAddressLine1
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getInternationalAddressLine1() {
+        return internationalAddressLine1.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE1, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getInternationalAddressLine1_JsonNullable() {
+    return internationalAddressLine1;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE1)
+  public void setInternationalAddressLine1_JsonNullable(JsonNullable<String> internationalAddressLine1) {
+    this.internationalAddressLine1 = internationalAddressLine1;
+  }
+
+  public void setInternationalAddressLine1(@javax.annotation.Nullable String internationalAddressLine1) {
+    this.internationalAddressLine1 = JsonNullable.<String>of(internationalAddressLine1);
+  }
+
+
+  public NetherlandsIdinAddress internationalAddressLine2(@javax.annotation.Nullable String internationalAddressLine2) {
+    this.internationalAddressLine2 = JsonNullable.<String>of(internationalAddressLine2);
+    return this;
+  }
+
+  /**
+   * Second line of the individual&#39;s international address.
+   * @return internationalAddressLine2
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getInternationalAddressLine2() {
+        return internationalAddressLine2.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE2, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getInternationalAddressLine2_JsonNullable() {
+    return internationalAddressLine2;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE2)
+  public void setInternationalAddressLine2_JsonNullable(JsonNullable<String> internationalAddressLine2) {
+    this.internationalAddressLine2 = internationalAddressLine2;
+  }
+
+  public void setInternationalAddressLine2(@javax.annotation.Nullable String internationalAddressLine2) {
+    this.internationalAddressLine2 = JsonNullable.<String>of(internationalAddressLine2);
+  }
+
+
+  public NetherlandsIdinAddress internationalAddressLine3(@javax.annotation.Nullable String internationalAddressLine3) {
+    this.internationalAddressLine3 = JsonNullable.<String>of(internationalAddressLine3);
+    return this;
+  }
+
+  /**
+   * Third line of the individual&#39;s international address.
+   * @return internationalAddressLine3
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getInternationalAddressLine3() {
+        return internationalAddressLine3.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE3, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getInternationalAddressLine3_JsonNullable() {
+    return internationalAddressLine3;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INTERNATIONAL_ADDRESS_LINE3)
+  public void setInternationalAddressLine3_JsonNullable(JsonNullable<String> internationalAddressLine3) {
+    this.internationalAddressLine3 = internationalAddressLine3;
+  }
+
+  public void setInternationalAddressLine3(@javax.annotation.Nullable String internationalAddressLine3) {
+    this.internationalAddressLine3 = JsonNullable.<String>of(internationalAddressLine3);
   }
 
 
@@ -196,16 +415,32 @@ public class NetherlandsIdinAddress {
       return false;
     }
     NetherlandsIdinAddress netherlandsIdinAddress = (NetherlandsIdinAddress) o;
-    return Objects.equals(this.street, netherlandsIdinAddress.street) &&
-        Objects.equals(this.houseNumber, netherlandsIdinAddress.houseNumber) &&
-        Objects.equals(this.postalCode, netherlandsIdinAddress.postalCode) &&
-        Objects.equals(this.city, netherlandsIdinAddress.city) &&
-        Objects.equals(this.countryCode, netherlandsIdinAddress.countryCode);
+    return equalsNullable(this.street, netherlandsIdinAddress.street) &&
+        equalsNullable(this.houseNumber, netherlandsIdinAddress.houseNumber) &&
+        equalsNullable(this.houseNumberSuffix, netherlandsIdinAddress.houseNumberSuffix) &&
+        equalsNullable(this.addressExtra, netherlandsIdinAddress.addressExtra) &&
+        equalsNullable(this.postalCode, netherlandsIdinAddress.postalCode) &&
+        equalsNullable(this.city, netherlandsIdinAddress.city) &&
+        equalsNullable(this.countryCode, netherlandsIdinAddress.countryCode) &&
+        equalsNullable(this.internationalAddressLine1, netherlandsIdinAddress.internationalAddressLine1) &&
+        equalsNullable(this.internationalAddressLine2, netherlandsIdinAddress.internationalAddressLine2) &&
+        equalsNullable(this.internationalAddressLine3, netherlandsIdinAddress.internationalAddressLine3);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(street, houseNumber, postalCode, city, countryCode);
+    return Objects.hash(hashCodeNullable(street), hashCodeNullable(houseNumber), hashCodeNullable(houseNumberSuffix), hashCodeNullable(addressExtra), hashCodeNullable(postalCode), hashCodeNullable(city), hashCodeNullable(countryCode), hashCodeNullable(internationalAddressLine1), hashCodeNullable(internationalAddressLine2), hashCodeNullable(internationalAddressLine3));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -214,9 +449,14 @@ public class NetherlandsIdinAddress {
     sb.append("class NetherlandsIdinAddress {\n");
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("    houseNumber: ").append(toIndentedString(houseNumber)).append("\n");
+    sb.append("    houseNumberSuffix: ").append(toIndentedString(houseNumberSuffix)).append("\n");
+    sb.append("    addressExtra: ").append(toIndentedString(addressExtra)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    internationalAddressLine1: ").append(toIndentedString(internationalAddressLine1)).append("\n");
+    sb.append("    internationalAddressLine2: ").append(toIndentedString(internationalAddressLine2)).append("\n");
+    sb.append("    internationalAddressLine3: ").append(toIndentedString(internationalAddressLine3)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -271,6 +511,16 @@ public class NetherlandsIdinAddress {
       joiner.add(String.format(java.util.Locale.ROOT, "%shouseNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHouseNumber()))));
     }
 
+    // add `houseNumberSuffix` to the URL query string
+    if (getHouseNumberSuffix() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%shouseNumberSuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHouseNumberSuffix()))));
+    }
+
+    // add `addressExtra` to the URL query string
+    if (getAddressExtra() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%saddressExtra%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddressExtra()))));
+    }
+
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
@@ -284,6 +534,21 @@ public class NetherlandsIdinAddress {
     // add `countryCode` to the URL query string
     if (getCountryCode() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scountryCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryCode()))));
+    }
+
+    // add `internationalAddressLine1` to the URL query string
+    if (getInternationalAddressLine1() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sinternationalAddressLine1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInternationalAddressLine1()))));
+    }
+
+    // add `internationalAddressLine2` to the URL query string
+    if (getInternationalAddressLine2() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sinternationalAddressLine2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInternationalAddressLine2()))));
+    }
+
+    // add `internationalAddressLine3` to the URL query string
+    if (getInternationalAddressLine3() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sinternationalAddressLine3%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInternationalAddressLine3()))));
     }
 
     return joiner.toString();

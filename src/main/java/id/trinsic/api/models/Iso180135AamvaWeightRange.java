@@ -40,11 +40,10 @@ import id.trinsic.ApiClient;
   Iso180135AamvaWeightRange.JSON_PROPERTY_MIN_KILOGRAMS,
   Iso180135AamvaWeightRange.JSON_PROPERTY_MAX_KILOGRAMS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135AamvaWeightRange {
   public static final String JSON_PROPERTY_MIN_KILOGRAMS = "minKilograms";
-  @javax.annotation.Nonnull
-  private Integer minKilograms;
+  private JsonNullable<Integer> minKilograms = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_MAX_KILOGRAMS = "maxKilograms";
   private JsonNullable<Integer> maxKilograms = JsonNullable.<Integer>undefined();
@@ -52,8 +51,8 @@ public class Iso180135AamvaWeightRange {
   public Iso180135AamvaWeightRange() { 
   }
 
-  public Iso180135AamvaWeightRange minKilograms(@javax.annotation.Nonnull Integer minKilograms) {
-    this.minKilograms = minKilograms;
+  public Iso180135AamvaWeightRange minKilograms(@javax.annotation.Nullable Integer minKilograms) {
+    this.minKilograms = JsonNullable.<Integer>of(minKilograms);
     return this;
   }
 
@@ -61,18 +60,26 @@ public class Iso180135AamvaWeightRange {
    * Minimum weight in the range, in kilograms.
    * @return minKilograms
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_MIN_KILOGRAMS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getMinKilograms() {
-    return minKilograms;
+        return minKilograms.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_MIN_KILOGRAMS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_MIN_KILOGRAMS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMinKilograms(@javax.annotation.Nonnull Integer minKilograms) {
+  public JsonNullable<Integer> getMinKilograms_JsonNullable() {
+    return minKilograms;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MIN_KILOGRAMS)
+  public void setMinKilograms_JsonNullable(JsonNullable<Integer> minKilograms) {
     this.minKilograms = minKilograms;
+  }
+
+  public void setMinKilograms(@javax.annotation.Nullable Integer minKilograms) {
+    this.minKilograms = JsonNullable.<Integer>of(minKilograms);
   }
 
 
@@ -120,7 +127,7 @@ public class Iso180135AamvaWeightRange {
       return false;
     }
     Iso180135AamvaWeightRange iso180135AamvaWeightRange = (Iso180135AamvaWeightRange) o;
-    return Objects.equals(this.minKilograms, iso180135AamvaWeightRange.minKilograms) &&
+    return equalsNullable(this.minKilograms, iso180135AamvaWeightRange.minKilograms) &&
         equalsNullable(this.maxKilograms, iso180135AamvaWeightRange.maxKilograms);
   }
 
@@ -130,7 +137,7 @@ public class Iso180135AamvaWeightRange {
 
   @Override
   public int hashCode() {
-    return Objects.hash(minKilograms, hashCodeNullable(maxKilograms));
+    return Objects.hash(hashCodeNullable(minKilograms), hashCodeNullable(maxKilograms));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

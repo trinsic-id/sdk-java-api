@@ -38,7 +38,7 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionResponse.JSON_PROPERTY_LAUNCH_URL,
   CreateHostedProviderSessionResponse.JSON_PROPERTY_RESULTS_ACCESS_KEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CreateHostedProviderSessionResponse {
   public static final String JSON_PROPERTY_SESSION_ID = "sessionId";
   @javax.annotation.Nonnull
@@ -85,7 +85,7 @@ public class CreateHostedProviderSessionResponse {
   }
 
   /**
-   * The URL that should be used to launch the Hosted Provider Session on your user&#39;s device.              There are two recommended ways to do so: - Redirect their browser to the &#x60;LaunchUrl&#x60; as a top-level navigation - Open a popup window and navigate it to the &#x60;LaunchUrl&#x60;              This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
+   * The URL that should be used to launch the Hosted Provider Session on your user&#39;s device.              Redirect the user&#39;s browser to the &#x60;LaunchUrl&#x60; as a top-level navigation              This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
    * @return launchUrl
    */
   @javax.annotation.Nonnull

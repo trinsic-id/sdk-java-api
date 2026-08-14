@@ -44,32 +44,28 @@ import id.trinsic.ApiClient;
   BoliviaCiProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   BoliviaCiProviderOutput.JSON_PROPERTY_DOCUMENT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BoliviaCiProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private String fullName;
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
-  @javax.annotation.Nonnull
-  private String givenName;
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
-  @javax.annotation.Nonnull
-  private String familyName;
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
-  @javax.annotation.Nonnull
-  private String documentNumber;
+  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
 
   public BoliviaCiProviderOutput() { 
   }
 
-  public BoliviaCiProviderOutput fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
+  public BoliviaCiProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
 
@@ -77,23 +73,31 @@ public class BoliviaCiProviderOutput {
    * Full name as it appears on the CI (Cédula de Identidad).
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
 
-  public BoliviaCiProviderOutput givenName(@javax.annotation.Nonnull String givenName) {
-    this.givenName = givenName;
+
+  public BoliviaCiProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
 
@@ -101,23 +105,31 @@ public class BoliviaCiProviderOutput {
    * Given name(s) of the holder as they appear on the CI (Cédula de Identidad).
    * @return givenName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGivenName() {
-    return givenName;
+        return givenName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGivenName(@javax.annotation.Nonnull String givenName) {
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
     this.givenName = givenName;
   }
 
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
 
-  public BoliviaCiProviderOutput familyName(@javax.annotation.Nonnull String familyName) {
-    this.familyName = familyName;
+
+  public BoliviaCiProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
@@ -125,18 +137,26 @@ public class BoliviaCiProviderOutput {
    * Family name(s) of the holder (paternal and maternal) as they appear on the CI (Cédula de Identidad).
    * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFamilyName() {
-    return familyName;
+        return familyName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
     this.familyName = familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
@@ -172,8 +192,8 @@ public class BoliviaCiProviderOutput {
   }
 
 
-  public BoliviaCiProviderOutput documentNumber(@javax.annotation.Nonnull String documentNumber) {
-    this.documentNumber = documentNumber;
+  public BoliviaCiProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
     return this;
   }
 
@@ -181,18 +201,26 @@ public class BoliviaCiProviderOutput {
    * The CI (Cédula de Identidad) document number for the matched record.              The document is officially called the Cédula de Identidad and is commonly called carnet or carnet de identidad in Bolivia. This is the identifier assigned by the Servicio General de Identificación Personal (SEGIP) in the Registro Único de Identificación (RUI). The value is entirely numeric. There is no verification digit or other data encoded in the number.              Published regulations do not define a fixed length; digit count may vary.
    * @return documentNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentNumber() {
-    return documentNumber;
+        return documentNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentNumber(@javax.annotation.Nonnull String documentNumber) {
+  public JsonNullable<String> getDocumentNumber_JsonNullable() {
+    return documentNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
     this.documentNumber = documentNumber;
+  }
+
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
   }
 
 
@@ -208,11 +236,11 @@ public class BoliviaCiProviderOutput {
       return false;
     }
     BoliviaCiProviderOutput boliviaCiProviderOutput = (BoliviaCiProviderOutput) o;
-    return Objects.equals(this.fullName, boliviaCiProviderOutput.fullName) &&
-        Objects.equals(this.givenName, boliviaCiProviderOutput.givenName) &&
-        Objects.equals(this.familyName, boliviaCiProviderOutput.familyName) &&
+    return equalsNullable(this.fullName, boliviaCiProviderOutput.fullName) &&
+        equalsNullable(this.givenName, boliviaCiProviderOutput.givenName) &&
+        equalsNullable(this.familyName, boliviaCiProviderOutput.familyName) &&
         equalsNullable(this.dateOfBirth, boliviaCiProviderOutput.dateOfBirth) &&
-        Objects.equals(this.documentNumber, boliviaCiProviderOutput.documentNumber);
+        equalsNullable(this.documentNumber, boliviaCiProviderOutput.documentNumber);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -221,7 +249,7 @@ public class BoliviaCiProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fullName, givenName, familyName, hashCodeNullable(dateOfBirth), documentNumber);
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(documentNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

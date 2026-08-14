@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,21 +41,19 @@ import id.trinsic.ApiClient;
   Iso180132BiometricValidityPeriod.JSON_PROPERTY_NOT_BEFORE,
   Iso180132BiometricValidityPeriod.JSON_PROPERTY_NOT_AFTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180132BiometricValidityPeriod {
   public static final String JSON_PROPERTY_NOT_BEFORE = "notBefore";
-  @javax.annotation.Nonnull
-  private LocalDate notBefore;
+  private JsonNullable<LocalDate> notBefore = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_NOT_AFTER = "notAfter";
-  @javax.annotation.Nonnull
-  private LocalDate notAfter;
+  private JsonNullable<LocalDate> notAfter = JsonNullable.<LocalDate>undefined();
 
   public Iso180132BiometricValidityPeriod() { 
   }
 
-  public Iso180132BiometricValidityPeriod notBefore(@javax.annotation.Nonnull LocalDate notBefore) {
-    this.notBefore = notBefore;
+  public Iso180132BiometricValidityPeriod notBefore(@javax.annotation.Nullable LocalDate notBefore) {
+    this.notBefore = JsonNullable.<LocalDate>of(notBefore);
     return this;
   }
 
@@ -59,23 +61,31 @@ public class Iso180132BiometricValidityPeriod {
    * Date the biometric data block becomes valid.
    * @return notBefore
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getNotBefore() {
-    return notBefore;
+        return notBefore.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNotBefore(@javax.annotation.Nonnull LocalDate notBefore) {
+  public JsonNullable<LocalDate> getNotBefore_JsonNullable() {
+    return notBefore;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NOT_BEFORE)
+  public void setNotBefore_JsonNullable(JsonNullable<LocalDate> notBefore) {
     this.notBefore = notBefore;
   }
 
+  public void setNotBefore(@javax.annotation.Nullable LocalDate notBefore) {
+    this.notBefore = JsonNullable.<LocalDate>of(notBefore);
+  }
 
-  public Iso180132BiometricValidityPeriod notAfter(@javax.annotation.Nonnull LocalDate notAfter) {
-    this.notAfter = notAfter;
+
+  public Iso180132BiometricValidityPeriod notAfter(@javax.annotation.Nullable LocalDate notAfter) {
+    this.notAfter = JsonNullable.<LocalDate>of(notAfter);
     return this;
   }
 
@@ -83,18 +93,26 @@ public class Iso180132BiometricValidityPeriod {
    * Date the biometric data block expires.
    * @return notAfter
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getNotAfter() {
-    return notAfter;
+        return notAfter.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNotAfter(@javax.annotation.Nonnull LocalDate notAfter) {
+  public JsonNullable<LocalDate> getNotAfter_JsonNullable() {
+    return notAfter;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NOT_AFTER)
+  public void setNotAfter_JsonNullable(JsonNullable<LocalDate> notAfter) {
     this.notAfter = notAfter;
+  }
+
+  public void setNotAfter(@javax.annotation.Nullable LocalDate notAfter) {
+    this.notAfter = JsonNullable.<LocalDate>of(notAfter);
   }
 
 
@@ -110,13 +128,24 @@ public class Iso180132BiometricValidityPeriod {
       return false;
     }
     Iso180132BiometricValidityPeriod iso180132BiometricValidityPeriod = (Iso180132BiometricValidityPeriod) o;
-    return Objects.equals(this.notBefore, iso180132BiometricValidityPeriod.notBefore) &&
-        Objects.equals(this.notAfter, iso180132BiometricValidityPeriod.notAfter);
+    return equalsNullable(this.notBefore, iso180132BiometricValidityPeriod.notBefore) &&
+        equalsNullable(this.notAfter, iso180132BiometricValidityPeriod.notAfter);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(notBefore, notAfter);
+    return Objects.hash(hashCodeNullable(notBefore), hashCodeNullable(notAfter));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

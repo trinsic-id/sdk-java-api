@@ -48,31 +48,25 @@ import id.trinsic.ApiClient;
   ZimbabweNidLookup2ProviderOutput.JSON_PROPERTY_IS_ALIVE,
   ZimbabweNidLookup2ProviderOutput.JSON_PROPERTY_DATE_OF_DEATH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ZimbabweNidLookup2ProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
-  @javax.annotation.Nonnull
-  private String nationalIdNumber;
+  private JsonNullable<String> nationalIdNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
-  @javax.annotation.Nonnull
-  private String givenName;
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
-  @javax.annotation.Nonnull
-  private String familyName;
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private String fullName;
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
-  @javax.annotation.Nonnull
-  private String sex;
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "placeOfBirth";
   private JsonNullable<String> placeOfBirth = JsonNullable.<String>undefined();
@@ -86,8 +80,8 @@ public class ZimbabweNidLookup2ProviderOutput {
   public ZimbabweNidLookup2ProviderOutput() { 
   }
 
-  public ZimbabweNidLookup2ProviderOutput nationalIdNumber(@javax.annotation.Nonnull String nationalIdNumber) {
-    this.nationalIdNumber = nationalIdNumber;
+  public ZimbabweNidLookup2ProviderOutput nationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
     return this;
   }
 
@@ -95,23 +89,31 @@ public class ZimbabweNidLookup2ProviderOutput {
    * Zimbabwe National ID number (NID) issued by the Zimbabwean government.              Format: - 8-9 digits followed by 1 letter and 2 digits - Regex: /^[0-9]{8,9}[A-Za-z]\\d{2}$/ - There is no publicly documented encoding scheme for encoding personal information in the NID - No check digit or algorithm has been publicly documented by the Zimbabwean government
    * @return nationalIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNationalIdNumber() {
-    return nationalIdNumber;
+        return nationalIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdNumber(@javax.annotation.Nonnull String nationalIdNumber) {
+  public JsonNullable<String> getNationalIdNumber_JsonNullable() {
+    return nationalIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
+  public void setNationalIdNumber_JsonNullable(JsonNullable<String> nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
+  public void setNationalIdNumber(@javax.annotation.Nullable String nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<String>of(nationalIdNumber);
+  }
 
-  public ZimbabweNidLookup2ProviderOutput givenName(@javax.annotation.Nonnull String givenName) {
-    this.givenName = givenName;
+
+  public ZimbabweNidLookup2ProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
 
@@ -119,23 +121,31 @@ public class ZimbabweNidLookup2ProviderOutput {
    * Given name(s) of the individual.
    * @return givenName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGivenName() {
-    return givenName;
+        return givenName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGivenName(@javax.annotation.Nonnull String givenName) {
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
     this.givenName = givenName;
   }
 
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
 
-  public ZimbabweNidLookup2ProviderOutput familyName(@javax.annotation.Nonnull String familyName) {
-    this.familyName = familyName;
+
+  public ZimbabweNidLookup2ProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
@@ -143,23 +153,31 @@ public class ZimbabweNidLookup2ProviderOutput {
    * Family name of the individual.
    * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFamilyName() {
-    return familyName;
+        return familyName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
     this.familyName = familyName;
   }
 
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+  }
 
-  public ZimbabweNidLookup2ProviderOutput fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
+
+  public ZimbabweNidLookup2ProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
 
@@ -167,23 +185,31 @@ public class ZimbabweNidLookup2ProviderOutput {
    * Full name of the individual.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
 
-  public ZimbabweNidLookup2ProviderOutput sex(@javax.annotation.Nonnull String sex) {
-    this.sex = sex;
+
+  public ZimbabweNidLookup2ProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
     return this;
   }
 
@@ -191,23 +217,31 @@ public class ZimbabweNidLookup2ProviderOutput {
    * Sex of the individual.              Possible values: - Male - Female - Not Applicable - Unknown
    * @return sex
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSex() {
-    return sex;
+        return sex.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSex(@javax.annotation.Nonnull String sex) {
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
     this.sex = sex;
   }
 
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+  }
 
-  public ZimbabweNidLookup2ProviderOutput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public ZimbabweNidLookup2ProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
@@ -215,18 +249,26 @@ public class ZimbabweNidLookup2ProviderOutput {
    * Date of birth of the individual.
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
 
@@ -338,12 +380,12 @@ public class ZimbabweNidLookup2ProviderOutput {
       return false;
     }
     ZimbabweNidLookup2ProviderOutput zimbabweNidLookup2ProviderOutput = (ZimbabweNidLookup2ProviderOutput) o;
-    return Objects.equals(this.nationalIdNumber, zimbabweNidLookup2ProviderOutput.nationalIdNumber) &&
-        Objects.equals(this.givenName, zimbabweNidLookup2ProviderOutput.givenName) &&
-        Objects.equals(this.familyName, zimbabweNidLookup2ProviderOutput.familyName) &&
-        Objects.equals(this.fullName, zimbabweNidLookup2ProviderOutput.fullName) &&
-        Objects.equals(this.sex, zimbabweNidLookup2ProviderOutput.sex) &&
-        Objects.equals(this.dateOfBirth, zimbabweNidLookup2ProviderOutput.dateOfBirth) &&
+    return equalsNullable(this.nationalIdNumber, zimbabweNidLookup2ProviderOutput.nationalIdNumber) &&
+        equalsNullable(this.givenName, zimbabweNidLookup2ProviderOutput.givenName) &&
+        equalsNullable(this.familyName, zimbabweNidLookup2ProviderOutput.familyName) &&
+        equalsNullable(this.fullName, zimbabweNidLookup2ProviderOutput.fullName) &&
+        equalsNullable(this.sex, zimbabweNidLookup2ProviderOutput.sex) &&
+        equalsNullable(this.dateOfBirth, zimbabweNidLookup2ProviderOutput.dateOfBirth) &&
         equalsNullable(this.placeOfBirth, zimbabweNidLookup2ProviderOutput.placeOfBirth) &&
         equalsNullable(this.isAlive, zimbabweNidLookup2ProviderOutput.isAlive) &&
         equalsNullable(this.dateOfDeath, zimbabweNidLookup2ProviderOutput.dateOfDeath);
@@ -355,7 +397,7 @@ public class ZimbabweNidLookup2ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nationalIdNumber, givenName, familyName, fullName, sex, dateOfBirth, hashCodeNullable(placeOfBirth), hashCodeNullable(isAlive), hashCodeNullable(dateOfDeath));
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(fullName), hashCodeNullable(sex), hashCodeNullable(dateOfBirth), hashCodeNullable(placeOfBirth), hashCodeNullable(isAlive), hashCodeNullable(dateOfDeath));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

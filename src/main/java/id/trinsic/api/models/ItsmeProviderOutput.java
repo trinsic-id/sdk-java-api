@@ -24,7 +24,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.ItsmeAddress;
+import id.trinsic.api.models.ItsmeBelgianIdentityCard;
+import id.trinsic.api.models.ItsmeBelgianNationalNumber;
+import id.trinsic.api.models.ItsmeDirectDevice;
+import id.trinsic.api.models.ItsmeIdentityDocument;
+import id.trinsic.api.models.ItsmePlaceOfBirth;
+import id.trinsic.api.models.ItsmeProviderAddress;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -36,43 +41,34 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * Exposed properties for the &#x60;a-itsme-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+ * Exposed properties for the &#x60;itsme&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
-  ItsmeProviderOutput.JSON_PROPERTY_FIRST_NAME,
-  ItsmeProviderOutput.JSON_PROPERTY_LAST_NAME,
   ItsmeProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
-  ItsmeProviderOutput.JSON_PROPERTY_HASHED_NATIONAL_REGISTER_NUMBER,
-  ItsmeProviderOutput.JSON_PROPERTY_NATIONAL_REGISTER_NUMBER,
   ItsmeProviderOutput.JSON_PROPERTY_EMAIL,
   ItsmeProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
+  ItsmeProviderOutput.JSON_PROPERTY_SUB,
+  ItsmeProviderOutput.JSON_PROPERTY_FULL_NAME,
+  ItsmeProviderOutput.JSON_PROPERTY_GIVEN_NAME,
+  ItsmeProviderOutput.JSON_PROPERTY_FAMILY_NAME,
+  ItsmeProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH_AS_STRING,
   ItsmeProviderOutput.JSON_PROPERTY_GENDER,
-  ItsmeProviderOutput.JSON_PROPERTY_NATIONALITY,
-  ItsmeProviderOutput.JSON_PROPERTY_BIRTH_PLACE,
-  ItsmeProviderOutput.JSON_PROPERTY_DOCUMENT_NUMBER,
-  ItsmeProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_EXPIRATION_DATE,
-  ItsmeProviderOutput.JSON_PROPERTY_LANGUAGE,
-  ItsmeProviderOutput.JSON_PROPERTY_ADDRESS
+  ItsmeProviderOutput.JSON_PROPERTY_LOCALE,
+  ItsmeProviderOutput.JSON_PROPERTY_PICTURE_URL,
+  ItsmeProviderOutput.JSON_PROPERTY_EMAIL_VERIFIED,
+  ItsmeProviderOutput.JSON_PROPERTY_PHONE_NUMBER_VERIFIED,
+  ItsmeProviderOutput.JSON_PROPERTY_ADDRESS,
+  ItsmeProviderOutput.JSON_PROPERTY_CITIZENSHIP,
+  ItsmeProviderOutput.JSON_PROPERTY_BELGIAN_NATIONAL_NUMBER,
+  ItsmeProviderOutput.JSON_PROPERTY_BELGIAN_IDENTITY_CARD,
+  ItsmeProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT,
+  ItsmeProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
+  ItsmeProviderOutput.JSON_PROPERTY_DEVICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ItsmeProviderOutput {
-  public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
-
-  public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
-
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
-
-  public static final String JSON_PROPERTY_HASHED_NATIONAL_REGISTER_NUMBER = "hashedNationalRegisterNumber";
-  private JsonNullable<String> hashedNationalRegisterNumber = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_NATIONAL_REGISTER_NUMBER = "nationalRegisterNumber";
-  private JsonNullable<String> nationalRegisterNumber = JsonNullable.<String>undefined();
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   private JsonNullable<String> email = JsonNullable.<String>undefined();
@@ -80,163 +76,89 @@ public class ItsmeProviderOutput {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
 
+  public static final String JSON_PROPERTY_SUB = "sub";
+  private JsonNullable<String> sub = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH_AS_STRING = "dateOfBirthAsString";
+  private JsonNullable<String> dateOfBirthAsString = JsonNullable.<String>undefined();
+
   public static final String JSON_PROPERTY_GENDER = "gender";
   private JsonNullable<String> gender = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_NATIONALITY = "nationality";
-  private JsonNullable<String> nationality = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_LOCALE = "locale";
+  private JsonNullable<String> locale = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_BIRTH_PLACE = "birthPlace";
-  private JsonNullable<String> birthPlace = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_PICTURE_URL = "pictureUrl";
+  private JsonNullable<String> pictureUrl = JsonNullable.<String>undefined();
 
-  public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
-  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_EMAIL_VERIFIED = "emailVerified";
+  private JsonNullable<Boolean> emailVerified = JsonNullable.<Boolean>undefined();
 
-  public static final String JSON_PROPERTY_IDENTITY_DOCUMENT_EXPIRATION_DATE = "identityDocumentExpirationDate";
-  private JsonNullable<LocalDate> identityDocumentExpirationDate = JsonNullable.<LocalDate>undefined();
-
-  public static final String JSON_PROPERTY_LANGUAGE = "language";
-  private JsonNullable<String> language = JsonNullable.<String>undefined();
+  public static final String JSON_PROPERTY_PHONE_NUMBER_VERIFIED = "phoneNumberVerified";
+  private JsonNullable<Boolean> phoneNumberVerified = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  private JsonNullable<ItsmeAddress> address = JsonNullable.<ItsmeAddress>undefined();
+  private JsonNullable<ItsmeProviderAddress> address = JsonNullable.<ItsmeProviderAddress>undefined();
+
+  public static final String JSON_PROPERTY_CITIZENSHIP = "citizenship";
+  private JsonNullable<String> citizenship = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_BELGIAN_NATIONAL_NUMBER = "belgianNationalNumber";
+  private JsonNullable<ItsmeBelgianNationalNumber> belgianNationalNumber = JsonNullable.<ItsmeBelgianNationalNumber>undefined();
+
+  public static final String JSON_PROPERTY_BELGIAN_IDENTITY_CARD = "belgianIdentityCard";
+  private JsonNullable<ItsmeBelgianIdentityCard> belgianIdentityCard = JsonNullable.<ItsmeBelgianIdentityCard>undefined();
+
+  public static final String JSON_PROPERTY_IDENTITY_DOCUMENT = "identityDocument";
+  private JsonNullable<ItsmeIdentityDocument> identityDocument = JsonNullable.<ItsmeIdentityDocument>undefined();
+
+  public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "placeOfBirth";
+  private JsonNullable<ItsmePlaceOfBirth> placeOfBirth = JsonNullable.<ItsmePlaceOfBirth>undefined();
+
+  public static final String JSON_PROPERTY_DEVICE = "device";
+  private JsonNullable<ItsmeDirectDevice> device = JsonNullable.<ItsmeDirectDevice>undefined();
 
   public ItsmeProviderOutput() { 
   }
 
-  public ItsmeProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public ItsmeProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
   /**
-   * The first name of the verified individual
-   * @return firstName
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getFirstName() {
-    return firstName;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
-  }
-
-
-  public ItsmeProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
-    return this;
-  }
-
-  /**
-   * The last name of the verified individual
-   * @return lastName
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getLastName() {
-    return lastName;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
-  }
-
-
-  public ItsmeProviderOutput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-    return this;
-  }
-
-  /**
-   * The date of birth of the verified individual
+   * The date of birth of the verified individual.              Availability by ID document issuing country: always returned for supported issuing countries except Belgium, where it is best effort.
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
-
-  public ItsmeProviderOutput hashedNationalRegisterNumber(@javax.annotation.Nullable String hashedNationalRegisterNumber) {
-    this.hashedNationalRegisterNumber = JsonNullable.<String>of(hashedNationalRegisterNumber);
-    return this;
-  }
-
-  /**
-   * The hashed version of the Belgian National Register Number of the verified individual.              By default, itsme does not return the raw National Register Number of the individual; instead, only a hashed version is returned.              Your account must be approved by itsme to receive the raw, unhashed National Register Number.
-   * @return hashedNationalRegisterNumber
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getHashedNationalRegisterNumber() {
-        return hashedNationalRegisterNumber.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_HASHED_NATIONAL_REGISTER_NUMBER, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getHashedNationalRegisterNumber_JsonNullable() {
-    return hashedNationalRegisterNumber;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_HASHED_NATIONAL_REGISTER_NUMBER)
-  public void setHashedNationalRegisterNumber_JsonNullable(JsonNullable<String> hashedNationalRegisterNumber) {
-    this.hashedNationalRegisterNumber = hashedNationalRegisterNumber;
-  }
-
-  public void setHashedNationalRegisterNumber(@javax.annotation.Nullable String hashedNationalRegisterNumber) {
-    this.hashedNationalRegisterNumber = JsonNullable.<String>of(hashedNationalRegisterNumber);
-  }
-
-
-  public ItsmeProviderOutput nationalRegisterNumber(@javax.annotation.Nullable String nationalRegisterNumber) {
-    this.nationalRegisterNumber = JsonNullable.<String>of(nationalRegisterNumber);
-    return this;
-  }
-
-  /**
-   * The raw (not hashed) Belgian National Register Number (\&quot;Rijksregisternummer\&quot;) of the verified individual.              Only returned if your account has been explicitly authorized to receive it by itsme; by law, this data is considered sensitive personal data.              This is an 11-digit number in the format YYMMDDXXXCC, where: - YYMMDD represents the individual&#39;s date of birth (year, month, day). - XXX is a sequential birth number, odd for females and even for males. - CC is a checksum, calculated with the equation: 97 - (YYMMDDXXX mod 97)              For births in the year 2000 or later, the digit &#39;2&#39; is prepended to the first 9 digits during checksum calculation.
-   * @return nationalRegisterNumber
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getNationalRegisterNumber() {
-        return nationalRegisterNumber.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_NUMBER, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getNationalRegisterNumber_JsonNullable() {
-    return nationalRegisterNumber;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_NATIONAL_REGISTER_NUMBER)
-  public void setNationalRegisterNumber_JsonNullable(JsonNullable<String> nationalRegisterNumber) {
-    this.nationalRegisterNumber = nationalRegisterNumber;
-  }
-
-  public void setNationalRegisterNumber(@javax.annotation.Nullable String nationalRegisterNumber) {
-    this.nationalRegisterNumber = JsonNullable.<String>of(nationalRegisterNumber);
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
 
@@ -246,7 +168,7 @@ public class ItsmeProviderOutput {
   }
 
   /**
-   * The individual&#39;s email address.
+   * The email address of the verified individual.              Availability by ID document issuing country: best effort for all supported issuing countries.
    * @return email
    */
   @javax.annotation.Nullable
@@ -278,7 +200,7 @@ public class ItsmeProviderOutput {
   }
 
   /**
-   * The individual&#39;s phone number in international format.
+   * The phone number of the verified individual, with a leading + country calling code.              Availability by ID document issuing country: always returned for all supported issuing countries.
    * @return phoneNumber
    */
   @javax.annotation.Nullable
@@ -304,13 +226,173 @@ public class ItsmeProviderOutput {
   }
 
 
+  public ItsmeProviderOutput sub(@javax.annotation.Nullable String sub) {
+    this.sub = JsonNullable.<String>of(sub);
+    return this;
+  }
+
+  /**
+   * The stable OpenID Connect (OIDC) subject (sub) identifier.              This should be a stable identifier, however, if a user deletes and recreates an account, this identifier will change.
+   * @return sub
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSub() {
+        return sub.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SUB, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSub_JsonNullable() {
+    return sub;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUB)
+  public void setSub_JsonNullable(JsonNullable<String> sub) {
+    this.sub = sub;
+  }
+
+  public void setSub(@javax.annotation.Nullable String sub) {
+    this.sub = JsonNullable.<String>of(sub);
+  }
+
+
+  public ItsmeProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+    return this;
+  }
+
+  /**
+   * The full name of the verified individual.              Availability by ID document issuing country: always returned for all supported issuing countries.
+   * @return fullName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFullName() {
+        return fullName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
+    this.fullName = fullName;
+  }
+
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
+
+
+  public ItsmeProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+    return this;
+  }
+
+  /**
+   * The given name of the verified individual.              Availability by ID document issuing country: best effort for all supported issuing countries.
+   * @return givenName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getGivenName() {
+        return givenName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
+    this.givenName = givenName;
+  }
+
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
+
+
+  public ItsmeProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+    return this;
+  }
+
+  /**
+   * The family name of the verified individual.              Availability by ID document issuing country: always returned for all supported issuing countries.
+   * @return familyName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getFamilyName() {
+        return familyName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
+    this.familyName = familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+  }
+
+
+  public ItsmeProviderOutput dateOfBirthAsString(@javax.annotation.Nullable String dateOfBirthAsString) {
+    this.dateOfBirthAsString = JsonNullable.<String>of(dateOfBirthAsString);
+    return this;
+  }
+
+  /**
+   * The date of birth of the verified individual in itsme&#39;s document-facing string format.              Availability by ID document issuing country: best effort for Belgian-issued ID documents; not returned for other supported issuing countries.
+   * @return dateOfBirthAsString
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDateOfBirthAsString() {
+        return dateOfBirthAsString.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH_AS_STRING, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDateOfBirthAsString_JsonNullable() {
+    return dateOfBirthAsString;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH_AS_STRING)
+  public void setDateOfBirthAsString_JsonNullable(JsonNullable<String> dateOfBirthAsString) {
+    this.dateOfBirthAsString = dateOfBirthAsString;
+  }
+
+  public void setDateOfBirthAsString(@javax.annotation.Nullable String dateOfBirthAsString) {
+    this.dateOfBirthAsString = JsonNullable.<String>of(dateOfBirthAsString);
+  }
+
+
   public ItsmeProviderOutput gender(@javax.annotation.Nullable String gender) {
     this.gender = JsonNullable.<String>of(gender);
     return this;
   }
 
   /**
-   * The individual&#39;s gender.              Possible values: - Male - Female - Unknown - Not Applicable
+   * The gender claim for the verified individual.              Availability by ID document issuing country: always returned for supported issuing countries except Netherlands, where it is best effort.              Known values: - Female - Male - Unknown
    * @return gender
    */
   @javax.annotation.Nullable
@@ -336,195 +418,355 @@ public class ItsmeProviderOutput {
   }
 
 
-  public ItsmeProviderOutput nationality(@javax.annotation.Nullable String nationality) {
-    this.nationality = JsonNullable.<String>of(nationality);
+  public ItsmeProviderOutput locale(@javax.annotation.Nullable String locale) {
+    this.locale = JsonNullable.<String>of(locale);
     return this;
   }
 
   /**
-   * The individual&#39;s nationality as an ISO 3166-1 alpha-3 code.
-   * @return nationality
+   * The itsme app language as an uppercase language code.              Availability by ID document issuing country: best effort for all supported issuing countries.              Known values: - NL - FR - DE - EN
+   * @return locale
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getNationality() {
-        return nationality.orElse(null);
+  public String getLocale() {
+        return locale.orElse(null);
   }
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONALITY, required = false)
+  @JsonProperty(value = JSON_PROPERTY_LOCALE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getNationality_JsonNullable() {
-    return nationality;
+  public JsonNullable<String> getLocale_JsonNullable() {
+    return locale;
   }
   
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  public void setNationality_JsonNullable(JsonNullable<String> nationality) {
-    this.nationality = nationality;
+  @JsonProperty(JSON_PROPERTY_LOCALE)
+  public void setLocale_JsonNullable(JsonNullable<String> locale) {
+    this.locale = locale;
   }
 
-  public void setNationality(@javax.annotation.Nullable String nationality) {
-    this.nationality = JsonNullable.<String>of(nationality);
+  public void setLocale(@javax.annotation.Nullable String locale) {
+    this.locale = JsonNullable.<String>of(locale);
   }
 
 
-  public ItsmeProviderOutput birthPlace(@javax.annotation.Nullable String birthPlace) {
-    this.birthPlace = JsonNullable.<String>of(birthPlace);
+  public ItsmeProviderOutput pictureUrl(@javax.annotation.Nullable String pictureUrl) {
+    this.pictureUrl = JsonNullable.<String>of(pictureUrl);
     return this;
   }
 
   /**
-   * The individual&#39;s place of birth.
-   * @return birthPlace
+   * The URL of the profile picture resource.              Availability by ID document issuing country: always returned for supported issuing countries except Belgium, where it is best effort.
+   * @return pictureUrl
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getBirthPlace() {
-        return birthPlace.orElse(null);
+  public String getPictureUrl() {
+        return pictureUrl.orElse(null);
   }
 
-  @JsonProperty(value = JSON_PROPERTY_BIRTH_PLACE, required = false)
+  @JsonProperty(value = JSON_PROPERTY_PICTURE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getBirthPlace_JsonNullable() {
-    return birthPlace;
+  public JsonNullable<String> getPictureUrl_JsonNullable() {
+    return pictureUrl;
   }
   
-  @JsonProperty(JSON_PROPERTY_BIRTH_PLACE)
-  public void setBirthPlace_JsonNullable(JsonNullable<String> birthPlace) {
-    this.birthPlace = birthPlace;
+  @JsonProperty(JSON_PROPERTY_PICTURE_URL)
+  public void setPictureUrl_JsonNullable(JsonNullable<String> pictureUrl) {
+    this.pictureUrl = pictureUrl;
   }
 
-  public void setBirthPlace(@javax.annotation.Nullable String birthPlace) {
-    this.birthPlace = JsonNullable.<String>of(birthPlace);
+  public void setPictureUrl(@javax.annotation.Nullable String pictureUrl) {
+    this.pictureUrl = JsonNullable.<String>of(pictureUrl);
   }
 
 
-  public ItsmeProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
-    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  public ItsmeProviderOutput emailVerified(@javax.annotation.Nullable Boolean emailVerified) {
+    this.emailVerified = JsonNullable.<Boolean>of(emailVerified);
     return this;
   }
 
   /**
-   * The document number
-   * @return documentNumber
+   * Whether itsme reports the email address as verified.              Availability by ID document issuing country: returned only if &#x60;email&#x60; is available.              Note: itsme currently documents that this value is usually false because email verification is not implemented in its systems.
+   * @return emailVerified
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public String getDocumentNumber() {
-        return documentNumber.orElse(null);
+  public Boolean getEmailVerified() {
+        return emailVerified.orElse(null);
   }
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getDocumentNumber_JsonNullable() {
-    return documentNumber;
+  public JsonNullable<Boolean> getEmailVerified_JsonNullable() {
+    return emailVerified;
   }
   
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
-  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
-    this.documentNumber = documentNumber;
+  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
+  public void setEmailVerified_JsonNullable(JsonNullable<Boolean> emailVerified) {
+    this.emailVerified = emailVerified;
   }
 
-  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
-    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  public void setEmailVerified(@javax.annotation.Nullable Boolean emailVerified) {
+    this.emailVerified = JsonNullable.<Boolean>of(emailVerified);
   }
 
 
-  public ItsmeProviderOutput identityDocumentExpirationDate(@javax.annotation.Nullable LocalDate identityDocumentExpirationDate) {
-    this.identityDocumentExpirationDate = JsonNullable.<LocalDate>of(identityDocumentExpirationDate);
+  public ItsmeProviderOutput phoneNumberVerified(@javax.annotation.Nullable Boolean phoneNumberVerified) {
+    this.phoneNumberVerified = JsonNullable.<Boolean>of(phoneNumberVerified);
     return this;
   }
 
   /**
-   * The expiration date of the identity document.
-   * @return identityDocumentExpirationDate
+   * Whether itsme reports the phone number as verified.              Availability by ID document issuing country: always returned for all supported issuing countries.
+   * @return phoneNumberVerified
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public LocalDate getIdentityDocumentExpirationDate() {
-        return identityDocumentExpirationDate.orElse(null);
+  public Boolean getPhoneNumberVerified() {
+        return phoneNumberVerified.orElse(null);
   }
 
-  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT_EXPIRATION_DATE, required = false)
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER_VERIFIED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<LocalDate> getIdentityDocumentExpirationDate_JsonNullable() {
-    return identityDocumentExpirationDate;
+  public JsonNullable<Boolean> getPhoneNumberVerified_JsonNullable() {
+    return phoneNumberVerified;
   }
   
-  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT_EXPIRATION_DATE)
-  public void setIdentityDocumentExpirationDate_JsonNullable(JsonNullable<LocalDate> identityDocumentExpirationDate) {
-    this.identityDocumentExpirationDate = identityDocumentExpirationDate;
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER_VERIFIED)
+  public void setPhoneNumberVerified_JsonNullable(JsonNullable<Boolean> phoneNumberVerified) {
+    this.phoneNumberVerified = phoneNumberVerified;
   }
 
-  public void setIdentityDocumentExpirationDate(@javax.annotation.Nullable LocalDate identityDocumentExpirationDate) {
-    this.identityDocumentExpirationDate = JsonNullable.<LocalDate>of(identityDocumentExpirationDate);
+  public void setPhoneNumberVerified(@javax.annotation.Nullable Boolean phoneNumberVerified) {
+    this.phoneNumberVerified = JsonNullable.<Boolean>of(phoneNumberVerified);
   }
 
 
-  public ItsmeProviderOutput language(@javax.annotation.Nullable String language) {
-    this.language = JsonNullable.<String>of(language);
+  public ItsmeProviderOutput address(@javax.annotation.Nullable ItsmeProviderAddress address) {
+    this.address = JsonNullable.<ItsmeProviderAddress>of(address);
     return this;
   }
 
   /**
-   * The individual&#39;s language as an ISO 639-1 code. Expected values: NL, FR, DE, EN.
-   * @return language
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getLanguage() {
-        return language.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_LANGUAGE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getLanguage_JsonNullable() {
-    return language;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_LANGUAGE)
-  public void setLanguage_JsonNullable(JsonNullable<String> language) {
-    this.language = language;
-  }
-
-  public void setLanguage(@javax.annotation.Nullable String language) {
-    this.language = JsonNullable.<String>of(language);
-  }
-
-
-  public ItsmeProviderOutput address(@javax.annotation.Nullable ItsmeAddress address) {
-    this.address = JsonNullable.<ItsmeAddress>of(address);
-    return this;
-  }
-
-  /**
-   * The individual&#39;s address
+   * The address of the verified individual.              Availability by ID document issuing country: always returned for Belgian-issued ID documents, best effort for Netherlands-issued ID documents, and not returned for other supported issuing countries.
    * @return address
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public ItsmeAddress getAddress() {
+  public ItsmeProviderAddress getAddress() {
         return address.orElse(null);
   }
 
   @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ItsmeAddress> getAddress_JsonNullable() {
+  public JsonNullable<ItsmeProviderAddress> getAddress_JsonNullable() {
     return address;
   }
   
   @JsonProperty(JSON_PROPERTY_ADDRESS)
-  public void setAddress_JsonNullable(JsonNullable<ItsmeAddress> address) {
+  public void setAddress_JsonNullable(JsonNullable<ItsmeProviderAddress> address) {
     this.address = address;
   }
 
-  public void setAddress(@javax.annotation.Nullable ItsmeAddress address) {
-    this.address = JsonNullable.<ItsmeAddress>of(address);
+  public void setAddress(@javax.annotation.Nullable ItsmeProviderAddress address) {
+    this.address = JsonNullable.<ItsmeProviderAddress>of(address);
+  }
+
+
+  public ItsmeProviderOutput citizenship(@javax.annotation.Nullable String citizenship) {
+    this.citizenship = JsonNullable.<String>of(citizenship);
+    return this;
+  }
+
+  /**
+   * The citizenship of the verified individual as an ISO 3166-1 alpha-2 country code.              Availability by ID document issuing country: always returned for supported issuing countries except Belgium, where it is best effort.
+   * @return citizenship
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCitizenship() {
+        return citizenship.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_CITIZENSHIP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCitizenship_JsonNullable() {
+    return citizenship;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CITIZENSHIP)
+  public void setCitizenship_JsonNullable(JsonNullable<String> citizenship) {
+    this.citizenship = citizenship;
+  }
+
+  public void setCitizenship(@javax.annotation.Nullable String citizenship) {
+    this.citizenship = JsonNullable.<String>of(citizenship);
+  }
+
+
+  public ItsmeProviderOutput belgianNationalNumber(@javax.annotation.Nullable ItsmeBelgianNationalNumber belgianNationalNumber) {
+    this.belgianNationalNumber = JsonNullable.<ItsmeBelgianNationalNumber>of(belgianNationalNumber);
+    return this;
+  }
+
+  /**
+   * The Belgian National Register Number and related metadata.              Availability by ID document issuing country: returned only for Belgian-issued ID documents.
+   * @return belgianNationalNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmeBelgianNationalNumber getBelgianNationalNumber() {
+        return belgianNationalNumber.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BELGIAN_NATIONAL_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmeBelgianNationalNumber> getBelgianNationalNumber_JsonNullable() {
+    return belgianNationalNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BELGIAN_NATIONAL_NUMBER)
+  public void setBelgianNationalNumber_JsonNullable(JsonNullable<ItsmeBelgianNationalNumber> belgianNationalNumber) {
+    this.belgianNationalNumber = belgianNationalNumber;
+  }
+
+  public void setBelgianNationalNumber(@javax.annotation.Nullable ItsmeBelgianNationalNumber belgianNationalNumber) {
+    this.belgianNationalNumber = JsonNullable.<ItsmeBelgianNationalNumber>of(belgianNationalNumber);
+  }
+
+
+  public ItsmeProviderOutput belgianIdentityCard(@javax.annotation.Nullable ItsmeBelgianIdentityCard belgianIdentityCard) {
+    this.belgianIdentityCard = JsonNullable.<ItsmeBelgianIdentityCard>of(belgianIdentityCard);
+    return this;
+  }
+
+  /**
+   * The Belgian eID card document number and related metadata.              Availability by ID document issuing country: returned only for Belgian-issued ID documents.
+   * @return belgianIdentityCard
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmeBelgianIdentityCard getBelgianIdentityCard() {
+        return belgianIdentityCard.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BELGIAN_IDENTITY_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmeBelgianIdentityCard> getBelgianIdentityCard_JsonNullable() {
+    return belgianIdentityCard;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BELGIAN_IDENTITY_CARD)
+  public void setBelgianIdentityCard_JsonNullable(JsonNullable<ItsmeBelgianIdentityCard> belgianIdentityCard) {
+    this.belgianIdentityCard = belgianIdentityCard;
+  }
+
+  public void setBelgianIdentityCard(@javax.annotation.Nullable ItsmeBelgianIdentityCard belgianIdentityCard) {
+    this.belgianIdentityCard = JsonNullable.<ItsmeBelgianIdentityCard>of(belgianIdentityCard);
+  }
+
+
+  public ItsmeProviderOutput identityDocument(@javax.annotation.Nullable ItsmeIdentityDocument identityDocument) {
+    this.identityDocument = JsonNullable.<ItsmeIdentityDocument>of(identityDocument);
+    return this;
+  }
+
+  /**
+   * The identity document and related metadata.              Availability by ID document issuing country: always returned for all supported issuing countries.
+   * @return identityDocument
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmeIdentityDocument getIdentityDocument() {
+        return identityDocument.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_DOCUMENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmeIdentityDocument> getIdentityDocument_JsonNullable() {
+    return identityDocument;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IDENTITY_DOCUMENT)
+  public void setIdentityDocument_JsonNullable(JsonNullable<ItsmeIdentityDocument> identityDocument) {
+    this.identityDocument = identityDocument;
+  }
+
+  public void setIdentityDocument(@javax.annotation.Nullable ItsmeIdentityDocument identityDocument) {
+    this.identityDocument = JsonNullable.<ItsmeIdentityDocument>of(identityDocument);
+  }
+
+
+  public ItsmeProviderOutput placeOfBirth(@javax.annotation.Nullable ItsmePlaceOfBirth placeOfBirth) {
+    this.placeOfBirth = JsonNullable.<ItsmePlaceOfBirth>of(placeOfBirth);
+    return this;
+  }
+
+  /**
+   * The place of birth.              Availability by ID document issuing country: best effort for Belgian-issued ID documents; not returned for other supported issuing countries.
+   * @return placeOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmePlaceOfBirth getPlaceOfBirth() {
+        return placeOfBirth.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_PLACE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmePlaceOfBirth> getPlaceOfBirth_JsonNullable() {
+    return placeOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
+  public void setPlaceOfBirth_JsonNullable(JsonNullable<ItsmePlaceOfBirth> placeOfBirth) {
+    this.placeOfBirth = placeOfBirth;
+  }
+
+  public void setPlaceOfBirth(@javax.annotation.Nullable ItsmePlaceOfBirth placeOfBirth) {
+    this.placeOfBirth = JsonNullable.<ItsmePlaceOfBirth>of(placeOfBirth);
+  }
+
+
+  public ItsmeProviderOutput device(@javax.annotation.Nullable ItsmeDirectDevice device) {
+    this.device = JsonNullable.<ItsmeDirectDevice>of(device);
+    return this;
+  }
+
+  /**
+   * The device metadata for the verification.              Availability by ID document issuing country: best effort for all supported issuing countries.
+   * @return device
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmeDirectDevice getDevice() {
+        return device.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmeDirectDevice> getDevice_JsonNullable() {
+    return device;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DEVICE)
+  public void setDevice_JsonNullable(JsonNullable<ItsmeDirectDevice> device) {
+    this.device = device;
+  }
+
+  public void setDevice(@javax.annotation.Nullable ItsmeDirectDevice device) {
+    this.device = JsonNullable.<ItsmeDirectDevice>of(device);
   }
 
 
@@ -540,20 +782,26 @@ public class ItsmeProviderOutput {
       return false;
     }
     ItsmeProviderOutput itsmeProviderOutput = (ItsmeProviderOutput) o;
-    return Objects.equals(this.firstName, itsmeProviderOutput.firstName) &&
-        Objects.equals(this.lastName, itsmeProviderOutput.lastName) &&
-        Objects.equals(this.dateOfBirth, itsmeProviderOutput.dateOfBirth) &&
-        equalsNullable(this.hashedNationalRegisterNumber, itsmeProviderOutput.hashedNationalRegisterNumber) &&
-        equalsNullable(this.nationalRegisterNumber, itsmeProviderOutput.nationalRegisterNumber) &&
+    return equalsNullable(this.dateOfBirth, itsmeProviderOutput.dateOfBirth) &&
         equalsNullable(this.email, itsmeProviderOutput.email) &&
         equalsNullable(this.phoneNumber, itsmeProviderOutput.phoneNumber) &&
+        equalsNullable(this.sub, itsmeProviderOutput.sub) &&
+        equalsNullable(this.fullName, itsmeProviderOutput.fullName) &&
+        equalsNullable(this.givenName, itsmeProviderOutput.givenName) &&
+        equalsNullable(this.familyName, itsmeProviderOutput.familyName) &&
+        equalsNullable(this.dateOfBirthAsString, itsmeProviderOutput.dateOfBirthAsString) &&
         equalsNullable(this.gender, itsmeProviderOutput.gender) &&
-        equalsNullable(this.nationality, itsmeProviderOutput.nationality) &&
-        equalsNullable(this.birthPlace, itsmeProviderOutput.birthPlace) &&
-        equalsNullable(this.documentNumber, itsmeProviderOutput.documentNumber) &&
-        equalsNullable(this.identityDocumentExpirationDate, itsmeProviderOutput.identityDocumentExpirationDate) &&
-        equalsNullable(this.language, itsmeProviderOutput.language) &&
-        equalsNullable(this.address, itsmeProviderOutput.address);
+        equalsNullable(this.locale, itsmeProviderOutput.locale) &&
+        equalsNullable(this.pictureUrl, itsmeProviderOutput.pictureUrl) &&
+        equalsNullable(this.emailVerified, itsmeProviderOutput.emailVerified) &&
+        equalsNullable(this.phoneNumberVerified, itsmeProviderOutput.phoneNumberVerified) &&
+        equalsNullable(this.address, itsmeProviderOutput.address) &&
+        equalsNullable(this.citizenship, itsmeProviderOutput.citizenship) &&
+        equalsNullable(this.belgianNationalNumber, itsmeProviderOutput.belgianNationalNumber) &&
+        equalsNullable(this.belgianIdentityCard, itsmeProviderOutput.belgianIdentityCard) &&
+        equalsNullable(this.identityDocument, itsmeProviderOutput.identityDocument) &&
+        equalsNullable(this.placeOfBirth, itsmeProviderOutput.placeOfBirth) &&
+        equalsNullable(this.device, itsmeProviderOutput.device);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -562,7 +810,7 @@ public class ItsmeProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, dateOfBirth, hashCodeNullable(hashedNationalRegisterNumber), hashCodeNullable(nationalRegisterNumber), hashCodeNullable(email), hashCodeNullable(phoneNumber), hashCodeNullable(gender), hashCodeNullable(nationality), hashCodeNullable(birthPlace), hashCodeNullable(documentNumber), hashCodeNullable(identityDocumentExpirationDate), hashCodeNullable(language), hashCodeNullable(address));
+    return Objects.hash(hashCodeNullable(dateOfBirth), hashCodeNullable(email), hashCodeNullable(phoneNumber), hashCodeNullable(sub), hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirthAsString), hashCodeNullable(gender), hashCodeNullable(locale), hashCodeNullable(pictureUrl), hashCodeNullable(emailVerified), hashCodeNullable(phoneNumberVerified), hashCodeNullable(address), hashCodeNullable(citizenship), hashCodeNullable(belgianNationalNumber), hashCodeNullable(belgianIdentityCard), hashCodeNullable(identityDocument), hashCodeNullable(placeOfBirth), hashCodeNullable(device));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -576,20 +824,26 @@ public class ItsmeProviderOutput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ItsmeProviderOutput {\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    hashedNationalRegisterNumber: ").append(toIndentedString(hashedNationalRegisterNumber)).append("\n");
-    sb.append("    nationalRegisterNumber: ").append(toIndentedString(nationalRegisterNumber)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    sub: ").append(toIndentedString(sub)).append("\n");
+    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
+    sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
+    sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
+    sb.append("    dateOfBirthAsString: ").append(toIndentedString(dateOfBirthAsString)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
-    sb.append("    birthPlace: ").append(toIndentedString(birthPlace)).append("\n");
-    sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
-    sb.append("    identityDocumentExpirationDate: ").append(toIndentedString(identityDocumentExpirationDate)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    sb.append("    pictureUrl: ").append(toIndentedString(pictureUrl)).append("\n");
+    sb.append("    emailVerified: ").append(toIndentedString(emailVerified)).append("\n");
+    sb.append("    phoneNumberVerified: ").append(toIndentedString(phoneNumberVerified)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    citizenship: ").append(toIndentedString(citizenship)).append("\n");
+    sb.append("    belgianNationalNumber: ").append(toIndentedString(belgianNationalNumber)).append("\n");
+    sb.append("    belgianIdentityCard: ").append(toIndentedString(belgianIdentityCard)).append("\n");
+    sb.append("    identityDocument: ").append(toIndentedString(identityDocument)).append("\n");
+    sb.append("    placeOfBirth: ").append(toIndentedString(placeOfBirth)).append("\n");
+    sb.append("    device: ").append(toIndentedString(device)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -634,29 +888,9 @@ public class ItsmeProviderOutput {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `firstName` to the URL query string
-    if (getFirstName() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFirstName()))));
-    }
-
-    // add `lastName` to the URL query string
-    if (getLastName() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastName()))));
-    }
-
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
-    }
-
-    // add `hashedNationalRegisterNumber` to the URL query string
-    if (getHashedNationalRegisterNumber() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%shashedNationalRegisterNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHashedNationalRegisterNumber()))));
-    }
-
-    // add `nationalRegisterNumber` to the URL query string
-    if (getNationalRegisterNumber() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%snationalRegisterNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationalRegisterNumber()))));
     }
 
     // add `email` to the URL query string
@@ -669,39 +903,89 @@ public class ItsmeProviderOutput {
       joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
     }
 
+    // add `sub` to the URL query string
+    if (getSub() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
+    }
+
+    // add `fullName` to the URL query string
+    if (getFullName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
+    }
+
+    // add `givenName` to the URL query string
+    if (getGivenName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+    }
+
+    // add `familyName` to the URL query string
+    if (getFamilyName() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
+    }
+
+    // add `dateOfBirthAsString` to the URL query string
+    if (getDateOfBirthAsString() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirthAsString%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirthAsString()))));
+    }
+
     // add `gender` to the URL query string
     if (getGender() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sgender%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGender()))));
     }
 
-    // add `nationality` to the URL query string
-    if (getNationality() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%snationality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNationality()))));
+    // add `locale` to the URL query string
+    if (getLocale() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%slocale%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocale()))));
     }
 
-    // add `birthPlace` to the URL query string
-    if (getBirthPlace() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sbirthPlace%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthPlace()))));
+    // add `pictureUrl` to the URL query string
+    if (getPictureUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%spictureUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPictureUrl()))));
     }
 
-    // add `documentNumber` to the URL query string
-    if (getDocumentNumber() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+    // add `emailVerified` to the URL query string
+    if (getEmailVerified() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
     }
 
-    // add `identityDocumentExpirationDate` to the URL query string
-    if (getIdentityDocumentExpirationDate() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sidentityDocumentExpirationDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIdentityDocumentExpirationDate()))));
-    }
-
-    // add `language` to the URL query string
-    if (getLanguage() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%slanguage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLanguage()))));
+    // add `phoneNumberVerified` to the URL query string
+    if (getPhoneNumberVerified() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumberVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumberVerified()))));
     }
 
     // add `address` to the URL query string
     if (getAddress() != null) {
       joiner.add(getAddress().toUrlQueryString(prefix + "address" + suffix));
+    }
+
+    // add `citizenship` to the URL query string
+    if (getCitizenship() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%scitizenship%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCitizenship()))));
+    }
+
+    // add `belgianNationalNumber` to the URL query string
+    if (getBelgianNationalNumber() != null) {
+      joiner.add(getBelgianNationalNumber().toUrlQueryString(prefix + "belgianNationalNumber" + suffix));
+    }
+
+    // add `belgianIdentityCard` to the URL query string
+    if (getBelgianIdentityCard() != null) {
+      joiner.add(getBelgianIdentityCard().toUrlQueryString(prefix + "belgianIdentityCard" + suffix));
+    }
+
+    // add `identityDocument` to the URL query string
+    if (getIdentityDocument() != null) {
+      joiner.add(getIdentityDocument().toUrlQueryString(prefix + "identityDocument" + suffix));
+    }
+
+    // add `placeOfBirth` to the URL query string
+    if (getPlaceOfBirth() != null) {
+      joiner.add(getPlaceOfBirth().toUrlQueryString(prefix + "placeOfBirth" + suffix));
+    }
+
+    // add `device` to the URL query string
+    if (getDevice() != null) {
+      joiner.add(getDevice().toUrlQueryString(prefix + "device" + suffix));
     }
 
     return joiner.toString();

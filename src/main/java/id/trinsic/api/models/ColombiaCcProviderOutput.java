@@ -29,6 +29,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -48,53 +52,43 @@ import id.trinsic.ApiClient;
   ColombiaCcProviderOutput.JSON_PROPERTY_EXPEDITION_PLACE,
   ColombiaCcProviderOutput.JSON_PROPERTY_ARRAY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ColombiaCcProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private String fullName;
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
-  @javax.annotation.Nonnull
-  private String givenName;
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
-  @javax.annotation.Nonnull
-  private String familyName;
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
-  @javax.annotation.Nonnull
-  private String sex;
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_IS_ALIVE = "isAlive";
-  @javax.annotation.Nonnull
-  private Boolean isAlive;
+  private JsonNullable<Boolean> isAlive = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
-  @javax.annotation.Nonnull
-  private String documentNumber;
+  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_EXPEDITION_DATE = "expeditionDate";
-  @javax.annotation.Nonnull
-  private LocalDate expeditionDate;
+  private JsonNullable<LocalDate> expeditionDate = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_EXPEDITION_PLACE = "expeditionPlace";
-  @javax.annotation.Nonnull
-  private ColombiaExpeditionPlace expeditionPlace;
+  private JsonNullable<ColombiaExpeditionPlace> expeditionPlace = JsonNullable.<ColombiaExpeditionPlace>undefined();
 
   public static final String JSON_PROPERTY_ARRAY_NAME = "arrayName";
-  @javax.annotation.Nonnull
-  private List<String> arrayName = new ArrayList<>();
+  private JsonNullable<List<String>> arrayName = JsonNullable.<List<String>>undefined();
 
   public ColombiaCcProviderOutput() { 
   }
 
-  public ColombiaCcProviderOutput fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
+  public ColombiaCcProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
 
@@ -102,23 +96,31 @@ public class ColombiaCcProviderOutput {
    * Full name as it appears on the CC.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
 
-  public ColombiaCcProviderOutput givenName(@javax.annotation.Nonnull String givenName) {
-    this.givenName = givenName;
+
+  public ColombiaCcProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
 
@@ -126,23 +128,31 @@ public class ColombiaCcProviderOutput {
    * Given name(s) of the holder as they appear on the CC.
    * @return givenName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGivenName() {
-    return givenName;
+        return givenName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGivenName(@javax.annotation.Nonnull String givenName) {
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
     this.givenName = givenName;
   }
 
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
 
-  public ColombiaCcProviderOutput familyName(@javax.annotation.Nonnull String familyName) {
-    this.familyName = familyName;
+
+  public ColombiaCcProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
@@ -150,23 +160,31 @@ public class ColombiaCcProviderOutput {
    * Family name(s) of the holder as they appear on the CC. Space-separated when both paternal and maternal family names are present.
    * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFamilyName() {
-    return familyName;
+        return familyName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
     this.familyName = familyName;
   }
 
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+  }
 
-  public ColombiaCcProviderOutput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public ColombiaCcProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
@@ -174,23 +192,31 @@ public class ColombiaCcProviderOutput {
    * Date of birth as recorded in the civil registry (Registraduría Nacional).
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
 
-  public ColombiaCcProviderOutput sex(@javax.annotation.Nonnull String sex) {
-    this.sex = sex;
+
+  public ColombiaCcProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
     return this;
   }
 
@@ -198,23 +224,31 @@ public class ColombiaCcProviderOutput {
    * Sex of the holder as recorded in the civil registry (Registraduría Nacional).              Possible values: - Male - Female - Unknown (when the sex is not recorded or cannot be confidently determined)
    * @return sex
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSex() {
-    return sex;
+        return sex.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSex(@javax.annotation.Nonnull String sex) {
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
     this.sex = sex;
   }
 
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+  }
 
-  public ColombiaCcProviderOutput isAlive(@javax.annotation.Nonnull Boolean isAlive) {
-    this.isAlive = isAlive;
+
+  public ColombiaCcProviderOutput isAlive(@javax.annotation.Nullable Boolean isAlive) {
+    this.isAlive = JsonNullable.<Boolean>of(isAlive);
     return this;
   }
 
@@ -222,23 +256,31 @@ public class ColombiaCcProviderOutput {
    * Whether the person is reported as alive in Colombia&#39;s official civil registry (Registraduría Nacional).              Used to detect identity fraud when the holder is deceased.
    * @return isAlive
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_IS_ALIVE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getIsAlive() {
-    return isAlive;
+        return isAlive.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_IS_ALIVE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_IS_ALIVE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsAlive(@javax.annotation.Nonnull Boolean isAlive) {
+  public JsonNullable<Boolean> getIsAlive_JsonNullable() {
+    return isAlive;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IS_ALIVE)
+  public void setIsAlive_JsonNullable(JsonNullable<Boolean> isAlive) {
     this.isAlive = isAlive;
   }
 
+  public void setIsAlive(@javax.annotation.Nullable Boolean isAlive) {
+    this.isAlive = JsonNullable.<Boolean>of(isAlive);
+  }
 
-  public ColombiaCcProviderOutput documentNumber(@javax.annotation.Nonnull String documentNumber) {
-    this.documentNumber = documentNumber;
+
+  public ColombiaCcProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
     return this;
   }
 
@@ -246,23 +288,31 @@ public class ColombiaCcProviderOutput {
    * The Cédula de Ciudadanía (CC) document number.              This is the unique identifier assigned by the Registraduría Nacional when the person is first issued a CC. It does not change when the person renews or receives a new physical card; it remains the same for the individual for life.              Cédulas issued after 2004 use the NUIP (Número Único de Identificación Personal), which is 10 digits. Older documents may have fewer than 10 digits and are still valid.
    * @return documentNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentNumber() {
-    return documentNumber;
+        return documentNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentNumber(@javax.annotation.Nonnull String documentNumber) {
+  public JsonNullable<String> getDocumentNumber_JsonNullable() {
+    return documentNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
     this.documentNumber = documentNumber;
   }
 
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  }
 
-  public ColombiaCcProviderOutput expeditionDate(@javax.annotation.Nonnull LocalDate expeditionDate) {
-    this.expeditionDate = expeditionDate;
+
+  public ColombiaCcProviderOutput expeditionDate(@javax.annotation.Nullable LocalDate expeditionDate) {
+    this.expeditionDate = JsonNullable.<LocalDate>of(expeditionDate);
     return this;
   }
 
@@ -270,23 +320,31 @@ public class ColombiaCcProviderOutput {
    * Date the CC was issued (fecha de expedición).              Format: - yyyy-MM-dd
    * @return expeditionDate
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getExpeditionDate() {
-    return expeditionDate;
+        return expeditionDate.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_DATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpeditionDate(@javax.annotation.Nonnull LocalDate expeditionDate) {
+  public JsonNullable<LocalDate> getExpeditionDate_JsonNullable() {
+    return expeditionDate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EXPEDITION_DATE)
+  public void setExpeditionDate_JsonNullable(JsonNullable<LocalDate> expeditionDate) {
     this.expeditionDate = expeditionDate;
   }
 
+  public void setExpeditionDate(@javax.annotation.Nullable LocalDate expeditionDate) {
+    this.expeditionDate = JsonNullable.<LocalDate>of(expeditionDate);
+  }
 
-  public ColombiaCcProviderOutput expeditionPlace(@javax.annotation.Nonnull ColombiaExpeditionPlace expeditionPlace) {
-    this.expeditionPlace = expeditionPlace;
+
+  public ColombiaCcProviderOutput expeditionPlace(@javax.annotation.Nullable ColombiaExpeditionPlace expeditionPlace) {
+    this.expeditionPlace = JsonNullable.<ColombiaExpeditionPlace>of(expeditionPlace);
     return this;
   }
 
@@ -294,31 +352,43 @@ public class ColombiaCcProviderOutput {
    * Place where the CC was issued (lugar de expedición): municipality and department as recorded by the Registraduría Nacional.
    * @return expeditionPlace
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_PLACE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public ColombiaExpeditionPlace getExpeditionPlace() {
-    return expeditionPlace;
+        return expeditionPlace.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_PLACE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_EXPEDITION_PLACE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpeditionPlace(@javax.annotation.Nonnull ColombiaExpeditionPlace expeditionPlace) {
+  public JsonNullable<ColombiaExpeditionPlace> getExpeditionPlace_JsonNullable() {
+    return expeditionPlace;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EXPEDITION_PLACE)
+  public void setExpeditionPlace_JsonNullable(JsonNullable<ColombiaExpeditionPlace> expeditionPlace) {
     this.expeditionPlace = expeditionPlace;
   }
 
+  public void setExpeditionPlace(@javax.annotation.Nullable ColombiaExpeditionPlace expeditionPlace) {
+    this.expeditionPlace = JsonNullable.<ColombiaExpeditionPlace>of(expeditionPlace);
+  }
 
-  public ColombiaCcProviderOutput arrayName(@javax.annotation.Nonnull List<String> arrayName) {
-    this.arrayName = arrayName;
+
+  public ColombiaCcProviderOutput arrayName(@javax.annotation.Nullable List<String> arrayName) {
+    this.arrayName = JsonNullable.<List<String>>of(arrayName);
     return this;
   }
 
   public ColombiaCcProviderOutput addArrayNameItem(String arrayNameItem) {
-    if (this.arrayName == null) {
-      this.arrayName = new ArrayList<>();
+    if (this.arrayName == null || !this.arrayName.isPresent()) {
+      this.arrayName = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.arrayName.add(arrayNameItem);
+    try {
+      this.arrayName.get().add(arrayNameItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -326,18 +396,26 @@ public class ColombiaCcProviderOutput {
    * All names as they appear on the CC, as an array of strings.              Format: - Order follows the civil registry: typically family name(s) first, then given name(s).
    * @return arrayName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public List<String> getArrayName() {
-    return arrayName;
+        return arrayName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setArrayName(@javax.annotation.Nonnull List<String> arrayName) {
+  public JsonNullable<List<String>> getArrayName_JsonNullable() {
+    return arrayName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ARRAY_NAME)
+  public void setArrayName_JsonNullable(JsonNullable<List<String>> arrayName) {
     this.arrayName = arrayName;
+  }
+
+  public void setArrayName(@javax.annotation.Nullable List<String> arrayName) {
+    this.arrayName = JsonNullable.<List<String>>of(arrayName);
   }
 
 
@@ -353,21 +431,32 @@ public class ColombiaCcProviderOutput {
       return false;
     }
     ColombiaCcProviderOutput colombiaCcProviderOutput = (ColombiaCcProviderOutput) o;
-    return Objects.equals(this.fullName, colombiaCcProviderOutput.fullName) &&
-        Objects.equals(this.givenName, colombiaCcProviderOutput.givenName) &&
-        Objects.equals(this.familyName, colombiaCcProviderOutput.familyName) &&
-        Objects.equals(this.dateOfBirth, colombiaCcProviderOutput.dateOfBirth) &&
-        Objects.equals(this.sex, colombiaCcProviderOutput.sex) &&
-        Objects.equals(this.isAlive, colombiaCcProviderOutput.isAlive) &&
-        Objects.equals(this.documentNumber, colombiaCcProviderOutput.documentNumber) &&
-        Objects.equals(this.expeditionDate, colombiaCcProviderOutput.expeditionDate) &&
-        Objects.equals(this.expeditionPlace, colombiaCcProviderOutput.expeditionPlace) &&
-        Objects.equals(this.arrayName, colombiaCcProviderOutput.arrayName);
+    return equalsNullable(this.fullName, colombiaCcProviderOutput.fullName) &&
+        equalsNullable(this.givenName, colombiaCcProviderOutput.givenName) &&
+        equalsNullable(this.familyName, colombiaCcProviderOutput.familyName) &&
+        equalsNullable(this.dateOfBirth, colombiaCcProviderOutput.dateOfBirth) &&
+        equalsNullable(this.sex, colombiaCcProviderOutput.sex) &&
+        equalsNullable(this.isAlive, colombiaCcProviderOutput.isAlive) &&
+        equalsNullable(this.documentNumber, colombiaCcProviderOutput.documentNumber) &&
+        equalsNullable(this.expeditionDate, colombiaCcProviderOutput.expeditionDate) &&
+        equalsNullable(this.expeditionPlace, colombiaCcProviderOutput.expeditionPlace) &&
+        equalsNullable(this.arrayName, colombiaCcProviderOutput.arrayName);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fullName, givenName, familyName, dateOfBirth, sex, isAlive, documentNumber, expeditionDate, expeditionPlace, arrayName);
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(isAlive), hashCodeNullable(documentNumber), hashCodeNullable(expeditionDate), hashCodeNullable(expeditionPlace), hashCodeNullable(arrayName));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

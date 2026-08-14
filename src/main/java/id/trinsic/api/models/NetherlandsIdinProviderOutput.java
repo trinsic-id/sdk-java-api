@@ -50,39 +50,31 @@ import id.trinsic.ApiClient;
   NetherlandsIdinProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
   NetherlandsIdinProviderOutput.JSON_PROPERTY_EMAIL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NetherlandsIdinProviderOutput {
   public static final String JSON_PROPERTY_AUTHORITY_ID = "authorityId";
-  @javax.annotation.Nonnull
-  private String authorityId;
+  private JsonNullable<String> authorityId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_AUTHORITY_NAME = "authorityName";
-  @javax.annotation.Nonnull
-  private String authorityName;
+  private JsonNullable<String> authorityName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CUSTOMER_ID = "customerId";
-  @javax.annotation.Nonnull
-  private String customerId;
+  private JsonNullable<String> customerId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_INITIALS = "initials";
-  @javax.annotation.Nonnull
-  private String initials;
+  private JsonNullable<String> initials = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
-  @javax.annotation.Nonnull
-  private String familyName;
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  @javax.annotation.Nonnull
-  private NetherlandsIdinAddress address;
+  private JsonNullable<NetherlandsIdinAddress> address = JsonNullable.<NetherlandsIdinAddress>undefined();
 
   public static final String JSON_PROPERTY_BIRTH_DATE = "birthDate";
-  @javax.annotation.Nonnull
-  private LocalDate birthDate;
+  private JsonNullable<LocalDate> birthDate = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_GENDER = "gender";
-  @javax.annotation.Nonnull
-  private String gender;
+  private JsonNullable<String> gender = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
@@ -93,8 +85,8 @@ public class NetherlandsIdinProviderOutput {
   public NetherlandsIdinProviderOutput() { 
   }
 
-  public NetherlandsIdinProviderOutput authorityId(@javax.annotation.Nonnull String authorityId) {
-    this.authorityId = authorityId;
+  public NetherlandsIdinProviderOutput authorityId(@javax.annotation.Nullable String authorityId) {
+    this.authorityId = JsonNullable.<String>of(authorityId);
     return this;
   }
 
@@ -102,23 +94,31 @@ public class NetherlandsIdinProviderOutput {
    * Unique identifier of the authority that was used to verify the individual.              For banks this follows the SWIFT/BIC (Bank Identification Code) format.
    * @return authorityId
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_AUTHORITY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAuthorityId() {
-    return authorityId;
+        return authorityId.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_AUTHORITY_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_AUTHORITY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAuthorityId(@javax.annotation.Nonnull String authorityId) {
+  public JsonNullable<String> getAuthorityId_JsonNullable() {
+    return authorityId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AUTHORITY_ID)
+  public void setAuthorityId_JsonNullable(JsonNullable<String> authorityId) {
     this.authorityId = authorityId;
   }
 
+  public void setAuthorityId(@javax.annotation.Nullable String authorityId) {
+    this.authorityId = JsonNullable.<String>of(authorityId);
+  }
 
-  public NetherlandsIdinProviderOutput authorityName(@javax.annotation.Nonnull String authorityName) {
-    this.authorityName = authorityName;
+
+  public NetherlandsIdinProviderOutput authorityName(@javax.annotation.Nullable String authorityName) {
+    this.authorityName = JsonNullable.<String>of(authorityName);
     return this;
   }
 
@@ -126,23 +126,31 @@ public class NetherlandsIdinProviderOutput {
    * Name of the authority that was used to verify the individual.
    * @return authorityName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_AUTHORITY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAuthorityName() {
-    return authorityName;
+        return authorityName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_AUTHORITY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_AUTHORITY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAuthorityName(@javax.annotation.Nonnull String authorityName) {
+  public JsonNullable<String> getAuthorityName_JsonNullable() {
+    return authorityName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AUTHORITY_NAME)
+  public void setAuthorityName_JsonNullable(JsonNullable<String> authorityName) {
     this.authorityName = authorityName;
   }
 
+  public void setAuthorityName(@javax.annotation.Nullable String authorityName) {
+    this.authorityName = JsonNullable.<String>of(authorityName);
+  }
 
-  public NetherlandsIdinProviderOutput customerId(@javax.annotation.Nonnull String customerId) {
-    this.customerId = customerId;
+
+  public NetherlandsIdinProviderOutput customerId(@javax.annotation.Nullable String customerId) {
+    this.customerId = JsonNullable.<String>of(customerId);
     return this;
   }
 
@@ -150,47 +158,63 @@ public class NetherlandsIdinProviderOutput {
    * Unique identifier of the customer&#39;s account with the issuing authority.              This identifier is generated by each authority and is unique per customer registration, authority, and individual. The identifier should be treated as a unique opaque string.
    * @return customerId
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCustomerId() {
-    return customerId;
+        return customerId.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCustomerId(@javax.annotation.Nonnull String customerId) {
+  public JsonNullable<String> getCustomerId_JsonNullable() {
+    return customerId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
+  public void setCustomerId_JsonNullable(JsonNullable<String> customerId) {
     this.customerId = customerId;
   }
 
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
+    this.customerId = JsonNullable.<String>of(customerId);
+  }
 
-  public NetherlandsIdinProviderOutput initials(@javax.annotation.Nonnull String initials) {
-    this.initials = initials;
+
+  public NetherlandsIdinProviderOutput initials(@javax.annotation.Nullable String initials) {
+    this.initials = JsonNullable.<String>of(initials);
     return this;
   }
 
   /**
-   * Initials of the individual.
+   * The initials of the Consumer, defined as the first letter of each of the Consumer’s first names.              Maximum of 24 capitalized letters. Only the first letter of each first name is used which must be capitalized and returned without spaces or dots. Given the name “Jan-Jaap Christaan Jozefszoon” or “jan-jaap christaan jozefszoon”, the value of this field will be “JC”.
    * @return initials
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_INITIALS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getInitials() {
-    return initials;
+        return initials.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_INITIALS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_INITIALS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setInitials(@javax.annotation.Nonnull String initials) {
+  public JsonNullable<String> getInitials_JsonNullable() {
+    return initials;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INITIALS)
+  public void setInitials_JsonNullable(JsonNullable<String> initials) {
     this.initials = initials;
   }
 
+  public void setInitials(@javax.annotation.Nullable String initials) {
+    this.initials = JsonNullable.<String>of(initials);
+  }
 
-  public NetherlandsIdinProviderOutput familyName(@javax.annotation.Nonnull String familyName) {
-    this.familyName = familyName;
+
+  public NetherlandsIdinProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
@@ -198,23 +222,31 @@ public class NetherlandsIdinProviderOutput {
    * Last/family name of the individual.
    * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFamilyName() {
-    return familyName;
+        return familyName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
     this.familyName = familyName;
   }
 
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
+  }
 
-  public NetherlandsIdinProviderOutput address(@javax.annotation.Nonnull NetherlandsIdinAddress address) {
-    this.address = address;
+
+  public NetherlandsIdinProviderOutput address(@javax.annotation.Nullable NetherlandsIdinAddress address) {
+    this.address = JsonNullable.<NetherlandsIdinAddress>of(address);
     return this;
   }
 
@@ -222,23 +254,31 @@ public class NetherlandsIdinProviderOutput {
    * Address of the individual.
    * @return address
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public NetherlandsIdinAddress getAddress() {
-    return address;
+        return address.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(@javax.annotation.Nonnull NetherlandsIdinAddress address) {
+  public JsonNullable<NetherlandsIdinAddress> getAddress_JsonNullable() {
+    return address;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  public void setAddress_JsonNullable(JsonNullable<NetherlandsIdinAddress> address) {
     this.address = address;
   }
 
+  public void setAddress(@javax.annotation.Nullable NetherlandsIdinAddress address) {
+    this.address = JsonNullable.<NetherlandsIdinAddress>of(address);
+  }
 
-  public NetherlandsIdinProviderOutput birthDate(@javax.annotation.Nonnull LocalDate birthDate) {
-    this.birthDate = birthDate;
+
+  public NetherlandsIdinProviderOutput birthDate(@javax.annotation.Nullable LocalDate birthDate) {
+    this.birthDate = JsonNullable.<LocalDate>of(birthDate);
     return this;
   }
 
@@ -246,23 +286,31 @@ public class NetherlandsIdinProviderOutput {
    * Date of birth of the individual.
    * @return birthDate
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_BIRTH_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getBirthDate() {
-    return birthDate;
+        return birthDate.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_BIRTH_DATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_BIRTH_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setBirthDate(@javax.annotation.Nonnull LocalDate birthDate) {
+  public JsonNullable<LocalDate> getBirthDate_JsonNullable() {
+    return birthDate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BIRTH_DATE)
+  public void setBirthDate_JsonNullable(JsonNullable<LocalDate> birthDate) {
     this.birthDate = birthDate;
   }
 
+  public void setBirthDate(@javax.annotation.Nullable LocalDate birthDate) {
+    this.birthDate = JsonNullable.<LocalDate>of(birthDate);
+  }
 
-  public NetherlandsIdinProviderOutput gender(@javax.annotation.Nonnull String gender) {
-    this.gender = gender;
+
+  public NetherlandsIdinProviderOutput gender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
     return this;
   }
 
@@ -270,18 +318,26 @@ public class NetherlandsIdinProviderOutput {
    * Gender of the individual.              Possible values: - Male - Female - Unknown
    * @return gender
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GENDER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGender() {
-    return gender;
+        return gender.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GENDER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GENDER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGender(@javax.annotation.Nonnull String gender) {
+  public JsonNullable<String> getGender_JsonNullable() {
+    return gender;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GENDER)
+  public void setGender_JsonNullable(JsonNullable<String> gender) {
     this.gender = gender;
+  }
+
+  public void setGender(@javax.annotation.Nullable String gender) {
+    this.gender = JsonNullable.<String>of(gender);
   }
 
 
@@ -361,14 +417,14 @@ public class NetherlandsIdinProviderOutput {
       return false;
     }
     NetherlandsIdinProviderOutput netherlandsIdinProviderOutput = (NetherlandsIdinProviderOutput) o;
-    return Objects.equals(this.authorityId, netherlandsIdinProviderOutput.authorityId) &&
-        Objects.equals(this.authorityName, netherlandsIdinProviderOutput.authorityName) &&
-        Objects.equals(this.customerId, netherlandsIdinProviderOutput.customerId) &&
-        Objects.equals(this.initials, netherlandsIdinProviderOutput.initials) &&
-        Objects.equals(this.familyName, netherlandsIdinProviderOutput.familyName) &&
-        Objects.equals(this.address, netherlandsIdinProviderOutput.address) &&
-        Objects.equals(this.birthDate, netherlandsIdinProviderOutput.birthDate) &&
-        Objects.equals(this.gender, netherlandsIdinProviderOutput.gender) &&
+    return equalsNullable(this.authorityId, netherlandsIdinProviderOutput.authorityId) &&
+        equalsNullable(this.authorityName, netherlandsIdinProviderOutput.authorityName) &&
+        equalsNullable(this.customerId, netherlandsIdinProviderOutput.customerId) &&
+        equalsNullable(this.initials, netherlandsIdinProviderOutput.initials) &&
+        equalsNullable(this.familyName, netherlandsIdinProviderOutput.familyName) &&
+        equalsNullable(this.address, netherlandsIdinProviderOutput.address) &&
+        equalsNullable(this.birthDate, netherlandsIdinProviderOutput.birthDate) &&
+        equalsNullable(this.gender, netherlandsIdinProviderOutput.gender) &&
         equalsNullable(this.phoneNumber, netherlandsIdinProviderOutput.phoneNumber) &&
         equalsNullable(this.email, netherlandsIdinProviderOutput.email);
   }
@@ -379,7 +435,7 @@ public class NetherlandsIdinProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorityId, authorityName, customerId, initials, familyName, address, birthDate, gender, hashCodeNullable(phoneNumber), hashCodeNullable(email));
+    return Objects.hash(hashCodeNullable(authorityId), hashCodeNullable(authorityName), hashCodeNullable(customerId), hashCodeNullable(initials), hashCodeNullable(familyName), hashCodeNullable(address), hashCodeNullable(birthDate), hashCodeNullable(gender), hashCodeNullable(phoneNumber), hashCodeNullable(email));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

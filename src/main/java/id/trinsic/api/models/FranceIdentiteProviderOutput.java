@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   FranceIdentiteProviderOutput.JSON_PROPERTY_AGE_VERIFICATION,
   FranceIdentiteProviderOutput.JSON_PROPERTY_RAW18013_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FranceIdentiteProviderOutput {
   public static final String JSON_PROPERTY_PID = "pid";
   private JsonNullable<EudiPidCredential> pid = JsonNullable.<EudiPidCredential>undefined();
@@ -53,8 +53,7 @@ public class FranceIdentiteProviderOutput {
   private JsonNullable<EudiAgeVerificationCredential> ageVerification = JsonNullable.<EudiAgeVerificationCredential>undefined();
 
   public static final String JSON_PROPERTY_RAW18013_OUTPUT = "raw18013Output";
-  @javax.annotation.Nonnull
-  private MdlOutput raw18013Output;
+  private JsonNullable<MdlOutput> raw18013Output = JsonNullable.<MdlOutput>undefined();
 
   public FranceIdentiteProviderOutput() { 
   }
@@ -123,8 +122,8 @@ public class FranceIdentiteProviderOutput {
   }
 
 
-  public FranceIdentiteProviderOutput raw18013Output(@javax.annotation.Nonnull MdlOutput raw18013Output) {
-    this.raw18013Output = raw18013Output;
+  public FranceIdentiteProviderOutput raw18013Output(@javax.annotation.Nullable MdlOutput raw18013Output) {
+    this.raw18013Output = JsonNullable.<MdlOutput>of(raw18013Output);
     return this;
   }
 
@@ -132,18 +131,26 @@ public class FranceIdentiteProviderOutput {
    * The raw output of the 18013-7 exchange performed through France Identité.
    * @return raw18013Output
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_RAW18013_OUTPUT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public MdlOutput getRaw18013Output() {
-    return raw18013Output;
+        return raw18013Output.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_RAW18013_OUTPUT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_RAW18013_OUTPUT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRaw18013Output(@javax.annotation.Nonnull MdlOutput raw18013Output) {
+  public JsonNullable<MdlOutput> getRaw18013Output_JsonNullable() {
+    return raw18013Output;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RAW18013_OUTPUT)
+  public void setRaw18013Output_JsonNullable(JsonNullable<MdlOutput> raw18013Output) {
     this.raw18013Output = raw18013Output;
+  }
+
+  public void setRaw18013Output(@javax.annotation.Nullable MdlOutput raw18013Output) {
+    this.raw18013Output = JsonNullable.<MdlOutput>of(raw18013Output);
   }
 
 
@@ -161,7 +168,7 @@ public class FranceIdentiteProviderOutput {
     FranceIdentiteProviderOutput franceIdentiteProviderOutput = (FranceIdentiteProviderOutput) o;
     return equalsNullable(this.pid, franceIdentiteProviderOutput.pid) &&
         equalsNullable(this.ageVerification, franceIdentiteProviderOutput.ageVerification) &&
-        Objects.equals(this.raw18013Output, franceIdentiteProviderOutput.raw18013Output);
+        equalsNullable(this.raw18013Output, franceIdentiteProviderOutput.raw18013Output);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -170,7 +177,7 @@ public class FranceIdentiteProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(pid), hashCodeNullable(ageVerification), raw18013Output);
+    return Objects.hash(hashCodeNullable(pid), hashCodeNullable(ageVerification), hashCodeNullable(raw18013Output));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

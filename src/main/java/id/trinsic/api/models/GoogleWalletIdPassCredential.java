@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * A Google Wallet ID Pass credential, with document type &#x60;com.google.wallet.idcard.1&#x60;.              This is a passport-derived digital credential issued by Google.
+ * A Google Wallet ID Pass credential, retrieved from Google Wallet.              This is a passport-derived digital credential issued by Google.
  */
 @JsonPropertyOrder({
   GoogleWalletIdPassCredential.JSON_PROPERTY_GIVEN_NAME,
@@ -54,7 +54,7 @@ import id.trinsic.ApiClient;
   GoogleWalletIdPassCredential.JSON_PROPERTY_AGE_OVER,
   GoogleWalletIdPassCredential.JSON_PROPERTY_ISSUE_DATE_OF_UNDERLYING_DOCUMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GoogleWalletIdPassCredential {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();

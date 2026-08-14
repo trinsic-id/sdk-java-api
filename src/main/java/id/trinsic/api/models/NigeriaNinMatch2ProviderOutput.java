@@ -48,15 +48,13 @@ import id.trinsic.ApiClient;
   NigeriaNinMatch2ProviderOutput.JSON_PROPERTY_SEX,
   NigeriaNinMatch2ProviderOutput.JSON_PROPERTY_PHONE_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NigeriaNinMatch2ProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
-  @javax.annotation.Nonnull
-  private NigeriaNinMatch2NationalIdNumberField nationalIdNumber;
+  private JsonNullable<NigeriaNinMatch2NationalIdNumberField> nationalIdNumber = JsonNullable.<NigeriaNinMatch2NationalIdNumberField>undefined();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private NigeriaNinMatch2FullNameField fullName;
+  private JsonNullable<NigeriaNinMatch2FullNameField> fullName = JsonNullable.<NigeriaNinMatch2FullNameField>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<NigeriaNinMatch2DateOfBirthField> dateOfBirth = JsonNullable.<NigeriaNinMatch2DateOfBirthField>undefined();
@@ -70,8 +68,8 @@ public class NigeriaNinMatch2ProviderOutput {
   public NigeriaNinMatch2ProviderOutput() { 
   }
 
-  public NigeriaNinMatch2ProviderOutput nationalIdNumber(@javax.annotation.Nonnull NigeriaNinMatch2NationalIdNumberField nationalIdNumber) {
-    this.nationalIdNumber = nationalIdNumber;
+  public NigeriaNinMatch2ProviderOutput nationalIdNumber(@javax.annotation.Nullable NigeriaNinMatch2NationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<NigeriaNinMatch2NationalIdNumberField>of(nationalIdNumber);
     return this;
   }
 
@@ -79,23 +77,31 @@ public class NigeriaNinMatch2ProviderOutput {
    * Outcome of the verification of the NIN.
    * @return nationalIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public NigeriaNinMatch2NationalIdNumberField getNationalIdNumber() {
-    return nationalIdNumber;
+        return nationalIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdNumber(@javax.annotation.Nonnull NigeriaNinMatch2NationalIdNumberField nationalIdNumber) {
+  public JsonNullable<NigeriaNinMatch2NationalIdNumberField> getNationalIdNumber_JsonNullable() {
+    return nationalIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
+  public void setNationalIdNumber_JsonNullable(JsonNullable<NigeriaNinMatch2NationalIdNumberField> nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
+  public void setNationalIdNumber(@javax.annotation.Nullable NigeriaNinMatch2NationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<NigeriaNinMatch2NationalIdNumberField>of(nationalIdNumber);
+  }
 
-  public NigeriaNinMatch2ProviderOutput fullName(@javax.annotation.Nonnull NigeriaNinMatch2FullNameField fullName) {
-    this.fullName = fullName;
+
+  public NigeriaNinMatch2ProviderOutput fullName(@javax.annotation.Nullable NigeriaNinMatch2FullNameField fullName) {
+    this.fullName = JsonNullable.<NigeriaNinMatch2FullNameField>of(fullName);
     return this;
   }
 
@@ -103,18 +109,26 @@ public class NigeriaNinMatch2ProviderOutput {
    * Outcome of the verification of the full name.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public NigeriaNinMatch2FullNameField getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull NigeriaNinMatch2FullNameField fullName) {
+  public JsonNullable<NigeriaNinMatch2FullNameField> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<NigeriaNinMatch2FullNameField> fullName) {
     this.fullName = fullName;
+  }
+
+  public void setFullName(@javax.annotation.Nullable NigeriaNinMatch2FullNameField fullName) {
+    this.fullName = JsonNullable.<NigeriaNinMatch2FullNameField>of(fullName);
   }
 
 
@@ -226,8 +240,8 @@ public class NigeriaNinMatch2ProviderOutput {
       return false;
     }
     NigeriaNinMatch2ProviderOutput nigeriaNinMatch2ProviderOutput = (NigeriaNinMatch2ProviderOutput) o;
-    return Objects.equals(this.nationalIdNumber, nigeriaNinMatch2ProviderOutput.nationalIdNumber) &&
-        Objects.equals(this.fullName, nigeriaNinMatch2ProviderOutput.fullName) &&
+    return equalsNullable(this.nationalIdNumber, nigeriaNinMatch2ProviderOutput.nationalIdNumber) &&
+        equalsNullable(this.fullName, nigeriaNinMatch2ProviderOutput.fullName) &&
         equalsNullable(this.dateOfBirth, nigeriaNinMatch2ProviderOutput.dateOfBirth) &&
         equalsNullable(this.sex, nigeriaNinMatch2ProviderOutput.sex) &&
         equalsNullable(this.phoneNumber, nigeriaNinMatch2ProviderOutput.phoneNumber);
@@ -239,7 +253,7 @@ public class NigeriaNinMatch2ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nationalIdNumber, fullName, hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(phoneNumber));
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(phoneNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

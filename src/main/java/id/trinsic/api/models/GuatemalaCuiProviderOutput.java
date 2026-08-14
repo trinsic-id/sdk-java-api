@@ -51,52 +51,43 @@ import id.trinsic.ApiClient;
   GuatemalaCuiProviderOutput.JSON_PROPERTY_SEX,
   GuatemalaCuiProviderOutput.JSON_PROPERTY_ARRAY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GuatemalaCuiProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private String fullName;
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
-  @javax.annotation.Nonnull
-  private String givenName;
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
-  @javax.annotation.Nonnull
-  private String familyName;
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
-  @javax.annotation.Nonnull
-  private String documentNumber;
+  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SERIAL_DIGITS = "serialDigits";
-  @javax.annotation.Nonnull
-  private String serialDigits;
+  private JsonNullable<String> serialDigits = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_VERIFIER_DIGIT = "verifierDigit";
-  @javax.annotation.Nonnull
-  private String verifierDigit;
+  private JsonNullable<String> verifierDigit = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GEOGRAPHIC_DIGITS = "geographicDigits";
-  @javax.annotation.Nonnull
-  private String geographicDigits;
+  private JsonNullable<String> geographicDigits = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
-  @javax.annotation.Nonnull
-  private String sex;
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ARRAY_NAME = "arrayName";
-  @javax.annotation.Nonnull
-  private List<String> arrayName = new ArrayList<>();
+  private JsonNullable<List<String>> arrayName = JsonNullable.<List<String>>undefined();
 
   public GuatemalaCuiProviderOutput() { 
   }
 
-  public GuatemalaCuiProviderOutput fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
+  public GuatemalaCuiProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
 
@@ -104,23 +95,31 @@ public class GuatemalaCuiProviderOutput {
    * Full name, including given and family names of the CUI holder.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
 
-  public GuatemalaCuiProviderOutput givenName(@javax.annotation.Nonnull String givenName) {
-    this.givenName = givenName;
+
+  public GuatemalaCuiProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
 
@@ -128,23 +127,31 @@ public class GuatemalaCuiProviderOutput {
    * Given name(s) of the CUI holder.
    * @return givenName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGivenName() {
-    return givenName;
+        return givenName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGivenName(@javax.annotation.Nonnull String givenName) {
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
     this.givenName = givenName;
   }
 
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
 
-  public GuatemalaCuiProviderOutput familyName(@javax.annotation.Nonnull String familyName) {
-    this.familyName = familyName;
+
+  public GuatemalaCuiProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
@@ -152,18 +159,26 @@ public class GuatemalaCuiProviderOutput {
    * Family name(s) of the CUI holder, including maternal and paternal names.
    * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFamilyName() {
-    return familyName;
+        return familyName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
     this.familyName = familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
@@ -199,8 +214,8 @@ public class GuatemalaCuiProviderOutput {
   }
 
 
-  public GuatemalaCuiProviderOutput documentNumber(@javax.annotation.Nonnull String documentNumber) {
-    this.documentNumber = documentNumber;
+  public GuatemalaCuiProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
     return this;
   }
 
@@ -208,23 +223,31 @@ public class GuatemalaCuiProviderOutput {
    * The Guatemalan Código Único de Identificación (CUI) number.              Assigned and maintained by RENAP (Registro Nacional de las Personas). Official format: exactly 13 numeric digits. 8 RENAP-assigned serial digits, 1 verifier digit (dígito verificador), and 4 geographic digits for department and municipality of birth. The CUI is printed on the Documento Personal de Identificación (DPI) in three groups (4–5–4) separated by spaces.              Trinsic normalizes to digits-only when returning the result, automatically removing spaces, dots, hyphens, and other non-alphanumeric characters.              No verifier algorithm appears in publicly accessible RENAP resources. Community-maintained validators often use modulus-11 (non-official).
    * @return documentNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentNumber() {
-    return documentNumber;
+        return documentNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentNumber(@javax.annotation.Nonnull String documentNumber) {
+  public JsonNullable<String> getDocumentNumber_JsonNullable() {
+    return documentNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
     this.documentNumber = documentNumber;
   }
 
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  }
 
-  public GuatemalaCuiProviderOutput serialDigits(@javax.annotation.Nonnull String serialDigits) {
-    this.serialDigits = serialDigits;
+
+  public GuatemalaCuiProviderOutput serialDigits(@javax.annotation.Nullable String serialDigits) {
+    this.serialDigits = JsonNullable.<String>of(serialDigits);
     return this;
   }
 
@@ -232,23 +255,31 @@ public class GuatemalaCuiProviderOutput {
    * The first 8 digits of the CUI: the portion RENAP assigns from its registration system, before the verifier digit and the four-place geographic codes. Called the “serial” numbers in community-maintained validators.
    * @return serialDigits
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_DIGITS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSerialDigits() {
-    return serialDigits;
+        return serialDigits.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_DIGITS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_DIGITS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSerialDigits(@javax.annotation.Nonnull String serialDigits) {
+  public JsonNullable<String> getSerialDigits_JsonNullable() {
+    return serialDigits;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SERIAL_DIGITS)
+  public void setSerialDigits_JsonNullable(JsonNullable<String> serialDigits) {
     this.serialDigits = serialDigits;
   }
 
+  public void setSerialDigits(@javax.annotation.Nullable String serialDigits) {
+    this.serialDigits = JsonNullable.<String>of(serialDigits);
+  }
 
-  public GuatemalaCuiProviderOutput verifierDigit(@javax.annotation.Nonnull String verifierDigit) {
-    this.verifierDigit = verifierDigit;
+
+  public GuatemalaCuiProviderOutput verifierDigit(@javax.annotation.Nullable String verifierDigit) {
+    this.verifierDigit = JsonNullable.<String>of(verifierDigit);
     return this;
   }
 
@@ -256,23 +287,31 @@ public class GuatemalaCuiProviderOutput {
    * The 9th digit of the CUI (verifier digit / dígito verificador). No verifier algorithm appears in publicly accessible RENAP resources.              However, community-maintained validators often use modulus-11 (non-official).
    * @return verifierDigit
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VERIFIER_DIGIT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getVerifierDigit() {
-    return verifierDigit;
+        return verifierDigit.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VERIFIER_DIGIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VERIFIER_DIGIT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setVerifierDigit(@javax.annotation.Nonnull String verifierDigit) {
+  public JsonNullable<String> getVerifierDigit_JsonNullable() {
+    return verifierDigit;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VERIFIER_DIGIT)
+  public void setVerifierDigit_JsonNullable(JsonNullable<String> verifierDigit) {
     this.verifierDigit = verifierDigit;
   }
 
+  public void setVerifierDigit(@javax.annotation.Nullable String verifierDigit) {
+    this.verifierDigit = JsonNullable.<String>of(verifierDigit);
+  }
 
-  public GuatemalaCuiProviderOutput geographicDigits(@javax.annotation.Nonnull String geographicDigits) {
-    this.geographicDigits = geographicDigits;
+
+  public GuatemalaCuiProviderOutput geographicDigits(@javax.annotation.Nullable String geographicDigits) {
+    this.geographicDigits = JsonNullable.<String>of(geographicDigits);
     return this;
   }
 
@@ -280,23 +319,31 @@ public class GuatemalaCuiProviderOutput {
    * The last four digits encode birthplace department and municipality. There is not a publicly accessible dataset from RENAP for geographic codes. The INE (Instituto Nacional de Estadística y Censos) provides a dictionary of variables (Educación Formal 2024) that includes statistical codes for decoding departments and municipalities. Be careful using these resources, as these codes are not official RENAP codes. They may not always map to the correct department and municipality for consular registrations, naturalizations, foreign residents, and other edge cases.              For the dataset, see: https://datos.ine.gob.gt/dataset/educacion-formal-2024 under \&quot;Diccionario de Variables (Educación Formal 2024)\&quot;
    * @return geographicDigits
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHIC_DIGITS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGeographicDigits() {
-    return geographicDigits;
+        return geographicDigits.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHIC_DIGITS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHIC_DIGITS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGeographicDigits(@javax.annotation.Nonnull String geographicDigits) {
+  public JsonNullable<String> getGeographicDigits_JsonNullable() {
+    return geographicDigits;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GEOGRAPHIC_DIGITS)
+  public void setGeographicDigits_JsonNullable(JsonNullable<String> geographicDigits) {
     this.geographicDigits = geographicDigits;
   }
 
+  public void setGeographicDigits(@javax.annotation.Nullable String geographicDigits) {
+    this.geographicDigits = JsonNullable.<String>of(geographicDigits);
+  }
 
-  public GuatemalaCuiProviderOutput sex(@javax.annotation.Nonnull String sex) {
-    this.sex = sex;
+
+  public GuatemalaCuiProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
     return this;
   }
 
@@ -304,31 +351,43 @@ public class GuatemalaCuiProviderOutput {
    * Sex of the CUI holder.              Possible values: - Male - Female - Unknown
    * @return sex
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSex() {
-    return sex;
+        return sex.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSex(@javax.annotation.Nonnull String sex) {
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
     this.sex = sex;
   }
 
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+  }
 
-  public GuatemalaCuiProviderOutput arrayName(@javax.annotation.Nonnull List<String> arrayName) {
-    this.arrayName = arrayName;
+
+  public GuatemalaCuiProviderOutput arrayName(@javax.annotation.Nullable List<String> arrayName) {
+    this.arrayName = JsonNullable.<List<String>>of(arrayName);
     return this;
   }
 
   public GuatemalaCuiProviderOutput addArrayNameItem(String arrayNameItem) {
-    if (this.arrayName == null) {
-      this.arrayName = new ArrayList<>();
+    if (this.arrayName == null || !this.arrayName.isPresent()) {
+      this.arrayName = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.arrayName.add(arrayNameItem);
+    try {
+      this.arrayName.get().add(arrayNameItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -336,18 +395,26 @@ public class GuatemalaCuiProviderOutput {
    * All names of the CUI holder, as an array of strings (e.g. given and family name parts).
    * @return arrayName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public List<String> getArrayName() {
-    return arrayName;
+        return arrayName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setArrayName(@javax.annotation.Nonnull List<String> arrayName) {
+  public JsonNullable<List<String>> getArrayName_JsonNullable() {
+    return arrayName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ARRAY_NAME)
+  public void setArrayName_JsonNullable(JsonNullable<List<String>> arrayName) {
     this.arrayName = arrayName;
+  }
+
+  public void setArrayName(@javax.annotation.Nullable List<String> arrayName) {
+    this.arrayName = JsonNullable.<List<String>>of(arrayName);
   }
 
 
@@ -363,16 +430,16 @@ public class GuatemalaCuiProviderOutput {
       return false;
     }
     GuatemalaCuiProviderOutput guatemalaCuiProviderOutput = (GuatemalaCuiProviderOutput) o;
-    return Objects.equals(this.fullName, guatemalaCuiProviderOutput.fullName) &&
-        Objects.equals(this.givenName, guatemalaCuiProviderOutput.givenName) &&
-        Objects.equals(this.familyName, guatemalaCuiProviderOutput.familyName) &&
+    return equalsNullable(this.fullName, guatemalaCuiProviderOutput.fullName) &&
+        equalsNullable(this.givenName, guatemalaCuiProviderOutput.givenName) &&
+        equalsNullable(this.familyName, guatemalaCuiProviderOutput.familyName) &&
         equalsNullable(this.dateOfBirth, guatemalaCuiProviderOutput.dateOfBirth) &&
-        Objects.equals(this.documentNumber, guatemalaCuiProviderOutput.documentNumber) &&
-        Objects.equals(this.serialDigits, guatemalaCuiProviderOutput.serialDigits) &&
-        Objects.equals(this.verifierDigit, guatemalaCuiProviderOutput.verifierDigit) &&
-        Objects.equals(this.geographicDigits, guatemalaCuiProviderOutput.geographicDigits) &&
-        Objects.equals(this.sex, guatemalaCuiProviderOutput.sex) &&
-        Objects.equals(this.arrayName, guatemalaCuiProviderOutput.arrayName);
+        equalsNullable(this.documentNumber, guatemalaCuiProviderOutput.documentNumber) &&
+        equalsNullable(this.serialDigits, guatemalaCuiProviderOutput.serialDigits) &&
+        equalsNullable(this.verifierDigit, guatemalaCuiProviderOutput.verifierDigit) &&
+        equalsNullable(this.geographicDigits, guatemalaCuiProviderOutput.geographicDigits) &&
+        equalsNullable(this.sex, guatemalaCuiProviderOutput.sex) &&
+        equalsNullable(this.arrayName, guatemalaCuiProviderOutput.arrayName);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -381,7 +448,7 @@ public class GuatemalaCuiProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fullName, givenName, familyName, hashCodeNullable(dateOfBirth), documentNumber, serialDigits, verifierDigit, geographicDigits, sex, arrayName);
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(documentNumber), hashCodeNullable(serialDigits), hashCodeNullable(verifierDigit), hashCodeNullable(geographicDigits), hashCodeNullable(sex), hashCodeNullable(arrayName));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

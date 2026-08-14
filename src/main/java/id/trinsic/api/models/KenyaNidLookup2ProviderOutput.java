@@ -51,37 +51,31 @@ import id.trinsic.ApiClient;
   KenyaNidLookup2ProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
   KenyaNidLookup2ProviderOutput.JSON_PROPERTY_PLACE_OF_RESIDENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class KenyaNidLookup2ProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SURNAME = "surname";
-  @javax.annotation.Nonnull
-  private String surname;
+  private JsonNullable<String> surname = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_OTHER_NAME = "otherName";
   private JsonNullable<String> otherName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
-  @javax.annotation.Nonnull
-  private String sex;
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_CITIZENSHIP = "citizenship";
-  @javax.annotation.Nonnull
-  private String citizenship;
+  private JsonNullable<String> citizenship = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
-  @javax.annotation.Nonnull
-  private String idNumber;
+  private JsonNullable<String> idNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
-  @javax.annotation.Nonnull
-  private String serialNumber;
+  private JsonNullable<String> serialNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_ISSUE = "dateOfIssue";
   private JsonNullable<LocalDate> dateOfIssue = JsonNullable.<LocalDate>undefined();
@@ -95,8 +89,8 @@ public class KenyaNidLookup2ProviderOutput {
   public KenyaNidLookup2ProviderOutput() { 
   }
 
-  public KenyaNidLookup2ProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public KenyaNidLookup2ProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -104,23 +98,31 @@ public class KenyaNidLookup2ProviderOutput {
    * The first name (given name) of the ID holder as recorded in IPRS.
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public KenyaNidLookup2ProviderOutput surname(@javax.annotation.Nonnull String surname) {
-    this.surname = surname;
+
+  public KenyaNidLookup2ProviderOutput surname(@javax.annotation.Nullable String surname) {
+    this.surname = JsonNullable.<String>of(surname);
     return this;
   }
 
@@ -128,18 +130,26 @@ public class KenyaNidLookup2ProviderOutput {
    * The surname (family name) of the ID holder as recorded in IPRS.
    * @return surname
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSurname() {
-    return surname;
+        return surname.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSurname(@javax.annotation.Nonnull String surname) {
+  public JsonNullable<String> getSurname_JsonNullable() {
+    return surname;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SURNAME)
+  public void setSurname_JsonNullable(JsonNullable<String> surname) {
     this.surname = surname;
+  }
+
+  public void setSurname(@javax.annotation.Nullable String surname) {
+    this.surname = JsonNullable.<String>of(surname);
   }
 
 
@@ -175,8 +185,8 @@ public class KenyaNidLookup2ProviderOutput {
   }
 
 
-  public KenyaNidLookup2ProviderOutput sex(@javax.annotation.Nonnull String sex) {
-    this.sex = sex;
+  public KenyaNidLookup2ProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
     return this;
   }
 
@@ -184,18 +194,26 @@ public class KenyaNidLookup2ProviderOutput {
    * The sex of the ID holder as recorded on the National ID.              Possible values: - Male - Female
    * @return sex
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSex() {
-    return sex;
+        return sex.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSex(@javax.annotation.Nonnull String sex) {
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
     this.sex = sex;
+  }
+
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
   }
 
 
@@ -231,8 +249,8 @@ public class KenyaNidLookup2ProviderOutput {
   }
 
 
-  public KenyaNidLookup2ProviderOutput citizenship(@javax.annotation.Nonnull String citizenship) {
-    this.citizenship = citizenship;
+  public KenyaNidLookup2ProviderOutput citizenship(@javax.annotation.Nullable String citizenship) {
+    this.citizenship = JsonNullable.<String>of(citizenship);
     return this;
   }
 
@@ -240,23 +258,31 @@ public class KenyaNidLookup2ProviderOutput {
    * Citizenship status as recorded in the IPRS civil registry database.              For the Kenya National ID lookup, this value will always be \&quot;Kenyan\&quot; as the National ID is only issued to Kenyan citizens. Non-citizens residing in Kenya are issued different identification documents (Alien ID cards, refugee documentation, etc.) which are not supported by this provider.
    * @return citizenship
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CITIZENSHIP, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCitizenship() {
-    return citizenship;
+        return citizenship.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CITIZENSHIP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CITIZENSHIP, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCitizenship(@javax.annotation.Nonnull String citizenship) {
+  public JsonNullable<String> getCitizenship_JsonNullable() {
+    return citizenship;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CITIZENSHIP)
+  public void setCitizenship_JsonNullable(JsonNullable<String> citizenship) {
     this.citizenship = citizenship;
   }
 
+  public void setCitizenship(@javax.annotation.Nullable String citizenship) {
+    this.citizenship = JsonNullable.<String>of(citizenship);
+  }
 
-  public KenyaNidLookup2ProviderOutput idNumber(@javax.annotation.Nonnull String idNumber) {
-    this.idNumber = idNumber;
+
+  public KenyaNidLookup2ProviderOutput idNumber(@javax.annotation.Nullable String idNumber) {
+    this.idNumber = JsonNullable.<String>of(idNumber);
     return this;
   }
 
@@ -264,23 +290,31 @@ public class KenyaNidLookup2ProviderOutput {
    * The Kenya National ID Number (Nambari ya Kitambulisho) or Unique Personal Identifier (Maisha Namba).              This is the primary unique identifier for Kenyan citizens in all government systems, issued by the National Registration Bureau (NRB). The format is either 8 digits for National ID or 9 digits for Maisha Namba UPI (the new format since 2023).
    * @return idNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getIdNumber() {
-    return idNumber;
+        return idNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIdNumber(@javax.annotation.Nonnull String idNumber) {
+  public JsonNullable<String> getIdNumber_JsonNullable() {
+    return idNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
+  public void setIdNumber_JsonNullable(JsonNullable<String> idNumber) {
     this.idNumber = idNumber;
   }
 
+  public void setIdNumber(@javax.annotation.Nullable String idNumber) {
+    this.idNumber = JsonNullable.<String>of(idNumber);
+  }
 
-  public KenyaNidLookup2ProviderOutput serialNumber(@javax.annotation.Nonnull String serialNumber) {
-    this.serialNumber = serialNumber;
+
+  public KenyaNidLookup2ProviderOutput serialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
     return this;
   }
 
@@ -288,18 +322,26 @@ public class KenyaNidLookup2ProviderOutput {
    * The physical card serial number printed on the Kenya National ID card.              This is distinct from the ID Number and serves as a card issuance tracking identifier maintained by IPRS. This value changes each time a new physical card is issued (loss, damage, renewal).
    * @return serialNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSerialNumber() {
-    return serialNumber;
+        return serialNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSerialNumber(@javax.annotation.Nonnull String serialNumber) {
+  public JsonNullable<String> getSerialNumber_JsonNullable() {
+    return serialNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  public void setSerialNumber_JsonNullable(JsonNullable<String> serialNumber) {
     this.serialNumber = serialNumber;
+  }
+
+  public void setSerialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
   }
 
 
@@ -411,14 +453,14 @@ public class KenyaNidLookup2ProviderOutput {
       return false;
     }
     KenyaNidLookup2ProviderOutput kenyaNidLookup2ProviderOutput = (KenyaNidLookup2ProviderOutput) o;
-    return Objects.equals(this.firstName, kenyaNidLookup2ProviderOutput.firstName) &&
-        Objects.equals(this.surname, kenyaNidLookup2ProviderOutput.surname) &&
+    return equalsNullable(this.firstName, kenyaNidLookup2ProviderOutput.firstName) &&
+        equalsNullable(this.surname, kenyaNidLookup2ProviderOutput.surname) &&
         equalsNullable(this.otherName, kenyaNidLookup2ProviderOutput.otherName) &&
-        Objects.equals(this.sex, kenyaNidLookup2ProviderOutput.sex) &&
+        equalsNullable(this.sex, kenyaNidLookup2ProviderOutput.sex) &&
         equalsNullable(this.dateOfBirth, kenyaNidLookup2ProviderOutput.dateOfBirth) &&
-        Objects.equals(this.citizenship, kenyaNidLookup2ProviderOutput.citizenship) &&
-        Objects.equals(this.idNumber, kenyaNidLookup2ProviderOutput.idNumber) &&
-        Objects.equals(this.serialNumber, kenyaNidLookup2ProviderOutput.serialNumber) &&
+        equalsNullable(this.citizenship, kenyaNidLookup2ProviderOutput.citizenship) &&
+        equalsNullable(this.idNumber, kenyaNidLookup2ProviderOutput.idNumber) &&
+        equalsNullable(this.serialNumber, kenyaNidLookup2ProviderOutput.serialNumber) &&
         equalsNullable(this.dateOfIssue, kenyaNidLookup2ProviderOutput.dateOfIssue) &&
         equalsNullable(this.placeOfBirth, kenyaNidLookup2ProviderOutput.placeOfBirth) &&
         equalsNullable(this.placeOfResidence, kenyaNidLookup2ProviderOutput.placeOfResidence);
@@ -430,7 +472,7 @@ public class KenyaNidLookup2ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, surname, hashCodeNullable(otherName), sex, hashCodeNullable(dateOfBirth), citizenship, idNumber, serialNumber, hashCodeNullable(dateOfIssue), hashCodeNullable(placeOfBirth), hashCodeNullable(placeOfResidence));
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(surname), hashCodeNullable(otherName), hashCodeNullable(sex), hashCodeNullable(dateOfBirth), hashCodeNullable(citizenship), hashCodeNullable(idNumber), hashCodeNullable(serialNumber), hashCodeNullable(dateOfIssue), hashCodeNullable(placeOfBirth), hashCodeNullable(placeOfResidence));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

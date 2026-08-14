@@ -43,15 +43,13 @@ import id.trinsic.ApiClient;
   Iso180135AamvaDomesticVehicleClass.JSON_PROPERTY_ISSUE_DATE,
   Iso180135AamvaDomesticVehicleClass.JSON_PROPERTY_EXPIRY_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135AamvaDomesticVehicleClass {
   public static final String JSON_PROPERTY_CODE = "code";
-  @javax.annotation.Nonnull
-  private String code;
+  private JsonNullable<String> code = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  @javax.annotation.Nonnull
-  private String description;
+  private JsonNullable<String> description = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ISSUE_DATE = "issueDate";
   private JsonNullable<LocalDate> issueDate = JsonNullable.<LocalDate>undefined();
@@ -62,8 +60,8 @@ public class Iso180135AamvaDomesticVehicleClass {
   public Iso180135AamvaDomesticVehicleClass() { 
   }
 
-  public Iso180135AamvaDomesticVehicleClass code(@javax.annotation.Nonnull String code) {
-    this.code = code;
+  public Iso180135AamvaDomesticVehicleClass code(@javax.annotation.Nullable String code) {
+    this.code = JsonNullable.<String>of(code);
     return this;
   }
 
@@ -71,23 +69,31 @@ public class Iso180135AamvaDomesticVehicleClass {
    * Vehicle class code.
    * @return code
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCode() {
-    return code;
+        return code.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(@javax.annotation.Nonnull String code) {
+  public JsonNullable<String> getCode_JsonNullable() {
+    return code;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CODE)
+  public void setCode_JsonNullable(JsonNullable<String> code) {
     this.code = code;
   }
 
+  public void setCode(@javax.annotation.Nullable String code) {
+    this.code = JsonNullable.<String>of(code);
+  }
 
-  public Iso180135AamvaDomesticVehicleClass description(@javax.annotation.Nonnull String description) {
-    this.description = description;
+
+  public Iso180135AamvaDomesticVehicleClass description(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
     return this;
   }
 
@@ -95,18 +101,26 @@ public class Iso180135AamvaDomesticVehicleClass {
    * Human-readable description of the vehicle class.
    * @return description
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDescription() {
-    return description;
+        return description.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDescription(@javax.annotation.Nonnull String description) {
+  public JsonNullable<String> getDescription_JsonNullable() {
+    return description;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  public void setDescription_JsonNullable(JsonNullable<String> description) {
     this.description = description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
   }
 
 
@@ -186,8 +200,8 @@ public class Iso180135AamvaDomesticVehicleClass {
       return false;
     }
     Iso180135AamvaDomesticVehicleClass iso180135AamvaDomesticVehicleClass = (Iso180135AamvaDomesticVehicleClass) o;
-    return Objects.equals(this.code, iso180135AamvaDomesticVehicleClass.code) &&
-        Objects.equals(this.description, iso180135AamvaDomesticVehicleClass.description) &&
+    return equalsNullable(this.code, iso180135AamvaDomesticVehicleClass.code) &&
+        equalsNullable(this.description, iso180135AamvaDomesticVehicleClass.description) &&
         equalsNullable(this.issueDate, iso180135AamvaDomesticVehicleClass.issueDate) &&
         equalsNullable(this.expiryDate, iso180135AamvaDomesticVehicleClass.expiryDate);
   }
@@ -198,7 +212,7 @@ public class Iso180135AamvaDomesticVehicleClass {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, description, hashCodeNullable(issueDate), hashCodeNullable(expiryDate));
+    return Objects.hash(hashCodeNullable(code), hashCodeNullable(description), hashCodeNullable(issueDate), hashCodeNullable(expiryDate));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -83,22 +83,6 @@ class ProviderTest {
     }
 
     /**
-     * Test the property 'description'
-     */
-    @Test
-    void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'geography'
-     */
-    @Test
-    void geographyTest() {
-        // TODO: test geography
-    }
-
-    /**
      * Test the property 'regions'
      */
     @Test

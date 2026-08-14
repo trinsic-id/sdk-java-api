@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,36 +41,35 @@ import id.trinsic.ApiClient;
   MdlOutputCertificateData.JSON_PROPERTY_SERIAL_NUMBER,
   MdlOutputCertificateData.JSON_PROPERTY_COMMON_NAME,
   MdlOutputCertificateData.JSON_PROPERTY_STATE_OR_PROVINCE_NAME,
+  MdlOutputCertificateData.JSON_PROPERTY_COUNTRY_CODE,
   MdlOutputCertificateData.JSON_PROPERTY_NOT_BEFORE,
   MdlOutputCertificateData.JSON_PROPERTY_NOT_AFTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MdlOutputCertificateData {
   public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
-  @javax.annotation.Nonnull
-  private String serialNumber;
+  private JsonNullable<String> serialNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COMMON_NAME = "commonName";
-  @javax.annotation.Nonnull
-  private String commonName;
+  private JsonNullable<String> commonName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_STATE_OR_PROVINCE_NAME = "stateOrProvinceName";
-  @javax.annotation.Nonnull
-  private String stateOrProvinceName;
+  private JsonNullable<String> stateOrProvinceName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_COUNTRY_CODE = "countryCode";
+  private JsonNullable<String> countryCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NOT_BEFORE = "notBefore";
-  @javax.annotation.Nonnull
-  private OffsetDateTime notBefore;
+  private JsonNullable<OffsetDateTime> notBefore = JsonNullable.<OffsetDateTime>undefined();
 
   public static final String JSON_PROPERTY_NOT_AFTER = "notAfter";
-  @javax.annotation.Nonnull
-  private OffsetDateTime notAfter;
+  private JsonNullable<OffsetDateTime> notAfter = JsonNullable.<OffsetDateTime>undefined();
 
   public MdlOutputCertificateData() { 
   }
 
-  public MdlOutputCertificateData serialNumber(@javax.annotation.Nonnull String serialNumber) {
-    this.serialNumber = serialNumber;
+  public MdlOutputCertificateData serialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
     return this;
   }
 
@@ -74,23 +77,31 @@ public class MdlOutputCertificateData {
    * The serial number of the certificate
    * @return serialNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSerialNumber() {
-    return serialNumber;
+        return serialNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSerialNumber(@javax.annotation.Nonnull String serialNumber) {
+  public JsonNullable<String> getSerialNumber_JsonNullable() {
+    return serialNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  public void setSerialNumber_JsonNullable(JsonNullable<String> serialNumber) {
     this.serialNumber = serialNumber;
   }
 
+  public void setSerialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
+  }
 
-  public MdlOutputCertificateData commonName(@javax.annotation.Nonnull String commonName) {
-    this.commonName = commonName;
+
+  public MdlOutputCertificateData commonName(@javax.annotation.Nullable String commonName) {
+    this.commonName = JsonNullable.<String>of(commonName);
     return this;
   }
 
@@ -98,47 +109,95 @@ public class MdlOutputCertificateData {
    * The common name (CN) of the certificate
    * @return commonName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COMMON_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCommonName() {
-    return commonName;
+        return commonName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_COMMON_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_COMMON_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCommonName(@javax.annotation.Nonnull String commonName) {
+  public JsonNullable<String> getCommonName_JsonNullable() {
+    return commonName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COMMON_NAME)
+  public void setCommonName_JsonNullable(JsonNullable<String> commonName) {
     this.commonName = commonName;
   }
 
+  public void setCommonName(@javax.annotation.Nullable String commonName) {
+    this.commonName = JsonNullable.<String>of(commonName);
+  }
 
-  public MdlOutputCertificateData stateOrProvinceName(@javax.annotation.Nonnull String stateOrProvinceName) {
-    this.stateOrProvinceName = stateOrProvinceName;
+
+  public MdlOutputCertificateData stateOrProvinceName(@javax.annotation.Nullable String stateOrProvinceName) {
+    this.stateOrProvinceName = JsonNullable.<String>of(stateOrProvinceName);
     return this;
   }
 
   /**
-   * The stateOrProvinceName field from the signing certificate.              Per the ISO 18013-5 (mDL) spec, this is an ISO 3166-2:2020 country subdivision code (e.g., \&quot;US-CA\&quot; for California, USA).              May be an empty string for certificates which are not state-specific (e.g., Google Wallet&#39;s ID Pass certificates).
+   * The stateOrProvinceName field from the certificate
    * @return stateOrProvinceName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_STATE_OR_PROVINCE_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getStateOrProvinceName() {
-    return stateOrProvinceName;
+        return stateOrProvinceName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_STATE_OR_PROVINCE_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_STATE_OR_PROVINCE_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStateOrProvinceName(@javax.annotation.Nonnull String stateOrProvinceName) {
+  public JsonNullable<String> getStateOrProvinceName_JsonNullable() {
+    return stateOrProvinceName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_STATE_OR_PROVINCE_NAME)
+  public void setStateOrProvinceName_JsonNullable(JsonNullable<String> stateOrProvinceName) {
     this.stateOrProvinceName = stateOrProvinceName;
   }
 
+  public void setStateOrProvinceName(@javax.annotation.Nullable String stateOrProvinceName) {
+    this.stateOrProvinceName = JsonNullable.<String>of(stateOrProvinceName);
+  }
 
-  public MdlOutputCertificateData notBefore(@javax.annotation.Nonnull OffsetDateTime notBefore) {
-    this.notBefore = notBefore;
+
+  public MdlOutputCertificateData countryCode(@javax.annotation.Nullable String countryCode) {
+    this.countryCode = JsonNullable.<String>of(countryCode);
+    return this;
+  }
+
+  /**
+   * The countryCode field from the certificate
+   * @return countryCode
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCountryCode() {
+        return countryCode.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCountryCode_JsonNullable() {
+    return countryCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+  public void setCountryCode_JsonNullable(JsonNullable<String> countryCode) {
+    this.countryCode = countryCode;
+  }
+
+  public void setCountryCode(@javax.annotation.Nullable String countryCode) {
+    this.countryCode = JsonNullable.<String>of(countryCode);
+  }
+
+
+  public MdlOutputCertificateData notBefore(@javax.annotation.Nullable OffsetDateTime notBefore) {
+    this.notBefore = JsonNullable.<OffsetDateTime>of(notBefore);
     return this;
   }
 
@@ -146,23 +205,31 @@ public class MdlOutputCertificateData {
    * The date before which this certificate is not valid.
    * @return notBefore
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public OffsetDateTime getNotBefore() {
-    return notBefore;
+        return notBefore.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NOT_BEFORE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNotBefore(@javax.annotation.Nonnull OffsetDateTime notBefore) {
+  public JsonNullable<OffsetDateTime> getNotBefore_JsonNullable() {
+    return notBefore;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NOT_BEFORE)
+  public void setNotBefore_JsonNullable(JsonNullable<OffsetDateTime> notBefore) {
     this.notBefore = notBefore;
   }
 
+  public void setNotBefore(@javax.annotation.Nullable OffsetDateTime notBefore) {
+    this.notBefore = JsonNullable.<OffsetDateTime>of(notBefore);
+  }
 
-  public MdlOutputCertificateData notAfter(@javax.annotation.Nonnull OffsetDateTime notAfter) {
-    this.notAfter = notAfter;
+
+  public MdlOutputCertificateData notAfter(@javax.annotation.Nullable OffsetDateTime notAfter) {
+    this.notAfter = JsonNullable.<OffsetDateTime>of(notAfter);
     return this;
   }
 
@@ -170,18 +237,26 @@ public class MdlOutputCertificateData {
    * The date after which this certificate is not valid.
    * @return notAfter
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public OffsetDateTime getNotAfter() {
-    return notAfter;
+        return notAfter.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NOT_AFTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNotAfter(@javax.annotation.Nonnull OffsetDateTime notAfter) {
+  public JsonNullable<OffsetDateTime> getNotAfter_JsonNullable() {
+    return notAfter;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NOT_AFTER)
+  public void setNotAfter_JsonNullable(JsonNullable<OffsetDateTime> notAfter) {
     this.notAfter = notAfter;
+  }
+
+  public void setNotAfter(@javax.annotation.Nullable OffsetDateTime notAfter) {
+    this.notAfter = JsonNullable.<OffsetDateTime>of(notAfter);
   }
 
 
@@ -197,16 +272,28 @@ public class MdlOutputCertificateData {
       return false;
     }
     MdlOutputCertificateData mdlOutputCertificateData = (MdlOutputCertificateData) o;
-    return Objects.equals(this.serialNumber, mdlOutputCertificateData.serialNumber) &&
-        Objects.equals(this.commonName, mdlOutputCertificateData.commonName) &&
-        Objects.equals(this.stateOrProvinceName, mdlOutputCertificateData.stateOrProvinceName) &&
-        Objects.equals(this.notBefore, mdlOutputCertificateData.notBefore) &&
-        Objects.equals(this.notAfter, mdlOutputCertificateData.notAfter);
+    return equalsNullable(this.serialNumber, mdlOutputCertificateData.serialNumber) &&
+        equalsNullable(this.commonName, mdlOutputCertificateData.commonName) &&
+        equalsNullable(this.stateOrProvinceName, mdlOutputCertificateData.stateOrProvinceName) &&
+        equalsNullable(this.countryCode, mdlOutputCertificateData.countryCode) &&
+        equalsNullable(this.notBefore, mdlOutputCertificateData.notBefore) &&
+        equalsNullable(this.notAfter, mdlOutputCertificateData.notAfter);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serialNumber, commonName, stateOrProvinceName, notBefore, notAfter);
+    return Objects.hash(hashCodeNullable(serialNumber), hashCodeNullable(commonName), hashCodeNullable(stateOrProvinceName), hashCodeNullable(countryCode), hashCodeNullable(notBefore), hashCodeNullable(notAfter));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -216,6 +303,7 @@ public class MdlOutputCertificateData {
     sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
     sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
     sb.append("    stateOrProvinceName: ").append(toIndentedString(stateOrProvinceName)).append("\n");
+    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
     sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
     sb.append("}");
@@ -275,6 +363,11 @@ public class MdlOutputCertificateData {
     // add `stateOrProvinceName` to the URL query string
     if (getStateOrProvinceName() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sstateOrProvinceName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStateOrProvinceName()))));
+    }
+
+    // add `countryCode` to the URL query string
+    if (getCountryCode() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%scountryCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountryCode()))));
     }
 
     // add `notBefore` to the URL query string

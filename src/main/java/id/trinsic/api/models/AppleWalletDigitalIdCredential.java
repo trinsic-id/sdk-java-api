@@ -62,7 +62,7 @@ import id.trinsic.ApiClient;
   AppleWalletDigitalIdCredential.JSON_PROPERTY_RESIDENT_POSTAL_CODE,
   AppleWalletDigitalIdCredential.JSON_PROPERTY_RESIDENT_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AppleWalletDigitalIdCredential {
   public static final String JSON_PROPERTY_GIVEN_NAME_UNICODE = "givenNameUnicode";
   private JsonNullable<String> givenNameUnicode = JsonNullable.<String>undefined();

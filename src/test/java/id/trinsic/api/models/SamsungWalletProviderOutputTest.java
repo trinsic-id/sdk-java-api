@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.Iso180135MobileDriversLicenseCredential;
 import id.trinsic.api.models.MdlOutput;
+import id.trinsic.api.models.SamsungIdWithClearCredential;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -49,6 +50,14 @@ class SamsungWalletProviderOutputTest {
     @Test
     void mobileDriversLicenseTest() {
         // TODO: test mobileDriversLicense
+    }
+
+    /**
+     * Test the property 'samsungIdWithClear'
+     */
+    @Test
+    void samsungIdWithClearTest() {
+        // TODO: test samsungIdWithClear
     }
 
     /**

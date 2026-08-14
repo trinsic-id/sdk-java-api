@@ -8,14 +8,17 @@ Exposed properties for the `france-identite-numerique` Provider which do not dir
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**givenName** | [**FrenchNumeriqueGivenName**](FrenchNumeriqueGivenName.md) | Given name information including the full given name and its structured components (first name and middle name(s)). |  [optional] |
+|**sub** | **String** | OpenID Connect subject identifier (sub) for the verified individual. |  [optional] |
+|**givenName** | **String** | Full given name(s) as recorded on the individual&#39;s French identity document.              If the individual has multiple given names, they are separated by a single space. |  [optional] |
+|**splittedGivenName** | [**FrenchNumeriqueSplittedGivenName**](FrenchNumeriqueSplittedGivenName.md) | Given name split into first name and middle name(s). |  [optional] |
 |**familyName** | **String** | Birth name (nom de naissance) as recorded on the individual&#39;s French identity document. In France, this is the family name given at birth and may differ from the usage name. |  [optional] |
 |**preferredSurname** | **String** | Usage surname (\&quot;nom d&#39;usage\&quot;) - according to French law, this is the surname used in daily life. This is typically a married name or other preferred surname, as opposed to FamilyName which is the birth surname (\&quot;nom de naissance\&quot;). |  [optional] |
 |**birthdate** | **String** | Date of birth in YYYY-MM-DD format, as recorded on the individual&#39;s French identity document. |  [optional] |
 |**nationality** | [**FrenchNumeriqueNationality**](FrenchNumeriqueNationality.md) | Nationality information with ISO 3166 alpha-3 code and French label. The label is provided in French (e.g., \&quot;Française\&quot; for French nationality). |  [optional] |
 |**sex** | **String** | Sex - \&quot;Male\&quot; or \&quot;Female\&quot;. |  [optional] |
 |**majority** | **Boolean** | Majority status (majorité) indicating whether the individual has reached the French age of legal majority (18 years old). This value is computed by the provider from the individual&#39;s birthdate. |  [optional] |
-|**phoneNumber** | [**FrenchNumeriquePhone**](FrenchNumeriquePhone.md) | Phone number information including the full phone number and its structured components (country prefix and national number). |  [optional] |
+|**phoneNumber** | **String** | Full phone number including country prefix. |  [optional] |
+|**splittedPhone** | [**FrenchNumeriqueSplittedPhone**](FrenchNumeriqueSplittedPhone.md) | Phone number split into country prefix and national number. |  [optional] |
 |**phoneNumberVerified** | **Boolean** | Whether the phone number has been verified by the provider. |  [optional] |
 |**email** | **String** | Email address registered in the individual&#39;s digital identity account. |  [optional] |
 |**emailVerified** | **Boolean** | Whether the email address has been verified by the provider. |  [optional] |

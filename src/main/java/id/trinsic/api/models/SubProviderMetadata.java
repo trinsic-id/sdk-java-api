@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,9 +40,10 @@ import id.trinsic.ApiClient;
   SubProviderMetadata.JSON_PROPERTY_ID,
   SubProviderMetadata.JSON_PROPERTY_NAME,
   SubProviderMetadata.JSON_PROPERTY_SUBTEXT,
-  SubProviderMetadata.JSON_PROPERTY_LOGO_URL
+  SubProviderMetadata.JSON_PROPERTY_LOGO_URL,
+  SubProviderMetadata.JSON_PROPERTY_DARK_MODE_LOGO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SubProviderMetadata {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -55,6 +60,9 @@ public class SubProviderMetadata {
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
   private String logoUrl;
+
+  public static final String JSON_PROPERTY_DARK_MODE_LOGO_URL = "darkModeLogoUrl";
+  private JsonNullable<String> darkModeLogoUrl = JsonNullable.<String>undefined();
 
   public SubProviderMetadata() { 
   }
@@ -137,7 +145,7 @@ public class SubProviderMetadata {
   }
 
   /**
-   * A URL pointing to the logo on Trinsic&#39;s CDN.              May be a PNG, JPG, or SVG image.
+   * A URL pointing to the logo on Trinsic&#39;s CDN.              It may be a PNG, JPG, or SVG image.
    * @return logoUrl
    */
   @javax.annotation.Nonnull
@@ -152,6 +160,38 @@ public class SubProviderMetadata {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLogoUrl(@javax.annotation.Nonnull String logoUrl) {
     this.logoUrl = logoUrl;
+  }
+
+
+  public SubProviderMetadata darkModeLogoUrl(@javax.annotation.Nullable String darkModeLogoUrl) {
+    this.darkModeLogoUrl = JsonNullable.<String>of(darkModeLogoUrl);
+    return this;
+  }
+
+  /**
+   * An optional URL pointing to a dark mode logo on Trinsic&#39;s CDN.              It may be a PNG, JPG, or SVG image. If omitted, use LogoUrl in dark mode.
+   * @return darkModeLogoUrl
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getDarkModeLogoUrl() {
+        return darkModeLogoUrl.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DARK_MODE_LOGO_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getDarkModeLogoUrl_JsonNullable() {
+    return darkModeLogoUrl;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DARK_MODE_LOGO_URL)
+  public void setDarkModeLogoUrl_JsonNullable(JsonNullable<String> darkModeLogoUrl) {
+    this.darkModeLogoUrl = darkModeLogoUrl;
+  }
+
+  public void setDarkModeLogoUrl(@javax.annotation.Nullable String darkModeLogoUrl) {
+    this.darkModeLogoUrl = JsonNullable.<String>of(darkModeLogoUrl);
   }
 
 
@@ -170,12 +210,24 @@ public class SubProviderMetadata {
     return Objects.equals(this.id, subProviderMetadata.id) &&
         Objects.equals(this.name, subProviderMetadata.name) &&
         Objects.equals(this.subtext, subProviderMetadata.subtext) &&
-        Objects.equals(this.logoUrl, subProviderMetadata.logoUrl);
+        Objects.equals(this.logoUrl, subProviderMetadata.logoUrl) &&
+        equalsNullable(this.darkModeLogoUrl, subProviderMetadata.darkModeLogoUrl);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, subtext, logoUrl);
+    return Objects.hash(id, name, subtext, logoUrl, hashCodeNullable(darkModeLogoUrl));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -186,6 +238,7 @@ public class SubProviderMetadata {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
+    sb.append("    darkModeLogoUrl: ").append(toIndentedString(darkModeLogoUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,6 +301,11 @@ public class SubProviderMetadata {
     // add `logoUrl` to the URL query string
     if (getLogoUrl() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%slogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLogoUrl()))));
+    }
+
+    // add `darkModeLogoUrl` to the URL query string
+    if (getDarkModeLogoUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdarkModeLogoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDarkModeLogoUrl()))));
     }
 
     return joiner.toString();

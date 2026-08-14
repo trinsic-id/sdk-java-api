@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,92 +41,113 @@ import id.trinsic.ApiClient;
   KoreaTelcoMatchProviderOutput.JSON_PROPERTY_TELE_TYPE,
   KoreaTelcoMatchProviderOutput.JSON_PROPERTY_RESULT_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class KoreaTelcoMatchProviderOutput {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
-  @javax.annotation.Nonnull
-  private String phoneNumber;
+  private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_TELE_TYPE = "teleType";
-  @javax.annotation.Nonnull
-  private String teleType;
+  private JsonNullable<String> teleType = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_RESULT_CODE = "resultCode";
-  @javax.annotation.Nonnull
-  private String resultCode;
+  private JsonNullable<String> resultCode = JsonNullable.<String>undefined();
 
   public KoreaTelcoMatchProviderOutput() { 
   }
 
-  public KoreaTelcoMatchProviderOutput phoneNumber(@javax.annotation.Nonnull String phoneNumber) {
-    this.phoneNumber = phoneNumber;
+  public KoreaTelcoMatchProviderOutput phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
     return this;
   }
 
   /**
-   * The verified phone number as submitted by the relying party.
+   * The phone number submitted for the carrier match.
    * @return phoneNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPhoneNumber() {
-    return phoneNumber;
+        return phoneNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPhoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public JsonNullable<String> getPhoneNumber_JsonNullable() {
+    return phoneNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  public void setPhoneNumber_JsonNullable(JsonNullable<String> phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+  }
 
-  public KoreaTelcoMatchProviderOutput teleType(@javax.annotation.Nonnull String teleType) {
-    this.teleType = teleType;
+
+  public KoreaTelcoMatchProviderOutput teleType(@javax.annotation.Nullable String teleType) {
+    this.teleType = JsonNullable.<String>of(teleType);
     return this;
   }
 
   /**
-   * The mobile carrier used for verification. Possible values: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;&lt;description&gt;Lgu&lt;/description&gt;&lt;/item&gt;&lt;item&gt;&lt;description&gt;Skt&lt;/description&gt;&lt;/item&gt;&lt;item&gt;&lt;description&gt;Kt&lt;/description&gt;&lt;/item&gt;&lt;/list&gt;
+   * The mobile carrier used for the match.              Supported values: Lgu, Skt, Kt.
    * @return teleType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_TELE_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getTeleType() {
-    return teleType;
+        return teleType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_TELE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_TELE_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTeleType(@javax.annotation.Nonnull String teleType) {
+  public JsonNullable<String> getTeleType_JsonNullable() {
+    return teleType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TELE_TYPE)
+  public void setTeleType_JsonNullable(JsonNullable<String> teleType) {
     this.teleType = teleType;
   }
 
+  public void setTeleType(@javax.annotation.Nullable String teleType) {
+    this.teleType = JsonNullable.<String>of(teleType);
+  }
 
-  public KoreaTelcoMatchProviderOutput resultCode(@javax.annotation.Nonnull String resultCode) {
-    this.resultCode = resultCode;
+
+  public KoreaTelcoMatchProviderOutput resultCode(@javax.annotation.Nullable String resultCode) {
+    this.resultCode = JsonNullable.<String>of(resultCode);
     return this;
   }
 
   /**
-   * The RaonSecure result code returned by the carrier verification system. \&quot;0000\&quot; indicates a successful match.              Common error codes: - \&quot;0000\&quot;: Successful match - \&quot;0001\&quot;: Identity Verification Failed - Verification Information Mismatch (General) - \&quot;0002\&quot;: Identity Verification Failed - Unable to Verify Phone Number - \&quot;0004\&quot;: Identity Verification Failed - Date of Birth Verification Error - \&quot;0005\&quot;: Identity Verification Failed - Gender Verification Error - \&quot;0006\&quot;: Identity Verification Failed - Name Verification Error - \&quot;0009\&quot;: Identity Verification Failed - Device OS Mismatch
+   * The carrier match result code.              Common result codes: - \&quot;0000\&quot;: Successful match - \&quot;0001\&quot;: Failed - Verification Information Mismatch (General) - \&quot;0002\&quot;: Failed - Unable to Verify Phone Number - \&quot;0004\&quot;: Failed - Date of Birth Verification Error - \&quot;0005\&quot;: Failed - Gender Verification Error - \&quot;0006\&quot;: Failed - Name Verification Error - \&quot;0009\&quot;: Failed - Device OS Mismatch
    * @return resultCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_RESULT_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getResultCode() {
-    return resultCode;
+        return resultCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_RESULT_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_RESULT_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setResultCode(@javax.annotation.Nonnull String resultCode) {
+  public JsonNullable<String> getResultCode_JsonNullable() {
+    return resultCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RESULT_CODE)
+  public void setResultCode_JsonNullable(JsonNullable<String> resultCode) {
     this.resultCode = resultCode;
+  }
+
+  public void setResultCode(@javax.annotation.Nullable String resultCode) {
+    this.resultCode = JsonNullable.<String>of(resultCode);
   }
 
 
@@ -138,14 +163,25 @@ public class KoreaTelcoMatchProviderOutput {
       return false;
     }
     KoreaTelcoMatchProviderOutput koreaTelcoMatchProviderOutput = (KoreaTelcoMatchProviderOutput) o;
-    return Objects.equals(this.phoneNumber, koreaTelcoMatchProviderOutput.phoneNumber) &&
-        Objects.equals(this.teleType, koreaTelcoMatchProviderOutput.teleType) &&
-        Objects.equals(this.resultCode, koreaTelcoMatchProviderOutput.resultCode);
+    return equalsNullable(this.phoneNumber, koreaTelcoMatchProviderOutput.phoneNumber) &&
+        equalsNullable(this.teleType, koreaTelcoMatchProviderOutput.teleType) &&
+        equalsNullable(this.resultCode, koreaTelcoMatchProviderOutput.resultCode);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, teleType, resultCode);
+    return Objects.hash(hashCodeNullable(phoneNumber), hashCodeNullable(teleType), hashCodeNullable(resultCode));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

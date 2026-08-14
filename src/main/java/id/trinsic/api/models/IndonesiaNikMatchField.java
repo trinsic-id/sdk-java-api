@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,21 +40,19 @@ import id.trinsic.ApiClient;
   IndonesiaNikMatchField.JSON_PROPERTY_CONTENT,
   IndonesiaNikMatchField.JSON_PROPERTY_MATCH_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndonesiaNikMatchField {
   public static final String JSON_PROPERTY_CONTENT = "content";
-  @javax.annotation.Nonnull
-  private String content;
+  private JsonNullable<String> content = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_MATCH_VALUE = "matchValue";
-  @javax.annotation.Nonnull
-  private Boolean matchValue;
+  private JsonNullable<Boolean> matchValue = JsonNullable.<Boolean>undefined();
 
   public IndonesiaNikMatchField() { 
   }
 
-  public IndonesiaNikMatchField content(@javax.annotation.Nonnull String content) {
-    this.content = content;
+  public IndonesiaNikMatchField content(@javax.annotation.Nullable String content) {
+    this.content = JsonNullable.<String>of(content);
     return this;
   }
 
@@ -58,23 +60,31 @@ public class IndonesiaNikMatchField {
    * Raw value used for this match field.
    * @return content
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CONTENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getContent() {
-    return content;
+        return content.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CONTENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CONTENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setContent(@javax.annotation.Nonnull String content) {
+  public JsonNullable<String> getContent_JsonNullable() {
+    return content;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  public void setContent_JsonNullable(JsonNullable<String> content) {
     this.content = content;
   }
 
+  public void setContent(@javax.annotation.Nullable String content) {
+    this.content = JsonNullable.<String>of(content);
+  }
 
-  public IndonesiaNikMatchField matchValue(@javax.annotation.Nonnull Boolean matchValue) {
-    this.matchValue = matchValue;
+
+  public IndonesiaNikMatchField matchValue(@javax.annotation.Nullable Boolean matchValue) {
+    this.matchValue = JsonNullable.<Boolean>of(matchValue);
     return this;
   }
 
@@ -82,18 +92,26 @@ public class IndonesiaNikMatchField {
    * Whether the value matched.
    * @return matchValue
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_MATCH_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getMatchValue() {
-    return matchValue;
+        return matchValue.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_MATCH_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_MATCH_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMatchValue(@javax.annotation.Nonnull Boolean matchValue) {
+  public JsonNullable<Boolean> getMatchValue_JsonNullable() {
+    return matchValue;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MATCH_VALUE)
+  public void setMatchValue_JsonNullable(JsonNullable<Boolean> matchValue) {
     this.matchValue = matchValue;
+  }
+
+  public void setMatchValue(@javax.annotation.Nullable Boolean matchValue) {
+    this.matchValue = JsonNullable.<Boolean>of(matchValue);
   }
 
 
@@ -109,13 +127,24 @@ public class IndonesiaNikMatchField {
       return false;
     }
     IndonesiaNikMatchField indonesiaNikMatchField = (IndonesiaNikMatchField) o;
-    return Objects.equals(this.content, indonesiaNikMatchField.content) &&
-        Objects.equals(this.matchValue, indonesiaNikMatchField.matchValue);
+    return equalsNullable(this.content, indonesiaNikMatchField.content) &&
+        equalsNullable(this.matchValue, indonesiaNikMatchField.matchValue);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content, matchValue);
+    return Objects.hash(hashCodeNullable(content), hashCodeNullable(matchValue));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

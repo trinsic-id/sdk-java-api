@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,14 +39,18 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   BrazilCpfCheckInput.JSON_PROPERTY_CPF_NUMBER,
+  BrazilCpfCheckInput.JSON_PROPERTY_DATE_OF_BIRTH,
   BrazilCpfCheckInput.JSON_PROPERTY_SELFIE_IMAGE,
   BrazilCpfCheckInput.JSON_PROPERTY_SELFIE_IMAGE_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BrazilCpfCheckInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
   @javax.annotation.Nonnull
   private String cpfNumber;
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_SELFIE_IMAGE = "selfieImage";
   private JsonNullable<byte[]> selfieImage = JsonNullable.<byte[]>undefined();
@@ -77,6 +82,38 @@ public class BrazilCpfCheckInput {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCpfNumber(@javax.annotation.Nonnull String cpfNumber) {
     this.cpfNumber = cpfNumber;
+  }
+
+
+  public BrazilCpfCheckInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+    return this;
+  }
+
+  /**
+   * The user&#39;s date of birth. Optional, but date of birth will become required for lookups starting September 1, 2026.
+   * @return dateOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDateOfBirth() {
+        return dateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
 
@@ -157,6 +194,7 @@ public class BrazilCpfCheckInput {
     }
     BrazilCpfCheckInput brazilCpfCheckInput = (BrazilCpfCheckInput) o;
     return Objects.equals(this.cpfNumber, brazilCpfCheckInput.cpfNumber) &&
+        equalsNullable(this.dateOfBirth, brazilCpfCheckInput.dateOfBirth) &&
         equalsNullable(this.selfieImage, brazilCpfCheckInput.selfieImage) &&
         equalsNullable(this.selfieImageContentType, brazilCpfCheckInput.selfieImageContentType);
   }
@@ -167,7 +205,7 @@ public class BrazilCpfCheckInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpfNumber, hashCodeNullable(selfieImage), hashCodeNullable(selfieImageContentType));
+    return Objects.hash(cpfNumber, hashCodeNullable(dateOfBirth), hashCodeNullable(selfieImage), hashCodeNullable(selfieImageContentType));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -182,6 +220,7 @@ public class BrazilCpfCheckInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrazilCpfCheckInput {\n");
     sb.append("    cpfNumber: ").append(toIndentedString(cpfNumber)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    selfieImage: ").append(toIndentedString(selfieImage)).append("\n");
     sb.append("    selfieImageContentType: ").append(toIndentedString(selfieImageContentType)).append("\n");
     sb.append("}");
@@ -231,6 +270,11 @@ public class BrazilCpfCheckInput {
     // add `cpfNumber` to the URL query string
     if (getCpfNumber() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
+    }
+
+    // add `dateOfBirth` to the URL query string
+    if (getDateOfBirth() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `selfieImage` to the URL query string

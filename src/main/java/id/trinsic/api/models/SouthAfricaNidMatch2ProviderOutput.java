@@ -47,15 +47,13 @@ import id.trinsic.ApiClient;
   SouthAfricaNidMatch2ProviderOutput.JSON_PROPERTY_SEX,
   SouthAfricaNidMatch2ProviderOutput.JSON_PROPERTY_CITIZENSHIP_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SouthAfricaNidMatch2ProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
-  @javax.annotation.Nonnull
-  private SouthAfricaNidMatch2NationalIdNumberField nationalIdNumber;
+  private JsonNullable<SouthAfricaNidMatch2NationalIdNumberField> nationalIdNumber = JsonNullable.<SouthAfricaNidMatch2NationalIdNumberField>undefined();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private SouthAfricaNidMatch2FullNameField fullName;
+  private JsonNullable<SouthAfricaNidMatch2FullNameField> fullName = JsonNullable.<SouthAfricaNidMatch2FullNameField>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<SouthAfricaNidMatch2DateOfBirthField> dateOfBirth = JsonNullable.<SouthAfricaNidMatch2DateOfBirthField>undefined();
@@ -69,8 +67,8 @@ public class SouthAfricaNidMatch2ProviderOutput {
   public SouthAfricaNidMatch2ProviderOutput() { 
   }
 
-  public SouthAfricaNidMatch2ProviderOutput nationalIdNumber(@javax.annotation.Nonnull SouthAfricaNidMatch2NationalIdNumberField nationalIdNumber) {
-    this.nationalIdNumber = nationalIdNumber;
+  public SouthAfricaNidMatch2ProviderOutput nationalIdNumber(@javax.annotation.Nullable SouthAfricaNidMatch2NationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<SouthAfricaNidMatch2NationalIdNumberField>of(nationalIdNumber);
     return this;
   }
 
@@ -78,23 +76,31 @@ public class SouthAfricaNidMatch2ProviderOutput {
    * Outcome of the verification of the national ID number.
    * @return nationalIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public SouthAfricaNidMatch2NationalIdNumberField getNationalIdNumber() {
-    return nationalIdNumber;
+        return nationalIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdNumber(@javax.annotation.Nonnull SouthAfricaNidMatch2NationalIdNumberField nationalIdNumber) {
+  public JsonNullable<SouthAfricaNidMatch2NationalIdNumberField> getNationalIdNumber_JsonNullable() {
+    return nationalIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
+  public void setNationalIdNumber_JsonNullable(JsonNullable<SouthAfricaNidMatch2NationalIdNumberField> nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
+  public void setNationalIdNumber(@javax.annotation.Nullable SouthAfricaNidMatch2NationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<SouthAfricaNidMatch2NationalIdNumberField>of(nationalIdNumber);
+  }
 
-  public SouthAfricaNidMatch2ProviderOutput fullName(@javax.annotation.Nonnull SouthAfricaNidMatch2FullNameField fullName) {
-    this.fullName = fullName;
+
+  public SouthAfricaNidMatch2ProviderOutput fullName(@javax.annotation.Nullable SouthAfricaNidMatch2FullNameField fullName) {
+    this.fullName = JsonNullable.<SouthAfricaNidMatch2FullNameField>of(fullName);
     return this;
   }
 
@@ -102,18 +108,26 @@ public class SouthAfricaNidMatch2ProviderOutput {
    * Outcome of the verification of the full name.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public SouthAfricaNidMatch2FullNameField getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull SouthAfricaNidMatch2FullNameField fullName) {
+  public JsonNullable<SouthAfricaNidMatch2FullNameField> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<SouthAfricaNidMatch2FullNameField> fullName) {
     this.fullName = fullName;
+  }
+
+  public void setFullName(@javax.annotation.Nullable SouthAfricaNidMatch2FullNameField fullName) {
+    this.fullName = JsonNullable.<SouthAfricaNidMatch2FullNameField>of(fullName);
   }
 
 
@@ -225,8 +239,8 @@ public class SouthAfricaNidMatch2ProviderOutput {
       return false;
     }
     SouthAfricaNidMatch2ProviderOutput southAfricaNidMatch2ProviderOutput = (SouthAfricaNidMatch2ProviderOutput) o;
-    return Objects.equals(this.nationalIdNumber, southAfricaNidMatch2ProviderOutput.nationalIdNumber) &&
-        Objects.equals(this.fullName, southAfricaNidMatch2ProviderOutput.fullName) &&
+    return equalsNullable(this.nationalIdNumber, southAfricaNidMatch2ProviderOutput.nationalIdNumber) &&
+        equalsNullable(this.fullName, southAfricaNidMatch2ProviderOutput.fullName) &&
         equalsNullable(this.dateOfBirth, southAfricaNidMatch2ProviderOutput.dateOfBirth) &&
         equalsNullable(this.sex, southAfricaNidMatch2ProviderOutput.sex) &&
         equalsNullable(this.citizenshipStatus, southAfricaNidMatch2ProviderOutput.citizenshipStatus);
@@ -238,7 +252,7 @@ public class SouthAfricaNidMatch2ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nationalIdNumber, fullName, hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(citizenshipStatus));
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(citizenshipStatus));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

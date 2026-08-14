@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.Iso180135MobileDriversLicenseCredential;
 import id.trinsic.api.models.MdlOutput;
+import id.trinsic.api.models.SamsungIdWithClearCredential;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -40,16 +41,19 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   SamsungWalletProviderOutput.JSON_PROPERTY_MOBILE_DRIVERS_LICENSE,
+  SamsungWalletProviderOutput.JSON_PROPERTY_SAMSUNG_ID_WITH_CLEAR,
   SamsungWalletProviderOutput.JSON_PROPERTY_RAW_MDL_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SamsungWalletProviderOutput {
   public static final String JSON_PROPERTY_MOBILE_DRIVERS_LICENSE = "mobileDriversLicense";
   private JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>undefined();
 
+  public static final String JSON_PROPERTY_SAMSUNG_ID_WITH_CLEAR = "samsungIdWithClear";
+  private JsonNullable<SamsungIdWithClearCredential> samsungIdWithClear = JsonNullable.<SamsungIdWithClearCredential>undefined();
+
   public static final String JSON_PROPERTY_RAW_MDL_OUTPUT = "rawMdlOutput";
-  @javax.annotation.Nonnull
-  private MdlOutput rawMdlOutput;
+  private JsonNullable<MdlOutput> rawMdlOutput = JsonNullable.<MdlOutput>undefined();
 
   public SamsungWalletProviderOutput() { 
   }
@@ -86,8 +90,40 @@ public class SamsungWalletProviderOutput {
   }
 
 
-  public SamsungWalletProviderOutput rawMdlOutput(@javax.annotation.Nonnull MdlOutput rawMdlOutput) {
-    this.rawMdlOutput = rawMdlOutput;
+  public SamsungWalletProviderOutput samsungIdWithClear(@javax.annotation.Nullable SamsungIdWithClearCredential samsungIdWithClear) {
+    this.samsungIdWithClear = JsonNullable.<SamsungIdWithClearCredential>of(samsungIdWithClear);
+    return this;
+  }
+
+  /**
+   * A Samsung ID with CLEAR credential, retrieved from the individual&#39;s Samsung Wallet.
+   * @return samsungIdWithClear
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public SamsungIdWithClearCredential getSamsungIdWithClear() {
+        return samsungIdWithClear.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SAMSUNG_ID_WITH_CLEAR, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SamsungIdWithClearCredential> getSamsungIdWithClear_JsonNullable() {
+    return samsungIdWithClear;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SAMSUNG_ID_WITH_CLEAR)
+  public void setSamsungIdWithClear_JsonNullable(JsonNullable<SamsungIdWithClearCredential> samsungIdWithClear) {
+    this.samsungIdWithClear = samsungIdWithClear;
+  }
+
+  public void setSamsungIdWithClear(@javax.annotation.Nullable SamsungIdWithClearCredential samsungIdWithClear) {
+    this.samsungIdWithClear = JsonNullable.<SamsungIdWithClearCredential>of(samsungIdWithClear);
+  }
+
+
+  public SamsungWalletProviderOutput rawMdlOutput(@javax.annotation.Nullable MdlOutput rawMdlOutput) {
+    this.rawMdlOutput = JsonNullable.<MdlOutput>of(rawMdlOutput);
     return this;
   }
 
@@ -95,18 +131,26 @@ public class SamsungWalletProviderOutput {
    * The raw output of the mDL exchange performed through Samsung Wallet.
    * @return rawMdlOutput
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_RAW_MDL_OUTPUT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public MdlOutput getRawMdlOutput() {
-    return rawMdlOutput;
+        return rawMdlOutput.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_RAW_MDL_OUTPUT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_RAW_MDL_OUTPUT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRawMdlOutput(@javax.annotation.Nonnull MdlOutput rawMdlOutput) {
+  public JsonNullable<MdlOutput> getRawMdlOutput_JsonNullable() {
+    return rawMdlOutput;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RAW_MDL_OUTPUT)
+  public void setRawMdlOutput_JsonNullable(JsonNullable<MdlOutput> rawMdlOutput) {
     this.rawMdlOutput = rawMdlOutput;
+  }
+
+  public void setRawMdlOutput(@javax.annotation.Nullable MdlOutput rawMdlOutput) {
+    this.rawMdlOutput = JsonNullable.<MdlOutput>of(rawMdlOutput);
   }
 
 
@@ -123,7 +167,8 @@ public class SamsungWalletProviderOutput {
     }
     SamsungWalletProviderOutput samsungWalletProviderOutput = (SamsungWalletProviderOutput) o;
     return equalsNullable(this.mobileDriversLicense, samsungWalletProviderOutput.mobileDriversLicense) &&
-        Objects.equals(this.rawMdlOutput, samsungWalletProviderOutput.rawMdlOutput);
+        equalsNullable(this.samsungIdWithClear, samsungWalletProviderOutput.samsungIdWithClear) &&
+        equalsNullable(this.rawMdlOutput, samsungWalletProviderOutput.rawMdlOutput);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -132,7 +177,7 @@ public class SamsungWalletProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(mobileDriversLicense), rawMdlOutput);
+    return Objects.hash(hashCodeNullable(mobileDriversLicense), hashCodeNullable(samsungIdWithClear), hashCodeNullable(rawMdlOutput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -147,6 +192,7 @@ public class SamsungWalletProviderOutput {
     StringBuilder sb = new StringBuilder();
     sb.append("class SamsungWalletProviderOutput {\n");
     sb.append("    mobileDriversLicense: ").append(toIndentedString(mobileDriversLicense)).append("\n");
+    sb.append("    samsungIdWithClear: ").append(toIndentedString(samsungIdWithClear)).append("\n");
     sb.append("    rawMdlOutput: ").append(toIndentedString(rawMdlOutput)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -195,6 +241,11 @@ public class SamsungWalletProviderOutput {
     // add `mobileDriversLicense` to the URL query string
     if (getMobileDriversLicense() != null) {
       joiner.add(getMobileDriversLicense().toUrlQueryString(prefix + "mobileDriversLicense" + suffix));
+    }
+
+    // add `samsungIdWithClear` to the URL query string
+    if (getSamsungIdWithClear() != null) {
+      joiner.add(getSamsungIdWithClear().toUrlQueryString(prefix + "samsungIdWithClear" + suffix));
     }
 
     // add `rawMdlOutput` to the URL query string

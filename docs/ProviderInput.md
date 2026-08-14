@@ -7,8 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**trinsicMockOutput** | [**MockOutputProviderInput**](MockOutputProviderInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-mock-output&#x60; provider. |  [optional] |
 |**indonesiaNikLookup** | [**IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider |  [optional] |
 |**chinaResidentIdMatch** | [**ChinaResidentIdMatchInput**](ChinaResidentIdMatchInput.md) | Input for the &#x60;china-resident-id-match&#x60; provider |  [optional] |
+|**evrotrust** | [**EvrotrustInput**](EvrotrustInput.md) | Input for the &#x60;evrotrust&#x60; provider |  [optional] |
 |**indonesiaDukcapilMatch** | [**IndonesiaDukcapilMatchInput**](IndonesiaDukcapilMatchInput.md) | Input for the &#x60;indonesia-dukcapil-match&#x60; provider |  [optional] |
 |**mexicoCurpLookup** | [**MexicoCurpInput**](MexicoCurpInput.md) | Input for the &#x60;mexico-curp-lookup&#x60; provider |  [optional] |
 |**southAfricaNidLookup** | [**SouthAfricaNidInput**](SouthAfricaNidInput.md) | Input for the &#x60;south-africa-nid-lookup&#x60; provider |  [optional] |
@@ -18,6 +20,8 @@
 |**southAfricaNidLookup2** | [**SouthAfricaNidLookup2Input**](SouthAfricaNidLookup2Input.md) | Input for the &#x60;south-africa-nid-lookup-2&#x60; provider |  [optional] |
 |**southAfricaNidMatch2** | [**SouthAfricaNidMatch2Input**](SouthAfricaNidMatch2Input.md) | Input for the &#x60;south-africa-nid-match-2&#x60; provider |  [optional] |
 |**nigeriaNinLookup2** | [**NigeriaNinLookup2Input**](NigeriaNinLookup2Input.md) | Input for the &#x60;nigeria-nin-lookup-2&#x60; provider |  [optional] |
+|**nigeriaNinLookup3** | [**NigeriaNinLookup3Input**](NigeriaNinLookup3Input.md) | Input for the &#x60;nigeria-nin-lookup-3&#x60; provider |  [optional] |
+|**kenyaNidLookup3** | [**KenyaNidLookup3Input**](KenyaNidLookup3Input.md) | Input for the &#x60;kenya-nid-lookup-3&#x60; provider |  [optional] |
 |**coteDivoireNidLookup2** | [**CoteDIvoireNidLookup2Input**](CoteDIvoireNidLookup2Input.md) | Input for the &#x60;cote-divoire-nid-lookup-2&#x60; provider |  [optional] |
 |**zimbabweNidLookup2** | [**ZimbabweNidLookup2Input**](ZimbabweNidLookup2Input.md) | Input for the &#x60;zimbabwe-nid-lookup-2&#x60; provider |  [optional] |
 |**nigeriaNinMatch2** | [**NigeriaNinMatch2Input**](NigeriaNinMatch2Input.md) | Input for the &#x60;nigeria-nin-match-2&#x60; provider |  [optional] |
@@ -39,6 +43,11 @@
 |**appleWallet** | [**AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider |  [optional] |
 |**samsungWallet** | [**SamsungWalletInput**](SamsungWalletInput.md) | Input for the &#x60;samsung-wallet&#x60; provider |  [optional] |
 |**franceIdentite** | [**FranceIdentiteInput**](FranceIdentiteInput.md) | Input for the &#x60;france-identite&#x60; provider |  [optional] |
+|**moldovaEvoWallet** | [**MoldovaEvoWalletInput**](MoldovaEvoWalletInput.md) | Input for the &#x60;moldova-evo-wallet&#x60; provider |  [optional] |
+|**germanyEudiSandbox** | [**GermanyEudiSandboxInput**](GermanyEudiSandboxInput.md) |  |  [optional] |
+|**denmarkAltid** | [**DenmarkAltIdInput**](DenmarkAltIdInput.md) |  |  [optional] |
+|**austriaValeraEudiSandbox** | [**AustriaValeraEudiSandboxInput**](AustriaValeraEudiSandboxInput.md) |  |  [optional] |
+|**netherlandsEudiSandbox** | [**NetherlandsEudiSandboxInput**](NetherlandsEudiSandboxInput.md) | Input for the &#x60;netherlands-eudi-sandbox&#x60; provider |  [optional] |
 |**polandMobywatelMatch** | [**PolandMobywatelMatchInput**](PolandMobywatelMatchInput.md) | Input for the &#x60;poland-mobywatel-match&#x60; provider |  [optional] |
 |**boliviaCiLookup** | [**BoliviaCiLookupInput**](BoliviaCiLookupInput.md) | Input for the &#x60;bolivia-ci-lookup&#x60; provider |  [optional] |
 |**colombiaCcLookup** | [**ColombiaCcLookupInput**](ColombiaCcLookupInput.md) | Input for the &#x60;colombia-cc-lookup&#x60; provider |  [optional] |

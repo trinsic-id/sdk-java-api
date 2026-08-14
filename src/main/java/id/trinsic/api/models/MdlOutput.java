@@ -29,6 +29,10 @@ import id.trinsic.api.models.MdlOutputFieldData;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -42,109 +46,133 @@ import id.trinsic.ApiClient;
   MdlOutput.JSON_PROPERTY_DOCUMENT_TYPE,
   MdlOutput.JSON_PROPERTY_NAME_SPACES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MdlOutput {
   public static final String JSON_PROPERTY_IACA_ROOT_CERTIFICATE = "iacaRootCertificate";
-  @javax.annotation.Nonnull
-  private MdlOutputCertificateData iacaRootCertificate;
+  private JsonNullable<MdlOutputCertificateData> iacaRootCertificate = JsonNullable.<MdlOutputCertificateData>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_SIGNER_CERTIFICATE = "documentSignerCertificate";
-  @javax.annotation.Nonnull
-  private MdlOutputCertificateData documentSignerCertificate;
+  private JsonNullable<MdlOutputCertificateData> documentSignerCertificate = JsonNullable.<MdlOutputCertificateData>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
-  @javax.annotation.Nonnull
-  private String documentType;
+  private JsonNullable<String> documentType = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NAME_SPACES = "nameSpaces";
-  @javax.annotation.Nonnull
-  private Map<String, Map<String, MdlOutputFieldData>> nameSpaces = new HashMap<>();
+  private JsonNullable<Map<String, Map<String, MdlOutputFieldData>>> nameSpaces = JsonNullable.<Map<String, Map<String, MdlOutputFieldData>>>undefined();
 
   public MdlOutput() { 
   }
 
-  public MdlOutput iacaRootCertificate(@javax.annotation.Nonnull MdlOutputCertificateData iacaRootCertificate) {
-    this.iacaRootCertificate = iacaRootCertificate;
+  public MdlOutput iacaRootCertificate(@javax.annotation.Nullable MdlOutputCertificateData iacaRootCertificate) {
+    this.iacaRootCertificate = JsonNullable.<MdlOutputCertificateData>of(iacaRootCertificate);
     return this;
   }
 
   /**
-   * Information about the IACA Root Certificate which signed (directly or indirectly) the Document Signer Certificate for this mDL.
+   * Information about the IACA Root Certificate which signed (directly or indirectly) the Document Signer Certificate for this mDoc.
    * @return iacaRootCertificate
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_IACA_ROOT_CERTIFICATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public MdlOutputCertificateData getIacaRootCertificate() {
-    return iacaRootCertificate;
+        return iacaRootCertificate.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_IACA_ROOT_CERTIFICATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_IACA_ROOT_CERTIFICATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIacaRootCertificate(@javax.annotation.Nonnull MdlOutputCertificateData iacaRootCertificate) {
+  public JsonNullable<MdlOutputCertificateData> getIacaRootCertificate_JsonNullable() {
+    return iacaRootCertificate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IACA_ROOT_CERTIFICATE)
+  public void setIacaRootCertificate_JsonNullable(JsonNullable<MdlOutputCertificateData> iacaRootCertificate) {
     this.iacaRootCertificate = iacaRootCertificate;
   }
 
+  public void setIacaRootCertificate(@javax.annotation.Nullable MdlOutputCertificateData iacaRootCertificate) {
+    this.iacaRootCertificate = JsonNullable.<MdlOutputCertificateData>of(iacaRootCertificate);
+  }
 
-  public MdlOutput documentSignerCertificate(@javax.annotation.Nonnull MdlOutputCertificateData documentSignerCertificate) {
-    this.documentSignerCertificate = documentSignerCertificate;
+
+  public MdlOutput documentSignerCertificate(@javax.annotation.Nullable MdlOutputCertificateData documentSignerCertificate) {
+    this.documentSignerCertificate = JsonNullable.<MdlOutputCertificateData>of(documentSignerCertificate);
     return this;
   }
 
   /**
-   * Information about the Document Signer Certificate which signed the mDL presented by the individual.
+   * Information about the Document Signer Certificate which signed the mDoc presented by the individual.
    * @return documentSignerCertificate
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNER_CERTIFICATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public MdlOutputCertificateData getDocumentSignerCertificate() {
-    return documentSignerCertificate;
+        return documentSignerCertificate.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNER_CERTIFICATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNER_CERTIFICATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentSignerCertificate(@javax.annotation.Nonnull MdlOutputCertificateData documentSignerCertificate) {
+  public JsonNullable<MdlOutputCertificateData> getDocumentSignerCertificate_JsonNullable() {
+    return documentSignerCertificate;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNER_CERTIFICATE)
+  public void setDocumentSignerCertificate_JsonNullable(JsonNullable<MdlOutputCertificateData> documentSignerCertificate) {
     this.documentSignerCertificate = documentSignerCertificate;
   }
 
+  public void setDocumentSignerCertificate(@javax.annotation.Nullable MdlOutputCertificateData documentSignerCertificate) {
+    this.documentSignerCertificate = JsonNullable.<MdlOutputCertificateData>of(documentSignerCertificate);
+  }
 
-  public MdlOutput documentType(@javax.annotation.Nonnull String documentType) {
-    this.documentType = documentType;
+
+  public MdlOutput documentType(@javax.annotation.Nullable String documentType) {
+    this.documentType = JsonNullable.<String>of(documentType);
     return this;
   }
 
   /**
-   * The document type of the mDL presented by the individual.              Common values: - \&quot;org.iso.18013.5.1.mDL\&quot; for ISO 18013-5 mDLs - \&quot;com.google.wallet.idcard.1\&quot; for Google Wallet ID Cards
+   * The document type of the mDoc presented by the individual.              Common values: - \&quot;org.iso.18013.5.1.mDL\&quot; for ISO 18013-5 mDLs - \&quot;com.google.wallet.idcard.1\&quot; for Google Wallet ID Cards
    * @return documentType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentType() {
-    return documentType;
+        return documentType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentType(@javax.annotation.Nonnull String documentType) {
+  public JsonNullable<String> getDocumentType_JsonNullable() {
+    return documentType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  public void setDocumentType_JsonNullable(JsonNullable<String> documentType) {
     this.documentType = documentType;
   }
 
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
+    this.documentType = JsonNullable.<String>of(documentType);
+  }
 
-  public MdlOutput nameSpaces(@javax.annotation.Nonnull Map<String, Map<String, MdlOutputFieldData>> nameSpaces) {
-    this.nameSpaces = nameSpaces;
+
+  public MdlOutput nameSpaces(@javax.annotation.Nullable Map<String, Map<String, MdlOutputFieldData>> nameSpaces) {
+    this.nameSpaces = JsonNullable.<Map<String, Map<String, MdlOutputFieldData>>>of(nameSpaces);
     return this;
   }
 
   public MdlOutput putNameSpacesItem(String key, Map<String, MdlOutputFieldData> nameSpacesItem) {
-    if (this.nameSpaces == null) {
-      this.nameSpaces = new HashMap<>();
+    if (this.nameSpaces == null || !this.nameSpaces.isPresent()) {
+      this.nameSpaces = JsonNullable.<Map<String, Map<String, MdlOutputFieldData>>>of(new HashMap<>());
     }
-    this.nameSpaces.put(key, nameSpacesItem);
+    try {
+      this.nameSpaces.get().put(key, nameSpacesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -152,18 +180,26 @@ public class MdlOutput {
    * The namespaces, and fields within those namespaces, which were present in the processed mDL.
    * @return nameSpaces
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NAME_SPACES, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Map<String, Map<String, MdlOutputFieldData>> getNameSpaces() {
-    return nameSpaces;
+        return nameSpaces.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NAME_SPACES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NAME_SPACES, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNameSpaces(@javax.annotation.Nonnull Map<String, Map<String, MdlOutputFieldData>> nameSpaces) {
+  public JsonNullable<Map<String, Map<String, MdlOutputFieldData>>> getNameSpaces_JsonNullable() {
+    return nameSpaces;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NAME_SPACES)
+  public void setNameSpaces_JsonNullable(JsonNullable<Map<String, Map<String, MdlOutputFieldData>>> nameSpaces) {
     this.nameSpaces = nameSpaces;
+  }
+
+  public void setNameSpaces(@javax.annotation.Nullable Map<String, Map<String, MdlOutputFieldData>> nameSpaces) {
+    this.nameSpaces = JsonNullable.<Map<String, Map<String, MdlOutputFieldData>>>of(nameSpaces);
   }
 
 
@@ -179,15 +215,26 @@ public class MdlOutput {
       return false;
     }
     MdlOutput mdlOutput = (MdlOutput) o;
-    return Objects.equals(this.iacaRootCertificate, mdlOutput.iacaRootCertificate) &&
-        Objects.equals(this.documentSignerCertificate, mdlOutput.documentSignerCertificate) &&
-        Objects.equals(this.documentType, mdlOutput.documentType) &&
-        Objects.equals(this.nameSpaces, mdlOutput.nameSpaces);
+    return equalsNullable(this.iacaRootCertificate, mdlOutput.iacaRootCertificate) &&
+        equalsNullable(this.documentSignerCertificate, mdlOutput.documentSignerCertificate) &&
+        equalsNullable(this.documentType, mdlOutput.documentType) &&
+        equalsNullable(this.nameSpaces, mdlOutput.nameSpaces);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iacaRootCertificate, documentSignerCertificate, documentType, nameSpaces);
+    return Objects.hash(hashCodeNullable(iacaRootCertificate), hashCodeNullable(documentSignerCertificate), hashCodeNullable(documentType), hashCodeNullable(nameSpaces));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

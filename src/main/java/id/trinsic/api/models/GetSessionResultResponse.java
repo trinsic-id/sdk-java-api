@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   GetSessionResultResponse.JSON_PROPERTY_SESSION,
   GetSessionResultResponse.JSON_PROPERTY_IDENTITY_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GetSessionResultResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
   @javax.annotation.Nonnull
@@ -60,7 +60,7 @@ public class GetSessionResultResponse {
   }
 
   /**
-   * Get session
+   * The Session in its current state.
    * @return session
    */
   @javax.annotation.Nonnull
@@ -84,7 +84,7 @@ public class GetSessionResultResponse {
   }
 
   /**
-   * Get identityData
+   * The IdentityData which resulted from the Session, if not HPKE-encrypted.
    * @return identityData
    */
   @javax.annotation.Nullable

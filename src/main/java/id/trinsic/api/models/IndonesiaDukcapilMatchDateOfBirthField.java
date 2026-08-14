@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,21 +41,19 @@ import id.trinsic.ApiClient;
   IndonesiaDukcapilMatchDateOfBirthField.JSON_PROPERTY_INPUT_VALUE,
   IndonesiaDukcapilMatchDateOfBirthField.JSON_PROPERTY_OUTCOME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndonesiaDukcapilMatchDateOfBirthField {
   public static final String JSON_PROPERTY_INPUT_VALUE = "inputValue";
-  @javax.annotation.Nonnull
-  private LocalDate inputValue;
+  private JsonNullable<LocalDate> inputValue = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_OUTCOME = "outcome";
-  @javax.annotation.Nonnull
-  private Double outcome;
+  private JsonNullable<Double> outcome = JsonNullable.<Double>undefined();
 
   public IndonesiaDukcapilMatchDateOfBirthField() { 
   }
 
-  public IndonesiaDukcapilMatchDateOfBirthField inputValue(@javax.annotation.Nonnull LocalDate inputValue) {
-    this.inputValue = inputValue;
+  public IndonesiaDukcapilMatchDateOfBirthField inputValue(@javax.annotation.Nullable LocalDate inputValue) {
+    this.inputValue = JsonNullable.<LocalDate>of(inputValue);
     return this;
   }
 
@@ -59,23 +61,31 @@ public class IndonesiaDukcapilMatchDateOfBirthField {
    * The date of birth submitted for this check.
    * @return inputValue
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getInputValue() {
-    return inputValue;
+        return inputValue.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setInputValue(@javax.annotation.Nonnull LocalDate inputValue) {
+  public JsonNullable<LocalDate> getInputValue_JsonNullable() {
+    return inputValue;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INPUT_VALUE)
+  public void setInputValue_JsonNullable(JsonNullable<LocalDate> inputValue) {
     this.inputValue = inputValue;
   }
 
+  public void setInputValue(@javax.annotation.Nullable LocalDate inputValue) {
+    this.inputValue = JsonNullable.<LocalDate>of(inputValue);
+  }
 
-  public IndonesiaDukcapilMatchDateOfBirthField outcome(@javax.annotation.Nonnull Double outcome) {
-    this.outcome = outcome;
+
+  public IndonesiaDukcapilMatchDateOfBirthField outcome(@javax.annotation.Nullable Double outcome) {
+    this.outcome = JsonNullable.<Double>of(outcome);
     return this;
   }
 
@@ -83,18 +93,26 @@ public class IndonesiaDukcapilMatchDateOfBirthField {
    * The provider assessment result for the submitted date of birth.              Local integration code expects the provider to return 0 or 1 for this assessment.
    * @return outcome
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Double getOutcome() {
-    return outcome;
+        return outcome.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOutcome(@javax.annotation.Nonnull Double outcome) {
+  public JsonNullable<Double> getOutcome_JsonNullable() {
+    return outcome;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OUTCOME)
+  public void setOutcome_JsonNullable(JsonNullable<Double> outcome) {
     this.outcome = outcome;
+  }
+
+  public void setOutcome(@javax.annotation.Nullable Double outcome) {
+    this.outcome = JsonNullable.<Double>of(outcome);
   }
 
 
@@ -110,13 +128,24 @@ public class IndonesiaDukcapilMatchDateOfBirthField {
       return false;
     }
     IndonesiaDukcapilMatchDateOfBirthField indonesiaDukcapilMatchDateOfBirthField = (IndonesiaDukcapilMatchDateOfBirthField) o;
-    return Objects.equals(this.inputValue, indonesiaDukcapilMatchDateOfBirthField.inputValue) &&
-        Objects.equals(this.outcome, indonesiaDukcapilMatchDateOfBirthField.outcome);
+    return equalsNullable(this.inputValue, indonesiaDukcapilMatchDateOfBirthField.inputValue) &&
+        equalsNullable(this.outcome, indonesiaDukcapilMatchDateOfBirthField.outcome);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputValue, outcome);
+    return Objects.hash(hashCodeNullable(inputValue), hashCodeNullable(outcome));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

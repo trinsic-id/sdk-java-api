@@ -48,7 +48,7 @@ import id.trinsic.ApiClient;
   CzechBankIdAddress.JSON_PROPERTY_COUNTRY,
   CzechBankIdAddress.JSON_PROPERTY_RUIAN_REFERENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CzechBankIdAddress {
   public static final String JSON_PROPERTY_TYPE = "type";
   private JsonNullable<String> type = JsonNullable.<String>undefined();
@@ -66,19 +66,16 @@ public class CzechBankIdAddress {
   private JsonNullable<String> evidenceNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CITY = "city";
-  @javax.annotation.Nonnull
-  private String city;
+  private JsonNullable<String> city = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CITY_AREA = "cityArea";
   private JsonNullable<String> cityArea = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ZIPCODE = "zipcode";
-  @javax.annotation.Nonnull
-  private String zipcode;
+  private JsonNullable<String> zipcode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
-  @javax.annotation.Nonnull
-  private String country;
+  private JsonNullable<String> country = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_RUIAN_REFERENCE = "ruianReference";
   private JsonNullable<String> ruianReference = JsonNullable.<String>undefined();
@@ -246,8 +243,8 @@ public class CzechBankIdAddress {
   }
 
 
-  public CzechBankIdAddress city(@javax.annotation.Nonnull String city) {
-    this.city = city;
+  public CzechBankIdAddress city(@javax.annotation.Nullable String city) {
+    this.city = JsonNullable.<String>of(city);
     return this;
   }
 
@@ -255,18 +252,26 @@ public class CzechBankIdAddress {
    * The city name.
    * @return city
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCity() {
-    return city;
+        return city.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCity(@javax.annotation.Nonnull String city) {
+  public JsonNullable<String> getCity_JsonNullable() {
+    return city;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CITY)
+  public void setCity_JsonNullable(JsonNullable<String> city) {
     this.city = city;
+  }
+
+  public void setCity(@javax.annotation.Nullable String city) {
+    this.city = JsonNullable.<String>of(city);
   }
 
 
@@ -302,8 +307,8 @@ public class CzechBankIdAddress {
   }
 
 
-  public CzechBankIdAddress zipcode(@javax.annotation.Nonnull String zipcode) {
-    this.zipcode = zipcode;
+  public CzechBankIdAddress zipcode(@javax.annotation.Nullable String zipcode) {
+    this.zipcode = JsonNullable.<String>of(zipcode);
     return this;
   }
 
@@ -311,23 +316,31 @@ public class CzechBankIdAddress {
    * The zip of the address.
    * @return zipcode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ZIPCODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getZipcode() {
-    return zipcode;
+        return zipcode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ZIPCODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ZIPCODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setZipcode(@javax.annotation.Nonnull String zipcode) {
+  public JsonNullable<String> getZipcode_JsonNullable() {
+    return zipcode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ZIPCODE)
+  public void setZipcode_JsonNullable(JsonNullable<String> zipcode) {
     this.zipcode = zipcode;
   }
 
+  public void setZipcode(@javax.annotation.Nullable String zipcode) {
+    this.zipcode = JsonNullable.<String>of(zipcode);
+  }
 
-  public CzechBankIdAddress country(@javax.annotation.Nonnull String country) {
-    this.country = country;
+
+  public CzechBankIdAddress country(@javax.annotation.Nullable String country) {
+    this.country = JsonNullable.<String>of(country);
     return this;
   }
 
@@ -335,18 +348,26 @@ public class CzechBankIdAddress {
    * The country code in ISO 3166-1 alpha-2 format.
    * @return country
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCountry() {
-    return country;
+        return country.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCountry(@javax.annotation.Nonnull String country) {
+  public JsonNullable<String> getCountry_JsonNullable() {
+    return country;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  public void setCountry_JsonNullable(JsonNullable<String> country) {
     this.country = country;
+  }
+
+  public void setCountry(@javax.annotation.Nullable String country) {
+    this.country = JsonNullable.<String>of(country);
   }
 
 
@@ -399,10 +420,10 @@ public class CzechBankIdAddress {
         equalsNullable(this.buildingApartment, czechBankIdAddress.buildingApartment) &&
         equalsNullable(this.streetNumber, czechBankIdAddress.streetNumber) &&
         equalsNullable(this.evidenceNumber, czechBankIdAddress.evidenceNumber) &&
-        Objects.equals(this.city, czechBankIdAddress.city) &&
+        equalsNullable(this.city, czechBankIdAddress.city) &&
         equalsNullable(this.cityArea, czechBankIdAddress.cityArea) &&
-        Objects.equals(this.zipcode, czechBankIdAddress.zipcode) &&
-        Objects.equals(this.country, czechBankIdAddress.country) &&
+        equalsNullable(this.zipcode, czechBankIdAddress.zipcode) &&
+        equalsNullable(this.country, czechBankIdAddress.country) &&
         equalsNullable(this.ruianReference, czechBankIdAddress.ruianReference);
   }
 
@@ -412,7 +433,7 @@ public class CzechBankIdAddress {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(type), hashCodeNullable(street), hashCodeNullable(buildingApartment), hashCodeNullable(streetNumber), hashCodeNullable(evidenceNumber), city, hashCodeNullable(cityArea), zipcode, country, hashCodeNullable(ruianReference));
+    return Objects.hash(hashCodeNullable(type), hashCodeNullable(street), hashCodeNullable(buildingApartment), hashCodeNullable(streetNumber), hashCodeNullable(evidenceNumber), hashCodeNullable(city), hashCodeNullable(cityArea), hashCodeNullable(zipcode), hashCodeNullable(country), hashCodeNullable(ruianReference));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

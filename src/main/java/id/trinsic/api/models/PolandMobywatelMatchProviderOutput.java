@@ -59,7 +59,7 @@ import id.trinsic.ApiClient;
   PolandMobywatelMatchProviderOutput.JSON_PROPERTY_AGE_ESTIMATION_THRESHOLD,
   PolandMobywatelMatchProviderOutput.JSON_PROPERTY_ESTIMATED_AGE_FROM_SELFIE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PolandMobywatelMatchProviderOutput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -194,7 +194,7 @@ public class PolandMobywatelMatchProviderOutput {
   }
 
   /**
-   * Nationality as provided by the individual.
+   * Nationality as provided by the individual.              This is not necessarily the same as the raw input that was provided. This is the normalized value, which was used to match against the individual&#39;s mObywatel wallet.              Format: - 3-letter ISO 3166-1 alpha-3 code (e.g. POL)
    * @return nationality
    */
   @javax.annotation.Nullable

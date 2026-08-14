@@ -48,7 +48,7 @@ import id.trinsic.ApiClient;
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_LOCALIZED_CLAIMS,
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class DigilockerAadhaarProviderOutput {
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
   private JsonNullable<String> documentType = JsonNullable.<String>undefined();
@@ -69,8 +69,7 @@ public class DigilockerAadhaarProviderOutput {
   private JsonNullable<AadhaarLocalizedClaims> localizedClaims = JsonNullable.<AadhaarLocalizedClaims>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED = "documentSignatureValidated";
-  @javax.annotation.Nonnull
-  private Boolean documentSignatureValidated;
+  private JsonNullable<Boolean> documentSignatureValidated = JsonNullable.<Boolean>undefined();
 
   public DigilockerAadhaarProviderOutput() { 
   }
@@ -267,8 +266,8 @@ public class DigilockerAadhaarProviderOutput {
   }
 
 
-  public DigilockerAadhaarProviderOutput documentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
-    this.documentSignatureValidated = documentSignatureValidated;
+  public DigilockerAadhaarProviderOutput documentSignatureValidated(@javax.annotation.Nullable Boolean documentSignatureValidated) {
+    this.documentSignatureValidated = JsonNullable.<Boolean>of(documentSignatureValidated);
     return this;
   }
 
@@ -276,18 +275,26 @@ public class DigilockerAadhaarProviderOutput {
    * Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers (e.g. Signzy) also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation.
    * @return documentSignatureValidated
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getDocumentSignatureValidated() {
-    return documentSignatureValidated;
+        return documentSignatureValidated.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
+  public JsonNullable<Boolean> getDocumentSignatureValidated_JsonNullable() {
+    return documentSignatureValidated;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED)
+  public void setDocumentSignatureValidated_JsonNullable(JsonNullable<Boolean> documentSignatureValidated) {
     this.documentSignatureValidated = documentSignatureValidated;
+  }
+
+  public void setDocumentSignatureValidated(@javax.annotation.Nullable Boolean documentSignatureValidated) {
+    this.documentSignatureValidated = JsonNullable.<Boolean>of(documentSignatureValidated);
   }
 
 
@@ -309,7 +316,7 @@ public class DigilockerAadhaarProviderOutput {
         equalsNullable(this.aadhaarNumberLastFour, digilockerAadhaarProviderOutput.aadhaarNumberLastFour) &&
         equalsNullable(this.claims, digilockerAadhaarProviderOutput.claims) &&
         equalsNullable(this.localizedClaims, digilockerAadhaarProviderOutput.localizedClaims) &&
-        Objects.equals(this.documentSignatureValidated, digilockerAadhaarProviderOutput.documentSignatureValidated);
+        equalsNullable(this.documentSignatureValidated, digilockerAadhaarProviderOutput.documentSignatureValidated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -318,7 +325,7 @@ public class DigilockerAadhaarProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(documentType), hashCodeNullable(timestamp), hashCodeNullable(timeToLive), hashCodeNullable(aadhaarNumberLastFour), hashCodeNullable(claims), hashCodeNullable(localizedClaims), documentSignatureValidated);
+    return Objects.hash(hashCodeNullable(documentType), hashCodeNullable(timestamp), hashCodeNullable(timeToLive), hashCodeNullable(aadhaarNumberLastFour), hashCodeNullable(claims), hashCodeNullable(localizedClaims), hashCodeNullable(documentSignatureValidated));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

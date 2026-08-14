@@ -8,8 +8,8 @@ Owner and type identifying the product that produced a biometric data block.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**productOwner** | **Integer** | Identifier of the product owner. |  |
-|**productType** | **Integer** | Identifier of the product type. |  |
+|**productOwner** | **Integer** | Identifier of the product owner. |  [optional] |
+|**productType** | **Integer** | Identifier of the product type. |  [optional] |
 
 
 

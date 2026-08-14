@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   GoogleWalletProviderOutput.JSON_PROPERTY_ID_PASS,
   GoogleWalletProviderOutput.JSON_PROPERTY_RAW_MDL_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GoogleWalletProviderOutput {
   public static final String JSON_PROPERTY_MOBILE_DRIVERS_LICENSE = "mobileDriversLicense";
   private JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>undefined();
@@ -53,8 +53,7 @@ public class GoogleWalletProviderOutput {
   private JsonNullable<GoogleWalletIdPassCredential> idPass = JsonNullable.<GoogleWalletIdPassCredential>undefined();
 
   public static final String JSON_PROPERTY_RAW_MDL_OUTPUT = "rawMdlOutput";
-  @javax.annotation.Nonnull
-  private MdlOutput rawMdlOutput;
+  private JsonNullable<MdlOutput> rawMdlOutput = JsonNullable.<MdlOutput>undefined();
 
   public GoogleWalletProviderOutput() { 
   }
@@ -123,8 +122,8 @@ public class GoogleWalletProviderOutput {
   }
 
 
-  public GoogleWalletProviderOutput rawMdlOutput(@javax.annotation.Nonnull MdlOutput rawMdlOutput) {
-    this.rawMdlOutput = rawMdlOutput;
+  public GoogleWalletProviderOutput rawMdlOutput(@javax.annotation.Nullable MdlOutput rawMdlOutput) {
+    this.rawMdlOutput = JsonNullable.<MdlOutput>of(rawMdlOutput);
     return this;
   }
 
@@ -132,18 +131,26 @@ public class GoogleWalletProviderOutput {
    * The raw output of the mDL exchange performed through Google Wallet.
    * @return rawMdlOutput
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_RAW_MDL_OUTPUT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public MdlOutput getRawMdlOutput() {
-    return rawMdlOutput;
+        return rawMdlOutput.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_RAW_MDL_OUTPUT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_RAW_MDL_OUTPUT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRawMdlOutput(@javax.annotation.Nonnull MdlOutput rawMdlOutput) {
+  public JsonNullable<MdlOutput> getRawMdlOutput_JsonNullable() {
+    return rawMdlOutput;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_RAW_MDL_OUTPUT)
+  public void setRawMdlOutput_JsonNullable(JsonNullable<MdlOutput> rawMdlOutput) {
     this.rawMdlOutput = rawMdlOutput;
+  }
+
+  public void setRawMdlOutput(@javax.annotation.Nullable MdlOutput rawMdlOutput) {
+    this.rawMdlOutput = JsonNullable.<MdlOutput>of(rawMdlOutput);
   }
 
 
@@ -161,7 +168,7 @@ public class GoogleWalletProviderOutput {
     GoogleWalletProviderOutput googleWalletProviderOutput = (GoogleWalletProviderOutput) o;
     return equalsNullable(this.mobileDriversLicense, googleWalletProviderOutput.mobileDriversLicense) &&
         equalsNullable(this.idPass, googleWalletProviderOutput.idPass) &&
-        Objects.equals(this.rawMdlOutput, googleWalletProviderOutput.rawMdlOutput);
+        equalsNullable(this.rawMdlOutput, googleWalletProviderOutput.rawMdlOutput);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -170,7 +177,7 @@ public class GoogleWalletProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(mobileDriversLicense), hashCodeNullable(idPass), rawMdlOutput);
+    return Objects.hash(hashCodeNullable(mobileDriversLicense), hashCodeNullable(idPass), hashCodeNullable(rawMdlOutput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

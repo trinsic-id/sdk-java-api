@@ -40,14 +40,13 @@ import id.trinsic.ApiClient;
   AadhaarLanguage.JSON_PROPERTY_LANGUAGE_CODE,
   AadhaarLanguage.JSON_PROPERTY_LANGUAGE_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AadhaarLanguage {
   public static final String JSON_PROPERTY_LANGUAGE_CODE = "languageCode";
   private JsonNullable<String> languageCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LANGUAGE_NAME = "languageName";
-  @javax.annotation.Nonnull
-  private String languageName;
+  private JsonNullable<String> languageName = JsonNullable.<String>undefined();
 
   public AadhaarLanguage() { 
   }
@@ -57,7 +56,7 @@ public class AadhaarLanguage {
     @JsonProperty(JSON_PROPERTY_LANGUAGE_NAME) String languageName
   ) {
   this();
-    this.languageName = languageName;
+    this.languageName = languageName == null ? JsonNullable.<String>undefined() : JsonNullable.of(languageName);
   }
 
   public AadhaarLanguage languageCode(@javax.annotation.Nullable String languageCode) {
@@ -96,13 +95,27 @@ public class AadhaarLanguage {
    * The language name for the localized claims.              This is Trinsic mapping the language from the code. The mapping comes from the spec, however, the code may not always reflect with the actual language used in the localized claims. Use this as a reference. Possible values: - Assamese (01) - Bengali (02) - Gujarati (05) - Hindi (06) - Kannada (07) - Malayalam (11) - Manipuri (12) - Marathi (13) - Oriya (15) - Punjabi (16) - Tamil (20) - Telugu (21) - Urdu (22)
    * @return languageName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LANGUAGE_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLanguageName() {
-    return languageName;
+    
+    if (languageName == null) {
+      languageName = JsonNullable.<String>undefined();
+    }
+    return languageName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LANGUAGE_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getLanguageName_JsonNullable() {
+    return languageName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LANGUAGE_NAME)
+  private void setLanguageName_JsonNullable(JsonNullable<String> languageName) {
+    this.languageName = languageName;
+  }
 
 
 
@@ -119,7 +132,7 @@ public class AadhaarLanguage {
     }
     AadhaarLanguage aadhaarLanguage = (AadhaarLanguage) o;
     return equalsNullable(this.languageCode, aadhaarLanguage.languageCode) &&
-        Objects.equals(this.languageName, aadhaarLanguage.languageName);
+        equalsNullable(this.languageName, aadhaarLanguage.languageName);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -128,7 +141,7 @@ public class AadhaarLanguage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(languageCode), languageName);
+    return Objects.hash(hashCodeNullable(languageCode), hashCodeNullable(languageName));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

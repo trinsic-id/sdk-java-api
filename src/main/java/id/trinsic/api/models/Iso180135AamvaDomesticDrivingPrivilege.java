@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   Iso180135AamvaDomesticDrivingPrivilege.JSON_PROPERTY_VEHICLE_RESTRICTIONS,
   Iso180135AamvaDomesticDrivingPrivilege.JSON_PROPERTY_VEHICLE_ENDORSEMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135AamvaDomesticDrivingPrivilege {
   public static final String JSON_PROPERTY_VEHICLE_CLASS = "vehicleClass";
   private JsonNullable<Iso180135AamvaDomesticVehicleClass> vehicleClass = JsonNullable.<Iso180135AamvaDomesticVehicleClass>undefined();

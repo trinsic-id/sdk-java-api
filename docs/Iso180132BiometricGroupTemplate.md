@@ -8,7 +8,7 @@ A group of biometric templates returned for a single biometric category, per ISO
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**templates** | [**List&lt;Iso180132BiometricTemplate&gt;**](Iso180132BiometricTemplate.md) | Individual biometric templates contained in this group. |  |
+|**templates** | [**List&lt;Iso180132BiometricTemplate&gt;**](Iso180132BiometricTemplate.md) | Individual biometric templates contained in this group. |  [optional] |
 
 
 

@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -38,29 +42,25 @@ import id.trinsic.ApiClient;
   FrejaIndirectProviderOutput.JSON_PROPERTY_PERSONAL_NUMBER,
   FrejaIndirectProviderOutput.JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrejaIndirectProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PERSONAL_NUMBER = "personalNumber";
-  @javax.annotation.Nonnull
-  private String personalNumber;
+  private JsonNullable<String> personalNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY = "personalNumberCountry";
-  @javax.annotation.Nonnull
-  private String personalNumberCountry;
+  private JsonNullable<String> personalNumberCountry = JsonNullable.<String>undefined();
 
   public FrejaIndirectProviderOutput() { 
   }
 
-  public FrejaIndirectProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public FrejaIndirectProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -68,23 +68,31 @@ public class FrejaIndirectProviderOutput {
    * The first name of the verified individual
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public FrejaIndirectProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public FrejaIndirectProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -92,23 +100,31 @@ public class FrejaIndirectProviderOutput {
    * The last name of the verified individual
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
   }
 
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
+  }
 
-  public FrejaIndirectProviderOutput personalNumber(@javax.annotation.Nonnull String personalNumber) {
-    this.personalNumber = personalNumber;
+
+  public FrejaIndirectProviderOutput personalNumber(@javax.annotation.Nullable String personalNumber) {
+    this.personalNumber = JsonNullable.<String>of(personalNumber);
     return this;
   }
 
@@ -116,23 +132,31 @@ public class FrejaIndirectProviderOutput {
    * The value returned by Freja in the \&quot;ssn\&quot; field.              The actual value of this field depends on the country of origin used to create the Freja credential. It is typically a Social Security Number, National Identification Number, or equivalent personal identifier.
    * @return personalNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPersonalNumber() {
-    return personalNumber;
+        return personalNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPersonalNumber(@javax.annotation.Nonnull String personalNumber) {
+  public JsonNullable<String> getPersonalNumber_JsonNullable() {
+    return personalNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER)
+  public void setPersonalNumber_JsonNullable(JsonNullable<String> personalNumber) {
     this.personalNumber = personalNumber;
   }
 
+  public void setPersonalNumber(@javax.annotation.Nullable String personalNumber) {
+    this.personalNumber = JsonNullable.<String>of(personalNumber);
+  }
 
-  public FrejaIndirectProviderOutput personalNumberCountry(@javax.annotation.Nonnull String personalNumberCountry) {
-    this.personalNumberCountry = personalNumberCountry;
+
+  public FrejaIndirectProviderOutput personalNumberCountry(@javax.annotation.Nullable String personalNumberCountry) {
+    this.personalNumberCountry = JsonNullable.<String>of(personalNumberCountry);
     return this;
   }
 
@@ -140,18 +164,26 @@ public class FrejaIndirectProviderOutput {
    * The 2-digit ISO country code of the country which issued the personal number.
    * @return personalNumberCountry
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPersonalNumberCountry() {
-    return personalNumberCountry;
+        return personalNumberCountry.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPersonalNumberCountry(@javax.annotation.Nonnull String personalNumberCountry) {
+  public JsonNullable<String> getPersonalNumberCountry_JsonNullable() {
+    return personalNumberCountry;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER_COUNTRY)
+  public void setPersonalNumberCountry_JsonNullable(JsonNullable<String> personalNumberCountry) {
     this.personalNumberCountry = personalNumberCountry;
+  }
+
+  public void setPersonalNumberCountry(@javax.annotation.Nullable String personalNumberCountry) {
+    this.personalNumberCountry = JsonNullable.<String>of(personalNumberCountry);
   }
 
 
@@ -167,15 +199,26 @@ public class FrejaIndirectProviderOutput {
       return false;
     }
     FrejaIndirectProviderOutput frejaIndirectProviderOutput = (FrejaIndirectProviderOutput) o;
-    return Objects.equals(this.firstName, frejaIndirectProviderOutput.firstName) &&
-        Objects.equals(this.lastName, frejaIndirectProviderOutput.lastName) &&
-        Objects.equals(this.personalNumber, frejaIndirectProviderOutput.personalNumber) &&
-        Objects.equals(this.personalNumberCountry, frejaIndirectProviderOutput.personalNumberCountry);
+    return equalsNullable(this.firstName, frejaIndirectProviderOutput.firstName) &&
+        equalsNullable(this.lastName, frejaIndirectProviderOutput.lastName) &&
+        equalsNullable(this.personalNumber, frejaIndirectProviderOutput.personalNumber) &&
+        equalsNullable(this.personalNumberCountry, frejaIndirectProviderOutput.personalNumberCountry);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, personalNumber, personalNumberCountry);
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(lastName), hashCodeNullable(personalNumber), hashCodeNullable(personalNumberCountry));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

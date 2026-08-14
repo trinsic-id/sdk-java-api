@@ -51,18 +51,16 @@ import id.trinsic.ApiClient;
   NigeriaNinLookup2ProviderOutput.JSON_PROPERTY_LOCAL_GOVERNMENT_AREA,
   NigeriaNinLookup2ProviderOutput.JSON_PROPERTY_STATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class NigeriaNinLookup2ProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_MIDDLE_NAME = "middleName";
   private JsonNullable<String> middleName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SURNAME = "surname";
-  @javax.annotation.Nonnull
-  private String surname;
+  private JsonNullable<String> surname = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
   private JsonNullable<String> sex = JsonNullable.<String>undefined();
@@ -74,8 +72,7 @@ public class NigeriaNinLookup2ProviderOutput {
   private JsonNullable<String> birthCountry = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER = "nationalIdentityNumber";
-  @javax.annotation.Nonnull
-  private String nationalIdentityNumber;
+  private JsonNullable<String> nationalIdentityNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
@@ -95,8 +92,8 @@ public class NigeriaNinLookup2ProviderOutput {
   public NigeriaNinLookup2ProviderOutput() { 
   }
 
-  public NigeriaNinLookup2ProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public NigeriaNinLookup2ProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -104,18 +101,26 @@ public class NigeriaNinLookup2ProviderOutput {
    * The first name (given name) of the ID holder.
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
+  }
+
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
   }
 
 
@@ -151,8 +156,8 @@ public class NigeriaNinLookup2ProviderOutput {
   }
 
 
-  public NigeriaNinLookup2ProviderOutput surname(@javax.annotation.Nonnull String surname) {
-    this.surname = surname;
+  public NigeriaNinLookup2ProviderOutput surname(@javax.annotation.Nullable String surname) {
+    this.surname = JsonNullable.<String>of(surname);
     return this;
   }
 
@@ -160,18 +165,26 @@ public class NigeriaNinLookup2ProviderOutput {
    * The surname (family name) of the ID holder.
    * @return surname
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSurname() {
-    return surname;
+        return surname.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SURNAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSurname(@javax.annotation.Nonnull String surname) {
+  public JsonNullable<String> getSurname_JsonNullable() {
+    return surname;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SURNAME)
+  public void setSurname_JsonNullable(JsonNullable<String> surname) {
     this.surname = surname;
+  }
+
+  public void setSurname(@javax.annotation.Nullable String surname) {
+    this.surname = JsonNullable.<String>of(surname);
   }
 
 
@@ -271,8 +284,8 @@ public class NigeriaNinLookup2ProviderOutput {
   }
 
 
-  public NigeriaNinLookup2ProviderOutput nationalIdentityNumber(@javax.annotation.Nonnull String nationalIdentityNumber) {
-    this.nationalIdentityNumber = nationalIdentityNumber;
+  public NigeriaNinLookup2ProviderOutput nationalIdentityNumber(@javax.annotation.Nullable String nationalIdentityNumber) {
+    this.nationalIdentityNumber = JsonNullable.<String>of(nationalIdentityNumber);
     return this;
   }
 
@@ -280,18 +293,26 @@ public class NigeriaNinLookup2ProviderOutput {
    * National Identification Number (NIN).              This is a unique, permanent identifier assigned by the National Identity Management Commission (NIMC) upon enrollment.              Format: - 11 numeric digits - No publicly known encoding scheme is used to encode personal information in the NIN - Last digit is a checksum using the Verhoeff algorithm
    * @return nationalIdentityNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNationalIdentityNumber() {
-    return nationalIdentityNumber;
+        return nationalIdentityNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdentityNumber(@javax.annotation.Nonnull String nationalIdentityNumber) {
+  public JsonNullable<String> getNationalIdentityNumber_JsonNullable() {
+    return nationalIdentityNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER)
+  public void setNationalIdentityNumber_JsonNullable(JsonNullable<String> nationalIdentityNumber) {
     this.nationalIdentityNumber = nationalIdentityNumber;
+  }
+
+  public void setNationalIdentityNumber(@javax.annotation.Nullable String nationalIdentityNumber) {
+    this.nationalIdentityNumber = JsonNullable.<String>of(nationalIdentityNumber);
   }
 
 
@@ -301,7 +322,7 @@ public class NigeriaNinLookup2ProviderOutput {
   }
 
   /**
-   * Phone number registered with the National Identity Management Commission.
+   * Phone number registered with the National Identity Management Commission.              Format: - Valid Nigerian numbers are returned in international E.164 format   (for example, +2348031234567). - Otherwise, the value is returned in trunk notation (leading zero included)   as provided by the authority (for example, 0123456789).
    * @return phoneNumber
    */
   @javax.annotation.Nullable
@@ -467,13 +488,13 @@ public class NigeriaNinLookup2ProviderOutput {
       return false;
     }
     NigeriaNinLookup2ProviderOutput nigeriaNinLookup2ProviderOutput = (NigeriaNinLookup2ProviderOutput) o;
-    return Objects.equals(this.firstName, nigeriaNinLookup2ProviderOutput.firstName) &&
+    return equalsNullable(this.firstName, nigeriaNinLookup2ProviderOutput.firstName) &&
         equalsNullable(this.middleName, nigeriaNinLookup2ProviderOutput.middleName) &&
-        Objects.equals(this.surname, nigeriaNinLookup2ProviderOutput.surname) &&
+        equalsNullable(this.surname, nigeriaNinLookup2ProviderOutput.surname) &&
         equalsNullable(this.sex, nigeriaNinLookup2ProviderOutput.sex) &&
         equalsNullable(this.dateOfBirth, nigeriaNinLookup2ProviderOutput.dateOfBirth) &&
         equalsNullable(this.birthCountry, nigeriaNinLookup2ProviderOutput.birthCountry) &&
-        Objects.equals(this.nationalIdentityNumber, nigeriaNinLookup2ProviderOutput.nationalIdentityNumber) &&
+        equalsNullable(this.nationalIdentityNumber, nigeriaNinLookup2ProviderOutput.nationalIdentityNumber) &&
         equalsNullable(this.phoneNumber, nigeriaNinLookup2ProviderOutput.phoneNumber) &&
         equalsNullable(this.email, nigeriaNinLookup2ProviderOutput.email) &&
         equalsNullable(this.address, nigeriaNinLookup2ProviderOutput.address) &&
@@ -487,7 +508,7 @@ public class NigeriaNinLookup2ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, hashCodeNullable(middleName), surname, hashCodeNullable(sex), hashCodeNullable(dateOfBirth), hashCodeNullable(birthCountry), nationalIdentityNumber, hashCodeNullable(phoneNumber), hashCodeNullable(email), hashCodeNullable(address), hashCodeNullable(localGovernmentArea), hashCodeNullable(state));
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(middleName), hashCodeNullable(surname), hashCodeNullable(sex), hashCodeNullable(dateOfBirth), hashCodeNullable(birthCountry), hashCodeNullable(nationalIdentityNumber), hashCodeNullable(phoneNumber), hashCodeNullable(email), hashCodeNullable(address), hashCodeNullable(localGovernmentArea), hashCodeNullable(state));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

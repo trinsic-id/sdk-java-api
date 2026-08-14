@@ -27,6 +27,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.DiiaIssuerOutput;
 import id.trinsic.api.models.DiiaSubjectOutput;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -38,21 +42,19 @@ import id.trinsic.ApiClient;
   DiiaProviderOutput.JSON_PROPERTY_SUBJECT,
   DiiaProviderOutput.JSON_PROPERTY_ISSUER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class DiiaProviderOutput {
   public static final String JSON_PROPERTY_SUBJECT = "subject";
-  @javax.annotation.Nonnull
-  private DiiaSubjectOutput subject;
+  private JsonNullable<DiiaSubjectOutput> subject = JsonNullable.<DiiaSubjectOutput>undefined();
 
   public static final String JSON_PROPERTY_ISSUER = "issuer";
-  @javax.annotation.Nonnull
-  private DiiaIssuerOutput issuer;
+  private JsonNullable<DiiaIssuerOutput> issuer = JsonNullable.<DiiaIssuerOutput>undefined();
 
   public DiiaProviderOutput() { 
   }
 
-  public DiiaProviderOutput subject(@javax.annotation.Nonnull DiiaSubjectOutput subject) {
-    this.subject = subject;
+  public DiiaProviderOutput subject(@javax.annotation.Nullable DiiaSubjectOutput subject) {
+    this.subject = JsonNullable.<DiiaSubjectOutput>of(subject);
     return this;
   }
 
@@ -60,23 +62,31 @@ public class DiiaProviderOutput {
    * Diia.Signature user data.
    * @return subject
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public DiiaSubjectOutput getSubject() {
-    return subject;
+        return subject.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSubject(@javax.annotation.Nonnull DiiaSubjectOutput subject) {
+  public JsonNullable<DiiaSubjectOutput> getSubject_JsonNullable() {
+    return subject;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUBJECT)
+  public void setSubject_JsonNullable(JsonNullable<DiiaSubjectOutput> subject) {
     this.subject = subject;
   }
 
+  public void setSubject(@javax.annotation.Nullable DiiaSubjectOutput subject) {
+    this.subject = JsonNullable.<DiiaSubjectOutput>of(subject);
+  }
 
-  public DiiaProviderOutput issuer(@javax.annotation.Nonnull DiiaIssuerOutput issuer) {
-    this.issuer = issuer;
+
+  public DiiaProviderOutput issuer(@javax.annotation.Nullable DiiaIssuerOutput issuer) {
+    this.issuer = JsonNullable.<DiiaIssuerOutput>of(issuer);
     return this;
   }
 
@@ -84,18 +94,26 @@ public class DiiaProviderOutput {
    * Diia.Signature issuer data.
    * @return issuer
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ISSUER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public DiiaIssuerOutput getIssuer() {
-    return issuer;
+        return issuer.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ISSUER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ISSUER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIssuer(@javax.annotation.Nonnull DiiaIssuerOutput issuer) {
+  public JsonNullable<DiiaIssuerOutput> getIssuer_JsonNullable() {
+    return issuer;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ISSUER)
+  public void setIssuer_JsonNullable(JsonNullable<DiiaIssuerOutput> issuer) {
     this.issuer = issuer;
+  }
+
+  public void setIssuer(@javax.annotation.Nullable DiiaIssuerOutput issuer) {
+    this.issuer = JsonNullable.<DiiaIssuerOutput>of(issuer);
   }
 
 
@@ -111,13 +129,24 @@ public class DiiaProviderOutput {
       return false;
     }
     DiiaProviderOutput diiaProviderOutput = (DiiaProviderOutput) o;
-    return Objects.equals(this.subject, diiaProviderOutput.subject) &&
-        Objects.equals(this.issuer, diiaProviderOutput.issuer);
+    return equalsNullable(this.subject, diiaProviderOutput.subject) &&
+        equalsNullable(this.issuer, diiaProviderOutput.issuer);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(subject, issuer);
+    return Objects.hash(hashCodeNullable(subject), hashCodeNullable(issuer));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

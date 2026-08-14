@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,25 +41,22 @@ import id.trinsic.ApiClient;
   SpidBillingInformation.JSON_PROPERTY_VERIFICATION_TYPE,
   SpidBillingInformation.JSON_PROPERTY_VERIFICATION_LEVEL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SpidBillingInformation {
   public static final String JSON_PROPERTY_IS_BILLABLE = "isBillable";
-  @javax.annotation.Nonnull
-  private Boolean isBillable;
+  private JsonNullable<Boolean> isBillable = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_VERIFICATION_TYPE = "verificationType";
-  @javax.annotation.Nonnull
-  private String verificationType;
+  private JsonNullable<String> verificationType = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_VERIFICATION_LEVEL = "verificationLevel";
-  @javax.annotation.Nonnull
-  private Integer verificationLevel;
+  private JsonNullable<Integer> verificationLevel = JsonNullable.<Integer>undefined();
 
   public SpidBillingInformation() { 
   }
 
-  public SpidBillingInformation isBillable(@javax.annotation.Nonnull Boolean isBillable) {
-    this.isBillable = isBillable;
+  public SpidBillingInformation isBillable(@javax.annotation.Nullable Boolean isBillable) {
+    this.isBillable = JsonNullable.<Boolean>of(isBillable);
     return this;
   }
 
@@ -63,23 +64,31 @@ public class SpidBillingInformation {
    * Whether this SPID verification has resulted in a billable event.
    * @return isBillable
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_IS_BILLABLE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getIsBillable() {
-    return isBillable;
+        return isBillable.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_IS_BILLABLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_IS_BILLABLE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsBillable(@javax.annotation.Nonnull Boolean isBillable) {
+  public JsonNullable<Boolean> getIsBillable_JsonNullable() {
+    return isBillable;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IS_BILLABLE)
+  public void setIsBillable_JsonNullable(JsonNullable<Boolean> isBillable) {
     this.isBillable = isBillable;
   }
 
+  public void setIsBillable(@javax.annotation.Nullable Boolean isBillable) {
+    this.isBillable = JsonNullable.<Boolean>of(isBillable);
+  }
 
-  public SpidBillingInformation verificationType(@javax.annotation.Nonnull String verificationType) {
-    this.verificationType = verificationType;
+
+  public SpidBillingInformation verificationType(@javax.annotation.Nullable String verificationType) {
+    this.verificationType = JsonNullable.<String>of(verificationType);
     return this;
   }
 
@@ -87,23 +96,31 @@ public class SpidBillingInformation {
    * The billable verification type for this SPID verification.              Possible values: \&quot;Authentication\&quot; | \&quot;Registration\&quot;
    * @return verificationType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getVerificationType() {
-    return verificationType;
+        return verificationType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setVerificationType(@javax.annotation.Nonnull String verificationType) {
+  public JsonNullable<String> getVerificationType_JsonNullable() {
+    return verificationType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_TYPE)
+  public void setVerificationType_JsonNullable(JsonNullable<String> verificationType) {
     this.verificationType = verificationType;
   }
 
+  public void setVerificationType(@javax.annotation.Nullable String verificationType) {
+    this.verificationType = JsonNullable.<String>of(verificationType);
+  }
 
-  public SpidBillingInformation verificationLevel(@javax.annotation.Nonnull Integer verificationLevel) {
-    this.verificationLevel = verificationLevel;
+
+  public SpidBillingInformation verificationLevel(@javax.annotation.Nullable Integer verificationLevel) {
+    this.verificationLevel = JsonNullable.<Integer>of(verificationLevel);
     return this;
   }
 
@@ -111,18 +128,26 @@ public class SpidBillingInformation {
    * The billable verification level for this SPID verification.              Possible values: 1 | 2 | 3
    * @return verificationLevel
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_LEVEL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getVerificationLevel() {
-    return verificationLevel;
+        return verificationLevel.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_LEVEL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_LEVEL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setVerificationLevel(@javax.annotation.Nonnull Integer verificationLevel) {
+  public JsonNullable<Integer> getVerificationLevel_JsonNullable() {
+    return verificationLevel;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_LEVEL)
+  public void setVerificationLevel_JsonNullable(JsonNullable<Integer> verificationLevel) {
     this.verificationLevel = verificationLevel;
+  }
+
+  public void setVerificationLevel(@javax.annotation.Nullable Integer verificationLevel) {
+    this.verificationLevel = JsonNullable.<Integer>of(verificationLevel);
   }
 
 
@@ -138,14 +163,25 @@ public class SpidBillingInformation {
       return false;
     }
     SpidBillingInformation spidBillingInformation = (SpidBillingInformation) o;
-    return Objects.equals(this.isBillable, spidBillingInformation.isBillable) &&
-        Objects.equals(this.verificationType, spidBillingInformation.verificationType) &&
-        Objects.equals(this.verificationLevel, spidBillingInformation.verificationLevel);
+    return equalsNullable(this.isBillable, spidBillingInformation.isBillable) &&
+        equalsNullable(this.verificationType, spidBillingInformation.verificationType) &&
+        equalsNullable(this.verificationLevel, spidBillingInformation.verificationLevel);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isBillable, verificationType, verificationLevel);
+    return Objects.hash(hashCodeNullable(isBillable), hashCodeNullable(verificationType), hashCodeNullable(verificationLevel));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

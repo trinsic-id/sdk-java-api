@@ -44,36 +44,31 @@ import id.trinsic.ApiClient;
   IndiaPanStructuredNumber.JSON_PROPERTY_SERIAL_NUMBER,
   IndiaPanStructuredNumber.JSON_PROPERTY_CHECK_LETTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndiaPanStructuredNumber {
   public static final String JSON_PROPERTY_SERIES_CODE = "seriesCode";
-  @javax.annotation.Nonnull
-  private String seriesCode;
+  private JsonNullable<String> seriesCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ASSESSEE_CATEGORY_CODE = "assesseeCategoryCode";
-  @javax.annotation.Nonnull
-  private String assesseeCategoryCode;
+  private JsonNullable<String> assesseeCategoryCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_ASSESSEE_CATEGORY_NAME = "assesseeCategoryName";
   private JsonNullable<String> assesseeCategoryName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NAME_PREFIX_LETTER = "namePrefixLetter";
-  @javax.annotation.Nonnull
-  private String namePrefixLetter;
+  private JsonNullable<String> namePrefixLetter = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
-  @javax.annotation.Nonnull
-  private String serialNumber;
+  private JsonNullable<String> serialNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CHECK_LETTER = "checkLetter";
-  @javax.annotation.Nonnull
-  private String checkLetter;
+  private JsonNullable<String> checkLetter = JsonNullable.<String>undefined();
 
   public IndiaPanStructuredNumber() { 
   }
 
-  public IndiaPanStructuredNumber seriesCode(@javax.annotation.Nonnull String seriesCode) {
-    this.seriesCode = seriesCode;
+  public IndiaPanStructuredNumber seriesCode(@javax.annotation.Nullable String seriesCode) {
+    this.seriesCode = JsonNullable.<String>of(seriesCode);
     return this;
   }
 
@@ -81,23 +76,31 @@ public class IndiaPanStructuredNumber {
    * Three-letter block issued by the Income Tax Department of India.              Ties the number to a specific Income Tax Office or jurisdiction using an internal labeling system.              Position: - Characters 1 through 3 of the PAN              Possible values: - Any three-letter block of uppercase Latin letters
    * @return seriesCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SERIES_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSeriesCode() {
-    return seriesCode;
+        return seriesCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SERIES_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SERIES_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSeriesCode(@javax.annotation.Nonnull String seriesCode) {
+  public JsonNullable<String> getSeriesCode_JsonNullable() {
+    return seriesCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SERIES_CODE)
+  public void setSeriesCode_JsonNullable(JsonNullable<String> seriesCode) {
     this.seriesCode = seriesCode;
   }
 
+  public void setSeriesCode(@javax.annotation.Nullable String seriesCode) {
+    this.seriesCode = JsonNullable.<String>of(seriesCode);
+  }
 
-  public IndiaPanStructuredNumber assesseeCategoryCode(@javax.annotation.Nonnull String assesseeCategoryCode) {
-    this.assesseeCategoryCode = assesseeCategoryCode;
+
+  public IndiaPanStructuredNumber assesseeCategoryCode(@javax.annotation.Nullable String assesseeCategoryCode) {
+    this.assesseeCategoryCode = JsonNullable.<String>of(assesseeCategoryCode);
     return this;
   }
 
@@ -105,18 +108,26 @@ public class IndiaPanStructuredNumber {
    * Code that represents the entity that is subject to income tax in India.              Position: - Character 4 of the PAN              Possible values: - \&quot;A\&quot; for Association of Persons (AOP) - \&quot;B\&quot; for Body of Individuals (BOI) - \&quot;C\&quot; for Company - \&quot;F\&quot; for Firm - \&quot;G\&quot; for Government - \&quot;H\&quot; for Hindu Undivided Family (HUF) - \&quot;J\&quot; for Artificial Juridical Person - \&quot;L\&quot; for Local Authority - \&quot;P\&quot; for Individual - \&quot;T\&quot; for Trust
    * @return assesseeCategoryCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ASSESSEE_CATEGORY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getAssesseeCategoryCode() {
-    return assesseeCategoryCode;
+        return assesseeCategoryCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ASSESSEE_CATEGORY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ASSESSEE_CATEGORY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAssesseeCategoryCode(@javax.annotation.Nonnull String assesseeCategoryCode) {
+  public JsonNullable<String> getAssesseeCategoryCode_JsonNullable() {
+    return assesseeCategoryCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ASSESSEE_CATEGORY_CODE)
+  public void setAssesseeCategoryCode_JsonNullable(JsonNullable<String> assesseeCategoryCode) {
     this.assesseeCategoryCode = assesseeCategoryCode;
+  }
+
+  public void setAssesseeCategoryCode(@javax.annotation.Nullable String assesseeCategoryCode) {
+    this.assesseeCategoryCode = JsonNullable.<String>of(assesseeCategoryCode);
   }
 
 
@@ -152,8 +163,8 @@ public class IndiaPanStructuredNumber {
   }
 
 
-  public IndiaPanStructuredNumber namePrefixLetter(@javax.annotation.Nonnull String namePrefixLetter) {
-    this.namePrefixLetter = namePrefixLetter;
+  public IndiaPanStructuredNumber namePrefixLetter(@javax.annotation.Nullable String namePrefixLetter) {
+    this.namePrefixLetter = JsonNullable.<String>of(namePrefixLetter);
     return this;
   }
 
@@ -161,23 +172,31 @@ public class IndiaPanStructuredNumber {
    * First letter of the name of the entity that is subject to income tax in India.              Position: - Character 5 of the PAN.              Format: - When AssesseeCategoryCode is P, this character is the first letter of the individual&#39;s   family name as recorded for the PAN. - When AssesseeCategoryCode is A, B, C, F, G, H, J, L, or T, this character is the first letter   of the name of the association, body, company, firm, government, HUF, local authority, or   trust.              Possible values: - Any uppercase Latin letter
    * @return namePrefixLetter
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NAME_PREFIX_LETTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNamePrefixLetter() {
-    return namePrefixLetter;
+        return namePrefixLetter.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NAME_PREFIX_LETTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NAME_PREFIX_LETTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNamePrefixLetter(@javax.annotation.Nonnull String namePrefixLetter) {
+  public JsonNullable<String> getNamePrefixLetter_JsonNullable() {
+    return namePrefixLetter;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NAME_PREFIX_LETTER)
+  public void setNamePrefixLetter_JsonNullable(JsonNullable<String> namePrefixLetter) {
     this.namePrefixLetter = namePrefixLetter;
   }
 
+  public void setNamePrefixLetter(@javax.annotation.Nullable String namePrefixLetter) {
+    this.namePrefixLetter = JsonNullable.<String>of(namePrefixLetter);
+  }
 
-  public IndiaPanStructuredNumber serialNumber(@javax.annotation.Nonnull String serialNumber) {
-    this.serialNumber = serialNumber;
+
+  public IndiaPanStructuredNumber serialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
     return this;
   }
 
@@ -185,23 +204,31 @@ public class IndiaPanStructuredNumber {
    * Sequential four-digit field assigned by the Income Tax Department of India.              Each PAN receives a unique serial within the given series code and assessee category.              Position: - Characters 6 through 9 of the PAN.              Possible values: - Four-digit strings 0001 through 9999 inclusive, using only digits 0 through 9
    * @return serialNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSerialNumber() {
-    return serialNumber;
+        return serialNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSerialNumber(@javax.annotation.Nonnull String serialNumber) {
+  public JsonNullable<String> getSerialNumber_JsonNullable() {
+    return serialNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  public void setSerialNumber_JsonNullable(JsonNullable<String> serialNumber) {
     this.serialNumber = serialNumber;
   }
 
+  public void setSerialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
+  }
 
-  public IndiaPanStructuredNumber checkLetter(@javax.annotation.Nonnull String checkLetter) {
-    this.checkLetter = checkLetter;
+
+  public IndiaPanStructuredNumber checkLetter(@javax.annotation.Nullable String checkLetter) {
+    this.checkLetter = JsonNullable.<String>of(checkLetter);
     return this;
   }
 
@@ -209,18 +236,26 @@ public class IndiaPanStructuredNumber {
    * Alphabetic check character for the first nine characters of the PAN.              The algorithm has not been made publicly available by the Income Tax Department of India.              Position: - Character 10 of the PAN.              Possible values: - One uppercase Latin letter A through Z
    * @return checkLetter
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CHECK_LETTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCheckLetter() {
-    return checkLetter;
+        return checkLetter.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CHECK_LETTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CHECK_LETTER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCheckLetter(@javax.annotation.Nonnull String checkLetter) {
+  public JsonNullable<String> getCheckLetter_JsonNullable() {
+    return checkLetter;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CHECK_LETTER)
+  public void setCheckLetter_JsonNullable(JsonNullable<String> checkLetter) {
     this.checkLetter = checkLetter;
+  }
+
+  public void setCheckLetter(@javax.annotation.Nullable String checkLetter) {
+    this.checkLetter = JsonNullable.<String>of(checkLetter);
   }
 
 
@@ -236,12 +271,12 @@ public class IndiaPanStructuredNumber {
       return false;
     }
     IndiaPanStructuredNumber indiaPanStructuredNumber = (IndiaPanStructuredNumber) o;
-    return Objects.equals(this.seriesCode, indiaPanStructuredNumber.seriesCode) &&
-        Objects.equals(this.assesseeCategoryCode, indiaPanStructuredNumber.assesseeCategoryCode) &&
+    return equalsNullable(this.seriesCode, indiaPanStructuredNumber.seriesCode) &&
+        equalsNullable(this.assesseeCategoryCode, indiaPanStructuredNumber.assesseeCategoryCode) &&
         equalsNullable(this.assesseeCategoryName, indiaPanStructuredNumber.assesseeCategoryName) &&
-        Objects.equals(this.namePrefixLetter, indiaPanStructuredNumber.namePrefixLetter) &&
-        Objects.equals(this.serialNumber, indiaPanStructuredNumber.serialNumber) &&
-        Objects.equals(this.checkLetter, indiaPanStructuredNumber.checkLetter);
+        equalsNullable(this.namePrefixLetter, indiaPanStructuredNumber.namePrefixLetter) &&
+        equalsNullable(this.serialNumber, indiaPanStructuredNumber.serialNumber) &&
+        equalsNullable(this.checkLetter, indiaPanStructuredNumber.checkLetter);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -250,7 +285,7 @@ public class IndiaPanStructuredNumber {
 
   @Override
   public int hashCode() {
-    return Objects.hash(seriesCode, assesseeCategoryCode, hashCodeNullable(assesseeCategoryName), namePrefixLetter, serialNumber, checkLetter);
+    return Objects.hash(hashCodeNullable(seriesCode), hashCodeNullable(assesseeCategoryCode), hashCodeNullable(assesseeCategoryName), hashCodeNullable(namePrefixLetter), hashCodeNullable(serialNumber), hashCodeNullable(checkLetter));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -40,14 +40,13 @@ import id.trinsic.ApiClient;
   Iso180135AamvaDomesticVehicleRestriction.JSON_PROPERTY_CODE,
   Iso180135AamvaDomesticVehicleRestriction.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180135AamvaDomesticVehicleRestriction {
   public static final String JSON_PROPERTY_CODE = "code";
   private JsonNullable<String> code = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  @javax.annotation.Nonnull
-  private String description;
+  private JsonNullable<String> description = JsonNullable.<String>undefined();
 
   public Iso180135AamvaDomesticVehicleRestriction() { 
   }
@@ -84,8 +83,8 @@ public class Iso180135AamvaDomesticVehicleRestriction {
   }
 
 
-  public Iso180135AamvaDomesticVehicleRestriction description(@javax.annotation.Nonnull String description) {
-    this.description = description;
+  public Iso180135AamvaDomesticVehicleRestriction description(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
     return this;
   }
 
@@ -93,18 +92,26 @@ public class Iso180135AamvaDomesticVehicleRestriction {
    * Human-readable description of the restriction.
    * @return description
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDescription() {
-    return description;
+        return description.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDescription(@javax.annotation.Nonnull String description) {
+  public JsonNullable<String> getDescription_JsonNullable() {
+    return description;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  public void setDescription_JsonNullable(JsonNullable<String> description) {
     this.description = description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
   }
 
 
@@ -121,7 +128,7 @@ public class Iso180135AamvaDomesticVehicleRestriction {
     }
     Iso180135AamvaDomesticVehicleRestriction iso180135AamvaDomesticVehicleRestriction = (Iso180135AamvaDomesticVehicleRestriction) o;
     return equalsNullable(this.code, iso180135AamvaDomesticVehicleRestriction.code) &&
-        Objects.equals(this.description, iso180135AamvaDomesticVehicleRestriction.description);
+        equalsNullable(this.description, iso180135AamvaDomesticVehicleRestriction.description);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -130,7 +137,7 @@ public class Iso180135AamvaDomesticVehicleRestriction {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(code), description);
+    return Objects.hash(hashCodeNullable(code), hashCodeNullable(description));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

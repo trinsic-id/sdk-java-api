@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**originatingProviderId** | **String** | The ID of the provider from which this data originated (eg \&quot;yoti\&quot;, \&quot;clear\&quot;) |  [optional] |
+|**originatingProviderId** | **String** | The ID of the provider from which this data originated (eg \&quot;yoti\&quot;, \&quot;clear\&quot;) |  |
 |**originatingSubProviderId** | **String** | The sub-provider ID of the provider from which this data originated (eg \&quot;rabo\&quot;, \&quot;poste-italiane\&quot;)              This is applicable only to federated Identity Providers such as SPID and IDIN. |  [optional] |
 |**person** | [**PersonData**](PersonData.md) | Identity data of the individual who was verified |  [optional] |
 |**document** | [**DocumentData**](DocumentData.md) | Identity data of the document involved in verification, if relevant |  [optional] |

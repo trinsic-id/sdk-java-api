@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,21 +40,19 @@ import id.trinsic.ApiClient;
   SouthAfricaNidMatch2NationalIdNumberField.JSON_PROPERTY_INPUT_VALUE,
   SouthAfricaNidMatch2NationalIdNumberField.JSON_PROPERTY_OUTCOME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SouthAfricaNidMatch2NationalIdNumberField {
   public static final String JSON_PROPERTY_INPUT_VALUE = "inputValue";
-  @javax.annotation.Nonnull
-  private String inputValue;
+  private JsonNullable<String> inputValue = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_OUTCOME = "outcome";
-  @javax.annotation.Nonnull
-  private String outcome;
+  private JsonNullable<String> outcome = JsonNullable.<String>undefined();
 
   public SouthAfricaNidMatch2NationalIdNumberField() { 
   }
 
-  public SouthAfricaNidMatch2NationalIdNumberField inputValue(@javax.annotation.Nonnull String inputValue) {
-    this.inputValue = inputValue;
+  public SouthAfricaNidMatch2NationalIdNumberField inputValue(@javax.annotation.Nullable String inputValue) {
+    this.inputValue = JsonNullable.<String>of(inputValue);
     return this;
   }
 
@@ -58,23 +60,31 @@ public class SouthAfricaNidMatch2NationalIdNumberField {
    * The South African National Identity Number (13 digits) is issued for life by the Department of Home Affairs (DHA) and stored in the Home Affairs National Identification System (HANIS) database. The same number is mandatory for banking, employment, taxation, and voting, and is printed on both the legacy green ID book and the Smart ID Card (rolled out from 2013 onward).              Format: - YYMMDD G(4) C A Z - YYMMDD is the date of birth - G(4) is the gender code (below 5000 female, 5000 or above male) - C is the citizenship indicator (0 citizen, 1 permanent resident) - A is reserved (it had a politically sensitive meaning in the past, but is currently   semantically meaningless) - Z is a Luhn check digit
    * @return inputValue
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getInputValue() {
-    return inputValue;
+        return inputValue.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setInputValue(@javax.annotation.Nonnull String inputValue) {
+  public JsonNullable<String> getInputValue_JsonNullable() {
+    return inputValue;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INPUT_VALUE)
+  public void setInputValue_JsonNullable(JsonNullable<String> inputValue) {
     this.inputValue = inputValue;
   }
 
+  public void setInputValue(@javax.annotation.Nullable String inputValue) {
+    this.inputValue = JsonNullable.<String>of(inputValue);
+  }
 
-  public SouthAfricaNidMatch2NationalIdNumberField outcome(@javax.annotation.Nonnull String outcome) {
-    this.outcome = outcome;
+
+  public SouthAfricaNidMatch2NationalIdNumberField outcome(@javax.annotation.Nullable String outcome) {
+    this.outcome = JsonNullable.<String>of(outcome);
     return this;
   }
 
@@ -82,18 +92,26 @@ public class SouthAfricaNidMatch2NationalIdNumberField {
    * The outcome of verifying the national ID number.              Possible values: - Verified - Not Verified - Not Done - Issuer Unavailable - Not Returned
    * @return outcome
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getOutcome() {
-    return outcome;
+        return outcome.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOutcome(@javax.annotation.Nonnull String outcome) {
+  public JsonNullable<String> getOutcome_JsonNullable() {
+    return outcome;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OUTCOME)
+  public void setOutcome_JsonNullable(JsonNullable<String> outcome) {
     this.outcome = outcome;
+  }
+
+  public void setOutcome(@javax.annotation.Nullable String outcome) {
+    this.outcome = JsonNullable.<String>of(outcome);
   }
 
 
@@ -109,13 +127,24 @@ public class SouthAfricaNidMatch2NationalIdNumberField {
       return false;
     }
     SouthAfricaNidMatch2NationalIdNumberField southAfricaNidMatch2NationalIdNumberField = (SouthAfricaNidMatch2NationalIdNumberField) o;
-    return Objects.equals(this.inputValue, southAfricaNidMatch2NationalIdNumberField.inputValue) &&
-        Objects.equals(this.outcome, southAfricaNidMatch2NationalIdNumberField.outcome);
+    return equalsNullable(this.inputValue, southAfricaNidMatch2NationalIdNumberField.inputValue) &&
+        equalsNullable(this.outcome, southAfricaNidMatch2NationalIdNumberField.outcome);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputValue, outcome);
+    return Objects.hash(hashCodeNullable(inputValue), hashCodeNullable(outcome));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

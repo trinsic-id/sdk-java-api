@@ -24,23 +24,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.AlaskaMobileIdProviderOutput;
 import id.trinsic.api.models.AppleWalletProviderOutput;
 import id.trinsic.api.models.AudkenniProviderOutput;
 import id.trinsic.api.models.AustriaHandySignaturProviderOutput;
+import id.trinsic.api.models.AustriaValeraEudiSandboxProviderOutput;
 import id.trinsic.api.models.BelgiumIdCardProviderOutput;
 import id.trinsic.api.models.BoliviaCiProviderOutput;
 import id.trinsic.api.models.BrazilCnhProviderOutput;
+import id.trinsic.api.models.BrazilCpfProviderOutput;
 import id.trinsic.api.models.ChinaResidentIdMatchOutput;
+import id.trinsic.api.models.ClearProviderOutput;
 import id.trinsic.api.models.ColombiaCcProviderOutput;
 import id.trinsic.api.models.ConnectIdProviderOutput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2ProviderOutput;
 import id.trinsic.api.models.CzechBankIdProviderOutput;
 import id.trinsic.api.models.CzechMojeIdProviderOutput;
 import id.trinsic.api.models.CzechiaMojeIdProviderOutput;
+import id.trinsic.api.models.DenmarkAltIdProviderOutput;
 import id.trinsic.api.models.DigilockerAadhaarProviderOutput;
 import id.trinsic.api.models.DiiaProviderOutput;
 import id.trinsic.api.models.ElSalvadorDuiProviderOutput;
 import id.trinsic.api.models.EstoniaIdCardProviderOutput;
+import id.trinsic.api.models.EudiReferenceWalletProviderOutput;
+import id.trinsic.api.models.EvrotrustProviderOutput;
 import id.trinsic.api.models.FaydaProviderOutput;
 import id.trinsic.api.models.FinlandIdCardProviderOutput;
 import id.trinsic.api.models.FinnishTrustNetworkProviderOutput;
@@ -48,16 +55,19 @@ import id.trinsic.api.models.FranceIdentiteProviderOutput;
 import id.trinsic.api.models.FrejaIndirectProviderOutput;
 import id.trinsic.api.models.FrejaProviderOutput;
 import id.trinsic.api.models.FrenchNumeriqueProviderOutput;
+import id.trinsic.api.models.GermanyEudiSandboxProviderOutput;
 import id.trinsic.api.models.GoogleWalletProviderOutput;
 import id.trinsic.api.models.GuatemalaCuiProviderOutput;
-import id.trinsic.api.models.IdemiaPreviewProviderOutput;
+import id.trinsic.api.models.IdemiaMobileIdProviderOutput;
 import id.trinsic.api.models.IndiaDigilockerAadhaarMatchProviderOutput;
 import id.trinsic.api.models.IndiaPanLookupProviderOutput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchProviderOutput;
 import id.trinsic.api.models.IndonesiaNikMatch;
 import id.trinsic.api.models.InteracProviderOutput;
+import id.trinsic.api.models.ItsmeLoginProviderOutput;
 import id.trinsic.api.models.ItsmeProviderOutput;
 import id.trinsic.api.models.KenyaNidLookup2ProviderOutput;
+import id.trinsic.api.models.KenyaNidLookup3ProviderOutput;
 import id.trinsic.api.models.KenyaNidMatch2ProviderOutput;
 import id.trinsic.api.models.KoreaTelcoMatchProviderOutput;
 import id.trinsic.api.models.LaWalletProviderOutput;
@@ -68,8 +78,11 @@ import id.trinsic.api.models.LloydsSmartIdProviderOutput;
 import id.trinsic.api.models.MexicoCurpProviderOutput;
 import id.trinsic.api.models.MitIdProviderOutput;
 import id.trinsic.api.models.MobileIdProviderOutput;
+import id.trinsic.api.models.MoldovaEvoWalletProviderOutput;
+import id.trinsic.api.models.NetherlandsEudiSandboxProviderOutput;
 import id.trinsic.api.models.NetherlandsIdinProviderOutput;
 import id.trinsic.api.models.NigeriaNinLookup2ProviderOutput;
+import id.trinsic.api.models.NigeriaNinLookup3ProviderOutput;
 import id.trinsic.api.models.NigeriaNinMatch2ProviderOutput;
 import id.trinsic.api.models.NorwegianBankIdProviderOutput;
 import id.trinsic.api.models.OneIdProviderOutput;
@@ -96,7 +109,6 @@ import id.trinsic.api.models.SwedenBankIdProviderOutput;
 import id.trinsic.api.models.UAEPassProviderOutput;
 import id.trinsic.api.models.UgandaNidMatch2ProviderOutput;
 import id.trinsic.api.models.UnitedKingdomEvisaProviderOutput;
-import id.trinsic.api.models.VerimiProviderOutput;
 import id.trinsic.api.models.YotiDeeplinkProviderOutput;
 import id.trinsic.api.models.YotiProviderOutput;
 import id.trinsic.api.models.ZimbabweNidLookup2ProviderOutput;
@@ -130,23 +142,29 @@ import id.trinsic.ApiClient;
   ProviderOutput.JSON_PROPERTY_APPLE_WALLET,
   ProviderOutput.JSON_PROPERTY_AUDKENNI,
   ProviderOutput.JSON_PROPERTY_AUSTRALIA_CONNECT_ID,
+  ProviderOutput.JSON_PROPERTY_AUSTRIA_VALERA_EUDI_SANDBOX,
   ProviderOutput.JSON_PROPERTY_BOLIVIA_CI_LOOKUP,
+  ProviderOutput.JSON_PROPERTY_BRAZIL_CPF_LOOKUP,
   ProviderOutput.JSON_PROPERTY_BRAZIL_DIGITAL_CNH,
   ProviderOutput.JSON_PROPERTY_CANADA_INTERAC,
+  ProviderOutput.JSON_PROPERTY_CLEAR,
   ProviderOutput.JSON_PROPERTY_COLOMBIA_CC_LOOKUP,
   ProviderOutput.JSON_PROPERTY_COTE_DIVOIRE_NID_LOOKUP2,
+  ProviderOutput.JSON_PROPERTY_DENMARK_ALTID,
   ProviderOutput.JSON_PROPERTY_EL_SALVADOR_DUI_LOOKUP,
   ProviderOutput.JSON_PROPERTY_CZECH_BANK_ID,
   ProviderOutput.JSON_PROPERTY_CZECH_REPUBLIC_MOJEID,
   ProviderOutput.JSON_PROPERTY_DENMARK_MITID,
   ProviderOutput.JSON_PROPERTY_ETHIOPIA_FAYDA,
+  ProviderOutput.JSON_PROPERTY_EVROTRUST,
   ProviderOutput.JSON_PROPERTY_FINNISH_TRUST_NETWORK,
+  ProviderOutput.JSON_PROPERTY_EUDI_REFERENCE_WALLET,
   ProviderOutput.JSON_PROPERTY_FRANCE_IDENTITE,
   ProviderOutput.JSON_PROPERTY_FRANCE_IDENTITE_NUMERIQUE,
   ProviderOutput.JSON_PROPERTY_FREJA,
+  ProviderOutput.JSON_PROPERTY_GERMANY_EUDI_SANDBOX,
   ProviderOutput.JSON_PROPERTY_GOOGLE_WALLET,
   ProviderOutput.JSON_PROPERTY_GUATEMALA_CUI_LOOKUP,
-  ProviderOutput.JSON_PROPERTY_IDEMIA_PREVIEW,
   ProviderOutput.JSON_PROPERTY_PANAMA_CEDULA_LOOKUP,
   ProviderOutput.JSON_PROPERTY_INDIA_DIGILOCKER_AADHAAR,
   ProviderOutput.JSON_PROPERTY_INDIA_DIGILOCKER_AADHAAR_FETCH,
@@ -156,13 +174,18 @@ import id.trinsic.ApiClient;
   ProviderOutput.JSON_PROPERTY_INDONESIA_NIK_LOOKUP,
   ProviderOutput.JSON_PROPERTY_CHINA_RESIDENT_ID_MATCH,
   ProviderOutput.JSON_PROPERTY_ITALY_SPID,
+  ProviderOutput.JSON_PROPERTY_ITSME,
   ProviderOutput.JSON_PROPERTY_KENYA_NID_LOOKUP2,
+  ProviderOutput.JSON_PROPERTY_KENYA_NID_LOOKUP3,
   ProviderOutput.JSON_PROPERTY_KENYA_NID_MATCH2,
   ProviderOutput.JSON_PROPERTY_KOREA_TELCO_MATCH,
   ProviderOutput.JSON_PROPERTY_LLOYDS_SMART_ID,
   ProviderOutput.JSON_PROPERTY_MEXICO_CURP_LOOKUP,
   ProviderOutput.JSON_PROPERTY_MOBILE_ID,
+  ProviderOutput.JSON_PROPERTY_MOLDOVA_EVO_WALLET,
+  ProviderOutput.JSON_PROPERTY_NETHERLANDS_EUDI_SANDBOX,
   ProviderOutput.JSON_PROPERTY_NIGERIA_NIN_LOOKUP2,
+  ProviderOutput.JSON_PROPERTY_NIGERIA_NIN_LOOKUP3,
   ProviderOutput.JSON_PROPERTY_NIGERIA_NIN_MATCH2,
   ProviderOutput.JSON_PROPERTY_ONEID,
   ProviderOutput.JSON_PROPERTY_PERU_DNI_LOOKUP,
@@ -181,16 +204,17 @@ import id.trinsic.ApiClient;
   ProviderOutput.JSON_PROPERTY_UAE_PASS,
   ProviderOutput.JSON_PROPERTY_UGANDA_NID_MATCH2,
   ProviderOutput.JSON_PROPERTY_UK_EVISA_LOOKUP,
-  ProviderOutput.JSON_PROPERTY_VERIMI,
   ProviderOutput.JSON_PROPERTY_SWEDEN_BANKID,
   ProviderOutput.JSON_PROPERTY_UKRAINE_DIIA,
+  ProviderOutput.JSON_PROPERTY_USA_ALASKA_MOBILE_ID,
   ProviderOutput.JSON_PROPERTY_USA_LOUISIANA_WALLET,
+  ProviderOutput.JSON_PROPERTY_USA_NEW_YORK_MOBILE_ID,
   ProviderOutput.JSON_PROPERTY_NETHERLANDS_IDIN,
   ProviderOutput.JSON_PROPERTY_YOTI,
   ProviderOutput.JSON_PROPERTY_YOTI_DEEPLINK,
   ProviderOutput.JSON_PROPERTY_ZIMBABWE_NID_LOOKUP2
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ProviderOutput {
   public static final String JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN = "a-at-handy-signatur-login";
   private JsonNullable<AustriaHandySignaturProviderOutput> aAtHandySignaturLogin = JsonNullable.<AustriaHandySignaturProviderOutput>undefined();
@@ -211,7 +235,7 @@ public class ProviderOutput {
   private JsonNullable<FrejaIndirectProviderOutput> aFrejaEidLogin = JsonNullable.<FrejaIndirectProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_A_ITSME_LOGIN = "a-itsme-login";
-  private JsonNullable<ItsmeProviderOutput> aItsmeLogin = JsonNullable.<ItsmeProviderOutput>undefined();
+  private JsonNullable<ItsmeLoginProviderOutput> aItsmeLogin = JsonNullable.<ItsmeLoginProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_A_LT_ID_LOGIN = "a-lt-id-login";
   private JsonNullable<LithuaniaIdCardProviderOutput> aLtIdLogin = JsonNullable.<LithuaniaIdCardProviderOutput>undefined();
@@ -243,8 +267,14 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_AUSTRALIA_CONNECT_ID = "australia-connect-id";
   private JsonNullable<ConnectIdProviderOutput> australiaConnectId = JsonNullable.<ConnectIdProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_AUSTRIA_VALERA_EUDI_SANDBOX = "austria-valera-eudi-sandbox";
+  private JsonNullable<AustriaValeraEudiSandboxProviderOutput> austriaValeraEudiSandbox = JsonNullable.<AustriaValeraEudiSandboxProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_BOLIVIA_CI_LOOKUP = "bolivia-ci-lookup";
   private JsonNullable<BoliviaCiProviderOutput> boliviaCiLookup = JsonNullable.<BoliviaCiProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_BRAZIL_CPF_LOOKUP = "brazil-cpf-lookup";
+  private JsonNullable<BrazilCpfProviderOutput> brazilCpfLookup = JsonNullable.<BrazilCpfProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_BRAZIL_DIGITAL_CNH = "brazil-digital-cnh";
   private JsonNullable<BrazilCnhProviderOutput> brazilDigitalCnh = JsonNullable.<BrazilCnhProviderOutput>undefined();
@@ -252,11 +282,17 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_CANADA_INTERAC = "canada-interac";
   private JsonNullable<InteracProviderOutput> canadaInterac = JsonNullable.<InteracProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_CLEAR = "clear";
+  private JsonNullable<ClearProviderOutput> clear = JsonNullable.<ClearProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_COLOMBIA_CC_LOOKUP = "colombia-cc-lookup";
   private JsonNullable<ColombiaCcProviderOutput> colombiaCcLookup = JsonNullable.<ColombiaCcProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_COTE_DIVOIRE_NID_LOOKUP2 = "cote-divoire-nid-lookup-2";
   private JsonNullable<CoteDIvoireNidLookup2ProviderOutput> coteDivoireNidLookup2 = JsonNullable.<CoteDIvoireNidLookup2ProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_DENMARK_ALTID = "denmark-altid";
+  private JsonNullable<DenmarkAltIdProviderOutput> denmarkAltid = JsonNullable.<DenmarkAltIdProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_EL_SALVADOR_DUI_LOOKUP = "el-salvador-dui-lookup";
   private JsonNullable<ElSalvadorDuiProviderOutput> elSalvadorDuiLookup = JsonNullable.<ElSalvadorDuiProviderOutput>undefined();
@@ -273,8 +309,14 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_ETHIOPIA_FAYDA = "ethiopia-fayda";
   private JsonNullable<FaydaProviderOutput> ethiopiaFayda = JsonNullable.<FaydaProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_EVROTRUST = "evrotrust";
+  private JsonNullable<EvrotrustProviderOutput> evrotrust = JsonNullable.<EvrotrustProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_FINNISH_TRUST_NETWORK = "finnish-trust-network";
   private JsonNullable<FinnishTrustNetworkProviderOutput> finnishTrustNetwork = JsonNullable.<FinnishTrustNetworkProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_EUDI_REFERENCE_WALLET = "eudi-reference-wallet";
+  private JsonNullable<EudiReferenceWalletProviderOutput> eudiReferenceWallet = JsonNullable.<EudiReferenceWalletProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_FRANCE_IDENTITE = "france-identite";
   private JsonNullable<FranceIdentiteProviderOutput> franceIdentite = JsonNullable.<FranceIdentiteProviderOutput>undefined();
@@ -285,14 +327,14 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_FREJA = "freja";
   private JsonNullable<FrejaProviderOutput> freja = JsonNullable.<FrejaProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_GERMANY_EUDI_SANDBOX = "germany-eudi-sandbox";
+  private JsonNullable<GermanyEudiSandboxProviderOutput> germanyEudiSandbox = JsonNullable.<GermanyEudiSandboxProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_GOOGLE_WALLET = "google-wallet";
   private JsonNullable<GoogleWalletProviderOutput> googleWallet = JsonNullable.<GoogleWalletProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_GUATEMALA_CUI_LOOKUP = "guatemala-cui-lookup";
   private JsonNullable<GuatemalaCuiProviderOutput> guatemalaCuiLookup = JsonNullable.<GuatemalaCuiProviderOutput>undefined();
-
-  public static final String JSON_PROPERTY_IDEMIA_PREVIEW = "idemia-preview";
-  private JsonNullable<IdemiaPreviewProviderOutput> idemiaPreview = JsonNullable.<IdemiaPreviewProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_PANAMA_CEDULA_LOOKUP = "panama-cedula-lookup";
   private JsonNullable<PanamaCedulaProviderOutput> panamaCedulaLookup = JsonNullable.<PanamaCedulaProviderOutput>undefined();
@@ -321,8 +363,14 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_ITALY_SPID = "italy-spid";
   private JsonNullable<SpidProviderOutput> italySpid = JsonNullable.<SpidProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_ITSME = "itsme";
+  private JsonNullable<ItsmeProviderOutput> itsme = JsonNullable.<ItsmeProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_KENYA_NID_LOOKUP2 = "kenya-nid-lookup-2";
   private JsonNullable<KenyaNidLookup2ProviderOutput> kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2ProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_KENYA_NID_LOOKUP3 = "kenya-nid-lookup-3";
+  private JsonNullable<KenyaNidLookup3ProviderOutput> kenyaNidLookup3 = JsonNullable.<KenyaNidLookup3ProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_KENYA_NID_MATCH2 = "kenya-nid-match-2";
   private JsonNullable<KenyaNidMatch2ProviderOutput> kenyaNidMatch2 = JsonNullable.<KenyaNidMatch2ProviderOutput>undefined();
@@ -339,8 +387,17 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_MOBILE_ID = "mobile-id";
   private JsonNullable<MobileIdProviderOutput> mobileId = JsonNullable.<MobileIdProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_MOLDOVA_EVO_WALLET = "moldova-evo-wallet";
+  private JsonNullable<MoldovaEvoWalletProviderOutput> moldovaEvoWallet = JsonNullable.<MoldovaEvoWalletProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_NETHERLANDS_EUDI_SANDBOX = "netherlands-eudi-sandbox";
+  private JsonNullable<NetherlandsEudiSandboxProviderOutput> netherlandsEudiSandbox = JsonNullable.<NetherlandsEudiSandboxProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_NIGERIA_NIN_LOOKUP2 = "nigeria-nin-lookup-2";
   private JsonNullable<NigeriaNinLookup2ProviderOutput> nigeriaNinLookup2 = JsonNullable.<NigeriaNinLookup2ProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_NIGERIA_NIN_LOOKUP3 = "nigeria-nin-lookup-3";
+  private JsonNullable<NigeriaNinLookup3ProviderOutput> nigeriaNinLookup3 = JsonNullable.<NigeriaNinLookup3ProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_NIGERIA_NIN_MATCH2 = "nigeria-nin-match-2";
   private JsonNullable<NigeriaNinMatch2ProviderOutput> nigeriaNinMatch2 = JsonNullable.<NigeriaNinMatch2ProviderOutput>undefined();
@@ -396,17 +453,20 @@ public class ProviderOutput {
   public static final String JSON_PROPERTY_UK_EVISA_LOOKUP = "uk-evisa-lookup";
   private JsonNullable<UnitedKingdomEvisaProviderOutput> ukEvisaLookup = JsonNullable.<UnitedKingdomEvisaProviderOutput>undefined();
 
-  public static final String JSON_PROPERTY_VERIMI = "verimi";
-  private JsonNullable<VerimiProviderOutput> verimi = JsonNullable.<VerimiProviderOutput>undefined();
-
   public static final String JSON_PROPERTY_SWEDEN_BANKID = "sweden-bankid";
   private JsonNullable<SwedenBankIdProviderOutput> swedenBankid = JsonNullable.<SwedenBankIdProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_UKRAINE_DIIA = "ukraine-diia";
   private JsonNullable<DiiaProviderOutput> ukraineDiia = JsonNullable.<DiiaProviderOutput>undefined();
 
+  public static final String JSON_PROPERTY_USA_ALASKA_MOBILE_ID = "usa-alaska-mobile-id";
+  private JsonNullable<AlaskaMobileIdProviderOutput> usaAlaskaMobileId = JsonNullable.<AlaskaMobileIdProviderOutput>undefined();
+
   public static final String JSON_PROPERTY_USA_LOUISIANA_WALLET = "usa-louisiana-wallet";
   private JsonNullable<LaWalletProviderOutput> usaLouisianaWallet = JsonNullable.<LaWalletProviderOutput>undefined();
+
+  public static final String JSON_PROPERTY_USA_NEW_YORK_MOBILE_ID = "usa-new-york-mobile-id";
+  private JsonNullable<IdemiaMobileIdProviderOutput> usaNewYorkMobileId = JsonNullable.<IdemiaMobileIdProviderOutput>undefined();
 
   public static final String JSON_PROPERTY_NETHERLANDS_IDIN = "netherlands-idin";
   private JsonNullable<NetherlandsIdinProviderOutput> netherlandsIdin = JsonNullable.<NetherlandsIdinProviderOutput>undefined();
@@ -615,8 +675,8 @@ public class ProviderOutput {
   }
 
 
-  public ProviderOutput aItsmeLogin(@javax.annotation.Nullable ItsmeProviderOutput aItsmeLogin) {
-    this.aItsmeLogin = JsonNullable.<ItsmeProviderOutput>of(aItsmeLogin);
+  public ProviderOutput aItsmeLogin(@javax.annotation.Nullable ItsmeLoginProviderOutput aItsmeLogin) {
+    this.aItsmeLogin = JsonNullable.<ItsmeLoginProviderOutput>of(aItsmeLogin);
     return this;
   }
 
@@ -626,24 +686,24 @@ public class ProviderOutput {
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public ItsmeProviderOutput getaItsmeLogin() {
+  public ItsmeLoginProviderOutput getaItsmeLogin() {
         return aItsmeLogin.orElse(null);
   }
 
   @JsonProperty(value = JSON_PROPERTY_A_ITSME_LOGIN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ItsmeProviderOutput> getaItsmeLogin_JsonNullable() {
+  public JsonNullable<ItsmeLoginProviderOutput> getaItsmeLogin_JsonNullable() {
     return aItsmeLogin;
   }
   
   @JsonProperty(JSON_PROPERTY_A_ITSME_LOGIN)
-  public void setaItsmeLogin_JsonNullable(JsonNullable<ItsmeProviderOutput> aItsmeLogin) {
+  public void setaItsmeLogin_JsonNullable(JsonNullable<ItsmeLoginProviderOutput> aItsmeLogin) {
     this.aItsmeLogin = aItsmeLogin;
   }
 
-  public void setaItsmeLogin(@javax.annotation.Nullable ItsmeProviderOutput aItsmeLogin) {
-    this.aItsmeLogin = JsonNullable.<ItsmeProviderOutput>of(aItsmeLogin);
+  public void setaItsmeLogin(@javax.annotation.Nullable ItsmeLoginProviderOutput aItsmeLogin) {
+    this.aItsmeLogin = JsonNullable.<ItsmeLoginProviderOutput>of(aItsmeLogin);
   }
 
 
@@ -967,6 +1027,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput austriaValeraEudiSandbox(@javax.annotation.Nullable AustriaValeraEudiSandboxProviderOutput austriaValeraEudiSandbox) {
+    this.austriaValeraEudiSandbox = JsonNullable.<AustriaValeraEudiSandboxProviderOutput>of(austriaValeraEudiSandbox);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;austria-valera-eudi-sandbox&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return austriaValeraEudiSandbox
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public AustriaValeraEudiSandboxProviderOutput getAustriaValeraEudiSandbox() {
+        return austriaValeraEudiSandbox.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_AUSTRIA_VALERA_EUDI_SANDBOX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<AustriaValeraEudiSandboxProviderOutput> getAustriaValeraEudiSandbox_JsonNullable() {
+    return austriaValeraEudiSandbox;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AUSTRIA_VALERA_EUDI_SANDBOX)
+  public void setAustriaValeraEudiSandbox_JsonNullable(JsonNullable<AustriaValeraEudiSandboxProviderOutput> austriaValeraEudiSandbox) {
+    this.austriaValeraEudiSandbox = austriaValeraEudiSandbox;
+  }
+
+  public void setAustriaValeraEudiSandbox(@javax.annotation.Nullable AustriaValeraEudiSandboxProviderOutput austriaValeraEudiSandbox) {
+    this.austriaValeraEudiSandbox = JsonNullable.<AustriaValeraEudiSandboxProviderOutput>of(austriaValeraEudiSandbox);
+  }
+
+
   public ProviderOutput boliviaCiLookup(@javax.annotation.Nullable BoliviaCiProviderOutput boliviaCiLookup) {
     this.boliviaCiLookup = JsonNullable.<BoliviaCiProviderOutput>of(boliviaCiLookup);
     return this;
@@ -996,6 +1088,38 @@ public class ProviderOutput {
 
   public void setBoliviaCiLookup(@javax.annotation.Nullable BoliviaCiProviderOutput boliviaCiLookup) {
     this.boliviaCiLookup = JsonNullable.<BoliviaCiProviderOutput>of(boliviaCiLookup);
+  }
+
+
+  public ProviderOutput brazilCpfLookup(@javax.annotation.Nullable BrazilCpfProviderOutput brazilCpfLookup) {
+    this.brazilCpfLookup = JsonNullable.<BrazilCpfProviderOutput>of(brazilCpfLookup);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;brazil-cpf-lookup&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return brazilCpfLookup
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public BrazilCpfProviderOutput getBrazilCpfLookup() {
+        return brazilCpfLookup.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_BRAZIL_CPF_LOOKUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<BrazilCpfProviderOutput> getBrazilCpfLookup_JsonNullable() {
+    return brazilCpfLookup;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BRAZIL_CPF_LOOKUP)
+  public void setBrazilCpfLookup_JsonNullable(JsonNullable<BrazilCpfProviderOutput> brazilCpfLookup) {
+    this.brazilCpfLookup = brazilCpfLookup;
+  }
+
+  public void setBrazilCpfLookup(@javax.annotation.Nullable BrazilCpfProviderOutput brazilCpfLookup) {
+    this.brazilCpfLookup = JsonNullable.<BrazilCpfProviderOutput>of(brazilCpfLookup);
   }
 
 
@@ -1063,6 +1187,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput clear(@javax.annotation.Nullable ClearProviderOutput clear) {
+    this.clear = JsonNullable.<ClearProviderOutput>of(clear);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;clear&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return clear
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ClearProviderOutput getClear() {
+        return clear.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_CLEAR, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ClearProviderOutput> getClear_JsonNullable() {
+    return clear;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CLEAR)
+  public void setClear_JsonNullable(JsonNullable<ClearProviderOutput> clear) {
+    this.clear = clear;
+  }
+
+  public void setClear(@javax.annotation.Nullable ClearProviderOutput clear) {
+    this.clear = JsonNullable.<ClearProviderOutput>of(clear);
+  }
+
+
   public ProviderOutput colombiaCcLookup(@javax.annotation.Nullable ColombiaCcProviderOutput colombiaCcLookup) {
     this.colombiaCcLookup = JsonNullable.<ColombiaCcProviderOutput>of(colombiaCcLookup);
     return this;
@@ -1124,6 +1280,38 @@ public class ProviderOutput {
 
   public void setCoteDivoireNidLookup2(@javax.annotation.Nullable CoteDIvoireNidLookup2ProviderOutput coteDivoireNidLookup2) {
     this.coteDivoireNidLookup2 = JsonNullable.<CoteDIvoireNidLookup2ProviderOutput>of(coteDivoireNidLookup2);
+  }
+
+
+  public ProviderOutput denmarkAltid(@javax.annotation.Nullable DenmarkAltIdProviderOutput denmarkAltid) {
+    this.denmarkAltid = JsonNullable.<DenmarkAltIdProviderOutput>of(denmarkAltid);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;denmark-altid&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return denmarkAltid
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public DenmarkAltIdProviderOutput getDenmarkAltid() {
+        return denmarkAltid.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DENMARK_ALTID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<DenmarkAltIdProviderOutput> getDenmarkAltid_JsonNullable() {
+    return denmarkAltid;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DENMARK_ALTID)
+  public void setDenmarkAltid_JsonNullable(JsonNullable<DenmarkAltIdProviderOutput> denmarkAltid) {
+    this.denmarkAltid = denmarkAltid;
+  }
+
+  public void setDenmarkAltid(@javax.annotation.Nullable DenmarkAltIdProviderOutput denmarkAltid) {
+    this.denmarkAltid = JsonNullable.<DenmarkAltIdProviderOutput>of(denmarkAltid);
   }
 
 
@@ -1287,6 +1475,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput evrotrust(@javax.annotation.Nullable EvrotrustProviderOutput evrotrust) {
+    this.evrotrust = JsonNullable.<EvrotrustProviderOutput>of(evrotrust);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;evrotrust&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return evrotrust
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public EvrotrustProviderOutput getEvrotrust() {
+        return evrotrust.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_EVROTRUST, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<EvrotrustProviderOutput> getEvrotrust_JsonNullable() {
+    return evrotrust;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EVROTRUST)
+  public void setEvrotrust_JsonNullable(JsonNullable<EvrotrustProviderOutput> evrotrust) {
+    this.evrotrust = evrotrust;
+  }
+
+  public void setEvrotrust(@javax.annotation.Nullable EvrotrustProviderOutput evrotrust) {
+    this.evrotrust = JsonNullable.<EvrotrustProviderOutput>of(evrotrust);
+  }
+
+
   public ProviderOutput finnishTrustNetwork(@javax.annotation.Nullable FinnishTrustNetworkProviderOutput finnishTrustNetwork) {
     this.finnishTrustNetwork = JsonNullable.<FinnishTrustNetworkProviderOutput>of(finnishTrustNetwork);
     return this;
@@ -1316,6 +1536,38 @@ public class ProviderOutput {
 
   public void setFinnishTrustNetwork(@javax.annotation.Nullable FinnishTrustNetworkProviderOutput finnishTrustNetwork) {
     this.finnishTrustNetwork = JsonNullable.<FinnishTrustNetworkProviderOutput>of(finnishTrustNetwork);
+  }
+
+
+  public ProviderOutput eudiReferenceWallet(@javax.annotation.Nullable EudiReferenceWalletProviderOutput eudiReferenceWallet) {
+    this.eudiReferenceWallet = JsonNullable.<EudiReferenceWalletProviderOutput>of(eudiReferenceWallet);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;eudi-reference-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return eudiReferenceWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public EudiReferenceWalletProviderOutput getEudiReferenceWallet() {
+        return eudiReferenceWallet.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_EUDI_REFERENCE_WALLET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<EudiReferenceWalletProviderOutput> getEudiReferenceWallet_JsonNullable() {
+    return eudiReferenceWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_EUDI_REFERENCE_WALLET)
+  public void setEudiReferenceWallet_JsonNullable(JsonNullable<EudiReferenceWalletProviderOutput> eudiReferenceWallet) {
+    this.eudiReferenceWallet = eudiReferenceWallet;
+  }
+
+  public void setEudiReferenceWallet(@javax.annotation.Nullable EudiReferenceWalletProviderOutput eudiReferenceWallet) {
+    this.eudiReferenceWallet = JsonNullable.<EudiReferenceWalletProviderOutput>of(eudiReferenceWallet);
   }
 
 
@@ -1415,6 +1667,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput germanyEudiSandbox(@javax.annotation.Nullable GermanyEudiSandboxProviderOutput germanyEudiSandbox) {
+    this.germanyEudiSandbox = JsonNullable.<GermanyEudiSandboxProviderOutput>of(germanyEudiSandbox);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;germany-eudi-sandbox&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return germanyEudiSandbox
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public GermanyEudiSandboxProviderOutput getGermanyEudiSandbox() {
+        return germanyEudiSandbox.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_GERMANY_EUDI_SANDBOX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<GermanyEudiSandboxProviderOutput> getGermanyEudiSandbox_JsonNullable() {
+    return germanyEudiSandbox;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GERMANY_EUDI_SANDBOX)
+  public void setGermanyEudiSandbox_JsonNullable(JsonNullable<GermanyEudiSandboxProviderOutput> germanyEudiSandbox) {
+    this.germanyEudiSandbox = germanyEudiSandbox;
+  }
+
+  public void setGermanyEudiSandbox(@javax.annotation.Nullable GermanyEudiSandboxProviderOutput germanyEudiSandbox) {
+    this.germanyEudiSandbox = JsonNullable.<GermanyEudiSandboxProviderOutput>of(germanyEudiSandbox);
+  }
+
+
   public ProviderOutput googleWallet(@javax.annotation.Nullable GoogleWalletProviderOutput googleWallet) {
     this.googleWallet = JsonNullable.<GoogleWalletProviderOutput>of(googleWallet);
     return this;
@@ -1476,38 +1760,6 @@ public class ProviderOutput {
 
   public void setGuatemalaCuiLookup(@javax.annotation.Nullable GuatemalaCuiProviderOutput guatemalaCuiLookup) {
     this.guatemalaCuiLookup = JsonNullable.<GuatemalaCuiProviderOutput>of(guatemalaCuiLookup);
-  }
-
-
-  public ProviderOutput idemiaPreview(@javax.annotation.Nullable IdemiaPreviewProviderOutput idemiaPreview) {
-    this.idemiaPreview = JsonNullable.<IdemiaPreviewProviderOutput>of(idemiaPreview);
-    return this;
-  }
-
-  /**
-   * Exposed properties for the &#x60;idemia-preview&#x60; Provider which do not directly map to the normalized IdentityData model.
-   * @return idemiaPreview
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public IdemiaPreviewProviderOutput getIdemiaPreview() {
-        return idemiaPreview.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_IDEMIA_PREVIEW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<IdemiaPreviewProviderOutput> getIdemiaPreview_JsonNullable() {
-    return idemiaPreview;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_IDEMIA_PREVIEW)
-  public void setIdemiaPreview_JsonNullable(JsonNullable<IdemiaPreviewProviderOutput> idemiaPreview) {
-    this.idemiaPreview = idemiaPreview;
-  }
-
-  public void setIdemiaPreview(@javax.annotation.Nullable IdemiaPreviewProviderOutput idemiaPreview) {
-    this.idemiaPreview = JsonNullable.<IdemiaPreviewProviderOutput>of(idemiaPreview);
   }
 
 
@@ -1799,6 +2051,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput itsme(@javax.annotation.Nullable ItsmeProviderOutput itsme) {
+    this.itsme = JsonNullable.<ItsmeProviderOutput>of(itsme);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;itsme&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return itsme
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ItsmeProviderOutput getItsme() {
+        return itsme.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ITSME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ItsmeProviderOutput> getItsme_JsonNullable() {
+    return itsme;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ITSME)
+  public void setItsme_JsonNullable(JsonNullable<ItsmeProviderOutput> itsme) {
+    this.itsme = itsme;
+  }
+
+  public void setItsme(@javax.annotation.Nullable ItsmeProviderOutput itsme) {
+    this.itsme = JsonNullable.<ItsmeProviderOutput>of(itsme);
+  }
+
+
   public ProviderOutput kenyaNidLookup2(@javax.annotation.Nullable KenyaNidLookup2ProviderOutput kenyaNidLookup2) {
     this.kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2ProviderOutput>of(kenyaNidLookup2);
     return this;
@@ -1828,6 +2112,38 @@ public class ProviderOutput {
 
   public void setKenyaNidLookup2(@javax.annotation.Nullable KenyaNidLookup2ProviderOutput kenyaNidLookup2) {
     this.kenyaNidLookup2 = JsonNullable.<KenyaNidLookup2ProviderOutput>of(kenyaNidLookup2);
+  }
+
+
+  public ProviderOutput kenyaNidLookup3(@javax.annotation.Nullable KenyaNidLookup3ProviderOutput kenyaNidLookup3) {
+    this.kenyaNidLookup3 = JsonNullable.<KenyaNidLookup3ProviderOutput>of(kenyaNidLookup3);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;kenya-nid-lookup-3&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return kenyaNidLookup3
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public KenyaNidLookup3ProviderOutput getKenyaNidLookup3() {
+        return kenyaNidLookup3.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_KENYA_NID_LOOKUP3, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<KenyaNidLookup3ProviderOutput> getKenyaNidLookup3_JsonNullable() {
+    return kenyaNidLookup3;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_KENYA_NID_LOOKUP3)
+  public void setKenyaNidLookup3_JsonNullable(JsonNullable<KenyaNidLookup3ProviderOutput> kenyaNidLookup3) {
+    this.kenyaNidLookup3 = kenyaNidLookup3;
+  }
+
+  public void setKenyaNidLookup3(@javax.annotation.Nullable KenyaNidLookup3ProviderOutput kenyaNidLookup3) {
+    this.kenyaNidLookup3 = JsonNullable.<KenyaNidLookup3ProviderOutput>of(kenyaNidLookup3);
   }
 
 
@@ -1991,6 +2307,70 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput moldovaEvoWallet(@javax.annotation.Nullable MoldovaEvoWalletProviderOutput moldovaEvoWallet) {
+    this.moldovaEvoWallet = JsonNullable.<MoldovaEvoWalletProviderOutput>of(moldovaEvoWallet);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;moldova-evo-wallet&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return moldovaEvoWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MoldovaEvoWalletProviderOutput getMoldovaEvoWallet() {
+        return moldovaEvoWallet.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_MOLDOVA_EVO_WALLET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MoldovaEvoWalletProviderOutput> getMoldovaEvoWallet_JsonNullable() {
+    return moldovaEvoWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MOLDOVA_EVO_WALLET)
+  public void setMoldovaEvoWallet_JsonNullable(JsonNullable<MoldovaEvoWalletProviderOutput> moldovaEvoWallet) {
+    this.moldovaEvoWallet = moldovaEvoWallet;
+  }
+
+  public void setMoldovaEvoWallet(@javax.annotation.Nullable MoldovaEvoWalletProviderOutput moldovaEvoWallet) {
+    this.moldovaEvoWallet = JsonNullable.<MoldovaEvoWalletProviderOutput>of(moldovaEvoWallet);
+  }
+
+
+  public ProviderOutput netherlandsEudiSandbox(@javax.annotation.Nullable NetherlandsEudiSandboxProviderOutput netherlandsEudiSandbox) {
+    this.netherlandsEudiSandbox = JsonNullable.<NetherlandsEudiSandboxProviderOutput>of(netherlandsEudiSandbox);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;netherlands-eudi-sandbox&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return netherlandsEudiSandbox
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public NetherlandsEudiSandboxProviderOutput getNetherlandsEudiSandbox() {
+        return netherlandsEudiSandbox.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_NETHERLANDS_EUDI_SANDBOX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<NetherlandsEudiSandboxProviderOutput> getNetherlandsEudiSandbox_JsonNullable() {
+    return netherlandsEudiSandbox;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NETHERLANDS_EUDI_SANDBOX)
+  public void setNetherlandsEudiSandbox_JsonNullable(JsonNullable<NetherlandsEudiSandboxProviderOutput> netherlandsEudiSandbox) {
+    this.netherlandsEudiSandbox = netherlandsEudiSandbox;
+  }
+
+  public void setNetherlandsEudiSandbox(@javax.annotation.Nullable NetherlandsEudiSandboxProviderOutput netherlandsEudiSandbox) {
+    this.netherlandsEudiSandbox = JsonNullable.<NetherlandsEudiSandboxProviderOutput>of(netherlandsEudiSandbox);
+  }
+
+
   public ProviderOutput nigeriaNinLookup2(@javax.annotation.Nullable NigeriaNinLookup2ProviderOutput nigeriaNinLookup2) {
     this.nigeriaNinLookup2 = JsonNullable.<NigeriaNinLookup2ProviderOutput>of(nigeriaNinLookup2);
     return this;
@@ -2020,6 +2400,38 @@ public class ProviderOutput {
 
   public void setNigeriaNinLookup2(@javax.annotation.Nullable NigeriaNinLookup2ProviderOutput nigeriaNinLookup2) {
     this.nigeriaNinLookup2 = JsonNullable.<NigeriaNinLookup2ProviderOutput>of(nigeriaNinLookup2);
+  }
+
+
+  public ProviderOutput nigeriaNinLookup3(@javax.annotation.Nullable NigeriaNinLookup3ProviderOutput nigeriaNinLookup3) {
+    this.nigeriaNinLookup3 = JsonNullable.<NigeriaNinLookup3ProviderOutput>of(nigeriaNinLookup3);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;nigeria-nin-lookup-3&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return nigeriaNinLookup3
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public NigeriaNinLookup3ProviderOutput getNigeriaNinLookup3() {
+        return nigeriaNinLookup3.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_NIGERIA_NIN_LOOKUP3, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<NigeriaNinLookup3ProviderOutput> getNigeriaNinLookup3_JsonNullable() {
+    return nigeriaNinLookup3;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NIGERIA_NIN_LOOKUP3)
+  public void setNigeriaNinLookup3_JsonNullable(JsonNullable<NigeriaNinLookup3ProviderOutput> nigeriaNinLookup3) {
+    this.nigeriaNinLookup3 = nigeriaNinLookup3;
+  }
+
+  public void setNigeriaNinLookup3(@javax.annotation.Nullable NigeriaNinLookup3ProviderOutput nigeriaNinLookup3) {
+    this.nigeriaNinLookup3 = JsonNullable.<NigeriaNinLookup3ProviderOutput>of(nigeriaNinLookup3);
   }
 
 
@@ -2599,38 +3011,6 @@ public class ProviderOutput {
   }
 
 
-  public ProviderOutput verimi(@javax.annotation.Nullable VerimiProviderOutput verimi) {
-    this.verimi = JsonNullable.<VerimiProviderOutput>of(verimi);
-    return this;
-  }
-
-  /**
-   * Exposed properties for the &#x60;verimi&#x60; Provider which do not directly map to the normalized IdentityData model.
-   * @return verimi
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public VerimiProviderOutput getVerimi() {
-        return verimi.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_VERIMI, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<VerimiProviderOutput> getVerimi_JsonNullable() {
-    return verimi;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_VERIMI)
-  public void setVerimi_JsonNullable(JsonNullable<VerimiProviderOutput> verimi) {
-    this.verimi = verimi;
-  }
-
-  public void setVerimi(@javax.annotation.Nullable VerimiProviderOutput verimi) {
-    this.verimi = JsonNullable.<VerimiProviderOutput>of(verimi);
-  }
-
-
   public ProviderOutput swedenBankid(@javax.annotation.Nullable SwedenBankIdProviderOutput swedenBankid) {
     this.swedenBankid = JsonNullable.<SwedenBankIdProviderOutput>of(swedenBankid);
     return this;
@@ -2695,6 +3075,38 @@ public class ProviderOutput {
   }
 
 
+  public ProviderOutput usaAlaskaMobileId(@javax.annotation.Nullable AlaskaMobileIdProviderOutput usaAlaskaMobileId) {
+    this.usaAlaskaMobileId = JsonNullable.<AlaskaMobileIdProviderOutput>of(usaAlaskaMobileId);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;usa-alaska-mobile-id&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return usaAlaskaMobileId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public AlaskaMobileIdProviderOutput getUsaAlaskaMobileId() {
+        return usaAlaskaMobileId.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_USA_ALASKA_MOBILE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<AlaskaMobileIdProviderOutput> getUsaAlaskaMobileId_JsonNullable() {
+    return usaAlaskaMobileId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USA_ALASKA_MOBILE_ID)
+  public void setUsaAlaskaMobileId_JsonNullable(JsonNullable<AlaskaMobileIdProviderOutput> usaAlaskaMobileId) {
+    this.usaAlaskaMobileId = usaAlaskaMobileId;
+  }
+
+  public void setUsaAlaskaMobileId(@javax.annotation.Nullable AlaskaMobileIdProviderOutput usaAlaskaMobileId) {
+    this.usaAlaskaMobileId = JsonNullable.<AlaskaMobileIdProviderOutput>of(usaAlaskaMobileId);
+  }
+
+
   public ProviderOutput usaLouisianaWallet(@javax.annotation.Nullable LaWalletProviderOutput usaLouisianaWallet) {
     this.usaLouisianaWallet = JsonNullable.<LaWalletProviderOutput>of(usaLouisianaWallet);
     return this;
@@ -2724,6 +3136,38 @@ public class ProviderOutput {
 
   public void setUsaLouisianaWallet(@javax.annotation.Nullable LaWalletProviderOutput usaLouisianaWallet) {
     this.usaLouisianaWallet = JsonNullable.<LaWalletProviderOutput>of(usaLouisianaWallet);
+  }
+
+
+  public ProviderOutput usaNewYorkMobileId(@javax.annotation.Nullable IdemiaMobileIdProviderOutput usaNewYorkMobileId) {
+    this.usaNewYorkMobileId = JsonNullable.<IdemiaMobileIdProviderOutput>of(usaNewYorkMobileId);
+    return this;
+  }
+
+  /**
+   * Exposed properties for the &#x60;usa-new-york-mobile-id&#x60; Provider which do not directly map to the normalized IdentityData model.
+   * @return usaNewYorkMobileId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public IdemiaMobileIdProviderOutput getUsaNewYorkMobileId() {
+        return usaNewYorkMobileId.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_USA_NEW_YORK_MOBILE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<IdemiaMobileIdProviderOutput> getUsaNewYorkMobileId_JsonNullable() {
+    return usaNewYorkMobileId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USA_NEW_YORK_MOBILE_ID)
+  public void setUsaNewYorkMobileId_JsonNullable(JsonNullable<IdemiaMobileIdProviderOutput> usaNewYorkMobileId) {
+    this.usaNewYorkMobileId = usaNewYorkMobileId;
+  }
+
+  public void setUsaNewYorkMobileId(@javax.annotation.Nullable IdemiaMobileIdProviderOutput usaNewYorkMobileId) {
+    this.usaNewYorkMobileId = JsonNullable.<IdemiaMobileIdProviderOutput>of(usaNewYorkMobileId);
   }
 
 
@@ -2884,23 +3328,29 @@ public class ProviderOutput {
         equalsNullable(this.appleWallet, providerOutput.appleWallet) &&
         equalsNullable(this.audkenni, providerOutput.audkenni) &&
         equalsNullable(this.australiaConnectId, providerOutput.australiaConnectId) &&
+        equalsNullable(this.austriaValeraEudiSandbox, providerOutput.austriaValeraEudiSandbox) &&
         equalsNullable(this.boliviaCiLookup, providerOutput.boliviaCiLookup) &&
+        equalsNullable(this.brazilCpfLookup, providerOutput.brazilCpfLookup) &&
         equalsNullable(this.brazilDigitalCnh, providerOutput.brazilDigitalCnh) &&
         equalsNullable(this.canadaInterac, providerOutput.canadaInterac) &&
+        equalsNullable(this.clear, providerOutput.clear) &&
         equalsNullable(this.colombiaCcLookup, providerOutput.colombiaCcLookup) &&
         equalsNullable(this.coteDivoireNidLookup2, providerOutput.coteDivoireNidLookup2) &&
+        equalsNullable(this.denmarkAltid, providerOutput.denmarkAltid) &&
         equalsNullable(this.elSalvadorDuiLookup, providerOutput.elSalvadorDuiLookup) &&
         equalsNullable(this.czechBankId, providerOutput.czechBankId) &&
         equalsNullable(this.czechRepublicMojeid, providerOutput.czechRepublicMojeid) &&
         equalsNullable(this.denmarkMitid, providerOutput.denmarkMitid) &&
         equalsNullable(this.ethiopiaFayda, providerOutput.ethiopiaFayda) &&
+        equalsNullable(this.evrotrust, providerOutput.evrotrust) &&
         equalsNullable(this.finnishTrustNetwork, providerOutput.finnishTrustNetwork) &&
+        equalsNullable(this.eudiReferenceWallet, providerOutput.eudiReferenceWallet) &&
         equalsNullable(this.franceIdentite, providerOutput.franceIdentite) &&
         equalsNullable(this.franceIdentiteNumerique, providerOutput.franceIdentiteNumerique) &&
         equalsNullable(this.freja, providerOutput.freja) &&
+        equalsNullable(this.germanyEudiSandbox, providerOutput.germanyEudiSandbox) &&
         equalsNullable(this.googleWallet, providerOutput.googleWallet) &&
         equalsNullable(this.guatemalaCuiLookup, providerOutput.guatemalaCuiLookup) &&
-        equalsNullable(this.idemiaPreview, providerOutput.idemiaPreview) &&
         equalsNullable(this.panamaCedulaLookup, providerOutput.panamaCedulaLookup) &&
         equalsNullable(this.indiaDigilockerAadhaar, providerOutput.indiaDigilockerAadhaar) &&
         equalsNullable(this.indiaDigilockerAadhaarFetch, providerOutput.indiaDigilockerAadhaarFetch) &&
@@ -2910,13 +3360,18 @@ public class ProviderOutput {
         equalsNullable(this.indonesiaNikLookup, providerOutput.indonesiaNikLookup) &&
         equalsNullable(this.chinaResidentIdMatch, providerOutput.chinaResidentIdMatch) &&
         equalsNullable(this.italySpid, providerOutput.italySpid) &&
+        equalsNullable(this.itsme, providerOutput.itsme) &&
         equalsNullable(this.kenyaNidLookup2, providerOutput.kenyaNidLookup2) &&
+        equalsNullable(this.kenyaNidLookup3, providerOutput.kenyaNidLookup3) &&
         equalsNullable(this.kenyaNidMatch2, providerOutput.kenyaNidMatch2) &&
         equalsNullable(this.koreaTelcoMatch, providerOutput.koreaTelcoMatch) &&
         equalsNullable(this.lloydsSmartId, providerOutput.lloydsSmartId) &&
         equalsNullable(this.mexicoCurpLookup, providerOutput.mexicoCurpLookup) &&
         equalsNullable(this.mobileId, providerOutput.mobileId) &&
+        equalsNullable(this.moldovaEvoWallet, providerOutput.moldovaEvoWallet) &&
+        equalsNullable(this.netherlandsEudiSandbox, providerOutput.netherlandsEudiSandbox) &&
         equalsNullable(this.nigeriaNinLookup2, providerOutput.nigeriaNinLookup2) &&
+        equalsNullable(this.nigeriaNinLookup3, providerOutput.nigeriaNinLookup3) &&
         equalsNullable(this.nigeriaNinMatch2, providerOutput.nigeriaNinMatch2) &&
         equalsNullable(this.oneid, providerOutput.oneid) &&
         equalsNullable(this.peruDniLookup, providerOutput.peruDniLookup) &&
@@ -2935,10 +3390,11 @@ public class ProviderOutput {
         equalsNullable(this.uaePass, providerOutput.uaePass) &&
         equalsNullable(this.ugandaNidMatch2, providerOutput.ugandaNidMatch2) &&
         equalsNullable(this.ukEvisaLookup, providerOutput.ukEvisaLookup) &&
-        equalsNullable(this.verimi, providerOutput.verimi) &&
         equalsNullable(this.swedenBankid, providerOutput.swedenBankid) &&
         equalsNullable(this.ukraineDiia, providerOutput.ukraineDiia) &&
+        equalsNullable(this.usaAlaskaMobileId, providerOutput.usaAlaskaMobileId) &&
         equalsNullable(this.usaLouisianaWallet, providerOutput.usaLouisianaWallet) &&
+        equalsNullable(this.usaNewYorkMobileId, providerOutput.usaNewYorkMobileId) &&
         equalsNullable(this.netherlandsIdin, providerOutput.netherlandsIdin) &&
         equalsNullable(this.yoti, providerOutput.yoti) &&
         equalsNullable(this.yotiDeeplink, providerOutput.yotiDeeplink) &&
@@ -2951,7 +3407,7 @@ public class ProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(aAtHandySignaturLogin), hashCodeNullable(aBeIdLogin), hashCodeNullable(aEdoappEidLogin), hashCodeNullable(aEeWebEidLogin), hashCodeNullable(aFiIdLogin), hashCodeNullable(aFrejaEidLogin), hashCodeNullable(aItsmeLogin), hashCodeNullable(aLtIdLogin), hashCodeNullable(aLvEparakstsIdLogin), hashCodeNullable(aLvEparakstsMobileLogin), hashCodeNullable(aMojeid), hashCodeNullable(aPlMojeidLogin), hashCodeNullable(aPtIdLogin), hashCodeNullable(aRsIdLogin), hashCodeNullable(appleWallet), hashCodeNullable(audkenni), hashCodeNullable(australiaConnectId), hashCodeNullable(boliviaCiLookup), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(canadaInterac), hashCodeNullable(colombiaCcLookup), hashCodeNullable(coteDivoireNidLookup2), hashCodeNullable(elSalvadorDuiLookup), hashCodeNullable(czechBankId), hashCodeNullable(czechRepublicMojeid), hashCodeNullable(denmarkMitid), hashCodeNullable(ethiopiaFayda), hashCodeNullable(finnishTrustNetwork), hashCodeNullable(franceIdentite), hashCodeNullable(franceIdentiteNumerique), hashCodeNullable(freja), hashCodeNullable(googleWallet), hashCodeNullable(guatemalaCuiLookup), hashCodeNullable(idemiaPreview), hashCodeNullable(panamaCedulaLookup), hashCodeNullable(indiaDigilockerAadhaar), hashCodeNullable(indiaDigilockerAadhaarFetch), hashCodeNullable(indiaDigilockerAadhaarMatch), hashCodeNullable(indiaPanLookup), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(indonesiaNikLookup), hashCodeNullable(chinaResidentIdMatch), hashCodeNullable(italySpid), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(koreaTelcoMatch), hashCodeNullable(lloydsSmartId), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(mobileId), hashCodeNullable(nigeriaNinLookup2), hashCodeNullable(nigeriaNinMatch2), hashCodeNullable(oneid), hashCodeNullable(peruDniLookup), hashCodeNullable(norwayBankid), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(philippinesPhilsysMatch), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(polandMobywatelMatch), hashCodeNullable(postOfficeEasyid), hashCodeNullable(samsungWallet), hashCodeNullable(singpassLogin), hashCodeNullable(singpassMyinfo), hashCodeNullable(smartId), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(southAfricaNidMatch2), hashCodeNullable(uaePass), hashCodeNullable(ugandaNidMatch2), hashCodeNullable(ukEvisaLookup), hashCodeNullable(verimi), hashCodeNullable(swedenBankid), hashCodeNullable(ukraineDiia), hashCodeNullable(usaLouisianaWallet), hashCodeNullable(netherlandsIdin), hashCodeNullable(yoti), hashCodeNullable(yotiDeeplink), hashCodeNullable(zimbabweNidLookup2));
+    return Objects.hash(hashCodeNullable(aAtHandySignaturLogin), hashCodeNullable(aBeIdLogin), hashCodeNullable(aEdoappEidLogin), hashCodeNullable(aEeWebEidLogin), hashCodeNullable(aFiIdLogin), hashCodeNullable(aFrejaEidLogin), hashCodeNullable(aItsmeLogin), hashCodeNullable(aLtIdLogin), hashCodeNullable(aLvEparakstsIdLogin), hashCodeNullable(aLvEparakstsMobileLogin), hashCodeNullable(aMojeid), hashCodeNullable(aPlMojeidLogin), hashCodeNullable(aPtIdLogin), hashCodeNullable(aRsIdLogin), hashCodeNullable(appleWallet), hashCodeNullable(audkenni), hashCodeNullable(australiaConnectId), hashCodeNullable(austriaValeraEudiSandbox), hashCodeNullable(boliviaCiLookup), hashCodeNullable(brazilCpfLookup), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(canadaInterac), hashCodeNullable(clear), hashCodeNullable(colombiaCcLookup), hashCodeNullable(coteDivoireNidLookup2), hashCodeNullable(denmarkAltid), hashCodeNullable(elSalvadorDuiLookup), hashCodeNullable(czechBankId), hashCodeNullable(czechRepublicMojeid), hashCodeNullable(denmarkMitid), hashCodeNullable(ethiopiaFayda), hashCodeNullable(evrotrust), hashCodeNullable(finnishTrustNetwork), hashCodeNullable(eudiReferenceWallet), hashCodeNullable(franceIdentite), hashCodeNullable(franceIdentiteNumerique), hashCodeNullable(freja), hashCodeNullable(germanyEudiSandbox), hashCodeNullable(googleWallet), hashCodeNullable(guatemalaCuiLookup), hashCodeNullable(panamaCedulaLookup), hashCodeNullable(indiaDigilockerAadhaar), hashCodeNullable(indiaDigilockerAadhaarFetch), hashCodeNullable(indiaDigilockerAadhaarMatch), hashCodeNullable(indiaPanLookup), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(indonesiaNikLookup), hashCodeNullable(chinaResidentIdMatch), hashCodeNullable(italySpid), hashCodeNullable(itsme), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(kenyaNidLookup3), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(koreaTelcoMatch), hashCodeNullable(lloydsSmartId), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(mobileId), hashCodeNullable(moldovaEvoWallet), hashCodeNullable(netherlandsEudiSandbox), hashCodeNullable(nigeriaNinLookup2), hashCodeNullable(nigeriaNinLookup3), hashCodeNullable(nigeriaNinMatch2), hashCodeNullable(oneid), hashCodeNullable(peruDniLookup), hashCodeNullable(norwayBankid), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(philippinesPhilsysMatch), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(polandMobywatelMatch), hashCodeNullable(postOfficeEasyid), hashCodeNullable(samsungWallet), hashCodeNullable(singpassLogin), hashCodeNullable(singpassMyinfo), hashCodeNullable(smartId), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(southAfricaNidMatch2), hashCodeNullable(uaePass), hashCodeNullable(ugandaNidMatch2), hashCodeNullable(ukEvisaLookup), hashCodeNullable(swedenBankid), hashCodeNullable(ukraineDiia), hashCodeNullable(usaAlaskaMobileId), hashCodeNullable(usaLouisianaWallet), hashCodeNullable(usaNewYorkMobileId), hashCodeNullable(netherlandsIdin), hashCodeNullable(yoti), hashCodeNullable(yotiDeeplink), hashCodeNullable(zimbabweNidLookup2));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2982,23 +3438,29 @@ public class ProviderOutput {
     sb.append("    appleWallet: ").append(toIndentedString(appleWallet)).append("\n");
     sb.append("    audkenni: ").append(toIndentedString(audkenni)).append("\n");
     sb.append("    australiaConnectId: ").append(toIndentedString(australiaConnectId)).append("\n");
+    sb.append("    austriaValeraEudiSandbox: ").append(toIndentedString(austriaValeraEudiSandbox)).append("\n");
     sb.append("    boliviaCiLookup: ").append(toIndentedString(boliviaCiLookup)).append("\n");
+    sb.append("    brazilCpfLookup: ").append(toIndentedString(brazilCpfLookup)).append("\n");
     sb.append("    brazilDigitalCnh: ").append(toIndentedString(brazilDigitalCnh)).append("\n");
     sb.append("    canadaInterac: ").append(toIndentedString(canadaInterac)).append("\n");
+    sb.append("    clear: ").append(toIndentedString(clear)).append("\n");
     sb.append("    colombiaCcLookup: ").append(toIndentedString(colombiaCcLookup)).append("\n");
     sb.append("    coteDivoireNidLookup2: ").append(toIndentedString(coteDivoireNidLookup2)).append("\n");
+    sb.append("    denmarkAltid: ").append(toIndentedString(denmarkAltid)).append("\n");
     sb.append("    elSalvadorDuiLookup: ").append(toIndentedString(elSalvadorDuiLookup)).append("\n");
     sb.append("    czechBankId: ").append(toIndentedString(czechBankId)).append("\n");
     sb.append("    czechRepublicMojeid: ").append(toIndentedString(czechRepublicMojeid)).append("\n");
     sb.append("    denmarkMitid: ").append(toIndentedString(denmarkMitid)).append("\n");
     sb.append("    ethiopiaFayda: ").append(toIndentedString(ethiopiaFayda)).append("\n");
+    sb.append("    evrotrust: ").append(toIndentedString(evrotrust)).append("\n");
     sb.append("    finnishTrustNetwork: ").append(toIndentedString(finnishTrustNetwork)).append("\n");
+    sb.append("    eudiReferenceWallet: ").append(toIndentedString(eudiReferenceWallet)).append("\n");
     sb.append("    franceIdentite: ").append(toIndentedString(franceIdentite)).append("\n");
     sb.append("    franceIdentiteNumerique: ").append(toIndentedString(franceIdentiteNumerique)).append("\n");
     sb.append("    freja: ").append(toIndentedString(freja)).append("\n");
+    sb.append("    germanyEudiSandbox: ").append(toIndentedString(germanyEudiSandbox)).append("\n");
     sb.append("    googleWallet: ").append(toIndentedString(googleWallet)).append("\n");
     sb.append("    guatemalaCuiLookup: ").append(toIndentedString(guatemalaCuiLookup)).append("\n");
-    sb.append("    idemiaPreview: ").append(toIndentedString(idemiaPreview)).append("\n");
     sb.append("    panamaCedulaLookup: ").append(toIndentedString(panamaCedulaLookup)).append("\n");
     sb.append("    indiaDigilockerAadhaar: ").append(toIndentedString(indiaDigilockerAadhaar)).append("\n");
     sb.append("    indiaDigilockerAadhaarFetch: ").append(toIndentedString(indiaDigilockerAadhaarFetch)).append("\n");
@@ -3008,13 +3470,18 @@ public class ProviderOutput {
     sb.append("    indonesiaNikLookup: ").append(toIndentedString(indonesiaNikLookup)).append("\n");
     sb.append("    chinaResidentIdMatch: ").append(toIndentedString(chinaResidentIdMatch)).append("\n");
     sb.append("    italySpid: ").append(toIndentedString(italySpid)).append("\n");
+    sb.append("    itsme: ").append(toIndentedString(itsme)).append("\n");
     sb.append("    kenyaNidLookup2: ").append(toIndentedString(kenyaNidLookup2)).append("\n");
+    sb.append("    kenyaNidLookup3: ").append(toIndentedString(kenyaNidLookup3)).append("\n");
     sb.append("    kenyaNidMatch2: ").append(toIndentedString(kenyaNidMatch2)).append("\n");
     sb.append("    koreaTelcoMatch: ").append(toIndentedString(koreaTelcoMatch)).append("\n");
     sb.append("    lloydsSmartId: ").append(toIndentedString(lloydsSmartId)).append("\n");
     sb.append("    mexicoCurpLookup: ").append(toIndentedString(mexicoCurpLookup)).append("\n");
     sb.append("    mobileId: ").append(toIndentedString(mobileId)).append("\n");
+    sb.append("    moldovaEvoWallet: ").append(toIndentedString(moldovaEvoWallet)).append("\n");
+    sb.append("    netherlandsEudiSandbox: ").append(toIndentedString(netherlandsEudiSandbox)).append("\n");
     sb.append("    nigeriaNinLookup2: ").append(toIndentedString(nigeriaNinLookup2)).append("\n");
+    sb.append("    nigeriaNinLookup3: ").append(toIndentedString(nigeriaNinLookup3)).append("\n");
     sb.append("    nigeriaNinMatch2: ").append(toIndentedString(nigeriaNinMatch2)).append("\n");
     sb.append("    oneid: ").append(toIndentedString(oneid)).append("\n");
     sb.append("    peruDniLookup: ").append(toIndentedString(peruDniLookup)).append("\n");
@@ -3033,10 +3500,11 @@ public class ProviderOutput {
     sb.append("    uaePass: ").append(toIndentedString(uaePass)).append("\n");
     sb.append("    ugandaNidMatch2: ").append(toIndentedString(ugandaNidMatch2)).append("\n");
     sb.append("    ukEvisaLookup: ").append(toIndentedString(ukEvisaLookup)).append("\n");
-    sb.append("    verimi: ").append(toIndentedString(verimi)).append("\n");
     sb.append("    swedenBankid: ").append(toIndentedString(swedenBankid)).append("\n");
     sb.append("    ukraineDiia: ").append(toIndentedString(ukraineDiia)).append("\n");
+    sb.append("    usaAlaskaMobileId: ").append(toIndentedString(usaAlaskaMobileId)).append("\n");
     sb.append("    usaLouisianaWallet: ").append(toIndentedString(usaLouisianaWallet)).append("\n");
+    sb.append("    usaNewYorkMobileId: ").append(toIndentedString(usaNewYorkMobileId)).append("\n");
     sb.append("    netherlandsIdin: ").append(toIndentedString(netherlandsIdin)).append("\n");
     sb.append("    yoti: ").append(toIndentedString(yoti)).append("\n");
     sb.append("    yotiDeeplink: ").append(toIndentedString(yotiDeeplink)).append("\n");
@@ -3170,9 +3638,19 @@ public class ProviderOutput {
       joiner.add(getAustraliaConnectId().toUrlQueryString(prefix + "australia-connect-id" + suffix));
     }
 
+    // add `austria-valera-eudi-sandbox` to the URL query string
+    if (getAustriaValeraEudiSandbox() != null) {
+      joiner.add(getAustriaValeraEudiSandbox().toUrlQueryString(prefix + "austria-valera-eudi-sandbox" + suffix));
+    }
+
     // add `bolivia-ci-lookup` to the URL query string
     if (getBoliviaCiLookup() != null) {
       joiner.add(getBoliviaCiLookup().toUrlQueryString(prefix + "bolivia-ci-lookup" + suffix));
+    }
+
+    // add `brazil-cpf-lookup` to the URL query string
+    if (getBrazilCpfLookup() != null) {
+      joiner.add(getBrazilCpfLookup().toUrlQueryString(prefix + "brazil-cpf-lookup" + suffix));
     }
 
     // add `brazil-digital-cnh` to the URL query string
@@ -3185,6 +3663,11 @@ public class ProviderOutput {
       joiner.add(getCanadaInterac().toUrlQueryString(prefix + "canada-interac" + suffix));
     }
 
+    // add `clear` to the URL query string
+    if (getClear() != null) {
+      joiner.add(getClear().toUrlQueryString(prefix + "clear" + suffix));
+    }
+
     // add `colombia-cc-lookup` to the URL query string
     if (getColombiaCcLookup() != null) {
       joiner.add(getColombiaCcLookup().toUrlQueryString(prefix + "colombia-cc-lookup" + suffix));
@@ -3193,6 +3676,11 @@ public class ProviderOutput {
     // add `cote-divoire-nid-lookup-2` to the URL query string
     if (getCoteDivoireNidLookup2() != null) {
       joiner.add(getCoteDivoireNidLookup2().toUrlQueryString(prefix + "cote-divoire-nid-lookup-2" + suffix));
+    }
+
+    // add `denmark-altid` to the URL query string
+    if (getDenmarkAltid() != null) {
+      joiner.add(getDenmarkAltid().toUrlQueryString(prefix + "denmark-altid" + suffix));
     }
 
     // add `el-salvador-dui-lookup` to the URL query string
@@ -3220,9 +3708,19 @@ public class ProviderOutput {
       joiner.add(getEthiopiaFayda().toUrlQueryString(prefix + "ethiopia-fayda" + suffix));
     }
 
+    // add `evrotrust` to the URL query string
+    if (getEvrotrust() != null) {
+      joiner.add(getEvrotrust().toUrlQueryString(prefix + "evrotrust" + suffix));
+    }
+
     // add `finnish-trust-network` to the URL query string
     if (getFinnishTrustNetwork() != null) {
       joiner.add(getFinnishTrustNetwork().toUrlQueryString(prefix + "finnish-trust-network" + suffix));
+    }
+
+    // add `eudi-reference-wallet` to the URL query string
+    if (getEudiReferenceWallet() != null) {
+      joiner.add(getEudiReferenceWallet().toUrlQueryString(prefix + "eudi-reference-wallet" + suffix));
     }
 
     // add `france-identite` to the URL query string
@@ -3240,6 +3738,11 @@ public class ProviderOutput {
       joiner.add(getFreja().toUrlQueryString(prefix + "freja" + suffix));
     }
 
+    // add `germany-eudi-sandbox` to the URL query string
+    if (getGermanyEudiSandbox() != null) {
+      joiner.add(getGermanyEudiSandbox().toUrlQueryString(prefix + "germany-eudi-sandbox" + suffix));
+    }
+
     // add `google-wallet` to the URL query string
     if (getGoogleWallet() != null) {
       joiner.add(getGoogleWallet().toUrlQueryString(prefix + "google-wallet" + suffix));
@@ -3248,11 +3751,6 @@ public class ProviderOutput {
     // add `guatemala-cui-lookup` to the URL query string
     if (getGuatemalaCuiLookup() != null) {
       joiner.add(getGuatemalaCuiLookup().toUrlQueryString(prefix + "guatemala-cui-lookup" + suffix));
-    }
-
-    // add `idemia-preview` to the URL query string
-    if (getIdemiaPreview() != null) {
-      joiner.add(getIdemiaPreview().toUrlQueryString(prefix + "idemia-preview" + suffix));
     }
 
     // add `panama-cedula-lookup` to the URL query string
@@ -3300,9 +3798,19 @@ public class ProviderOutput {
       joiner.add(getItalySpid().toUrlQueryString(prefix + "italy-spid" + suffix));
     }
 
+    // add `itsme` to the URL query string
+    if (getItsme() != null) {
+      joiner.add(getItsme().toUrlQueryString(prefix + "itsme" + suffix));
+    }
+
     // add `kenya-nid-lookup-2` to the URL query string
     if (getKenyaNidLookup2() != null) {
       joiner.add(getKenyaNidLookup2().toUrlQueryString(prefix + "kenya-nid-lookup-2" + suffix));
+    }
+
+    // add `kenya-nid-lookup-3` to the URL query string
+    if (getKenyaNidLookup3() != null) {
+      joiner.add(getKenyaNidLookup3().toUrlQueryString(prefix + "kenya-nid-lookup-3" + suffix));
     }
 
     // add `kenya-nid-match-2` to the URL query string
@@ -3330,9 +3838,24 @@ public class ProviderOutput {
       joiner.add(getMobileId().toUrlQueryString(prefix + "mobile-id" + suffix));
     }
 
+    // add `moldova-evo-wallet` to the URL query string
+    if (getMoldovaEvoWallet() != null) {
+      joiner.add(getMoldovaEvoWallet().toUrlQueryString(prefix + "moldova-evo-wallet" + suffix));
+    }
+
+    // add `netherlands-eudi-sandbox` to the URL query string
+    if (getNetherlandsEudiSandbox() != null) {
+      joiner.add(getNetherlandsEudiSandbox().toUrlQueryString(prefix + "netherlands-eudi-sandbox" + suffix));
+    }
+
     // add `nigeria-nin-lookup-2` to the URL query string
     if (getNigeriaNinLookup2() != null) {
       joiner.add(getNigeriaNinLookup2().toUrlQueryString(prefix + "nigeria-nin-lookup-2" + suffix));
+    }
+
+    // add `nigeria-nin-lookup-3` to the URL query string
+    if (getNigeriaNinLookup3() != null) {
+      joiner.add(getNigeriaNinLookup3().toUrlQueryString(prefix + "nigeria-nin-lookup-3" + suffix));
     }
 
     // add `nigeria-nin-match-2` to the URL query string
@@ -3425,11 +3948,6 @@ public class ProviderOutput {
       joiner.add(getUkEvisaLookup().toUrlQueryString(prefix + "uk-evisa-lookup" + suffix));
     }
 
-    // add `verimi` to the URL query string
-    if (getVerimi() != null) {
-      joiner.add(getVerimi().toUrlQueryString(prefix + "verimi" + suffix));
-    }
-
     // add `sweden-bankid` to the URL query string
     if (getSwedenBankid() != null) {
       joiner.add(getSwedenBankid().toUrlQueryString(prefix + "sweden-bankid" + suffix));
@@ -3440,9 +3958,19 @@ public class ProviderOutput {
       joiner.add(getUkraineDiia().toUrlQueryString(prefix + "ukraine-diia" + suffix));
     }
 
+    // add `usa-alaska-mobile-id` to the URL query string
+    if (getUsaAlaskaMobileId() != null) {
+      joiner.add(getUsaAlaskaMobileId().toUrlQueryString(prefix + "usa-alaska-mobile-id" + suffix));
+    }
+
     // add `usa-louisiana-wallet` to the URL query string
     if (getUsaLouisianaWallet() != null) {
       joiner.add(getUsaLouisianaWallet().toUrlQueryString(prefix + "usa-louisiana-wallet" + suffix));
+    }
+
+    // add `usa-new-york-mobile-id` to the URL query string
+    if (getUsaNewYorkMobileId() != null) {
+      joiner.add(getUsaNewYorkMobileId().toUrlQueryString(prefix + "usa-new-york-mobile-id" + suffix));
     }
 
     // add `netherlands-idin` to the URL query string

@@ -24,9 +24,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.FrenchNumeriqueGivenName;
 import id.trinsic.api.models.FrenchNumeriqueNationality;
-import id.trinsic.api.models.FrenchNumeriquePhone;
+import id.trinsic.api.models.FrenchNumeriqueSplittedGivenName;
+import id.trinsic.api.models.FrenchNumeriqueSplittedPhone;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -41,7 +41,9 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;france-identite-numerique&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
+  FrenchNumeriqueProviderOutput.JSON_PROPERTY_SUB,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_GIVEN_NAME,
+  FrenchNumeriqueProviderOutput.JSON_PROPERTY_SPLITTED_GIVEN_NAME,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_FAMILY_NAME,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_PREFERRED_SURNAME,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_BIRTHDATE,
@@ -49,6 +51,7 @@ import id.trinsic.ApiClient;
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_SEX,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_MAJORITY,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
+  FrenchNumeriqueProviderOutput.JSON_PROPERTY_SPLITTED_PHONE,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_PHONE_NUMBER_VERIFIED,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_EMAIL,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_EMAIL_VERIFIED,
@@ -67,10 +70,16 @@ import id.trinsic.ApiClient;
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_EMITTING_COUNTRY,
   FrenchNumeriqueProviderOutput.JSON_PROPERTY_IDENTITY_DOCUMENT_MRZ
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FrenchNumeriqueProviderOutput {
+  public static final String JSON_PROPERTY_SUB = "sub";
+  private JsonNullable<String> sub = JsonNullable.<String>undefined();
+
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
-  private JsonNullable<FrenchNumeriqueGivenName> givenName = JsonNullable.<FrenchNumeriqueGivenName>undefined();
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_SPLITTED_GIVEN_NAME = "splittedGivenName";
+  private JsonNullable<FrenchNumeriqueSplittedGivenName> splittedGivenName = JsonNullable.<FrenchNumeriqueSplittedGivenName>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
   private JsonNullable<String> familyName = JsonNullable.<String>undefined();
@@ -91,7 +100,10 @@ public class FrenchNumeriqueProviderOutput {
   private JsonNullable<Boolean> majority = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
-  private JsonNullable<FrenchNumeriquePhone> phoneNumber = JsonNullable.<FrenchNumeriquePhone>undefined();
+  private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_SPLITTED_PHONE = "splittedPhone";
+  private JsonNullable<FrenchNumeriqueSplittedPhone> splittedPhone = JsonNullable.<FrenchNumeriqueSplittedPhone>undefined();
 
   public static final String JSON_PROPERTY_PHONE_NUMBER_VERIFIED = "phoneNumberVerified";
   private JsonNullable<Boolean> phoneNumberVerified = JsonNullable.<Boolean>undefined();
@@ -147,35 +159,99 @@ public class FrenchNumeriqueProviderOutput {
   public FrenchNumeriqueProviderOutput() { 
   }
 
-  public FrenchNumeriqueProviderOutput givenName(@javax.annotation.Nullable FrenchNumeriqueGivenName givenName) {
-    this.givenName = JsonNullable.<FrenchNumeriqueGivenName>of(givenName);
+  public FrenchNumeriqueProviderOutput sub(@javax.annotation.Nullable String sub) {
+    this.sub = JsonNullable.<String>of(sub);
     return this;
   }
 
   /**
-   * Given name information including the full given name and its structured components (first name and middle name(s)).
+   * OpenID Connect subject identifier (sub) for the verified individual.
+   * @return sub
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSub() {
+        return sub.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SUB, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSub_JsonNullable() {
+    return sub;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUB)
+  public void setSub_JsonNullable(JsonNullable<String> sub) {
+    this.sub = sub;
+  }
+
+  public void setSub(@javax.annotation.Nullable String sub) {
+    this.sub = JsonNullable.<String>of(sub);
+  }
+
+
+  public FrenchNumeriqueProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+    return this;
+  }
+
+  /**
+   * Full given name(s) as recorded on the individual&#39;s French identity document.              If the individual has multiple given names, they are separated by a single space.
    * @return givenName
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public FrenchNumeriqueGivenName getGivenName() {
+  public String getGivenName() {
         return givenName.orElse(null);
   }
 
   @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<FrenchNumeriqueGivenName> getGivenName_JsonNullable() {
+  public JsonNullable<String> getGivenName_JsonNullable() {
     return givenName;
   }
   
   @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
-  public void setGivenName_JsonNullable(JsonNullable<FrenchNumeriqueGivenName> givenName) {
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
     this.givenName = givenName;
   }
 
-  public void setGivenName(@javax.annotation.Nullable FrenchNumeriqueGivenName givenName) {
-    this.givenName = JsonNullable.<FrenchNumeriqueGivenName>of(givenName);
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
+
+
+  public FrenchNumeriqueProviderOutput splittedGivenName(@javax.annotation.Nullable FrenchNumeriqueSplittedGivenName splittedGivenName) {
+    this.splittedGivenName = JsonNullable.<FrenchNumeriqueSplittedGivenName>of(splittedGivenName);
+    return this;
+  }
+
+  /**
+   * Given name split into first name and middle name(s).
+   * @return splittedGivenName
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FrenchNumeriqueSplittedGivenName getSplittedGivenName() {
+        return splittedGivenName.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SPLITTED_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FrenchNumeriqueSplittedGivenName> getSplittedGivenName_JsonNullable() {
+    return splittedGivenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SPLITTED_GIVEN_NAME)
+  public void setSplittedGivenName_JsonNullable(JsonNullable<FrenchNumeriqueSplittedGivenName> splittedGivenName) {
+    this.splittedGivenName = splittedGivenName;
+  }
+
+  public void setSplittedGivenName(@javax.annotation.Nullable FrenchNumeriqueSplittedGivenName splittedGivenName) {
+    this.splittedGivenName = JsonNullable.<FrenchNumeriqueSplittedGivenName>of(splittedGivenName);
   }
 
 
@@ -371,35 +447,67 @@ public class FrenchNumeriqueProviderOutput {
   }
 
 
-  public FrenchNumeriqueProviderOutput phoneNumber(@javax.annotation.Nullable FrenchNumeriquePhone phoneNumber) {
-    this.phoneNumber = JsonNullable.<FrenchNumeriquePhone>of(phoneNumber);
+  public FrenchNumeriqueProviderOutput phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
     return this;
   }
 
   /**
-   * Phone number information including the full phone number and its structured components (country prefix and national number).
+   * Full phone number including country prefix.
    * @return phoneNumber
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public FrenchNumeriquePhone getPhoneNumber() {
+  public String getPhoneNumber() {
         return phoneNumber.orElse(null);
   }
 
   @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<FrenchNumeriquePhone> getPhoneNumber_JsonNullable() {
+  public JsonNullable<String> getPhoneNumber_JsonNullable() {
     return phoneNumber;
   }
   
   @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
-  public void setPhoneNumber_JsonNullable(JsonNullable<FrenchNumeriquePhone> phoneNumber) {
+  public void setPhoneNumber_JsonNullable(JsonNullable<String> phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nullable FrenchNumeriquePhone phoneNumber) {
-    this.phoneNumber = JsonNullable.<FrenchNumeriquePhone>of(phoneNumber);
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+    this.phoneNumber = JsonNullable.<String>of(phoneNumber);
+  }
+
+
+  public FrenchNumeriqueProviderOutput splittedPhone(@javax.annotation.Nullable FrenchNumeriqueSplittedPhone splittedPhone) {
+    this.splittedPhone = JsonNullable.<FrenchNumeriqueSplittedPhone>of(splittedPhone);
+    return this;
+  }
+
+  /**
+   * Phone number split into country prefix and national number.
+   * @return splittedPhone
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FrenchNumeriqueSplittedPhone getSplittedPhone() {
+        return splittedPhone.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SPLITTED_PHONE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FrenchNumeriqueSplittedPhone> getSplittedPhone_JsonNullable() {
+    return splittedPhone;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SPLITTED_PHONE)
+  public void setSplittedPhone_JsonNullable(JsonNullable<FrenchNumeriqueSplittedPhone> splittedPhone) {
+    this.splittedPhone = splittedPhone;
+  }
+
+  public void setSplittedPhone(@javax.annotation.Nullable FrenchNumeriqueSplittedPhone splittedPhone) {
+    this.splittedPhone = JsonNullable.<FrenchNumeriqueSplittedPhone>of(splittedPhone);
   }
 
 
@@ -959,7 +1067,9 @@ public class FrenchNumeriqueProviderOutput {
       return false;
     }
     FrenchNumeriqueProviderOutput frenchNumeriqueProviderOutput = (FrenchNumeriqueProviderOutput) o;
-    return equalsNullable(this.givenName, frenchNumeriqueProviderOutput.givenName) &&
+    return equalsNullable(this.sub, frenchNumeriqueProviderOutput.sub) &&
+        equalsNullable(this.givenName, frenchNumeriqueProviderOutput.givenName) &&
+        equalsNullable(this.splittedGivenName, frenchNumeriqueProviderOutput.splittedGivenName) &&
         equalsNullable(this.familyName, frenchNumeriqueProviderOutput.familyName) &&
         equalsNullable(this.preferredSurname, frenchNumeriqueProviderOutput.preferredSurname) &&
         equalsNullable(this.birthdate, frenchNumeriqueProviderOutput.birthdate) &&
@@ -967,6 +1077,7 @@ public class FrenchNumeriqueProviderOutput {
         equalsNullable(this.sex, frenchNumeriqueProviderOutput.sex) &&
         equalsNullable(this.majority, frenchNumeriqueProviderOutput.majority) &&
         equalsNullable(this.phoneNumber, frenchNumeriqueProviderOutput.phoneNumber) &&
+        equalsNullable(this.splittedPhone, frenchNumeriqueProviderOutput.splittedPhone) &&
         equalsNullable(this.phoneNumberVerified, frenchNumeriqueProviderOutput.phoneNumberVerified) &&
         equalsNullable(this.email, frenchNumeriqueProviderOutput.email) &&
         equalsNullable(this.emailVerified, frenchNumeriqueProviderOutput.emailVerified) &&
@@ -992,7 +1103,7 @@ public class FrenchNumeriqueProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(preferredSurname), hashCodeNullable(birthdate), hashCodeNullable(nationality), hashCodeNullable(sex), hashCodeNullable(majority), hashCodeNullable(phoneNumber), hashCodeNullable(phoneNumberVerified), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(birthplace), hashCodeNullable(birthplaceLabel), hashCodeNullable(birthCountry), hashCodeNullable(birthCountryIso), hashCodeNullable(birthCountryLabel), hashCodeNullable(birthDepartment), hashCodeNullable(digitalIdentityCreationDate), hashCodeNullable(digitalIdentityExpirationDate), hashCodeNullable(identityDocumentType), hashCodeNullable(identityDocumentNumber), hashCodeNullable(identityDocumentEmittingDate), hashCodeNullable(identityDocumentExpirationDate), hashCodeNullable(identityDocumentEmittingCountry), hashCodeNullable(identityDocumentMrz));
+    return Objects.hash(hashCodeNullable(sub), hashCodeNullable(givenName), hashCodeNullable(splittedGivenName), hashCodeNullable(familyName), hashCodeNullable(preferredSurname), hashCodeNullable(birthdate), hashCodeNullable(nationality), hashCodeNullable(sex), hashCodeNullable(majority), hashCodeNullable(phoneNumber), hashCodeNullable(splittedPhone), hashCodeNullable(phoneNumberVerified), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(birthplace), hashCodeNullable(birthplaceLabel), hashCodeNullable(birthCountry), hashCodeNullable(birthCountryIso), hashCodeNullable(birthCountryLabel), hashCodeNullable(birthDepartment), hashCodeNullable(digitalIdentityCreationDate), hashCodeNullable(digitalIdentityExpirationDate), hashCodeNullable(identityDocumentType), hashCodeNullable(identityDocumentNumber), hashCodeNullable(identityDocumentEmittingDate), hashCodeNullable(identityDocumentExpirationDate), hashCodeNullable(identityDocumentEmittingCountry), hashCodeNullable(identityDocumentMrz));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1006,7 +1117,9 @@ public class FrenchNumeriqueProviderOutput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FrenchNumeriqueProviderOutput {\n");
+    sb.append("    sub: ").append(toIndentedString(sub)).append("\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
+    sb.append("    splittedGivenName: ").append(toIndentedString(splittedGivenName)).append("\n");
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
     sb.append("    preferredSurname: ").append(toIndentedString(preferredSurname)).append("\n");
     sb.append("    birthdate: ").append(toIndentedString(birthdate)).append("\n");
@@ -1014,6 +1127,7 @@ public class FrenchNumeriqueProviderOutput {
     sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
     sb.append("    majority: ").append(toIndentedString(majority)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    splittedPhone: ").append(toIndentedString(splittedPhone)).append("\n");
     sb.append("    phoneNumberVerified: ").append(toIndentedString(phoneNumberVerified)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    emailVerified: ").append(toIndentedString(emailVerified)).append("\n");
@@ -1075,9 +1189,19 @@ public class FrenchNumeriqueProviderOutput {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `sub` to the URL query string
+    if (getSub() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
+    }
+
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(getGivenName().toUrlQueryString(prefix + "givenName" + suffix));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
+    }
+
+    // add `splittedGivenName` to the URL query string
+    if (getSplittedGivenName() != null) {
+      joiner.add(getSplittedGivenName().toUrlQueryString(prefix + "splittedGivenName" + suffix));
     }
 
     // add `familyName` to the URL query string
@@ -1112,7 +1236,12 @@ public class FrenchNumeriqueProviderOutput {
 
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
-      joiner.add(getPhoneNumber().toUrlQueryString(prefix + "phoneNumber" + suffix));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+    }
+
+    // add `splittedPhone` to the URL query string
+    if (getSplittedPhone() != null) {
+      joiner.add(getSplittedPhone().toUrlQueryString(prefix + "splittedPhone" + suffix));
     }
 
     // add `phoneNumberVerified` to the URL query string

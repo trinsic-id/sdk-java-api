@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,21 +41,19 @@ import id.trinsic.ApiClient;
   IndiaDigilockerAadhaarMatchDateOfBirthField.JSON_PROPERTY_INPUT_VALUE,
   IndiaDigilockerAadhaarMatchDateOfBirthField.JSON_PROPERTY_OUTCOME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndiaDigilockerAadhaarMatchDateOfBirthField {
   public static final String JSON_PROPERTY_INPUT_VALUE = "inputValue";
-  @javax.annotation.Nonnull
-  private LocalDate inputValue;
+  private JsonNullable<LocalDate> inputValue = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_OUTCOME = "outcome";
-  @javax.annotation.Nonnull
-  private Boolean outcome;
+  private JsonNullable<Boolean> outcome = JsonNullable.<Boolean>undefined();
 
   public IndiaDigilockerAadhaarMatchDateOfBirthField() { 
   }
 
-  public IndiaDigilockerAadhaarMatchDateOfBirthField inputValue(@javax.annotation.Nonnull LocalDate inputValue) {
-    this.inputValue = inputValue;
+  public IndiaDigilockerAadhaarMatchDateOfBirthField inputValue(@javax.annotation.Nullable LocalDate inputValue) {
+    this.inputValue = JsonNullable.<LocalDate>of(inputValue);
     return this;
   }
 
@@ -59,23 +61,31 @@ public class IndiaDigilockerAadhaarMatchDateOfBirthField {
    * The date of birth submitted for this check, as provided in the match input.
    * @return inputValue
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getInputValue() {
-    return inputValue;
+        return inputValue.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setInputValue(@javax.annotation.Nonnull LocalDate inputValue) {
+  public JsonNullable<LocalDate> getInputValue_JsonNullable() {
+    return inputValue;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INPUT_VALUE)
+  public void setInputValue_JsonNullable(JsonNullable<LocalDate> inputValue) {
     this.inputValue = inputValue;
   }
 
+  public void setInputValue(@javax.annotation.Nullable LocalDate inputValue) {
+    this.inputValue = JsonNullable.<LocalDate>of(inputValue);
+  }
 
-  public IndiaDigilockerAadhaarMatchDateOfBirthField outcome(@javax.annotation.Nonnull Boolean outcome) {
-    this.outcome = outcome;
+
+  public IndiaDigilockerAadhaarMatchDateOfBirthField outcome(@javax.annotation.Nullable Boolean outcome) {
+    this.outcome = JsonNullable.<Boolean>of(outcome);
     return this;
   }
 
@@ -83,18 +93,26 @@ public class IndiaDigilockerAadhaarMatchDateOfBirthField {
    * Whether the submitted date of birth matched the issuer record for this session.
    * @return outcome
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getOutcome() {
-    return outcome;
+        return outcome.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOutcome(@javax.annotation.Nonnull Boolean outcome) {
+  public JsonNullable<Boolean> getOutcome_JsonNullable() {
+    return outcome;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OUTCOME)
+  public void setOutcome_JsonNullable(JsonNullable<Boolean> outcome) {
     this.outcome = outcome;
+  }
+
+  public void setOutcome(@javax.annotation.Nullable Boolean outcome) {
+    this.outcome = JsonNullable.<Boolean>of(outcome);
   }
 
 
@@ -110,13 +128,24 @@ public class IndiaDigilockerAadhaarMatchDateOfBirthField {
       return false;
     }
     IndiaDigilockerAadhaarMatchDateOfBirthField indiaDigilockerAadhaarMatchDateOfBirthField = (IndiaDigilockerAadhaarMatchDateOfBirthField) o;
-    return Objects.equals(this.inputValue, indiaDigilockerAadhaarMatchDateOfBirthField.inputValue) &&
-        Objects.equals(this.outcome, indiaDigilockerAadhaarMatchDateOfBirthField.outcome);
+    return equalsNullable(this.inputValue, indiaDigilockerAadhaarMatchDateOfBirthField.inputValue) &&
+        equalsNullable(this.outcome, indiaDigilockerAadhaarMatchDateOfBirthField.outcome);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputValue, outcome);
+    return Objects.hash(hashCodeNullable(inputValue), hashCodeNullable(outcome));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

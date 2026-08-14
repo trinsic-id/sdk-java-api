@@ -2,7 +2,7 @@
 
 # GoogleWalletIdPassCredential
 
-A Google Wallet ID Pass credential, with document type `com.google.wallet.idcard.1`.              This is a passport-derived digital credential issued by Google.
+A Google Wallet ID Pass credential, retrieved from Google Wallet.              This is a passport-derived digital credential issued by Google.
 
 ## Properties
 

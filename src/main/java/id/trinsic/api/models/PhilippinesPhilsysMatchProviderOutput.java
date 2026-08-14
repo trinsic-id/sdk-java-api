@@ -44,15 +44,13 @@ import id.trinsic.ApiClient;
   PhilippinesPhilsysMatchProviderOutput.JSON_PROPERTY_SUFFIX,
   PhilippinesPhilsysMatchProviderOutput.JSON_PROPERTY_BIRTH_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PhilippinesPhilsysMatchProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_MIDDLE_NAME = "middleName";
   private JsonNullable<String> middleName = JsonNullable.<String>undefined();
@@ -66,8 +64,8 @@ public class PhilippinesPhilsysMatchProviderOutput {
   public PhilippinesPhilsysMatchProviderOutput() { 
   }
 
-  public PhilippinesPhilsysMatchProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public PhilippinesPhilsysMatchProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -75,23 +73,31 @@ public class PhilippinesPhilsysMatchProviderOutput {
    * The individual&#39;s given name.
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public PhilippinesPhilsysMatchProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public PhilippinesPhilsysMatchProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -99,18 +105,26 @@ public class PhilippinesPhilsysMatchProviderOutput {
    * The individual&#39;s family name.
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
+  }
+
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
   }
 
 
@@ -222,8 +236,8 @@ public class PhilippinesPhilsysMatchProviderOutput {
       return false;
     }
     PhilippinesPhilsysMatchProviderOutput philippinesPhilsysMatchProviderOutput = (PhilippinesPhilsysMatchProviderOutput) o;
-    return Objects.equals(this.firstName, philippinesPhilsysMatchProviderOutput.firstName) &&
-        Objects.equals(this.lastName, philippinesPhilsysMatchProviderOutput.lastName) &&
+    return equalsNullable(this.firstName, philippinesPhilsysMatchProviderOutput.firstName) &&
+        equalsNullable(this.lastName, philippinesPhilsysMatchProviderOutput.lastName) &&
         equalsNullable(this.middleName, philippinesPhilsysMatchProviderOutput.middleName) &&
         equalsNullable(this.suffix, philippinesPhilsysMatchProviderOutput.suffix) &&
         equalsNullable(this.birthDate, philippinesPhilsysMatchProviderOutput.birthDate);
@@ -235,7 +249,7 @@ public class PhilippinesPhilsysMatchProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, hashCodeNullable(middleName), hashCodeNullable(suffix), hashCodeNullable(birthDate));
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(lastName), hashCodeNullable(middleName), hashCodeNullable(suffix), hashCodeNullable(birthDate));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

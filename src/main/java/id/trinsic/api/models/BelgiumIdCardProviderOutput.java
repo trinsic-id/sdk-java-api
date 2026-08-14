@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -39,29 +43,25 @@ import id.trinsic.ApiClient;
   BelgiumIdCardProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   BelgiumIdCardProviderOutput.JSON_PROPERTY_NATIONAL_REGISTER_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BelgiumIdCardProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_NATIONAL_REGISTER_NUMBER = "nationalRegisterNumber";
-  @javax.annotation.Nonnull
-  private String nationalRegisterNumber;
+  private JsonNullable<String> nationalRegisterNumber = JsonNullable.<String>undefined();
 
   public BelgiumIdCardProviderOutput() { 
   }
 
-  public BelgiumIdCardProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public BelgiumIdCardProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -69,23 +69,31 @@ public class BelgiumIdCardProviderOutput {
    * The first name of the verified individual
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public BelgiumIdCardProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public BelgiumIdCardProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -93,23 +101,31 @@ public class BelgiumIdCardProviderOutput {
    * The last name of the verified individual
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
   }
 
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
+  }
 
-  public BelgiumIdCardProviderOutput dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public BelgiumIdCardProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
@@ -117,23 +133,31 @@ public class BelgiumIdCardProviderOutput {
    * The date of birth of the verified individual
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
 
-  public BelgiumIdCardProviderOutput nationalRegisterNumber(@javax.annotation.Nonnull String nationalRegisterNumber) {
-    this.nationalRegisterNumber = nationalRegisterNumber;
+
+  public BelgiumIdCardProviderOutput nationalRegisterNumber(@javax.annotation.Nullable String nationalRegisterNumber) {
+    this.nationalRegisterNumber = JsonNullable.<String>of(nationalRegisterNumber);
     return this;
   }
 
@@ -141,18 +165,26 @@ public class BelgiumIdCardProviderOutput {
    * The Belgian National Register Number (\&quot;Rijksregisternummer\&quot;) of the verified individual.              This is an 11-digit number in the format YYMMDDXXXCC, where: - YYMMDD represents the individual&#39;s date of birth (year, month, day). - XXX is a sequential birth number, odd for males and even for females. - CC is a checksum, calculated with the equation: 97 - (YYMMDDXXX mod 97)              For births in the year 2000 or later, the digit &#39;2&#39; is prepended to the first 9 digits during checksum calculation.
    * @return nationalRegisterNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNationalRegisterNumber() {
-    return nationalRegisterNumber;
+        return nationalRegisterNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_REGISTER_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalRegisterNumber(@javax.annotation.Nonnull String nationalRegisterNumber) {
+  public JsonNullable<String> getNationalRegisterNumber_JsonNullable() {
+    return nationalRegisterNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_REGISTER_NUMBER)
+  public void setNationalRegisterNumber_JsonNullable(JsonNullable<String> nationalRegisterNumber) {
     this.nationalRegisterNumber = nationalRegisterNumber;
+  }
+
+  public void setNationalRegisterNumber(@javax.annotation.Nullable String nationalRegisterNumber) {
+    this.nationalRegisterNumber = JsonNullable.<String>of(nationalRegisterNumber);
   }
 
 
@@ -168,15 +200,26 @@ public class BelgiumIdCardProviderOutput {
       return false;
     }
     BelgiumIdCardProviderOutput belgiumIdCardProviderOutput = (BelgiumIdCardProviderOutput) o;
-    return Objects.equals(this.firstName, belgiumIdCardProviderOutput.firstName) &&
-        Objects.equals(this.lastName, belgiumIdCardProviderOutput.lastName) &&
-        Objects.equals(this.dateOfBirth, belgiumIdCardProviderOutput.dateOfBirth) &&
-        Objects.equals(this.nationalRegisterNumber, belgiumIdCardProviderOutput.nationalRegisterNumber);
+    return equalsNullable(this.firstName, belgiumIdCardProviderOutput.firstName) &&
+        equalsNullable(this.lastName, belgiumIdCardProviderOutput.lastName) &&
+        equalsNullable(this.dateOfBirth, belgiumIdCardProviderOutput.dateOfBirth) &&
+        equalsNullable(this.nationalRegisterNumber, belgiumIdCardProviderOutput.nationalRegisterNumber);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, dateOfBirth, nationalRegisterNumber);
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(lastName), hashCodeNullable(dateOfBirth), hashCodeNullable(nationalRegisterNumber));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

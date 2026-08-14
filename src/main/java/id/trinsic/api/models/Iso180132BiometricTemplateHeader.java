@@ -51,11 +51,10 @@ import id.trinsic.ApiClient;
   Iso180132BiometricTemplateHeader.JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_TYPE,
   Iso180132BiometricTemplateHeader.JSON_PROPERTY_BIOMETRIC_INFORMATION_RECORD_INDEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180132BiometricTemplateHeader {
   public static final String JSON_PROPERTY_PATRON_HEADER_VERSION = "patronHeaderVersion";
-  @javax.annotation.Nonnull
-  private Integer patronHeaderVersion;
+  private JsonNullable<Integer> patronHeaderVersion = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_BIOMETRIC_TYPE = "biometricType";
   private JsonNullable<Integer> biometricType = JsonNullable.<Integer>undefined();
@@ -76,12 +75,10 @@ public class Iso180132BiometricTemplateHeader {
   private JsonNullable<Iso180132BiometricDataBlockProduct> biometricDataBlockProduct = JsonNullable.<Iso180132BiometricDataBlockProduct>undefined();
 
   public static final String JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_OWNER = "biometricDataBlockFormatOwner";
-  @javax.annotation.Nonnull
-  private Integer biometricDataBlockFormatOwner;
+  private JsonNullable<Integer> biometricDataBlockFormatOwner = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_TYPE = "biometricDataBlockFormatType";
-  @javax.annotation.Nonnull
-  private Integer biometricDataBlockFormatType;
+  private JsonNullable<Integer> biometricDataBlockFormatType = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_BIOMETRIC_INFORMATION_RECORD_INDEX = "biometricInformationRecordIndex";
   private JsonNullable<String> biometricInformationRecordIndex = JsonNullable.<String>undefined();
@@ -89,8 +86,8 @@ public class Iso180132BiometricTemplateHeader {
   public Iso180132BiometricTemplateHeader() { 
   }
 
-  public Iso180132BiometricTemplateHeader patronHeaderVersion(@javax.annotation.Nonnull Integer patronHeaderVersion) {
-    this.patronHeaderVersion = patronHeaderVersion;
+  public Iso180132BiometricTemplateHeader patronHeaderVersion(@javax.annotation.Nullable Integer patronHeaderVersion) {
+    this.patronHeaderVersion = JsonNullable.<Integer>of(patronHeaderVersion);
     return this;
   }
 
@@ -98,18 +95,26 @@ public class Iso180132BiometricTemplateHeader {
    * Patron header version (defaults to 0x0101).
    * @return patronHeaderVersion
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PATRON_HEADER_VERSION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getPatronHeaderVersion() {
-    return patronHeaderVersion;
+        return patronHeaderVersion.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PATRON_HEADER_VERSION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PATRON_HEADER_VERSION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPatronHeaderVersion(@javax.annotation.Nonnull Integer patronHeaderVersion) {
+  public JsonNullable<Integer> getPatronHeaderVersion_JsonNullable() {
+    return patronHeaderVersion;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PATRON_HEADER_VERSION)
+  public void setPatronHeaderVersion_JsonNullable(JsonNullable<Integer> patronHeaderVersion) {
     this.patronHeaderVersion = patronHeaderVersion;
+  }
+
+  public void setPatronHeaderVersion(@javax.annotation.Nullable Integer patronHeaderVersion) {
+    this.patronHeaderVersion = JsonNullable.<Integer>of(patronHeaderVersion);
   }
 
 
@@ -305,8 +310,8 @@ public class Iso180132BiometricTemplateHeader {
   }
 
 
-  public Iso180132BiometricTemplateHeader biometricDataBlockFormatOwner(@javax.annotation.Nonnull Integer biometricDataBlockFormatOwner) {
-    this.biometricDataBlockFormatOwner = biometricDataBlockFormatOwner;
+  public Iso180132BiometricTemplateHeader biometricDataBlockFormatOwner(@javax.annotation.Nullable Integer biometricDataBlockFormatOwner) {
+    this.biometricDataBlockFormatOwner = JsonNullable.<Integer>of(biometricDataBlockFormatOwner);
     return this;
   }
 
@@ -314,23 +319,31 @@ public class Iso180132BiometricTemplateHeader {
    * Format owner of the biometric data block.
    * @return biometricDataBlockFormatOwner
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_OWNER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getBiometricDataBlockFormatOwner() {
-    return biometricDataBlockFormatOwner;
+        return biometricDataBlockFormatOwner.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_OWNER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setBiometricDataBlockFormatOwner(@javax.annotation.Nonnull Integer biometricDataBlockFormatOwner) {
+  public JsonNullable<Integer> getBiometricDataBlockFormatOwner_JsonNullable() {
+    return biometricDataBlockFormatOwner;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_OWNER)
+  public void setBiometricDataBlockFormatOwner_JsonNullable(JsonNullable<Integer> biometricDataBlockFormatOwner) {
     this.biometricDataBlockFormatOwner = biometricDataBlockFormatOwner;
   }
 
+  public void setBiometricDataBlockFormatOwner(@javax.annotation.Nullable Integer biometricDataBlockFormatOwner) {
+    this.biometricDataBlockFormatOwner = JsonNullable.<Integer>of(biometricDataBlockFormatOwner);
+  }
 
-  public Iso180132BiometricTemplateHeader biometricDataBlockFormatType(@javax.annotation.Nonnull Integer biometricDataBlockFormatType) {
-    this.biometricDataBlockFormatType = biometricDataBlockFormatType;
+
+  public Iso180132BiometricTemplateHeader biometricDataBlockFormatType(@javax.annotation.Nullable Integer biometricDataBlockFormatType) {
+    this.biometricDataBlockFormatType = JsonNullable.<Integer>of(biometricDataBlockFormatType);
     return this;
   }
 
@@ -338,18 +351,26 @@ public class Iso180132BiometricTemplateHeader {
    * Format type of the biometric data block.
    * @return biometricDataBlockFormatType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getBiometricDataBlockFormatType() {
-    return biometricDataBlockFormatType;
+        return biometricDataBlockFormatType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setBiometricDataBlockFormatType(@javax.annotation.Nonnull Integer biometricDataBlockFormatType) {
+  public JsonNullable<Integer> getBiometricDataBlockFormatType_JsonNullable() {
+    return biometricDataBlockFormatType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BIOMETRIC_DATA_BLOCK_FORMAT_TYPE)
+  public void setBiometricDataBlockFormatType_JsonNullable(JsonNullable<Integer> biometricDataBlockFormatType) {
     this.biometricDataBlockFormatType = biometricDataBlockFormatType;
+  }
+
+  public void setBiometricDataBlockFormatType(@javax.annotation.Nullable Integer biometricDataBlockFormatType) {
+    this.biometricDataBlockFormatType = JsonNullable.<Integer>of(biometricDataBlockFormatType);
   }
 
 
@@ -397,15 +418,15 @@ public class Iso180132BiometricTemplateHeader {
       return false;
     }
     Iso180132BiometricTemplateHeader iso180132BiometricTemplateHeader = (Iso180132BiometricTemplateHeader) o;
-    return Objects.equals(this.patronHeaderVersion, iso180132BiometricTemplateHeader.patronHeaderVersion) &&
+    return equalsNullable(this.patronHeaderVersion, iso180132BiometricTemplateHeader.patronHeaderVersion) &&
         equalsNullable(this.biometricType, iso180132BiometricTemplateHeader.biometricType) &&
         equalsNullable(this.biometricSubType, iso180132BiometricTemplateHeader.biometricSubType) &&
         equalsNullable(this.creationDate, iso180132BiometricTemplateHeader.creationDate) &&
         equalsNullable(this.biometricInformationRecordCreator, iso180132BiometricTemplateHeader.biometricInformationRecordCreator) &&
         equalsNullable(this.validityPeriod, iso180132BiometricTemplateHeader.validityPeriod) &&
         equalsNullable(this.biometricDataBlockProduct, iso180132BiometricTemplateHeader.biometricDataBlockProduct) &&
-        Objects.equals(this.biometricDataBlockFormatOwner, iso180132BiometricTemplateHeader.biometricDataBlockFormatOwner) &&
-        Objects.equals(this.biometricDataBlockFormatType, iso180132BiometricTemplateHeader.biometricDataBlockFormatType) &&
+        equalsNullable(this.biometricDataBlockFormatOwner, iso180132BiometricTemplateHeader.biometricDataBlockFormatOwner) &&
+        equalsNullable(this.biometricDataBlockFormatType, iso180132BiometricTemplateHeader.biometricDataBlockFormatType) &&
         equalsNullable(this.biometricInformationRecordIndex, iso180132BiometricTemplateHeader.biometricInformationRecordIndex);
   }
 
@@ -415,7 +436,7 @@ public class Iso180132BiometricTemplateHeader {
 
   @Override
   public int hashCode() {
-    return Objects.hash(patronHeaderVersion, hashCodeNullable(biometricType), hashCodeNullable(biometricSubType), hashCodeNullable(creationDate), hashCodeNullable(biometricInformationRecordCreator), hashCodeNullable(validityPeriod), hashCodeNullable(biometricDataBlockProduct), biometricDataBlockFormatOwner, biometricDataBlockFormatType, hashCodeNullable(biometricInformationRecordIndex));
+    return Objects.hash(hashCodeNullable(patronHeaderVersion), hashCodeNullable(biometricType), hashCodeNullable(biometricSubType), hashCodeNullable(creationDate), hashCodeNullable(biometricInformationRecordCreator), hashCodeNullable(validityPeriod), hashCodeNullable(biometricDataBlockProduct), hashCodeNullable(biometricDataBlockFormatOwner), hashCodeNullable(biometricDataBlockFormatType), hashCodeNullable(biometricInformationRecordIndex));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -64,18 +64,16 @@ import id.trinsic.ApiClient;
   SpidProviderOutput.JSON_PROPERTY_COMPANY_FISCAL_NUMBER,
   SpidProviderOutput.JSON_PROPERTY_REGISTERED_OFFICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SpidProviderOutput {
   public static final String JSON_PROPERTY_BILLING_INFORMATION = "billingInformation";
   private JsonNullable<SpidBillingInformation> billingInformation = JsonNullable.<SpidBillingInformation>undefined();
 
   public static final String JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID = "identityProviderEntityId";
-  @javax.annotation.Nonnull
-  private String identityProviderEntityId;
+  private JsonNullable<String> identityProviderEntityId = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SPID_CODE = "spidCode";
-  @javax.annotation.Nonnull
-  private String spidCode;
+  private JsonNullable<String> spidCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SPID_CREDENTIAL_EXPIRATION_DATE = "spidCredentialExpirationDate";
   private JsonNullable<LocalDate> spidCredentialExpirationDate = JsonNullable.<LocalDate>undefined();
@@ -175,8 +173,8 @@ public class SpidProviderOutput {
   }
 
 
-  public SpidProviderOutput identityProviderEntityId(@javax.annotation.Nonnull String identityProviderEntityId) {
-    this.identityProviderEntityId = identityProviderEntityId;
+  public SpidProviderOutput identityProviderEntityId(@javax.annotation.Nullable String identityProviderEntityId) {
+    this.identityProviderEntityId = JsonNullable.<String>of(identityProviderEntityId);
     return this;
   }
 
@@ -184,23 +182,31 @@ public class SpidProviderOutput {
    * The SPID Entity ID of the Identity Provider which issued the SPID identity.              This is an HTTPS URI which uniquely identifies the IdP within the SPID federation.              A normalized / simplified representation of this value is present in the &#x60;originatingSubProviderId&#x60; field in Trinsic&#39;s normalized data model.
    * @return identityProviderEntityId
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getIdentityProviderEntityId() {
-    return identityProviderEntityId;
+        return identityProviderEntityId.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIdentityProviderEntityId(@javax.annotation.Nonnull String identityProviderEntityId) {
+  public JsonNullable<String> getIdentityProviderEntityId_JsonNullable() {
+    return identityProviderEntityId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IDENTITY_PROVIDER_ENTITY_ID)
+  public void setIdentityProviderEntityId_JsonNullable(JsonNullable<String> identityProviderEntityId) {
     this.identityProviderEntityId = identityProviderEntityId;
   }
 
+  public void setIdentityProviderEntityId(@javax.annotation.Nullable String identityProviderEntityId) {
+    this.identityProviderEntityId = JsonNullable.<String>of(identityProviderEntityId);
+  }
 
-  public SpidProviderOutput spidCode(@javax.annotation.Nonnull String spidCode) {
-    this.spidCode = spidCode;
+
+  public SpidProviderOutput spidCode(@javax.annotation.Nullable String spidCode) {
+    this.spidCode = JsonNullable.<String>of(spidCode);
     return this;
   }
 
@@ -208,18 +214,26 @@ public class SpidProviderOutput {
    * The identifier of the SPID credential, uniquely identifying it within the SPID federation.              The format of this string is specific to each individual Identity Provider.
    * @return spidCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SPID_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSpidCode() {
-    return spidCode;
+        return spidCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SPID_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SPID_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSpidCode(@javax.annotation.Nonnull String spidCode) {
+  public JsonNullable<String> getSpidCode_JsonNullable() {
+    return spidCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SPID_CODE)
+  public void setSpidCode_JsonNullable(JsonNullable<String> spidCode) {
     this.spidCode = spidCode;
+  }
+
+  public void setSpidCode(@javax.annotation.Nullable String spidCode) {
+    this.spidCode = JsonNullable.<String>of(spidCode);
   }
 
 
@@ -908,8 +922,8 @@ public class SpidProviderOutput {
     }
     SpidProviderOutput spidProviderOutput = (SpidProviderOutput) o;
     return equalsNullable(this.billingInformation, spidProviderOutput.billingInformation) &&
-        Objects.equals(this.identityProviderEntityId, spidProviderOutput.identityProviderEntityId) &&
-        Objects.equals(this.spidCode, spidProviderOutput.spidCode) &&
+        equalsNullable(this.identityProviderEntityId, spidProviderOutput.identityProviderEntityId) &&
+        equalsNullable(this.spidCode, spidProviderOutput.spidCode) &&
         equalsNullable(this.spidCredentialExpirationDate, spidProviderOutput.spidCredentialExpirationDate) &&
         equalsNullable(this.rawIdCard, spidProviderOutput.rawIdCard) &&
         equalsNullable(this.givenName, spidProviderOutput.givenName) &&
@@ -939,7 +953,7 @@ public class SpidProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(billingInformation), identityProviderEntityId, spidCode, hashCodeNullable(spidCredentialExpirationDate), hashCodeNullable(rawIdCard), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(placeOfBirth), hashCodeNullable(countyOfBirth), hashCodeNullable(domicileStreetAddress), hashCodeNullable(domicilePostalCode), hashCodeNullable(domicileMunicipality), hashCodeNullable(domicileProvince), hashCodeNullable(domicileNation), hashCodeNullable(email), hashCodeNullable(mobilePhone), hashCodeNullable(digitalAddress), hashCodeNullable(fiscalNumber), hashCodeNullable(ivaCode), hashCodeNullable(companyName), hashCodeNullable(companyFiscalNumber), hashCodeNullable(registeredOffice));
+    return Objects.hash(hashCodeNullable(billingInformation), hashCodeNullable(identityProviderEntityId), hashCodeNullable(spidCode), hashCodeNullable(spidCredentialExpirationDate), hashCodeNullable(rawIdCard), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(gender), hashCodeNullable(placeOfBirth), hashCodeNullable(countyOfBirth), hashCodeNullable(domicileStreetAddress), hashCodeNullable(domicilePostalCode), hashCodeNullable(domicileMunicipality), hashCodeNullable(domicileProvince), hashCodeNullable(domicileNation), hashCodeNullable(email), hashCodeNullable(mobilePhone), hashCodeNullable(digitalAddress), hashCodeNullable(fiscalNumber), hashCodeNullable(ivaCode), hashCodeNullable(companyName), hashCodeNullable(companyFiscalNumber), hashCodeNullable(registeredOffice));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

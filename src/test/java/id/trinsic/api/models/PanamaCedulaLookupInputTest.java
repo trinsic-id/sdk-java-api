@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -48,14 +47,6 @@ class PanamaCedulaLookupInputTest {
     @Test
     void documentNumberTest() {
         // TODO: test documentNumber
-    }
-
-    /**
-     * Test the property 'dateOfBirth'
-     */
-    @Test
-    void dateOfBirthTest() {
-        // TODO: test dateOfBirth
     }
 
 }

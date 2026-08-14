@@ -55,7 +55,7 @@ import id.trinsic.ApiClient;
   SignzyIndiaAadhaarFetchProviderOutput.JSON_PROPERTY_MOBILE_PHONE,
   SignzyIndiaAadhaarFetchProviderOutput.JSON_PROPERTY_SCOPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SignzyIndiaAadhaarFetchProviderOutput {
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
   private JsonNullable<String> documentType = JsonNullable.<String>undefined();
@@ -76,8 +76,7 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
   private JsonNullable<AadhaarLocalizedClaims> localizedClaims = JsonNullable.<AadhaarLocalizedClaims>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED = "documentSignatureValidated";
-  @javax.annotation.Nonnull
-  private Boolean documentSignatureValidated;
+  private JsonNullable<Boolean> documentSignatureValidated = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_DIGILOCKER_ID = "digilockerId";
   private JsonNullable<String> digilockerId = JsonNullable.<String>undefined();
@@ -92,8 +91,7 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
   private JsonNullable<String> mobilePhone = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SCOPE = "scope";
-  @javax.annotation.Nonnull
-  private List<String> scope = new ArrayList<>();
+  private JsonNullable<List<String>> scope = JsonNullable.<List<String>>undefined();
 
   public SignzyIndiaAadhaarFetchProviderOutput() { 
   }
@@ -290,8 +288,8 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
   }
 
 
-  public SignzyIndiaAadhaarFetchProviderOutput documentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
-    this.documentSignatureValidated = documentSignatureValidated;
+  public SignzyIndiaAadhaarFetchProviderOutput documentSignatureValidated(@javax.annotation.Nullable Boolean documentSignatureValidated) {
+    this.documentSignatureValidated = JsonNullable.<Boolean>of(documentSignatureValidated);
     return this;
   }
 
@@ -299,18 +297,26 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
    * Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers (e.g. Signzy) also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation.
    * @return documentSignatureValidated
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getDocumentSignatureValidated() {
-    return documentSignatureValidated;
+        return documentSignatureValidated.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentSignatureValidated(@javax.annotation.Nonnull Boolean documentSignatureValidated) {
+  public JsonNullable<Boolean> getDocumentSignatureValidated_JsonNullable() {
+    return documentSignatureValidated;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED)
+  public void setDocumentSignatureValidated_JsonNullable(JsonNullable<Boolean> documentSignatureValidated) {
     this.documentSignatureValidated = documentSignatureValidated;
+  }
+
+  public void setDocumentSignatureValidated(@javax.annotation.Nullable Boolean documentSignatureValidated) {
+    this.documentSignatureValidated = JsonNullable.<Boolean>of(documentSignatureValidated);
   }
 
 
@@ -442,16 +448,20 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
   }
 
 
-  public SignzyIndiaAadhaarFetchProviderOutput scope(@javax.annotation.Nonnull List<String> scope) {
-    this.scope = scope;
+  public SignzyIndiaAadhaarFetchProviderOutput scope(@javax.annotation.Nullable List<String> scope) {
+    this.scope = JsonNullable.<List<String>>of(scope);
     return this;
   }
 
   public SignzyIndiaAadhaarFetchProviderOutput addScopeItem(String scopeItem) {
-    if (this.scope == null) {
-      this.scope = new ArrayList<>();
+    if (this.scope == null || !this.scope.isPresent()) {
+      this.scope = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.scope.add(scopeItem);
+    try {
+      this.scope.get().add(scopeItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -459,18 +469,26 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
    * DigiLocker consent scopes that the individual actually consented to for this session. Included in provider output so customers can verify what was granted: the customer does not control these—the individual chooses scopes in the DigiLocker consent UI, and there is no way to pre-select or enforce them. This is a common source of error (e.g. the individual skips a scope), so surfacing the granted scopes lets customers confirm the session had the expected consent.
    * @return scope
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SCOPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public List<String> getScope() {
-    return scope;
+        return scope.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SCOPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SCOPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setScope(@javax.annotation.Nonnull List<String> scope) {
+  public JsonNullable<List<String>> getScope_JsonNullable() {
+    return scope;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SCOPE)
+  public void setScope_JsonNullable(JsonNullable<List<String>> scope) {
     this.scope = scope;
+  }
+
+  public void setScope(@javax.annotation.Nullable List<String> scope) {
+    this.scope = JsonNullable.<List<String>>of(scope);
   }
 
 
@@ -492,12 +510,12 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
         equalsNullable(this.aadhaarNumberLastFour, signzyIndiaAadhaarFetchProviderOutput.aadhaarNumberLastFour) &&
         equalsNullable(this.claims, signzyIndiaAadhaarFetchProviderOutput.claims) &&
         equalsNullable(this.localizedClaims, signzyIndiaAadhaarFetchProviderOutput.localizedClaims) &&
-        Objects.equals(this.documentSignatureValidated, signzyIndiaAadhaarFetchProviderOutput.documentSignatureValidated) &&
+        equalsNullable(this.documentSignatureValidated, signzyIndiaAadhaarFetchProviderOutput.documentSignatureValidated) &&
         equalsNullable(this.digilockerId, signzyIndiaAadhaarFetchProviderOutput.digilockerId) &&
         equalsNullable(this.issuerId, signzyIndiaAadhaarFetchProviderOutput.issuerId) &&
         equalsNullable(this.issuer, signzyIndiaAadhaarFetchProviderOutput.issuer) &&
         equalsNullable(this.mobilePhone, signzyIndiaAadhaarFetchProviderOutput.mobilePhone) &&
-        Objects.equals(this.scope, signzyIndiaAadhaarFetchProviderOutput.scope);
+        equalsNullable(this.scope, signzyIndiaAadhaarFetchProviderOutput.scope);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -506,7 +524,7 @@ public class SignzyIndiaAadhaarFetchProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(documentType), hashCodeNullable(timestamp), hashCodeNullable(timeToLive), hashCodeNullable(aadhaarNumberLastFour), hashCodeNullable(claims), hashCodeNullable(localizedClaims), documentSignatureValidated, hashCodeNullable(digilockerId), hashCodeNullable(issuerId), hashCodeNullable(issuer), hashCodeNullable(mobilePhone), scope);
+    return Objects.hash(hashCodeNullable(documentType), hashCodeNullable(timestamp), hashCodeNullable(timeToLive), hashCodeNullable(aadhaarNumberLastFour), hashCodeNullable(claims), hashCodeNullable(localizedClaims), hashCodeNullable(documentSignatureValidated), hashCodeNullable(digilockerId), hashCodeNullable(issuerId), hashCodeNullable(issuer), hashCodeNullable(mobilePhone), hashCodeNullable(scope));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

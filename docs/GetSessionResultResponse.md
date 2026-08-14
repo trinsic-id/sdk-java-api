@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**session** | [**Session**](Session.md) |  |  |
-|**identityData** | [**IdentityData**](IdentityData.md) |  |  [optional] |
+|**session** | [**Session**](Session.md) | The Session in its current state. |  |
+|**identityData** | [**IdentityData**](IdentityData.md) | The IdentityData which resulted from the Session, if not HPKE-encrypted. |  [optional] |
 
 
 

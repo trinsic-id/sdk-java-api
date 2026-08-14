@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,21 +40,19 @@ import id.trinsic.ApiClient;
   AgeOverOutput.JSON_PROPERTY_AGE,
   AgeOverOutput.JSON_PROPERTY_IS_OVER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AgeOverOutput {
   public static final String JSON_PROPERTY_AGE = "age";
-  @javax.annotation.Nonnull
-  private Integer age;
+  private JsonNullable<Integer> age = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_IS_OVER = "isOver";
-  @javax.annotation.Nonnull
-  private Boolean isOver;
+  private JsonNullable<Boolean> isOver = JsonNullable.<Boolean>undefined();
 
   public AgeOverOutput() { 
   }
 
-  public AgeOverOutput age(@javax.annotation.Nonnull Integer age) {
-    this.age = age;
+  public AgeOverOutput age(@javax.annotation.Nullable Integer age) {
+    this.age = JsonNullable.<Integer>of(age);
     return this;
   }
 
@@ -58,23 +60,31 @@ public class AgeOverOutput {
    * The age threshold from the &#x60;age over X&#x60; claim.
    * @return age
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_AGE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getAge() {
-    return age;
+        return age.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_AGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_AGE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAge(@javax.annotation.Nonnull Integer age) {
+  public JsonNullable<Integer> getAge_JsonNullable() {
+    return age;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AGE)
+  public void setAge_JsonNullable(JsonNullable<Integer> age) {
     this.age = age;
   }
 
+  public void setAge(@javax.annotation.Nullable Integer age) {
+    this.age = JsonNullable.<Integer>of(age);
+  }
 
-  public AgeOverOutput isOver(@javax.annotation.Nonnull Boolean isOver) {
-    this.isOver = isOver;
+
+  public AgeOverOutput isOver(@javax.annotation.Nullable Boolean isOver) {
+    this.isOver = JsonNullable.<Boolean>of(isOver);
     return this;
   }
 
@@ -82,18 +92,26 @@ public class AgeOverOutput {
    * Whether the individual is at least the given age.
    * @return isOver
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_IS_OVER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getIsOver() {
-    return isOver;
+        return isOver.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_IS_OVER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_IS_OVER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsOver(@javax.annotation.Nonnull Boolean isOver) {
+  public JsonNullable<Boolean> getIsOver_JsonNullable() {
+    return isOver;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IS_OVER)
+  public void setIsOver_JsonNullable(JsonNullable<Boolean> isOver) {
     this.isOver = isOver;
+  }
+
+  public void setIsOver(@javax.annotation.Nullable Boolean isOver) {
+    this.isOver = JsonNullable.<Boolean>of(isOver);
   }
 
 
@@ -109,13 +127,24 @@ public class AgeOverOutput {
       return false;
     }
     AgeOverOutput ageOverOutput = (AgeOverOutput) o;
-    return Objects.equals(this.age, ageOverOutput.age) &&
-        Objects.equals(this.isOver, ageOverOutput.isOver);
+    return equalsNullable(this.age, ageOverOutput.age) &&
+        equalsNullable(this.isOver, ageOverOutput.isOver);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(age, isOver);
+    return Objects.hash(hashCodeNullable(age), hashCodeNullable(isOver));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

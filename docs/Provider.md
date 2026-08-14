@@ -11,8 +11,6 @@
 |**name** | **String** | The display name of the provider |  |
 |**logoUrl** | **String** | The URL of the provider&#39;s logo |  |
 |**subtext** | **String** | The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider. |  |
-|**description** | **String** | A description of the provider&#39;s capabilities |  [readonly] |
-|**geography** | **List&lt;String&gt;** | Geographic regions where this provider operates |  |
 |**regions** | **List&lt;String&gt;** | Specific regions supported by this provider |  |
 |**countries** | **List&lt;String&gt;** | The countries where this Provider is available (as alpha-2 ISO codes). |  |
 |**subdivisions** | **List&lt;String&gt;** | The subdivisions (states, provinces, etc.) where this Provider is available (as alpha-2 ISO codes). |  |

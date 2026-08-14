@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   PolandMobywatelMatchInput.JSON_PROPERTY_SELFIE_BYTES,
   PolandMobywatelMatchInput.JSON_PROPERTY_SELFIE_IMAGE_MIME_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PolandMobywatelMatchInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -177,7 +177,7 @@ public class PolandMobywatelMatchInput {
   }
 
   /**
-   * Nationality as it appears on mobile ID (mDowód).
+   * Nationality as it appears on mobile ID (mDowód).              Format: - Must be a valid ISO 3166-1 alpha-2 or alpha-3 country code. - Matching against mObywatel is an exact string comparison on the alpha-3 code.   Alpha-2 values are accepted and normalized to alpha-3 before matching.
    * @return nationality
    */
   @javax.annotation.Nullable
@@ -273,7 +273,7 @@ public class PolandMobywatelMatchInput {
   }
 
   /**
-   * The raw bytes of the selfie image collected from the user.
+   * The raw bytes of an optional selfie image collected from the individual.              Requirements from the provider: - JPEG or PNG - At least 720 pixels wide (1080 pixels recommended) - Not exceeding 10 MB - Clear, front-facing photo with good lighting and no sunglasses or face coverings.
    * @return selfieBytes
    */
   @javax.annotation.Nullable
@@ -305,7 +305,7 @@ public class PolandMobywatelMatchInput {
   }
 
   /**
-   * The MIME Type of the file contained in SelfieBytes.              Only JPEG or PNG formats are supported.
+   * The MIME type of the file contained in SelfieBytes.              Must be one of &#x60;image/jpeg&#x60; or &#x60;image/png&#x60;.
    * @return selfieImageMimeType
    */
   @javax.annotation.Nullable

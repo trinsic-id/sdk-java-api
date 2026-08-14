@@ -28,6 +28,10 @@ import id.trinsic.api.models.UgandaNidMatch2DateOfBirthField;
 import id.trinsic.api.models.UgandaNidMatch2NationalIdNumberField;
 import id.trinsic.api.models.UgandaNidMatch2SecondaryIdNumberField;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -40,25 +44,22 @@ import id.trinsic.ApiClient;
   UgandaNidMatch2ProviderOutput.JSON_PROPERTY_SECONDARY_ID_NUMBER,
   UgandaNidMatch2ProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class UgandaNidMatch2ProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
-  @javax.annotation.Nonnull
-  private UgandaNidMatch2NationalIdNumberField nationalIdNumber;
+  private JsonNullable<UgandaNidMatch2NationalIdNumberField> nationalIdNumber = JsonNullable.<UgandaNidMatch2NationalIdNumberField>undefined();
 
   public static final String JSON_PROPERTY_SECONDARY_ID_NUMBER = "secondaryIdNumber";
-  @javax.annotation.Nonnull
-  private UgandaNidMatch2SecondaryIdNumberField secondaryIdNumber;
+  private JsonNullable<UgandaNidMatch2SecondaryIdNumberField> secondaryIdNumber = JsonNullable.<UgandaNidMatch2SecondaryIdNumberField>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private UgandaNidMatch2DateOfBirthField dateOfBirth;
+  private JsonNullable<UgandaNidMatch2DateOfBirthField> dateOfBirth = JsonNullable.<UgandaNidMatch2DateOfBirthField>undefined();
 
   public UgandaNidMatch2ProviderOutput() { 
   }
 
-  public UgandaNidMatch2ProviderOutput nationalIdNumber(@javax.annotation.Nonnull UgandaNidMatch2NationalIdNumberField nationalIdNumber) {
-    this.nationalIdNumber = nationalIdNumber;
+  public UgandaNidMatch2ProviderOutput nationalIdNumber(@javax.annotation.Nullable UgandaNidMatch2NationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<UgandaNidMatch2NationalIdNumberField>of(nationalIdNumber);
     return this;
   }
 
@@ -66,23 +67,31 @@ public class UgandaNidMatch2ProviderOutput {
    * Outcome of verifying the national identification number in the NIRA database.
    * @return nationalIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public UgandaNidMatch2NationalIdNumberField getNationalIdNumber() {
-    return nationalIdNumber;
+        return nationalIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdNumber(@javax.annotation.Nonnull UgandaNidMatch2NationalIdNumberField nationalIdNumber) {
+  public JsonNullable<UgandaNidMatch2NationalIdNumberField> getNationalIdNumber_JsonNullable() {
+    return nationalIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
+  public void setNationalIdNumber_JsonNullable(JsonNullable<UgandaNidMatch2NationalIdNumberField> nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
+  public void setNationalIdNumber(@javax.annotation.Nullable UgandaNidMatch2NationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<UgandaNidMatch2NationalIdNumberField>of(nationalIdNumber);
+  }
 
-  public UgandaNidMatch2ProviderOutput secondaryIdNumber(@javax.annotation.Nonnull UgandaNidMatch2SecondaryIdNumberField secondaryIdNumber) {
-    this.secondaryIdNumber = secondaryIdNumber;
+
+  public UgandaNidMatch2ProviderOutput secondaryIdNumber(@javax.annotation.Nullable UgandaNidMatch2SecondaryIdNumberField secondaryIdNumber) {
+    this.secondaryIdNumber = JsonNullable.<UgandaNidMatch2SecondaryIdNumberField>of(secondaryIdNumber);
     return this;
   }
 
@@ -90,23 +99,31 @@ public class UgandaNidMatch2ProviderOutput {
    * Outcome of comparing the submitted card number with the NIRA database.
    * @return secondaryIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SECONDARY_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public UgandaNidMatch2SecondaryIdNumberField getSecondaryIdNumber() {
-    return secondaryIdNumber;
+        return secondaryIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SECONDARY_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SECONDARY_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSecondaryIdNumber(@javax.annotation.Nonnull UgandaNidMatch2SecondaryIdNumberField secondaryIdNumber) {
+  public JsonNullable<UgandaNidMatch2SecondaryIdNumberField> getSecondaryIdNumber_JsonNullable() {
+    return secondaryIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SECONDARY_ID_NUMBER)
+  public void setSecondaryIdNumber_JsonNullable(JsonNullable<UgandaNidMatch2SecondaryIdNumberField> secondaryIdNumber) {
     this.secondaryIdNumber = secondaryIdNumber;
   }
 
+  public void setSecondaryIdNumber(@javax.annotation.Nullable UgandaNidMatch2SecondaryIdNumberField secondaryIdNumber) {
+    this.secondaryIdNumber = JsonNullable.<UgandaNidMatch2SecondaryIdNumberField>of(secondaryIdNumber);
+  }
 
-  public UgandaNidMatch2ProviderOutput dateOfBirth(@javax.annotation.Nonnull UgandaNidMatch2DateOfBirthField dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public UgandaNidMatch2ProviderOutput dateOfBirth(@javax.annotation.Nullable UgandaNidMatch2DateOfBirthField dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<UgandaNidMatch2DateOfBirthField>of(dateOfBirth);
     return this;
   }
 
@@ -114,18 +131,26 @@ public class UgandaNidMatch2ProviderOutput {
    * Outcome of comparing the submitted date of birth with the NIRA database.
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public UgandaNidMatch2DateOfBirthField getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull UgandaNidMatch2DateOfBirthField dateOfBirth) {
+  public JsonNullable<UgandaNidMatch2DateOfBirthField> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<UgandaNidMatch2DateOfBirthField> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable UgandaNidMatch2DateOfBirthField dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<UgandaNidMatch2DateOfBirthField>of(dateOfBirth);
   }
 
 
@@ -141,14 +166,25 @@ public class UgandaNidMatch2ProviderOutput {
       return false;
     }
     UgandaNidMatch2ProviderOutput ugandaNidMatch2ProviderOutput = (UgandaNidMatch2ProviderOutput) o;
-    return Objects.equals(this.nationalIdNumber, ugandaNidMatch2ProviderOutput.nationalIdNumber) &&
-        Objects.equals(this.secondaryIdNumber, ugandaNidMatch2ProviderOutput.secondaryIdNumber) &&
-        Objects.equals(this.dateOfBirth, ugandaNidMatch2ProviderOutput.dateOfBirth);
+    return equalsNullable(this.nationalIdNumber, ugandaNidMatch2ProviderOutput.nationalIdNumber) &&
+        equalsNullable(this.secondaryIdNumber, ugandaNidMatch2ProviderOutput.secondaryIdNumber) &&
+        equalsNullable(this.dateOfBirth, ugandaNidMatch2ProviderOutput.dateOfBirth);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nationalIdNumber, secondaryIdNumber, dateOfBirth);
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(secondaryIdNumber), hashCodeNullable(dateOfBirth));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

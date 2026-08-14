@@ -8,8 +8,8 @@ Exposed properties for the `kenya-nid-match-2` Provider which do not directly ma
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**nationalIdNumber** | [**KenyaNidMatch2NationalIdNumberField**](KenyaNidMatch2NationalIdNumberField.md) | Outcome of the verification of the national ID number. |  |
-|**fullName** | [**KenyaNidMatch2FullNameField**](KenyaNidMatch2FullNameField.md) | Outcome of the verification of the full name. |  |
+|**nationalIdNumber** | [**KenyaNidMatch2NationalIdNumberField**](KenyaNidMatch2NationalIdNumberField.md) | Outcome of the verification of the national ID number. |  [optional] |
+|**fullName** | [**KenyaNidMatch2FullNameField**](KenyaNidMatch2FullNameField.md) | Outcome of the verification of the full name. |  [optional] |
 |**dateOfBirth** | [**KenyaNidMatch2DateOfBirthField**](KenyaNidMatch2DateOfBirthField.md) | Outcome of the verification of the date of birth. |  [optional] |
 |**sex** | [**KenyaNidMatch2SexField**](KenyaNidMatch2SexField.md) | Outcome of the verification of the sex. |  [optional] |
 

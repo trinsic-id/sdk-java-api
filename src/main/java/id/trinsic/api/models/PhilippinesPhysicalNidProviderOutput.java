@@ -48,11 +48,10 @@ import id.trinsic.ApiClient;
   PhilippinesPhysicalNidProviderOutput.JSON_PROPERTY_PLACE_OF_BIRTH,
   PhilippinesPhysicalNidProviderOutput.JSON_PROPERTY_DOCUMENT_ISSUE_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PhilippinesPhysicalNidProviderOutput {
   public static final String JSON_PROPERTY_PHILSYS_CARD_NUMBER = "philsysCardNumber";
-  @javax.annotation.Nonnull
-  private String philsysCardNumber;
+  private JsonNullable<String> philsysCardNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -81,8 +80,8 @@ public class PhilippinesPhysicalNidProviderOutput {
   public PhilippinesPhysicalNidProviderOutput() { 
   }
 
-  public PhilippinesPhysicalNidProviderOutput philsysCardNumber(@javax.annotation.Nonnull String philsysCardNumber) {
-    this.philsysCardNumber = philsysCardNumber;
+  public PhilippinesPhysicalNidProviderOutput philsysCardNumber(@javax.annotation.Nullable String philsysCardNumber) {
+    this.philsysCardNumber = JsonNullable.<String>of(philsysCardNumber);
     return this;
   }
 
@@ -90,18 +89,26 @@ public class PhilippinesPhysicalNidProviderOutput {
    * The PhilSys Card Number (PCN). Every citizen or resident alien registered in PhilSys has a PhilSys Number (PSN). This number is tokenized into a card number to protect the PSN. The PhilSys Card Number is 12 characters long, and often is written in octets with dashes in between.
    * @return philsysCardNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PHILSYS_CARD_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPhilsysCardNumber() {
-    return philsysCardNumber;
+        return philsysCardNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PHILSYS_CARD_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PHILSYS_CARD_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPhilsysCardNumber(@javax.annotation.Nonnull String philsysCardNumber) {
+  public JsonNullable<String> getPhilsysCardNumber_JsonNullable() {
+    return philsysCardNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PHILSYS_CARD_NUMBER)
+  public void setPhilsysCardNumber_JsonNullable(JsonNullable<String> philsysCardNumber) {
     this.philsysCardNumber = philsysCardNumber;
+  }
+
+  public void setPhilsysCardNumber(@javax.annotation.Nullable String philsysCardNumber) {
+    this.philsysCardNumber = JsonNullable.<String>of(philsysCardNumber);
   }
 
 
@@ -373,7 +380,7 @@ public class PhilippinesPhysicalNidProviderOutput {
       return false;
     }
     PhilippinesPhysicalNidProviderOutput philippinesPhysicalNidProviderOutput = (PhilippinesPhysicalNidProviderOutput) o;
-    return Objects.equals(this.philsysCardNumber, philippinesPhysicalNidProviderOutput.philsysCardNumber) &&
+    return equalsNullable(this.philsysCardNumber, philippinesPhysicalNidProviderOutput.philsysCardNumber) &&
         equalsNullable(this.givenName, philippinesPhysicalNidProviderOutput.givenName) &&
         equalsNullable(this.middleName, philippinesPhysicalNidProviderOutput.middleName) &&
         equalsNullable(this.familyName, philippinesPhysicalNidProviderOutput.familyName) &&
@@ -390,7 +397,7 @@ public class PhilippinesPhysicalNidProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(philsysCardNumber, hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(suffix), hashCodeNullable(sex), hashCodeNullable(placeOfBirth), hashCodeNullable(documentIssueDate));
+    return Objects.hash(hashCodeNullable(philsysCardNumber), hashCodeNullable(givenName), hashCodeNullable(middleName), hashCodeNullable(familyName), hashCodeNullable(dateOfBirth), hashCodeNullable(suffix), hashCodeNullable(sex), hashCodeNullable(placeOfBirth), hashCodeNullable(documentIssueDate));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

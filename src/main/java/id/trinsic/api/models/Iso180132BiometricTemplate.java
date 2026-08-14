@@ -43,19 +43,16 @@ import id.trinsic.ApiClient;
   Iso180132BiometricTemplate.JSON_PROPERTY_DATA_IS_ENCRYPTED,
   Iso180132BiometricTemplate.JSON_PROPERTY_BIOMETRIC_INFORMATION_RECORD_PAYLOAD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180132BiometricTemplate {
   public static final String JSON_PROPERTY_HEADER = "header";
-  @javax.annotation.Nonnull
-  private Iso180132BiometricTemplateHeader header;
+  private JsonNullable<Iso180132BiometricTemplateHeader> header = JsonNullable.<Iso180132BiometricTemplateHeader>undefined();
 
   public static final String JSON_PROPERTY_DATA_BLOCK = "dataBlock";
-  @javax.annotation.Nonnull
-  private byte[] dataBlock;
+  private JsonNullable<byte[]> dataBlock = JsonNullable.<byte[]>undefined();
 
   public static final String JSON_PROPERTY_DATA_IS_ENCRYPTED = "dataIsEncrypted";
-  @javax.annotation.Nonnull
-  private Boolean dataIsEncrypted;
+  private JsonNullable<Boolean> dataIsEncrypted = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_BIOMETRIC_INFORMATION_RECORD_PAYLOAD = "biometricInformationRecordPayload";
   private JsonNullable<byte[]> biometricInformationRecordPayload = JsonNullable.<byte[]>undefined();
@@ -63,8 +60,8 @@ public class Iso180132BiometricTemplate {
   public Iso180132BiometricTemplate() { 
   }
 
-  public Iso180132BiometricTemplate header(@javax.annotation.Nonnull Iso180132BiometricTemplateHeader header) {
-    this.header = header;
+  public Iso180132BiometricTemplate header(@javax.annotation.Nullable Iso180132BiometricTemplateHeader header) {
+    this.header = JsonNullable.<Iso180132BiometricTemplateHeader>of(header);
     return this;
   }
 
@@ -72,23 +69,31 @@ public class Iso180132BiometricTemplate {
    * Header describing the biometric template.
    * @return header
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_HEADER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Iso180132BiometricTemplateHeader getHeader() {
-    return header;
+        return header.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_HEADER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_HEADER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHeader(@javax.annotation.Nonnull Iso180132BiometricTemplateHeader header) {
+  public JsonNullable<Iso180132BiometricTemplateHeader> getHeader_JsonNullable() {
+    return header;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_HEADER)
+  public void setHeader_JsonNullable(JsonNullable<Iso180132BiometricTemplateHeader> header) {
     this.header = header;
   }
 
+  public void setHeader(@javax.annotation.Nullable Iso180132BiometricTemplateHeader header) {
+    this.header = JsonNullable.<Iso180132BiometricTemplateHeader>of(header);
+  }
 
-  public Iso180132BiometricTemplate dataBlock(@javax.annotation.Nonnull byte[] dataBlock) {
-    this.dataBlock = dataBlock;
+
+  public Iso180132BiometricTemplate dataBlock(@javax.annotation.Nullable byte[] dataBlock) {
+    this.dataBlock = JsonNullable.<byte[]>of(dataBlock);
     return this;
   }
 
@@ -96,23 +101,31 @@ public class Iso180132BiometricTemplate {
    * The raw data block, in a biometric type- and format-specific encoding.              For &#x60;face&#x60; and &#x60;signature_usual_mark&#x60;, this is a raw JPEG or JPEG2000 image.              See ISO 18013-2 and 18013-5.
    * @return dataBlock
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATA_BLOCK, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public byte[] getDataBlock() {
-    return dataBlock;
+        return dataBlock.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATA_BLOCK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATA_BLOCK, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDataBlock(@javax.annotation.Nonnull byte[] dataBlock) {
+  public JsonNullable<byte[]> getDataBlock_JsonNullable() {
+    return dataBlock;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATA_BLOCK)
+  public void setDataBlock_JsonNullable(JsonNullable<byte[]> dataBlock) {
     this.dataBlock = dataBlock;
   }
 
+  public void setDataBlock(@javax.annotation.Nullable byte[] dataBlock) {
+    this.dataBlock = JsonNullable.<byte[]>of(dataBlock);
+  }
 
-  public Iso180132BiometricTemplate dataIsEncrypted(@javax.annotation.Nonnull Boolean dataIsEncrypted) {
-    this.dataIsEncrypted = dataIsEncrypted;
+
+  public Iso180132BiometricTemplate dataIsEncrypted(@javax.annotation.Nullable Boolean dataIsEncrypted) {
+    this.dataIsEncrypted = JsonNullable.<Boolean>of(dataIsEncrypted);
     return this;
   }
 
@@ -120,18 +133,26 @@ public class Iso180132BiometricTemplate {
    * Whether the data block is encrypted.
    * @return dataIsEncrypted
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATA_IS_ENCRYPTED, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getDataIsEncrypted() {
-    return dataIsEncrypted;
+        return dataIsEncrypted.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATA_IS_ENCRYPTED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATA_IS_ENCRYPTED, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDataIsEncrypted(@javax.annotation.Nonnull Boolean dataIsEncrypted) {
+  public JsonNullable<Boolean> getDataIsEncrypted_JsonNullable() {
+    return dataIsEncrypted;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATA_IS_ENCRYPTED)
+  public void setDataIsEncrypted_JsonNullable(JsonNullable<Boolean> dataIsEncrypted) {
     this.dataIsEncrypted = dataIsEncrypted;
+  }
+
+  public void setDataIsEncrypted(@javax.annotation.Nullable Boolean dataIsEncrypted) {
+    this.dataIsEncrypted = JsonNullable.<Boolean>of(dataIsEncrypted);
   }
 
 
@@ -179,9 +200,9 @@ public class Iso180132BiometricTemplate {
       return false;
     }
     Iso180132BiometricTemplate iso180132BiometricTemplate = (Iso180132BiometricTemplate) o;
-    return Objects.equals(this.header, iso180132BiometricTemplate.header) &&
-        Arrays.equals(this.dataBlock, iso180132BiometricTemplate.dataBlock) &&
-        Objects.equals(this.dataIsEncrypted, iso180132BiometricTemplate.dataIsEncrypted) &&
+    return equalsNullable(this.header, iso180132BiometricTemplate.header) &&
+        equalsNullable(this.dataBlock, iso180132BiometricTemplate.dataBlock) &&
+        equalsNullable(this.dataIsEncrypted, iso180132BiometricTemplate.dataIsEncrypted) &&
         equalsNullable(this.biometricInformationRecordPayload, iso180132BiometricTemplate.biometricInformationRecordPayload);
   }
 
@@ -191,7 +212,7 @@ public class Iso180132BiometricTemplate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(header, Arrays.hashCode(dataBlock), dataIsEncrypted, hashCodeNullable(biometricInformationRecordPayload));
+    return Objects.hash(hashCodeNullable(header), hashCodeNullable(dataBlock), hashCodeNullable(dataIsEncrypted), hashCodeNullable(biometricInformationRecordPayload));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

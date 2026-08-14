@@ -18,7 +18,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import id.trinsic.api.models.ItsmeAddress;
+import id.trinsic.api.models.ItsmeBelgianIdentityCard;
+import id.trinsic.api.models.ItsmeBelgianNationalNumber;
+import id.trinsic.api.models.ItsmeDirectDevice;
+import id.trinsic.api.models.ItsmeIdentityDocument;
+import id.trinsic.api.models.ItsmePlaceOfBirth;
+import id.trinsic.api.models.ItsmeProviderAddress;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -44,43 +49,11 @@ class ItsmeProviderOutputTest {
     }
 
     /**
-     * Test the property 'firstName'
-     */
-    @Test
-    void firstNameTest() {
-        // TODO: test firstName
-    }
-
-    /**
-     * Test the property 'lastName'
-     */
-    @Test
-    void lastNameTest() {
-        // TODO: test lastName
-    }
-
-    /**
      * Test the property 'dateOfBirth'
      */
     @Test
     void dateOfBirthTest() {
         // TODO: test dateOfBirth
-    }
-
-    /**
-     * Test the property 'hashedNationalRegisterNumber'
-     */
-    @Test
-    void hashedNationalRegisterNumberTest() {
-        // TODO: test hashedNationalRegisterNumber
-    }
-
-    /**
-     * Test the property 'nationalRegisterNumber'
-     */
-    @Test
-    void nationalRegisterNumberTest() {
-        // TODO: test nationalRegisterNumber
     }
 
     /**
@@ -100,6 +73,46 @@ class ItsmeProviderOutputTest {
     }
 
     /**
+     * Test the property 'sub'
+     */
+    @Test
+    void subTest() {
+        // TODO: test sub
+    }
+
+    /**
+     * Test the property 'fullName'
+     */
+    @Test
+    void fullNameTest() {
+        // TODO: test fullName
+    }
+
+    /**
+     * Test the property 'givenName'
+     */
+    @Test
+    void givenNameTest() {
+        // TODO: test givenName
+    }
+
+    /**
+     * Test the property 'familyName'
+     */
+    @Test
+    void familyNameTest() {
+        // TODO: test familyName
+    }
+
+    /**
+     * Test the property 'dateOfBirthAsString'
+     */
+    @Test
+    void dateOfBirthAsStringTest() {
+        // TODO: test dateOfBirthAsString
+    }
+
+    /**
      * Test the property 'gender'
      */
     @Test
@@ -108,43 +121,35 @@ class ItsmeProviderOutputTest {
     }
 
     /**
-     * Test the property 'nationality'
+     * Test the property 'locale'
      */
     @Test
-    void nationalityTest() {
-        // TODO: test nationality
+    void localeTest() {
+        // TODO: test locale
     }
 
     /**
-     * Test the property 'birthPlace'
+     * Test the property 'pictureUrl'
      */
     @Test
-    void birthPlaceTest() {
-        // TODO: test birthPlace
+    void pictureUrlTest() {
+        // TODO: test pictureUrl
     }
 
     /**
-     * Test the property 'documentNumber'
+     * Test the property 'emailVerified'
      */
     @Test
-    void documentNumberTest() {
-        // TODO: test documentNumber
+    void emailVerifiedTest() {
+        // TODO: test emailVerified
     }
 
     /**
-     * Test the property 'identityDocumentExpirationDate'
+     * Test the property 'phoneNumberVerified'
      */
     @Test
-    void identityDocumentExpirationDateTest() {
-        // TODO: test identityDocumentExpirationDate
-    }
-
-    /**
-     * Test the property 'language'
-     */
-    @Test
-    void languageTest() {
-        // TODO: test language
+    void phoneNumberVerifiedTest() {
+        // TODO: test phoneNumberVerified
     }
 
     /**
@@ -153,6 +158,54 @@ class ItsmeProviderOutputTest {
     @Test
     void addressTest() {
         // TODO: test address
+    }
+
+    /**
+     * Test the property 'citizenship'
+     */
+    @Test
+    void citizenshipTest() {
+        // TODO: test citizenship
+    }
+
+    /**
+     * Test the property 'belgianNationalNumber'
+     */
+    @Test
+    void belgianNationalNumberTest() {
+        // TODO: test belgianNationalNumber
+    }
+
+    /**
+     * Test the property 'belgianIdentityCard'
+     */
+    @Test
+    void belgianIdentityCardTest() {
+        // TODO: test belgianIdentityCard
+    }
+
+    /**
+     * Test the property 'identityDocument'
+     */
+    @Test
+    void identityDocumentTest() {
+        // TODO: test identityDocument
+    }
+
+    /**
+     * Test the property 'placeOfBirth'
+     */
+    @Test
+    void placeOfBirthTest() {
+        // TODO: test placeOfBirth
+    }
+
+    /**
+     * Test the property 'device'
+     */
+    @Test
+    void deviceTest() {
+        // TODO: test device
     }
 
 }

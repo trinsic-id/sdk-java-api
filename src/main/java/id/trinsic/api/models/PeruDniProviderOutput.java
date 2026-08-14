@@ -58,14 +58,13 @@ import id.trinsic.ApiClient;
   PeruDniProviderOutput.JSON_PROPERTY_UBIGEO_RENIEC,
   PeruDniProviderOutput.JSON_PROPERTY_VERIFICATION_DIGIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PeruDniProviderOutput {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private JsonNullable<PeruDniAddress> address = JsonNullable.<PeruDniAddress>undefined();
 
   public static final String JSON_PROPERTY_ARRAY_NAME = "arrayName";
-  @javax.annotation.Nonnull
-  private List<String> arrayName = new ArrayList<>();
+  private JsonNullable<List<String>> arrayName = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_CIVIL_STATUS = "civilStatus";
   private JsonNullable<String> civilStatus = JsonNullable.<String>undefined();
@@ -74,12 +73,10 @@ public class PeruDniProviderOutput {
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
-  @javax.annotation.Nonnull
-  private String documentNumber;
+  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
-  @javax.annotation.Nonnull
-  private String documentType;
+  private JsonNullable<String> documentType = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_EXPEDITION_DATE = "expeditionDate";
   private JsonNullable<LocalDate> expeditionDate = JsonNullable.<LocalDate>undefined();
@@ -88,24 +85,19 @@ public class PeruDniProviderOutput {
   private JsonNullable<LocalDate> expirationDate = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private String fullName;
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_MATERNAL_LAST_NAME = "maternalLastName";
-  @javax.annotation.Nonnull
-  private String maternalLastName;
+  private JsonNullable<String> maternalLastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PATERNAL_LAST_NAME = "paternalLastName";
-  @javax.annotation.Nonnull
-  private String paternalLastName;
+  private JsonNullable<String> paternalLastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SEX = "sex";
   private JsonNullable<String> sex = JsonNullable.<String>undefined();
@@ -151,16 +143,20 @@ public class PeruDniProviderOutput {
   }
 
 
-  public PeruDniProviderOutput arrayName(@javax.annotation.Nonnull List<String> arrayName) {
-    this.arrayName = arrayName;
+  public PeruDniProviderOutput arrayName(@javax.annotation.Nullable List<String> arrayName) {
+    this.arrayName = JsonNullable.<List<String>>of(arrayName);
     return this;
   }
 
   public PeruDniProviderOutput addArrayNameItem(String arrayNameItem) {
-    if (this.arrayName == null) {
-      this.arrayName = new ArrayList<>();
+    if (this.arrayName == null || !this.arrayName.isPresent()) {
+      this.arrayName = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.arrayName.add(arrayNameItem);
+    try {
+      this.arrayName.get().add(arrayNameItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -168,18 +164,26 @@ public class PeruDniProviderOutput {
    * All names that appear on DNI, as an array of strings.              Format: - All uppercase - Ordered by paternal family name, then maternal family name, then given names.
    * @return arrayName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public List<String> getArrayName() {
-    return arrayName;
+        return arrayName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_ARRAY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setArrayName(@javax.annotation.Nonnull List<String> arrayName) {
+  public JsonNullable<List<String>> getArrayName_JsonNullable() {
+    return arrayName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ARRAY_NAME)
+  public void setArrayName_JsonNullable(JsonNullable<List<String>> arrayName) {
     this.arrayName = arrayName;
+  }
+
+  public void setArrayName(@javax.annotation.Nullable List<String> arrayName) {
+    this.arrayName = JsonNullable.<List<String>>of(arrayName);
   }
 
 
@@ -247,8 +251,8 @@ public class PeruDniProviderOutput {
   }
 
 
-  public PeruDniProviderOutput documentNumber(@javax.annotation.Nonnull String documentNumber) {
-    this.documentNumber = documentNumber;
+  public PeruDniProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
     return this;
   }
 
@@ -256,23 +260,31 @@ public class PeruDniProviderOutput {
    * The individual&#39;s National Identity Document number (Documento Nacional de Identidad or DNI).              Format: - 8 digits - Does NOT include verification digit. On the DNI card, a ninth digit appears next to the first eight. It is   0-9 or A-K. This is NOT included in the DNI number when returned from Peru&#39;s database. - Does NOT include dots or hyphens
    * @return documentNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentNumber() {
-    return documentNumber;
+        return documentNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentNumber(@javax.annotation.Nonnull String documentNumber) {
+  public JsonNullable<String> getDocumentNumber_JsonNullable() {
+    return documentNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
     this.documentNumber = documentNumber;
   }
 
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  }
 
-  public PeruDniProviderOutput documentType(@javax.annotation.Nonnull String documentType) {
-    this.documentType = documentType;
+
+  public PeruDniProviderOutput documentType(@javax.annotation.Nullable String documentType) {
+    this.documentType = JsonNullable.<String>of(documentType);
     return this;
   }
 
@@ -280,18 +292,26 @@ public class PeruDniProviderOutput {
    * Should always be \&quot;DNI\&quot;.
    * @return documentType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentType() {
-    return documentType;
+        return documentType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentType(@javax.annotation.Nonnull String documentType) {
+  public JsonNullable<String> getDocumentType_JsonNullable() {
+    return documentType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
+  public void setDocumentType_JsonNullable(JsonNullable<String> documentType) {
     this.documentType = documentType;
+  }
+
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
+    this.documentType = JsonNullable.<String>of(documentType);
   }
 
 
@@ -359,8 +379,8 @@ public class PeruDniProviderOutput {
   }
 
 
-  public PeruDniProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public PeruDniProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -368,23 +388,31 @@ public class PeruDniProviderOutput {
    * Given names as they appear on DNI.              Format: - All uppercase - Space-separated - Will include all given names
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public PeruDniProviderOutput fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
+
+  public PeruDniProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
 
@@ -392,23 +420,31 @@ public class PeruDniProviderOutput {
    * All names as they appear on DNI.              Format: - All uppercase - Space-separated - Will include all names, given and family - Ordered by given names first, then paternal family name, then maternal family name
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
 
-  public PeruDniProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public PeruDniProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -416,23 +452,31 @@ public class PeruDniProviderOutput {
    * Family names as they appear on DNI.              Format: - All uppercase - Will include all family names - Ordered by paternal family name first, then maternal family name
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
   }
 
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
+  }
 
-  public PeruDniProviderOutput maternalLastName(@javax.annotation.Nonnull String maternalLastName) {
-    this.maternalLastName = maternalLastName;
+
+  public PeruDniProviderOutput maternalLastName(@javax.annotation.Nullable String maternalLastName) {
+    this.maternalLastName = JsonNullable.<String>of(maternalLastName);
     return this;
   }
 
@@ -440,23 +484,31 @@ public class PeruDniProviderOutput {
    * Maternal last name as it appears on DNI.              Format: - All uppercase
    * @return maternalLastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_MATERNAL_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getMaternalLastName() {
-    return maternalLastName;
+        return maternalLastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_MATERNAL_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_MATERNAL_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMaternalLastName(@javax.annotation.Nonnull String maternalLastName) {
+  public JsonNullable<String> getMaternalLastName_JsonNullable() {
+    return maternalLastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_MATERNAL_LAST_NAME)
+  public void setMaternalLastName_JsonNullable(JsonNullable<String> maternalLastName) {
     this.maternalLastName = maternalLastName;
   }
 
+  public void setMaternalLastName(@javax.annotation.Nullable String maternalLastName) {
+    this.maternalLastName = JsonNullable.<String>of(maternalLastName);
+  }
 
-  public PeruDniProviderOutput paternalLastName(@javax.annotation.Nonnull String paternalLastName) {
-    this.paternalLastName = paternalLastName;
+
+  public PeruDniProviderOutput paternalLastName(@javax.annotation.Nullable String paternalLastName) {
+    this.paternalLastName = JsonNullable.<String>of(paternalLastName);
     return this;
   }
 
@@ -464,18 +516,26 @@ public class PeruDniProviderOutput {
    * Paternal last name as it appears on DNI.              Format: - All uppercase
    * @return paternalLastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PATERNAL_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPaternalLastName() {
-    return paternalLastName;
+        return paternalLastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PATERNAL_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PATERNAL_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPaternalLastName(@javax.annotation.Nonnull String paternalLastName) {
+  public JsonNullable<String> getPaternalLastName_JsonNullable() {
+    return paternalLastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PATERNAL_LAST_NAME)
+  public void setPaternalLastName_JsonNullable(JsonNullable<String> paternalLastName) {
     this.paternalLastName = paternalLastName;
+  }
+
+  public void setPaternalLastName(@javax.annotation.Nullable String paternalLastName) {
+    this.paternalLastName = JsonNullable.<String>of(paternalLastName);
   }
 
 
@@ -588,18 +648,18 @@ public class PeruDniProviderOutput {
     }
     PeruDniProviderOutput peruDniProviderOutput = (PeruDniProviderOutput) o;
     return equalsNullable(this.address, peruDniProviderOutput.address) &&
-        Objects.equals(this.arrayName, peruDniProviderOutput.arrayName) &&
+        equalsNullable(this.arrayName, peruDniProviderOutput.arrayName) &&
         equalsNullable(this.civilStatus, peruDniProviderOutput.civilStatus) &&
         equalsNullable(this.dateOfBirth, peruDniProviderOutput.dateOfBirth) &&
-        Objects.equals(this.documentNumber, peruDniProviderOutput.documentNumber) &&
-        Objects.equals(this.documentType, peruDniProviderOutput.documentType) &&
+        equalsNullable(this.documentNumber, peruDniProviderOutput.documentNumber) &&
+        equalsNullable(this.documentType, peruDniProviderOutput.documentType) &&
         equalsNullable(this.expeditionDate, peruDniProviderOutput.expeditionDate) &&
         equalsNullable(this.expirationDate, peruDniProviderOutput.expirationDate) &&
-        Objects.equals(this.firstName, peruDniProviderOutput.firstName) &&
-        Objects.equals(this.fullName, peruDniProviderOutput.fullName) &&
-        Objects.equals(this.lastName, peruDniProviderOutput.lastName) &&
-        Objects.equals(this.maternalLastName, peruDniProviderOutput.maternalLastName) &&
-        Objects.equals(this.paternalLastName, peruDniProviderOutput.paternalLastName) &&
+        equalsNullable(this.firstName, peruDniProviderOutput.firstName) &&
+        equalsNullable(this.fullName, peruDniProviderOutput.fullName) &&
+        equalsNullable(this.lastName, peruDniProviderOutput.lastName) &&
+        equalsNullable(this.maternalLastName, peruDniProviderOutput.maternalLastName) &&
+        equalsNullable(this.paternalLastName, peruDniProviderOutput.paternalLastName) &&
         equalsNullable(this.sex, peruDniProviderOutput.sex) &&
         equalsNullable(this.ubigeoReniec, peruDniProviderOutput.ubigeoReniec) &&
         equalsNullable(this.verificationDigit, peruDniProviderOutput.verificationDigit);
@@ -611,7 +671,7 @@ public class PeruDniProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(address), arrayName, hashCodeNullable(civilStatus), hashCodeNullable(dateOfBirth), documentNumber, documentType, hashCodeNullable(expeditionDate), hashCodeNullable(expirationDate), firstName, fullName, lastName, maternalLastName, paternalLastName, hashCodeNullable(sex), hashCodeNullable(ubigeoReniec), hashCodeNullable(verificationDigit));
+    return Objects.hash(hashCodeNullable(address), hashCodeNullable(arrayName), hashCodeNullable(civilStatus), hashCodeNullable(dateOfBirth), hashCodeNullable(documentNumber), hashCodeNullable(documentType), hashCodeNullable(expeditionDate), hashCodeNullable(expirationDate), hashCodeNullable(firstName), hashCodeNullable(fullName), hashCodeNullable(lastName), hashCodeNullable(maternalLastName), hashCodeNullable(paternalLastName), hashCodeNullable(sex), hashCodeNullable(ubigeoReniec), hashCodeNullable(verificationDigit));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

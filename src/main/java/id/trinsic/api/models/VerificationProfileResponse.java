@@ -50,7 +50,7 @@ import id.trinsic.ApiClient;
   VerificationProfileResponse.JSON_PROPERTY_SESSION_EXPIRATION,
   VerificationProfileResponse.JSON_PROPERTY_IS_PRODUCTION_USAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull

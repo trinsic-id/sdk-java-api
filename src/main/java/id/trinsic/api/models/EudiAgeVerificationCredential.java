@@ -25,7 +25,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AgeOverOutput;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,23 +37,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import id.trinsic.ApiClient;
 /**
- * An EUDI Age Verification credential, with document type &#x60;eu.europa.ec.eudi.av.1&#x60;.              This is the age verification credential type defined in the EUDI Wallet framework.
+ * An EUDI Age Verification credential, with document type &#x60;eu.europa.ec.av.1&#x60;.
  */
 @JsonPropertyOrder({
-  EudiAgeVerificationCredential.JSON_PROPERTY_AGE_OVER,
-  EudiAgeVerificationCredential.JSON_PROPERTY_EXPIRY_DATE,
-  EudiAgeVerificationCredential.JSON_PROPERTY_ISSUING_COUNTRY
+  EudiAgeVerificationCredential.JSON_PROPERTY_AGE_OVER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class EudiAgeVerificationCredential {
   public static final String JSON_PROPERTY_AGE_OVER = "ageOver";
   private JsonNullable<List<AgeOverOutput>> ageOver = JsonNullable.<List<AgeOverOutput>>undefined();
-
-  public static final String JSON_PROPERTY_EXPIRY_DATE = "expiryDate";
-  private JsonNullable<LocalDate> expiryDate = JsonNullable.<LocalDate>undefined();
-
-  public static final String JSON_PROPERTY_ISSUING_COUNTRY = "issuingCountry";
-  private JsonNullable<String> issuingCountry = JsonNullable.<String>undefined();
 
   public EudiAgeVerificationCredential() { 
   }
@@ -103,70 +94,6 @@ public class EudiAgeVerificationCredential {
   }
 
 
-  public EudiAgeVerificationCredential expiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
-    this.expiryDate = JsonNullable.<LocalDate>of(expiryDate);
-    return this;
-  }
-
-  /**
-   * Date when the age verification data expires.
-   * @return expiryDate
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public LocalDate getExpiryDate() {
-        return expiryDate.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_EXPIRY_DATE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<LocalDate> getExpiryDate_JsonNullable() {
-    return expiryDate;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  public void setExpiryDate_JsonNullable(JsonNullable<LocalDate> expiryDate) {
-    this.expiryDate = expiryDate;
-  }
-
-  public void setExpiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
-    this.expiryDate = JsonNullable.<LocalDate>of(expiryDate);
-  }
-
-
-  public EudiAgeVerificationCredential issuingCountry(@javax.annotation.Nullable String issuingCountry) {
-    this.issuingCountry = JsonNullable.<String>of(issuingCountry);
-    return this;
-  }
-
-  /**
-   * ISO 3166-1 alpha-2 country code of the country or territory of the issuer of the credential.
-   * @return issuingCountry
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getIssuingCountry() {
-        return issuingCountry.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_ISSUING_COUNTRY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getIssuingCountry_JsonNullable() {
-    return issuingCountry;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
-  public void setIssuingCountry_JsonNullable(JsonNullable<String> issuingCountry) {
-    this.issuingCountry = issuingCountry;
-  }
-
-  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
-    this.issuingCountry = JsonNullable.<String>of(issuingCountry);
-  }
-
-
   /**
    * Return true if this EudiAgeVerificationCredential object is equal to o.
    */
@@ -179,9 +106,7 @@ public class EudiAgeVerificationCredential {
       return false;
     }
     EudiAgeVerificationCredential eudiAgeVerificationCredential = (EudiAgeVerificationCredential) o;
-    return equalsNullable(this.ageOver, eudiAgeVerificationCredential.ageOver) &&
-        equalsNullable(this.expiryDate, eudiAgeVerificationCredential.expiryDate) &&
-        equalsNullable(this.issuingCountry, eudiAgeVerificationCredential.issuingCountry);
+    return equalsNullable(this.ageOver, eudiAgeVerificationCredential.ageOver);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -190,7 +115,7 @@ public class EudiAgeVerificationCredential {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(ageOver), hashCodeNullable(expiryDate), hashCodeNullable(issuingCountry));
+    return Objects.hash(hashCodeNullable(ageOver));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -205,8 +130,6 @@ public class EudiAgeVerificationCredential {
     StringBuilder sb = new StringBuilder();
     sb.append("class EudiAgeVerificationCredential {\n");
     sb.append("    ageOver: ").append(toIndentedString(ageOver)).append("\n");
-    sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
-    sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -259,16 +182,6 @@ public class EudiAgeVerificationCredential {
           "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
-    }
-
-    // add `expiryDate` to the URL query string
-    if (getExpiryDate() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sexpiryDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpiryDate()))));
-    }
-
-    // add `issuingCountry` to the URL query string
-    if (getIssuingCountry() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sissuingCountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIssuingCountry()))));
     }
 
     return joiner.toString();

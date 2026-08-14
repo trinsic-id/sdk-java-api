@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,21 +40,19 @@ import id.trinsic.ApiClient;
   IndonesiaDukcapilMatchFullNameField.JSON_PROPERTY_INPUT_VALUE,
   IndonesiaDukcapilMatchFullNameField.JSON_PROPERTY_OUTCOME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndonesiaDukcapilMatchFullNameField {
   public static final String JSON_PROPERTY_INPUT_VALUE = "inputValue";
-  @javax.annotation.Nonnull
-  private String inputValue;
+  private JsonNullable<String> inputValue = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_OUTCOME = "outcome";
-  @javax.annotation.Nonnull
-  private Double outcome;
+  private JsonNullable<Double> outcome = JsonNullable.<Double>undefined();
 
   public IndonesiaDukcapilMatchFullNameField() { 
   }
 
-  public IndonesiaDukcapilMatchFullNameField inputValue(@javax.annotation.Nonnull String inputValue) {
-    this.inputValue = inputValue;
+  public IndonesiaDukcapilMatchFullNameField inputValue(@javax.annotation.Nullable String inputValue) {
+    this.inputValue = JsonNullable.<String>of(inputValue);
     return this;
   }
 
@@ -58,23 +60,31 @@ public class IndonesiaDukcapilMatchFullNameField {
    * The full name submitted for this check.
    * @return inputValue
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getInputValue() {
-    return inputValue;
+        return inputValue.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_INPUT_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setInputValue(@javax.annotation.Nonnull String inputValue) {
+  public JsonNullable<String> getInputValue_JsonNullable() {
+    return inputValue;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INPUT_VALUE)
+  public void setInputValue_JsonNullable(JsonNullable<String> inputValue) {
     this.inputValue = inputValue;
   }
 
+  public void setInputValue(@javax.annotation.Nullable String inputValue) {
+    this.inputValue = JsonNullable.<String>of(inputValue);
+  }
 
-  public IndonesiaDukcapilMatchFullNameField outcome(@javax.annotation.Nonnull Double outcome) {
-    this.outcome = outcome;
+
+  public IndonesiaDukcapilMatchFullNameField outcome(@javax.annotation.Nullable Double outcome) {
+    this.outcome = JsonNullable.<Double>of(outcome);
     return this;
   }
 
@@ -82,18 +92,26 @@ public class IndonesiaDukcapilMatchFullNameField {
    * The provider assessment result for the submitted full name.              Format: numeric score from 0.0 to 1.0, where higher values indicate closer agreement with the Dukcapil record.
    * @return outcome
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Double getOutcome() {
-    return outcome;
+        return outcome.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_OUTCOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOutcome(@javax.annotation.Nonnull Double outcome) {
+  public JsonNullable<Double> getOutcome_JsonNullable() {
+    return outcome;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OUTCOME)
+  public void setOutcome_JsonNullable(JsonNullable<Double> outcome) {
     this.outcome = outcome;
+  }
+
+  public void setOutcome(@javax.annotation.Nullable Double outcome) {
+    this.outcome = JsonNullable.<Double>of(outcome);
   }
 
 
@@ -109,13 +127,24 @@ public class IndonesiaDukcapilMatchFullNameField {
       return false;
     }
     IndonesiaDukcapilMatchFullNameField indonesiaDukcapilMatchFullNameField = (IndonesiaDukcapilMatchFullNameField) o;
-    return Objects.equals(this.inputValue, indonesiaDukcapilMatchFullNameField.inputValue) &&
-        Objects.equals(this.outcome, indonesiaDukcapilMatchFullNameField.outcome);
+    return equalsNullable(this.inputValue, indonesiaDukcapilMatchFullNameField.inputValue) &&
+        equalsNullable(this.outcome, indonesiaDukcapilMatchFullNameField.outcome);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputValue, outcome);
+    return Objects.hash(hashCodeNullable(inputValue), hashCodeNullable(outcome));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

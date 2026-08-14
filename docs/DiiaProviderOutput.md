@@ -8,8 +8,8 @@ Exposed properties for the `ukraine-diia` Provider which do not directly map to 
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**subject** | [**DiiaSubjectOutput**](DiiaSubjectOutput.md) | Diia.Signature user data. |  |
-|**issuer** | [**DiiaIssuerOutput**](DiiaIssuerOutput.md) | Diia.Signature issuer data. |  |
+|**subject** | [**DiiaSubjectOutput**](DiiaSubjectOutput.md) | Diia.Signature user data. |  [optional] |
+|**issuer** | [**DiiaIssuerOutput**](DiiaIssuerOutput.md) | Diia.Signature issuer data. |  [optional] |
 
 
 

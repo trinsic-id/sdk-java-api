@@ -11,6 +11,7 @@
 |**type** | **String** | The type of the Attachment.              Possible values: - \&quot;selfie\&quot; - \&quot;document_front\&quot; - \&quot;document_back\&quot; - \&quot;document_portrait\&quot; - \&quot;document_signature\&quot; - \&quot;document_scan_report\&quot;              Additional attachment types may be defined for specific Providers. |  |
 |**contentType** | **String** | The MIME type of the attachment&#39;s contents; eg, \&quot;image/jpeg\&quot; or \&quot;application/pdf\&quot;. |  |
 |**sizeBytes** | **Integer** | The size in bytes of the attachment. |  |
+|**hpkeEncrypted** | **Boolean** | Whether the attachment contents are encrypted via HPKE and must be decrypted using your private key. |  [optional] |
 
 
 

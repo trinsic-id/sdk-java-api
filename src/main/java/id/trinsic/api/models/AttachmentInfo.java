@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,9 +41,10 @@ import id.trinsic.ApiClient;
   AttachmentInfo.JSON_PROPERTY_ID,
   AttachmentInfo.JSON_PROPERTY_TYPE,
   AttachmentInfo.JSON_PROPERTY_CONTENT_TYPE,
-  AttachmentInfo.JSON_PROPERTY_SIZE_BYTES
+  AttachmentInfo.JSON_PROPERTY_SIZE_BYTES,
+  AttachmentInfo.JSON_PROPERTY_HPKE_ENCRYPTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AttachmentInfo {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -56,6 +61,9 @@ public class AttachmentInfo {
   public static final String JSON_PROPERTY_SIZE_BYTES = "sizeBytes";
   @javax.annotation.Nonnull
   private Integer sizeBytes;
+
+  public static final String JSON_PROPERTY_HPKE_ENCRYPTED = "hpkeEncrypted";
+  private JsonNullable<Boolean> hpkeEncrypted = JsonNullable.<Boolean>undefined();
 
   public AttachmentInfo() { 
   }
@@ -156,6 +164,38 @@ public class AttachmentInfo {
   }
 
 
+  public AttachmentInfo hpkeEncrypted(@javax.annotation.Nullable Boolean hpkeEncrypted) {
+    this.hpkeEncrypted = JsonNullable.<Boolean>of(hpkeEncrypted);
+    return this;
+  }
+
+  /**
+   * Whether the attachment contents are encrypted via HPKE and must be decrypted using your private key.
+   * @return hpkeEncrypted
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getHpkeEncrypted() {
+        return hpkeEncrypted.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_HPKE_ENCRYPTED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getHpkeEncrypted_JsonNullable() {
+    return hpkeEncrypted;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_HPKE_ENCRYPTED)
+  public void setHpkeEncrypted_JsonNullable(JsonNullable<Boolean> hpkeEncrypted) {
+    this.hpkeEncrypted = hpkeEncrypted;
+  }
+
+  public void setHpkeEncrypted(@javax.annotation.Nullable Boolean hpkeEncrypted) {
+    this.hpkeEncrypted = JsonNullable.<Boolean>of(hpkeEncrypted);
+  }
+
+
   /**
    * Return true if this AttachmentInfo object is equal to o.
    */
@@ -171,12 +211,24 @@ public class AttachmentInfo {
     return Objects.equals(this.id, attachmentInfo.id) &&
         Objects.equals(this.type, attachmentInfo.type) &&
         Objects.equals(this.contentType, attachmentInfo.contentType) &&
-        Objects.equals(this.sizeBytes, attachmentInfo.sizeBytes);
+        Objects.equals(this.sizeBytes, attachmentInfo.sizeBytes) &&
+        equalsNullable(this.hpkeEncrypted, attachmentInfo.hpkeEncrypted);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, contentType, sizeBytes);
+    return Objects.hash(id, type, contentType, sizeBytes, hashCodeNullable(hpkeEncrypted));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -187,6 +239,7 @@ public class AttachmentInfo {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    sizeBytes: ").append(toIndentedString(sizeBytes)).append("\n");
+    sb.append("    hpkeEncrypted: ").append(toIndentedString(hpkeEncrypted)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -249,6 +302,11 @@ public class AttachmentInfo {
     // add `sizeBytes` to the URL query string
     if (getSizeBytes() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%ssizeBytes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSizeBytes()))));
+    }
+
+    // add `hpkeEncrypted` to the URL query string
+    if (getHpkeEncrypted() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%shpkeEncrypted%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHpkeEncrypted()))));
     }
 
     return joiner.toString();

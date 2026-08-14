@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.AgeOverOutput;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -51,22 +50,6 @@ class EudiAgeVerificationCredentialTest {
     @Test
     void ageOverTest() {
         // TODO: test ageOver
-    }
-
-    /**
-     * Test the property 'expiryDate'
-     */
-    @Test
-    void expiryDateTest() {
-        // TODO: test expiryDate
-    }
-
-    /**
-     * Test the property 'issuingCountry'
-     */
-    @Test
-    void issuingCountryTest() {
-        // TODO: test issuingCountry
     }
 
 }

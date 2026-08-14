@@ -41,11 +41,10 @@ import id.trinsic.ApiClient;
   AppleWalletDigitalIdBirthDate.JSON_PROPERTY_DATE_OF_BIRTH,
   AppleWalletDigitalIdBirthDate.JSON_PROPERTY_APPROXIMATE_MASK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AppleWalletDigitalIdBirthDate {
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private LocalDate dateOfBirth;
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public static final String JSON_PROPERTY_APPROXIMATE_MASK = "approximateMask";
   private JsonNullable<String> approximateMask = JsonNullable.<String>undefined();
@@ -53,8 +52,8 @@ public class AppleWalletDigitalIdBirthDate {
   public AppleWalletDigitalIdBirthDate() { 
   }
 
-  public AppleWalletDigitalIdBirthDate dateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+  public AppleWalletDigitalIdBirthDate dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
     return this;
   }
 
@@ -62,18 +61,26 @@ public class AppleWalletDigitalIdBirthDate {
    * The encoded date of birth.
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public LocalDate getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull LocalDate dateOfBirth) {
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
   }
 
 
@@ -121,7 +128,7 @@ public class AppleWalletDigitalIdBirthDate {
       return false;
     }
     AppleWalletDigitalIdBirthDate appleWalletDigitalIdBirthDate = (AppleWalletDigitalIdBirthDate) o;
-    return Objects.equals(this.dateOfBirth, appleWalletDigitalIdBirthDate.dateOfBirth) &&
+    return equalsNullable(this.dateOfBirth, appleWalletDigitalIdBirthDate.dateOfBirth) &&
         equalsNullable(this.approximateMask, appleWalletDigitalIdBirthDate.approximateMask);
   }
 
@@ -131,7 +138,7 @@ public class AppleWalletDigitalIdBirthDate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, hashCodeNullable(approximateMask));
+    return Objects.hash(hashCodeNullable(dateOfBirth), hashCodeNullable(approximateMask));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

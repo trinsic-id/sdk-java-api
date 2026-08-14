@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -37,12 +38,16 @@ import id.trinsic.ApiClient;
  * GuatemalaCuiLookupInput
  */
 @JsonPropertyOrder({
-  GuatemalaCuiLookupInput.JSON_PROPERTY_DOCUMENT_NUMBER
+  GuatemalaCuiLookupInput.JSON_PROPERTY_DOCUMENT_NUMBER,
+  GuatemalaCuiLookupInput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GuatemalaCuiLookupInput {
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
   private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
+  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
 
   public GuatemalaCuiLookupInput() { 
   }
@@ -79,6 +84,38 @@ public class GuatemalaCuiLookupInput {
   }
 
 
+  public GuatemalaCuiLookupInput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s date of birth.              Must match the record in order to retrieve the individual&#39;s details.
+   * @return dateOfBirth
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public LocalDate getDateOfBirth() {
+        return dateOfBirth.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
+
+
   /**
    * Return true if this GuatemalaCuiLookupInput object is equal to o.
    */
@@ -91,7 +128,8 @@ public class GuatemalaCuiLookupInput {
       return false;
     }
     GuatemalaCuiLookupInput guatemalaCuiLookupInput = (GuatemalaCuiLookupInput) o;
-    return equalsNullable(this.documentNumber, guatemalaCuiLookupInput.documentNumber);
+    return equalsNullable(this.documentNumber, guatemalaCuiLookupInput.documentNumber) &&
+        equalsNullable(this.dateOfBirth, guatemalaCuiLookupInput.dateOfBirth);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -100,7 +138,7 @@ public class GuatemalaCuiLookupInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(documentNumber));
+    return Objects.hash(hashCodeNullable(documentNumber), hashCodeNullable(dateOfBirth));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -115,6 +153,7 @@ public class GuatemalaCuiLookupInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class GuatemalaCuiLookupInput {\n");
     sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -162,6 +201,11 @@ public class GuatemalaCuiLookupInput {
     // add `documentNumber` to the URL query string
     if (getDocumentNumber() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sdocumentNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDocumentNumber()))));
+    }
+
+    // add `dateOfBirth` to the URL query string
+    if (getDateOfBirth() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     return joiner.toString();

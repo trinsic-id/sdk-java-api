@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -41,36 +40,27 @@ import id.trinsic.ApiClient;
   PanamaCedulaProviderOutput.JSON_PROPERTY_FULL_NAME,
   PanamaCedulaProviderOutput.JSON_PROPERTY_GIVEN_NAME,
   PanamaCedulaProviderOutput.JSON_PROPERTY_FAMILY_NAME,
-  PanamaCedulaProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   PanamaCedulaProviderOutput.JSON_PROPERTY_DOCUMENT_NUMBER,
   PanamaCedulaProviderOutput.JSON_PROPERTY_NATIONALITY_OR_RESIDENCE_TYPE,
   PanamaCedulaProviderOutput.JSON_PROPERTY_SUBDIVISION_OF_ORIGIN,
   PanamaCedulaProviderOutput.JSON_PROPERTY_SUBDIVISION_OF_ORIGIN_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PanamaCedulaProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private String fullName;
+  private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
-  @javax.annotation.Nonnull
-  private String givenName;
+  private JsonNullable<String> givenName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
-  @javax.annotation.Nonnull
-  private String familyName;
-
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+  private JsonNullable<String> familyName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
-  @javax.annotation.Nonnull
-  private String documentNumber;
+  private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_NATIONALITY_OR_RESIDENCE_TYPE = "nationalityOrResidenceType";
-  @javax.annotation.Nonnull
-  private String nationalityOrResidenceType;
+  private JsonNullable<String> nationalityOrResidenceType = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SUBDIVISION_OF_ORIGIN = "subdivisionOfOrigin";
   private JsonNullable<String> subdivisionOfOrigin = JsonNullable.<String>undefined();
@@ -81,8 +71,8 @@ public class PanamaCedulaProviderOutput {
   public PanamaCedulaProviderOutput() { 
   }
 
-  public PanamaCedulaProviderOutput fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
+  public PanamaCedulaProviderOutput fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
     return this;
   }
 
@@ -90,23 +80,31 @@ public class PanamaCedulaProviderOutput {
    * Full name from Tribunal Electoral records.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
+  public JsonNullable<String> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<String> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = JsonNullable.<String>of(fullName);
+  }
 
-  public PanamaCedulaProviderOutput givenName(@javax.annotation.Nonnull String givenName) {
-    this.givenName = givenName;
+
+  public PanamaCedulaProviderOutput givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
     return this;
   }
 
@@ -114,23 +112,31 @@ public class PanamaCedulaProviderOutput {
    * Given name(s) from Tribunal Electoral records.
    * @return givenName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getGivenName() {
-    return givenName;
+        return givenName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setGivenName(@javax.annotation.Nonnull String givenName) {
+  public JsonNullable<String> getGivenName_JsonNullable() {
+    return givenName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  public void setGivenName_JsonNullable(JsonNullable<String> givenName) {
     this.givenName = givenName;
   }
 
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = JsonNullable.<String>of(givenName);
+  }
 
-  public PanamaCedulaProviderOutput familyName(@javax.annotation.Nonnull String familyName) {
-    this.familyName = familyName;
+
+  public PanamaCedulaProviderOutput familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
     return this;
   }
 
@@ -138,55 +144,31 @@ public class PanamaCedulaProviderOutput {
    * Family name(s) from Tribunal Electoral records.
    * @return familyName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFamilyName() {
-    return familyName;
+        return familyName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
+  public JsonNullable<String> getFamilyName_JsonNullable() {
+    return familyName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
+  public void setFamilyName_JsonNullable(JsonNullable<String> familyName) {
     this.familyName = familyName;
   }
 
-
-  public PanamaCedulaProviderOutput dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
-    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
-    return this;
-  }
-
-  /**
-   * Verified date of birth from Tribunal Electoral records.
-   * @return dateOfBirth
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public LocalDate getDateOfBirth() {
-        return dateOfBirth.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<LocalDate> getDateOfBirth_JsonNullable() {
-    return dateOfBirth;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  public void setDateOfBirth_JsonNullable(JsonNullable<LocalDate> dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-  }
-
-  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
-    this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = JsonNullable.<String>of(familyName);
   }
 
 
-  public PanamaCedulaProviderOutput documentNumber(@javax.annotation.Nonnull String documentNumber) {
-    this.documentNumber = documentNumber;
+  public PanamaCedulaProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
     return this;
   }
 
@@ -194,23 +176,31 @@ public class PanamaCedulaProviderOutput {
    * The matched personal identity cédula (Cédula de Identidad Personal) number from Tribunal Electoral records.              On output, Trinsic applies the same normalization as for lookup input. Structure is always {firstSegment}-{libro}-{tomo}: libro is one to four digits and tomo is one to six digits, separated by hyphens.              Citizen category and format: - Born in Panama format: {province}-{libro}-{tomo} ({province} is official code 1 through 13). Examples   8-1234-12345, 4-56-789, 12-12-12345. - Panamanian born abroad format: PE-{libro}-{tomo}. Example PE-1234-12345. - Foreign national with cédula format: E-{libro}-{tomo}. Examples E-1234-12345, E-8-102017. - Naturalized citizen format: N-{libro}-{tomo}. Example N-1234-12345. - Pre-2006 civil registry (AV) format: {province}AV-{libro}-{tomo}. Example 10AV-1234-12345. - Indigenous (PI) format: {province}PI-{libro}-{tomo}. Example 1PI-1234-12345.
    * @return documentNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDocumentNumber() {
-    return documentNumber;
+        return documentNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DOCUMENT_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocumentNumber(@javax.annotation.Nonnull String documentNumber) {
+  public JsonNullable<String> getDocumentNumber_JsonNullable() {
+    return documentNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
+  public void setDocumentNumber_JsonNullable(JsonNullable<String> documentNumber) {
     this.documentNumber = documentNumber;
   }
 
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+    this.documentNumber = JsonNullable.<String>of(documentNumber);
+  }
 
-  public PanamaCedulaProviderOutput nationalityOrResidenceType(@javax.annotation.Nonnull String nationalityOrResidenceType) {
-    this.nationalityOrResidenceType = nationalityOrResidenceType;
+
+  public PanamaCedulaProviderOutput nationalityOrResidenceType(@javax.annotation.Nullable String nationalityOrResidenceType) {
+    this.nationalityOrResidenceType = JsonNullable.<String>of(nationalityOrResidenceType);
     return this;
   }
 
@@ -218,18 +208,26 @@ public class PanamaCedulaProviderOutput {
    * Inferred from DocumentNumber. Values are nationality or residence category.              Possible values: - BornInPanama - ForeignNational - BornAbroad - Naturalized - LegacyNumber - Indigenous - Unknown (we were unable to determine the category)
    * @return nationalityOrResidenceType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONALITY_OR_RESIDENCE_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getNationalityOrResidenceType() {
-    return nationalityOrResidenceType;
+        return nationalityOrResidenceType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONALITY_OR_RESIDENCE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONALITY_OR_RESIDENCE_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalityOrResidenceType(@javax.annotation.Nonnull String nationalityOrResidenceType) {
+  public JsonNullable<String> getNationalityOrResidenceType_JsonNullable() {
+    return nationalityOrResidenceType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONALITY_OR_RESIDENCE_TYPE)
+  public void setNationalityOrResidenceType_JsonNullable(JsonNullable<String> nationalityOrResidenceType) {
     this.nationalityOrResidenceType = nationalityOrResidenceType;
+  }
+
+  public void setNationalityOrResidenceType(@javax.annotation.Nullable String nationalityOrResidenceType) {
+    this.nationalityOrResidenceType = JsonNullable.<String>of(nationalityOrResidenceType);
   }
 
 
@@ -309,12 +307,11 @@ public class PanamaCedulaProviderOutput {
       return false;
     }
     PanamaCedulaProviderOutput panamaCedulaProviderOutput = (PanamaCedulaProviderOutput) o;
-    return Objects.equals(this.fullName, panamaCedulaProviderOutput.fullName) &&
-        Objects.equals(this.givenName, panamaCedulaProviderOutput.givenName) &&
-        Objects.equals(this.familyName, panamaCedulaProviderOutput.familyName) &&
-        equalsNullable(this.dateOfBirth, panamaCedulaProviderOutput.dateOfBirth) &&
-        Objects.equals(this.documentNumber, panamaCedulaProviderOutput.documentNumber) &&
-        Objects.equals(this.nationalityOrResidenceType, panamaCedulaProviderOutput.nationalityOrResidenceType) &&
+    return equalsNullable(this.fullName, panamaCedulaProviderOutput.fullName) &&
+        equalsNullable(this.givenName, panamaCedulaProviderOutput.givenName) &&
+        equalsNullable(this.familyName, panamaCedulaProviderOutput.familyName) &&
+        equalsNullable(this.documentNumber, panamaCedulaProviderOutput.documentNumber) &&
+        equalsNullable(this.nationalityOrResidenceType, panamaCedulaProviderOutput.nationalityOrResidenceType) &&
         equalsNullable(this.subdivisionOfOrigin, panamaCedulaProviderOutput.subdivisionOfOrigin) &&
         equalsNullable(this.subdivisionOfOriginName, panamaCedulaProviderOutput.subdivisionOfOriginName);
   }
@@ -325,7 +322,7 @@ public class PanamaCedulaProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fullName, givenName, familyName, hashCodeNullable(dateOfBirth), documentNumber, nationalityOrResidenceType, hashCodeNullable(subdivisionOfOrigin), hashCodeNullable(subdivisionOfOriginName));
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(documentNumber), hashCodeNullable(nationalityOrResidenceType), hashCodeNullable(subdivisionOfOrigin), hashCodeNullable(subdivisionOfOriginName));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -342,7 +339,6 @@ public class PanamaCedulaProviderOutput {
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
     sb.append("    nationalityOrResidenceType: ").append(toIndentedString(nationalityOrResidenceType)).append("\n");
     sb.append("    subdivisionOfOrigin: ").append(toIndentedString(subdivisionOfOrigin)).append("\n");
@@ -404,11 +400,6 @@ public class PanamaCedulaProviderOutput {
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
-    }
-
-    // add `dateOfBirth` to the URL query string
-    if (getDateOfBirth() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
     }
 
     // add `documentNumber` to the URL query string

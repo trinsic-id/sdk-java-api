@@ -42,11 +42,10 @@ import id.trinsic.ApiClient;
   BrazilCnhFacialBiometryOutput.JSON_PROPERTY_SIMILARITY_SCORE,
   BrazilCnhFacialBiometryOutput.JSON_PROPERTY_LIVENESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BrazilCnhFacialBiometryOutput {
   public static final String JSON_PROPERTY_DATABASE_FACE_AVAILABLE = "databaseFaceAvailable";
-  @javax.annotation.Nonnull
-  private Boolean databaseFaceAvailable;
+  private JsonNullable<Boolean> databaseFaceAvailable = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_PROBABILITY = "probability";
   private JsonNullable<String> probability = JsonNullable.<String>undefined();
@@ -60,8 +59,8 @@ public class BrazilCnhFacialBiometryOutput {
   public BrazilCnhFacialBiometryOutput() { 
   }
 
-  public BrazilCnhFacialBiometryOutput databaseFaceAvailable(@javax.annotation.Nonnull Boolean databaseFaceAvailable) {
-    this.databaseFaceAvailable = databaseFaceAvailable;
+  public BrazilCnhFacialBiometryOutput databaseFaceAvailable(@javax.annotation.Nullable Boolean databaseFaceAvailable) {
+    this.databaseFaceAvailable = JsonNullable.<Boolean>of(databaseFaceAvailable);
     return this;
   }
 
@@ -69,18 +68,26 @@ public class BrazilCnhFacialBiometryOutput {
    * Whether the government database had facial biometrics available for comparison.
    * @return databaseFaceAvailable
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATABASE_FACE_AVAILABLE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Boolean getDatabaseFaceAvailable() {
-    return databaseFaceAvailable;
+        return databaseFaceAvailable.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATABASE_FACE_AVAILABLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATABASE_FACE_AVAILABLE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDatabaseFaceAvailable(@javax.annotation.Nonnull Boolean databaseFaceAvailable) {
+  public JsonNullable<Boolean> getDatabaseFaceAvailable_JsonNullable() {
+    return databaseFaceAvailable;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATABASE_FACE_AVAILABLE)
+  public void setDatabaseFaceAvailable_JsonNullable(JsonNullable<Boolean> databaseFaceAvailable) {
     this.databaseFaceAvailable = databaseFaceAvailable;
+  }
+
+  public void setDatabaseFaceAvailable(@javax.annotation.Nullable Boolean databaseFaceAvailable) {
+    this.databaseFaceAvailable = JsonNullable.<Boolean>of(databaseFaceAvailable);
   }
 
 
@@ -192,7 +199,7 @@ public class BrazilCnhFacialBiometryOutput {
       return false;
     }
     BrazilCnhFacialBiometryOutput brazilCnhFacialBiometryOutput = (BrazilCnhFacialBiometryOutput) o;
-    return Objects.equals(this.databaseFaceAvailable, brazilCnhFacialBiometryOutput.databaseFaceAvailable) &&
+    return equalsNullable(this.databaseFaceAvailable, brazilCnhFacialBiometryOutput.databaseFaceAvailable) &&
         equalsNullable(this.probability, brazilCnhFacialBiometryOutput.probability) &&
         equalsNullable(this.similarityScore, brazilCnhFacialBiometryOutput.similarityScore) &&
         equalsNullable(this.liveness, brazilCnhFacialBiometryOutput.liveness);
@@ -204,7 +211,7 @@ public class BrazilCnhFacialBiometryOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(databaseFaceAvailable, hashCodeNullable(probability), hashCodeNullable(similarityScore), hashCodeNullable(liveness));
+    return Objects.hash(hashCodeNullable(databaseFaceAvailable), hashCodeNullable(probability), hashCodeNullable(similarityScore), hashCodeNullable(liveness));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

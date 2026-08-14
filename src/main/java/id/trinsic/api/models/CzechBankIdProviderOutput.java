@@ -77,11 +77,10 @@ import id.trinsic.ApiClient;
   CzechBankIdProviderOutput.JSON_PROPERTY_LOCALE,
   CzechBankIdProviderOutput.JSON_PROPERTY_TITLES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CzechBankIdProviderOutput {
   public static final String JSON_PROPERTY_SUBJECT_IDENTIFIER = "subjectIdentifier";
-  @javax.annotation.Nonnull
-  private String subjectIdentifier;
+  private JsonNullable<String> subjectIdentifier = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -176,8 +175,8 @@ public class CzechBankIdProviderOutput {
   public CzechBankIdProviderOutput() { 
   }
 
-  public CzechBankIdProviderOutput subjectIdentifier(@javax.annotation.Nonnull String subjectIdentifier) {
-    this.subjectIdentifier = subjectIdentifier;
+  public CzechBankIdProviderOutput subjectIdentifier(@javax.annotation.Nullable String subjectIdentifier) {
+    this.subjectIdentifier = JsonNullable.<String>of(subjectIdentifier);
     return this;
   }
 
@@ -185,18 +184,26 @@ public class CzechBankIdProviderOutput {
    * The subject identifier for the verified individual.
    * @return subjectIdentifier
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT_IDENTIFIER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSubjectIdentifier() {
-    return subjectIdentifier;
+        return subjectIdentifier.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SUBJECT_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT_IDENTIFIER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSubjectIdentifier(@javax.annotation.Nonnull String subjectIdentifier) {
+  public JsonNullable<String> getSubjectIdentifier_JsonNullable() {
+    return subjectIdentifier;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUBJECT_IDENTIFIER)
+  public void setSubjectIdentifier_JsonNullable(JsonNullable<String> subjectIdentifier) {
     this.subjectIdentifier = subjectIdentifier;
+  }
+
+  public void setSubjectIdentifier(@javax.annotation.Nullable String subjectIdentifier) {
+    this.subjectIdentifier = JsonNullable.<String>of(subjectIdentifier);
   }
 
 
@@ -1220,7 +1227,7 @@ public class CzechBankIdProviderOutput {
       return false;
     }
     CzechBankIdProviderOutput czechBankIdProviderOutput = (CzechBankIdProviderOutput) o;
-    return Objects.equals(this.subjectIdentifier, czechBankIdProviderOutput.subjectIdentifier) &&
+    return equalsNullable(this.subjectIdentifier, czechBankIdProviderOutput.subjectIdentifier) &&
         equalsNullable(this.fullName, czechBankIdProviderOutput.fullName) &&
         equalsNullable(this.givenName, czechBankIdProviderOutput.givenName) &&
         equalsNullable(this.familyName, czechBankIdProviderOutput.familyName) &&
@@ -1259,7 +1266,7 @@ public class CzechBankIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(subjectIdentifier, hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(middleName), hashCodeNullable(nickname), hashCodeNullable(preferredUsername), hashCodeNullable(gender), hashCodeNullable(dateOfBirth), hashCodeNullable(birthNumber), hashCodeNullable(age), hashCodeNullable(isAdult), hashCodeNullable(dateOfDeath), hashCodeNullable(birthPlace), hashCodeNullable(birthCountry), hashCodeNullable(primaryNationality), hashCodeNullable(nationalities), hashCodeNullable(maritalStatus), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(phoneNumber), hashCodeNullable(phoneNumberVerified), hashCodeNullable(isPoliticallyExposedPerson), hashCodeNullable(limitedLegalCapacity), hashCodeNullable(verification), hashCodeNullable(addresses), hashCodeNullable(idCards), hashCodeNullable(updatedAt), hashCodeNullable(zoneInfo), hashCodeNullable(locale), hashCodeNullable(titles));
+    return Objects.hash(hashCodeNullable(subjectIdentifier), hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(middleName), hashCodeNullable(nickname), hashCodeNullable(preferredUsername), hashCodeNullable(gender), hashCodeNullable(dateOfBirth), hashCodeNullable(birthNumber), hashCodeNullable(age), hashCodeNullable(isAdult), hashCodeNullable(dateOfDeath), hashCodeNullable(birthPlace), hashCodeNullable(birthCountry), hashCodeNullable(primaryNationality), hashCodeNullable(nationalities), hashCodeNullable(maritalStatus), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(phoneNumber), hashCodeNullable(phoneNumberVerified), hashCodeNullable(isPoliticallyExposedPerson), hashCodeNullable(limitedLegalCapacity), hashCodeNullable(verification), hashCodeNullable(addresses), hashCodeNullable(idCards), hashCodeNullable(updatedAt), hashCodeNullable(zoneInfo), hashCodeNullable(locale), hashCodeNullable(titles));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

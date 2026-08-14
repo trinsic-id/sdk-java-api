@@ -9,7 +9,7 @@ Vehicle restriction attached to a domestic driving privilege.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**code** | **String** | Restriction code, when present. |  [optional] |
-|**description** | **String** | Human-readable description of the restriction. |  |
+|**description** | **String** | Human-readable description of the restriction. |  [optional] |
 
 
 

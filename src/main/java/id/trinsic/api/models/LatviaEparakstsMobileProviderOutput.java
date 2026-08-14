@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,25 +41,22 @@ import id.trinsic.ApiClient;
   LatviaEparakstsMobileProviderOutput.JSON_PROPERTY_LAST_NAME,
   LatviaEparakstsMobileProviderOutput.JSON_PROPERTY_PERSONAL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class LatviaEparakstsMobileProviderOutput {
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-  @javax.annotation.Nonnull
-  private String firstName;
+  private JsonNullable<String> firstName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-  @javax.annotation.Nonnull
-  private String lastName;
+  private JsonNullable<String> lastName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PERSONAL_CODE = "personalCode";
-  @javax.annotation.Nonnull
-  private String personalCode;
+  private JsonNullable<String> personalCode = JsonNullable.<String>undefined();
 
   public LatviaEparakstsMobileProviderOutput() { 
   }
 
-  public LatviaEparakstsMobileProviderOutput firstName(@javax.annotation.Nonnull String firstName) {
-    this.firstName = firstName;
+  public LatviaEparakstsMobileProviderOutput firstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
     return this;
   }
 
@@ -63,23 +64,31 @@ public class LatviaEparakstsMobileProviderOutput {
    * The first name of the verified individual
    * @return firstName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getFirstName() {
-    return firstName;
+        return firstName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(@javax.annotation.Nonnull String firstName) {
+  public JsonNullable<String> getFirstName_JsonNullable() {
+    return firstName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  public void setFirstName_JsonNullable(JsonNullable<String> firstName) {
     this.firstName = firstName;
   }
 
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
+    this.firstName = JsonNullable.<String>of(firstName);
+  }
 
-  public LatviaEparakstsMobileProviderOutput lastName(@javax.annotation.Nonnull String lastName) {
-    this.lastName = lastName;
+
+  public LatviaEparakstsMobileProviderOutput lastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
     return this;
   }
 
@@ -87,23 +96,31 @@ public class LatviaEparakstsMobileProviderOutput {
    * The last name of the verified individual
    * @return lastName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getLastName() {
-    return lastName;
+        return lastName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(@javax.annotation.Nonnull String lastName) {
+  public JsonNullable<String> getLastName_JsonNullable() {
+    return lastName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  public void setLastName_JsonNullable(JsonNullable<String> lastName) {
     this.lastName = lastName;
   }
 
+  public void setLastName(@javax.annotation.Nullable String lastName) {
+    this.lastName = JsonNullable.<String>of(lastName);
+  }
 
-  public LatviaEparakstsMobileProviderOutput personalCode(@javax.annotation.Nonnull String personalCode) {
-    this.personalCode = personalCode;
+
+  public LatviaEparakstsMobileProviderOutput personalCode(@javax.annotation.Nullable String personalCode) {
+    this.personalCode = JsonNullable.<String>of(personalCode);
     return this;
   }
 
@@ -111,18 +128,26 @@ public class LatviaEparakstsMobileProviderOutput {
    * The 11-digit Latvian personal code (\&quot;personas kods\&quot;) of the verified individual.              This has two possible formats, depending on whether the personal code was issued after July 1, 2017.              For personal codes issued before July 1, 2017, the format is DDMMYY-CZZZQ, where: - DDMMYY is the date of birth, followed by an optional hyphen - C represents the century of birth (&#39;0&#39; for 1800-1899, &#39;1&#39; for 1900-1999, &#39;2&#39; for 2000-2099) - ZZZ is a serial number - Q is a checksum digit              For personal codes issued on or after July 1, 2017, the format is 32ZZZZZZZZQ, where: - 32 is a fixed prefix - ZZZZZZZQ are 8 random digits - Q is a checksum digit              NOTE: Individuals born before July 1, 2017 can elect to be issued a new personal code which does not contain their birthdate. Therefore, no concrete assumptions may be made about an individual&#39;s date of birth based solely on the format of their personal code.
    * @return personalCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getPersonalCode() {
-    return personalCode;
+        return personalCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PERSONAL_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PERSONAL_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPersonalCode(@javax.annotation.Nonnull String personalCode) {
+  public JsonNullable<String> getPersonalCode_JsonNullable() {
+    return personalCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PERSONAL_CODE)
+  public void setPersonalCode_JsonNullable(JsonNullable<String> personalCode) {
     this.personalCode = personalCode;
+  }
+
+  public void setPersonalCode(@javax.annotation.Nullable String personalCode) {
+    this.personalCode = JsonNullable.<String>of(personalCode);
   }
 
 
@@ -138,14 +163,25 @@ public class LatviaEparakstsMobileProviderOutput {
       return false;
     }
     LatviaEparakstsMobileProviderOutput latviaEparakstsMobileProviderOutput = (LatviaEparakstsMobileProviderOutput) o;
-    return Objects.equals(this.firstName, latviaEparakstsMobileProviderOutput.firstName) &&
-        Objects.equals(this.lastName, latviaEparakstsMobileProviderOutput.lastName) &&
-        Objects.equals(this.personalCode, latviaEparakstsMobileProviderOutput.personalCode);
+    return equalsNullable(this.firstName, latviaEparakstsMobileProviderOutput.firstName) &&
+        equalsNullable(this.lastName, latviaEparakstsMobileProviderOutput.lastName) &&
+        equalsNullable(this.personalCode, latviaEparakstsMobileProviderOutput.personalCode);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, personalCode);
+    return Objects.hash(hashCodeNullable(firstName), hashCodeNullable(lastName), hashCodeNullable(personalCode));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

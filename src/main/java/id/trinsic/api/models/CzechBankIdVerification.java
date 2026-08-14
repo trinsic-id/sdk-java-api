@@ -42,24 +42,22 @@ import id.trinsic.ApiClient;
   CzechBankIdVerification.JSON_PROPERTY_TIME,
   CzechBankIdVerification.JSON_PROPERTY_VERIFICATION_PROCESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CzechBankIdVerification {
   public static final String JSON_PROPERTY_TRUST_FRAMEWORK = "trustFramework";
-  @javax.annotation.Nonnull
-  private String trustFramework;
+  private JsonNullable<String> trustFramework = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_TIME = "time";
   private JsonNullable<OffsetDateTime> time = JsonNullable.<OffsetDateTime>undefined();
 
   public static final String JSON_PROPERTY_VERIFICATION_PROCESS = "verificationProcess";
-  @javax.annotation.Nonnull
-  private String verificationProcess;
+  private JsonNullable<String> verificationProcess = JsonNullable.<String>undefined();
 
   public CzechBankIdVerification() { 
   }
 
-  public CzechBankIdVerification trustFramework(@javax.annotation.Nonnull String trustFramework) {
-    this.trustFramework = trustFramework;
+  public CzechBankIdVerification trustFramework(@javax.annotation.Nullable String trustFramework) {
+    this.trustFramework = JsonNullable.<String>of(trustFramework);
     return this;
   }
 
@@ -67,18 +65,26 @@ public class CzechBankIdVerification {
    * The trust framework used for the verification.              This identifies the anti-money-laundering framework used for identity verification.
    * @return trustFramework
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_TRUST_FRAMEWORK, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getTrustFramework() {
-    return trustFramework;
+        return trustFramework.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_TRUST_FRAMEWORK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_TRUST_FRAMEWORK, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTrustFramework(@javax.annotation.Nonnull String trustFramework) {
+  public JsonNullable<String> getTrustFramework_JsonNullable() {
+    return trustFramework;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TRUST_FRAMEWORK)
+  public void setTrustFramework_JsonNullable(JsonNullable<String> trustFramework) {
     this.trustFramework = trustFramework;
+  }
+
+  public void setTrustFramework(@javax.annotation.Nullable String trustFramework) {
+    this.trustFramework = JsonNullable.<String>of(trustFramework);
   }
 
 
@@ -114,8 +120,8 @@ public class CzechBankIdVerification {
   }
 
 
-  public CzechBankIdVerification verificationProcess(@javax.annotation.Nonnull String verificationProcess) {
-    this.verificationProcess = verificationProcess;
+  public CzechBankIdVerification verificationProcess(@javax.annotation.Nullable String verificationProcess) {
+    this.verificationProcess = JsonNullable.<String>of(verificationProcess);
     return this;
   }
 
@@ -123,18 +129,26 @@ public class CzechBankIdVerification {
    * The verification process identifier.              This identifies the bank that completed the physical identity verification process.
    * @return verificationProcess
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROCESS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getVerificationProcess() {
-    return verificationProcess;
+        return verificationProcess.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROCESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VERIFICATION_PROCESS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setVerificationProcess(@javax.annotation.Nonnull String verificationProcess) {
+  public JsonNullable<String> getVerificationProcess_JsonNullable() {
+    return verificationProcess;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VERIFICATION_PROCESS)
+  public void setVerificationProcess_JsonNullable(JsonNullable<String> verificationProcess) {
     this.verificationProcess = verificationProcess;
+  }
+
+  public void setVerificationProcess(@javax.annotation.Nullable String verificationProcess) {
+    this.verificationProcess = JsonNullable.<String>of(verificationProcess);
   }
 
 
@@ -150,9 +164,9 @@ public class CzechBankIdVerification {
       return false;
     }
     CzechBankIdVerification czechBankIdVerification = (CzechBankIdVerification) o;
-    return Objects.equals(this.trustFramework, czechBankIdVerification.trustFramework) &&
+    return equalsNullable(this.trustFramework, czechBankIdVerification.trustFramework) &&
         equalsNullable(this.time, czechBankIdVerification.time) &&
-        Objects.equals(this.verificationProcess, czechBankIdVerification.verificationProcess);
+        equalsNullable(this.verificationProcess, czechBankIdVerification.verificationProcess);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -161,7 +175,7 @@ public class CzechBankIdVerification {
 
   @Override
   public int hashCode() {
-    return Objects.hash(trustFramework, hashCodeNullable(time), verificationProcess);
+    return Objects.hash(hashCodeNullable(trustFramework), hashCodeNullable(time), hashCodeNullable(verificationProcess));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

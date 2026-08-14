@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,21 +40,19 @@ import id.trinsic.ApiClient;
   Iso180132BiometricDataBlockProduct.JSON_PROPERTY_PRODUCT_OWNER,
   Iso180132BiometricDataBlockProduct.JSON_PROPERTY_PRODUCT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Iso180132BiometricDataBlockProduct {
   public static final String JSON_PROPERTY_PRODUCT_OWNER = "productOwner";
-  @javax.annotation.Nonnull
-  private Integer productOwner;
+  private JsonNullable<Integer> productOwner = JsonNullable.<Integer>undefined();
 
   public static final String JSON_PROPERTY_PRODUCT_TYPE = "productType";
-  @javax.annotation.Nonnull
-  private Integer productType;
+  private JsonNullable<Integer> productType = JsonNullable.<Integer>undefined();
 
   public Iso180132BiometricDataBlockProduct() { 
   }
 
-  public Iso180132BiometricDataBlockProduct productOwner(@javax.annotation.Nonnull Integer productOwner) {
-    this.productOwner = productOwner;
+  public Iso180132BiometricDataBlockProduct productOwner(@javax.annotation.Nullable Integer productOwner) {
+    this.productOwner = JsonNullable.<Integer>of(productOwner);
     return this;
   }
 
@@ -58,23 +60,31 @@ public class Iso180132BiometricDataBlockProduct {
    * Identifier of the product owner.
    * @return productOwner
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PRODUCT_OWNER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getProductOwner() {
-    return productOwner;
+        return productOwner.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PRODUCT_OWNER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProductOwner(@javax.annotation.Nonnull Integer productOwner) {
+  public JsonNullable<Integer> getProductOwner_JsonNullable() {
+    return productOwner;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PRODUCT_OWNER)
+  public void setProductOwner_JsonNullable(JsonNullable<Integer> productOwner) {
     this.productOwner = productOwner;
   }
 
+  public void setProductOwner(@javax.annotation.Nullable Integer productOwner) {
+    this.productOwner = JsonNullable.<Integer>of(productOwner);
+  }
 
-  public Iso180132BiometricDataBlockProduct productType(@javax.annotation.Nonnull Integer productType) {
-    this.productType = productType;
+
+  public Iso180132BiometricDataBlockProduct productType(@javax.annotation.Nullable Integer productType) {
+    this.productType = JsonNullable.<Integer>of(productType);
     return this;
   }
 
@@ -82,18 +92,26 @@ public class Iso180132BiometricDataBlockProduct {
    * Identifier of the product type.
    * @return productType
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public Integer getProductType() {
-    return productType;
+        return productType.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProductType(@javax.annotation.Nonnull Integer productType) {
+  public JsonNullable<Integer> getProductType_JsonNullable() {
+    return productType;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  public void setProductType_JsonNullable(JsonNullable<Integer> productType) {
     this.productType = productType;
+  }
+
+  public void setProductType(@javax.annotation.Nullable Integer productType) {
+    this.productType = JsonNullable.<Integer>of(productType);
   }
 
 
@@ -109,13 +127,24 @@ public class Iso180132BiometricDataBlockProduct {
       return false;
     }
     Iso180132BiometricDataBlockProduct iso180132BiometricDataBlockProduct = (Iso180132BiometricDataBlockProduct) o;
-    return Objects.equals(this.productOwner, iso180132BiometricDataBlockProduct.productOwner) &&
-        Objects.equals(this.productType, iso180132BiometricDataBlockProduct.productType);
+    return equalsNullable(this.productOwner, iso180132BiometricDataBlockProduct.productOwner) &&
+        equalsNullable(this.productType, iso180132BiometricDataBlockProduct.productType);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productOwner, productType);
+    return Objects.hash(hashCodeNullable(productOwner), hashCodeNullable(productType));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

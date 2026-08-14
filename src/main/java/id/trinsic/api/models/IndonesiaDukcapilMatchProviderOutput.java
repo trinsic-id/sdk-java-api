@@ -53,46 +53,37 @@ import id.trinsic.ApiClient;
   IndonesiaDukcapilMatchProviderOutput.JSON_PROPERTY_CONSENT_GIVEN_AT,
   IndonesiaDukcapilMatchProviderOutput.JSON_PROPERTY_EMAIL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndonesiaDukcapilMatchProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
-  @javax.annotation.Nonnull
-  private IndonesiaDukcapilMatchNationalIdNumberField nationalIdNumber;
+  private JsonNullable<IndonesiaDukcapilMatchNationalIdNumberField> nationalIdNumber = JsonNullable.<IndonesiaDukcapilMatchNationalIdNumberField>undefined();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
-  @javax.annotation.Nonnull
-  private IndonesiaDukcapilMatchFullNameField fullName;
+  private JsonNullable<IndonesiaDukcapilMatchFullNameField> fullName = JsonNullable.<IndonesiaDukcapilMatchFullNameField>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
-  @javax.annotation.Nonnull
-  private IndonesiaDukcapilMatchDateOfBirthField dateOfBirth;
+  private JsonNullable<IndonesiaDukcapilMatchDateOfBirthField> dateOfBirth = JsonNullable.<IndonesiaDukcapilMatchDateOfBirthField>undefined();
 
   public static final String JSON_PROPERTY_PROVINCE_CODE = "provinceCode";
-  @javax.annotation.Nonnull
-  private String provinceCode;
+  private JsonNullable<String> provinceCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_REGENCY_OR_CITY_CODE = "regencyOrCityCode";
-  @javax.annotation.Nonnull
-  private String regencyOrCityCode;
+  private JsonNullable<String> regencyOrCityCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DISTRICT_CODE = "districtCode";
-  @javax.annotation.Nonnull
-  private String districtCode;
+  private JsonNullable<String> districtCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SEX_NATIONAL_ID_NUMBER = "sexNationalIdNumber";
-  @javax.annotation.Nonnull
-  private String sexNationalIdNumber;
+  private JsonNullable<String> sexNationalIdNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
-  @javax.annotation.Nonnull
-  private String serialNumber;
+  private JsonNullable<String> serialNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_CONSENT_GIVEN_AT = "consentGivenAt";
-  @javax.annotation.Nonnull
-  private OffsetDateTime consentGivenAt;
+  private JsonNullable<OffsetDateTime> consentGivenAt = JsonNullable.<OffsetDateTime>undefined();
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   private JsonNullable<String> email = JsonNullable.<String>undefined();
@@ -100,8 +91,8 @@ public class IndonesiaDukcapilMatchProviderOutput {
   public IndonesiaDukcapilMatchProviderOutput() { 
   }
 
-  public IndonesiaDukcapilMatchProviderOutput nationalIdNumber(@javax.annotation.Nonnull IndonesiaDukcapilMatchNationalIdNumberField nationalIdNumber) {
-    this.nationalIdNumber = nationalIdNumber;
+  public IndonesiaDukcapilMatchProviderOutput nationalIdNumber(@javax.annotation.Nullable IndonesiaDukcapilMatchNationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<IndonesiaDukcapilMatchNationalIdNumberField>of(nationalIdNumber);
     return this;
   }
 
@@ -109,23 +100,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * NIK submitted for this Dukcapil match and the assessment result returned for that value.
    * @return nationalIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public IndonesiaDukcapilMatchNationalIdNumberField getNationalIdNumber() {
-    return nationalIdNumber;
+        return nationalIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNationalIdNumber(@javax.annotation.Nonnull IndonesiaDukcapilMatchNationalIdNumberField nationalIdNumber) {
+  public JsonNullable<IndonesiaDukcapilMatchNationalIdNumberField> getNationalIdNumber_JsonNullable() {
+    return nationalIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID_NUMBER)
+  public void setNationalIdNumber_JsonNullable(JsonNullable<IndonesiaDukcapilMatchNationalIdNumberField> nationalIdNumber) {
     this.nationalIdNumber = nationalIdNumber;
   }
 
+  public void setNationalIdNumber(@javax.annotation.Nullable IndonesiaDukcapilMatchNationalIdNumberField nationalIdNumber) {
+    this.nationalIdNumber = JsonNullable.<IndonesiaDukcapilMatchNationalIdNumberField>of(nationalIdNumber);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput fullName(@javax.annotation.Nonnull IndonesiaDukcapilMatchFullNameField fullName) {
-    this.fullName = fullName;
+
+  public IndonesiaDukcapilMatchProviderOutput fullName(@javax.annotation.Nullable IndonesiaDukcapilMatchFullNameField fullName) {
+    this.fullName = JsonNullable.<IndonesiaDukcapilMatchFullNameField>of(fullName);
     return this;
   }
 
@@ -133,23 +132,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Full name submitted for this Dukcapil match and the assessment result returned for that value.
    * @return fullName
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public IndonesiaDukcapilMatchFullNameField getFullName() {
-    return fullName;
+        return fullName.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull IndonesiaDukcapilMatchFullNameField fullName) {
+  public JsonNullable<IndonesiaDukcapilMatchFullNameField> getFullName_JsonNullable() {
+    return fullName;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  public void setFullName_JsonNullable(JsonNullable<IndonesiaDukcapilMatchFullNameField> fullName) {
     this.fullName = fullName;
   }
 
+  public void setFullName(@javax.annotation.Nullable IndonesiaDukcapilMatchFullNameField fullName) {
+    this.fullName = JsonNullable.<IndonesiaDukcapilMatchFullNameField>of(fullName);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput dateOfBirth(@javax.annotation.Nonnull IndonesiaDukcapilMatchDateOfBirthField dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+
+  public IndonesiaDukcapilMatchProviderOutput dateOfBirth(@javax.annotation.Nullable IndonesiaDukcapilMatchDateOfBirthField dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<IndonesiaDukcapilMatchDateOfBirthField>of(dateOfBirth);
     return this;
   }
 
@@ -157,23 +164,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Date of birth submitted for this Dukcapil match and the assessment result returned for that value.
    * @return dateOfBirth
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public IndonesiaDukcapilMatchDateOfBirthField getDateOfBirth() {
-    return dateOfBirth;
+        return dateOfBirth.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DATE_OF_BIRTH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDateOfBirth(@javax.annotation.Nonnull IndonesiaDukcapilMatchDateOfBirthField dateOfBirth) {
+  public JsonNullable<IndonesiaDukcapilMatchDateOfBirthField> getDateOfBirth_JsonNullable() {
+    return dateOfBirth;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  public void setDateOfBirth_JsonNullable(JsonNullable<IndonesiaDukcapilMatchDateOfBirthField> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
+  public void setDateOfBirth(@javax.annotation.Nullable IndonesiaDukcapilMatchDateOfBirthField dateOfBirth) {
+    this.dateOfBirth = JsonNullable.<IndonesiaDukcapilMatchDateOfBirthField>of(dateOfBirth);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput provinceCode(@javax.annotation.Nonnull String provinceCode) {
-    this.provinceCode = provinceCode;
+
+  public IndonesiaDukcapilMatchProviderOutput provinceCode(@javax.annotation.Nullable String provinceCode) {
+    this.provinceCode = JsonNullable.<String>of(provinceCode);
     return this;
   }
 
@@ -181,23 +196,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Two-digit Indonesian government administrative region code for the province, extracted from digits 1-2 of the submitted NIK number.              Source system: Kode Wilayah Administrasi Pemerintahan, maintained by Indonesia&#39;s Ministry of Home Affairs. The first digit indicates the island group: 1-2 Sumatra, 3-4 Java, 5 Bali and Nusa Tenggara, 6 Kalimantan, 7 Sulawesi, 8 Maluku, and 9 Papua. The second digit follows the province creation order.
    * @return provinceCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_PROVINCE_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getProvinceCode() {
-    return provinceCode;
+        return provinceCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_PROVINCE_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_PROVINCE_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProvinceCode(@javax.annotation.Nonnull String provinceCode) {
+  public JsonNullable<String> getProvinceCode_JsonNullable() {
+    return provinceCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROVINCE_CODE)
+  public void setProvinceCode_JsonNullable(JsonNullable<String> provinceCode) {
     this.provinceCode = provinceCode;
   }
 
+  public void setProvinceCode(@javax.annotation.Nullable String provinceCode) {
+    this.provinceCode = JsonNullable.<String>of(provinceCode);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput regencyOrCityCode(@javax.annotation.Nonnull String regencyOrCityCode) {
-    this.regencyOrCityCode = regencyOrCityCode;
+
+  public IndonesiaDukcapilMatchProviderOutput regencyOrCityCode(@javax.annotation.Nullable String regencyOrCityCode) {
+    this.regencyOrCityCode = JsonNullable.<String>of(regencyOrCityCode);
     return this;
   }
 
@@ -205,23 +228,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Four-digit Indonesian government administrative region code for the regency or city, extracted from digits 1-4 of the submitted NIK number.              Source system: Kode Wilayah Administrasi Pemerintahan, maintained by Indonesia&#39;s Ministry of Home Affairs. Format: two-digit province code followed by a two-digit regency or city sequence; suffixes 01-69 identify regencies and suffixes 71-99 identify cities. The NIK stores this value without dot separators.
    * @return regencyOrCityCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_REGENCY_OR_CITY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getRegencyOrCityCode() {
-    return regencyOrCityCode;
+        return regencyOrCityCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_REGENCY_OR_CITY_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_REGENCY_OR_CITY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRegencyOrCityCode(@javax.annotation.Nonnull String regencyOrCityCode) {
+  public JsonNullable<String> getRegencyOrCityCode_JsonNullable() {
+    return regencyOrCityCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REGENCY_OR_CITY_CODE)
+  public void setRegencyOrCityCode_JsonNullable(JsonNullable<String> regencyOrCityCode) {
     this.regencyOrCityCode = regencyOrCityCode;
   }
 
+  public void setRegencyOrCityCode(@javax.annotation.Nullable String regencyOrCityCode) {
+    this.regencyOrCityCode = JsonNullable.<String>of(regencyOrCityCode);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput districtCode(@javax.annotation.Nonnull String districtCode) {
-    this.districtCode = districtCode;
+
+  public IndonesiaDukcapilMatchProviderOutput districtCode(@javax.annotation.Nullable String districtCode) {
+    this.districtCode = JsonNullable.<String>of(districtCode);
     return this;
   }
 
@@ -229,23 +260,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Six-digit Indonesian government administrative region code for the district (kecamatan), extracted from digits 1-6 of the submitted NIK number.              Source system: Kode Wilayah Administrasi Pemerintahan, maintained by Indonesia&#39;s Ministry of Home Affairs. Format: two-digit province code, two-digit regency or city code, and two-digit district sequence. The NIK stores this value without dot separators.
    * @return districtCode
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_DISTRICT_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getDistrictCode() {
-    return districtCode;
+        return districtCode.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_DISTRICT_CODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_DISTRICT_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDistrictCode(@javax.annotation.Nonnull String districtCode) {
+  public JsonNullable<String> getDistrictCode_JsonNullable() {
+    return districtCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DISTRICT_CODE)
+  public void setDistrictCode_JsonNullable(JsonNullable<String> districtCode) {
     this.districtCode = districtCode;
   }
 
+  public void setDistrictCode(@javax.annotation.Nullable String districtCode) {
+    this.districtCode = JsonNullable.<String>of(districtCode);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput sexNationalIdNumber(@javax.annotation.Nonnull String sexNationalIdNumber) {
-    this.sexNationalIdNumber = sexNationalIdNumber;
+
+  public IndonesiaDukcapilMatchProviderOutput sexNationalIdNumber(@javax.annotation.Nullable String sexNationalIdNumber) {
+    this.sexNationalIdNumber = JsonNullable.<String>of(sexNationalIdNumber);
     return this;
   }
 
@@ -253,23 +292,31 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Sex extracted from the birth-day portion of the submitted NIK number.              Known values: - Male: The encoded day value is 40 or lower. - Female: The encoded day value is greater than 40.
    * @return sexNationalIdNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SEX_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSexNationalIdNumber() {
-    return sexNationalIdNumber;
+        return sexNationalIdNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SEX_NATIONAL_ID_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SEX_NATIONAL_ID_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSexNationalIdNumber(@javax.annotation.Nonnull String sexNationalIdNumber) {
+  public JsonNullable<String> getSexNationalIdNumber_JsonNullable() {
+    return sexNationalIdNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX_NATIONAL_ID_NUMBER)
+  public void setSexNationalIdNumber_JsonNullable(JsonNullable<String> sexNationalIdNumber) {
     this.sexNationalIdNumber = sexNationalIdNumber;
   }
 
+  public void setSexNationalIdNumber(@javax.annotation.Nullable String sexNationalIdNumber) {
+    this.sexNationalIdNumber = JsonNullable.<String>of(sexNationalIdNumber);
+  }
 
-  public IndonesiaDukcapilMatchProviderOutput serialNumber(@javax.annotation.Nonnull String serialNumber) {
-    this.serialNumber = serialNumber;
+
+  public IndonesiaDukcapilMatchProviderOutput serialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
     return this;
   }
 
@@ -277,18 +324,26 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * Four-digit issuance serial number extracted from digits 13-16 of the submitted NIK number.
    * @return serialNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getSerialNumber() {
-    return serialNumber;
+        return serialNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_SERIAL_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSerialNumber(@javax.annotation.Nonnull String serialNumber) {
+  public JsonNullable<String> getSerialNumber_JsonNullable() {
+    return serialNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  public void setSerialNumber_JsonNullable(JsonNullable<String> serialNumber) {
     this.serialNumber = serialNumber;
+  }
+
+  public void setSerialNumber(@javax.annotation.Nullable String serialNumber) {
+    this.serialNumber = JsonNullable.<String>of(serialNumber);
   }
 
 
@@ -324,8 +379,8 @@ public class IndonesiaDukcapilMatchProviderOutput {
   }
 
 
-  public IndonesiaDukcapilMatchProviderOutput consentGivenAt(@javax.annotation.Nonnull OffsetDateTime consentGivenAt) {
-    this.consentGivenAt = consentGivenAt;
+  public IndonesiaDukcapilMatchProviderOutput consentGivenAt(@javax.annotation.Nullable OffsetDateTime consentGivenAt) {
+    this.consentGivenAt = JsonNullable.<OffsetDateTime>of(consentGivenAt);
     return this;
   }
 
@@ -333,18 +388,26 @@ public class IndonesiaDukcapilMatchProviderOutput {
    * The consent timestamp submitted for this verification.
    * @return consentGivenAt
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CONSENT_GIVEN_AT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public OffsetDateTime getConsentGivenAt() {
-    return consentGivenAt;
+        return consentGivenAt.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CONSENT_GIVEN_AT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CONSENT_GIVEN_AT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setConsentGivenAt(@javax.annotation.Nonnull OffsetDateTime consentGivenAt) {
+  public JsonNullable<OffsetDateTime> getConsentGivenAt_JsonNullable() {
+    return consentGivenAt;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CONSENT_GIVEN_AT)
+  public void setConsentGivenAt_JsonNullable(JsonNullable<OffsetDateTime> consentGivenAt) {
     this.consentGivenAt = consentGivenAt;
+  }
+
+  public void setConsentGivenAt(@javax.annotation.Nullable OffsetDateTime consentGivenAt) {
+    this.consentGivenAt = JsonNullable.<OffsetDateTime>of(consentGivenAt);
   }
 
 
@@ -392,16 +455,16 @@ public class IndonesiaDukcapilMatchProviderOutput {
       return false;
     }
     IndonesiaDukcapilMatchProviderOutput indonesiaDukcapilMatchProviderOutput = (IndonesiaDukcapilMatchProviderOutput) o;
-    return Objects.equals(this.nationalIdNumber, indonesiaDukcapilMatchProviderOutput.nationalIdNumber) &&
-        Objects.equals(this.fullName, indonesiaDukcapilMatchProviderOutput.fullName) &&
-        Objects.equals(this.dateOfBirth, indonesiaDukcapilMatchProviderOutput.dateOfBirth) &&
-        Objects.equals(this.provinceCode, indonesiaDukcapilMatchProviderOutput.provinceCode) &&
-        Objects.equals(this.regencyOrCityCode, indonesiaDukcapilMatchProviderOutput.regencyOrCityCode) &&
-        Objects.equals(this.districtCode, indonesiaDukcapilMatchProviderOutput.districtCode) &&
-        Objects.equals(this.sexNationalIdNumber, indonesiaDukcapilMatchProviderOutput.sexNationalIdNumber) &&
-        Objects.equals(this.serialNumber, indonesiaDukcapilMatchProviderOutput.serialNumber) &&
+    return equalsNullable(this.nationalIdNumber, indonesiaDukcapilMatchProviderOutput.nationalIdNumber) &&
+        equalsNullable(this.fullName, indonesiaDukcapilMatchProviderOutput.fullName) &&
+        equalsNullable(this.dateOfBirth, indonesiaDukcapilMatchProviderOutput.dateOfBirth) &&
+        equalsNullable(this.provinceCode, indonesiaDukcapilMatchProviderOutput.provinceCode) &&
+        equalsNullable(this.regencyOrCityCode, indonesiaDukcapilMatchProviderOutput.regencyOrCityCode) &&
+        equalsNullable(this.districtCode, indonesiaDukcapilMatchProviderOutput.districtCode) &&
+        equalsNullable(this.sexNationalIdNumber, indonesiaDukcapilMatchProviderOutput.sexNationalIdNumber) &&
+        equalsNullable(this.serialNumber, indonesiaDukcapilMatchProviderOutput.serialNumber) &&
         equalsNullable(this.phoneNumber, indonesiaDukcapilMatchProviderOutput.phoneNumber) &&
-        Objects.equals(this.consentGivenAt, indonesiaDukcapilMatchProviderOutput.consentGivenAt) &&
+        equalsNullable(this.consentGivenAt, indonesiaDukcapilMatchProviderOutput.consentGivenAt) &&
         equalsNullable(this.email, indonesiaDukcapilMatchProviderOutput.email);
   }
 
@@ -411,7 +474,7 @@ public class IndonesiaDukcapilMatchProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nationalIdNumber, fullName, dateOfBirth, provinceCode, regencyOrCityCode, districtCode, sexNationalIdNumber, serialNumber, hashCodeNullable(phoneNumber), consentGivenAt, hashCodeNullable(email));
+    return Objects.hash(hashCodeNullable(nationalIdNumber), hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(provinceCode), hashCodeNullable(regencyOrCityCode), hashCodeNullable(districtCode), hashCodeNullable(sexNationalIdNumber), hashCodeNullable(serialNumber), hashCodeNullable(phoneNumber), hashCodeNullable(consentGivenAt), hashCodeNullable(email));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

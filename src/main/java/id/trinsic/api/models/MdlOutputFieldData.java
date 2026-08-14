@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.MdlOutputFieldDataType;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -37,21 +41,19 @@ import id.trinsic.ApiClient;
   MdlOutputFieldData.JSON_PROPERTY_TYPE,
   MdlOutputFieldData.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T15:26:09.424248927Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MdlOutputFieldData {
   public static final String JSON_PROPERTY_TYPE = "type";
-  @javax.annotation.Nonnull
-  private MdlOutputFieldDataType type;
+  private JsonNullable<MdlOutputFieldDataType> type = JsonNullable.<MdlOutputFieldDataType>undefined();
 
   public static final String JSON_PROPERTY_VALUE = "value";
-  @javax.annotation.Nonnull
-  private String value;
+  private JsonNullable<String> value = JsonNullable.<String>undefined();
 
   public MdlOutputFieldData() { 
   }
 
-  public MdlOutputFieldData type(@javax.annotation.Nonnull MdlOutputFieldDataType type) {
-    this.type = type;
+  public MdlOutputFieldData type(@javax.annotation.Nullable MdlOutputFieldDataType type) {
+    this.type = JsonNullable.<MdlOutputFieldDataType>of(type);
     return this;
   }
 
@@ -59,23 +61,31 @@ public class MdlOutputFieldData {
    * The type of data contained in &#x60;value&#x60;.
    * @return type
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public MdlOutputFieldDataType getType() {
-    return type;
+        return type.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(@javax.annotation.Nonnull MdlOutputFieldDataType type) {
+  public JsonNullable<MdlOutputFieldDataType> getType_JsonNullable() {
+    return type;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  public void setType_JsonNullable(JsonNullable<MdlOutputFieldDataType> type) {
     this.type = type;
   }
 
+  public void setType(@javax.annotation.Nullable MdlOutputFieldDataType type) {
+    this.type = JsonNullable.<MdlOutputFieldDataType>of(type);
+  }
 
-  public MdlOutputFieldData value(@javax.annotation.Nonnull String value) {
-    this.value = value;
+
+  public MdlOutputFieldData value(@javax.annotation.Nullable String value) {
+    this.value = JsonNullable.<String>of(value);
     return this;
   }
 
@@ -83,18 +93,26 @@ public class MdlOutputFieldData {
    * The string-encoded value of the field.
    * @return value
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getValue() {
-    return value;
+        return value.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public JsonNullable<String> getValue_JsonNullable() {
+    return value;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  public void setValue_JsonNullable(JsonNullable<String> value) {
     this.value = value;
+  }
+
+  public void setValue(@javax.annotation.Nullable String value) {
+    this.value = JsonNullable.<String>of(value);
   }
 
 
@@ -110,13 +128,24 @@ public class MdlOutputFieldData {
       return false;
     }
     MdlOutputFieldData mdlOutputFieldData = (MdlOutputFieldData) o;
-    return Objects.equals(this.type, mdlOutputFieldData.type) &&
-        Objects.equals(this.value, mdlOutputFieldData.value);
+    return equalsNullable(this.type, mdlOutputFieldData.type) &&
+        equalsNullable(this.value, mdlOutputFieldData.value);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, value);
+    return Objects.hash(hashCodeNullable(type), hashCodeNullable(value));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
