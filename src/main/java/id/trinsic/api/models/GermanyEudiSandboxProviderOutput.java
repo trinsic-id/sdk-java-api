@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   GermanyEudiSandboxProviderOutput.JSON_PROPERTY_PID,
   GermanyEudiSandboxProviderOutput.JSON_PROPERTY_RAW18013_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class GermanyEudiSandboxProviderOutput {
   public static final String JSON_PROPERTY_PID = "pid";
   private JsonNullable<EudiPidCredential> pid = JsonNullable.<EudiPidCredential>undefined();

@@ -69,7 +69,7 @@ import id.trinsic.ApiClient;
   SaudiArabiaNafathCitizenAttributes.JSON_PROPERTY_HEAD_OF_HOUSEHOLD,
   SaudiArabiaNafathCitizenAttributes.JSON_PROPERTY_NATIONAL_ADDRESSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class SaudiArabiaNafathCitizenAttributes {
   public static final String JSON_PROPERTY_ARABIC_FIRST_NAME = "arabicFirstName";
   private JsonNullable<String> arabicFirstName = JsonNullable.<String>undefined();

@@ -222,7 +222,7 @@ import id.trinsic.ApiClient;
   ProviderOutput.JSON_PROPERTY_YOTI_DEEPLINK,
   ProviderOutput.JSON_PROPERTY_ZIMBABWE_NID_LOOKUP2
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ProviderOutput {
   public static final String JSON_PROPERTY_A_AT_HANDY_SIGNATUR_LOGIN = "a-at-handy-signatur-login";
   private JsonNullable<AustriaHandySignaturProviderOutput> aAtHandySignaturLogin = JsonNullable.<AustriaHandySignaturProviderOutput>undefined();

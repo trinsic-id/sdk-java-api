@@ -53,7 +53,7 @@ import id.trinsic.ApiClient;
   BrazilCpfProviderOutput.JSON_PROPERTY_DATE_OF_REGISTRATION,
   BrazilCpfProviderOutput.JSON_PROPERTY_BIOMETRIC_VERIFICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class BrazilCpfProviderOutput {
   public static final String JSON_PROPERTY_PREVIEW_RAW_ERROR_CODE = "preview_raw_error_code";
   private JsonNullable<String> previewRawErrorCode = JsonNullable.<String>undefined();

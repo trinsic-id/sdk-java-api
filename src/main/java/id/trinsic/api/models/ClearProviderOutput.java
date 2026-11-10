@@ -64,7 +64,7 @@ import id.trinsic.ApiClient;
   ClearProviderOutput.JSON_PROPERTY_IDV_STATUS,
   ClearProviderOutput.JSON_PROPERTY_SESSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ClearProviderOutput {
   public static final String JSON_PROPERTY_AUTHENTICATED = "authenticated";
   private JsonNullable<Boolean> authenticated = JsonNullable.<Boolean>undefined();

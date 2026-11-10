@@ -60,7 +60,7 @@ import id.trinsic.ApiClient;
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_DOCUMENT_TYPE,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_SEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class IdemiaMobileIdProviderOutput {
   public static final String JSON_PROPERTY_SUB = "sub";
   private JsonNullable<String> sub = JsonNullable.<String>undefined();

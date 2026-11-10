@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   SamsungWalletProviderOutput.JSON_PROPERTY_SAMSUNG_ID_WITH_CLEAR,
   SamsungWalletProviderOutput.JSON_PROPERTY_RAW_MDL_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class SamsungWalletProviderOutput {
   public static final String JSON_PROPERTY_MOBILE_DRIVERS_LICENSE = "mobileDriversLicense";
   private JsonNullable<Iso180135MobileDriversLicenseCredential> mobileDriversLicense = JsonNullable.<Iso180135MobileDriversLicenseCredential>undefined();

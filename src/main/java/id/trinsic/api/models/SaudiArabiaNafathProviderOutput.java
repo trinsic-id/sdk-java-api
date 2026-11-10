@@ -53,7 +53,7 @@ import id.trinsic.ApiClient;
   SaudiArabiaNafathProviderOutput.JSON_PROPERTY_RESIDENT_SPECIFIC_ATTRIBUTES,
   SaudiArabiaNafathProviderOutput.JSON_PROPERTY_VISITOR_SPECIFIC_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class SaudiArabiaNafathProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_IDENTITY_NUMBER = "nationalIdentityNumber";
   private JsonNullable<String> nationalIdentityNumber = JsonNullable.<String>undefined();

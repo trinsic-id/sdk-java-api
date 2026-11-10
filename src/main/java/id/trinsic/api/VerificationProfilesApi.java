@@ -56,7 +56,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class VerificationProfilesApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -307,7 +307,7 @@ public class VerificationProfilesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/valpha/verification-profiles";
 
@@ -329,13 +329,17 @@ public class VerificationProfilesApi {
     if (externalId != null) {
         multiPartBuilder.addTextBody("ExternalId", externalId.toString());
     }
-    for (int i=0; i < providers.size(); i++) {
-        if (providers.get(i) != null) {
-            multiPartBuilder.addTextBody("Providers", providers.get(i).toString());
+    if (providers != null) {
+        for (int i=0; i < providers.size(); i++) {
+            if (providers.get(i) != null) {
+                multiPartBuilder.addTextBody("Providers", providers.get(i).toString());
+            }
         }
     }
-    multiPartBuilder.addBinaryBody("Logo", logo);
-    hasFiles = true;
+    if (logo != null) {
+        multiPartBuilder.addBinaryBody("Logo", logo);
+        hasFiles = true;
+    }
     if (redactionPeriod != null) {
         multiPartBuilder.addTextBody("RedactionPeriod", redactionPeriod.toString());
     }
@@ -485,7 +489,7 @@ public class VerificationProfilesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/valpha/verification-profiles/external-ids/{externalId}"
         .replace("{externalId}", ApiClient.urlEncode(externalId.toString()));
@@ -604,7 +608,7 @@ public class VerificationProfilesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/valpha/verification-profiles/{id}"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
@@ -727,7 +731,7 @@ public class VerificationProfilesApi {
   private HttpRequest.Builder listVerificationProfilesRequestBuilder(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String geography, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/valpha/verification-profiles";
 

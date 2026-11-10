@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   AppleWalletDigitalIdBirthDate.JSON_PROPERTY_DATE_OF_BIRTH,
   AppleWalletDigitalIdBirthDate.JSON_PROPERTY_APPROXIMATE_MASK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class AppleWalletDigitalIdBirthDate {
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();

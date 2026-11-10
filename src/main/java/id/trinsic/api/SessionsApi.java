@@ -65,7 +65,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class SessionsApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -280,7 +280,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}/cancel"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
@@ -395,7 +395,7 @@ public class SessionsApi {
   private HttpRequest.Builder createDirectProviderSessionRequestBuilder(@javax.annotation.Nullable CreateDirectProviderSessionRequest createDirectProviderSessionRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/provider/direct";
 
@@ -515,7 +515,7 @@ public class SessionsApi {
   private HttpRequest.Builder createHostedProviderSessionRequestBuilder(@javax.annotation.Nullable CreateHostedProviderSessionRequest createHostedProviderSessionRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/provider/hosted";
 
@@ -651,7 +651,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}/attachments/{attachmentId}/get"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()))
@@ -777,7 +777,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
@@ -900,7 +900,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}/results"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
@@ -1041,7 +1041,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/verification-profiles/{verificationProfileId}/sessions"
         .replace("{verificationProfileId}", ApiClient.urlEncode(verificationProfileId.toString()));
@@ -1177,7 +1177,7 @@ public class SessionsApi {
   private HttpRequest.Builder recommendProvidersRequestBuilder(@javax.annotation.Nullable RecommendProvidersRequest recommendProvidersRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/providers/recommend";
 
@@ -1287,7 +1287,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}/redact"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
@@ -1410,7 +1410,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}/step/refresh"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));
@@ -1539,7 +1539,7 @@ public class SessionsApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/sessions/{sessionId}/native-challenge/submit"
         .replace("{sessionId}", ApiClient.urlEncode(sessionId.toString()));

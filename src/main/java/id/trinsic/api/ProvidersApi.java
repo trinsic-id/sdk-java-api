@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ProvidersApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -262,7 +262,7 @@ public class ProvidersApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/providers/{providerId}"
         .replace("{providerId}", ApiClient.urlEncode(providerId.toString()));
@@ -377,7 +377,7 @@ public class ProvidersApi {
   private HttpRequest.Builder listProvidersRequestBuilder(@javax.annotation.Nullable Boolean licensed, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/providers";
 

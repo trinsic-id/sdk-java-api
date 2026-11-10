@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class DeveloperApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -260,7 +260,7 @@ public class DeveloperApi {
   private HttpRequest.Builder testAgainstArbitraryKeyRequestBuilder(@javax.annotation.Nullable HPKETestRequest hpKETestRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/developer/hpke-test";
 
@@ -388,7 +388,7 @@ public class DeveloperApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha4");
 
     String localVarPath = "/api/v1/developer/hpke-test/{verificationProfileId}"
         .replace("{verificationProfileId}", ApiClient.urlEncode(verificationProfileId.toString()));

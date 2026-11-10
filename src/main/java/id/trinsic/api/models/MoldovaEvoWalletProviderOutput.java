@@ -48,7 +48,7 @@ import id.trinsic.ApiClient;
   MoldovaEvoWalletProviderOutput.JSON_PROPERTY_VEHICLE_REGISTRATION_CERTIFICATE,
   MoldovaEvoWalletProviderOutput.JSON_PROPERTY_RAW18013_OUTPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T17:21:46.095837906Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class MoldovaEvoWalletProviderOutput {
   public static final String JSON_PROPERTY_IDENTITY_CARD = "identityCard";
   private JsonNullable<MoldovaIdentityCardCredential> identityCard = JsonNullable.<MoldovaIdentityCardCredential>undefined();
