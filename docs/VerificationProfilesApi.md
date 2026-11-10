@@ -505,7 +505,7 @@ ApiResponse<[**VerificationProfileResponse**](VerificationProfileResponse.md)>
 
 ## listVerificationProfiles
 
-> ListVerificationProfilesResponse listVerificationProfiles(page, pageSize)
+> ListVerificationProfilesResponse listVerificationProfiles(page, pageSize, geography)
 
 List Verification Profiles
 
@@ -534,8 +534,9 @@ public class Example {
         VerificationProfilesApi apiInstance = new VerificationProfilesApi(defaultClient);
         Integer page = 1; // Integer | 
         Integer pageSize = 20; // Integer | Size of the list to be returned. Accepted range from 1 to 100
+        String geography = "geography_example"; // String | Filter by data-residency geography. Accepted values: \"US\", \"EU\" (case-insensitive). Omit to include all geographies.
         try {
-            ListVerificationProfilesResponse result = apiInstance.listVerificationProfiles(page, pageSize);
+            ListVerificationProfilesResponse result = apiInstance.listVerificationProfiles(page, pageSize, geography);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling VerificationProfilesApi#listVerificationProfiles");
@@ -555,6 +556,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **pageSize** | **Integer**| Size of the list to be returned. Accepted range from 1 to 100 | [optional] [default to 20] |
+| **geography** | **String**| Filter by data-residency geography. Accepted values: \&quot;US\&quot;, \&quot;EU\&quot; (case-insensitive). Omit to include all geographies. | [optional] |
 
 ### Return type
 
@@ -581,7 +583,7 @@ public class Example {
 
 ## listVerificationProfilesWithHttpInfo
 
-> ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(page, pageSize)
+> ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(page, pageSize, geography)
 
 List Verification Profiles
 
@@ -611,8 +613,9 @@ public class Example {
         VerificationProfilesApi apiInstance = new VerificationProfilesApi(defaultClient);
         Integer page = 1; // Integer | 
         Integer pageSize = 20; // Integer | Size of the list to be returned. Accepted range from 1 to 100
+        String geography = "geography_example"; // String | Filter by data-residency geography. Accepted values: \"US\", \"EU\" (case-insensitive). Omit to include all geographies.
         try {
-            ApiResponse<ListVerificationProfilesResponse> response = apiInstance.listVerificationProfilesWithHttpInfo(page, pageSize);
+            ApiResponse<ListVerificationProfilesResponse> response = apiInstance.listVerificationProfilesWithHttpInfo(page, pageSize, geography);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -634,6 +637,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **pageSize** | **Integer**| Size of the list to be returned. Accepted range from 1 to 100 | [optional] [default to 20] |
+| **geography** | **String**| Filter by data-residency geography. Accepted values: \&quot;US\&quot;, \&quot;EU\&quot; (case-insensitive). Omit to include all geographies. | [optional] |
 
 ### Return type
 

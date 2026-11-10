@@ -42,11 +42,43 @@ class ConnectIdAgeVerificationTest {
     }
 
     /**
+     * Test the property 'over16'
+     */
+    @Test
+    void over16Test() {
+        // TODO: test over16
+    }
+
+    /**
      * Test the property 'over18'
      */
     @Test
     void over18Test() {
         // TODO: test over18
+    }
+
+    /**
+     * Test the property 'over21'
+     */
+    @Test
+    void over21Test() {
+        // TODO: test over21
+    }
+
+    /**
+     * Test the property 'over25'
+     */
+    @Test
+    void over25Test() {
+        // TODO: test over25
+    }
+
+    /**
+     * Test the property 'over65'
+     */
+    @Test
+    void over65Test() {
+        // TODO: test over65
     }
 
     /**

@@ -34,7 +34,9 @@ public enum SessionOrdering {
   
   UPDATED("Updated"),
   
-  STATE("State");
+  STATE("State"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -59,7 +61,7 @@ public enum SessionOrdering {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

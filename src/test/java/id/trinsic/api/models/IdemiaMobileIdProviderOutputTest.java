@@ -154,22 +154,6 @@ class IdemiaMobileIdProviderOutputTest {
     }
 
     /**
-     * Test the property 'email'
-     */
-    @Test
-    void emailTest() {
-        // TODO: test email
-    }
-
-    /**
-     * Test the property 'emailVerified'
-     */
-    @Test
-    void emailVerifiedTest() {
-        // TODO: test emailVerified
-    }
-
-    /**
      * Test the property 'documentNumber'
      */
     @Test

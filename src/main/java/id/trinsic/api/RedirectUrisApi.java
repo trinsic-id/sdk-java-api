@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class RedirectUrisApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -260,6 +260,7 @@ public class RedirectUrisApi {
   private HttpRequest.Builder addRequestBuilder(@javax.annotation.Nullable AddRedirectUriRequest addRedirectUriRequest, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/redirect-uris";
 
@@ -383,6 +384,7 @@ public class RedirectUrisApi {
   private HttpRequest.Builder callListRequestBuilder(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/redirect-uris";
 
@@ -503,6 +505,7 @@ public class RedirectUrisApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/redirect-uris/{id}"
         .replace("{id}", ApiClient.urlEncode(id.toString()));

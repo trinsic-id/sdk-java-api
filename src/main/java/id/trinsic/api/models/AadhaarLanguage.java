@@ -40,7 +40,7 @@ import id.trinsic.ApiClient;
   AadhaarLanguage.JSON_PROPERTY_LANGUAGE_CODE,
   AadhaarLanguage.JSON_PROPERTY_LANGUAGE_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class AadhaarLanguage {
   public static final String JSON_PROPERTY_LANGUAGE_CODE = "languageCode";
   private JsonNullable<String> languageCode = JsonNullable.<String>undefined();
@@ -52,7 +52,8 @@ public class AadhaarLanguage {
   }
 
   @JsonCreator
-  public AadhaarLanguage(
+  // Used only by Jackson; public construction uses named setters.
+  private AadhaarLanguage(
     @JsonProperty(JSON_PROPERTY_LANGUAGE_NAME) String languageName
   ) {
   this();

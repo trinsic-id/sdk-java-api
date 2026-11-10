@@ -19,6 +19,7 @@ Exposed properties for the `denmark-mitid` Provider which do not directly map to
 |**organizationName** | **String** | The name of the organization for the verification |  [optional] |
 |**organizationNumber** | **String** | The organization number (CVR number). This is an 8-digit unique identifier for the organization. This will be prefixed with \&quot;DK\&quot; for VAT numbers. |  [optional] |
 |**authorizedRepresentativeNumber** | **String** | The organization number (CVR number) of the organization the individual is authorized to represent. This is only returned if the requested scope is for an organization verification and the individual provides a private source on behalf of a company. |  [optional] |
+|**address** | [**MitIdAddressOutput**](MitIdAddressOutput.md) | The individual&#39;s address. |  [optional] |
 
 
 

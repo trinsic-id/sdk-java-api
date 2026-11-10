@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   Iso180135MobileDriversLicenseCredential.JSON_PROPERTY_STANDARD,
   Iso180135MobileDriversLicenseCredential.JSON_PROPERTY_AAMVA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Iso180135MobileDriversLicenseCredential {
   public static final String JSON_PROPERTY_STANDARD = "standard";
   private JsonNullable<Iso180135StandardNamespaceOutput> standard = JsonNullable.<Iso180135StandardNamespaceOutput>undefined();

@@ -110,8 +110,9 @@ public class VerificationProfilesApiTest {
     public void listVerificationProfilesTest() throws ApiException {
         Integer page = null;
         Integer pageSize = null;
+        String geography = null;
         ListVerificationProfilesResponse response = 
-        api.listVerificationProfiles(page, pageSize);
+        api.listVerificationProfiles(page, pageSize, geography);
         
         // TODO: test validations
     }

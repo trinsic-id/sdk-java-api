@@ -51,8 +51,6 @@ import id.trinsic.ApiClient;
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_RESIDENT_COUNTRY,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_RESIDENT_POSTAL_CODE,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_RESIDENT_CITY,
-  IdemiaMobileIdProviderOutput.JSON_PROPERTY_EMAIL,
-  IdemiaMobileIdProviderOutput.JSON_PROPERTY_EMAIL_VERIFIED,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_DOCUMENT_NUMBER,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_ISSUE_DATE,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_ISSUING_COUNTRY,
@@ -62,7 +60,7 @@ import id.trinsic.ApiClient;
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_DOCUMENT_TYPE,
   IdemiaMobileIdProviderOutput.JSON_PROPERTY_SEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class IdemiaMobileIdProviderOutput {
   public static final String JSON_PROPERTY_SUB = "sub";
   private JsonNullable<String> sub = JsonNullable.<String>undefined();
@@ -105,12 +103,6 @@ public class IdemiaMobileIdProviderOutput {
 
   public static final String JSON_PROPERTY_RESIDENT_CITY = "residentCity";
   private JsonNullable<String> residentCity = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_EMAIL = "email";
-  private JsonNullable<String> email = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_EMAIL_VERIFIED = "emailVerified";
-  private JsonNullable<Boolean> emailVerified = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
   private JsonNullable<String> documentNumber = JsonNullable.<String>undefined();
@@ -587,70 +579,6 @@ public class IdemiaMobileIdProviderOutput {
   }
 
 
-  public IdemiaMobileIdProviderOutput email(@javax.annotation.Nullable String email) {
-    this.email = JsonNullable.<String>of(email);
-    return this;
-  }
-
-  /**
-   * The individual&#39;s email address.
-   * @return email
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public String getEmail() {
-        return email.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<String> getEmail_JsonNullable() {
-    return email;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_EMAIL)
-  public void setEmail_JsonNullable(JsonNullable<String> email) {
-    this.email = email;
-  }
-
-  public void setEmail(@javax.annotation.Nullable String email) {
-    this.email = JsonNullable.<String>of(email);
-  }
-
-
-  public IdemiaMobileIdProviderOutput emailVerified(@javax.annotation.Nullable Boolean emailVerified) {
-    this.emailVerified = JsonNullable.<Boolean>of(emailVerified);
-    return this;
-  }
-
-  /**
-   * Whether the individual&#39;s email address has been verified.
-   * @return emailVerified
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-  public Boolean getEmailVerified() {
-        return emailVerified.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_EMAIL_VERIFIED, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<Boolean> getEmailVerified_JsonNullable() {
-    return emailVerified;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
-  public void setEmailVerified_JsonNullable(JsonNullable<Boolean> emailVerified) {
-    this.emailVerified = emailVerified;
-  }
-
-  public void setEmailVerified(@javax.annotation.Nullable Boolean emailVerified) {
-    this.emailVerified = JsonNullable.<Boolean>of(emailVerified);
-  }
-
-
   public IdemiaMobileIdProviderOutput documentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = JsonNullable.<String>of(documentNumber);
     return this;
@@ -933,8 +861,6 @@ public class IdemiaMobileIdProviderOutput {
         equalsNullable(this.residentCountry, idemiaMobileIdProviderOutput.residentCountry) &&
         equalsNullable(this.residentPostalCode, idemiaMobileIdProviderOutput.residentPostalCode) &&
         equalsNullable(this.residentCity, idemiaMobileIdProviderOutput.residentCity) &&
-        equalsNullable(this.email, idemiaMobileIdProviderOutput.email) &&
-        equalsNullable(this.emailVerified, idemiaMobileIdProviderOutput.emailVerified) &&
         equalsNullable(this.documentNumber, idemiaMobileIdProviderOutput.documentNumber) &&
         equalsNullable(this.issueDate, idemiaMobileIdProviderOutput.issueDate) &&
         equalsNullable(this.issuingCountry, idemiaMobileIdProviderOutput.issuingCountry) &&
@@ -951,7 +877,7 @@ public class IdemiaMobileIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(sub), hashCodeNullable(nameSuffix), hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(birthDate), hashCodeNullable(ageOver18), hashCodeNullable(ageOver21), hashCodeNullable(ageOver25), hashCodeNullable(residentAddress), hashCodeNullable(residentState), hashCodeNullable(residentCountry), hashCodeNullable(residentPostalCode), hashCodeNullable(residentCity), hashCodeNullable(email), hashCodeNullable(emailVerified), hashCodeNullable(documentNumber), hashCodeNullable(issueDate), hashCodeNullable(issuingCountry), hashCodeNullable(issuingAuthority), hashCodeNullable(expiryDate), hashCodeNullable(issuingJurisdiction), hashCodeNullable(documentType), hashCodeNullable(sex));
+    return Objects.hash(hashCodeNullable(sub), hashCodeNullable(nameSuffix), hashCodeNullable(fullName), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(birthDate), hashCodeNullable(ageOver18), hashCodeNullable(ageOver21), hashCodeNullable(ageOver25), hashCodeNullable(residentAddress), hashCodeNullable(residentState), hashCodeNullable(residentCountry), hashCodeNullable(residentPostalCode), hashCodeNullable(residentCity), hashCodeNullable(documentNumber), hashCodeNullable(issueDate), hashCodeNullable(issuingCountry), hashCodeNullable(issuingAuthority), hashCodeNullable(expiryDate), hashCodeNullable(issuingJurisdiction), hashCodeNullable(documentType), hashCodeNullable(sex));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -979,8 +905,6 @@ public class IdemiaMobileIdProviderOutput {
     sb.append("    residentCountry: ").append(toIndentedString(residentCountry)).append("\n");
     sb.append("    residentPostalCode: ").append(toIndentedString(residentPostalCode)).append("\n");
     sb.append("    residentCity: ").append(toIndentedString(residentCity)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    emailVerified: ").append(toIndentedString(emailVerified)).append("\n");
     sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
@@ -1101,16 +1025,6 @@ public class IdemiaMobileIdProviderOutput {
     // add `residentCity` to the URL query string
     if (getResidentCity() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sresidentCity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResidentCity()))));
-    }
-
-    // add `email` to the URL query string
-    if (getEmail() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
-    }
-
-    // add `emailVerified` to the URL query string
-    if (getEmailVerified() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%semailVerified%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailVerified()))));
     }
 
     // add `documentNumber` to the URL query string

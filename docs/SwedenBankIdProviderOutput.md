@@ -9,7 +9,9 @@ Exposed properties for the `sweden-bankid` Provider which do not directly map to
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**fullName** | **String** | The full name of the individual. |  [optional] |
-|**dateOfBirth** | **LocalDate** | The date of birth of the individual. |  [optional] |
+|**dateOfBirth** | **LocalDate** | The individual&#39;s date of birth in YYYY-MM-DD format. |  [optional] |
+|**sex** | **String** | The individual&#39;s sex, derived from the personal identity number. Values are Male or Female. |  [optional] |
+|**sub** | **String** | The OpenID Connect sub claim, when returned in the provider response.              The value starts with the se_bankid: prefix followed by the subject identifier. |  [optional] |
 |**personalIdentityNumber** | **String** | The Swedish personal number (personnummer) associated with the verified individual. The value is typically a 12-digit number. This is in the format YYYYMMDDXXXX, where: - YYYYMMDD is the date of birth. - XXXX is an individual number, indicating gender.              If XXXX is even, the individual is female. If XXXX is odd, the individual is male. |  [optional] |
 |**givenName** | **String** | The given name of the individual |  [optional] |
 |**familyName** | **String** | The family name of the individual |  [optional] |

@@ -48,7 +48,7 @@ import id.trinsic.ApiClient;
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_LOCALIZED_CLAIMS,
   DigilockerAadhaarProviderOutput.JSON_PROPERTY_DOCUMENT_SIGNATURE_VALIDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class DigilockerAadhaarProviderOutput {
   public static final String JSON_PROPERTY_DOCUMENT_TYPE = "documentType";
   private JsonNullable<String> documentType = JsonNullable.<String>undefined();
@@ -272,7 +272,7 @@ public class DigilockerAadhaarProviderOutput {
   }
 
   /**
-   * Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers (e.g. Signzy) also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation.
+   * Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation.
    * @return documentSignatureValidated
    */
   @javax.annotation.Nullable

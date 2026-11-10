@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   MdlOutput.JSON_PROPERTY_DOCUMENT_TYPE,
   MdlOutput.JSON_PROPERTY_NAME_SPACES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class MdlOutput {
   public static final String JSON_PROPERTY_IACA_ROOT_CERTIFICATE = "iacaRootCertificate";
   private JsonNullable<MdlOutputCertificateData> iacaRootCertificate = JsonNullable.<MdlOutputCertificateData>undefined();
@@ -165,7 +165,7 @@ public class MdlOutput {
   }
 
   public MdlOutput putNameSpacesItem(String key, Map<String, MdlOutputFieldData> nameSpacesItem) {
-    if (this.nameSpaces == null || !this.nameSpaces.isPresent()) {
+    if (this.nameSpaces == null || !this.nameSpaces.isPresent() || this.nameSpaces.get() == null) {
       this.nameSpaces = JsonNullable.<Map<String, Map<String, MdlOutputFieldData>>>of(new HashMap<>());
     }
     try {

@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   BrazilDigitalCnhInput.JSON_PROPERTY_DIGITAL_CNH_FILE_CONTENT_TYPE,
   BrazilDigitalCnhInput.JSON_PROPERTY_FACIAL_BIOMETRY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class BrazilDigitalCnhInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
   @javax.annotation.Nonnull
@@ -154,7 +154,7 @@ public class BrazilDigitalCnhInput {
   }
 
   /**
-   * The raw bytes of the image of the user&#39;s face, collected for biometric comparison.
+   * The raw bytes of the image of the user&#39;s face, collected for biometric comparison. When using an SDK, this can be a raw byte array. In raw JSON form this is Base64.
    * @return facialBiometryPhoto
    */
   @javax.annotation.Nullable

@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   RecommendationInfo.JSON_PROPERTY_SUBDIVISIONS,
   RecommendationInfo.JSON_PROPERTY_IP_ADDRESSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class RecommendationInfo {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
@@ -99,7 +99,7 @@ public class RecommendationInfo {
   }
 
   public RecommendationInfo addCountriesItem(String countriesItem) {
-    if (this.countries == null || !this.countries.isPresent()) {
+    if (this.countries == null || !this.countries.isPresent() || this.countries.get() == null) {
       this.countries = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -143,7 +143,7 @@ public class RecommendationInfo {
   }
 
   public RecommendationInfo addSubdivisionsItem(String subdivisionsItem) {
-    if (this.subdivisions == null || !this.subdivisions.isPresent()) {
+    if (this.subdivisions == null || !this.subdivisions.isPresent() || this.subdivisions.get() == null) {
       this.subdivisions = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -187,7 +187,7 @@ public class RecommendationInfo {
   }
 
   public RecommendationInfo addIpAddressesItem(String ipAddressesItem) {
-    if (this.ipAddresses == null || !this.ipAddresses.isPresent()) {
+    if (this.ipAddresses == null || !this.ipAddresses.isPresent() || this.ipAddresses.get() == null) {
       this.ipAddresses = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

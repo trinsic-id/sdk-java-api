@@ -18,7 +18,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.TrinsicHPKEBundle;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -43,6 +48,14 @@ class GetAttachmentResponseTest {
     @Test
     void contentTest() {
         // TODO: test content
+    }
+
+    /**
+     * Test the property 'encryptedContent'
+     */
+    @Test
+    void encryptedContentTest() {
+        // TODO: test encryptedContent
     }
 
     /**

@@ -41,6 +41,8 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   SwedenBankIdProviderOutput.JSON_PROPERTY_FULL_NAME,
   SwedenBankIdProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
+  SwedenBankIdProviderOutput.JSON_PROPERTY_SEX,
+  SwedenBankIdProviderOutput.JSON_PROPERTY_SUB,
   SwedenBankIdProviderOutput.JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER,
   SwedenBankIdProviderOutput.JSON_PROPERTY_GIVEN_NAME,
   SwedenBankIdProviderOutput.JSON_PROPERTY_FAMILY_NAME,
@@ -53,13 +55,19 @@ import id.trinsic.ApiClient;
   SwedenBankIdProviderOutput.JSON_PROPERTY_NOT_BEFORE,
   SwedenBankIdProviderOutput.JSON_PROPERTY_NOT_AFTER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class SwedenBankIdProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
+
+  public static final String JSON_PROPERTY_SEX = "sex";
+  private JsonNullable<String> sex = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_SUB = "sub";
+  private JsonNullable<String> sub = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PERSONAL_IDENTITY_NUMBER = "personalIdentityNumber";
   private JsonNullable<String> personalIdentityNumber = JsonNullable.<String>undefined();
@@ -135,7 +143,7 @@ public class SwedenBankIdProviderOutput {
   }
 
   /**
-   * The date of birth of the individual.
+   * The individual&#39;s date of birth in YYYY-MM-DD format.
    * @return dateOfBirth
    */
   @javax.annotation.Nullable
@@ -158,6 +166,70 @@ public class SwedenBankIdProviderOutput {
 
   public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = JsonNullable.<LocalDate>of(dateOfBirth);
+  }
+
+
+  public SwedenBankIdProviderOutput sex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s sex, derived from the personal identity number. Values are Male or Female.
+   * @return sex
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSex() {
+        return sex.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSex_JsonNullable() {
+    return sex;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SEX)
+  public void setSex_JsonNullable(JsonNullable<String> sex) {
+    this.sex = sex;
+  }
+
+  public void setSex(@javax.annotation.Nullable String sex) {
+    this.sex = JsonNullable.<String>of(sex);
+  }
+
+
+  public SwedenBankIdProviderOutput sub(@javax.annotation.Nullable String sub) {
+    this.sub = JsonNullable.<String>of(sub);
+    return this;
+  }
+
+  /**
+   * The OpenID Connect sub claim, when returned in the provider response.              The value starts with the se_bankid: prefix followed by the subject identifier.
+   * @return sub
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getSub() {
+        return sub.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_SUB, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getSub_JsonNullable() {
+    return sub;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_SUB)
+  public void setSub_JsonNullable(JsonNullable<String> sub) {
+    this.sub = sub;
+  }
+
+  public void setSub(@javax.annotation.Nullable String sub) {
+    this.sub = JsonNullable.<String>of(sub);
   }
 
 
@@ -527,6 +599,8 @@ public class SwedenBankIdProviderOutput {
     SwedenBankIdProviderOutput swedenBankIdProviderOutput = (SwedenBankIdProviderOutput) o;
     return equalsNullable(this.fullName, swedenBankIdProviderOutput.fullName) &&
         equalsNullable(this.dateOfBirth, swedenBankIdProviderOutput.dateOfBirth) &&
+        equalsNullable(this.sex, swedenBankIdProviderOutput.sex) &&
+        equalsNullable(this.sub, swedenBankIdProviderOutput.sub) &&
         equalsNullable(this.personalIdentityNumber, swedenBankIdProviderOutput.personalIdentityNumber) &&
         equalsNullable(this.givenName, swedenBankIdProviderOutput.givenName) &&
         equalsNullable(this.familyName, swedenBankIdProviderOutput.familyName) &&
@@ -546,7 +620,7 @@ public class SwedenBankIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(personalIdentityNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(country), hashCodeNullable(certificatePolicy), hashCodeNullable(commonName), hashCodeNullable(distinguishedName), hashCodeNullable(personalIdentityNumberIssuingCountry), hashCodeNullable(authenticationDeviceIp), hashCodeNullable(notBefore), hashCodeNullable(notAfter));
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(sex), hashCodeNullable(sub), hashCodeNullable(personalIdentityNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(country), hashCodeNullable(certificatePolicy), hashCodeNullable(commonName), hashCodeNullable(distinguishedName), hashCodeNullable(personalIdentityNumberIssuingCountry), hashCodeNullable(authenticationDeviceIp), hashCodeNullable(notBefore), hashCodeNullable(notAfter));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -562,6 +636,8 @@ public class SwedenBankIdProviderOutput {
     sb.append("class SwedenBankIdProviderOutput {\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
+    sb.append("    sub: ").append(toIndentedString(sub)).append("\n");
     sb.append("    personalIdentityNumber: ").append(toIndentedString(personalIdentityNumber)).append("\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
@@ -625,6 +701,16 @@ public class SwedenBankIdProviderOutput {
     // add `dateOfBirth` to the URL query string
     if (getDateOfBirth() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sdateOfBirth%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOfBirth()))));
+    }
+
+    // add `sex` to the URL query string
+    if (getSex() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
+    }
+
+    // add `sub` to the URL query string
+    if (getSub() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%ssub%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSub()))));
     }
 
     // add `personalIdentityNumber` to the URL query string

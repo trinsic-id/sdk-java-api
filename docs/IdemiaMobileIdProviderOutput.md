@@ -22,8 +22,6 @@ Exposed properties for Idemia Mobile ID Providers which do not directly map to t
 |**residentCountry** | **String** | The individual&#39;s resident country. |  [optional] |
 |**residentPostalCode** | **String** | The individual&#39;s resident postal code. |  [optional] |
 |**residentCity** | **String** | The individual&#39;s resident city. |  [optional] |
-|**email** | **String** | The individual&#39;s email address. |  [optional] |
-|**emailVerified** | **Boolean** | Whether the individual&#39;s email address has been verified. |  [optional] |
 |**documentNumber** | **String** | The individual&#39;s document number. |  [optional] |
 |**issueDate** | **String** | The date the document was issued. |  [optional] |
 |**issuingCountry** | **String** | The country that issued the document. |  [optional] |

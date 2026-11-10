@@ -37,7 +37,7 @@ import id.trinsic.ApiClient;
   UkEvisaLookupInput.JSON_PROPERTY_SHARE_CODE,
   UkEvisaLookupInput.JSON_PROPERTY_DATE_OF_BIRTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class UkEvisaLookupInput {
   public static final String JSON_PROPERTY_SHARE_CODE = "shareCode";
   @javax.annotation.Nonnull
@@ -56,7 +56,7 @@ public class UkEvisaLookupInput {
   }
 
   /**
-   * The 9-character share code.
+   * The 9-character alphanumeric UK Visas and Immigration (UKVI) share code. Must start with W for right to work, R for right to rent, or S for immigration status, matching the configured lookup type. Whitespace is removed and lowercase ASCII letters are converted to uppercase.
    * @return shareCode
    */
   @javax.annotation.Nonnull

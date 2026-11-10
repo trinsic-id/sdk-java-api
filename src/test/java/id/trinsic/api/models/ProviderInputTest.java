@@ -26,10 +26,13 @@ import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.ChinaResidentIdMatchInput;
 import id.trinsic.api.models.ColombiaCcLookupInput;
+import id.trinsic.api.models.ConnectIdInput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
+import id.trinsic.api.models.CzechBankIdInput;
 import id.trinsic.api.models.DenmarkAltIdInput;
 import id.trinsic.api.models.ElSalvadorDuiLookupInput;
 import id.trinsic.api.models.EvrotrustInput;
+import id.trinsic.api.models.FinnishTrustNetworkInput;
 import id.trinsic.api.models.FranceIdentiteInput;
 import id.trinsic.api.models.GermanyEudiSandboxInput;
 import id.trinsic.api.models.GoogleWalletInput;
@@ -38,6 +41,7 @@ import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndiaPanLookupInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
+import id.trinsic.api.models.JordanSanadInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.KenyaNidLookup2Input;
 import id.trinsic.api.models.KenyaNidLookup3Input;
@@ -67,6 +71,7 @@ import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import id.trinsic.api.models.UgandaNidMatch2Input;
 import id.trinsic.api.models.UkEvisaLookupInput;
+import id.trinsic.api.models.UsaArizonaWalletInput;
 import id.trinsic.api.models.UsaCaliforniaDmvInput;
 import id.trinsic.api.models.ZimbabweNidLookup2Input;
 import java.util.Arrays;
@@ -293,6 +298,14 @@ class ProviderInputTest {
     }
 
     /**
+     * Test the property 'jordanSanad'
+     */
+    @Test
+    void jordanSanadTest() {
+        // TODO: test jordanSanad
+    }
+
+    /**
      * Test the property 'philippinesPhilsysMatch'
      */
     @Test
@@ -338,6 +351,30 @@ class ProviderInputTest {
     @Test
     void netherlandsIdinTest() {
         // TODO: test netherlandsIdin
+    }
+
+    /**
+     * Test the property 'finnishTrustNetwork'
+     */
+    @Test
+    void finnishTrustNetworkTest() {
+        // TODO: test finnishTrustNetwork
+    }
+
+    /**
+     * Test the property 'czechBankId'
+     */
+    @Test
+    void czechBankIdTest() {
+        // TODO: test czechBankId
+    }
+
+    /**
+     * Test the property 'australiaConnectId'
+     */
+    @Test
+    void australiaConnectIdTest() {
+        // TODO: test australiaConnectId
     }
 
     /**
@@ -482,6 +519,14 @@ class ProviderInputTest {
     @Test
     void ukEvisaLookupTest() {
         // TODO: test ukEvisaLookup
+    }
+
+    /**
+     * Test the property 'usaArizonaWallet'
+     */
+    @Test
+    void usaArizonaWalletTest() {
+        // TODO: test usaArizonaWallet
     }
 
     /**

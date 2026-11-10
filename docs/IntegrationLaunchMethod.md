@@ -15,5 +15,7 @@
 
 * `PERFORM_NATIVE_CHALLENGE` (value: `"PerformNativeChallenge"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

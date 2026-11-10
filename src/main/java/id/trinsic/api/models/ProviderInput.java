@@ -32,10 +32,13 @@ import id.trinsic.api.models.BrazilCpfCheckInput;
 import id.trinsic.api.models.BrazilDigitalCnhInput;
 import id.trinsic.api.models.ChinaResidentIdMatchInput;
 import id.trinsic.api.models.ColombiaCcLookupInput;
+import id.trinsic.api.models.ConnectIdInput;
 import id.trinsic.api.models.CoteDIvoireNidLookup2Input;
+import id.trinsic.api.models.CzechBankIdInput;
 import id.trinsic.api.models.DenmarkAltIdInput;
 import id.trinsic.api.models.ElSalvadorDuiLookupInput;
 import id.trinsic.api.models.EvrotrustInput;
+import id.trinsic.api.models.FinnishTrustNetworkInput;
 import id.trinsic.api.models.FranceIdentiteInput;
 import id.trinsic.api.models.GermanyEudiSandboxInput;
 import id.trinsic.api.models.GoogleWalletInput;
@@ -44,6 +47,7 @@ import id.trinsic.api.models.IdinInput;
 import id.trinsic.api.models.IndiaPanLookupInput;
 import id.trinsic.api.models.IndonesiaDukcapilMatchInput;
 import id.trinsic.api.models.IndonesiaNikInput;
+import id.trinsic.api.models.JordanSanadInput;
 import id.trinsic.api.models.KenyaNidInput;
 import id.trinsic.api.models.KenyaNidLookup2Input;
 import id.trinsic.api.models.KenyaNidLookup3Input;
@@ -73,6 +77,7 @@ import id.trinsic.api.models.TrinsicTestDatabaseLookupInput;
 import id.trinsic.api.models.TrinsicTestSubProvidersInput;
 import id.trinsic.api.models.UgandaNidMatch2Input;
 import id.trinsic.api.models.UkEvisaLookupInput;
+import id.trinsic.api.models.UsaArizonaWalletInput;
 import id.trinsic.api.models.UsaCaliforniaDmvInput;
 import id.trinsic.api.models.ZimbabweNidLookup2Input;
 import java.util.Arrays;
@@ -113,12 +118,16 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_KOREA_TELCO_MATCH,
   ProviderInput.JSON_PROPERTY_BRAZIL_CPF_LOOKUP,
   ProviderInput.JSON_PROPERTY_BRAZIL_DIGITAL_CNH,
+  ProviderInput.JSON_PROPERTY_JORDAN_SANAD,
   ProviderInput.JSON_PROPERTY_PHILIPPINES_PHILSYS_MATCH,
   ProviderInput.JSON_PROPERTY_PHILIPPINES_PHYSICAL_NATIONAL_ID_QR,
   ProviderInput.JSON_PROPERTY_PHILIPPINES_DIGITAL_NATIONAL_ID_QR,
   ProviderInput.JSON_PROPERTY_SMART_ID,
   ProviderInput.JSON_PROPERTY_MOBILE_ID,
   ProviderInput.JSON_PROPERTY_NETHERLANDS_IDIN,
+  ProviderInput.JSON_PROPERTY_FINNISH_TRUST_NETWORK,
+  ProviderInput.JSON_PROPERTY_CZECH_BANK_ID,
+  ProviderInput.JSON_PROPERTY_AUSTRALIA_CONNECT_ID,
   ProviderInput.JSON_PROPERTY_ITALY_SPID,
   ProviderInput.JSON_PROPERTY_GOOGLE_WALLET,
   ProviderInput.JSON_PROPERTY_APPLE_WALLET,
@@ -137,11 +146,12 @@ import id.trinsic.ApiClient;
   ProviderInput.JSON_PROPERTY_PANAMA_CEDULA_LOOKUP,
   ProviderInput.JSON_PROPERTY_PERU_DNI_LOOKUP,
   ProviderInput.JSON_PROPERTY_UK_EVISA_LOOKUP,
+  ProviderInput.JSON_PROPERTY_USA_ARIZONA_WALLET,
   ProviderInput.JSON_PROPERTY_USA_CALIFORNIA_DMV,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_DATABASE_LOOKUP,
   ProviderInput.JSON_PROPERTY_TRINSIC_TEST_SUB_PROVIDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ProviderInput {
   public static final String JSON_PROPERTY_TRINSIC_MOCK_OUTPUT = "trinsic-mock-output";
   private JsonNullable<MockOutputProviderInput> trinsicMockOutput = JsonNullable.<MockOutputProviderInput>undefined();
@@ -218,6 +228,9 @@ public class ProviderInput {
   public static final String JSON_PROPERTY_BRAZIL_DIGITAL_CNH = "brazil-digital-cnh";
   private JsonNullable<BrazilDigitalCnhInput> brazilDigitalCnh = JsonNullable.<BrazilDigitalCnhInput>undefined();
 
+  public static final String JSON_PROPERTY_JORDAN_SANAD = "jordan-sanad";
+  private JsonNullable<JordanSanadInput> jordanSanad = JsonNullable.<JordanSanadInput>undefined();
+
   public static final String JSON_PROPERTY_PHILIPPINES_PHILSYS_MATCH = "philippines-philsys-match";
   private JsonNullable<PhilippineMatchInput> philippinesPhilsysMatch = JsonNullable.<PhilippineMatchInput>undefined();
 
@@ -235,6 +248,15 @@ public class ProviderInput {
 
   public static final String JSON_PROPERTY_NETHERLANDS_IDIN = "netherlands-idin";
   private JsonNullable<IdinInput> netherlandsIdin = JsonNullable.<IdinInput>undefined();
+
+  public static final String JSON_PROPERTY_FINNISH_TRUST_NETWORK = "finnish-trust-network";
+  private JsonNullable<FinnishTrustNetworkInput> finnishTrustNetwork = JsonNullable.<FinnishTrustNetworkInput>undefined();
+
+  public static final String JSON_PROPERTY_CZECH_BANK_ID = "czech-bank-id";
+  private JsonNullable<CzechBankIdInput> czechBankId = JsonNullable.<CzechBankIdInput>undefined();
+
+  public static final String JSON_PROPERTY_AUSTRALIA_CONNECT_ID = "australia-connect-id";
+  private JsonNullable<ConnectIdInput> australiaConnectId = JsonNullable.<ConnectIdInput>undefined();
 
   public static final String JSON_PROPERTY_ITALY_SPID = "italy-spid";
   private JsonNullable<SpidInput> italySpid = JsonNullable.<SpidInput>undefined();
@@ -289,6 +311,9 @@ public class ProviderInput {
 
   public static final String JSON_PROPERTY_UK_EVISA_LOOKUP = "uk-evisa-lookup";
   private JsonNullable<UkEvisaLookupInput> ukEvisaLookup = JsonNullable.<UkEvisaLookupInput>undefined();
+
+  public static final String JSON_PROPERTY_USA_ARIZONA_WALLET = "usa-arizona-wallet";
+  private JsonNullable<UsaArizonaWalletInput> usaArizonaWallet = JsonNullable.<UsaArizonaWalletInput>undefined();
 
   public static final String JSON_PROPERTY_USA_CALIFORNIA_DMV = "usa-california-dmv";
   private JsonNullable<UsaCaliforniaDmvInput> usaCaliforniaDmv = JsonNullable.<UsaCaliforniaDmvInput>undefined();
@@ -1102,6 +1127,38 @@ public class ProviderInput {
   }
 
 
+  public ProviderInput jordanSanad(@javax.annotation.Nullable JordanSanadInput jordanSanad) {
+    this.jordanSanad = JsonNullable.<JordanSanadInput>of(jordanSanad);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;jordan-sanad&#x60; provider.
+   * @return jordanSanad
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public JordanSanadInput getJordanSanad() {
+        return jordanSanad.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_JORDAN_SANAD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<JordanSanadInput> getJordanSanad_JsonNullable() {
+    return jordanSanad;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_JORDAN_SANAD)
+  public void setJordanSanad_JsonNullable(JsonNullable<JordanSanadInput> jordanSanad) {
+    this.jordanSanad = jordanSanad;
+  }
+
+  public void setJordanSanad(@javax.annotation.Nullable JordanSanadInput jordanSanad) {
+    this.jordanSanad = JsonNullable.<JordanSanadInput>of(jordanSanad);
+  }
+
+
   public ProviderInput philippinesPhilsysMatch(@javax.annotation.Nullable PhilippineMatchInput philippinesPhilsysMatch) {
     this.philippinesPhilsysMatch = JsonNullable.<PhilippineMatchInput>of(philippinesPhilsysMatch);
     return this;
@@ -1291,6 +1348,102 @@ public class ProviderInput {
 
   public void setNetherlandsIdin(@javax.annotation.Nullable IdinInput netherlandsIdin) {
     this.netherlandsIdin = JsonNullable.<IdinInput>of(netherlandsIdin);
+  }
+
+
+  public ProviderInput finnishTrustNetwork(@javax.annotation.Nullable FinnishTrustNetworkInput finnishTrustNetwork) {
+    this.finnishTrustNetwork = JsonNullable.<FinnishTrustNetworkInput>of(finnishTrustNetwork);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;finnish-trust-network&#x60; provider.
+   * @return finnishTrustNetwork
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FinnishTrustNetworkInput getFinnishTrustNetwork() {
+        return finnishTrustNetwork.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_FINNISH_TRUST_NETWORK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FinnishTrustNetworkInput> getFinnishTrustNetwork_JsonNullable() {
+    return finnishTrustNetwork;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_FINNISH_TRUST_NETWORK)
+  public void setFinnishTrustNetwork_JsonNullable(JsonNullable<FinnishTrustNetworkInput> finnishTrustNetwork) {
+    this.finnishTrustNetwork = finnishTrustNetwork;
+  }
+
+  public void setFinnishTrustNetwork(@javax.annotation.Nullable FinnishTrustNetworkInput finnishTrustNetwork) {
+    this.finnishTrustNetwork = JsonNullable.<FinnishTrustNetworkInput>of(finnishTrustNetwork);
+  }
+
+
+  public ProviderInput czechBankId(@javax.annotation.Nullable CzechBankIdInput czechBankId) {
+    this.czechBankId = JsonNullable.<CzechBankIdInput>of(czechBankId);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;czech-bank-id&#x60; provider.
+   * @return czechBankId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public CzechBankIdInput getCzechBankId() {
+        return czechBankId.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_CZECH_BANK_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<CzechBankIdInput> getCzechBankId_JsonNullable() {
+    return czechBankId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CZECH_BANK_ID)
+  public void setCzechBankId_JsonNullable(JsonNullable<CzechBankIdInput> czechBankId) {
+    this.czechBankId = czechBankId;
+  }
+
+  public void setCzechBankId(@javax.annotation.Nullable CzechBankIdInput czechBankId) {
+    this.czechBankId = JsonNullable.<CzechBankIdInput>of(czechBankId);
+  }
+
+
+  public ProviderInput australiaConnectId(@javax.annotation.Nullable ConnectIdInput australiaConnectId) {
+    this.australiaConnectId = JsonNullable.<ConnectIdInput>of(australiaConnectId);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;australia-connect-id&#x60; provider.
+   * @return australiaConnectId
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public ConnectIdInput getAustraliaConnectId() {
+        return australiaConnectId.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_AUSTRALIA_CONNECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<ConnectIdInput> getAustraliaConnectId_JsonNullable() {
+    return australiaConnectId;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_AUSTRALIA_CONNECT_ID)
+  public void setAustraliaConnectId_JsonNullable(JsonNullable<ConnectIdInput> australiaConnectId) {
+    this.australiaConnectId = australiaConnectId;
+  }
+
+  public void setAustraliaConnectId(@javax.annotation.Nullable ConnectIdInput australiaConnectId) {
+    this.australiaConnectId = JsonNullable.<ConnectIdInput>of(australiaConnectId);
   }
 
 
@@ -1870,6 +2023,38 @@ public class ProviderInput {
   }
 
 
+  public ProviderInput usaArizonaWallet(@javax.annotation.Nullable UsaArizonaWalletInput usaArizonaWallet) {
+    this.usaArizonaWallet = JsonNullable.<UsaArizonaWalletInput>of(usaArizonaWallet);
+    return this;
+  }
+
+  /**
+   * Input for the &#x60;usa-arizona-wallet&#x60; provider
+   * @return usaArizonaWallet
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public UsaArizonaWalletInput getUsaArizonaWallet() {
+        return usaArizonaWallet.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_USA_ARIZONA_WALLET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<UsaArizonaWalletInput> getUsaArizonaWallet_JsonNullable() {
+    return usaArizonaWallet;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USA_ARIZONA_WALLET)
+  public void setUsaArizonaWallet_JsonNullable(JsonNullable<UsaArizonaWalletInput> usaArizonaWallet) {
+    this.usaArizonaWallet = usaArizonaWallet;
+  }
+
+  public void setUsaArizonaWallet(@javax.annotation.Nullable UsaArizonaWalletInput usaArizonaWallet) {
+    this.usaArizonaWallet = JsonNullable.<UsaArizonaWalletInput>of(usaArizonaWallet);
+  }
+
+
   public ProviderInput usaCaliforniaDmv(@javax.annotation.Nullable UsaCaliforniaDmvInput usaCaliforniaDmv) {
     this.usaCaliforniaDmv = JsonNullable.<UsaCaliforniaDmvInput>of(usaCaliforniaDmv);
     return this;
@@ -2003,12 +2188,16 @@ public class ProviderInput {
         equalsNullable(this.koreaTelcoMatch, providerInput.koreaTelcoMatch) &&
         equalsNullable(this.brazilCpfLookup, providerInput.brazilCpfLookup) &&
         equalsNullable(this.brazilDigitalCnh, providerInput.brazilDigitalCnh) &&
+        equalsNullable(this.jordanSanad, providerInput.jordanSanad) &&
         equalsNullable(this.philippinesPhilsysMatch, providerInput.philippinesPhilsysMatch) &&
         equalsNullable(this.philippinesPhysicalNationalIdQr, providerInput.philippinesPhysicalNationalIdQr) &&
         equalsNullable(this.philippinesDigitalNationalIdQr, providerInput.philippinesDigitalNationalIdQr) &&
         equalsNullable(this.smartId, providerInput.smartId) &&
         equalsNullable(this.mobileId, providerInput.mobileId) &&
         equalsNullable(this.netherlandsIdin, providerInput.netherlandsIdin) &&
+        equalsNullable(this.finnishTrustNetwork, providerInput.finnishTrustNetwork) &&
+        equalsNullable(this.czechBankId, providerInput.czechBankId) &&
+        equalsNullable(this.australiaConnectId, providerInput.australiaConnectId) &&
         equalsNullable(this.italySpid, providerInput.italySpid) &&
         equalsNullable(this.googleWallet, providerInput.googleWallet) &&
         equalsNullable(this.appleWallet, providerInput.appleWallet) &&
@@ -2027,6 +2216,7 @@ public class ProviderInput {
         equalsNullable(this.panamaCedulaLookup, providerInput.panamaCedulaLookup) &&
         equalsNullable(this.peruDniLookup, providerInput.peruDniLookup) &&
         equalsNullable(this.ukEvisaLookup, providerInput.ukEvisaLookup) &&
+        equalsNullable(this.usaArizonaWallet, providerInput.usaArizonaWallet) &&
         equalsNullable(this.usaCaliforniaDmv, providerInput.usaCaliforniaDmv) &&
         equalsNullable(this.trinsicTestDatabaseLookup, providerInput.trinsicTestDatabaseLookup) &&
         equalsNullable(this.trinsicTestSubProviders, providerInput.trinsicTestSubProviders);
@@ -2038,7 +2228,7 @@ public class ProviderInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(trinsicMockOutput), hashCodeNullable(indonesiaNikLookup), hashCodeNullable(chinaResidentIdMatch), hashCodeNullable(evrotrust), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(southAfricaNidLookup), hashCodeNullable(kenyaNidLookup), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(southAfricaNidMatch2), hashCodeNullable(nigeriaNinLookup2), hashCodeNullable(nigeriaNinLookup3), hashCodeNullable(kenyaNidLookup3), hashCodeNullable(coteDivoireNidLookup2), hashCodeNullable(zimbabweNidLookup2), hashCodeNullable(nigeriaNinMatch2), hashCodeNullable(ugandaNidMatch2), hashCodeNullable(nigeriaNinLookup), hashCodeNullable(indiaDigilockerAadhaarMatch), hashCodeNullable(indiaPanLookup), hashCodeNullable(koreaTelcoMatch), hashCodeNullable(brazilCpfLookup), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(philippinesPhilsysMatch), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(netherlandsIdin), hashCodeNullable(italySpid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(samsungWallet), hashCodeNullable(franceIdentite), hashCodeNullable(moldovaEvoWallet), hashCodeNullable(germanyEudiSandbox), hashCodeNullable(denmarkAltid), hashCodeNullable(austriaValeraEudiSandbox), hashCodeNullable(netherlandsEudiSandbox), hashCodeNullable(polandMobywatelMatch), hashCodeNullable(boliviaCiLookup), hashCodeNullable(colombiaCcLookup), hashCodeNullable(elSalvadorDuiLookup), hashCodeNullable(guatemalaCuiLookup), hashCodeNullable(panamaCedulaLookup), hashCodeNullable(peruDniLookup), hashCodeNullable(ukEvisaLookup), hashCodeNullable(usaCaliforniaDmv), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
+    return Objects.hash(hashCodeNullable(trinsicMockOutput), hashCodeNullable(indonesiaNikLookup), hashCodeNullable(chinaResidentIdMatch), hashCodeNullable(evrotrust), hashCodeNullable(indonesiaDukcapilMatch), hashCodeNullable(mexicoCurpLookup), hashCodeNullable(southAfricaNidLookup), hashCodeNullable(kenyaNidLookup), hashCodeNullable(kenyaNidMatch2), hashCodeNullable(kenyaNidLookup2), hashCodeNullable(southAfricaNidLookup2), hashCodeNullable(southAfricaNidMatch2), hashCodeNullable(nigeriaNinLookup2), hashCodeNullable(nigeriaNinLookup3), hashCodeNullable(kenyaNidLookup3), hashCodeNullable(coteDivoireNidLookup2), hashCodeNullable(zimbabweNidLookup2), hashCodeNullable(nigeriaNinMatch2), hashCodeNullable(ugandaNidMatch2), hashCodeNullable(nigeriaNinLookup), hashCodeNullable(indiaDigilockerAadhaarMatch), hashCodeNullable(indiaPanLookup), hashCodeNullable(koreaTelcoMatch), hashCodeNullable(brazilCpfLookup), hashCodeNullable(brazilDigitalCnh), hashCodeNullable(jordanSanad), hashCodeNullable(philippinesPhilsysMatch), hashCodeNullable(philippinesPhysicalNationalIdQr), hashCodeNullable(philippinesDigitalNationalIdQr), hashCodeNullable(smartId), hashCodeNullable(mobileId), hashCodeNullable(netherlandsIdin), hashCodeNullable(finnishTrustNetwork), hashCodeNullable(czechBankId), hashCodeNullable(australiaConnectId), hashCodeNullable(italySpid), hashCodeNullable(googleWallet), hashCodeNullable(appleWallet), hashCodeNullable(samsungWallet), hashCodeNullable(franceIdentite), hashCodeNullable(moldovaEvoWallet), hashCodeNullable(germanyEudiSandbox), hashCodeNullable(denmarkAltid), hashCodeNullable(austriaValeraEudiSandbox), hashCodeNullable(netherlandsEudiSandbox), hashCodeNullable(polandMobywatelMatch), hashCodeNullable(boliviaCiLookup), hashCodeNullable(colombiaCcLookup), hashCodeNullable(elSalvadorDuiLookup), hashCodeNullable(guatemalaCuiLookup), hashCodeNullable(panamaCedulaLookup), hashCodeNullable(peruDniLookup), hashCodeNullable(ukEvisaLookup), hashCodeNullable(usaArizonaWallet), hashCodeNullable(usaCaliforniaDmv), hashCodeNullable(trinsicTestDatabaseLookup), hashCodeNullable(trinsicTestSubProviders));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2077,12 +2267,16 @@ public class ProviderInput {
     sb.append("    koreaTelcoMatch: ").append(toIndentedString(koreaTelcoMatch)).append("\n");
     sb.append("    brazilCpfLookup: ").append(toIndentedString(brazilCpfLookup)).append("\n");
     sb.append("    brazilDigitalCnh: ").append(toIndentedString(brazilDigitalCnh)).append("\n");
+    sb.append("    jordanSanad: ").append(toIndentedString(jordanSanad)).append("\n");
     sb.append("    philippinesPhilsysMatch: ").append(toIndentedString(philippinesPhilsysMatch)).append("\n");
     sb.append("    philippinesPhysicalNationalIdQr: ").append(toIndentedString(philippinesPhysicalNationalIdQr)).append("\n");
     sb.append("    philippinesDigitalNationalIdQr: ").append(toIndentedString(philippinesDigitalNationalIdQr)).append("\n");
     sb.append("    smartId: ").append(toIndentedString(smartId)).append("\n");
     sb.append("    mobileId: ").append(toIndentedString(mobileId)).append("\n");
     sb.append("    netherlandsIdin: ").append(toIndentedString(netherlandsIdin)).append("\n");
+    sb.append("    finnishTrustNetwork: ").append(toIndentedString(finnishTrustNetwork)).append("\n");
+    sb.append("    czechBankId: ").append(toIndentedString(czechBankId)).append("\n");
+    sb.append("    australiaConnectId: ").append(toIndentedString(australiaConnectId)).append("\n");
     sb.append("    italySpid: ").append(toIndentedString(italySpid)).append("\n");
     sb.append("    googleWallet: ").append(toIndentedString(googleWallet)).append("\n");
     sb.append("    appleWallet: ").append(toIndentedString(appleWallet)).append("\n");
@@ -2101,6 +2295,7 @@ public class ProviderInput {
     sb.append("    panamaCedulaLookup: ").append(toIndentedString(panamaCedulaLookup)).append("\n");
     sb.append("    peruDniLookup: ").append(toIndentedString(peruDniLookup)).append("\n");
     sb.append("    ukEvisaLookup: ").append(toIndentedString(ukEvisaLookup)).append("\n");
+    sb.append("    usaArizonaWallet: ").append(toIndentedString(usaArizonaWallet)).append("\n");
     sb.append("    usaCaliforniaDmv: ").append(toIndentedString(usaCaliforniaDmv)).append("\n");
     sb.append("    trinsicTestDatabaseLookup: ").append(toIndentedString(trinsicTestDatabaseLookup)).append("\n");
     sb.append("    trinsicTestSubProviders: ").append(toIndentedString(trinsicTestSubProviders)).append("\n");
@@ -2273,6 +2468,11 @@ public class ProviderInput {
       joiner.add(getBrazilDigitalCnh().toUrlQueryString(prefix + "brazil-digital-cnh" + suffix));
     }
 
+    // add `jordan-sanad` to the URL query string
+    if (getJordanSanad() != null) {
+      joiner.add(getJordanSanad().toUrlQueryString(prefix + "jordan-sanad" + suffix));
+    }
+
     // add `philippines-philsys-match` to the URL query string
     if (getPhilippinesPhilsysMatch() != null) {
       joiner.add(getPhilippinesPhilsysMatch().toUrlQueryString(prefix + "philippines-philsys-match" + suffix));
@@ -2301,6 +2501,21 @@ public class ProviderInput {
     // add `netherlands-idin` to the URL query string
     if (getNetherlandsIdin() != null) {
       joiner.add(getNetherlandsIdin().toUrlQueryString(prefix + "netherlands-idin" + suffix));
+    }
+
+    // add `finnish-trust-network` to the URL query string
+    if (getFinnishTrustNetwork() != null) {
+      joiner.add(getFinnishTrustNetwork().toUrlQueryString(prefix + "finnish-trust-network" + suffix));
+    }
+
+    // add `czech-bank-id` to the URL query string
+    if (getCzechBankId() != null) {
+      joiner.add(getCzechBankId().toUrlQueryString(prefix + "czech-bank-id" + suffix));
+    }
+
+    // add `australia-connect-id` to the URL query string
+    if (getAustraliaConnectId() != null) {
+      joiner.add(getAustraliaConnectId().toUrlQueryString(prefix + "australia-connect-id" + suffix));
     }
 
     // add `italy-spid` to the URL query string
@@ -2391,6 +2606,11 @@ public class ProviderInput {
     // add `uk-evisa-lookup` to the URL query string
     if (getUkEvisaLookup() != null) {
       joiner.add(getUkEvisaLookup().toUrlQueryString(prefix + "uk-evisa-lookup" + suffix));
+    }
+
+    // add `usa-arizona-wallet` to the URL query string
+    if (getUsaArizonaWallet() != null) {
+      joiner.add(getUsaArizonaWallet().toUrlQueryString(prefix + "usa-arizona-wallet" + suffix));
     }
 
     // add `usa-california-dmv` to the URL query string

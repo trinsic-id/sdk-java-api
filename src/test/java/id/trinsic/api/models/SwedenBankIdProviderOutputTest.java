@@ -60,6 +60,22 @@ class SwedenBankIdProviderOutputTest {
     }
 
     /**
+     * Test the property 'sex'
+     */
+    @Test
+    void sexTest() {
+        // TODO: test sex
+    }
+
+    /**
+     * Test the property 'sub'
+     */
+    @Test
+    void subTest() {
+        // TODO: test sub
+    }
+
+    /**
      * Test the property 'personalIdentityNumber'
      */
     @Test

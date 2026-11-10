@@ -71,6 +71,14 @@ class CreateDirectProviderSessionRequestTest {
     }
 
     /**
+     * Test the property 'enableRedirectBackwardsCompatibility'
+     */
+    @Test
+    void enableRedirectBackwardsCompatibilityTest() {
+        // TODO: test enableRedirectBackwardsCompatibility
+    }
+
+    /**
      * Test the property 'capabilities'
      */
     @Test

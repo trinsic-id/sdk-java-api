@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** | The unique identifier of the provider |  |
 |**name** | **String** | The display name of the provider |  |
+|**localizedDisplayNames** | **Map&lt;String, String&gt;** | Localized display names for the Provider, if any, keyed by lowercase BCP 47 language codes (eg \&quot;fr\&quot;).              If a particular language code is not present, fall back to &#x60;name&#x60;.              This should not be confused for the list of languages the Provider officially supports. |  [optional] |
 |**logoUrl** | **String** | The URL of the provider&#39;s logo |  |
 |**subtext** | **String** | The Provider&#39;s subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider. |  |
 |**regions** | **List&lt;String&gt;** | Specific regions supported by this provider |  |

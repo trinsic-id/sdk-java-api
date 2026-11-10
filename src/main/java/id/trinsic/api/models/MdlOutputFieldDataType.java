@@ -40,7 +40,9 @@ public enum MdlOutputFieldDataType {
   
   ENCODED_CBOR("EncodedCbor"),
   
-  INTENTIONALLY_OMITTED("IntentionallyOmitted");
+  INTENTIONALLY_OMITTED("IntentionallyOmitted"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -65,7 +67,7 @@ public enum MdlOutputFieldDataType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

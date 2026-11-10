@@ -64,7 +64,7 @@ import id.trinsic.ApiClient;
   ClearProviderOutput.JSON_PROPERTY_IDV_STATUS,
   ClearProviderOutput.JSON_PROPERTY_SESSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ClearProviderOutput {
   public static final String JSON_PROPERTY_AUTHENTICATED = "authenticated";
   private JsonNullable<Boolean> authenticated = JsonNullable.<Boolean>undefined();
@@ -167,7 +167,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addAuthenticationMethodsItem(String authenticationMethodsItem) {
-    if (this.authenticationMethods == null || !this.authenticationMethods.isPresent()) {
+    if (this.authenticationMethods == null || !this.authenticationMethods.isPresent() || this.authenticationMethods.get() == null) {
       this.authenticationMethods = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -211,7 +211,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addActivatedAuthenticationMethodsItem(String activatedAuthenticationMethodsItem) {
-    if (this.activatedAuthenticationMethods == null || !this.activatedAuthenticationMethods.isPresent()) {
+    if (this.activatedAuthenticationMethods == null || !this.activatedAuthenticationMethods.isPresent() || this.activatedAuthenticationMethods.get() == null) {
       this.activatedAuthenticationMethods = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -255,7 +255,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addChecksItem(ClearProviderOutputCheck checksItem) {
-    if (this.checks == null || !this.checks.isPresent()) {
+    if (this.checks == null || !this.checks.isPresent() || this.checks.get() == null) {
       this.checks = JsonNullable.<List<ClearProviderOutputCheck>>of(new ArrayList<>());
     }
     try {
@@ -299,7 +299,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addCheckMetadataItem(String checkMetadataItem) {
-    if (this.checkMetadata == null || !this.checkMetadata.isPresent()) {
+    if (this.checkMetadata == null || !this.checkMetadata.isPresent() || this.checkMetadata.get() == null) {
       this.checkMetadata = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -471,7 +471,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addFieldsToCollectItem(String fieldsToCollectItem) {
-    if (this.fieldsToCollect == null || !this.fieldsToCollect.isPresent()) {
+    if (this.fieldsToCollect == null || !this.fieldsToCollect.isPresent() || this.fieldsToCollect.get() == null) {
       this.fieldsToCollect = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -515,7 +515,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addIpItem(String ipItem) {
-    if (this.ip == null || !this.ip.isPresent()) {
+    if (this.ip == null || !this.ip.isPresent() || this.ip.get() == null) {
       this.ip = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -655,7 +655,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addUserAgentItem(String userAgentItem) {
-    if (this.userAgent == null || !this.userAgent.isPresent()) {
+    if (this.userAgent == null || !this.userAgent.isPresent() || this.userAgent.get() == null) {
       this.userAgent = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -827,7 +827,7 @@ public class ClearProviderOutput {
   }
 
   public ClearProviderOutput addSessionsItem(ClearProviderOutputSessionInfo sessionsItem) {
-    if (this.sessions == null || !this.sessions.isPresent()) {
+    if (this.sessions == null || !this.sessions.isPresent() || this.sessions.get() == null) {
       this.sessions = JsonNullable.<List<ClearProviderOutputSessionInfo>>of(new ArrayList<>());
     }
     try {

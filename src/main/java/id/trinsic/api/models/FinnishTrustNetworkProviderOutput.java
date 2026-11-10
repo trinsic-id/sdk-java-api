@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.FinnishTrustNetworkAddressOutput;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -47,10 +48,11 @@ import id.trinsic.ApiClient;
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_LEVEL_OF_ASSURANCE,
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_BANK,
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_PHONE_NUMBER,
+  FinnishTrustNetworkProviderOutput.JSON_PROPERTY_ADDRESS,
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_ORGANIZATION_NAME,
   FinnishTrustNetworkProviderOutput.JSON_PROPERTY_VAT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class FinnishTrustNetworkProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -78,6 +80,9 @@ public class FinnishTrustNetworkProviderOutput {
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ADDRESS = "address";
+  private JsonNullable<FinnishTrustNetworkAddressOutput> address = JsonNullable.<FinnishTrustNetworkAddressOutput>undefined();
 
   public static final String JSON_PROPERTY_ORGANIZATION_NAME = "organizationName";
   private JsonNullable<String> organizationName = JsonNullable.<String>undefined();
@@ -376,6 +381,38 @@ public class FinnishTrustNetworkProviderOutput {
   }
 
 
+  public FinnishTrustNetworkProviderOutput address(@javax.annotation.Nullable FinnishTrustNetworkAddressOutput address) {
+    this.address = JsonNullable.<FinnishTrustNetworkAddressOutput>of(address);
+    return this;
+  }
+
+  /**
+   * The address of the individual.
+   * @return address
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public FinnishTrustNetworkAddressOutput getAddress() {
+        return address.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<FinnishTrustNetworkAddressOutput> getAddress_JsonNullable() {
+    return address;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  public void setAddress_JsonNullable(JsonNullable<FinnishTrustNetworkAddressOutput> address) {
+    this.address = address;
+  }
+
+  public void setAddress(@javax.annotation.Nullable FinnishTrustNetworkAddressOutput address) {
+    this.address = JsonNullable.<FinnishTrustNetworkAddressOutput>of(address);
+  }
+
+
   public FinnishTrustNetworkProviderOutput organizationName(@javax.annotation.Nullable String organizationName) {
     this.organizationName = JsonNullable.<String>of(organizationName);
     return this;
@@ -461,6 +498,7 @@ public class FinnishTrustNetworkProviderOutput {
         equalsNullable(this.levelOfAssurance, finnishTrustNetworkProviderOutput.levelOfAssurance) &&
         equalsNullable(this.bank, finnishTrustNetworkProviderOutput.bank) &&
         equalsNullable(this.phoneNumber, finnishTrustNetworkProviderOutput.phoneNumber) &&
+        equalsNullable(this.address, finnishTrustNetworkProviderOutput.address) &&
         equalsNullable(this.organizationName, finnishTrustNetworkProviderOutput.organizationName) &&
         equalsNullable(this.vatNumber, finnishTrustNetworkProviderOutput.vatNumber);
   }
@@ -471,7 +509,7 @@ public class FinnishTrustNetworkProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(personalIdentificationCode), hashCodeNullable(uniqueIdentificationNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(levelOfAssurance), hashCodeNullable(bank), hashCodeNullable(phoneNumber), hashCodeNullable(organizationName), hashCodeNullable(vatNumber));
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(personalIdentificationCode), hashCodeNullable(uniqueIdentificationNumber), hashCodeNullable(givenName), hashCodeNullable(familyName), hashCodeNullable(levelOfAssurance), hashCodeNullable(bank), hashCodeNullable(phoneNumber), hashCodeNullable(address), hashCodeNullable(organizationName), hashCodeNullable(vatNumber));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -494,6 +532,7 @@ public class FinnishTrustNetworkProviderOutput {
     sb.append("    levelOfAssurance: ").append(toIndentedString(levelOfAssurance)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    vatNumber: ").append(toIndentedString(vatNumber)).append("\n");
     sb.append("}");
@@ -583,6 +622,11 @@ public class FinnishTrustNetworkProviderOutput {
     // add `phoneNumber` to the URL query string
     if (getPhoneNumber() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sphoneNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhoneNumber()))));
+    }
+
+    // add `address` to the URL query string
+    if (getAddress() != null) {
+      joiner.add(getAddress().toUrlQueryString(prefix + "address" + suffix));
     }
 
     // add `organizationName` to the URL query string

@@ -33,7 +33,9 @@ import id.trinsic.api.models.ResultCollectionMethod;
 import id.trinsic.api.models.SubProviderMetadata;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -48,6 +50,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   Provider.JSON_PROPERTY_ID,
   Provider.JSON_PROPERTY_NAME,
+  Provider.JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES,
   Provider.JSON_PROPERTY_LOGO_URL,
   Provider.JSON_PROPERTY_SUBTEXT,
   Provider.JSON_PROPERTY_REGIONS,
@@ -68,7 +71,7 @@ import id.trinsic.ApiClient;
   Provider.JSON_PROPERTY_LIVE_HEALTH,
   Provider.JSON_PROPERTY_TEST_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Provider {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -77,6 +80,9 @@ public class Provider {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
   private String name;
+
+  public static final String JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES = "localizedDisplayNames";
+  private JsonNullable<Map<String, String>> localizedDisplayNames = JsonNullable.<Map<String, String>>undefined();
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
@@ -198,6 +204,50 @@ public class Provider {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
+  }
+
+
+  public Provider localizedDisplayNames(@javax.annotation.Nullable Map<String, String> localizedDisplayNames) {
+    this.localizedDisplayNames = JsonNullable.<Map<String, String>>of(localizedDisplayNames);
+    return this;
+  }
+
+  public Provider putLocalizedDisplayNamesItem(String key, String localizedDisplayNamesItem) {
+    if (this.localizedDisplayNames == null || !this.localizedDisplayNames.isPresent() || this.localizedDisplayNames.get() == null) {
+      this.localizedDisplayNames = JsonNullable.<Map<String, String>>of(new HashMap<>());
+    }
+    try {
+      this.localizedDisplayNames.get().put(key, localizedDisplayNamesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Localized display names for the Provider, if any, keyed by lowercase BCP 47 language codes (eg \&quot;fr\&quot;).              If a particular language code is not present, fall back to &#x60;name&#x60;.              This should not be confused for the list of languages the Provider officially supports.
+   * @return localizedDisplayNames
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Map<String, String> getLocalizedDisplayNames() {
+        return localizedDisplayNames.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Map<String, String>> getLocalizedDisplayNames_JsonNullable() {
+    return localizedDisplayNames;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES)
+  public void setLocalizedDisplayNames_JsonNullable(JsonNullable<Map<String, String>> localizedDisplayNames) {
+    this.localizedDisplayNames = localizedDisplayNames;
+  }
+
+  public void setLocalizedDisplayNames(@javax.annotation.Nullable Map<String, String> localizedDisplayNames) {
+    this.localizedDisplayNames = JsonNullable.<Map<String, String>>of(localizedDisplayNames);
   }
 
 
@@ -543,7 +593,7 @@ public class Provider {
   }
 
   public Provider addSupportedLanguagesItem(ProviderSupportedLanguage supportedLanguagesItem) {
-    if (this.supportedLanguages == null || !this.supportedLanguages.isPresent()) {
+    if (this.supportedLanguages == null || !this.supportedLanguages.isPresent() || this.supportedLanguages.get() == null) {
       this.supportedLanguages = JsonNullable.<List<ProviderSupportedLanguage>>of(new ArrayList<>());
     }
     try {
@@ -587,7 +637,7 @@ public class Provider {
   }
 
   public Provider addAvailableAttributesItem(ContractAttribute availableAttributesItem) {
-    if (this.availableAttributes == null || !this.availableAttributes.isPresent()) {
+    if (this.availableAttributes == null || !this.availableAttributes.isPresent() || this.availableAttributes.get() == null) {
       this.availableAttributes = JsonNullable.<List<ContractAttribute>>of(new ArrayList<>());
     }
     try {
@@ -631,7 +681,7 @@ public class Provider {
   }
 
   public Provider addAvailableAttachmentsItem(ContractAttachment availableAttachmentsItem) {
-    if (this.availableAttachments == null || !this.availableAttachments.isPresent()) {
+    if (this.availableAttachments == null || !this.availableAttachments.isPresent() || this.availableAttachments.get() == null) {
       this.availableAttachments = JsonNullable.<List<ContractAttachment>>of(new ArrayList<>());
     }
     try {
@@ -675,7 +725,7 @@ public class Provider {
   }
 
   public Provider addSubProvidersItem(SubProviderMetadata subProvidersItem) {
-    if (this.subProviders == null || !this.subProviders.isPresent()) {
+    if (this.subProviders == null || !this.subProviders.isPresent() || this.subProviders.get() == null) {
       this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(new ArrayList<>());
     }
     try {
@@ -775,6 +825,7 @@ public class Provider {
     Provider provider = (Provider) o;
     return Objects.equals(this.id, provider.id) &&
         Objects.equals(this.name, provider.name) &&
+        equalsNullable(this.localizedDisplayNames, provider.localizedDisplayNames) &&
         Objects.equals(this.logoUrl, provider.logoUrl) &&
         Objects.equals(this.subtext, provider.subtext) &&
         Objects.equals(this.regions, provider.regions) &&
@@ -802,7 +853,7 @@ public class Provider {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoUrl, subtext, regions, countries, subdivisions, licensed, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsDirectProviderSessions, hashCodeNullable(supportedLanguages), hashCodeNullable(availableAttributes), hashCodeNullable(availableAttachments), hashCodeNullable(subProviders), liveHealth, testHealth);
+    return Objects.hash(id, name, hashCodeNullable(localizedDisplayNames), logoUrl, subtext, regions, countries, subdivisions, licensed, launchMethod, collectionMethod, resultsMayBeDelayedAfterRedirect, hasRefreshableContent, requiresInput, hasTrinsicInterface, supportsDirectProviderSessions, hashCodeNullable(supportedLanguages), hashCodeNullable(availableAttributes), hashCodeNullable(availableAttachments), hashCodeNullable(subProviders), liveHealth, testHealth);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -818,6 +869,7 @@ public class Provider {
     sb.append("class Provider {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    localizedDisplayNames: ").append(toIndentedString(localizedDisplayNames)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
     sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
@@ -889,6 +941,15 @@ public class Provider {
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `localizedDisplayNames` to the URL query string
+    if (getLocalizedDisplayNames() != null) {
+      for (String _key : getLocalizedDisplayNames().keySet()) {
+        joiner.add(String.format(java.util.Locale.ROOT, "%slocalizedDisplayNames%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
+            getLocalizedDisplayNames().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getLocalizedDisplayNames().get(_key)))));
+      }
     }
 
     // add `logoUrl` to the URL query string

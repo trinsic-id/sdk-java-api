@@ -44,13 +44,14 @@ import id.trinsic.ApiClient;
   VerificationProfileResponse.JSON_PROPERTY_ALIAS,
   VerificationProfileResponse.JSON_PROPERTY_BRAND_NAME,
   VerificationProfileResponse.JSON_PROPERTY_EXTERNAL_ID,
+  VerificationProfileResponse.JSON_PROPERTY_GEOGRAPHY,
   VerificationProfileResponse.JSON_PROPERTY_LOGO_URL,
   VerificationProfileResponse.JSON_PROPERTY_PRIMARY_COLOR,
   VerificationProfileResponse.JSON_PROPERTY_ENABLED_PROVIDERS,
   VerificationProfileResponse.JSON_PROPERTY_SESSION_EXPIRATION,
   VerificationProfileResponse.JSON_PROPERTY_IS_PRODUCTION_USAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class VerificationProfileResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -66,6 +67,10 @@ public class VerificationProfileResponse {
 
   public static final String JSON_PROPERTY_EXTERNAL_ID = "externalId";
   private JsonNullable<String> externalId = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_GEOGRAPHY = "geography";
+  @javax.annotation.Nonnull
+  private String geography;
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
@@ -191,6 +196,30 @@ public class VerificationProfileResponse {
 
   public void setExternalId(@javax.annotation.Nullable String externalId) {
     this.externalId = JsonNullable.<String>of(externalId);
+  }
+
+
+  public VerificationProfileResponse geography(@javax.annotation.Nonnull String geography) {
+    this.geography = geography;
+    return this;
+  }
+
+  /**
+   * The data-residency geography of the verification profile, such as \&quot;US\&quot; or \&quot;EU\&quot;.
+   * @return geography
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public String getGeography() {
+    return geography;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_GEOGRAPHY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setGeography(@javax.annotation.Nonnull String geography) {
+    this.geography = geography;
   }
 
 
@@ -338,6 +367,7 @@ public class VerificationProfileResponse {
         Objects.equals(this.alias, verificationProfileResponse.alias) &&
         Objects.equals(this.brandName, verificationProfileResponse.brandName) &&
         equalsNullable(this.externalId, verificationProfileResponse.externalId) &&
+        Objects.equals(this.geography, verificationProfileResponse.geography) &&
         Objects.equals(this.logoUrl, verificationProfileResponse.logoUrl) &&
         Objects.equals(this.primaryColor, verificationProfileResponse.primaryColor) &&
         Objects.equals(this.enabledProviders, verificationProfileResponse.enabledProviders) &&
@@ -351,7 +381,7 @@ public class VerificationProfileResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, alias, brandName, hashCodeNullable(externalId), logoUrl, primaryColor, enabledProviders, sessionExpiration, isProductionUsage);
+    return Objects.hash(id, alias, brandName, hashCodeNullable(externalId), geography, logoUrl, primaryColor, enabledProviders, sessionExpiration, isProductionUsage);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -369,6 +399,7 @@ public class VerificationProfileResponse {
     sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
     sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    geography: ").append(toIndentedString(geography)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    enabledProviders: ").append(toIndentedString(enabledProviders)).append("\n");
@@ -436,6 +467,11 @@ public class VerificationProfileResponse {
     // add `externalId` to the URL query string
     if (getExternalId() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sexternalId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExternalId()))));
+    }
+
+    // add `geography` to the URL query string
+    if (getGeography() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sgeography%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGeography()))));
     }
 
     // add `logoUrl` to the URL query string

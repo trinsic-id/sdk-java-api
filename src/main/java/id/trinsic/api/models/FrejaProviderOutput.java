@@ -61,7 +61,7 @@ import id.trinsic.ApiClient;
   FrejaProviderOutput.JSON_PROPERTY_RELYING_PARTY_USER_ID,
   FrejaProviderOutput.JSON_PROPERTY_TRANSACTION_REFERENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class FrejaProviderOutput {
   public static final String JSON_PROPERTY_NAME = "name";
   private JsonNullable<String> name = JsonNullable.<String>undefined();
@@ -318,7 +318,7 @@ public class FrejaProviderOutput {
   }
 
   public FrejaProviderOutput addAllEmailAddressesItem(String allEmailAddressesItem) {
-    if (this.allEmailAddresses == null || !this.allEmailAddresses.isPresent()) {
+    if (this.allEmailAddresses == null || !this.allEmailAddresses.isPresent() || this.allEmailAddresses.get() == null) {
       this.allEmailAddresses = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -394,7 +394,7 @@ public class FrejaProviderOutput {
   }
 
   public FrejaProviderOutput addAllPhysicalAddressesItem(OutputFrejaAddress allPhysicalAddressesItem) {
-    if (this.allPhysicalAddresses == null || !this.allPhysicalAddresses.isPresent()) {
+    if (this.allPhysicalAddresses == null || !this.allPhysicalAddresses.isPresent() || this.allPhysicalAddresses.get() == null) {
       this.allPhysicalAddresses = JsonNullable.<List<OutputFrejaAddress>>of(new ArrayList<>());
     }
     try {

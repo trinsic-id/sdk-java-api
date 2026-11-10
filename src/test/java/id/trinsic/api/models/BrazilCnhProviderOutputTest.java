@@ -46,6 +46,14 @@ class BrazilCnhProviderOutputTest {
     }
 
     /**
+     * Test the property 'cpfNumber'
+     */
+    @Test
+    void cpfNumberTest() {
+        // TODO: test cpfNumber
+    }
+
+    /**
      * Test the property 'fullName'
      */
     @Test

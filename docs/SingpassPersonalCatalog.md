@@ -29,7 +29,7 @@ MyInfo Personal catalog.
 |**passExpiryDate** | **LocalDate** | Pass expiration date.              Note that this only applies to a FIN holder. |  [optional] |
 |**employmentSector** | **String** | The user&#39;s employment sector. |  [optional] |
 |**registeredAddress** | [**SingpassMyInfoRegisteredAddressOutput**](SingpassMyInfoRegisteredAddressOutput.md) | The user&#39;s registered address. |  [optional] |
-|**houseDevelopmenetBoardType** | [**SingpassMyInfoDescription**](SingpassMyInfoDescription.md) | Housing and Development Board (HBD) flat type code and description.              This value will be null if not HBD Possible values (code description): - 111 1-ROOM FLAT (HDB) - 112 2-ROOM FLAT (HDB) - 113 3-ROOM FLAT (HDB) - 114 4-ROOM FLAT (HDB) - 115 5-ROOM FLAT (HDB) - 116 EXECUTIVE FLAT (HDB) - 118 STUDIO APARTMENT (HDB) |  [optional] |
+|**houseDevelopmentBoardType** | [**SingpassMyInfoDescription**](SingpassMyInfoDescription.md) | Housing and Development Board (HDB) flat type code and description.              This value will be null if not HDB. Possible values (code description): - 111 1-ROOM FLAT (HDB) - 112 2-ROOM FLAT (HDB) - 113 3-ROOM FLAT (HDB) - 114 4-ROOM FLAT (HDB) - 115 5-ROOM FLAT (HDB) - 116 EXECUTIVE FLAT (HDB) - 118 STUDIO APARTMENT (HDB) |  [optional] |
 |**housingType** | [**SingpassMyInfoDescription**](SingpassMyInfoDescription.md) | The user&#39;s housing type.              Possible values (code description): - 121 DETACHED HOUSE - 122 SEMI-DETACHED HOUSE - 123 TERRACE HOUSE - 131 CONDOMINIUM - 132 EXECUTIVE CONDOMINIUM - 139 APARTMENT |  [optional] |
 |**sex** | **String** | Sex of the individual.              Possible values: - Female - Male - Unknown |  [optional] |
 

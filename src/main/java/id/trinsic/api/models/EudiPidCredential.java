@@ -68,7 +68,7 @@ import id.trinsic.ApiClient;
   EudiPidCredential.JSON_PROPERTY_RESIDENT_POSTAL_CODE,
   EudiPidCredential.JSON_PROPERTY_RESIDENT_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class EudiPidCredential {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -352,7 +352,7 @@ public class EudiPidCredential {
   }
 
   public EudiPidCredential addNationalityItem(String nationalityItem) {
-    if (this.nationality == null || !this.nationality.isPresent()) {
+    if (this.nationality == null || !this.nationality.isPresent() || this.nationality.get() == null) {
       this.nationality = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

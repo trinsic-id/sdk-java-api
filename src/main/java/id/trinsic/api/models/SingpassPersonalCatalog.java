@@ -62,11 +62,11 @@ import id.trinsic.ApiClient;
   SingpassPersonalCatalog.JSON_PROPERTY_PASS_EXPIRY_DATE,
   SingpassPersonalCatalog.JSON_PROPERTY_EMPLOYMENT_SECTOR,
   SingpassPersonalCatalog.JSON_PROPERTY_REGISTERED_ADDRESS,
-  SingpassPersonalCatalog.JSON_PROPERTY_HOUSE_DEVELOPMENET_BOARD_TYPE,
+  SingpassPersonalCatalog.JSON_PROPERTY_HOUSE_DEVELOPMENT_BOARD_TYPE,
   SingpassPersonalCatalog.JSON_PROPERTY_HOUSING_TYPE,
   SingpassPersonalCatalog.JSON_PROPERTY_SEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class SingpassPersonalCatalog {
   public static final String JSON_PROPERTY_IDENTITY_NUMBER = "identityNumber";
   private JsonNullable<String> identityNumber = JsonNullable.<String>undefined();
@@ -131,8 +131,8 @@ public class SingpassPersonalCatalog {
   public static final String JSON_PROPERTY_REGISTERED_ADDRESS = "registeredAddress";
   private JsonNullable<SingpassMyInfoRegisteredAddressOutput> registeredAddress = JsonNullable.<SingpassMyInfoRegisteredAddressOutput>undefined();
 
-  public static final String JSON_PROPERTY_HOUSE_DEVELOPMENET_BOARD_TYPE = "houseDevelopmenetBoardType";
-  private JsonNullable<SingpassMyInfoDescription> houseDevelopmenetBoardType = JsonNullable.<SingpassMyInfoDescription>undefined();
+  public static final String JSON_PROPERTY_HOUSE_DEVELOPMENT_BOARD_TYPE = "houseDevelopmentBoardType";
+  private JsonNullable<SingpassMyInfoDescription> houseDevelopmentBoardType = JsonNullable.<SingpassMyInfoDescription>undefined();
 
   public static final String JSON_PROPERTY_HOUSING_TYPE = "housingType";
   private JsonNullable<SingpassMyInfoDescription> housingType = JsonNullable.<SingpassMyInfoDescription>undefined();
@@ -815,35 +815,35 @@ public class SingpassPersonalCatalog {
   }
 
 
-  public SingpassPersonalCatalog houseDevelopmenetBoardType(@javax.annotation.Nullable SingpassMyInfoDescription houseDevelopmenetBoardType) {
-    this.houseDevelopmenetBoardType = JsonNullable.<SingpassMyInfoDescription>of(houseDevelopmenetBoardType);
+  public SingpassPersonalCatalog houseDevelopmentBoardType(@javax.annotation.Nullable SingpassMyInfoDescription houseDevelopmentBoardType) {
+    this.houseDevelopmentBoardType = JsonNullable.<SingpassMyInfoDescription>of(houseDevelopmentBoardType);
     return this;
   }
 
   /**
-   * Housing and Development Board (HBD) flat type code and description.              This value will be null if not HBD Possible values (code description): - 111 1-ROOM FLAT (HDB) - 112 2-ROOM FLAT (HDB) - 113 3-ROOM FLAT (HDB) - 114 4-ROOM FLAT (HDB) - 115 5-ROOM FLAT (HDB) - 116 EXECUTIVE FLAT (HDB) - 118 STUDIO APARTMENT (HDB)
-   * @return houseDevelopmenetBoardType
+   * Housing and Development Board (HDB) flat type code and description.              This value will be null if not HDB. Possible values (code description): - 111 1-ROOM FLAT (HDB) - 112 2-ROOM FLAT (HDB) - 113 3-ROOM FLAT (HDB) - 114 4-ROOM FLAT (HDB) - 115 5-ROOM FLAT (HDB) - 116 EXECUTIVE FLAT (HDB) - 118 STUDIO APARTMENT (HDB)
+   * @return houseDevelopmentBoardType
    */
   @javax.annotation.Nullable
   @JsonIgnore
-  public SingpassMyInfoDescription getHouseDevelopmenetBoardType() {
-        return houseDevelopmenetBoardType.orElse(null);
+  public SingpassMyInfoDescription getHouseDevelopmentBoardType() {
+        return houseDevelopmentBoardType.orElse(null);
   }
 
-  @JsonProperty(value = JSON_PROPERTY_HOUSE_DEVELOPMENET_BOARD_TYPE, required = false)
+  @JsonProperty(value = JSON_PROPERTY_HOUSE_DEVELOPMENT_BOARD_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SingpassMyInfoDescription> getHouseDevelopmenetBoardType_JsonNullable() {
-    return houseDevelopmenetBoardType;
+  public JsonNullable<SingpassMyInfoDescription> getHouseDevelopmentBoardType_JsonNullable() {
+    return houseDevelopmentBoardType;
   }
   
-  @JsonProperty(JSON_PROPERTY_HOUSE_DEVELOPMENET_BOARD_TYPE)
-  public void setHouseDevelopmenetBoardType_JsonNullable(JsonNullable<SingpassMyInfoDescription> houseDevelopmenetBoardType) {
-    this.houseDevelopmenetBoardType = houseDevelopmenetBoardType;
+  @JsonProperty(JSON_PROPERTY_HOUSE_DEVELOPMENT_BOARD_TYPE)
+  public void setHouseDevelopmentBoardType_JsonNullable(JsonNullable<SingpassMyInfoDescription> houseDevelopmentBoardType) {
+    this.houseDevelopmentBoardType = houseDevelopmentBoardType;
   }
 
-  public void setHouseDevelopmenetBoardType(@javax.annotation.Nullable SingpassMyInfoDescription houseDevelopmenetBoardType) {
-    this.houseDevelopmenetBoardType = JsonNullable.<SingpassMyInfoDescription>of(houseDevelopmenetBoardType);
+  public void setHouseDevelopmentBoardType(@javax.annotation.Nullable SingpassMyInfoDescription houseDevelopmentBoardType) {
+    this.houseDevelopmentBoardType = JsonNullable.<SingpassMyInfoDescription>of(houseDevelopmentBoardType);
   }
 
 
@@ -944,7 +944,7 @@ public class SingpassPersonalCatalog {
         equalsNullable(this.passExpiryDate, singpassPersonalCatalog.passExpiryDate) &&
         equalsNullable(this.employmentSector, singpassPersonalCatalog.employmentSector) &&
         equalsNullable(this.registeredAddress, singpassPersonalCatalog.registeredAddress) &&
-        equalsNullable(this.houseDevelopmenetBoardType, singpassPersonalCatalog.houseDevelopmenetBoardType) &&
+        equalsNullable(this.houseDevelopmentBoardType, singpassPersonalCatalog.houseDevelopmentBoardType) &&
         equalsNullable(this.housingType, singpassPersonalCatalog.housingType) &&
         equalsNullable(this.sex, singpassPersonalCatalog.sex);
   }
@@ -955,7 +955,7 @@ public class SingpassPersonalCatalog {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(identityNumber), hashCodeNullable(partialIdentityNumber), hashCodeNullable(name), hashCodeNullable(aliasName), hashCodeNullable(hanyuPinyinName), hashCodeNullable(hanyuPinyinAliasName), hashCodeNullable(marriedName), hashCodeNullable(email), hashCodeNullable(mobileNumber), hashCodeNullable(dialect), hashCodeNullable(dateOfBirth), hashCodeNullable(residentialStatus), hashCodeNullable(nationality), hashCodeNullable(birthCountry), hashCodeNullable(passportNumber), hashCodeNullable(passportExpiryDate), hashCodeNullable(passType), hashCodeNullable(passStatus), hashCodeNullable(passExpiryDate), hashCodeNullable(employmentSector), hashCodeNullable(registeredAddress), hashCodeNullable(houseDevelopmenetBoardType), hashCodeNullable(housingType), hashCodeNullable(sex));
+    return Objects.hash(hashCodeNullable(identityNumber), hashCodeNullable(partialIdentityNumber), hashCodeNullable(name), hashCodeNullable(aliasName), hashCodeNullable(hanyuPinyinName), hashCodeNullable(hanyuPinyinAliasName), hashCodeNullable(marriedName), hashCodeNullable(email), hashCodeNullable(mobileNumber), hashCodeNullable(dialect), hashCodeNullable(dateOfBirth), hashCodeNullable(residentialStatus), hashCodeNullable(nationality), hashCodeNullable(birthCountry), hashCodeNullable(passportNumber), hashCodeNullable(passportExpiryDate), hashCodeNullable(passType), hashCodeNullable(passStatus), hashCodeNullable(passExpiryDate), hashCodeNullable(employmentSector), hashCodeNullable(registeredAddress), hashCodeNullable(houseDevelopmentBoardType), hashCodeNullable(housingType), hashCodeNullable(sex));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -990,7 +990,7 @@ public class SingpassPersonalCatalog {
     sb.append("    passExpiryDate: ").append(toIndentedString(passExpiryDate)).append("\n");
     sb.append("    employmentSector: ").append(toIndentedString(employmentSector)).append("\n");
     sb.append("    registeredAddress: ").append(toIndentedString(registeredAddress)).append("\n");
-    sb.append("    houseDevelopmenetBoardType: ").append(toIndentedString(houseDevelopmenetBoardType)).append("\n");
+    sb.append("    houseDevelopmentBoardType: ").append(toIndentedString(houseDevelopmentBoardType)).append("\n");
     sb.append("    housingType: ").append(toIndentedString(housingType)).append("\n");
     sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
     sb.append("}");
@@ -1142,9 +1142,9 @@ public class SingpassPersonalCatalog {
       joiner.add(getRegisteredAddress().toUrlQueryString(prefix + "registeredAddress" + suffix));
     }
 
-    // add `houseDevelopmenetBoardType` to the URL query string
-    if (getHouseDevelopmenetBoardType() != null) {
-      joiner.add(getHouseDevelopmenetBoardType().toUrlQueryString(prefix + "houseDevelopmenetBoardType" + suffix));
+    // add `houseDevelopmentBoardType` to the URL query string
+    if (getHouseDevelopmentBoardType() != null) {
+      joiner.add(getHouseDevelopmentBoardType().toUrlQueryString(prefix + "houseDevelopmentBoardType" + suffix));
     }
 
     // add `housingType` to the URL query string

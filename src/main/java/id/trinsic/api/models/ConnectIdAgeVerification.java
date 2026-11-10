@@ -37,13 +37,29 @@ import id.trinsic.ApiClient;
  * ConnectIdAgeVerification
  */
 @JsonPropertyOrder({
+  ConnectIdAgeVerification.JSON_PROPERTY_OVER16,
   ConnectIdAgeVerification.JSON_PROPERTY_OVER18,
+  ConnectIdAgeVerification.JSON_PROPERTY_OVER21,
+  ConnectIdAgeVerification.JSON_PROPERTY_OVER25,
+  ConnectIdAgeVerification.JSON_PROPERTY_OVER65,
   ConnectIdAgeVerification.JSON_PROPERTY_TRUST_FRAMEWORK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ConnectIdAgeVerification {
+  public static final String JSON_PROPERTY_OVER16 = "over16";
+  private JsonNullable<Boolean> over16 = JsonNullable.<Boolean>undefined();
+
   public static final String JSON_PROPERTY_OVER18 = "over18";
   private JsonNullable<Boolean> over18 = JsonNullable.<Boolean>undefined();
+
+  public static final String JSON_PROPERTY_OVER21 = "over21";
+  private JsonNullable<Boolean> over21 = JsonNullable.<Boolean>undefined();
+
+  public static final String JSON_PROPERTY_OVER25 = "over25";
+  private JsonNullable<Boolean> over25 = JsonNullable.<Boolean>undefined();
+
+  public static final String JSON_PROPERTY_OVER65 = "over65";
+  private JsonNullable<Boolean> over65 = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_TRUST_FRAMEWORK = "trustFramework";
   private JsonNullable<String> trustFramework = JsonNullable.<String>undefined();
@@ -51,13 +67,45 @@ public class ConnectIdAgeVerification {
   public ConnectIdAgeVerification() { 
   }
 
+  public ConnectIdAgeVerification over16(@javax.annotation.Nullable Boolean over16) {
+    this.over16 = JsonNullable.<Boolean>of(over16);
+    return this;
+  }
+
+  /**
+   * Whether the individual is at least 16 years old.
+   * @return over16
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getOver16() {
+        return over16.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_OVER16, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getOver16_JsonNullable() {
+    return over16;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OVER16)
+  public void setOver16_JsonNullable(JsonNullable<Boolean> over16) {
+    this.over16 = over16;
+  }
+
+  public void setOver16(@javax.annotation.Nullable Boolean over16) {
+    this.over16 = JsonNullable.<Boolean>of(over16);
+  }
+
+
   public ConnectIdAgeVerification over18(@javax.annotation.Nullable Boolean over18) {
     this.over18 = JsonNullable.<Boolean>of(over18);
     return this;
   }
 
   /**
-   * If the individual is over 18 years old.
+   * Whether the individual is at least 18 years old.
    * @return over18
    */
   @javax.annotation.Nullable
@@ -80,6 +128,102 @@ public class ConnectIdAgeVerification {
 
   public void setOver18(@javax.annotation.Nullable Boolean over18) {
     this.over18 = JsonNullable.<Boolean>of(over18);
+  }
+
+
+  public ConnectIdAgeVerification over21(@javax.annotation.Nullable Boolean over21) {
+    this.over21 = JsonNullable.<Boolean>of(over21);
+    return this;
+  }
+
+  /**
+   * Whether the individual is at least 21 years old.
+   * @return over21
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getOver21() {
+        return over21.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_OVER21, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getOver21_JsonNullable() {
+    return over21;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OVER21)
+  public void setOver21_JsonNullable(JsonNullable<Boolean> over21) {
+    this.over21 = over21;
+  }
+
+  public void setOver21(@javax.annotation.Nullable Boolean over21) {
+    this.over21 = JsonNullable.<Boolean>of(over21);
+  }
+
+
+  public ConnectIdAgeVerification over25(@javax.annotation.Nullable Boolean over25) {
+    this.over25 = JsonNullable.<Boolean>of(over25);
+    return this;
+  }
+
+  /**
+   * Whether the individual is at least 25 years old.
+   * @return over25
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getOver25() {
+        return over25.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_OVER25, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getOver25_JsonNullable() {
+    return over25;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OVER25)
+  public void setOver25_JsonNullable(JsonNullable<Boolean> over25) {
+    this.over25 = over25;
+  }
+
+  public void setOver25(@javax.annotation.Nullable Boolean over25) {
+    this.over25 = JsonNullable.<Boolean>of(over25);
+  }
+
+
+  public ConnectIdAgeVerification over65(@javax.annotation.Nullable Boolean over65) {
+    this.over65 = JsonNullable.<Boolean>of(over65);
+    return this;
+  }
+
+  /**
+   * Whether the individual is at least 65 years old.
+   * @return over65
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Boolean getOver65() {
+        return over65.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_OVER65, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Boolean> getOver65_JsonNullable() {
+    return over65;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OVER65)
+  public void setOver65_JsonNullable(JsonNullable<Boolean> over65) {
+    this.over65 = over65;
+  }
+
+  public void setOver65(@javax.annotation.Nullable Boolean over65) {
+    this.over65 = JsonNullable.<Boolean>of(over65);
   }
 
 
@@ -127,7 +271,11 @@ public class ConnectIdAgeVerification {
       return false;
     }
     ConnectIdAgeVerification connectIdAgeVerification = (ConnectIdAgeVerification) o;
-    return equalsNullable(this.over18, connectIdAgeVerification.over18) &&
+    return equalsNullable(this.over16, connectIdAgeVerification.over16) &&
+        equalsNullable(this.over18, connectIdAgeVerification.over18) &&
+        equalsNullable(this.over21, connectIdAgeVerification.over21) &&
+        equalsNullable(this.over25, connectIdAgeVerification.over25) &&
+        equalsNullable(this.over65, connectIdAgeVerification.over65) &&
         equalsNullable(this.trustFramework, connectIdAgeVerification.trustFramework);
   }
 
@@ -137,7 +285,7 @@ public class ConnectIdAgeVerification {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(over18), hashCodeNullable(trustFramework));
+    return Objects.hash(hashCodeNullable(over16), hashCodeNullable(over18), hashCodeNullable(over21), hashCodeNullable(over25), hashCodeNullable(over65), hashCodeNullable(trustFramework));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -151,7 +299,11 @@ public class ConnectIdAgeVerification {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConnectIdAgeVerification {\n");
+    sb.append("    over16: ").append(toIndentedString(over16)).append("\n");
     sb.append("    over18: ").append(toIndentedString(over18)).append("\n");
+    sb.append("    over21: ").append(toIndentedString(over21)).append("\n");
+    sb.append("    over25: ").append(toIndentedString(over25)).append("\n");
+    sb.append("    over65: ").append(toIndentedString(over65)).append("\n");
     sb.append("    trustFramework: ").append(toIndentedString(trustFramework)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -197,9 +349,29 @@ public class ConnectIdAgeVerification {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `over16` to the URL query string
+    if (getOver16() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sover16%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver16()))));
+    }
+
     // add `over18` to the URL query string
     if (getOver18() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sover18%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver18()))));
+    }
+
+    // add `over21` to the URL query string
+    if (getOver21() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sover21%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver21()))));
+    }
+
+    // add `over25` to the URL query string
+    if (getOver25() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sover25%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver25()))));
+    }
+
+    // add `over65` to the URL query string
+    if (getOver65() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sover65%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOver65()))));
     }
 
     // add `trustFramework` to the URL query string

@@ -14,7 +14,7 @@ Exposed properties for the `india-digilocker-aadhaar` Provider which do not dire
 |**aadhaarNumberLastFour** | **String** | The Aadhaar number (UID) value for the individual.              This is only the last four digits of the Aadhaar number. |  [optional] |
 |**claims** | [**AadhaarClaims**](AadhaarClaims.md) | The claims extracted from the Aadhaar document. |  [optional] |
 |**localizedClaims** | [**AadhaarLocalizedClaims**](AadhaarLocalizedClaims.md) | The localized claims extracted from the Aadhaar document. |  [optional] |
-|**documentSignatureValidated** | **Boolean** | Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers (e.g. Signzy) also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation. |  [optional] |
+|**documentSignatureValidated** | **Boolean** | Whether our own validation of the Aadhaar document signature and certificate chain succeeded.              When the signed document (e.g. Digilocker XML) is available, we validate it using the standard CCA/SafeScrypt chain. When the document is not returned, the signature cannot be validated and this is false. Some providers also supply a separate DSC validation indicator in the webhook payload; that is independent of this flag, which reflects only our validation. |  [optional] |
 
 
 

@@ -56,7 +56,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class VerificationProfilesApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -307,6 +307,7 @@ public class VerificationProfilesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/verification-profiles";
 
@@ -484,6 +485,7 @@ public class VerificationProfilesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/verification-profiles/external-ids/{externalId}"
         .replace("{externalId}", ApiClient.urlEncode(externalId.toString()));
@@ -602,6 +604,7 @@ public class VerificationProfilesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/verification-profiles/{id}"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
@@ -627,11 +630,12 @@ public class VerificationProfilesApi {
    * List the verification profiles for the current organization and environment.
    * @param page  (optional, default to 1)
    * @param pageSize Size of the list to be returned. Accepted range from 1 to 100 (optional, default to 20)
+   * @param geography Filter by data-residency geography. Accepted values: \&quot;US\&quot;, \&quot;EU\&quot; (case-insensitive). Omit to include all geographies. (optional)
    * @return ListVerificationProfilesResponse
    * @throws ApiException if fails to make API call
    */
-  public ListVerificationProfilesResponse listVerificationProfiles(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-    return listVerificationProfiles(page, pageSize, null);
+  public ListVerificationProfilesResponse listVerificationProfiles(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String geography) throws ApiException {
+    return listVerificationProfiles(page, pageSize, geography, null);
   }
 
   /**
@@ -639,12 +643,13 @@ public class VerificationProfilesApi {
    * List the verification profiles for the current organization and environment.
    * @param page  (optional, default to 1)
    * @param pageSize Size of the list to be returned. Accepted range from 1 to 100 (optional, default to 20)
+   * @param geography Filter by data-residency geography. Accepted values: \&quot;US\&quot;, \&quot;EU\&quot; (case-insensitive). Omit to include all geographies. (optional)
    * @param headers Optional headers to include in the request
    * @return ListVerificationProfilesResponse
    * @throws ApiException if fails to make API call
    */
-  public ListVerificationProfilesResponse listVerificationProfiles(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
-    ApiResponse<ListVerificationProfilesResponse> localVarResponse = listVerificationProfilesWithHttpInfo(page, pageSize, headers);
+  public ListVerificationProfilesResponse listVerificationProfiles(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String geography, Map<String, String> headers) throws ApiException {
+    ApiResponse<ListVerificationProfilesResponse> localVarResponse = listVerificationProfilesWithHttpInfo(page, pageSize, geography, headers);
     return localVarResponse.getData();
   }
 
@@ -653,11 +658,12 @@ public class VerificationProfilesApi {
    * List the verification profiles for the current organization and environment.
    * @param page  (optional, default to 1)
    * @param pageSize Size of the list to be returned. Accepted range from 1 to 100 (optional, default to 20)
+   * @param geography Filter by data-residency geography. Accepted values: \&quot;US\&quot;, \&quot;EU\&quot; (case-insensitive). Omit to include all geographies. (optional)
    * @return ApiResponse&lt;ListVerificationProfilesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-    return listVerificationProfilesWithHttpInfo(page, pageSize, null);
+  public ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String geography) throws ApiException {
+    return listVerificationProfilesWithHttpInfo(page, pageSize, geography, null);
   }
 
   /**
@@ -665,12 +671,13 @@ public class VerificationProfilesApi {
    * List the verification profiles for the current organization and environment.
    * @param page  (optional, default to 1)
    * @param pageSize Size of the list to be returned. Accepted range from 1 to 100 (optional, default to 20)
+   * @param geography Filter by data-residency geography. Accepted values: \&quot;US\&quot;, \&quot;EU\&quot; (case-insensitive). Omit to include all geographies. (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;ListVerificationProfilesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = listVerificationProfilesRequestBuilder(page, pageSize, headers);
+  public ApiResponse<ListVerificationProfilesResponse> listVerificationProfilesWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String geography, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = listVerificationProfilesRequestBuilder(page, pageSize, geography, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -717,9 +724,10 @@ public class VerificationProfilesApi {
     }
   }
 
-  private HttpRequest.Builder listVerificationProfilesRequestBuilder(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder listVerificationProfilesRequestBuilder(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String geography, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+    localVarRequestBuilder.header("X-Trinsic-SDK", "java/3.3.0-alpha3");
 
     String localVarPath = "/api/valpha/verification-profiles";
 
@@ -730,6 +738,8 @@ public class VerificationProfilesApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("page", page));
     localVarQueryParameterBaseName = "pageSize";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("pageSize", pageSize));
+    localVarQueryParameterBaseName = "geography";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("geography", geography));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

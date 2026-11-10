@@ -58,7 +58,7 @@ import id.trinsic.ApiClient;
   PeruDniProviderOutput.JSON_PROPERTY_UBIGEO_RENIEC,
   PeruDniProviderOutput.JSON_PROPERTY_VERIFICATION_DIGIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class PeruDniProviderOutput {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private JsonNullable<PeruDniAddress> address = JsonNullable.<PeruDniAddress>undefined();
@@ -149,7 +149,7 @@ public class PeruDniProviderOutput {
   }
 
   public PeruDniProviderOutput addArrayNameItem(String arrayNameItem) {
-    if (this.arrayName == null || !this.arrayName.isPresent()) {
+    if (this.arrayName == null || !this.arrayName.isPresent() || this.arrayName.get() == null) {
       this.arrayName = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

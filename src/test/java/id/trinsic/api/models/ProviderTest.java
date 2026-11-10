@@ -27,7 +27,9 @@ import id.trinsic.api.models.ResultCollectionMethod;
 import id.trinsic.api.models.SubProviderMetadata;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -64,6 +66,14 @@ class ProviderTest {
     @Test
     void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'localizedDisplayNames'
+     */
+    @Test
+    void localizedDisplayNamesTest() {
+        // TODO: test localizedDisplayNames
     }
 
     /**

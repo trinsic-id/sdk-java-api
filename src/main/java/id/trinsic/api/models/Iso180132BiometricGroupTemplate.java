@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   Iso180132BiometricGroupTemplate.JSON_PROPERTY_TEMPLATES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Iso180132BiometricGroupTemplate {
   public static final String JSON_PROPERTY_TEMPLATES = "templates";
   private JsonNullable<List<Iso180132BiometricTemplate>> templates = JsonNullable.<List<Iso180132BiometricTemplate>>undefined();
@@ -56,7 +56,7 @@ public class Iso180132BiometricGroupTemplate {
   }
 
   public Iso180132BiometricGroupTemplate addTemplatesItem(Iso180132BiometricTemplate templatesItem) {
-    if (this.templates == null || !this.templates.isPresent()) {
+    if (this.templates == null || !this.templates.isPresent() || this.templates.get() == null) {
       this.templates = JsonNullable.<List<Iso180132BiometricTemplate>>of(new ArrayList<>());
     }
     try {

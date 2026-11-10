@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.IdentityData;
 import id.trinsic.api.models.Session;
+import id.trinsic.api.models.TrinsicHPKEBundle;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -57,6 +58,14 @@ class GetSessionResultResponseTest {
     @Test
     void identityDataTest() {
         // TODO: test identityData
+    }
+
+    /**
+     * Test the property 'encryptedIdentityData'
+     */
+    @Test
+    void encryptedIdentityDataTest() {
+        // TODO: test encryptedIdentityData
     }
 
 }

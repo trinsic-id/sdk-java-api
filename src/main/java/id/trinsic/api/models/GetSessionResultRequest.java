@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -33,13 +37,17 @@ import id.trinsic.ApiClient;
  * GetSessionResultRequest
  */
 @JsonPropertyOrder({
-  GetSessionResultRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY
+  GetSessionResultRequest.JSON_PROPERTY_RESULTS_ACCESS_KEY,
+  GetSessionResultRequest.JSON_PROPERTY_REDIRECT_TOKEN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class GetSessionResultRequest {
   public static final String JSON_PROPERTY_RESULTS_ACCESS_KEY = "resultsAccessKey";
   @javax.annotation.Nonnull
   private String resultsAccessKey;
+
+  public static final String JSON_PROPERTY_REDIRECT_TOKEN = "redirectToken";
+  private JsonNullable<String> redirectToken = JsonNullable.<String>undefined();
 
   public GetSessionResultRequest() { 
   }
@@ -68,6 +76,38 @@ public class GetSessionResultRequest {
   }
 
 
+  public GetSessionResultRequest redirectToken(@javax.annotation.Nullable String redirectToken) {
+    this.redirectToken = JsonNullable.<String>of(redirectToken);
+    return this;
+  }
+
+  /**
+   * The &#x60;redirectToken&#x60; which Trinsic appended to your Redirect URL before sending the user back to your application.              This is only relevant for Sessions which involve a redirect flow.              If a &#x60;redirectToken&#x60; is required for a Session, it is only required for the first call to &#x60;GetSessionResult&#x60;. Future calls do not require a &#x60;redirectToken&#x60;.
+   * @return redirectToken
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getRedirectToken() {
+        return redirectToken.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_TOKEN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRedirectToken_JsonNullable() {
+    return redirectToken;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REDIRECT_TOKEN)
+  public void setRedirectToken_JsonNullable(JsonNullable<String> redirectToken) {
+    this.redirectToken = redirectToken;
+  }
+
+  public void setRedirectToken(@javax.annotation.Nullable String redirectToken) {
+    this.redirectToken = JsonNullable.<String>of(redirectToken);
+  }
+
+
   /**
    * Return true if this GetSessionResultRequest object is equal to o.
    */
@@ -80,12 +120,24 @@ public class GetSessionResultRequest {
       return false;
     }
     GetSessionResultRequest getSessionResultRequest = (GetSessionResultRequest) o;
-    return Objects.equals(this.resultsAccessKey, getSessionResultRequest.resultsAccessKey);
+    return Objects.equals(this.resultsAccessKey, getSessionResultRequest.resultsAccessKey) &&
+        equalsNullable(this.redirectToken, getSessionResultRequest.redirectToken);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(resultsAccessKey);
+    return Objects.hash(resultsAccessKey, hashCodeNullable(redirectToken));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -93,6 +145,7 @@ public class GetSessionResultRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSessionResultRequest {\n");
     sb.append("    resultsAccessKey: ").append(toIndentedString(resultsAccessKey)).append("\n");
+    sb.append("    redirectToken: ").append(toIndentedString(redirectToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -140,6 +193,11 @@ public class GetSessionResultRequest {
     // add `resultsAccessKey` to the URL query string
     if (getResultsAccessKey() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sresultsAccessKey%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResultsAccessKey()))));
+    }
+
+    // add `redirectToken` to the URL query string
+    if (getRedirectToken() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirectToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectToken()))));
     }
 
     return joiner.toString();

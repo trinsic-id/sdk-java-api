@@ -32,12 +32,16 @@
 |**koreaTelcoMatch** | [**KoreaTelcoMatchInput**](KoreaTelcoMatchInput.md) | Input for the &#x60;korea-telco-match&#x60; provider |  [optional] |
 |**brazilCpfLookup** | [**BrazilCpfCheckInput**](BrazilCpfCheckInput.md) | Input for the &#x60;brazil-cpf-lookup&#x60; provider |  [optional] |
 |**brazilDigitalCnh** | [**BrazilDigitalCnhInput**](BrazilDigitalCnhInput.md) | Input for the &#x60;brazil-digital-cnh&#x60; provider |  [optional] |
+|**jordanSanad** | [**JordanSanadInput**](JordanSanadInput.md) | Input for the &#x60;jordan-sanad&#x60; provider. |  [optional] |
 |**philippinesPhilsysMatch** | [**PhilippineMatchInput**](PhilippineMatchInput.md) | Input for the &#x60;philippines-philsys-match&#x60; provider |  [optional] |
 |**philippinesPhysicalNationalIdQr** | [**PhilippineQRInput**](PhilippineQRInput.md) | Input for the &#x60;philippines-physical-national-id-qr&#x60; provider |  [optional] |
 |**philippinesDigitalNationalIdQr** | [**PhilippineQRInput**](PhilippineQRInput.md) | Input for the &#x60;philippines-digital-national-id-qr&#x60; provider |  [optional] |
 |**smartId** | [**SmartIdInput**](SmartIdInput.md) | Input for the &#x60;smart-id&#x60; provider |  [optional] |
 |**mobileId** | [**MobileIdInput**](MobileIdInput.md) | Input for the &#x60;mobile-id&#x60; provider |  [optional] |
 |**netherlandsIdin** | [**IdinInput**](IdinInput.md) | Input for the &#x60;netherlands-idin&#x60; provider |  [optional] |
+|**finnishTrustNetwork** | [**FinnishTrustNetworkInput**](FinnishTrustNetworkInput.md) | Input for the &#x60;finnish-trust-network&#x60; provider. |  [optional] |
+|**czechBankId** | [**CzechBankIdInput**](CzechBankIdInput.md) | Input for the &#x60;czech-bank-id&#x60; provider. |  [optional] |
+|**australiaConnectId** | [**ConnectIdInput**](ConnectIdInput.md) | Input for the &#x60;australia-connect-id&#x60; provider. |  [optional] |
 |**italySpid** | [**SpidInput**](SpidInput.md) | Input for the &#x60;italy-spid&#x60; provider |  [optional] |
 |**googleWallet** | [**GoogleWalletInput**](GoogleWalletInput.md) | Input for the &#x60;google-wallet&#x60; provider |  [optional] |
 |**appleWallet** | [**AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider |  [optional] |
@@ -56,6 +60,7 @@
 |**panamaCedulaLookup** | [**PanamaCedulaLookupInput**](PanamaCedulaLookupInput.md) | Input for the &#x60;panama-cedula-lookup&#x60; provider |  [optional] |
 |**peruDniLookup** | [**PeruDniLookupInput**](PeruDniLookupInput.md) | Input for the &#x60;peru-dni-lookup&#x60; provider |  [optional] |
 |**ukEvisaLookup** | [**UkEvisaLookupInput**](UkEvisaLookupInput.md) | Input for the &#x60;uk-evisa-lookup&#x60; provider |  [optional] |
+|**usaArizonaWallet** | [**UsaArizonaWalletInput**](UsaArizonaWalletInput.md) | Input for the &#x60;usa-arizona-wallet&#x60; provider |  [optional] |
 |**usaCaliforniaDmv** | [**UsaCaliforniaDmvInput**](UsaCaliforniaDmvInput.md) | Input for the &#x60;usa-california-dmv&#x60; provider |  [optional] |
 |**trinsicTestDatabaseLookup** | [**TrinsicTestDatabaseLookupInput**](TrinsicTestDatabaseLookupInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider |  [optional] |
 |**trinsicTestSubProviders** | [**TrinsicTestSubProvidersInput**](TrinsicTestSubProvidersInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider |  [optional] |

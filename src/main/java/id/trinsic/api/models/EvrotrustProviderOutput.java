@@ -73,7 +73,7 @@ import id.trinsic.ApiClient;
   EvrotrustProviderOutput.JSON_PROPERTY_IDENTIFICATION_REASON,
   EvrotrustProviderOutput.JSON_PROPERTY_IDENTIFICATION_BEFORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class EvrotrustProviderOutput {
   public static final String JSON_PROPERTY_NAMES = "names";
   private JsonNullable<String> names = JsonNullable.<String>undefined();
@@ -1041,7 +1041,7 @@ public class EvrotrustProviderOutput {
   }
 
   public EvrotrustProviderOutput addEmailAddressesItem(String emailAddressesItem) {
-    if (this.emailAddresses == null || !this.emailAddresses.isPresent()) {
+    if (this.emailAddresses == null || !this.emailAddresses.isPresent() || this.emailAddresses.get() == null) {
       this.emailAddresses = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -1085,7 +1085,7 @@ public class EvrotrustProviderOutput {
   }
 
   public EvrotrustProviderOutput addPhoneNumbersItem(String phoneNumbersItem) {
-    if (this.phoneNumbers == null || !this.phoneNumbers.isPresent()) {
+    if (this.phoneNumbers == null || !this.phoneNumbers.isPresent() || this.phoneNumbers.get() == null) {
       this.phoneNumbers = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   PolandMobywatelMatchInput.JSON_PROPERTY_SELFIE_BYTES,
   PolandMobywatelMatchInput.JSON_PROPERTY_SELFIE_IMAGE_MIME_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class PolandMobywatelMatchInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -273,7 +273,7 @@ public class PolandMobywatelMatchInput {
   }
 
   /**
-   * The raw bytes of an optional selfie image collected from the individual.              Requirements from the provider: - JPEG or PNG - At least 720 pixels wide (1080 pixels recommended) - Not exceeding 10 MB - Clear, front-facing photo with good lighting and no sunglasses or face coverings.
+   * The raw bytes of an optional selfie image collected from the individual.              When using an SDK, this can be a raw byte array. In raw JSON form this is Base64.              Requirements from the provider: - JPEG or PNG - At least 720 pixels wide (1080 pixels recommended) - Not exceeding 10 MB - Clear, front-facing photo with good lighting and no sunglasses or face coverings.
    * @return selfieBytes
    */
   @javax.annotation.Nullable

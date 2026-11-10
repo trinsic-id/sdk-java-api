@@ -44,10 +44,11 @@ import id.trinsic.ApiClient;
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
+  CreateHostedProviderSessionRequest.JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_BROWSER_LANGUAGES,
   CreateHostedProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -60,6 +61,10 @@ public class CreateHostedProviderSessionRequest {
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   @javax.annotation.Nonnull
   private String redirectUrl;
+
+  public static final String JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY = "enableRedirectBackwardsCompatibility";
+  @javax.annotation.Nonnull
+  private Boolean enableRedirectBackwardsCompatibility;
 
   public static final String JSON_PROPERTY_BROWSER_LANGUAGES = "browserLanguages";
   private JsonNullable<List<String>> browserLanguages = JsonNullable.<List<String>>undefined();
@@ -142,13 +147,37 @@ public class CreateHostedProviderSessionRequest {
   }
 
 
+  public CreateHostedProviderSessionRequest enableRedirectBackwardsCompatibility(@javax.annotation.Nonnull Boolean enableRedirectBackwardsCompatibility) {
+    this.enableRedirectBackwardsCompatibility = enableRedirectBackwardsCompatibility;
+    return this;
+  }
+
+  /**
+   * Defaults to &#x60;true&#x60; if not provided. Controls backwards compatibility behavior.              If &#x60;true&#x60;, &#x60;redirectToken&#x60; validation is not required as part of the Session flow. If &#x60;false&#x60;, &#x60;redirectToken&#x60; validation is required as a core part of the Session flow; results cannot be fetched without it.              This parameter exists to enable backwards compatibility with existing integrations. In the future, this parameter will be removed and &#x60;redirectToken&#x60; validation will always be required.              If your integration supports &#x60;redirectToken&#x60;, you should explicitly set this parameter&#39;s value to &#x60;false&#x60;. Only set this value to &#x60;true&#x60; if your integration does not support &#x60;redirectToken&#x60; and you are not yet able to add support.
+   * @return enableRedirectBackwardsCompatibility
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public Boolean getEnableRedirectBackwardsCompatibility() {
+    return enableRedirectBackwardsCompatibility;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setEnableRedirectBackwardsCompatibility(@javax.annotation.Nonnull Boolean enableRedirectBackwardsCompatibility) {
+    this.enableRedirectBackwardsCompatibility = enableRedirectBackwardsCompatibility;
+  }
+
+
   public CreateHostedProviderSessionRequest browserLanguages(@javax.annotation.Nullable List<String> browserLanguages) {
     this.browserLanguages = JsonNullable.<List<String>>of(browserLanguages);
     return this;
   }
 
   public CreateHostedProviderSessionRequest addBrowserLanguagesItem(String browserLanguagesItem) {
-    if (this.browserLanguages == null || !this.browserLanguages.isPresent()) {
+    if (this.browserLanguages == null || !this.browserLanguages.isPresent() || this.browserLanguages.get() == null) {
       this.browserLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -235,6 +264,7 @@ public class CreateHostedProviderSessionRequest {
     return Objects.equals(this.provider, createHostedProviderSessionRequest.provider) &&
         Objects.equals(this.verificationProfileId, createHostedProviderSessionRequest.verificationProfileId) &&
         Objects.equals(this.redirectUrl, createHostedProviderSessionRequest.redirectUrl) &&
+        Objects.equals(this.enableRedirectBackwardsCompatibility, createHostedProviderSessionRequest.enableRedirectBackwardsCompatibility) &&
         equalsNullable(this.browserLanguages, createHostedProviderSessionRequest.browserLanguages) &&
         equalsNullable(this.providerInput, createHostedProviderSessionRequest.providerInput);
   }
@@ -245,7 +275,7 @@ public class CreateHostedProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, verificationProfileId, redirectUrl, hashCodeNullable(browserLanguages), hashCodeNullable(providerInput));
+    return Objects.hash(provider, verificationProfileId, redirectUrl, enableRedirectBackwardsCompatibility, hashCodeNullable(browserLanguages), hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -262,6 +292,7 @@ public class CreateHostedProviderSessionRequest {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    enableRedirectBackwardsCompatibility: ").append(toIndentedString(enableRedirectBackwardsCompatibility)).append("\n");
     sb.append("    browserLanguages: ").append(toIndentedString(browserLanguages)).append("\n");
     sb.append("    providerInput: ").append(toIndentedString(providerInput)).append("\n");
     sb.append("}");
@@ -321,6 +352,11 @@ public class CreateHostedProviderSessionRequest {
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+    }
+
+    // add `enableRedirectBackwardsCompatibility` to the URL query string
+    if (getEnableRedirectBackwardsCompatibility() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%senableRedirectBackwardsCompatibility%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEnableRedirectBackwardsCompatibility()))));
     }
 
     // add `browserLanguages` to the URL query string

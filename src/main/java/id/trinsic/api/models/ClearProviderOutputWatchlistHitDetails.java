@@ -58,7 +58,7 @@ import id.trinsic.ApiClient;
   ClearProviderOutputWatchlistHitDetails.JSON_PROPERTY_MODIFIED_AT,
   ClearProviderOutputWatchlistHitDetails.JSON_PROPERTY_SOURCE_URLS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ClearProviderOutputWatchlistHitDetails {
   public static final String JSON_PROPERTY_NAME = "name";
   private JsonNullable<List<String>> name = JsonNullable.<List<String>>undefined();
@@ -117,7 +117,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addNameItem(String nameItem) {
-    if (this.name == null || !this.name.isPresent()) {
+    if (this.name == null || !this.name.isPresent() || this.name.get() == null) {
       this.name = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -161,7 +161,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addAliasItem(String aliasItem) {
-    if (this.alias == null || !this.alias.isPresent()) {
+    if (this.alias == null || !this.alias.isPresent() || this.alias.get() == null) {
       this.alias = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -205,7 +205,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addCountryItem(String countryItem) {
-    if (this.country == null || !this.country.isPresent()) {
+    if (this.country == null || !this.country.isPresent() || this.country.get() == null) {
       this.country = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -249,7 +249,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addAddressItem(ClearProviderOutputAddress addressItem) {
-    if (this.address == null || !this.address.isPresent()) {
+    if (this.address == null || !this.address.isPresent() || this.address.get() == null) {
       this.address = JsonNullable.<List<ClearProviderOutputAddress>>of(new ArrayList<>());
     }
     try {
@@ -293,7 +293,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addDateOfBirthItem(ClearProviderOutputPartialDate dateOfBirthItem) {
-    if (this.dateOfBirth == null || !this.dateOfBirth.isPresent()) {
+    if (this.dateOfBirth == null || !this.dateOfBirth.isPresent() || this.dateOfBirth.get() == null) {
       this.dateOfBirth = JsonNullable.<List<ClearProviderOutputPartialDate>>of(new ArrayList<>());
     }
     try {
@@ -337,7 +337,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addDateOfDeathItem(ClearProviderOutputPartialDate dateOfDeathItem) {
-    if (this.dateOfDeath == null || !this.dateOfDeath.isPresent()) {
+    if (this.dateOfDeath == null || !this.dateOfDeath.isPresent() || this.dateOfDeath.get() == null) {
       this.dateOfDeath = JsonNullable.<List<ClearProviderOutputPartialDate>>of(new ArrayList<>());
     }
     try {
@@ -381,7 +381,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addPlaceOfBirthItem(String placeOfBirthItem) {
-    if (this.placeOfBirth == null || !this.placeOfBirth.isPresent()) {
+    if (this.placeOfBirth == null || !this.placeOfBirth.isPresent() || this.placeOfBirth.get() == null) {
       this.placeOfBirth = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -425,7 +425,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addGenderItem(String genderItem) {
-    if (this.gender == null || !this.gender.isPresent()) {
+    if (this.gender == null || !this.gender.isPresent() || this.gender.get() == null) {
       this.gender = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -469,7 +469,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addNationalityItem(String nationalityItem) {
-    if (this.nationality == null || !this.nationality.isPresent()) {
+    if (this.nationality == null || !this.nationality.isPresent() || this.nationality.get() == null) {
       this.nationality = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -513,7 +513,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addPositionItem(String positionItem) {
-    if (this.position == null || !this.position.isPresent()) {
+    if (this.position == null || !this.position.isPresent() || this.position.get() == null) {
       this.position = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -557,7 +557,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addPassportNumberItem(String passportNumberItem) {
-    if (this.passportNumber == null || !this.passportNumber.isPresent()) {
+    if (this.passportNumber == null || !this.passportNumber.isPresent() || this.passportNumber.get() == null) {
       this.passportNumber = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -601,7 +601,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addIdNumberItem(String idNumberItem) {
-    if (this.idNumber == null || !this.idNumber.isPresent()) {
+    if (this.idNumber == null || !this.idNumber.isPresent() || this.idNumber.get() == null) {
       this.idNumber = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -645,7 +645,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addNotesItem(String notesItem) {
-    if (this.notes == null || !this.notes.isPresent()) {
+    if (this.notes == null || !this.notes.isPresent() || this.notes.get() == null) {
       this.notes = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -689,7 +689,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addCreatedAtItem(ClearProviderOutputPartialDate createdAtItem) {
-    if (this.createdAt == null || !this.createdAt.isPresent()) {
+    if (this.createdAt == null || !this.createdAt.isPresent() || this.createdAt.get() == null) {
       this.createdAt = JsonNullable.<List<ClearProviderOutputPartialDate>>of(new ArrayList<>());
     }
     try {
@@ -733,7 +733,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addModifiedAtItem(ClearProviderOutputPartialDate modifiedAtItem) {
-    if (this.modifiedAt == null || !this.modifiedAt.isPresent()) {
+    if (this.modifiedAt == null || !this.modifiedAt.isPresent() || this.modifiedAt.get() == null) {
       this.modifiedAt = JsonNullable.<List<ClearProviderOutputPartialDate>>of(new ArrayList<>());
     }
     try {
@@ -777,7 +777,7 @@ public class ClearProviderOutputWatchlistHitDetails {
   }
 
   public ClearProviderOutputWatchlistHitDetails addSourceUrlsItem(String sourceUrlsItem) {
-    if (this.sourceUrls == null || !this.sourceUrls.isPresent()) {
+    if (this.sourceUrls == null || !this.sourceUrls.isPresent() || this.sourceUrls.get() == null) {
       this.sourceUrls = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

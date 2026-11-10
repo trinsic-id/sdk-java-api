@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.MitIdAddressOutput;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.UUID;
@@ -129,6 +130,14 @@ class MitIdProviderOutputTest {
     @Test
     void authorizedRepresentativeNumberTest() {
         // TODO: test authorizedRepresentativeNumber
+    }
+
+    /**
+     * Test the property 'address'
+     */
+    @Test
+    void addressTest() {
+        // TODO: test address
     }
 
 }

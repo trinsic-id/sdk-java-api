@@ -32,7 +32,9 @@ public enum MdlExchangeMechanism {
   
   NATIVE_APP("NativeApp"),
   
-  DIGITAL_CREDENTIALS_API("DigitalCredentialsApi");
+  DIGITAL_CREDENTIALS_API("DigitalCredentialsApi"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum MdlExchangeMechanism {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

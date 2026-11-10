@@ -41,7 +41,7 @@ import id.trinsic.ApiClient;
   KoreaTelcoMatchProviderOutput.JSON_PROPERTY_TELE_TYPE,
   KoreaTelcoMatchProviderOutput.JSON_PROPERTY_RESULT_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class KoreaTelcoMatchProviderOutput {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
   private JsonNullable<String> phoneNumber = JsonNullable.<String>undefined();

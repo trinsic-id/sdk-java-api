@@ -77,6 +77,14 @@ class VerificationProfileResponseTest {
     }
 
     /**
+     * Test the property 'geography'
+     */
+    @Test
+    void geographyTest() {
+        // TODO: test geography
+    }
+
+    /**
      * Test the property 'logoUrl'
      */
     @Test

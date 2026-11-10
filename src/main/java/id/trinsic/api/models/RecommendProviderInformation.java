@@ -27,7 +27,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.SubProviderMetadata;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -42,6 +44,7 @@ import id.trinsic.ApiClient;
 @JsonPropertyOrder({
   RecommendProviderInformation.JSON_PROPERTY_ID,
   RecommendProviderInformation.JSON_PROPERTY_NAME,
+  RecommendProviderInformation.JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES,
   RecommendProviderInformation.JSON_PROPERTY_LOGO_URL,
   RecommendProviderInformation.JSON_PROPERTY_SUBTEXT,
   RecommendProviderInformation.JSON_PROPERTY_HEALTH,
@@ -50,7 +53,7 @@ import id.trinsic.ApiClient;
   RecommendProviderInformation.JSON_PROPERTY_COUNTRIES,
   RecommendProviderInformation.JSON_PROPERTY_SUBDIVISIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class RecommendProviderInformation {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -59,6 +62,9 @@ public class RecommendProviderInformation {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
   private String name;
+
+  public static final String JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES = "localizedDisplayNames";
+  private JsonNullable<Map<String, String>> localizedDisplayNames = JsonNullable.<Map<String, String>>undefined();
 
   public static final String JSON_PROPERTY_LOGO_URL = "logoUrl";
   @javax.annotation.Nonnull
@@ -91,9 +97,11 @@ public class RecommendProviderInformation {
   }
 
   @JsonCreator
-  public RecommendProviderInformation(
+  // Used only by Jackson; public construction uses named setters.
+  private RecommendProviderInformation(
     @JsonProperty(JSON_PROPERTY_ID) String id, 
     @JsonProperty(JSON_PROPERTY_NAME) String name, 
+    @JsonProperty(JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES) Map<String, String> localizedDisplayNames, 
     @JsonProperty(JSON_PROPERTY_LOGO_URL) String logoUrl, 
     @JsonProperty(JSON_PROPERTY_SUBTEXT) String subtext, 
     @JsonProperty(JSON_PROPERTY_HEALTH) String health, 
@@ -104,6 +112,7 @@ public class RecommendProviderInformation {
   this();
     this.id = id;
     this.name = name;
+    this.localizedDisplayNames = localizedDisplayNames == null ? JsonNullable.<Map<String, String>>undefined() : JsonNullable.of(localizedDisplayNames);
     this.logoUrl = logoUrl;
     this.subtext = subtext;
     this.health = health;
@@ -137,6 +146,34 @@ public class RecommendProviderInformation {
     return name;
   }
 
+
+
+
+  /**
+   * Localized display names for the Provider, if any, keyed by lowercase BCP 47 language codes (eg \&quot;fr\&quot;).              If a particular language code is not present, fall back to &#x60;name&#x60;.              This should not be confused for the list of languages the Provider officially supports.
+   * @return localizedDisplayNames
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public Map<String, String> getLocalizedDisplayNames() {
+    
+    if (localizedDisplayNames == null) {
+      localizedDisplayNames = JsonNullable.<Map<String, String>>undefined();
+    }
+    return localizedDisplayNames.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Map<String, String>> getLocalizedDisplayNames_JsonNullable() {
+    return localizedDisplayNames;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LOCALIZED_DISPLAY_NAMES)
+  private void setLocalizedDisplayNames_JsonNullable(JsonNullable<Map<String, String>> localizedDisplayNames) {
+    this.localizedDisplayNames = localizedDisplayNames;
+  }
 
 
 
@@ -188,7 +225,7 @@ public class RecommendProviderInformation {
   }
 
   public RecommendProviderInformation addSubProvidersItem(SubProviderMetadata subProvidersItem) {
-    if (this.subProviders == null || !this.subProviders.isPresent()) {
+    if (this.subProviders == null || !this.subProviders.isPresent() || this.subProviders.get() == null) {
       this.subProviders = JsonNullable.<List<SubProviderMetadata>>of(new ArrayList<>());
     }
     try {
@@ -282,6 +319,7 @@ public class RecommendProviderInformation {
     RecommendProviderInformation recommendProviderInformation = (RecommendProviderInformation) o;
     return Objects.equals(this.id, recommendProviderInformation.id) &&
         Objects.equals(this.name, recommendProviderInformation.name) &&
+        equalsNullable(this.localizedDisplayNames, recommendProviderInformation.localizedDisplayNames) &&
         Objects.equals(this.logoUrl, recommendProviderInformation.logoUrl) &&
         Objects.equals(this.subtext, recommendProviderInformation.subtext) &&
         Objects.equals(this.health, recommendProviderInformation.health) &&
@@ -297,7 +335,7 @@ public class RecommendProviderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoUrl, subtext, health, hashCodeNullable(subProviders), regions, countries, subdivisions);
+    return Objects.hash(id, name, hashCodeNullable(localizedDisplayNames), logoUrl, subtext, health, hashCodeNullable(subProviders), regions, countries, subdivisions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -313,6 +351,7 @@ public class RecommendProviderInformation {
     sb.append("class RecommendProviderInformation {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    localizedDisplayNames: ").append(toIndentedString(localizedDisplayNames)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("    subtext: ").append(toIndentedString(subtext)).append("\n");
     sb.append("    health: ").append(toIndentedString(health)).append("\n");
@@ -372,6 +411,15 @@ public class RecommendProviderInformation {
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `localizedDisplayNames` to the URL query string
+    if (getLocalizedDisplayNames() != null) {
+      for (String _key : getLocalizedDisplayNames().keySet()) {
+        joiner.add(String.format(java.util.Locale.ROOT, "%slocalizedDisplayNames%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
+            getLocalizedDisplayNames().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getLocalizedDisplayNames().get(_key)))));
+      }
     }
 
     // add `logoUrl` to the URL query string

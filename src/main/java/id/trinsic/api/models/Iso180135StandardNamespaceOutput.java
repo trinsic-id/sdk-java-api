@@ -80,7 +80,7 @@ import id.trinsic.ApiClient;
   Iso180135StandardNamespaceOutput.JSON_PROPERTY_BIOMETRIC_TEMPLATE_IRIS,
   Iso180135StandardNamespaceOutput.JSON_PROPERTY_BIOMETRIC_TEMPLATE_RETINA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Iso180135StandardNamespaceOutput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -580,7 +580,7 @@ public class Iso180135StandardNamespaceOutput {
   }
 
   public Iso180135StandardNamespaceOutput addDrivingPrivilegesItem(Iso180135DrivingPrivilege drivingPrivilegesItem) {
-    if (this.drivingPrivileges == null || !this.drivingPrivileges.isPresent()) {
+    if (this.drivingPrivileges == null || !this.drivingPrivileges.isPresent() || this.drivingPrivileges.get() == null) {
       this.drivingPrivileges = JsonNullable.<List<Iso180135DrivingPrivilege>>of(new ArrayList<>());
     }
     try {
@@ -1136,7 +1136,7 @@ public class Iso180135StandardNamespaceOutput {
   }
 
   public Iso180135StandardNamespaceOutput addAgeOverItem(AgeOverOutput ageOverItem) {
-    if (this.ageOver == null || !this.ageOver.isPresent()) {
+    if (this.ageOver == null || !this.ageOver.isPresent() || this.ageOver.get() == null) {
       this.ageOver = JsonNullable.<List<AgeOverOutput>>of(new ArrayList<>());
     }
     try {

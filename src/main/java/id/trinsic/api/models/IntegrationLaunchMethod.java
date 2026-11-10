@@ -38,7 +38,9 @@ public enum IntegrationLaunchMethod {
   
   SHOW_CONTENT("ShowContent"),
   
-  PERFORM_NATIVE_CHALLENGE("PerformNativeChallenge");
+  PERFORM_NATIVE_CHALLENGE("PerformNativeChallenge"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -63,7 +65,7 @@ public enum IntegrationLaunchMethod {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

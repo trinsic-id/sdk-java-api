@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   ClearProviderOutputWatchlistHit.JSON_PROPERTY_SOURCE_LISTS,
   ClearProviderOutputWatchlistHit.JSON_PROPERTY_HIT_TYPES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ClearProviderOutputWatchlistHit {
   public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
   private JsonNullable<String> entityType = JsonNullable.<String>undefined();
@@ -133,7 +133,7 @@ public class ClearProviderOutputWatchlistHit {
   }
 
   public ClearProviderOutputWatchlistHit addSourceListsItem(ClearProviderOutputWatchlistSource sourceListsItem) {
-    if (this.sourceLists == null || !this.sourceLists.isPresent()) {
+    if (this.sourceLists == null || !this.sourceLists.isPresent() || this.sourceLists.get() == null) {
       this.sourceLists = JsonNullable.<List<ClearProviderOutputWatchlistSource>>of(new ArrayList<>());
     }
     try {
@@ -177,7 +177,7 @@ public class ClearProviderOutputWatchlistHit {
   }
 
   public ClearProviderOutputWatchlistHit addHitTypesItem(String hitTypesItem) {
-    if (this.hitTypes == null || !this.hitTypes.isPresent()) {
+    if (this.hitTypes == null || !this.hitTypes.isPresent() || this.hitTypes.get() == null) {
       this.hitTypes = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

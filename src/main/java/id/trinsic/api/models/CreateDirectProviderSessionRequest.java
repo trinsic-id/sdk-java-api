@@ -45,12 +45,13 @@ import id.trinsic.ApiClient;
   CreateDirectProviderSessionRequest.JSON_PROPERTY_PROVIDER,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_VERIFICATION_PROFILE_ID,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_REDIRECT_URL,
+  CreateDirectProviderSessionRequest.JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_CAPABILITIES,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_FALLBACK_TO_HOSTED_U_I,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_BROWSER_LANGUAGES,
   CreateDirectProviderSessionRequest.JSON_PROPERTY_PROVIDER_INPUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class CreateDirectProviderSessionRequest {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nonnull
@@ -62,6 +63,10 @@ public class CreateDirectProviderSessionRequest {
 
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirectUrl";
   private JsonNullable<String> redirectUrl = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY = "enableRedirectBackwardsCompatibility";
+  @javax.annotation.Nonnull
+  private Boolean enableRedirectBackwardsCompatibility;
 
   public static final String JSON_PROPERTY_CAPABILITIES = "capabilities";
   @javax.annotation.Nonnull
@@ -159,6 +164,30 @@ public class CreateDirectProviderSessionRequest {
   }
 
 
+  public CreateDirectProviderSessionRequest enableRedirectBackwardsCompatibility(@javax.annotation.Nonnull Boolean enableRedirectBackwardsCompatibility) {
+    this.enableRedirectBackwardsCompatibility = enableRedirectBackwardsCompatibility;
+    return this;
+  }
+
+  /**
+   * Defaults to &#x60;true&#x60; if not provided. Controls backwards compatibility behavior.              If &#x60;true&#x60;, &#x60;redirectToken&#x60; validation is not required as part of the Session flow. If &#x60;false&#x60;, &#x60;redirectToken&#x60; validation is required as a core part of the Session flow; results cannot be fetched without it. (This applies only to &#x60;CaptureRedirect&#x60; Sessions in Direct mode).              This parameter exists to enable backwards compatibility with existing integrations. In the future, this parameter will be removed and &#x60;redirectToken&#x60; validation will always be required.              If your integration supports &#x60;redirectToken&#x60;, you should explicitly set this parameter&#39;s value to &#x60;false&#x60;. Only set this value to &#x60;true&#x60; if your integration does not support &#x60;redirectToken&#x60; and you are not yet able to add support.
+   * @return enableRedirectBackwardsCompatibility
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public Boolean getEnableRedirectBackwardsCompatibility() {
+    return enableRedirectBackwardsCompatibility;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_ENABLE_REDIRECT_BACKWARDS_COMPATIBILITY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setEnableRedirectBackwardsCompatibility(@javax.annotation.Nonnull Boolean enableRedirectBackwardsCompatibility) {
+    this.enableRedirectBackwardsCompatibility = enableRedirectBackwardsCompatibility;
+  }
+
+
   public CreateDirectProviderSessionRequest capabilities(@javax.annotation.Nonnull List<IntegrationCapability> capabilities) {
     this.capabilities = capabilities;
     return this;
@@ -229,7 +258,7 @@ public class CreateDirectProviderSessionRequest {
   }
 
   public CreateDirectProviderSessionRequest addBrowserLanguagesItem(String browserLanguagesItem) {
-    if (this.browserLanguages == null || !this.browserLanguages.isPresent()) {
+    if (this.browserLanguages == null || !this.browserLanguages.isPresent() || this.browserLanguages.get() == null) {
       this.browserLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {
@@ -314,6 +343,7 @@ public class CreateDirectProviderSessionRequest {
     return Objects.equals(this.provider, createDirectProviderSessionRequest.provider) &&
         Objects.equals(this.verificationProfileId, createDirectProviderSessionRequest.verificationProfileId) &&
         equalsNullable(this.redirectUrl, createDirectProviderSessionRequest.redirectUrl) &&
+        Objects.equals(this.enableRedirectBackwardsCompatibility, createDirectProviderSessionRequest.enableRedirectBackwardsCompatibility) &&
         Objects.equals(this.capabilities, createDirectProviderSessionRequest.capabilities) &&
         equalsNullable(this.fallbackToHostedUI, createDirectProviderSessionRequest.fallbackToHostedUI) &&
         equalsNullable(this.browserLanguages, createDirectProviderSessionRequest.browserLanguages) &&
@@ -326,7 +356,7 @@ public class CreateDirectProviderSessionRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, verificationProfileId, hashCodeNullable(redirectUrl), capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(browserLanguages), hashCodeNullable(providerInput));
+    return Objects.hash(provider, verificationProfileId, hashCodeNullable(redirectUrl), enableRedirectBackwardsCompatibility, capabilities, hashCodeNullable(fallbackToHostedUI), hashCodeNullable(browserLanguages), hashCodeNullable(providerInput));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -343,6 +373,7 @@ public class CreateDirectProviderSessionRequest {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    verificationProfileId: ").append(toIndentedString(verificationProfileId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    enableRedirectBackwardsCompatibility: ").append(toIndentedString(enableRedirectBackwardsCompatibility)).append("\n");
     sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
     sb.append("    fallbackToHostedUI: ").append(toIndentedString(fallbackToHostedUI)).append("\n");
     sb.append("    browserLanguages: ").append(toIndentedString(browserLanguages)).append("\n");
@@ -404,6 +435,11 @@ public class CreateDirectProviderSessionRequest {
     // add `redirectUrl` to the URL query string
     if (getRedirectUrl() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sredirectUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+    }
+
+    // add `enableRedirectBackwardsCompatibility` to the URL query string
+    if (getEnableRedirectBackwardsCompatibility() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%senableRedirectBackwardsCompatibility%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEnableRedirectBackwardsCompatibility()))));
     }
 
     // add `capabilities` to the URL query string

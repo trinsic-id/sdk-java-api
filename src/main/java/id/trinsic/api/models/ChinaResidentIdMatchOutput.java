@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   ChinaResidentIdMatchOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   ChinaResidentIdMatchOutput.JSON_PROPERTY_RESIDENT_ID_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ChinaResidentIdMatchOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();

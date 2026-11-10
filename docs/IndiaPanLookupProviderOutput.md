@@ -15,7 +15,7 @@ Exposed properties for the `india-pan-lookup` Provider which do not directly map
 |**middleName** | **String** | Middle name of the individual.              NOTE: Only available when PAN status is VALID and the verification is for an individual person. |  [optional] |
 |**familyName** | **String** | Family name of the individual.              NOTE: Only available when PAN status is VALID and the verification is for an individual person. |  [optional] |
 |**dateOfBirth** | **String** | Date of birth of the individual.              NOTE: Only available when PAN status is VALID and the verification is for an individual person. |  [optional] |
-|**panStatus** | **String** | PAN card status from Signzy for the lookup.              Possible values: - VALID - FAKE - DEACTIVATED - DELETED - INVALID - AMALGAMATION - ACQUISITION - DEATH - DISSOLUTION - LIQUIDATED - MERGER - PARTITION - SPLIT - UNDER LIQUIDATION - INOPERATIVE |  [optional] |
+|**panStatus** | **String** | PAN card status returned by the lookup provider.              Possible values: - VALID - FAKE - DEACTIVATED - DELETED - INVALID - AMALGAMATION - ACQUISITION - DEATH - DISSOLUTION - LIQUIDATED - MERGER - PARTITION - SPLIT - UNDER LIQUIDATION - INOPERATIVE |  [optional] |
 
 
 

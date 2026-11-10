@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import id.trinsic.api.models.IdentityData;
 import id.trinsic.api.models.Session;
+import id.trinsic.api.models.TrinsicHPKEBundle;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -40,9 +41,10 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   GetSessionResultResponse.JSON_PROPERTY_SESSION,
-  GetSessionResultResponse.JSON_PROPERTY_IDENTITY_DATA
+  GetSessionResultResponse.JSON_PROPERTY_IDENTITY_DATA,
+  GetSessionResultResponse.JSON_PROPERTY_ENCRYPTED_IDENTITY_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class GetSessionResultResponse {
   public static final String JSON_PROPERTY_SESSION = "session";
   @javax.annotation.Nonnull
@@ -50,6 +52,9 @@ public class GetSessionResultResponse {
 
   public static final String JSON_PROPERTY_IDENTITY_DATA = "identityData";
   private JsonNullable<IdentityData> identityData = JsonNullable.<IdentityData>undefined();
+
+  public static final String JSON_PROPERTY_ENCRYPTED_IDENTITY_DATA = "encryptedIdentityData";
+  private JsonNullable<TrinsicHPKEBundle> encryptedIdentityData = JsonNullable.<TrinsicHPKEBundle>undefined();
 
   public GetSessionResultResponse() { 
   }
@@ -110,6 +115,38 @@ public class GetSessionResultResponse {
   }
 
 
+  public GetSessionResultResponse encryptedIdentityData(@javax.annotation.Nullable TrinsicHPKEBundle encryptedIdentityData) {
+    this.encryptedIdentityData = JsonNullable.<TrinsicHPKEBundle>of(encryptedIdentityData);
+    return this;
+  }
+
+  /**
+   * The HPKE-encrypted IdentityData which resulted from the Session, if HPKE-encrypted.
+   * @return encryptedIdentityData
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public TrinsicHPKEBundle getEncryptedIdentityData() {
+        return encryptedIdentityData.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ENCRYPTED_IDENTITY_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<TrinsicHPKEBundle> getEncryptedIdentityData_JsonNullable() {
+    return encryptedIdentityData;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ENCRYPTED_IDENTITY_DATA)
+  public void setEncryptedIdentityData_JsonNullable(JsonNullable<TrinsicHPKEBundle> encryptedIdentityData) {
+    this.encryptedIdentityData = encryptedIdentityData;
+  }
+
+  public void setEncryptedIdentityData(@javax.annotation.Nullable TrinsicHPKEBundle encryptedIdentityData) {
+    this.encryptedIdentityData = JsonNullable.<TrinsicHPKEBundle>of(encryptedIdentityData);
+  }
+
+
   /**
    * Return true if this GetSessionResultResponse object is equal to o.
    */
@@ -123,7 +160,8 @@ public class GetSessionResultResponse {
     }
     GetSessionResultResponse getSessionResultResponse = (GetSessionResultResponse) o;
     return Objects.equals(this.session, getSessionResultResponse.session) &&
-        equalsNullable(this.identityData, getSessionResultResponse.identityData);
+        equalsNullable(this.identityData, getSessionResultResponse.identityData) &&
+        equalsNullable(this.encryptedIdentityData, getSessionResultResponse.encryptedIdentityData);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -132,7 +170,7 @@ public class GetSessionResultResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(session, hashCodeNullable(identityData));
+    return Objects.hash(session, hashCodeNullable(identityData), hashCodeNullable(encryptedIdentityData));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -148,6 +186,7 @@ public class GetSessionResultResponse {
     sb.append("class GetSessionResultResponse {\n");
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    identityData: ").append(toIndentedString(identityData)).append("\n");
+    sb.append("    encryptedIdentityData: ").append(toIndentedString(encryptedIdentityData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,6 +239,11 @@ public class GetSessionResultResponse {
     // add `identityData` to the URL query string
     if (getIdentityData() != null) {
       joiner.add(getIdentityData().toUrlQueryString(prefix + "identityData" + suffix));
+    }
+
+    // add `encryptedIdentityData` to the URL query string
+    if (getEncryptedIdentityData() != null) {
+      joiner.add(getEncryptedIdentityData().toUrlQueryString(prefix + "encryptedIdentityData" + suffix));
     }
 
     return joiner.toString();

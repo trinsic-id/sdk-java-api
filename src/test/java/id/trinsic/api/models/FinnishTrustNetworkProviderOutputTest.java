@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.FinnishTrustNetworkAddressOutput;
 import java.time.LocalDate;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -112,6 +113,14 @@ class FinnishTrustNetworkProviderOutputTest {
     @Test
     void phoneNumberTest() {
         // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'address'
+     */
+    @Test
+    void addressTest() {
+        // TODO: test address
     }
 
     /**

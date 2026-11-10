@@ -65,7 +65,7 @@ import id.trinsic.ApiClient;
   CzechMojeIdProviderOutput.JSON_PROPERTY_BILLING_ADDRESS,
   CzechMojeIdProviderOutput.JSON_PROPERTY_SHIPPING_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class CzechMojeIdProviderOutput {
   public static final String JSON_PROPERTY_SUBJECT_IDENTIFIER = "subjectIdentifier";
   private JsonNullable<String> subjectIdentifier = JsonNullable.<String>undefined();

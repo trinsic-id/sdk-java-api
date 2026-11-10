@@ -214,11 +214,11 @@ class SingpassPersonalCatalogTest {
     }
 
     /**
-     * Test the property 'houseDevelopmenetBoardType'
+     * Test the property 'houseDevelopmentBoardType'
      */
     @Test
-    void houseDevelopmenetBoardTypeTest() {
-        // TODO: test houseDevelopmenetBoardType
+    void houseDevelopmentBoardTypeTest() {
+        // TODO: test houseDevelopmentBoardType
     }
 
     /**

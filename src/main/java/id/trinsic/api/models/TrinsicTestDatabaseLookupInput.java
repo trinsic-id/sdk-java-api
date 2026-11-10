@@ -42,7 +42,7 @@ import id.trinsic.ApiClient;
   TrinsicTestDatabaseLookupInput.JSON_PROPERTY_IDENTITY_CODE,
   TrinsicTestDatabaseLookupInput.JSON_PROPERTY_SELFIE_BASE64
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class TrinsicTestDatabaseLookupInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private JsonNullable<String> givenName = JsonNullable.<String>undefined();
@@ -161,7 +161,7 @@ public class TrinsicTestDatabaseLookupInput {
   }
 
   /**
-   * An optional selfie image, base64-encoded.              Will replace the existing test selfie attachment output if provided.
+   * An optional selfie image in a Base64 string.              Will replace the existing test selfie attachment output if provided.
    * @return selfieBase64
    */
   @javax.annotation.Nullable

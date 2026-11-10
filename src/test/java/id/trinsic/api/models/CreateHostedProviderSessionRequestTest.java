@@ -70,6 +70,14 @@ class CreateHostedProviderSessionRequestTest {
     }
 
     /**
+     * Test the property 'enableRedirectBackwardsCompatibility'
+     */
+    @Test
+    void enableRedirectBackwardsCompatibilityTest() {
+        // TODO: test enableRedirectBackwardsCompatibility
+    }
+
+    /**
      * Test the property 'browserLanguages'
      */
     @Test

@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.MitIdAddressOutput;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.UUID;
@@ -49,9 +50,10 @@ import id.trinsic.ApiClient;
   MitIdProviderOutput.JSON_PROPERTY_CIVIL_REGISTRATION_NUMBER,
   MitIdProviderOutput.JSON_PROPERTY_ORGANIZATION_NAME,
   MitIdProviderOutput.JSON_PROPERTY_ORGANIZATION_NUMBER,
-  MitIdProviderOutput.JSON_PROPERTY_AUTHORIZED_REPRESENTATIVE_NUMBER
+  MitIdProviderOutput.JSON_PROPERTY_AUTHORIZED_REPRESENTATIVE_NUMBER,
+  MitIdProviderOutput.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class MitIdProviderOutput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -85,6 +87,9 @@ public class MitIdProviderOutput {
 
   public static final String JSON_PROPERTY_AUTHORIZED_REPRESENTATIVE_NUMBER = "authorizedRepresentativeNumber";
   private JsonNullable<String> authorizedRepresentativeNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_ADDRESS = "address";
+  private JsonNullable<MitIdAddressOutput> address = JsonNullable.<MitIdAddressOutput>undefined();
 
   public MitIdProviderOutput() { 
   }
@@ -441,6 +446,38 @@ public class MitIdProviderOutput {
   }
 
 
+  public MitIdProviderOutput address(@javax.annotation.Nullable MitIdAddressOutput address) {
+    this.address = JsonNullable.<MitIdAddressOutput>of(address);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s address.
+   * @return address
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public MitIdAddressOutput getAddress() {
+        return address.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<MitIdAddressOutput> getAddress_JsonNullable() {
+    return address;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  public void setAddress_JsonNullable(JsonNullable<MitIdAddressOutput> address) {
+    this.address = address;
+  }
+
+  public void setAddress(@javax.annotation.Nullable MitIdAddressOutput address) {
+    this.address = JsonNullable.<MitIdAddressOutput>of(address);
+  }
+
+
   /**
    * Return true if this MitIdProviderOutput object is equal to o.
    */
@@ -463,7 +500,8 @@ public class MitIdProviderOutput {
         equalsNullable(this.civilRegistrationNumber, mitIdProviderOutput.civilRegistrationNumber) &&
         equalsNullable(this.organizationName, mitIdProviderOutput.organizationName) &&
         equalsNullable(this.organizationNumber, mitIdProviderOutput.organizationNumber) &&
-        equalsNullable(this.authorizedRepresentativeNumber, mitIdProviderOutput.authorizedRepresentativeNumber);
+        equalsNullable(this.authorizedRepresentativeNumber, mitIdProviderOutput.authorizedRepresentativeNumber) &&
+        equalsNullable(this.address, mitIdProviderOutput.address);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -472,7 +510,7 @@ public class MitIdProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(uniqueIdentifier), hashCodeNullable(authenticationAssuranceLevel), hashCodeNullable(identityAuthenticationLevel), hashCodeNullable(levelOfAssurance), hashCodeNullable(identificationSource), hashCodeNullable(civilRegistrationNumber), hashCodeNullable(organizationName), hashCodeNullable(organizationNumber), hashCodeNullable(authorizedRepresentativeNumber));
+    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(dateOfBirth), hashCodeNullable(uniqueIdentifier), hashCodeNullable(authenticationAssuranceLevel), hashCodeNullable(identityAuthenticationLevel), hashCodeNullable(levelOfAssurance), hashCodeNullable(identificationSource), hashCodeNullable(civilRegistrationNumber), hashCodeNullable(organizationName), hashCodeNullable(organizationNumber), hashCodeNullable(authorizedRepresentativeNumber), hashCodeNullable(address));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -497,6 +535,7 @@ public class MitIdProviderOutput {
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    organizationNumber: ").append(toIndentedString(organizationNumber)).append("\n");
     sb.append("    authorizedRepresentativeNumber: ").append(toIndentedString(authorizedRepresentativeNumber)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -594,6 +633,11 @@ public class MitIdProviderOutput {
     // add `authorizedRepresentativeNumber` to the URL query string
     if (getAuthorizedRepresentativeNumber() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sauthorizedRepresentativeNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthorizedRepresentativeNumber()))));
+    }
+
+    // add `address` to the URL query string
+    if (getAddress() != null) {
+      joiner.add(getAddress().toUrlQueryString(prefix + "address" + suffix));
     }
 
     return joiner.toString();

@@ -16,7 +16,7 @@ Exposed properties for the `brazil-cpf-lookup` Provider which do not directly ma
 |**name** | **String** | The full legal name of the individual. |  [optional] |
 |**socialName** | **String** | The social name of the individual in case the individual would like to use a different name than their full legal name. |  [optional] |
 |**dateOfBirth** | **LocalDate** | The date of birth of the individual. |  [optional] |
-|**yearOfDeath** | **String** | Deprecated as of September 1, 2026.              The year of death of the individual, if applicable. |  [optional] |
+|**yearOfDeath** | **String** | Deprecated as of September 19, 2026.              The year of death of the individual, if applicable. |  [optional] |
 |**dateOfRegistration** | **LocalDate** | The date of registration of the individual with the Federal Revenue Service. |  [optional] |
 |**biometricVerification** | [**BrazilBiometricVerificationOutput**](BrazilBiometricVerificationOutput.md) | The biometric verification results.              This is an optional configurable check. |  [optional] |
 

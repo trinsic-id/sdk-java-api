@@ -63,6 +63,7 @@ docs/ColombiaCcProviderOutput.md
 docs/ColombiaExpeditionPlace.md
 docs/ConnectIdAddress.md
 docs/ConnectIdAgeVerification.md
+docs/ConnectIdInput.md
 docs/ConnectIdProviderOutput.md
 docs/ContractAttachment.md
 docs/ContractAttribute.md
@@ -75,6 +76,7 @@ docs/CreateHostedProviderSessionResponse.md
 docs/CreateVerificationProfileResponse.md
 docs/CzechBankIdAddress.md
 docs/CzechBankIdCard.md
+docs/CzechBankIdInput.md
 docs/CzechBankIdProviderOutput.md
 docs/CzechBankIdTitle.md
 docs/CzechBankIdVerification.md
@@ -83,6 +85,7 @@ docs/CzechMojeIdProviderOutput.md
 docs/CzechiaMojeIdProviderOutput.md
 docs/DenmarkAltIdInput.md
 docs/DenmarkAltIdProviderOutput.md
+docs/DeveloperApi.md
 docs/DigilockerAadhaarProviderOutput.md
 docs/DiiaIssuerOutput.md
 docs/DiiaProviderOutput.md
@@ -101,6 +104,8 @@ docs/EvrotrustProviderOutput.md
 docs/FaydaProviderAddress.md
 docs/FaydaProviderOutput.md
 docs/FinlandIdCardProviderOutput.md
+docs/FinnishTrustNetworkAddressOutput.md
+docs/FinnishTrustNetworkInput.md
 docs/FinnishTrustNetworkProviderOutput.md
 docs/FranceIdentiteInput.md
 docs/FranceIdentiteProviderOutput.md
@@ -123,6 +128,8 @@ docs/GoogleWalletInput.md
 docs/GoogleWalletProviderOutput.md
 docs/GuatemalaCuiLookupInput.md
 docs/GuatemalaCuiProviderOutput.md
+docs/HPKETestRequest.md
+docs/HPKETestVPRequest.md
 docs/IdemiaMobileIdProviderOutput.md
 docs/IdentityData.md
 docs/IdinInput.md
@@ -170,6 +177,8 @@ docs/ItsmeLoginProviderOutput.md
 docs/ItsmePlaceOfBirth.md
 docs/ItsmeProviderAddress.md
 docs/ItsmeProviderOutput.md
+docs/JapanMyNumberProviderOutput.md
+docs/JordanSanadInput.md
 docs/KenyaNidInput.md
 docs/KenyaNidLookup2Address.md
 docs/KenyaNidLookup2Input.md
@@ -204,6 +213,7 @@ docs/MdlOutputFieldData.md
 docs/MdlOutputFieldDataType.md
 docs/MexicoCurpInput.md
 docs/MexicoCurpProviderOutput.md
+docs/MitIdAddressOutput.md
 docs/MitIdProviderOutput.md
 docs/MobileCarrier.md
 docs/MobileIdInput.md
@@ -276,9 +286,17 @@ docs/RefreshStepContentRequest.md
 docs/RefreshStepContentResponse.md
 docs/ResultCollection.md
 docs/ResultCollectionMethod.md
+docs/RevolutProviderOutput.md
 docs/SamsungIdWithClearCredential.md
 docs/SamsungWalletInput.md
 docs/SamsungWalletProviderOutput.md
+docs/SanadProviderOutput.md
+docs/SaudiArabiaNafathAddress.md
+docs/SaudiArabiaNafathCitizenAttributes.md
+docs/SaudiArabiaNafathHeadOfHousehold.md
+docs/SaudiArabiaNafathProviderOutput.md
+docs/SaudiArabiaNafathResidentAttributes.md
+docs/SaudiArabiaNafathVisitorAttributes.md
 docs/SerbiaIdCardProviderOutput.md
 docs/Session.md
 docs/SessionErrorCode.md
@@ -312,6 +330,8 @@ docs/SubProviderMetadata.md
 docs/SubmitNativeChallengeResponseRequest.md
 docs/SubmitNativeChallengeResponseResponse.md
 docs/SwedenBankIdProviderOutput.md
+docs/TrinsicHPKEBundle.md
+docs/TrinsicHPKEMetadata.md
 docs/TrinsicTestDatabaseLookupInput.md
 docs/TrinsicTestSubProvidersInput.md
 docs/UAEPassProviderOutput.md
@@ -322,6 +342,7 @@ docs/UgandaNidMatch2ProviderOutput.md
 docs/UgandaNidMatch2SecondaryIdNumberField.md
 docs/UkEvisaLookupInput.md
 docs/UnitedKingdomEvisaProviderOutput.md
+docs/UsaArizonaWalletInput.md
 docs/UsaCaliforniaDmvInput.md
 docs/VerificationProfileResponse.md
 docs/VerificationProfilesApi.md
@@ -351,6 +372,7 @@ src/main/java/id/trinsic/RFC3339InstantDeserializer.java
 src/main/java/id/trinsic/RFC3339JavaTimeModule.java
 src/main/java/id/trinsic/ServerConfiguration.java
 src/main/java/id/trinsic/ServerVariable.java
+src/main/java/id/trinsic/api/DeveloperApi.java
 src/main/java/id/trinsic/api/ProvidersApi.java
 src/main/java/id/trinsic/api/RedirectUrisApi.java
 src/main/java/id/trinsic/api/SessionsApi.java
@@ -413,6 +435,7 @@ src/main/java/id/trinsic/api/models/ColombiaCcProviderOutput.java
 src/main/java/id/trinsic/api/models/ColombiaExpeditionPlace.java
 src/main/java/id/trinsic/api/models/ConnectIdAddress.java
 src/main/java/id/trinsic/api/models/ConnectIdAgeVerification.java
+src/main/java/id/trinsic/api/models/ConnectIdInput.java
 src/main/java/id/trinsic/api/models/ConnectIdProviderOutput.java
 src/main/java/id/trinsic/api/models/ContractAttachment.java
 src/main/java/id/trinsic/api/models/ContractAttribute.java
@@ -425,6 +448,7 @@ src/main/java/id/trinsic/api/models/CreateHostedProviderSessionResponse.java
 src/main/java/id/trinsic/api/models/CreateVerificationProfileResponse.java
 src/main/java/id/trinsic/api/models/CzechBankIdAddress.java
 src/main/java/id/trinsic/api/models/CzechBankIdCard.java
+src/main/java/id/trinsic/api/models/CzechBankIdInput.java
 src/main/java/id/trinsic/api/models/CzechBankIdProviderOutput.java
 src/main/java/id/trinsic/api/models/CzechBankIdTitle.java
 src/main/java/id/trinsic/api/models/CzechBankIdVerification.java
@@ -451,6 +475,8 @@ src/main/java/id/trinsic/api/models/EvrotrustProviderOutput.java
 src/main/java/id/trinsic/api/models/FaydaProviderAddress.java
 src/main/java/id/trinsic/api/models/FaydaProviderOutput.java
 src/main/java/id/trinsic/api/models/FinlandIdCardProviderOutput.java
+src/main/java/id/trinsic/api/models/FinnishTrustNetworkAddressOutput.java
+src/main/java/id/trinsic/api/models/FinnishTrustNetworkInput.java
 src/main/java/id/trinsic/api/models/FinnishTrustNetworkProviderOutput.java
 src/main/java/id/trinsic/api/models/FranceIdentiteInput.java
 src/main/java/id/trinsic/api/models/FranceIdentiteProviderOutput.java
@@ -473,6 +499,8 @@ src/main/java/id/trinsic/api/models/GoogleWalletInput.java
 src/main/java/id/trinsic/api/models/GoogleWalletProviderOutput.java
 src/main/java/id/trinsic/api/models/GuatemalaCuiLookupInput.java
 src/main/java/id/trinsic/api/models/GuatemalaCuiProviderOutput.java
+src/main/java/id/trinsic/api/models/HPKETestRequest.java
+src/main/java/id/trinsic/api/models/HPKETestVPRequest.java
 src/main/java/id/trinsic/api/models/IdemiaMobileIdProviderOutput.java
 src/main/java/id/trinsic/api/models/IdentityData.java
 src/main/java/id/trinsic/api/models/IdinInput.java
@@ -520,6 +548,8 @@ src/main/java/id/trinsic/api/models/ItsmeLoginProviderOutput.java
 src/main/java/id/trinsic/api/models/ItsmePlaceOfBirth.java
 src/main/java/id/trinsic/api/models/ItsmeProviderAddress.java
 src/main/java/id/trinsic/api/models/ItsmeProviderOutput.java
+src/main/java/id/trinsic/api/models/JapanMyNumberProviderOutput.java
+src/main/java/id/trinsic/api/models/JordanSanadInput.java
 src/main/java/id/trinsic/api/models/KenyaNidInput.java
 src/main/java/id/trinsic/api/models/KenyaNidLookup2Address.java
 src/main/java/id/trinsic/api/models/KenyaNidLookup2Input.java
@@ -554,6 +584,7 @@ src/main/java/id/trinsic/api/models/MdlOutputFieldData.java
 src/main/java/id/trinsic/api/models/MdlOutputFieldDataType.java
 src/main/java/id/trinsic/api/models/MexicoCurpInput.java
 src/main/java/id/trinsic/api/models/MexicoCurpProviderOutput.java
+src/main/java/id/trinsic/api/models/MitIdAddressOutput.java
 src/main/java/id/trinsic/api/models/MitIdProviderOutput.java
 src/main/java/id/trinsic/api/models/MobileCarrier.java
 src/main/java/id/trinsic/api/models/MobileIdInput.java
@@ -624,9 +655,17 @@ src/main/java/id/trinsic/api/models/RefreshStepContentRequest.java
 src/main/java/id/trinsic/api/models/RefreshStepContentResponse.java
 src/main/java/id/trinsic/api/models/ResultCollection.java
 src/main/java/id/trinsic/api/models/ResultCollectionMethod.java
+src/main/java/id/trinsic/api/models/RevolutProviderOutput.java
 src/main/java/id/trinsic/api/models/SamsungIdWithClearCredential.java
 src/main/java/id/trinsic/api/models/SamsungWalletInput.java
 src/main/java/id/trinsic/api/models/SamsungWalletProviderOutput.java
+src/main/java/id/trinsic/api/models/SanadProviderOutput.java
+src/main/java/id/trinsic/api/models/SaudiArabiaNafathAddress.java
+src/main/java/id/trinsic/api/models/SaudiArabiaNafathCitizenAttributes.java
+src/main/java/id/trinsic/api/models/SaudiArabiaNafathHeadOfHousehold.java
+src/main/java/id/trinsic/api/models/SaudiArabiaNafathProviderOutput.java
+src/main/java/id/trinsic/api/models/SaudiArabiaNafathResidentAttributes.java
+src/main/java/id/trinsic/api/models/SaudiArabiaNafathVisitorAttributes.java
 src/main/java/id/trinsic/api/models/SerbiaIdCardProviderOutput.java
 src/main/java/id/trinsic/api/models/Session.java
 src/main/java/id/trinsic/api/models/SessionErrorCode.java
@@ -659,6 +698,8 @@ src/main/java/id/trinsic/api/models/SubProviderMetadata.java
 src/main/java/id/trinsic/api/models/SubmitNativeChallengeResponseRequest.java
 src/main/java/id/trinsic/api/models/SubmitNativeChallengeResponseResponse.java
 src/main/java/id/trinsic/api/models/SwedenBankIdProviderOutput.java
+src/main/java/id/trinsic/api/models/TrinsicHPKEBundle.java
+src/main/java/id/trinsic/api/models/TrinsicHPKEMetadata.java
 src/main/java/id/trinsic/api/models/TrinsicTestDatabaseLookupInput.java
 src/main/java/id/trinsic/api/models/TrinsicTestSubProvidersInput.java
 src/main/java/id/trinsic/api/models/UAEPassProviderOutput.java
@@ -669,6 +710,7 @@ src/main/java/id/trinsic/api/models/UgandaNidMatch2ProviderOutput.java
 src/main/java/id/trinsic/api/models/UgandaNidMatch2SecondaryIdNumberField.java
 src/main/java/id/trinsic/api/models/UkEvisaLookupInput.java
 src/main/java/id/trinsic/api/models/UnitedKingdomEvisaProviderOutput.java
+src/main/java/id/trinsic/api/models/UsaArizonaWalletInput.java
 src/main/java/id/trinsic/api/models/UsaCaliforniaDmvInput.java
 src/main/java/id/trinsic/api/models/VerificationProfileResponse.java
 src/main/java/id/trinsic/api/models/YotiDeeplinkProviderOutput.java
@@ -677,6 +719,7 @@ src/main/java/id/trinsic/api/models/YotiProviderOutput.java
 src/main/java/id/trinsic/api/models/YotiStructuredPostalAddress.java
 src/main/java/id/trinsic/api/models/ZimbabweNidLookup2Input.java
 src/main/java/id/trinsic/api/models/ZimbabweNidLookup2ProviderOutput.java
+src/test/java/id/trinsic/api/DeveloperApiTest.java
 src/test/java/id/trinsic/api/ProvidersApiTest.java
 src/test/java/id/trinsic/api/RedirectUrisApiTest.java
 src/test/java/id/trinsic/api/SessionsApiTest.java
@@ -738,6 +781,7 @@ src/test/java/id/trinsic/api/models/ColombiaCcProviderOutputTest.java
 src/test/java/id/trinsic/api/models/ColombiaExpeditionPlaceTest.java
 src/test/java/id/trinsic/api/models/ConnectIdAddressTest.java
 src/test/java/id/trinsic/api/models/ConnectIdAgeVerificationTest.java
+src/test/java/id/trinsic/api/models/ConnectIdInputTest.java
 src/test/java/id/trinsic/api/models/ConnectIdProviderOutputTest.java
 src/test/java/id/trinsic/api/models/ContractAttachmentTest.java
 src/test/java/id/trinsic/api/models/ContractAttributeTest.java
@@ -750,6 +794,7 @@ src/test/java/id/trinsic/api/models/CreateHostedProviderSessionResponseTest.java
 src/test/java/id/trinsic/api/models/CreateVerificationProfileResponseTest.java
 src/test/java/id/trinsic/api/models/CzechBankIdAddressTest.java
 src/test/java/id/trinsic/api/models/CzechBankIdCardTest.java
+src/test/java/id/trinsic/api/models/CzechBankIdInputTest.java
 src/test/java/id/trinsic/api/models/CzechBankIdProviderOutputTest.java
 src/test/java/id/trinsic/api/models/CzechBankIdTitleTest.java
 src/test/java/id/trinsic/api/models/CzechBankIdVerificationTest.java
@@ -776,6 +821,8 @@ src/test/java/id/trinsic/api/models/EvrotrustProviderOutputTest.java
 src/test/java/id/trinsic/api/models/FaydaProviderAddressTest.java
 src/test/java/id/trinsic/api/models/FaydaProviderOutputTest.java
 src/test/java/id/trinsic/api/models/FinlandIdCardProviderOutputTest.java
+src/test/java/id/trinsic/api/models/FinnishTrustNetworkAddressOutputTest.java
+src/test/java/id/trinsic/api/models/FinnishTrustNetworkInputTest.java
 src/test/java/id/trinsic/api/models/FinnishTrustNetworkProviderOutputTest.java
 src/test/java/id/trinsic/api/models/FranceIdentiteInputTest.java
 src/test/java/id/trinsic/api/models/FranceIdentiteProviderOutputTest.java
@@ -798,6 +845,8 @@ src/test/java/id/trinsic/api/models/GoogleWalletInputTest.java
 src/test/java/id/trinsic/api/models/GoogleWalletProviderOutputTest.java
 src/test/java/id/trinsic/api/models/GuatemalaCuiLookupInputTest.java
 src/test/java/id/trinsic/api/models/GuatemalaCuiProviderOutputTest.java
+src/test/java/id/trinsic/api/models/HPKETestRequestTest.java
+src/test/java/id/trinsic/api/models/HPKETestVPRequestTest.java
 src/test/java/id/trinsic/api/models/IdemiaMobileIdProviderOutputTest.java
 src/test/java/id/trinsic/api/models/IdentityDataTest.java
 src/test/java/id/trinsic/api/models/IdinInputTest.java
@@ -845,6 +894,8 @@ src/test/java/id/trinsic/api/models/ItsmeLoginProviderOutputTest.java
 src/test/java/id/trinsic/api/models/ItsmePlaceOfBirthTest.java
 src/test/java/id/trinsic/api/models/ItsmeProviderAddressTest.java
 src/test/java/id/trinsic/api/models/ItsmeProviderOutputTest.java
+src/test/java/id/trinsic/api/models/JapanMyNumberProviderOutputTest.java
+src/test/java/id/trinsic/api/models/JordanSanadInputTest.java
 src/test/java/id/trinsic/api/models/KenyaNidInputTest.java
 src/test/java/id/trinsic/api/models/KenyaNidLookup2AddressTest.java
 src/test/java/id/trinsic/api/models/KenyaNidLookup2InputTest.java
@@ -879,6 +930,7 @@ src/test/java/id/trinsic/api/models/MdlOutputFieldDataTypeTest.java
 src/test/java/id/trinsic/api/models/MdlOutputTest.java
 src/test/java/id/trinsic/api/models/MexicoCurpInputTest.java
 src/test/java/id/trinsic/api/models/MexicoCurpProviderOutputTest.java
+src/test/java/id/trinsic/api/models/MitIdAddressOutputTest.java
 src/test/java/id/trinsic/api/models/MitIdProviderOutputTest.java
 src/test/java/id/trinsic/api/models/MobileCarrierTest.java
 src/test/java/id/trinsic/api/models/MobileIdInputTest.java
@@ -949,9 +1001,17 @@ src/test/java/id/trinsic/api/models/RefreshStepContentRequestTest.java
 src/test/java/id/trinsic/api/models/RefreshStepContentResponseTest.java
 src/test/java/id/trinsic/api/models/ResultCollectionMethodTest.java
 src/test/java/id/trinsic/api/models/ResultCollectionTest.java
+src/test/java/id/trinsic/api/models/RevolutProviderOutputTest.java
 src/test/java/id/trinsic/api/models/SamsungIdWithClearCredentialTest.java
 src/test/java/id/trinsic/api/models/SamsungWalletInputTest.java
 src/test/java/id/trinsic/api/models/SamsungWalletProviderOutputTest.java
+src/test/java/id/trinsic/api/models/SanadProviderOutputTest.java
+src/test/java/id/trinsic/api/models/SaudiArabiaNafathAddressTest.java
+src/test/java/id/trinsic/api/models/SaudiArabiaNafathCitizenAttributesTest.java
+src/test/java/id/trinsic/api/models/SaudiArabiaNafathHeadOfHouseholdTest.java
+src/test/java/id/trinsic/api/models/SaudiArabiaNafathProviderOutputTest.java
+src/test/java/id/trinsic/api/models/SaudiArabiaNafathResidentAttributesTest.java
+src/test/java/id/trinsic/api/models/SaudiArabiaNafathVisitorAttributesTest.java
 src/test/java/id/trinsic/api/models/SerbiaIdCardProviderOutputTest.java
 src/test/java/id/trinsic/api/models/SessionErrorCodeTest.java
 src/test/java/id/trinsic/api/models/SessionOrderingTest.java
@@ -984,6 +1044,8 @@ src/test/java/id/trinsic/api/models/SubProviderMetadataTest.java
 src/test/java/id/trinsic/api/models/SubmitNativeChallengeResponseRequestTest.java
 src/test/java/id/trinsic/api/models/SubmitNativeChallengeResponseResponseTest.java
 src/test/java/id/trinsic/api/models/SwedenBankIdProviderOutputTest.java
+src/test/java/id/trinsic/api/models/TrinsicHPKEBundleTest.java
+src/test/java/id/trinsic/api/models/TrinsicHPKEMetadataTest.java
 src/test/java/id/trinsic/api/models/TrinsicTestDatabaseLookupInputTest.java
 src/test/java/id/trinsic/api/models/TrinsicTestSubProvidersInputTest.java
 src/test/java/id/trinsic/api/models/UAEPassProviderOutputTest.java
@@ -994,6 +1056,7 @@ src/test/java/id/trinsic/api/models/UgandaNidMatch2ProviderOutputTest.java
 src/test/java/id/trinsic/api/models/UgandaNidMatch2SecondaryIdNumberFieldTest.java
 src/test/java/id/trinsic/api/models/UkEvisaLookupInputTest.java
 src/test/java/id/trinsic/api/models/UnitedKingdomEvisaProviderOutputTest.java
+src/test/java/id/trinsic/api/models/UsaArizonaWalletInputTest.java
 src/test/java/id/trinsic/api/models/UsaCaliforniaDmvInputTest.java
 src/test/java/id/trinsic/api/models/VerificationProfileResponseTest.java
 src/test/java/id/trinsic/api/models/YotiDeeplinkProviderOutputTest.java

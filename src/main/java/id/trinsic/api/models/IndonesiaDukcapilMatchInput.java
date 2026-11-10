@@ -48,7 +48,7 @@ import id.trinsic.ApiClient;
   IndonesiaDukcapilMatchInput.JSON_PROPERTY_DOCUMENT_IMAGE,
   IndonesiaDukcapilMatchInput.JSON_PROPERTY_CONSENT_GIVEN_AT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class IndonesiaDukcapilMatchInput {
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<String> fullName = JsonNullable.<String>undefined();
@@ -243,7 +243,7 @@ public class IndonesiaDukcapilMatchInput {
   }
 
   /**
-   * The raw bytes of the selfie image of the individual.              Must be JPEG or PNG format; 10MB maximum.
+   * The raw bytes of the selfie image of the individual.              Must be JPEG or PNG format; 10MB maximum. When using an SDK, this can be a raw byte array. In raw JSON form this is Base64.
    * @return selfieImage
    */
   @javax.annotation.Nullable

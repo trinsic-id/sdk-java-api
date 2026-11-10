@@ -52,7 +52,9 @@ public enum SessionErrorCode {
   
   SECURITY_VALIDATION_FAILED("SecurityValidationFailed"),
   
-  INVALID_RESPONSE("InvalidResponse");
+  INVALID_RESPONSE("InvalidResponse"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -77,7 +79,7 @@ public enum SessionErrorCode {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

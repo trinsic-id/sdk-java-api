@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   KenyaNidMatch2ProviderOutput.JSON_PROPERTY_DATE_OF_BIRTH,
   KenyaNidMatch2ProviderOutput.JSON_PROPERTY_SEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class KenyaNidMatch2ProviderOutput {
   public static final String JSON_PROPERTY_NATIONAL_ID_NUMBER = "nationalIdNumber";
   private JsonNullable<KenyaNidMatch2NationalIdNumberField> nationalIdNumber = JsonNullable.<KenyaNidMatch2NationalIdNumberField>undefined();

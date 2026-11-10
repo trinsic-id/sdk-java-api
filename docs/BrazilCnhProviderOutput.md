@@ -8,6 +8,7 @@ Exposed properties for the `brazil-digital-cnh` Provider which do not directly m
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**cpfNumber** | **String** | The individual&#39;s CPF number.              A CPF (Cadastro de Pessoas Físicas) is the Brazilian individual taxpayer identification number for residents and foreigners. It is an 11-digit number managed by the Federal Revenue Service, the last 2 digits are check digits, calculated based on the first 9 digits. The 9th digit indicates the fiscal region responsible for the registration, |  [optional] |
 |**fullName** | [**BrazilCnhMatchFieldString**](BrazilCnhMatchFieldString.md) | Full name decoded from the CNH QR Code and whether it matched the government database. |  [optional] |
 |**fullNameSimilarity** | **Double** | Similarity score for the decoded full name from the CNH QR Code.              Ranges from 0.0 to 1.0, where 1.0 is an exact match. |  [optional] |
 |**originDocument** | **String** | Source identity document number/reference for the CNH record, decoded from the CNH QR Code. |  [optional] |

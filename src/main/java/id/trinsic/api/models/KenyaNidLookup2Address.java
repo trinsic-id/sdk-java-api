@@ -45,7 +45,7 @@ import id.trinsic.ApiClient;
   KenyaNidLookup2Address.JSON_PROPERTY_ADDITIONAL_LINES,
   KenyaNidLookup2Address.JSON_PROPERTY_RAW
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class KenyaNidLookup2Address {
   public static final String JSON_PROPERTY_DISTRICT = "district";
   private JsonNullable<String> district = JsonNullable.<String>undefined();
@@ -167,7 +167,7 @@ public class KenyaNidLookup2Address {
   }
 
   public KenyaNidLookup2Address addAdditionalLinesItem(String additionalLinesItem) {
-    if (this.additionalLines == null || !this.additionalLines.isPresent()) {
+    if (this.additionalLines == null || !this.additionalLines.isPresent() || this.additionalLines.get() == null) {
       this.additionalLines = JsonNullable.<List<String>>of(new ArrayList<>());
     }
     try {

@@ -60,6 +60,7 @@ import id.trinsic.api.models.IndonesiaNikMatch;
 import id.trinsic.api.models.InteracProviderOutput;
 import id.trinsic.api.models.ItsmeLoginProviderOutput;
 import id.trinsic.api.models.ItsmeProviderOutput;
+import id.trinsic.api.models.JapanMyNumberProviderOutput;
 import id.trinsic.api.models.KenyaNidLookup2ProviderOutput;
 import id.trinsic.api.models.KenyaNidLookup3ProviderOutput;
 import id.trinsic.api.models.KenyaNidMatch2ProviderOutput;
@@ -90,7 +91,10 @@ import id.trinsic.api.models.PolandMobywatelMatchProviderOutput;
 import id.trinsic.api.models.PolandMojeIdProviderOutput;
 import id.trinsic.api.models.PortugalIdCardProviderOutput;
 import id.trinsic.api.models.PostOfficeEasyIdProviderOutput;
+import id.trinsic.api.models.RevolutProviderOutput;
 import id.trinsic.api.models.SamsungWalletProviderOutput;
+import id.trinsic.api.models.SanadProviderOutput;
+import id.trinsic.api.models.SaudiArabiaNafathProviderOutput;
 import id.trinsic.api.models.SerbiaIdCardProviderOutput;
 import id.trinsic.api.models.SignzyIndiaAadhaarFetchProviderOutput;
 import id.trinsic.api.models.SingpassLoginProviderOutput;
@@ -530,6 +534,22 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'japanMynumber'
+     */
+    @Test
+    void japanMynumberTest() {
+        // TODO: test japanMynumber
+    }
+
+    /**
+     * Test the property 'jordanSanad'
+     */
+    @Test
+    void jordanSanadTest() {
+        // TODO: test jordanSanad
+    }
+
+    /**
      * Test the property 'kenyaNidLookup2'
      */
     @Test
@@ -634,6 +654,14 @@ class ProviderOutputTest {
     }
 
     /**
+     * Test the property 'revolut'
+     */
+    @Test
+    void revolutTest() {
+        // TODO: test revolut
+    }
+
+    /**
      * Test the property 'peruDniLookup'
      */
     @Test
@@ -695,6 +723,14 @@ class ProviderOutputTest {
     @Test
     void samsungWalletTest() {
         // TODO: test samsungWallet
+    }
+
+    /**
+     * Test the property 'saudiArabiaNafath'
+     */
+    @Test
+    void saudiArabiaNafathTest() {
+        // TODO: test saudiArabiaNafath
     }
 
     /**

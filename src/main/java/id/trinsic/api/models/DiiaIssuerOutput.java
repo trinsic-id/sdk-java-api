@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   DiiaIssuerOutput.JSON_PROPERTY_SERIAL_NUMBER,
   DiiaIssuerOutput.JSON_PROPERTY_NATIONAL_REGISTRATION_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class DiiaIssuerOutput {
   public static final String JSON_PROPERTY_COMMON_NAME = "commonName";
   private JsonNullable<String> commonName = JsonNullable.<String>undefined();

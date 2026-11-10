@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   ItsmeAddress.JSON_PROPERTY_CITY,
   ItsmeAddress.JSON_PROPERTY_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ItsmeAddress {
   public static final String JSON_PROPERTY_STREET_ADDRESS = "streetAddress";
   private JsonNullable<String> streetAddress = JsonNullable.<String>undefined();

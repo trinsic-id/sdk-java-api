@@ -34,7 +34,9 @@ public enum ResultCollectionMethod {
   
   CAPTURE_REDIRECT("CaptureRedirect"),
   
-  SUBMIT_NATIVE_CHALLENGE_RESPONSE("SubmitNativeChallengeResponse");
+  SUBMIT_NATIVE_CHALLENGE_RESPONSE("SubmitNativeChallengeResponse"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -59,7 +61,7 @@ public enum ResultCollectionMethod {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

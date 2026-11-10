@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   Iso180135AamvaDomesticDrivingPrivilege.JSON_PROPERTY_VEHICLE_RESTRICTIONS,
   Iso180135AamvaDomesticDrivingPrivilege.JSON_PROPERTY_VEHICLE_ENDORSEMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Iso180135AamvaDomesticDrivingPrivilege {
   public static final String JSON_PROPERTY_VEHICLE_CLASS = "vehicleClass";
   private JsonNullable<Iso180135AamvaDomesticVehicleClass> vehicleClass = JsonNullable.<Iso180135AamvaDomesticVehicleClass>undefined();
@@ -98,7 +98,7 @@ public class Iso180135AamvaDomesticDrivingPrivilege {
   }
 
   public Iso180135AamvaDomesticDrivingPrivilege addVehicleRestrictionsItem(Iso180135AamvaDomesticVehicleRestriction vehicleRestrictionsItem) {
-    if (this.vehicleRestrictions == null || !this.vehicleRestrictions.isPresent()) {
+    if (this.vehicleRestrictions == null || !this.vehicleRestrictions.isPresent() || this.vehicleRestrictions.get() == null) {
       this.vehicleRestrictions = JsonNullable.<List<Iso180135AamvaDomesticVehicleRestriction>>of(new ArrayList<>());
     }
     try {
@@ -142,7 +142,7 @@ public class Iso180135AamvaDomesticDrivingPrivilege {
   }
 
   public Iso180135AamvaDomesticDrivingPrivilege addVehicleEndorsementsItem(Iso180135AamvaDomesticVehicleEndorsement vehicleEndorsementsItem) {
-    if (this.vehicleEndorsements == null || !this.vehicleEndorsements.isPresent()) {
+    if (this.vehicleEndorsements == null || !this.vehicleEndorsements.isPresent() || this.vehicleEndorsements.get() == null) {
       this.vehicleEndorsements = JsonNullable.<List<Iso180135AamvaDomesticVehicleEndorsement>>of(new ArrayList<>());
     }
     try {

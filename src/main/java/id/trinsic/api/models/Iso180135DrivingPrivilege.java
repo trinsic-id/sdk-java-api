@@ -46,7 +46,7 @@ import id.trinsic.ApiClient;
   Iso180135DrivingPrivilege.JSON_PROPERTY_EXPIRY_DATE,
   Iso180135DrivingPrivilege.JSON_PROPERTY_CODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Iso180135DrivingPrivilege {
   public static final String JSON_PROPERTY_VEHICLE_CATEGORY_CODE = "vehicleCategoryCode";
   private JsonNullable<String> vehicleCategoryCode = JsonNullable.<String>undefined();
@@ -165,7 +165,7 @@ public class Iso180135DrivingPrivilege {
   }
 
   public Iso180135DrivingPrivilege addCodesItem(Iso180135DrivingPrivilegeCode codesItem) {
-    if (this.codes == null || !this.codes.isPresent()) {
+    if (this.codes == null || !this.codes.isPresent() || this.codes.get() == null) {
       this.codes = JsonNullable.<List<Iso180135DrivingPrivilegeCode>>of(new ArrayList<>());
     }
     try {

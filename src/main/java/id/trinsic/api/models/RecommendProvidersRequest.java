@@ -44,7 +44,7 @@ import id.trinsic.ApiClient;
   RecommendProvidersRequest.JSON_PROPERTY_RECOMMENDATION_INFO,
   RecommendProvidersRequest.JSON_PROPERTY_HEALTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class RecommendProvidersRequest {
   public static final String JSON_PROPERTY_VERIFICATION_PROFILE_ID = "verificationProfileId";
   @javax.annotation.Nonnull
@@ -89,7 +89,7 @@ public class RecommendProvidersRequest {
   }
 
   /**
-   * Information about the user you wish to generate a recommendation for.
+   * Information about the user you wish to generate a recommendation for. When no location can be determined from this information, all eligible providers are returned in the remainder.
    * @return recommendationInfo
    */
   @javax.annotation.Nullable

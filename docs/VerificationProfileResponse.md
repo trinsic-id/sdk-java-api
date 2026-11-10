@@ -11,6 +11,7 @@
 |**alias** | **String** | An alias of the verification profile shown to developers and administrators. |  |
 |**brandName** | **String** | The brand name of the verification profile shown to end-users. |  |
 |**externalId** | **String** | A customer-defined external ID for this verification profile, unique within your organization. |  [optional] |
+|**geography** | **String** | The data-residency geography of the verification profile, such as \&quot;US\&quot; or \&quot;EU\&quot;. |  |
 |**logoUrl** | **String** | The URL of the verification profile&#39;s logo. |  |
 |**primaryColor** | **String** | The primary color of the verification profile. |  |
 |**enabledProviders** | **List&lt;String&gt;** | The providers that are currently enabled for the verification profile. |  |

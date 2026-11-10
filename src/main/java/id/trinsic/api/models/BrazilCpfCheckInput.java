@@ -43,11 +43,10 @@ import id.trinsic.ApiClient;
   BrazilCpfCheckInput.JSON_PROPERTY_SELFIE_IMAGE,
   BrazilCpfCheckInput.JSON_PROPERTY_SELFIE_IMAGE_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class BrazilCpfCheckInput {
   public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
-  @javax.annotation.Nonnull
-  private String cpfNumber;
+  private JsonNullable<String> cpfNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "dateOfBirth";
   private JsonNullable<LocalDate> dateOfBirth = JsonNullable.<LocalDate>undefined();
@@ -61,8 +60,8 @@ public class BrazilCpfCheckInput {
   public BrazilCpfCheckInput() { 
   }
 
-  public BrazilCpfCheckInput cpfNumber(@javax.annotation.Nonnull String cpfNumber) {
-    this.cpfNumber = cpfNumber;
+  public BrazilCpfCheckInput cpfNumber(@javax.annotation.Nullable String cpfNumber) {
+    this.cpfNumber = JsonNullable.<String>of(cpfNumber);
     return this;
   }
 
@@ -70,18 +69,26 @@ public class BrazilCpfCheckInput {
    * The user&#39;s 11-digit, numeric CPF Number
    * @return cpfNumber
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonIgnore
   public String getCpfNumber() {
-    return cpfNumber;
+        return cpfNumber.orElse(null);
   }
 
+  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCpfNumber(@javax.annotation.Nonnull String cpfNumber) {
+  public JsonNullable<String> getCpfNumber_JsonNullable() {
+    return cpfNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
+  public void setCpfNumber_JsonNullable(JsonNullable<String> cpfNumber) {
     this.cpfNumber = cpfNumber;
+  }
+
+  public void setCpfNumber(@javax.annotation.Nullable String cpfNumber) {
+    this.cpfNumber = JsonNullable.<String>of(cpfNumber);
   }
 
 
@@ -91,7 +98,7 @@ public class BrazilCpfCheckInput {
   }
 
   /**
-   * The user&#39;s date of birth. Optional, but date of birth will become required for lookups starting September 1, 2026.
+   * The user&#39;s date of birth, in &#x60;YYYY-MM-DD&#x60; format. Optional in this request; required to complete CPF lookups.
    * @return dateOfBirth
    */
   @javax.annotation.Nullable
@@ -123,7 +130,7 @@ public class BrazilCpfCheckInput {
   }
 
   /**
-   * The raw bytes of the selfie image collected from the user.
+   * The selfie image collected from the user. When using an SDK, this can be a raw byte array. In raw JSON form this is Base64.
    * @return selfieImage
    */
   @javax.annotation.Nullable
@@ -193,7 +200,7 @@ public class BrazilCpfCheckInput {
       return false;
     }
     BrazilCpfCheckInput brazilCpfCheckInput = (BrazilCpfCheckInput) o;
-    return Objects.equals(this.cpfNumber, brazilCpfCheckInput.cpfNumber) &&
+    return equalsNullable(this.cpfNumber, brazilCpfCheckInput.cpfNumber) &&
         equalsNullable(this.dateOfBirth, brazilCpfCheckInput.dateOfBirth) &&
         equalsNullable(this.selfieImage, brazilCpfCheckInput.selfieImage) &&
         equalsNullable(this.selfieImageContentType, brazilCpfCheckInput.selfieImageContentType);
@@ -205,7 +212,7 @@ public class BrazilCpfCheckInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cpfNumber, hashCodeNullable(dateOfBirth), hashCodeNullable(selfieImage), hashCodeNullable(selfieImageContentType));
+    return Objects.hash(hashCodeNullable(cpfNumber), hashCodeNullable(dateOfBirth), hashCodeNullable(selfieImage), hashCodeNullable(selfieImageContentType));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

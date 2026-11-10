@@ -41,6 +41,7 @@ import id.trinsic.ApiClient;
  * Exposed properties for the &#x60;brazil-digital-cnh&#x60; Provider which do not directly map to the normalized IdentityData model.
  */
 @JsonPropertyOrder({
+  BrazilCnhProviderOutput.JSON_PROPERTY_CPF_NUMBER,
   BrazilCnhProviderOutput.JSON_PROPERTY_FULL_NAME,
   BrazilCnhProviderOutput.JSON_PROPERTY_FULL_NAME_SIMILARITY,
   BrazilCnhProviderOutput.JSON_PROPERTY_ORIGIN_DOCUMENT,
@@ -58,8 +59,11 @@ import id.trinsic.ApiClient;
   BrazilCnhProviderOutput.JSON_PROPERTY_RENACH_NUMBER,
   BrazilCnhProviderOutput.JSON_PROPERTY_FACIAL_BIOMETRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class BrazilCnhProviderOutput {
+  public static final String JSON_PROPERTY_CPF_NUMBER = "cpfNumber";
+  private JsonNullable<String> cpfNumber = JsonNullable.<String>undefined();
+
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
   private JsonNullable<BrazilCnhMatchFieldString> fullName = JsonNullable.<BrazilCnhMatchFieldString>undefined();
 
@@ -110,6 +114,38 @@ public class BrazilCnhProviderOutput {
 
   public BrazilCnhProviderOutput() { 
   }
+
+  public BrazilCnhProviderOutput cpfNumber(@javax.annotation.Nullable String cpfNumber) {
+    this.cpfNumber = JsonNullable.<String>of(cpfNumber);
+    return this;
+  }
+
+  /**
+   * The individual&#39;s CPF number.              A CPF (Cadastro de Pessoas Físicas) is the Brazilian individual taxpayer identification number for residents and foreigners. It is an 11-digit number managed by the Federal Revenue Service, the last 2 digits are check digits, calculated based on the first 9 digits. The 9th digit indicates the fiscal region responsible for the registration,
+   * @return cpfNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public String getCpfNumber() {
+        return cpfNumber.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_CPF_NUMBER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getCpfNumber_JsonNullable() {
+    return cpfNumber;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CPF_NUMBER)
+  public void setCpfNumber_JsonNullable(JsonNullable<String> cpfNumber) {
+    this.cpfNumber = cpfNumber;
+  }
+
+  public void setCpfNumber(@javax.annotation.Nullable String cpfNumber) {
+    this.cpfNumber = JsonNullable.<String>of(cpfNumber);
+  }
+
 
   public BrazilCnhProviderOutput fullName(@javax.annotation.Nullable BrazilCnhMatchFieldString fullName) {
     this.fullName = JsonNullable.<BrazilCnhMatchFieldString>of(fullName);
@@ -635,7 +671,8 @@ public class BrazilCnhProviderOutput {
       return false;
     }
     BrazilCnhProviderOutput brazilCnhProviderOutput = (BrazilCnhProviderOutput) o;
-    return equalsNullable(this.fullName, brazilCnhProviderOutput.fullName) &&
+    return equalsNullable(this.cpfNumber, brazilCnhProviderOutput.cpfNumber) &&
+        equalsNullable(this.fullName, brazilCnhProviderOutput.fullName) &&
         equalsNullable(this.fullNameSimilarity, brazilCnhProviderOutput.fullNameSimilarity) &&
         equalsNullable(this.originDocument, brazilCnhProviderOutput.originDocument) &&
         equalsNullable(this.dateOfBirth, brazilCnhProviderOutput.dateOfBirth) &&
@@ -659,7 +696,7 @@ public class BrazilCnhProviderOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(fullName), hashCodeNullable(fullNameSimilarity), hashCodeNullable(originDocument), hashCodeNullable(dateOfBirth), hashCodeNullable(motherFullName), hashCodeNullable(fatherFullName), hashCodeNullable(category), hashCodeNullable(registrationNumber), hashCodeNullable(registrationNumberCheckDigitsValid), hashCodeNullable(firstIssueDate), hashCodeNullable(observations), hashCodeNullable(issueCity), hashCodeNullable(issueState), hashCodeNullable(validationNumber), hashCodeNullable(renachNumber), hashCodeNullable(facialBiometry));
+    return Objects.hash(hashCodeNullable(cpfNumber), hashCodeNullable(fullName), hashCodeNullable(fullNameSimilarity), hashCodeNullable(originDocument), hashCodeNullable(dateOfBirth), hashCodeNullable(motherFullName), hashCodeNullable(fatherFullName), hashCodeNullable(category), hashCodeNullable(registrationNumber), hashCodeNullable(registrationNumberCheckDigitsValid), hashCodeNullable(firstIssueDate), hashCodeNullable(observations), hashCodeNullable(issueCity), hashCodeNullable(issueState), hashCodeNullable(validationNumber), hashCodeNullable(renachNumber), hashCodeNullable(facialBiometry));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -673,6 +710,7 @@ public class BrazilCnhProviderOutput {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrazilCnhProviderOutput {\n");
+    sb.append("    cpfNumber: ").append(toIndentedString(cpfNumber)).append("\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    fullNameSimilarity: ").append(toIndentedString(fullNameSimilarity)).append("\n");
     sb.append("    originDocument: ").append(toIndentedString(originDocument)).append("\n");
@@ -732,6 +770,11 @@ public class BrazilCnhProviderOutput {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `cpfNumber` to the URL query string
+    if (getCpfNumber() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%scpfNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCpfNumber()))));
+    }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {

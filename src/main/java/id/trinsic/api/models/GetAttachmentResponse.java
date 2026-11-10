@@ -24,7 +24,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import id.trinsic.api.models.TrinsicHPKEBundle;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -34,13 +39,17 @@ import id.trinsic.ApiClient;
  */
 @JsonPropertyOrder({
   GetAttachmentResponse.JSON_PROPERTY_CONTENT,
+  GetAttachmentResponse.JSON_PROPERTY_ENCRYPTED_CONTENT,
   GetAttachmentResponse.JSON_PROPERTY_CONTENT_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T17:44:49.089914606Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-10T04:27:03.470234859Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class GetAttachmentResponse {
   public static final String JSON_PROPERTY_CONTENT = "content";
   @javax.annotation.Nonnull
   private byte[] content;
+
+  public static final String JSON_PROPERTY_ENCRYPTED_CONTENT = "encryptedContent";
+  private JsonNullable<TrinsicHPKEBundle> encryptedContent = JsonNullable.<TrinsicHPKEBundle>undefined();
 
   public static final String JSON_PROPERTY_CONTENT_TYPE = "contentType";
   @javax.annotation.Nonnull
@@ -70,6 +79,38 @@ public class GetAttachmentResponse {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setContent(@javax.annotation.Nonnull byte[] content) {
     this.content = content;
+  }
+
+
+  public GetAttachmentResponse encryptedContent(@javax.annotation.Nullable TrinsicHPKEBundle encryptedContent) {
+    this.encryptedContent = JsonNullable.<TrinsicHPKEBundle>of(encryptedContent);
+    return this;
+  }
+
+  /**
+   * The HPKE Bundle containing the encrypted contents of the Attachment, if secured via HPKE.              Decrypt it using the HPKE info string &#x60;trinsic-hpke:1:attachment-contents:{sessionId}:{attachmentId}&#x60;.
+   * @return encryptedContent
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+  public TrinsicHPKEBundle getEncryptedContent() {
+        return encryptedContent.orElse(null);
+  }
+
+  @JsonProperty(value = JSON_PROPERTY_ENCRYPTED_CONTENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<TrinsicHPKEBundle> getEncryptedContent_JsonNullable() {
+    return encryptedContent;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ENCRYPTED_CONTENT)
+  public void setEncryptedContent_JsonNullable(JsonNullable<TrinsicHPKEBundle> encryptedContent) {
+    this.encryptedContent = encryptedContent;
+  }
+
+  public void setEncryptedContent(@javax.annotation.Nullable TrinsicHPKEBundle encryptedContent) {
+    this.encryptedContent = JsonNullable.<TrinsicHPKEBundle>of(encryptedContent);
   }
 
 
@@ -110,12 +151,24 @@ public class GetAttachmentResponse {
     }
     GetAttachmentResponse getAttachmentResponse = (GetAttachmentResponse) o;
     return Arrays.equals(this.content, getAttachmentResponse.content) &&
+        equalsNullable(this.encryptedContent, getAttachmentResponse.encryptedContent) &&
         Objects.equals(this.contentType, getAttachmentResponse.contentType);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(Arrays.hashCode(content), contentType);
+    return Objects.hash(Arrays.hashCode(content), hashCodeNullable(encryptedContent), contentType);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -123,6 +176,7 @@ public class GetAttachmentResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAttachmentResponse {\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    encryptedContent: ").append(toIndentedString(encryptedContent)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -171,6 +225,11 @@ public class GetAttachmentResponse {
     // add `content` to the URL query string
     if (getContent() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
+    }
+
+    // add `encryptedContent` to the URL query string
+    if (getEncryptedContent() != null) {
+      joiner.add(getEncryptedContent().toUrlQueryString(prefix + "encryptedContent" + suffix));
     }
 
     // add `contentType` to the URL query string
